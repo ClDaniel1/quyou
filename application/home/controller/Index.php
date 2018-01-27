@@ -14,7 +14,7 @@ class Index extends \think\Controller
     {
         $intro = new Intro();
 
-        $intro->getAll(23, 10208);
+        $intro->getAll(150, 11498);
     }
 
 
