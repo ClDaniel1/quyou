@@ -1,0 +1,241 @@
+{extend name="public/base"}
+{block name='style'}
+<!--页面样式、引用/示例如下-->
+<style>
+    #searchBar{
+        width: 50%;
+        position: absolute;
+        background: rgba(0,0,0,0.7);
+        height: 125px;
+        z-index: 1;
+        left: 25%;
+        bottom: 20%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px  black;
+    }
+    #searchContent{
+        width: 89%;
+        transition: all 0.5s;
+        margin-top: 10px;
+    }
+    @media(max-width: 1550px) {
+        #searchContent{
+            width: 87%;
+        }
+    }
+    @media(max-width: 1350px) {
+        #searchContent{
+            width: 83%;
+        }
+    }
+
+    @media(max-width: 1050px) {
+        #searchContent{
+            width: 80%;
+        }
+
+    }
+    @media(max-width: 846px) {
+        #searchContent{
+            width: 75%;
+        }
+
+    }
+
+    .listImg{
+        overflow: hidden;
+        text-align: center;
+    }
+    .listImg a{
+         width: 100%;
+         display: inline-block;
+         text-align: center;
+     }
+    .am-list-main a{
+        transition: all 0.5s;
+    }
+    .am-list-main a:hover{
+        color: #F9851D;
+    }
+    .am-list-main div{
+       font-size: 17px;
+        margin-top: 15px;
+    }
+    .listImg img{
+        height: 175px;
+        display: inline-block;
+    }
+    .am-list li{
+        transition: all 0.5s;
+    }
+    .am-list li:hover{
+        background: #f7f7f7;
+    }
+    #ad {
+        width: 100%;
+    }
+    @media(max-width: 768px) {
+        #searchBar{
+            display: none;
+        }
+        .listImg{
+            display: inline;
+            width: 100%;
+        }
+        .am-list-main{
+            display: inline;
+            width: 100%;
+            padding: 15px 35px;
+        }
+        .am-list-item-hd a{
+            font-size: 18px;
+        }
+        .am-list-main div{
+            font-size: 14px;
+        }
+
+    }
+</style>
+{/block}
+
+{block name='title'}
+趣游
+{/block}
+
+{block name='body'}
+<!--页面内容 /示例如下-->
+
+<div data-am-widget="slider" class="am-slider am-slider-c3" data-am-slider='{&quot;controlNav&quot;:false}' >
+    <ul class="am-slides">
+        <li>
+            <img src="https://n4-q.mafengwo.net/s11/M00/C6/B0/wKgBEFpnJsSAAqlhAAi_DZlFIR042.jpeg?imageMogr2%2Finterlace%2F1">
+            <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">1</span>/4</div>远方 有一个地方 那里种有我们的梦想</div>
+        </li>
+        <li>
+            <img src="https://b4-q.mafengwo.net/s11/M00/9E/70/wKgBEFplvumAEU6GAAuwkxzWAm802.jpeg?imageMogr2%2Finterlace%2F1">
+            <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">2</span>/4</div>某天 也许会相遇 相遇在这个好地方</div>
+
+        </li>
+        <li>
+            <img src="https://b1-q.mafengwo.net/s11/M00/62/8D/wKgBEFpiDjGAY3QYAAd13CQEx5c24.jpeg?imageMogr2%2Finterlace%2F1">
+            <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">3</span>/4</div>不要太担心 只因为我相信 终会走过这条遥远的道路</div>
+
+        </li>
+        <li>
+            <img src="https://n4-q.mafengwo.net/s11/M00/19/36/wKgBEFpkuyaASpXSAAVeGFv-0eA31.jpeg?imageMogr2%2Finterlace%2F1">
+            <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">4</span>/4</div>OH PARA PARADISE 是否那么重要 你是否那么地遥远</div>
+
+        </li>
+
+    </ul>
+    <div id="searchBar" class="am-slider-desc">
+        <form class="layui-form" action="" >
+            <div class="layui-form-item" style="display: inline-block;" id="searchContent">
+                <div class="layui-input-block" style="margin-left: 35px;">
+                    <input type="radio" name="search" value="all" title="全部" checked>
+                    <input type="radio" name="search" value="des" title="目的地" >
+                    <input type="radio" name="search" value="hotel" title="酒店" >
+                </div>
+                <div class="layui-input-block" style="margin-left: 35px;margin-top: 10px    ">
+                    <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索内容" autocomplete="off" class="layui-input"    >
+                </div>
+            </div>
+            <div class="layui-form-item" style="display: inline-block;" >
+                <div class="layui-input-block" style="margin-left: 10px">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo"><i class="layui-icon">&#xe615;</i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="layui-container">
+    <div class="layui-row layui-col-space30">
+        <div class="layui-col-md3" id="leftBar">
+            <div class="am-panel am-panel-primary panel" id="ad">
+                <div class="am-panel-hd">广告</div>
+                <div class="am-panel-bd">
+                    <img src="https://b4-q.mafengwo.net/s11/M00/9E/70/wKgBEFplvumAEU6GAAuwkxzWAm802.jpeg?imageMogr2%2Finterlace%2F1" alt="我很囧，你保重....晒晒旅行中的那些囧！"  class="am-img-responsive"/>
+                </div>
+            </div>
+
+            <div class="am-panel am-panel-primary panel" id="hot">
+                <div class="am-panel-hd">热门活动</div>
+                <div class="am-panel-bd">
+                    <img src="https://b4-q.mafengwo.net/s11/M00/9E/70/wKgBEFplvumAEU6GAAuwkxzWAm802.jpeg?imageMogr2%2Finterlace%2F1" alt="我很囧，你保重....晒晒旅行中的那些囧！"  class="am-img-responsive"/>
+                    <img src="https://b4-q.mafengwo.net/s11/M00/9E/70/wKgBEFplvumAEU6GAAuwkxzWAm802.jpeg?imageMogr2%2Finterlace%2F1" alt="我很囧，你保重....晒晒旅行中的那些囧！"  class="am-img-responsive"/>
+                    <img src="https://b4-q.mafengwo.net/s11/M00/9E/70/wKgBEFplvumAEU6GAAuwkxzWAm802.jpeg?imageMogr2%2Finterlace%2F1" alt="我很囧，你保重....晒晒旅行中的那些囧！"  class="am-img-responsive"/>
+                    <img src="https://b4-q.mafengwo.net/s11/M00/9E/70/wKgBEFplvumAEU6GAAuwkxzWAm802.jpeg?imageMogr2%2Finterlace%2F1" alt="我很囧，你保重....晒晒旅行中的那些囧！"  class="am-img-responsive"/>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="layui-col-md9" id="hotNote">
+            <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">热门游记</li>
+                    <li>最新游记</li>
+                    <input class="layui-btn" type="button" value="写游记" style="float: right;margin-bottom: 10px">
+                </ul>
+
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show">
+
+                        <ul class="am-list" id="list">
+                            <!--缩略图在标题左边-->
+
+                        </ul >
+
+                    </div>
+                    <div class="layui-tab-item">内容2</div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+    {/block}
+
+
+{block name='script'}
+<!--JS、引用 /示例如下-->
+
+<script>
+    var flow = layui.flow;
+    flow.load({
+        elem: '#list',
+        isAuto:false//指定列表容器
+        ,done: function(page, next){ //到达临界点（默认滚动触发），触发下一页
+            var lis = [];
+            //以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
+            for(var i =0;i<10;i++){
+                lis.push('<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">'+
+                    '<div class="am-u-sm-4 am-list-thumb listImg">'+
+                    '<a href="http://www.douban.com/online/11614662/" class="">'+
+                    '<img src="https://b4-q.mafengwo.net/s11/M00/9E/70/wKgBEFplvumAEU6GAAuwkxzWAm802.jpeg?imageMogr2%2Finterlace%2F1" alt="我很囧，你保重....晒晒旅行中的那些囧！" />'+
+                    '</a>'+
+                    '</div>'+
+                    ' <div class=" am-u-sm-8 am-list-main">'+
+                    '<h1 class="am-list-item-hd"><a href="http://www.douban.com/online/11614662/" class="">我很囧，你保重....晒晒旅行中的那些囧！</a></h1>'+
+                    '<div class="am-list-item-text">囧人囧事囧照，人在囧途，越囧越萌。标记《带你出发，陪我回家》http://book.douban.com/subject/25711202/为“想读”“在读”或“读过”，有机会获得此书本活动进行3个月，每月送出三本书。会有不定期bonus！</div>'+
+                    '<div class="am-list-item-text am-vertical-align-bottom "><i class="layui-icon">&#xe715;</i> 云南  <i class="layui-icon">by</i></div>'+
+                    ' </div>'+
+                    '</li>');
+            }
+
+
+
+                //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+                //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+                next(lis.join(''), page < 10);
+            }
+    });
+</script>
+{/block}

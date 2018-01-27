@@ -1,0 +1,369 @@
+{extend name="public/base"}
+{block name='style'}
+<!--页面样式、引用/示例如下-->
+<style>
+    #bannerText{
+        transition: all 0.5s;
+        display: inline-block;
+        left: auto;
+        right: 15%;
+    }
+    #bannerText div{
+        display: inline-block;
+        padding: 25px;
+    }
+    #editer{
+        text-align: right;
+        margin-top: 15px;
+    }
+    #search{
+        width: 300px;
+        display: inline-block;
+    }
+    #searchBar{
+        transition: all 0.5s;
+        display: inline-block;
+        bottom: 35%;
+        left: 15%;
+    }
+    #searchBar>div{
+        padding: 30px;
+        padding-top: 35px;
+        display: inline-block;
+    }
+    @media (max-width: 768px) {
+        #searchBar{
+            display: none;
+        }
+    }
+    #banner li{
+        display: block;
+        max-height: 800px;
+        overflow: hidden;
+    }
+    #banner img{
+        margin-top: -35px;
+    }
+    #title{
+        font-size: 2em;
+        text-align: center;
+        line-height: 75px;
+        height: 75px;
+        width: 100%;
+        display: inline-block;
+    }
+    dl{
+        width: 100%;
+        border-bottom: dashed 1px #EEEEEE;
+        padding: 20px 0;
+        list-style: none;
+        padding-left: 130px;
+    }
+    #des dt{
+        float: left;
+        font-size: 1.2em;
+        display: inline-block;
+        font-weight: normal;
+        padding-right: 15px;
+        margin-left: -130px;
+    }
+    #des a{
+        transition: all 0.3s;
+        margin-right: 10px;
+    }
+    #des a:hover{
+        color: #F9851D;
+
+    }
+    #des dd{
+        display: inline-block;
+        margin-top: 0;
+    }
+    #des dd a{
+
+        line-height: 30px;
+        color: grey;
+    }
+
+</style>
+{/block}
+
+{block name='title'}
+趣游
+{/block}
+
+{block name='body'}
+<!--页面内容 /示例如下-->
+
+<div data-am-widget="" class="am-slider am-slider-d2" data-am-slider='{&quot;directionNav&quot;:false}'  id="banner">
+    <ul class="am-slides">
+        <li>
+            <img src="https://b2-q.mafengwo.net/s11/M00/A9/F2/wKgBEFpd5fCASAWeAApM2WMZ60s74.jpeg">
+            <div class="am-slider-desc" id="bannerText">
+                <div class="am-slider-content">
+                    <h2 class="am-slider-title" id="text"></h2>
+                    <p id="editer"></p>
+                </div>
+            </div>
+            <div class="am-slider-desc"  id="searchBar">
+                <div class="am-slider-content">
+                    <form class="layui-form" action="" >
+                        <h2 class="am-slider-title">请输入目的地</h2>
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索内容" autocomplete="off" class="layui-input"    id="search">
+                        <div class="layui-form-item" style="display: inline-block;" >
+                            <div class="layui-input-block" style="margin-left: 10px">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo"><i class="layui-icon">&#xe615;</i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div id="title">
+    热门目的地
+</div>
+<div class="layui-container" id="des">
+    <div class="layui-row layui-col-space30" >
+        <div class="layui-col-sm6">
+            <dl class=" am-text-top">
+                <dt>直辖市</dt>
+                <dd>
+                    <a href="{:url('home/region/region','des=2')}">北京</a>
+                    <a href="{:url('home/region/region','des=10')}">上海</a>
+                    <a href="{:url('home/region/region','des=2')}">重庆</a>
+                    <a href="{:url('home/region/region','des=10')}">天津</a>
+                </dd>
+            </dl>
+            <dl class=" am-text-top">
+                <dt><a href="{:url('home/region/region','des=2')}">云南</a></dt>
+                <dd>
+                    <a href="{:url('home/region/region','des=2')}">丽江</a>
+                    <a href="{:url('home/region/region','des=10')}">大理</a>
+                    <a href="{:url('home/region/region','des=2')}">昆明</a>
+                    <a href="{:url('home/region/region','des=10')}">香格里拉</a>
+                    <a href="{:url('home/region/region','des=10')}">泸沽湖</a>
+                    <a href="{:url('home/region/region','des=10')}">双廊</a>
+                    <a href="{:url('home/region/region','des=10')}">西双版纳</a>
+                    <a href="{:url('home/region/region','des=10')}">束河</a>
+                    <a href="{:url('home/region/region','des=10')}">腾冲</a>
+                    <a href="{:url('home/region/region','des=10')}">雨崩</a>
+                </dd>
+            </dl>
+            <dl class=" am-text-top">
+                <dt>
+                    <a href="{:url('home/region/region','des=10')}">四川</a>
+                </dt>
+                <dd>
+                    <a href="{:url('home/region/region','des=2')}">成都</a>
+                    <a href="{:url('home/region/region','des=10')}">九寨沟</a>
+                    <a href="{:url('home/region/region','des=2')}">稻城</a>
+                    <a href="{:url('home/region/region','des=10')}">色达</a>
+                    <a href="{:url('home/region/region','des=10')}">若尔盖</a>
+                    <a href="{:url('home/region/region','des=10')}">都江堰</a>
+                    <a href="{:url('home/region/region','des=10')}">亚丁</a>
+                    <a href="{:url('home/region/region','des=10')}">阿坝</a>
+                    <a href="{:url('home/region/region','des=10')}">峨眉山</a>
+                    <a href="{:url('home/region/region','des=10')}">牛背山</a>
+                </dd>
+            </dl>
+            <dl class=" am-text-top">
+                <dt>
+                    <a href="{:url('home/region/region','des=10')}">浙江</a>
+                </dt>
+                <dd>
+                    <a href="{:url('home/region/region','des=2')}">杭州</a>
+                    <a href="{:url('home/region/region','des=10')}">乌镇</a>
+                    <a href="{:url('home/region/region','des=2')}">西塘</a>
+                    <a href="{:url('home/region/region','des=10')}">千岛湖</a>
+                    <a href="{:url('home/region/region','des=10')}">普陀山</a>
+                    <a href="{:url('home/region/region','des=10')}">东极岛</a>
+                    <a href="{:url('home/region/region','des=10')}">南浔</a>
+                </dd>
+            </dl>
+            <dl class=" am-text-top">
+                <dt>
+                    <a href="{:url('home/region/region','des=10')}">福建</a>
+                    <a href="{:url('home/region/region','des=10')}">浙江</a>
+                </dt>
+                <dd>
+                    <a href="{:url('home/region/region','des=2')}">三亚</a>
+                    <a href="{:url('home/region/region','des=10')}">蜈支洲岛</a>
+                    <a href="{:url('home/region/region','des=2')}">海口</a>
+                    <a href="{:url('home/region/region','des=10')}">厦门</a>
+                    <a href="{:url('home/region/region','des=10')}">鼓浪屿</a>
+                    <a href="{:url('home/region/region','des=10')}">武夷山</a>
+                    <a href="{:url('home/region/region','des=10')}">泉州</a>
+                </dd>
+            </dl>
+            <dl class=" am-text-top">
+                <dt>
+                    <a href="{:url('home/region/region','des=10')}">江苏</a>
+                </dt>
+                <dd>
+                    <a href="{:url('home/region/region','des=2')}">南京</a>
+                    <a href="{:url('home/region/region','des=10')}">苏州</a>
+                    <a href="{:url('home/region/region','des=2')}">无锡</a>
+                    <a href="{:url('home/region/region','des=10')}">扬州</a>
+                    <a href="{:url('home/region/region','des=10')}">周庄</a>
+                    <a href="{:url('home/region/region','des=10')}">常州</a>
+                    <a href="{:url('home/region/region','des=10')}">连云港</a>
+                    <a href="{:url('home/region/region','des=10')}">同里</a>
+                </dd>
+            </dl>
+            <dl class=" am-text-top">
+                <dt>
+                    <a href="{:url('home/region/region','des=10')}">广东</a>
+                    <a href="{:url('home/region/region','des=10')}">广西</a>
+                </dt>
+                <dd>
+                    <a href="{:url('home/region/region','des=2')}">广州</a>
+                    <a href="{:url('home/region/region','des=10')}">深圳</a>
+                    <a href="{:url('home/region/region','des=2')}">珠海</a>
+                    <a href="{:url('home/region/region','des=10')}">汕头</a>
+                    <a href="{:url('home/region/region','des=10')}">桂林</a>
+                    <a href="{:url('home/region/region','des=10')}">阳朔</a>
+                    <a href="{:url('home/region/region','des=10')}">北海</a>
+                    <a href="{:url('home/region/region','des=10')}">黄姚古镇</a>
+                    <a href="{:url('home/region/region','des=10')}">涠洲岛</a>
+                    <a href="{:url('home/region/region','des=10')}">龙脊梯田</a>
+                </dd>
+            </dl>
+        </div>
+        <div class="layui-col-sm6">
+            <dl>
+                <dt>
+                    <a href="{:url('home/region/region','des=2')}">西藏</a>
+                    <a href="{:url('home/region/region','des=2')}">贵州</a>
+                </dt>
+                <dd>
+                    <a href="{:url('home/region/region','des=2')}">拉萨</a>
+                    <a href="{:url('home/region/region','des=10')}">林芝</a>
+                    <a href="{:url('home/region/region','des=2')}">阿里</a>
+                    <a href="{:url('home/region/region','des=10')}">黔东南</a>
+                    <a href="{:url('home/region/region','des=10')}">荔波</a>
+                    <a href="{:url('home/region/region','des=10')}">镇远</a>
+                    <a href="{:url('home/region/region','des=10')}">西江</a>
+                    <a href="{:url('home/region/region','des=10')}">黄果树</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="{:url('home/region/region','des=2')}">西北</a>
+                </dt>
+                <dd>
+                    <a href="{:url('home/region/region','des=2')}">西安</a>
+                    <a href="{:url('home/region/region','des=10')}">青海湖</a>
+                    <a href="{:url('home/region/region','des=2')}">西宁</a>
+                    <a href="{:url('home/region/region','des=10')}">祁连</a>
+                    <a href="{:url('home/region/region','des=10')}">敦煌</a>
+                    <a href="{:url('home/region/region','des=10')}">兰州</a>
+                    <a href="{:url('home/region/region','des=10')}">甘南</a>
+                    <a href="{:url('home/region/region','des=10')}">张掖</a>
+                    <a href="{:url('home/region/region','des=10')}">嘉峪关</a>
+                    <a href="{:url('home/region/region','des=10')}">新疆</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="{:url('home/region/region','des=2')}">山东</a>
+                    <a href="{:url('home/region/region','des=2')}">山西</a>
+                </dt>
+                <dd>
+                    <a href="{:url('home/region/region','des=2')}">青岛</a>
+                    <a href="{:url('home/region/region','des=10')}">泰山</a>
+                    <a href="{:url('home/region/region','des=2')}">日照</a>
+                    <a href="{:url('home/region/region','des=10')}">威海</a>
+                    <a href="{:url('home/region/region','des=10')}">烟台</a>
+                    <a href="{:url('home/region/region','des=10')}">长岛</a>
+                    <a href="{:url('home/region/region','des=10')}">蓬莱</a>
+                    <a href="{:url('home/region/region','des=10')}">平遥</a>
+                    <a href="{:url('home/region/region','des=10')}">大同</a>
+                    <a href="{:url('home/region/region','des=10')}">五台山</a>
+                    <a href="{:url('home/region/region','des=10')}">壶口瀑布</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="{:url('home/region/region','des=2')}">湖南</a>
+                    <a href="{:url('home/region/region','des=2')}">湖北</a>
+                </dt>
+                <dd>
+                    <a href="{:url('home/region/region','des=2')}">张家界</a>
+                    <a href="{:url('home/region/region','des=10')}">凤凰</a>
+                    <a href="{:url('home/region/region','des=2')}">郴州</a>
+                    <a href="{:url('home/region/region','des=10')}">武汉</a>
+                    <a href="{:url('home/region/region','des=10')}">恩施</a>
+                    <a href="{:url('home/region/region','des=10')}">神农架</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="{:url('home/region/region','des=2')}">安徽</a>
+                    <a href="{:url('home/region/region','des=2')}">江西</a>
+                </dt>
+                <dd>
+                    <a href="{:url('home/region/region','des=2')}">黄山</a>
+                    <a href="{:url('home/region/region','des=10')}">宏村</a>
+                    <a href="{:url('home/region/region','des=2')}">婺源</a>
+                    <a href="{:url('home/region/region','des=10')}">景德镇</a>
+                    <a href="{:url('home/region/region','des=10')}">庐山</a>
+                    <a href="{:url('home/region/region','des=10')}">三清山</a>
+                    <a href="{:url('home/region/region','des=10')}">南昌</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="{:url('home/region/region','des=2')}">河北</a>
+                    <a href="{:url('home/region/region','des=2')}">河南</a>
+                </dt>
+                <dd>
+                    <a href="{:url('home/region/region','des=2')}">北戴河</a>
+                    <a href="{:url('home/region/region','des=10')}">秦皇岛</a>
+                    <a href="{:url('home/region/region','des=2')}">承德</a>
+                    <a href="{:url('home/region/region','des=10')}">张北</a>
+                    <a href="{:url('home/region/region','des=10')}">少林寺</a>
+                    <a href="{:url('home/region/region','des=10')}">洛阳</a>
+                    <a href="{:url('home/region/region','des=10')}">龙门石窟</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="{:url('home/region/region','des=2')}">内蒙古</a>
+                    <a href="{:url('home/region/region','des=2')}">东北</a>
+                </dt>
+                <dd>
+                    <a href="{:url('home/region/region','des=2')}">呼伦贝尔</a>
+                    <a href="{:url('home/region/region','des=10')}">阿尔山</a>
+                    <a href="{:url('home/region/region','des=2')}">海拉尔</a>
+                    <a href="{:url('home/region/region','des=10')}">哈尔滨</a>
+                    <a href="{:url('home/region/region','des=10')}">漠河</a>
+                    <a href="{:url('home/region/region','des=10')}">雪乡</a>
+                    <a href="{:url('home/region/region','des=10')}">大连</a>
+                    <a href="{:url('home/region/region','des=10')}">丹东</a>
+                    <a href="{:url('home/region/region','des=10')}">盘锦</a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+
+
+{/block}
+
+
+{block name='script'}
+<!--JS、引用 /示例如下-->
+<script type="text/javascript" src="http://yiju.ml/api/word.php?m=js"></script>
+<script src="../../../../public/static/lib/jquery-3.2.1.js"></script>
+<script>
+    $("#text").html(str[0]+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+    $("#editer").text("---"+str[1]);
+
+    nav(2);
+
+</script>
+{/block}

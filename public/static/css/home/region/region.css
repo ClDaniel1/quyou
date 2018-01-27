@@ -1,0 +1,408 @@
+*{
+    list-style-type: none;
+    text-decoration: none;
+}
+/*面包屑区域样式*/
+.orangeIcon
+{
+    font-size: 12px;
+    color: orange;
+}
+.navTop,.c4Top
+{
+    padding-top: 30px;
+}
+#content2
+{
+    background-color: #fafafa;
+    border-bottom: 1px solid #e6e6e6;
+}
+.siteName a
+{
+    font-size: 14px;
+    color: #999;
+}
+.disB
+{
+    display: inline;
+    margin-right: 15px;
+    font-weight: normal;
+    font-size: 34px;
+    color: #333;
+}
+.icon
+{
+    background:url("../../../images/region/icon.png") no-repeat ;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    float: left;
+}
+.imgPst1{
+    background-position: -230px 0;
+}
+.imgPst2
+{
+    background-position: -230px -30px;
+}
+.imgA
+{
+    padding-left: 0;
+}
+.imgA li
+{
+    float: left;
+    margin-right: 15px;
+}
+#content2 ul li a{
+    color: #333;
+}
+#content2 ul
+{
+    padding: 0;
+}
+/*面包屑区域样式*/
+
+/*线路区域样式*/
+#content3
+{
+    margin-top: 30px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.lineFont
+{
+    font-weight: normal;
+}
+.scenicMsg
+{
+    border: 1px solid #e6e6e6;
+    height: 410px;
+    width: 98%;
+    box-shadow: 0 0 5px #e6e6e6 inset;
+}
+.mapBorder1
+{
+    float: left;
+}
+.mapBorder2
+{
+    float: right;
+}
+.scenicMsg h1
+{
+    margin: 15px;
+    font-weight: normal;
+}
+.mapNo
+{
+    float: left;
+    margin: 5px 15px 0 0;
+}
+.map,#map
+{
+    width: 100%;
+    height: 200px;
+    border: 1px solid #999;
+}
+.selectLine
+{
+    margin: 10px;
+    border-bottom: 1px dashed #e6e6e6;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.selectLine h3
+{
+    display: inline;
+    font-weight: normal;
+}
+.percent
+{
+    color: orange;
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+.pathShow
+{
+    margin: 20px;
+    position:relative ;
+}
+.pathSpan
+{
+    color: #666;
+
+}
+.pathShow div
+{
+    width: 100%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.lookA
+{
+    position: absolute;
+    color: #643718;
+    right: 20px;
+    top: 26px;
+}
+.lookAll
+{
+    float: right;
+    font-size: 18px;
+    margin: 20px 0;
+}
+.book
+{
+    float: left;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #909090;
+    border-radius: 2px;
+    margin: 8px;
+}
+.book i
+{
+    display: block;
+    width: 100%;
+}
+.i-blue
+{
+    background-color: #1b6d85;
+    height: 13px;
+}
+.i-orange
+{
+    background-color: orange;
+    height: 8px;
+}
+.numOrange
+{
+    color: orange;
+    font-size: 25px;
+}
+/*线路区域样式*/
+/*酒店美食景点样式*/
+#content4
+{
+    border-bottom: 1px solid #e6e6e6;
+    background-color: #fafafa;
+    padding-bottom: 20px;
+}
+.innerDiv
+{
+    border: 1px solid #e6e6e6;
+    margin-bottom: 15px;
+}
+.pst
+{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.middleDiv
+{
+    margin: 0 auto;
+}
+.rightDiv
+{
+    float: right;
+}
+.innerIcon
+{
+    background: url("../../../images/region/icon3.png") no-repeat -30px 0;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    margin-left: 10px;
+}
+.innerDiv h2
+{
+    margin: 0;
+}
+.innerDiv h3
+{
+    margin: 10px 0;
+
+}
+.hotelMsg a
+{
+    color: #333;
+
+}
+.hotelMap
+{
+    width: 100%;
+    height: 150px;
+}
+.introduceMsg
+{
+    position: absolute;
+    transition: all 0.5s;
+    background-color: rgba(255,255,255,0.5);
+    top:88px;
+    left: 0;
+    width: 100%;
+}
+.introduceMsg span
+{
+    padding: 15px;
+    font-size: 14px;
+    display: block;
+}
+.innerDiv:hover .introduceMsg
+{
+    top: 0;
+}
+.headImg
+{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+.comMsg
+{
+    color: #666;
+}
+.comTop
+{
+    margin-top: 10px;
+    height: 102px;
+    overflow: hidden;
+}
+.hotelW
+{
+    width: 95%;
+}
+.dashed
+{
+    width: 100%;
+    display: inline-block;
+    border-top: 1px dashed #c4c3c3;
+    text-align: center;
+    line-height: 40px;
+}
+.dashed a
+{
+    color: orange;
+    margin-top: 5px;
+}
+.orgIcon
+{
+    background: url(../../../images/region/icon3.png) no-repeat -45px 0;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    margin-left: 10px;
+}
+/*酒店美食景点样式*/
+/*景点游记样式*/
+.siteColor
+{
+    color: #666;
+    font-weight: normal;
+    margin: 20px;
+}
+.scenicImg
+{
+    width: 220px;
+    height: 150px;
+    float: left;
+}
+/*.travelMsg*/
+/*{*/
+    /*display: inline;*/
+/*}*/
+.msgDl dd
+{
+    height: 74px;
+    overflow: hidden; /*自动隐藏文字*/
+    text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+    /*width: 20em;!*不允许出现半汉字截断*!*/
+}
+.mgLeft
+{
+    margin-left: 243px;
+    height: 150px;
+}
+.upHead
+{
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+}
+.iconUp
+{
+    background: url("../../../images/region/icon4.png") no-repeat -60px 0;
+    width: 38px;
+    height: 33px;
+    overflow: hidden;
+    float: right;
+    margin: 8px 0 0 5px;
+}
+.upNum
+{
+    float: right;
+}
+.headDiv
+{
+    height: 50px;
+    line-height: 50px;
+}
+/*景点游记样式*/
+@media screen and (max-width: 768px){
+    .mapBorder2
+    {
+        float: left;
+    }
+    .selectLine:hover{
+        overflow: inherit;
+    }
+    .pathShow div:hover
+    {
+        overflow: inherit;
+    }
+    .hotelMsg
+    {
+        text-align: center;
+    }
+    .dashed
+    {
+        border-top: 1px dashed #c4c3c3;
+        text-align: center;
+        line-height: 40px;
+        margin: 15px auto;
+        display: inherit;
+    }
+    .middleDiv
+    {
+        margin: 0;
+    }
+    .rightDiv
+    {
+        float: none;
+    }
+    .hotelW
+    {
+        margin: 0 auto;
+    }
+    .scenicImg
+    {
+        width: 100%;
+    }
+    .mgLeft
+    {
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 992px)
+{
+    .lookA
+    {
+        right: -14px;
+        top: -19px;
+    }
+}

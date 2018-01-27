@@ -1,0 +1,224 @@
+{extend name="public/base"}
+{block name='style'}
+<!--页面样式、引用/示例如下-->
+<!--<link rel="stylesheet" href="__CSS__/scenic/region/region.css">-->
+<style>
+    #myFootmark{
+        width: 100%;
+        height: 480px;
+        background-color: #b2e2fa;
+    }
+
+    #tags_bar{
+        height: 58px;
+        background-color: #fff;
+        background-color: rgba(255,255,255,0.95);
+        border-bottom: #d6d6d6 1px solid;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+        /*float: left;*/
+    }
+    .safewidth{
+        width: 980px;
+        height: 1000px;
+        margin: 0 auto;
+        background-color: #3f3f3f;
+    }
+    #left{
+        width: 280px;
+        height: 500px;
+        background-color: #ffffff;
+        float: left;
+        border: 1px solid #fff;
+    }
+
+    #right{
+        width: 682px;
+        height: 800px;
+        background-color: white ;
+        float: right;
+    }
+    #uheadImg{
+        width: 100px;
+        height: 100px;
+        border-radius: 120px;
+        background-color: #00a0e9;
+        margin: 15px 90px;
+    }
+    #uname{
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: 16px;
+        color: #2E2D3C;
+        text-align: center;
+        padding: 0;
+        word-wrap: break-word;
+    }
+    .setBtn{
+        margin: 20px 90px;
+    }
+    .myPation{
+        text-align: center;
+        float: left;
+        width: 33.33%;
+        padding: 10px 0;
+        border: 1px solid #d8d8d8;
+
+    }
+    .myPation a{
+        color:  #444;;
+    }
+    .rightList li{
+        width: 130px;
+        height: 46px;
+        text-align: center;
+        font-size: 18px;
+        float: left;
+    }
+    .rightBtn{
+        margin: 20px 280px;
+    }
+
+
+
+
+
+</style>
+{/block}
+
+{block name='title'}
+个人中心
+{/block}
+
+{block name='body'}
+<!--页面内容 /示例如下-->
+<div>
+    <div id="myFootmark"></div>
+    <!--<div id="tags_bar">-->
+    <div class="safewidth">
+        <div id="left">
+            <div id="uheadImg"></div>
+            <div id="uname">用户名</div>
+            <a href="{:url('home/Setting/setting')}" class="layui-btn layui-btn-radius setBtn">设置中心</a>
+            <div class="myPation">
+                <a href="">3</a>
+                <p>关注</p>
+            </div>
+            <div class="myPation">
+                <a href="">3</a>
+                <p>粉丝</p>
+            </div>
+            <div class="myPation">
+                <a href="">3</a>
+                <p>收藏</p>
+            </div>
+        </div>
+        <div id="right">
+            <div class="layui-tab layui-tab-brief" lay-filter="test1">
+                <ul class="layui-tab-title rightList">
+                    <li class="layui-this " lay-id="1" >我的足迹</li>
+                    <li lay-id="2">我的游记</li>
+                    <li lay-id="3">我的点评</li>
+                    <li lay-id="4">订单管理</li>
+                    <li lay-id="5">我的收藏</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show">
+                        <ul class="layui-timeline">
+                            <li class="layui-timeline-item">
+                                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                                <div class="layui-timeline-content layui-text">
+                                    <h3 class="layui-timeline-title">8月18日</h3>
+                                    <p>
+                                        layui 2.0 的一切准备工作似乎都已到位。发布之弦，一触即发。
+                                        <br>不枉近百个日日夜夜与之为伴。因小而大，因弱而强。
+                                        <br>无论它能走多远，抑或如何支撑？至少我曾倾注全心，无怨无悔 <i class="layui-icon"></i>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="layui-timeline-item">
+                                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                                <div class="layui-timeline-content layui-text">
+                                    <h3 class="layui-timeline-title">8月16日</h3>
+                                    <p>杜甫的思想核心是儒家的仁政思想，他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。个人最爱的名篇有：</p>
+                                    <ul>
+                                        <li>《登高》</li>
+                                        <li>《茅屋为秋风所破歌》</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="layui-timeline-item">
+                                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                                <div class="layui-timeline-content layui-text">
+                                    <h3 class="layui-timeline-title">8月15日</h3>
+                                    <p>
+                                        中国人民抗日战争胜利72周年
+                                        <br>常常在想，尽管对这个国家有这样那样的抱怨，但我们的确生在了最好的时代
+                                        <br>铭记、感恩
+                                        <br>所有为中华民族浴血奋战的英雄将士
+                                        <br>永垂不朽
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="layui-timeline-item">
+                                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                                <div class="layui-timeline-content layui-text">
+                                    <div class="layui-timeline-title">过去</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="layui-tab-item">
+                        <a href="" class="layui-btn layui-btn-radius rightBtn">写游记</a>
+
+
+
+
+
+                    </div>
+                    <div class="layui-tab-item">
+                        <a href="" class="layui-btn layui-btn-radius rightBtn">写点评</a>
+                    </div>
+                    <div class="layui-tab-item">
+                        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this">已支付订单</li>
+                                <li>未支付订单</li>
+                            </ul>
+                            <div class="layui-tab-content" style="height: 100px;">
+                                <div class="layui-tab-item layui-show">1</div>
+                                <div class="layui-tab-item">2</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item">5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+{/block}
+
+
+{block name='script'}
+<script>
+    nav(4);
+</script>
+<script>
+    layui.use('element', function(){
+        var element = layui.element;
+
+        //获取hash来切换选项卡，假设当前地址的hash为lay-id对应的值
+        var layid = location.hash.replace(/^#test1=/, '');
+        element.tabChange('test1', layid); //假设当前地址为：http://a.com#test1=222，那么选项卡会自动切换到“发送消息”这一项
+
+        //监听Tab切换，以改变地址hash值
+        element.on('tab(test1)', function(){
+            location.hash = 'test1='+ this.getAttribute('lay-id');
+        });
+    });
+</script>
+<!--JS、引用 /示例如下-->
+{/block}
