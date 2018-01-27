@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\wamp64\www\quyou\public/../application/admin\view\hotel\hotel.html";i:1517042946;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -19,33 +20,33 @@
     <script type="text/javascript" src="__STATIC__/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <title>景点列表</title>
+    <title>酒店列表</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 景点管理 <span class="c-gray en">&gt;</span> 景点列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 酒店管理 <span class="c-gray en">&gt;</span> 酒店列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-    <div class="text-c"> 景点搜索：
+    <div class="text-c"> 酒店搜索：
         <input type="text" onfocus="" id="logmin" class="input-text" style="width:400px;margin-right:200px; ">
-        <button name=""  class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜景点</button>
+        <button name=""  class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜酒店</button>
     </div>
-    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="picture_add('景点添加','{:url('admin/Scenic/scenicAppend')}')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>添加景点</a></span> <span class="r">共有数据：<strong id="scenicSpot"></strong> 条</span> </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="picture_add('酒店添加','<?php echo url('admin/Hotel/hotelAppend'); ?>')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>添加酒店</a></span> <span class="r">共有数据：<strong id="foodSpot"></strong> 条</span> </div>
     <div class="mt-20">
         <table class="table table-border table-bordered table-bg table-hover table-sort">
             <thead>
             <tr class="text-c">
                 <th width="40"><input name="" type="checkbox" value=""></th>
-                <th width="80">景点ID</th>
-                <th width="100">景点名称</th>
-                <th width="100">景点描述</th>
-                <th width="100">景点票数</th>
-                <th>景点一角</th>
-                <th width="150">景点价格</th>
-                <th width="150">景点位置</th>
+                <th width="80">酒店ID</th>
+                <th width="100">酒店名称</th>
+                <th width="160">酒店描述</th>
+                <th width="100">酒店房间数</th>
+                <th>酒店风景</th>
+                <th width="120">酒店价格</th>
+                <th width="120">酒店位置</th>
                 <th width="60">发布状态</th>
                 <th width="100">操作</th>
             </tr>
             </thead>
-            <tbody id="scenicList">
+            <tbody id="foodList">
 
             </tbody>
         </table>
@@ -106,32 +107,9 @@
     }
 
     /*图片-下架*/
-    function picture_stop(obj,id){
-        layer.confirm('确认要下架吗？',function(index){
-            $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
-            $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
-            $(obj).remove();
-            layer.msg('已下架!',{icon: 5,time:1000});
-        });
-        /*$.ajax({
-            type: 'get',
-            url: scenicUrl,
-            async: false,
-            dataType: 'json',
-            success: function (res) {
+    var hotelShelves="<?php echo url('admin/Hotel/hotelShelves'); ?>";
+    var hotelOn="<?php echo url('admin/Hotel/hotelOn'); ?>";
 
-            }*/
-    }
-
-    /*图片-发布*/
-    function picture_start(obj,id){
-        layer.confirm('确认要发布吗？',function(index){
-            $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
-            $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
-            $(obj).remove();
-            layer.msg('已发布!',{icon: 6,time:1000});
-        });
-    }
 
     /*图片-申请上线*/
     function picture_shenqing(obj,id){
@@ -167,19 +145,19 @@
             });
         });
     }
-    var menuUrl="{:url('admin/Scenic/ScenicSpot')}";
-    var scenicUrl="{:url('admin/Scenic/ScenicRelease')}";
+    var menuUrl="<?php echo url('admin/Hotel/hotelSpot'); ?>";
+    var hotelUrl="<?php echo url('admin/Hotel/hotelRelease'); ?>";
 </script>
-<script type="text/javascript" src="__JS__/admin/scenic/scenic.js"></script>
+<script type="text/javascript" src="__JS__/admin/hotel/hotel.js"></script>
 <script type="text/javascript">
     $('.table-sort').dataTable({
-     "aaSorting": [[ 1, "desc" ]],//默认第几个排序
-     "bStateSave": true,//状态保存
-     "aoColumnDefs": [
-     //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-     {"orderable":false,"aTargets":[0,8]}// 制定列不参与排序
-     ]
-     });
+        "aaSorting": [[ 1, "desc" ]],//默认第几个排序
+        "bStateSave": true,//状态保存
+        "aoColumnDefs": [
+            //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+            {"orderable":false,"aTargets":[0,8]}// 制定列不参与排序
+        ]
+    });
 </script>
 </body>
 </html>

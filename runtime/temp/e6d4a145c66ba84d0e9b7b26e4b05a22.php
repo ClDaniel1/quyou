@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\wamp64\www\quyou\public/../application/admin\view\scenic\scenic.html";i:1517044418;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -28,7 +29,7 @@
         <input type="text" onfocus="" id="logmin" class="input-text" style="width:400px;margin-right:200px; ">
         <button name=""  class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜景点</button>
     </div>
-    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="picture_add('景点添加','{:url('admin/Scenic/scenicAppend')}')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>添加景点</a></span> <span class="r">共有数据：<strong id="scenicSpot"></strong> 条</span> </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="picture_add('景点添加','<?php echo url('admin/Scenic/scenicAppend'); ?>')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>添加景点</a></span> <span class="r">共有数据：<strong id="scenicSpot"></strong> 条</span> </div>
     <div class="mt-20">
         <table class="table table-border table-bordered table-bg table-hover table-sort">
             <thead>
@@ -167,8 +168,8 @@
             });
         });
     }
-    var menuUrl="{:url('admin/Scenic/ScenicSpot')}";
-    var scenicUrl="{:url('admin/Scenic/ScenicRelease')}";
+    var menuUrl="<?php echo url('admin/Scenic/ScenicSpot'); ?>";
+    var scenicUrl="<?php echo url('admin/Scenic/ScenicRelease'); ?>";
 </script>
 <script type="text/javascript" src="__JS__/admin/scenic/scenic.js"></script>
 <script type="text/javascript">
