@@ -8597,3 +8597,304 @@
 [ info ] [ LOG ] INIT File
 
 ---------------------------------------------------------------
+[ 2018-01-28T17:34:44+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/
+[ log ] 127.0.0.1/quyou/public/ [运行时间：0.070502s][吞吐率：14.18req/s] [内存消耗：2,255.45kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\wamp64\www\quyou\application\home\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:34:45+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.039651s][吞吐率：25.22req/s] [内存消耗：2,232.60kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:35:39+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/
+[ log ] 127.0.0.1/quyou/public/ [运行时间：0.049666s][吞吐率：20.13req/s] [内存消耗：2,255.84kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\wamp64\www\quyou\application\home\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:35:39+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.041007s][吞吐率：24.39req/s] [内存消耗：2,232.60kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:35:41+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/login.html
+[ log ] 127.0.0.1/quyou/public/home/login/login.html [运行时间：0.034091s][吞吐率：29.33req/s] [内存消耗：2,267.43kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->login[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:35:41+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/captcha.html
+[ log ] 127.0.0.1/quyou/public/captcha.html [运行时间：0.061251s][吞吐率：16.33req/s] [内存消耗：1,820.95kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\wamp64\www\quyou\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:35:46+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/login/dologin.html
+[ log ] 127.0.0.1/quyou/public/home/login/dologin.html [运行时间：0.363939s][吞吐率：2.75req/s] [内存消耗：3,324.70kb] [文件加载：56]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '33',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'uphone' => '1001',
+  'upwd' => '123123',
+  'code' => 'wqcy',
+)
+[ info ] [ RUN ] app\home\controller\Login->doLogin[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.078147s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.053029s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uphone` = 1001  AND `upwd` = '123123' LIMIT 1 [ RunTime:0.053219s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.077021s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `t_user`  SET `loginKey`='VF7jMiIMNqFmKyow5hwUasnKYlI0GXbO'  WHERE  `uphone` = 1001 [ RunTime:0.058387s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T17:35:47+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/index/index.html
+[ log ] 127.0.0.1/quyou/public/home/index/index.html [运行时间：0.038874s][吞吐率：25.72req/s] [内存消耗：2,256.26kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=VF7jMiIMNqFmKyow5hwUasnKYlI0GXbO',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\wamp64\www\quyou\application\home\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:35:48+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.252634s][吞吐率：3.96req/s] [内存消耗：3,287.63kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=VF7jMiIMNqFmKyow5hwUasnKYlI0GXbO',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.083981s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.052840s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uphone` = 1001  AND `loginKey` = 'VF7jMiIMNqFmKyow5hwUasnKYlI0GXbO' LIMIT 1 [ RunTime:0.058145s ]
+
+---------------------------------------------------------------
