@@ -27,7 +27,7 @@ $.ajax({
                     '<td>'+res.data[0][i]['foodDescribe']+'</td>'+
                     '<td class="text-l"><a class="maincolor" href="javascript:;" onClick="picture_edit(\'图库编辑\',\'picture-show.html\',\'10001\')">'+res.data[0][i]['foodNum']+'人</a></td>'+
                     '<td><a href="javascript:;" onClick="picture_edit(\'图库编辑\',\'picture-show.html\',\'10001\')">'+
-                    '<img width="210" class="picture-thumb" src="https://dimg04.c-ctrip.com/images/300s0a0000004nrms3EBC_C_125_70.jpg"></a></td>'+
+                    '<img width="210" class="picture-thumb" src="/quyou/public/static/'+res.data[0][i]['foodImg']+'"></a></td>'+
                     '<td class="text-c">'+res.data[0][i]['foodMoney']+'.00</td>'+
                     '<td>中国黑龙江</td>'+
                     '<td class="td-status"><span class="label label-success radius">已发布</span></td>'+
@@ -45,7 +45,7 @@ $.ajax({
                     '<td>'+res.data[0][i]['foodDescribe']+'</td>'+
                     '<td class="text-l"><a class="maincolor" href="javascript:;" onClick="picture_edit(\'图库编辑\',\'picture-show.html\',\'10001\')">'+res.data[0][i]['foodNum']+'人</a></td>'+
                     '<td><a href="javascript:;" onClick="picture_edit(\'图库编辑\',\'picture-show.html\',\'10001\')">'+
-                    '<img width="210" class="picture-thumb" src="https://dimg04.c-ctrip.com/images/300s0a0000004nrms3EBC_C_125_70.jpg"></a></td>'+
+                    '<img width="210" class="picture-thumb" src="/quyou/public/static/'+res.data[0][i]['foodImg']+'"></a></td>'+
                     '<td class="text-c">'+res.data[0][i]['foodMoney']+'.00</td>'+
                     '<td>中国黑龙江</td>'+
                     '<td class="td-status"><span class="label label-defaunt radius">已下架</span></td>'+

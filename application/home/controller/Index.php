@@ -1,7 +1,6 @@
 <?php
 namespace app\home\controller;
 
-use org\Intro;
 
 class Index extends \think\Controller
 {
@@ -9,13 +8,4 @@ class Index extends \think\Controller
     {
         return $this->fetch('index');
     }
-
-    public function ex()
-    {
-        $intro = new Intro();
-
-        $intro->getAll(23, 10208);
-    }
-
-
 }
