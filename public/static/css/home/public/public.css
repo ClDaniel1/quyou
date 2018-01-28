@@ -96,7 +96,7 @@ html::-webkit-scrollbar-thumb {
         left: 0;
     }
     #baseMain{
-        padding-top: 50px;
+        padding-top: 60px;
     }
     .siteNav
     {
@@ -233,4 +233,7 @@ html::-webkit-scrollbar-thumb {
 .treeNav li:hover
 {
     border-bottom: 5px solid orange;
+}
+.layui-nav .loginIn{
+    display: none;
 }

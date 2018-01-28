@@ -246,6 +246,9 @@ return [
             'successReg'=>'注册成功',
             'regError'=>'注册失败',
             'haveUser'=>'用户重复了'
+        ],
+        'loginChek'     =>[
+            'err'=>"登录信息有误，请重新登录"
         ]
     ],
 
@@ -255,7 +258,7 @@ return [
     'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY',
 
     // 验证码字体大小(px)
-    'fontSize' => 25,
+    'fontSize' => 35,
 
     // 是否画混淆曲线
     'useCurve' => false,
@@ -271,7 +274,5 @@ return [
 
     // 验证成功后是否重置
     'reset'    => false],
-
-
 
 ];

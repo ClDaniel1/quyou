@@ -28,7 +28,7 @@ $.ajax({
                     '<td>'+res.data[0][i]['hotelDescribe']+'</td>'+
                     '<td class="text-l"><a class="maincolor" href="javascript:;" onClick="picture_edit(\'图库编辑\',\'picture-show.html\',\'10001\')">'+res.data[0][i]['hotelNum']+'人</a></td>'+
                     '<td><a href="javascript:;" onClick="picture_edit(\'图库编辑\',\'picture-show.html\',\'10001\')">'+
-                    '<img width="210" class="picture-thumb" src="/QY/public/static/'+res.data[0][i]['img']+'"></a></td>'+
+                    '<img width="210" class="picture-thumb" src="/quyou/public/static/'+res.data[0][i]['img']+'"></a></td>'+
                     '<td class="text-c">'+res.data[0][i]['hotelPrice']+'.00</td>'+
                     '<td>'+res.data[0][i]['REGION_NAME']+'</td>'+
                     '<td class="td-status"><span class="label label-success radius">已发布</span></td>'+
@@ -46,7 +46,7 @@ $.ajax({
                     '<td>'+res.data[0][i]['hotelDescribe']+'</td>'+
                     '<td class="text-l"><a class="maincolor" href="javascript:;" onClick="picture_edit(\'图库编辑\',\'picture-show.html\',\'10001\')">'+res.data[0][i]['hotelNum']+'人</a></td>'+
                     '<td><a href="javascript:;" onClick="picture_edit(\'图库编辑\',\'picture-show.html\',\'10001\')">'+
-                    '<img width="210" class="picture-thumb" src="/QY/public/static/'+res.data[0][i]['img']+'"></a></td>'+
+                    '<img width="210" class="picture-thumb" src="/quyou/public/static/'+res.data[0][i]['img']+'"></a></td>'+
                     '<td class="text-c">'+res.data[0][i]['hotelPrice']+'.00</td>'+
                     '<td>'+res.data[0][i]['REGION_NAME']+'</td>'+
                     '<td class="td-status"><span class="label label-defaunt radius">已下架</span></td>'+
