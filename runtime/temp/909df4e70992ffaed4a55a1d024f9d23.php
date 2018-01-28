@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517075846;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517117100;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517075846;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517117638;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,7 +155,7 @@
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
                     <dd><a href="">我的消息</a></dd>
-                    <dd><a href=""  class="toCenter">个人中心</a></dd>
+                    <dd><a href="" class="toCenter">个人中心</a></dd>
                     <dd  onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
                 </dl>
             </li>
