@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517075846;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517113824;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517075846;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517117100;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,12 +149,14 @@
             <li class="layui-nav-item layui-this"><a href="<?php echo url('home/Index/index'); ?>">首页</a></li>
             <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
             <li class="layui-nav-item"><a href="">旅途直播</a></li>
-            <li class="layui-nav-item">
+            <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
+            <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
+            <li class="layui-nav-item loginIn">
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
                     <dd><a href="">我的消息</a></dd>
-                    <dd><a href="">个人中心</a></dd>
-                    <dd><a href="">退出登录</a></dd>
+                    <dd><a href=""  class="toCenter">个人中心</a></dd>
+                    <dd  onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
                 </dl>
             </li>
             <li style="height: 30px; text-align: center"></li>
@@ -171,8 +173,15 @@
         <li class="layui-nav-item"><a href="">旅途直播</a></li>
     </ul>
     <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
-       <li class="layui-nav-item"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
+        <li class="layui-nav-item loginIn">
+            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
+            <dl class="layui-nav-child">
+                <dd><a href="">我的消息</a></dd>
+                <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
+            </dl>
+        </li>
+       <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
+        <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
     </ul>
 </div>
 
@@ -389,8 +398,9 @@
     </div>
 </footer>
 </body>
-
+<script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
+<script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
 
 <script>
     $("#menu").click(showSideBar);
@@ -421,8 +431,6 @@
 
 </script>
 <script src="__JS__/home/public/public.js"></script>
-<script src="__STATIC__\lib\layui\layui.all.js"></script>
-<script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
 
 <!--JS、引用 /示例如下-->
 

@@ -234,3 +234,6 @@ html::-webkit-scrollbar-thumb {
 {
     border-bottom: 5px solid orange;
 }
+.layui-nav .loginIn{
+    display: none;
+}
