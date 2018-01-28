@@ -1,0 +1,147 @@
+/*攻略部分样式*/
+.souInput input
+{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.souInput button
+{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.msgDiv span,.priceF
+{
+    font-size: 16px;
+    color: #666;
+}
+.msgDiv p
+{
+    font-size: 15px;
+    line-height: 25px;
+    color: #666;
+    text-indent: 2em;
+    text-overflow: ellipsis;
+    height: 125px;
+    overflow: hidden;
+    /*white-space:nowrap;*/
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+}
+.regionImg
+{
+    width: 300px;
+    height: 185px;
+}
+/*酒店搜索部分样式*/
+.priContent
+{
+    margin: 20px 0;
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 15px;
+}
+.textR
+{
+    text-align: right;
+}
+.layui-input
+{
+    width: 30%;
+    display: inline-block;
+}
+.souIcon
+{
+    font-size: 30px;
+    position: absolute;
+    top: 5px;
+}
+.icon5
+{
+    clear: both;
+    display: inline-block;
+    margin: 11px 0 0 5px;
+    width: 7px;
+    height: 12px;
+    background: url('../../../images/region/icon5.png') no-repeat -110px -200px;
+    overflow: hidden;
+}
+.mgLeft
+{
+    padding-left: 60px;
+}
+/*酒店信息展示区*/
+.hotelBd
+{
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 15px;
+}
+.hotelBd img
+{
+    width: 90%;
+    height: 240px;
+    border-radius: 5px;
+}
+.hTile
+{
+    margin-bottom: 15px;
+}
+.hTile span
+{
+    color: #666;
+    font-size: 23px;
+}
+.addA
+{
+    float: right;
+}
+.reply
+{
+    height: 139px;
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.reply p
+{
+    margin-top: 20px;
+    line-height: 20px;
+    color: #666;
+    font-size: 15px;
+}
+.payBt
+{
+    float: right;
+}
+.payBt a
+{
+    color: orange;
+    font-size: 25px;
+}
+@media screen and (max-width: 768px){
+    .reply
+    {
+        width: 100%;
+        height: 139px;
+        overflow: hidden;
+    }
+    .textR
+    {
+        text-align: left;
+    }
+    .payBt
+    {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+    }
+    .mgLeft
+    {
+        padding-left: 40px;
+    }
+    .regionImg
+    {
+        width: 90%;
+    }
+}
