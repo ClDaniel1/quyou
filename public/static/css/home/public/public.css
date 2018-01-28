@@ -237,3 +237,6 @@ html::-webkit-scrollbar-thumb {
 .layui-nav .loginIn{
     display: none;
 }
+.layui-input:hover, .layui-textarea:hover {
+    border-color: orange!important;
+}
