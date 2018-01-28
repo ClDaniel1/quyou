@@ -246,6 +246,9 @@ return [
             'successReg'=>'注册成功',
             'regError'=>'注册失败',
             'haveUser'=>'用户重复了'
+        ],
+        'loginChek'     =>[
+            'err'=>"登录信息有误，请重新登录"
         ]
     ],
 

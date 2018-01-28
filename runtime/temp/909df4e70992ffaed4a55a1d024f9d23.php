@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517075846;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517075846;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517075846;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517113824;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -170,16 +170,9 @@
         <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
         <li class="layui-nav-item"><a href="">旅途直播</a></li>
     </ul>
-    <ul class="layui-nav navBg" lay-filter="" style="float: right">
-        <li class="layui-nav-item">
-            <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
-            <dl class="layui-nav-child">
-                <dd><a href="">我的消息</a></dd>
-                <dd><a href="javascript:;">退出登录</a></dd>
-            </dl>
-        </li>
-       <!-- <li class="layui-nav-item"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>-->
+    <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
+       <li class="layui-nav-item"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
+        <li class="layui-nav-item"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
     </ul>
 </div>
 
@@ -396,9 +389,9 @@
     </div>
 </footer>
 </body>
-<script src="__STATIC__\lib\layui\layui.all.js"></script>
+
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
-<script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
+
 <script>
     $("#menu").click(showSideBar);
     function showSideBar() {
@@ -424,7 +417,12 @@
         $("#sideBar li").eq(i).addClass("layui-this");
     }
 
+    var checkUrl = "<?php echo url('home/Login/check'); ?>";
+
 </script>
+<script src="__JS__/home/public/public.js"></script>
+<script src="__STATIC__\lib\layui\layui.all.js"></script>
+<script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
 
 <!--JS、引用 /示例如下-->
 
