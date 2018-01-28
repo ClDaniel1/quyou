@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"D:\wamp64\www\quyou\public/../application/home\view\region\region.html";i:1517040643;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517040643;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"D:\wamp64\www\quyou\public/../application/home\view\region\region.html";i:1517040643;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517075846;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,13 +30,11 @@
         .navBg{
             background: #F9851D ;
         }
-<<<<<<< HEAD
-        .body{
+        .body {
             background-color: #efefef;
-=======
+        }
         footer{
             margin-top:25px;
->>>>>>> e79f6f254ff1825636c527baa2f2ad3069c1603d
         }
     </style>
 </head>
@@ -445,7 +443,6 @@
 
 
 
-<<<<<<< HEAD
 
 
 <footer style="background: #3c3c3c">
@@ -493,8 +490,6 @@
         </div>
     </div>
 </footer>
-=======
->>>>>>> af1153db015604462702e242cb521fd40c46e4e9
 </body>
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
