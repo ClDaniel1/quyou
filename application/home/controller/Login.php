@@ -86,7 +86,6 @@ class Login extends \think\Controller
             'msg'  =>  "",
             'data' =>  []
         ];
-        cookie(['prefix' => 'quyou_', 'expire' => 3600,'path'=>'/']);
         //判断是否有用户信息
         if(cookie("uphone")==null){
             if(cookie("ukey")!=null){
