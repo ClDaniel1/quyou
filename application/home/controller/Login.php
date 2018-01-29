@@ -56,8 +56,7 @@ class Login extends \think\Controller
         Session::set('userInfo',$result);
 
         //登录成功 存入cookie
-        // 初始化
-        cookie(['prefix' => 'quyou_', 'expire' => 3600,'path'=>'/']);
+        
 
         //生成登录32位随机字符串，来验证登录是否有效
         $radom = new RadomStr();

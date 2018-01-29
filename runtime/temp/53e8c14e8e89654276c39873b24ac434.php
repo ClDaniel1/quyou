@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"D:\AppServ\www\quyou\public/../application/home\view\index\index.html";i:1517134811;s:69:"D:\AppServ\www\quyou\public/../application/home\view\public\base.html";i:1517134811;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"D:\AppServ\www\quyou\public/../application/home\view\index\index.html";i:1517187160;s:69:"D:\AppServ\www\quyou\public/../application/home\view\public\base.html";i:1517187514;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,6 +134,7 @@
 
 
 
+
 <div class="layui-header header layui-show-xs-block layui-hide-sm navBg" id="liteNav" >
     <ul class="layui-nav navBg" lay-filter="" style="text-align: center">
         <i class="layui-icon"  style="float: left;font-size: 30px; line-height: 60px" id="menu">&#xe671;</i>
@@ -172,28 +173,16 @@
         <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
         <li class="layui-nav-item"><a href="">旅途直播</a></li>
     </ul>
-<<<<<<< HEAD
-    <ul class="layui-nav navBg" lay-filter="" style="float: right">
-        <!--<li class="layui-nav-item">
-            <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
-=======
     <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
         <li class="layui-nav-item loginIn">
             <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
->>>>>>> f5f0e81dfc640f2741dad867b6339c50058b78ce
             <dl class="layui-nav-child">
                 <dd><a href="">我的消息</a></dd>
                 <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
-<<<<<<< HEAD
-        </li>-->
-       <li class="layui-nav-item"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
-=======
         </li>
        <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
         <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
->>>>>>> f5f0e81dfc640f2741dad867b6339c50058b78ce
     </ul>
 </div>
 
@@ -209,7 +198,7 @@
             </div>
             <div class="layui-row layui-hide-xs">
                 <ul class="layui-nav catalog">
-                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>概况</a></li>
+                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>首页</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst2"></i>玩法路线</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
                     <li class="layui-nav-item"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=1000"><i class="icon1 iconPst4"></i>酒店</a></li>
@@ -330,7 +319,7 @@
                 <ul class="layui-tab-title">
                     <li class="layui-this">热门游记</li>
                     <li>最新游记</li>
-                    <input class="layui-btn" type="button" value="写游记" style="float: right;margin-bottom: 10px">
+                    <a href="<?php echo url('home/Notes/notes'); ?>"><input class="layui-btn" type="button" value="写游记" style="float: right;margin-bottom: 10px"></a>
                 </ul>
 
                 <div class="layui-tab-content">
@@ -413,7 +402,6 @@
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
 <script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
-
 <script>
     $("#menu").click(showSideBar);
     function showSideBar() {
