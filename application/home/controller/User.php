@@ -73,8 +73,8 @@ class User extends \think\Controller
         $um->setKey($result['uphone'],$loginKey);
 
         // 设置
-        cookie('uphone',$result['uphone'], 3600);
-        cookie('ukey',$loginKey, 3600);
+        cookie('uphone',$result['uid']);
+        cookie('ukey',$loginKey);
 
 
 
@@ -85,6 +85,48 @@ class User extends \think\Controller
         ];
         return json($returnMsg);
 
+    }
+
+    public function checkLogin(){
+
+        //判断是否有用户信息
+        if(cookie("uphone")==null){
+            if(cookie("ukey")!=null){
+                cookie("ukey",null);
+            }
+            //用户没有登录
+            return false;
+        }
+        else{
+            //用户key为空，取消登陆状态，需要重新登录
+            if(cookie("ukey")==null){
+                cookie("uphone",null);
+                return false;
+            }
+            else{
+                $uphone = cookie('uphone');
+                $ukey = cookie('ukey');
+                $where=[
+                    'uid' =>  $uphone,
+                    'loginKey'   =>   $ukey
+                ];
+
+                //检查登录信息
+                $um = new \app\home\model\User();
+                $res = $um->checkLogin($where);
+
+                if(empty($res)){
+                    //检查失败
+                    cookie("uphone",null);
+                    cookie("ukey",null);
+                    return false;
+                }
+                else{
+                    //检查成功
+                    return true;
+                }
+            }
+        }
     }
 
     public function check(){
@@ -114,7 +156,7 @@ class User extends \think\Controller
                 $uphone = cookie('uphone');
                 $ukey = cookie('ukey');
                 $where=[
-                    'uphone' =>  $uphone,
+                    'uid' =>  $uphone,
                     'loginKey'   =>   $ukey
                 ];
 
