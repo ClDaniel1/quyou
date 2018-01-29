@@ -98,23 +98,74 @@
         padding-left:7.5%;
     }
     @media (min-width:768px ) {
-        .navBg{
-            background: none!important;
+        .navBg {
+            background: none !important;
             z-index: 100;
         }
-        .navBg img{
+
+        .navBg img {
             z-index: 101;
             position: relative;
         }
-        #baseMain{
+
+        #baseMain {
             margin-top: -60px;
             display: inline-block;
             width: 100%;
         }
-        .layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after{
+
+        .layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after {
             display: none;
         }
+
     }
+    .textarea-wrapper {
+        position: relative;
+        display: block;
+        width: 100%
+    }
+    .content-editable {
+        position: relative;
+        z-index: -1;
+        opacity: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: normal;
+        font-size: 16px;
+        white-space: pre;
+    }
+    .field-textarea {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 150%;
+        line-height: normal;
+        font-size:16px;
+        border: none;
+        text-align: left;
+        resize: none;
+        overflow: hidden;
+        background-color: transparent;
+    }
+    #leftBar div{
+        margin-bottom: 35px;
+    }
+    #leftBar img{
+        width: 100%;
+    }
+    #addImg{
+        overflow: hidden;
+    }
+    #addImg input{
+        width: 100%;
+        position: absolute;
+        top: 15px;
+        opacity: 0;
+    }
+
+
 </style>
 {/block}
 
@@ -138,34 +189,43 @@
 <div class="layui-upload">
     <button type="button" id="aspectration" data-ratio="9:3" style="width: 100%">
         <div>
+        {if $info["img"]!= null}
+        <img src="__STATIC__/{$info["img"]}" alt="">
+
+       {else}{
+
             <span><i class="layui-icon"></i>上传头图</span>
+
+        }
+        {/else}{/if}
         </div>
     </button>
 </div>
 
 <div id="title" class="layui-container">
 
-        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入游记标题" class="layui-input">
+        <input type="text" value="{$info["title"]}" name="title" lay-verify="title" autocomplete="off" placeholder="请输入游记标题" class="layui-input">
 
 </div>
 
 
 <div id="noteConten" class="layui-container">
     <div class="layui-col-sm9" id="leftBar">
-dfsdf
+        <notecontent></notecontent>
     </div>
     <div class="layui-col-sm3" id="rightBar" style="position: sticky;top: 15px;">
         <div id="btnBar">
-            <button class="layui-btn layui-btn-radius">
-                <i class="layui-icon">&#xe64a;</i> 添加图片
+            <button class="layui-btn layui-btn-radius" id="addImg">
+                <i class="layui-icon" @click="addImg">&#xe64a;</i> 添加图片
+
             </button>
-            <button class="layui-btn layui-btn-radius">
+            <button class="layui-btn layui-btn-radius" @click="add">
                 <i class="layui-icon">&#xe638;</i> 添加段落
             </button>
             <button class="layui-btn layui-btn-radius">
                 <i class="layui-icon">&#xe6fc;</i> 添加音乐
             </button>
-            <button class="layui-btn layui-btn-radius" id="save">
+            <button class="layui-btn layui-btn-radius" @click="save">
                 <div id="toSave"><i class="layui-icon">&#xe60e;</i> 保存草稿</div>
                 <div id="saving"><i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop" ></i> 正在保存</div>
                 <div id="saved"><i class="layui-icon">&#xe605;</i> 保存完成</div>
@@ -176,6 +236,18 @@ dfsdf
         </div>
         <div id="catal">
             <i>游记目录</i>
+            <i v-for="title in conData">
+                {{title.title}}}
+            </i>
+        </div>
+    </div>
+</div>
+
+<div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="my-modal-loading">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">图片上传中...</div>
+        <div class="am-modal-bd">
+            <span class="am-icon-spinner am-icon-spin"></span>
         </div>
     </div>
 </div>
@@ -191,6 +263,8 @@ dfsdf
     var upload = layui.upload;
     var jcropApi;
 
+    var $modal = $('#my-modal-loading');
+
     //执行实例
     upload.render({
         elem: '#aspectration'
@@ -200,6 +274,7 @@ dfsdf
         ,number:1
         //,multiple: true
         ,bindAction: '#subBI'
+        ,data:{noteId:{$noteId}}
         ,bgOpacity:0.1
         ,choose: function(obj){
             //预读本地文件示例，不支持ie8
@@ -246,6 +321,7 @@ dfsdf
             });
         }
         ,before:function () {
+            $modal.modal();
             var select = jcropApi.tellSelect();
             var size = jcropApi.getBounds();
             console.log(select);
@@ -257,6 +333,7 @@ dfsdf
             })
         }
         ,done: function(res){
+            $modal.modal('close');
             if(res["code"]== 50001){
                 $("#aspectration div").empty();
                 $img = "<img src='/quyou/public/static/"+res["data"]["url"]+"?"+Math.random()+"'/>";
@@ -282,6 +359,8 @@ dfsdf
         }
     });
 
+
+
     $("#escBI").click(function () {
 
         $("#imgView").fadeOut(300,function () {
@@ -289,26 +368,188 @@ dfsdf
         })
     });
 
-    $("#save").click(function () {
-        $("#toSave").fadeOut(300,function () {
-            $("#saving").fadeIn(300);
-        });
+    var bus = new Vue();
+    Vue.component('notecontent', {
+        template: '<div><div v-for="con in conData">' +
+        '<h2 v-if="con.title != null && con.num != 1 && con.type==0">{{con.title}}</h2>' +
+        '<div v-if="con.type==0" class="textarea-wrapper"><div class="content-editable" contenteditable="true">{{con.content}}</div><textarea v-model="con.content" contenteditable="true" class="field-textarea" placeholder="在这里输入您的游记内容"></textarea></div>' +
+        '<div v-if="con.type==1"><img v-bind:src="imgurl+con.content" alt=""></div>' +
+        '</div></div>',
+        data:function(){
+            return {
+                conData:[],
+                imgurl:"__STATIC__/"
+            };
+        },
+        methods:{
+            init:function () {
+                $.ajax({
+                    url:"{:url('home/Notes/getCon')}",
+                    type:"post",
+                    data:{"id":{$noteId}},
+                    dataType:"json",
+                    success:function (data) {
+                        this.conData = data.data;
+                    }.bind(this)
+                })
+            },
 
-        setTimeout(function () {
-            $("#saving").fadeOut(300,function () {
-                $("#saved").fadeIn(300);
-            });
+        },
 
-            setTimeout(function () {
-                $("#saved").fadeOut(300,function () {
-                    $("#toSave").fadeIn(300);
+        created:function () {
+            this.init();
+            bus.$on('save', function () {
+                console.log(this.conData);
+                $("#toSave").fadeOut(300,function () {
+                    $("#saving").fadeIn(300);
                 });
 
-            },2000)
-        },2000)
+                setTimeout(function () {
+                    $("#saving").fadeOut(300,function () {
+                        $("#saved").fadeIn(300);
+                    });
 
+                    setTimeout(function () {
+                        $("#saved").fadeOut(300,function () {
+                            $("#toSave").fadeIn(300);
+                        });
+
+                    },2000)
+                },2000)
+
+
+            }.bind(this))
+            bus.$on('add', function () {
+                $("#toSave").fadeOut(300,function () {
+                    $("#saving").fadeIn(300);
+                });
+
+                setTimeout(function () {
+                    $("#saving").fadeOut(300,function () {
+                        $("#saved").fadeIn(300);
+                    });
+
+                    setTimeout(function () {
+                        $("#saved").fadeOut(300,function () {
+                            $("#toSave").fadeIn(300);
+                        });
+
+                    },2000)
+                },2000)
+
+
+            }.bind(this))
+        }
     });
 
+    var con = new Vue({
+        el:"#noteConten",
+        methods:{
+            save:function () {
+                bus.$emit('save');
+
+            },
+            add:function () {
+                bus.$emit('add');
+            },
+            addImg:function () {
+
+            }
+        }
+    })
+
+  /*  upload.render({
+        elem: '#addImg'
+        ,url: '{:url("home/Notes/setUp")}'
+        ,auto: false
+        ,accept:"imgaes"
+        ,number:1
+        //,multiple: true
+        ,bindAction: '#subBI'
+        ,data:{noteId:{$noteId}}
+        ,bgOpacity:0.1
+        ,choose: function(obj){
+            //预读本地文件示例，不支持ie8
+            obj.preview(function(index, file, result){
+                $('#imgShow').attr('src', result); //图片链接（base64）
+
+                setTimeout(function () {
+                    var wid = document.getElementById('imgShow').naturalWidth;
+                    var hei = document.getElementById('imgShow').naturalHeight;
+                    if(wid<1350 || hei < 480){
+                        layer.open({
+                            content:"请选择宽度大于1350，并且高度大于480的图片",
+                            yes: function(index, layero){
+                                //do something
+                                layer.close(index); //如果设定了yes回调，需进行手工关闭
+                            }
+                        });
+                    }
+                    else {
+                        $("#imgView").fadeIn(300,function () {
+
+                            $('#imgShow').Jcrop({
+                                allowSelect:false,
+                                aspectRatio:3/1
+                            }, function() {
+                                jcropApi = this;
+                            });
+                            var size = jcropApi.getBounds();
+
+                            var scale = wid/size[0];
+
+                            var x = 900/scale;
+                            var y = 300/scale;
+
+                            jcropApi.setOptions({
+                                setSelect:[0,0,size[0],size[0]/3],
+                                minSize:[x,y]
+                            })
+                        });
+                    }
+
+                },300)
+
+            });
+        }
+        ,before:function () {
+            $modal.modal();
+            var select = jcropApi.tellSelect();
+            var size = jcropApi.getBounds();
+            console.log(select);
+            var data = [size[0],select["x"],select["y"],select["x2"],select["y2"]];
+            $.ajax({
+                url: '{:url("home/Notes/setUp")}',
+                data:{"size":JSON.stringify(data)},
+                async:false
+            })
+        }
+        ,done: function(res){
+            $modal.modal('close');
+            if(res["code"]== 50001){
+                $("#aspectration div").empty();
+                $img = "<img src='/quyou/public/static/"+res["data"]["url"]+"?"+Math.random()+"'/>";
+                $("#aspectration div").append($img);
+
+                layer.msg("上传成功");
+                $("#imgView").fadeOut(300,function () {
+                    jcropApi.destroy();
+                })
+            }
+            else{
+                layer.open({
+                    content:res["msg"],
+                    yes: function(index, layero){
+                        //do something
+                        $("#imgView").fadeOut(300,function () {
+                            jcropApi.destroy();
+                        });
+                        layer.close(index); //如果设定了yes回调，需进行手工关闭
+                    }
+                });
+            }
+        }
+    });*/
 
 
 </script>
