@@ -63,7 +63,48 @@
     padding: 0;
 }
 /*面包屑区域样式*/
-
+/*攻略百科部分样式*/
+#regionBk
+{
+    background-color: #fafafa;
+    padding: 20px 0;
+}
+.souInput input
+{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.souInput button
+{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.msgDiv span,.priceF
+{
+    font-size: 16px;
+    color: #666;
+}
+.msgDiv p
+{
+    font-size: 15px;
+    line-height: 25px;
+    color: #666;
+    text-indent: 2em;
+    text-overflow: ellipsis;
+    height: 125px;
+    overflow: hidden;
+    /*white-space:nowrap;*/
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7;
+}
+.regionImg img
+{
+    width: 250px;
+    height: 230px;
+}
+/*攻略百科部分样式*/
 /*线路区域样式*/
 #content3
 {
@@ -412,6 +453,10 @@
     {
         margin: 5px 0;
         display: block;
+    }
+    .regionImg img
+    {
+        width: 90%;
     }
 }
 @media screen and (max-width: 992px)

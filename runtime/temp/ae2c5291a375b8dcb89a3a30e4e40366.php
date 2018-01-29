@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\desti\desti.html";i:1517049813;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517043587;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\desti\desti.html";i:1517152143;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517152143;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,17 +112,16 @@
         .navBg{
             background: #F9851D ;
         }
-<<<<<<< HEAD
-        .body{
+        .body {
             background-color: #efefef;
-=======
+        }
         footer{
             margin-top:25px;
->>>>>>> e79f6f254ff1825636c527baa2f2ad3069c1603d
         }
     </style>
 </head>
 <body class="body">
+
 
 
 
@@ -141,12 +140,14 @@
             <li class="layui-nav-item layui-this"><a href="<?php echo url('home/Index/index'); ?>">首页</a></li>
             <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
             <li class="layui-nav-item"><a href="">旅途直播</a></li>
-            <li class="layui-nav-item">
+            <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
+            <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
+            <li class="layui-nav-item loginIn">
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
                     <dd><a href="">我的消息</a></dd>
-                    <dd><a href="">个人中心</a></dd>
-                    <dd><a href="">退出登录</a></dd>
+                    <dd><a href="" class="toCenter">个人中心</a></dd>
+                    <dd  onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
                 </dl>
             </li>
             <li style="height: 30px; text-align: center"></li>
@@ -162,16 +163,16 @@
         <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
         <li class="layui-nav-item"><a href="">旅途直播</a></li>
     </ul>
-    <ul class="layui-nav navBg" lay-filter="" style="float: right">
-        <li class="layui-nav-item">
-            <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
+    <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
+        <li class="layui-nav-item loginIn">
+            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
             <dl class="layui-nav-child">
                 <dd><a href="">我的消息</a></dd>
-                <dd><a href="javascript:;">退出登录</a></dd>
+                <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
         </li>
-       <!-- <li class="layui-nav-item"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>-->
+       <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
+        <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
     </ul>
 </div>
 
@@ -187,7 +188,7 @@
             </div>
             <div class="layui-row layui-hide-xs">
                 <ul class="layui-nav catalog">
-                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>概况</a></li>
+                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>首页</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst2"></i>玩法路线</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
                     <li class="layui-nav-item"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=1000"><i class="icon1 iconPst4"></i>酒店</a></li>
@@ -276,217 +277,185 @@
                 <dd>
                     <a href="<?php echo url('home/region/region','des=2'); ?>">北京</a>
                     <a href="<?php echo url('home/region/region','des=10'); ?>">上海</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">重庆</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">天津</a>
+                    <a href="<?php echo url('home/region/region','des=23'); ?>">重庆</a>
+                    <a href="<?php echo url('home/region/region','des=3'); ?>">天津</a>
                 </dd>
             </dl>
             <dl class=" am-text-top">
-                <dt><a href="<?php echo url('home/region/region','des=2'); ?>">云南</a></dt>
+                <dt><a href="<?php echo url('home/region/region','des=26'); ?>">云南</a></dt>
                 <dd>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">丽江</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">大理</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">昆明</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">香格里拉</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">泸沽湖</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">双廊</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">西双版纳</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">束河</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">腾冲</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">雨崩</a>
+                    <a href="<?php echo url('home/region/region','des=308'); ?>">丽江</a>
+                    <a href="<?php echo url('home/region/region','des=3038'); ?>">大理</a>
+                    <a href="<?php echo url('home/region/region','des=303'); ?>">昆明</a>
+                    <a href="<?php echo url('home/region/region','des=3059'); ?>">香格里拉</a>
+                    <a href="<?php echo url('home/region/region','des=314'); ?>">西双版纳</a>
+                    <a href="<?php echo url('home/region/region','des=2963'); ?>">腾冲</a>
                 </dd>
             </dl>
             <dl class=" am-text-top">
                 <dt>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">四川</a>
+                    <a href="<?php echo url('home/region/region','des=24'); ?>">四川</a>
                 </dt>
                 <dd>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">成都</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">九寨沟</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">稻城</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">色达</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">若尔盖</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">都江堰</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">亚丁</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">阿坝</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">峨眉山</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">牛背山</a>
+                    <a href="<?php echo url('home/region/region','des=273'); ?>">成都</a>
+                    <a href="<?php echo url('home/region/region','des=2790'); ?>">九寨沟</a>
+                    <a href="<?php echo url('home/region/region','des=2815'); ?>">稻城</a>
+                    <a href="<?php echo url('home/region/region','des=2811'); ?>">色达</a>
+                    <a href="<?php echo url('home/region/region','des=2797'); ?>">若尔盖</a>
+                    <a href="<?php echo url('home/region/region','des=2651'); ?>">都江堰</a>
+                    <a href="<?php echo url('home/region/region','des=2796'); ?>">阿坝</a>
+                    <a href="<?php echo url('home/region/region','des=2724'); ?>">峨眉山</a>
                 </dd>
             </dl>
             <dl class=" am-text-top">
                 <dt>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">浙江</a>
+                    <a href="<?php echo url('home/region/region','des=12'); ?>">浙江</a>
                 </dt>
                 <dd>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">杭州</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">乌镇</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">西塘</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">千岛湖</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">普陀山</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">东极岛</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">南浔</a>
+                    <a href="<?php echo url('home/region/region','des=122'); ?>">杭州</a>
+                    <a href="<?php echo url('home/region/region','des=123'); ?>">宁波</a>
+                    <a href="<?php echo url('home/region/region','des=126'); ?>">湖州</a>
+                    <a href="<?php echo url('home/region/region','des=127'); ?>">绍兴</a>
+                    <a href="<?php echo url('home/region/region','des=1346'); ?>">南浔</a>
                 </dd>
             </dl>
             <dl class=" am-text-top">
                 <dt>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">福建</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">浙江</a>
+                    <a href="<?php echo url('home/region/region','des=14'); ?>">福建</a>
+                    <a href="<?php echo url('home/region/region','des=22'); ?>">海南</a>
                 </dt>
                 <dd>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">三亚</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">蜈支洲岛</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">海口</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">厦门</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">鼓浪屿</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">武夷山</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">泉州</a>
+                    <a href="<?php echo url('home/region/region','des=268'); ?>">三亚</a>
+                    <a href="<?php echo url('home/region/region','des=267'); ?>">海口</a>
+                    <a href="<?php echo url('home/region/region','des=151'); ?>">厦门</a>
+                    <a href="<?php echo url('home/region/region','des=1594'); ?>">武夷山</a>
+                    <a href="<?php echo url('home/region/region','des=154'); ?>">泉州</a>
                 </dd>
             </dl>
             <dl class=" am-text-top">
                 <dt>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">江苏</a>
+                    <a href="<?php echo url('home/region/region','des=11'); ?>">江苏</a>
                 </dt>
                 <dd>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">南京</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">苏州</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">无锡</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">扬州</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">周庄</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">常州</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">连云港</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">同里</a>
+                    <a href="<?php echo url('home/region/region','des=109'); ?>">南京</a>
+                    <a href="<?php echo url('home/region/region','des=113'); ?>">苏州</a>
+                    <a href="<?php echo url('home/region/region','des=110'); ?>">无锡</a>
+                    <a href="<?php echo url('home/region/region','des=118'); ?>">扬州</a>
+                    <a href="<?php echo url('home/region/region','des=112'); ?>">常州</a>
+                    <a href="<?php echo url('home/region/region','des=115'); ?>">连云港</a>
                 </dd>
             </dl>
             <dl class=" am-text-top">
                 <dt>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">广东</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">广西</a>
+                    <a href="<?php echo url('home/region/region','des=20'); ?>">广东</a>
+                    <a href="<?php echo url('home/region/region','des=21'); ?>">广西</a>
                 </dt>
                 <dd>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">广州</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">深圳</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">珠海</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">汕头</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">桂林</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">阳朔</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">北海</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">黄姚古镇</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">涠洲岛</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">龙脊梯田</a>
+                    <a href="<?php echo url('home/region/region','des=232'); ?>">广州</a>
+                    <a href="<?php echo url('home/region/region','des=234'); ?>">深圳</a>
+                    <a href="<?php echo url('home/region/region','des=235'); ?>">珠海</a>
+                    <a href="<?php echo url('home/region/region','des=236'); ?>">汕头</a>
+                    <a href="<?php echo url('home/region/region','des=255'); ?>">桂林</a>
+                    <a href="<?php echo url('home/region/region','des=2477'); ?>">阳朔</a>
+                    <a href="<?php echo url('home/region/region','des=257'); ?>">北海</a>
                 </dd>
             </dl>
         </div>
         <div class="layui-col-sm6">
             <dl>
                 <dt>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">西藏</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">贵州</a>
+                    <a href="<?php echo url('home/region/region','des=27'); ?>">西藏</a>
+                    <a href="<?php echo url('home/region/region','des=25'); ?>">贵州</a>
                 </dt>
                 <dd>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">拉萨</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">林芝</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">阿里</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">黔东南</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">荔波</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">镇远</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">西江</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">黄果树</a>
+                    <a href="<?php echo url('home/region/region','des=319'); ?>">拉萨</a>
+                    <a href="<?php echo url('home/region/region','des=325'); ?>">林芝</a>
+                    <a href="<?php echo url('home/region/region','des=324'); ?>">阿里</a>
+                    <a href="<?php echo url('home/region/region','des=2901'); ?>">镇远</a>
                 </dd>
             </dl>
             <dl>
                 <dt>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">西北</a>
+                    西北
                 </dt>
                 <dd>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">西安</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">青海湖</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">西宁</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">祁连</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">敦煌</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">兰州</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">甘南</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">张掖</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">嘉峪关</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">新疆</a>
+                    <a href="<?php echo url('home/region/region','des=326'); ?>">西安</a>
+                    <a href="<?php echo url('home/region/region','des=350'); ?>">西宁</a>
+                    <a href="<?php echo url('home/region/region','des=3366'); ?>">祁连</a>
+                    <a href="<?php echo url('home/region/region','des=3307'); ?>">敦煌</a>
+                    <a href="<?php echo url('home/region/region','des=336'); ?>">兰州</a>
+                    <a href="<?php echo url('home/region/region','des=349'); ?>">甘南</a>
+                    <a href="<?php echo url('home/region/region','des=342'); ?>">张掖</a>
                 </dd>
             </dl>
             <dl>
                 <dt>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">山东</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">山西</a>
+                    <a href="<?php echo url('home/region/region','des=16'); ?>">山东</a>
+                    <a href="<?php echo url('home/region/region','des=5'); ?>">山西</a>
                 </dt>
                 <dd>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">青岛</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">泰山</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">日照</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">威海</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">烟台</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">长岛</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">蓬莱</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">平遥</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">大同</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">五台山</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">壶口瀑布</a>
+                    <a href="<?php echo url('home/region/region','des=171'); ?>">青岛</a>
+                    <a href="<?php echo url('home/region/region','des=1811'); ?>">泰山</a>
+                    <a href="<?php echo url('home/region/region','des=180'); ?>">日照</a>
+                    <a href="<?php echo url('home/region/region','des=179'); ?>">威海</a>
+                    <a href="<?php echo url('home/region/region','des=175'); ?>">烟台</a>
+                    <a href="<?php echo url('home/region/region','des=1776'); ?>">长岛</a>
+                    <a href="<?php echo url('home/region/region','des=1780'); ?>">蓬莱</a>
+                    <a href="<?php echo url('home/region/region','des=663'); ?>">平遥</a>
+                    <a href="<?php echo url('home/region/region','des=49'); ?>">大同</a>
                 </dd>
             </dl>
             <dl>
                 <dt>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">湖南</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">湖北</a>
+                    <a href="<?php echo url('home/region/region','des=19'); ?>">湖南</a>
+                    <a href="<?php echo url('home/region/region','des=18'); ?>">湖北</a>
                 </dt>
                 <dd>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">张家界</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">凤凰</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">郴州</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">武汉</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">恩施</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">神农架</a>
+                    <a href="<?php echo url('home/region/region','des=212'); ?>">荆州</a>
+                    <a href="<?php echo url('home/region/region','des=2301'); ?>">凤凰</a>
+                    <a href="<?php echo url('home/region/region','des=227'); ?>">郴州</a>
+                    <a href="<?php echo url('home/region/region','des=204'); ?>">武汉</a>
+                    <a href="<?php echo url('home/region/region','des=216'); ?>">恩施</a>
                 </dd>
             </dl>
             <dl>
                 <dt>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">安徽</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">江西</a>
+                    <a href="<?php echo url('home/region/region','des=13'); ?>">安徽</a>
+                    <a href="<?php echo url('home/region/region','des=15'); ?>">江西</a>
                 </dt>
                 <dd>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">黄山</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">宏村</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">婺源</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">景德镇</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">庐山</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">三清山</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">南昌</a>
+                    <a href="<?php echo url('home/region/region','des=141'); ?>">黄山</a>
+                    <a href="<?php echo url('home/region/region','des=1723'); ?>">婺源</a>
+                    <a href="<?php echo url('home/region/region','des=160'); ?>">景德镇</a>
+                    <a href="<?php echo url('home/region/region','des=1637'); ?>">庐山</a>
+                    <a href="<?php echo url('home/region/region','des=159'); ?>">南昌</a>
                 </dd>
             </dl>
             <dl>
                 <dt>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">河北</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">河南</a>
+                    <a href="<?php echo url('home/region/region','des=4'); ?>">河北</a>
+                    <a href="<?php echo url('home/region/region','des=17'); ?>">河南</a>
                 </dt>
                 <dd>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">北戴河</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">秦皇岛</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">承德</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">张北</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">少林寺</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">洛阳</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">龙门石窟</a>
+                    <a href="<?php echo url('home/region/region','des=456'); ?>">北戴河</a>
+                    <a href="<?php echo url('home/region/region','des=39'); ?>">秦皇岛</a>
+                    <a href="<?php echo url('home/region/region','des=44'); ?>">承德</a>
+                    <a href="<?php echo url('home/region/region','des=533'); ?>">张北</a>
+                    <a href="<?php echo url('home/region/region','des=189'); ?>">洛阳</a>
                 </dd>
             </dl>
             <dl>
                 <dt>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">内蒙古</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">东北</a>
+                    <a href="<?php echo url('home/region/region','des=6'); ?>">内蒙古</a>
+                    东北
                 </dt>
                 <dd>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">呼伦贝尔</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">阿尔山</a>
-                    <a href="<?php echo url('home/region/region','des=2'); ?>">海拉尔</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">哈尔滨</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">漠河</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">雪乡</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">大连</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">丹东</a>
-                    <a href="<?php echo url('home/region/region','des=10'); ?>">盘锦</a>
+                    <a href="<?php echo url('home/region/region','des=65'); ?>">呼伦贝尔</a>
+                    <a href="<?php echo url('home/region/region','des=816'); ?>">阿尔山</a>
+                    <a href="<?php echo url('home/region/region','des=782'); ?>">海拉尔</a>
+                    <a href="<?php echo url('home/region/region','des=94'); ?>">哈尔滨</a>
+                    <a href="<?php echo url('home/region/region','des=1159'); ?>">漠河</a>
+                    <a href="<?php echo url('home/region/region','des=72'); ?>">大连</a>
                 </dd>
             </dl>
         </div>
@@ -502,7 +471,6 @@
 
 
 
-<<<<<<< HEAD
 
 
 <footer style="background: #3c3c3c">
@@ -550,8 +518,6 @@
         </div>
     </div>
 </footer>
-=======
->>>>>>> af1153db015604462702e242cb521fd40c46e4e9
 </body>
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
@@ -581,11 +547,13 @@
         $("#sideBar li").eq(i).addClass("layui-this");
     }
 
+    var checkUrl = "<?php echo url('home/Login/check'); ?>";
+
 </script>
+<script src="__JS__/home/public/public.js"></script>
 
 <!--JS、引用 /示例如下-->
 <script type="text/javascript" src="http://yiju.ml/api/word.php?m=js"></script>
-<script src="../../../../public/static/lib/jquery-3.2.1.js"></script>
 <script>
     $("#text").html(str[0]+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
     $("#editer").text("---"+str[1]);

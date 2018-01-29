@@ -92,6 +92,24 @@
         </div>
     </div>
 </div>
+<!--地区百科信息-->
+<div id="regionBk">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-sm5 layui-col-xs6">
+                <div class="msgDiv">
+                    <span>攻略：</span>
+                    <p class=" ">
+                        {$bkMsg.intro}
+                    </p>
+                </div>
+            </div>
+            <div class="layui-col-sm5 regionImg layui-col-sm-offset2 layui-col-xs-offset1 layui-col-xs5 ">
+                {$bkMsg.img}
+            </div>
+        </div>
+    </div>
+</div>
 <!--景点路线区域-->
 <div id="content3">
     <div class="layui-container">
@@ -264,17 +282,16 @@
 </div>
 {/block}
 
-
 {block name='script'}
 <!--JS、引用 /示例如下-->
 <!--引用百度地图api文件-->
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=TRYU1lcQ2YkgXRzerqXODMOKkAGrETrL"></script>
 <script>
+
     nav(2);
     layui.use('element', function(){
         var element = layui.element;
     });
-
 //   到时候需要封装起来
     var map = new BMap.Map("map");//创建地图实例
     map.enableScrollWheelZoom(true);//地图的鼠标滚轮缩放默认是关闭的，需要配置开启。
