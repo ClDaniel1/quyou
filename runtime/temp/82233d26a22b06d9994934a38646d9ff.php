@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:75:"D:\wamp64\www\quyou\QY\public/../application/home\view\setting\setting.html";i:1517040643;s:71:"D:\wamp64\www\quyou\QY\public/../application/home\view\public\base.html";i:1517040643;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\hotel.html";i:1517130996;s:75:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\regionNav.html";i:1517043587;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517110113;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,86 +18,15 @@
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     
-<!--页面样式、引用/示例如下-->
-<!--<link rel="stylesheet" href="__CSS__/scenic/region/region.css">-->
 <style>
-.setting{
-    width: 100%;
-    height: 800px;
-    background-color: #00b7ee;
-}
-.menuList{
-    position: absolute;
-    border-bottom-style:none;
-    margin: 20px 100px;
-    width: 200px;
-    height: 300px;
-
-}
-.menuList li{
-    display: table;
-    /*width: 130px;*/
-    height: 46px;
-    text-align: center;
-    font-size: 18px;
-
-}
-.menuCon{
-    margin: 20px 260px;
-    /*background-color: #00b7ee;*/
-    height: 800px;
-    /*border: 1px solid black;*/
-    /*width: 600px;*/
-    /*height: 600px;*/
-}
-.title{
-    padding-bottom: 18px;
-    margin: 0 0 20px 0;
-    border-bottom: 1px solid #eee;
-}
-.title p{
-    font-size: 24px;
-    color: #444;
-    font-weight: normal;
-}
-.setTitle{
-    font-size: 15px;
-    color: #969696;
-}
-#myInfo tr td{
-    padding: 20px 0;
-    width: 150px;
-    height: 74px;
-}
-.setInput{
-    padding: 5px 10px;
-    width: 200px;
-    font-size: 15px;
-    border: 1px solid #c8c8c8;
-    border-radius: 4px;
-    text-align: center;
-    background-color: hsla(0,0%,71%,.1);
-}
-#myInfo tr{
-    border-bottom: 1px solid #f0f0f0;
-    display: table-row;
-    vertical-align: inherit;
-    /*border-color: inherit;*/
-}
-.setRadio{
-    font-size: 15px;
-    color: #969696;
-    float: left;
-}
-.setRadio input{
-    margin: 0 20px;
-}
-
-
+    #desNav{
+        display: block;
+    }
 </style>
+<link rel="stylesheet" href="__CSS__/home/region/hotel.css">
 
     <title>
-个人中心
+趣游
 </title>
     <style>
         .navBg{
@@ -173,12 +102,14 @@
                  <span class="layui-breadcrumb" lay-separator=">">
                     <a href="">目的地</a>
                     
-                    
+    <a href="">厦门<i class="layui-icon orangeIcon">&#xe625;</i></a>
+    <a><cite style="color: #ff7000;font-weight: bold;">重庆酒店预订</cite></a>
+
                 </span>
             </div>
             <div class="layui-row layui-hide-xs">
                 <ul class="layui-nav catalog">
-                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>概况</a></li>
+                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>首页</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst2"></i>玩法路线</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
                     <li class="layui-nav-item"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=1000"><i class="icon1 iconPst4"></i>酒店</a></li>
@@ -227,92 +158,79 @@
         </div>
     </div>
     
-<!--页面内容 /示例如下-->
-
-
-<div id="menuList">
-    <div class="layui-tab layui-tab-brief" lay-filter="test1">
-        <ul class="layui-tab-title menuList">
-            <li class="layui-this " lay-id="myInfo" >我的信息</li>
-            <li lay-id="2">我的头像</li>
-            <li lay-id="3">账号安全</li>
-            <li lay-id="4">我的钱包</li>
-            <li lay-id="5">绑定设置</li>
-        </ul>
-        <div class="layui-tab-content menuCon">
-            <div class="layui-tab-item layui-show">
-                <div class="title">
-                    <p>我的信息</p>
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-sm5 layui-col-xs6">
+                <div class="am-input-group souInput">
+                    <input type="text" class="am-form-field">
+                     <span class="am-input-group-btn">
+                        <button class="am-btn am-btn-default" type="button">
+                            <span class="am-icon-search"></span>
+                        </button>
+                    </span>
                 </div>
-                <table id="myInfo">
-                    <tr>
-                        <td class="setTitle">昵称</td>
-                        <td><input class="am-form-field am-round setInput" type="text" placeholder="请输入昵称"></td>
-                    </tr>
-                    <tr>
-                        <td class="setTitle">电子邮箱</td>
-                        <td><input class="am-form-field am-round setInput" type="text" placeholder="请输入您的常用邮箱"></td>
-                    </tr>
-                    <tr>
-                        <td class="setTitle">性别</td>
-                        <td class="setRadio">
-                            <input type="radio" value="1">男
-
-                            <input style=""  type="radio" value="2">女
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="setTitle">年龄</td>
-                        <td><input class="am-form-field am-round setInput" type="text" placeholder="请输入您的年龄"></td>
-                    </tr>
-
-
-
-                </table>
-
-
-
-
-
-
-            </div>
-            <div class="layui-tab-item">
-                <div class="title">
-                    <p>我的头像</p>
-                </div>
-
-
-
-
-            </div>
-            <div class="layui-tab-item">
-                <div class="title">
-                    <p>账号安全</p>
-                </div>
-
-
-            </div>
-            <div class="layui-tab-item">
-                <div class="title">
-                    <p>我的钱包</p>
+                <div class="msgDiv">
+                    <span>攻略：</span>
+                    <p class=" ">
+                        西湖醋鱼选用西湖鲲鱼作原料，烹制前一般先要在鱼笼中饿养一两天，使其排泄肠内杂物，除去泥土味。烹制时火候要求非常严格，仅能用三四...
+                        西湖醋鱼选用西湖鲲鱼作原料，烹制前一般先要在鱼笼中饿养一两天，使其排泄肠内杂物，除去泥土味。烹制时火候要求非常严格，仅能用三四...
+                        西湖醋鱼选用西湖鲲鱼作原料，烹制前一般先要在鱼笼中饿养一两天，使其排泄肠内杂物，除去泥土味。烹制时火候要求非常严格，仅能用三四...
+                    </p>
                 </div>
             </div>
-            <div class="layui-tab-item">
-                <div class="title">
-                    <p>绑定设置</p>
+            <div class="layui-col-sm5 layui-col-sm-offset2 layui-col-xs-offset1 layui-col-xs5 ">
+                <img class="regionImg" src="http://p1-q.mafengwo.net/s8/M00/C8/AD/wKgBpVWR1OWATgwpAAC6kG1-XPU02.jpeg?imageMogr2%2Fthumbnail%2F%21660x480r%2Fgravity%2FCenter%2Fcrop%2F%21660x480%2Fquality%2F90" alt="加载失败">
+            </div>
+        </div>
+        <div class="layui-row priContent">
+            <div class="layui-col-sm5 ">
+                    <span class="priceF">价格:</span>
+                    <input type="text" name="title"  placeholder="请输入价格" class="layui-input">
+                    <span>-</span>
+                    <input type="text" name="title"   placeholder="请输入价格" class="layui-input">
+                    <i class="layui-icon souIcon">&#xe615;</i>
+            </div>
+            <div class="layui-col-sm5  layui-col-sm-offset2">
+                <div class="layui-form textR">
+                    <input type="checkbox" name="" title="收藏">
+                    <input type="text" name="title"   placeholder="请输酒店名" class="layui-input">
+                    <i class="layui-icon souIcon">&#xe615;</i>
+                    <span class="mgLeft">价格</span><i class="icon5"></i>
                 </div>
-
+                <div>
+            </div>
+        </div>
+        </div>
+        <div class="layui-row hotelBd">
+            <div class="layui-col-sm4 layui-col-xs6">
+                <img src="http://p1-q.mafengwo.net/s8/M00/C8/AD/wKgBpVWR1OWATgwpAAC6kG1-XPU02.jpeg?imageMogr2%2Fthumbnail%2F%21660x480r%2Fgravity%2FCenter%2Fcrop%2F%21660x480%2Fquality%2F90" alt="加载失败">
+            </div>
+            <div class="layui-col-sm8 layui-col-xs6">
+                <div class="hotelR">
+                    <div class="hTile">
+                        <span>杭州尚途酒店公寓 </span>
+                        <a class="addA">
+                            <i class="layui-icon">&#xe658;</i>
+                            <i>收藏</i>
+                        </a>
+                    </div>
+                    <div class="reply">
+                        <a href="">
+                            <span><span>2</span>条</span><br>
+                            <span>峰峰评价</span>
+                        </a>
+                        <p>房间很大，很干净，旁边就是超市和丁兰广场，很方便，下次还住！</p>
+                    </div>
+                    <div class="payBt">
+                        <a href="">
+                            立即预订
+                            <span>￥<span>2000</span></span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-</div>
-
-
-
-
-
 
 </div>
 
@@ -401,16 +319,5 @@
 
 </script>
 
-<script>
-    nav(4);
-</script>
-<script>
-    //JavaScript代码区域
-    layui.use('element', function(){
-        var element = layui.element;
-
-    });
-</script>
-<!--JS、引用 /示例如下-->
 
 </html>

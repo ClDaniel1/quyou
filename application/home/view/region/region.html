@@ -16,24 +16,23 @@
 <div id="content2">
     <div class="layui-container navTop">
         <div class="layui-row">
-            <div class="layui-col-sm6 siteNav">
+            <div class="layui-col-sm6 layui-col-xs12">
                 <div>
                     <span class="layui-breadcrumb" lay-separator=">">
                         <a href="">目的地</a>
-                        <a href="">美国<i class="layui-icon orangeIcon">&#xe625;</i></a>
-                        <a href="">旧金山<i class="layui-icon orangeIcon">&#xe625;</i></a>
-                        <a ><cite style="color: #ff7000;font-weight: bold;">旧金山旅游攻略</cite></a>
+                        <a href="">{$region_name}<i class="layui-icon orangeIcon">&#xe625;</i></a>
+                        <a ><cite style="color: #ff7000;font-weight: bold;"><span>{$region_name}</span>旅游攻略</cite></a>
                     </span>
                 </div>
                 <div class="siteMsg">
                     <div class="siteName">
-                        <h1 class="disB">喜马拉雅山脉</h1>
-                        <a href="">(<span>42344</span>张照片)</a>
+                        <h1 class="disB">{$region_name}</h1>
+                        <a href="">(<span>{$count}</span>张照片)</a>
                     </div>
                 </div>
             </div>
-            <div class="layui-col-sm3 layui-col-sm-offset3">
-               <ul class="imgA">
+            <div class="layui-col-sm3 layui-col-xs12 layui-col-sm-offset3">
+               <ul class="imgA am-text-middle">
                    <li>
                        <a href=""><i class="icon imgPst1"></i>收藏</a>
                    </li>
@@ -96,22 +95,21 @@
 <!--景点路线区域-->
 <div id="content3">
     <div class="layui-container">
-        <h1 class="lineFont"><span>厦门</span><span>3</span>条景点路线</h1>
+        <h1 class="lineFont"><span>{$region_name}</span><span>2</span>条经典路线</h1>
         <div class="layui-row">
+
             <div class="layui-col-sm6">
                 <div class="mapBorder1 scenicMsg">
                     <h1>
                         <span class="layui-badge layui-bg-orange mapNo">1</span>
-                        <span>厦门鼓浪屿5日游</span>
+                        <span>{$region_name}鼓浪屿1日游</span>
                     </h1>
                     <div class="map">
-
-                    <div id="map">
-
-                    </div></div>
+                        <div id="map"></div>
+                    </div>
                     <div class="selectLine">
                         <span class="percent">45%</span>
-                        <h3>初次访问<span>旧金山</span>的蜂蜂会选择这条路线</h3>
+                        <h3>初次访问<span>{$region_name}</span>的蜂蜂会选择这条路线</h3>
                     </div>
                     <div class="pathShow">
                         <div>
@@ -123,27 +121,7 @@
                               <a><cite>花海公园</cite></a>
                             </span>
                         </div>
-                        <div>
-                            <span class="pathSpan">D<span>1</span></span>
-                            <span class="layui-breadcrumb" lay-separator="->">
-                              <a href=""><cite>西湖</cite></a>
-                              <a href=""><cite>大学城</cite></a>
-                              <a href=""><cite>光亚广场</cite></a>
-                              <a><cite>花海公园</cite></a>
-                            </span>
-                        </div>
                         <a href="" class="lookA">查看></a>
-                    </div>
-                </div>
-            </div>
-            <div class="layui-col-sm6 ">
-                <div class="mapBorder2 scenicMsg">
-                    <h1>
-                        <span class="layui-badge layui-bg-orange mapNo">1</span>
-                        <span>厦门鼓浪屿5日游</span>
-                    </h1>
-                    <div class="map1">
-
                     </div>
                 </div>
             </div>
@@ -167,15 +145,16 @@
             <div class="layui-col-sm4">
                 <div class="hotelW">
                     <h2 class="hotelMsg"><a href="">酒店住宿攻略<i class="innerIcon"></i></a></h2>
-                    <div class="innerDiv">
+                    {volist name='hotelMsg.msg' id='value'}
+                        <div class="innerDiv">
                         <h3>
-                            <span class="layui-badge layui-bg-orange">1</span>
-                            <span>中山路-步行街</span>
+                            <span class="layui-badge layui-bg-orange">{$i}</span>
+                            <span>{$value.hotelName}</span>
                         </h3>
                         <div class="pst">
-                            <img class="hotelMap" src="__STATIC__/images/region/hotel/hotel1.gif" alt="">
+                            <img class="hotelMap" src="__STATIC__/{$value.img}" alt="">
                             <div class="introduceMsg">
-                                <span>四季如季如春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾酒店+赠往返船票+VI北京往返厦门4-5天自由行（鼓浪屿四季如春度假酒店+市区君帝湾酒店+赠往返船票+VIP专车接送机）</span>
+                                <span>{$value.hotelDescribe}</span>
                             </div>
                         </div>
                         <div class="comTop">
@@ -184,65 +163,52 @@
                             <span class="comMsg">“呆过四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
                         </div>
                     </div>
-                    <div class="innerDiv">
-                        <h3>
-                            <span class="layui-badge layui-bg-orange">1</span>
-                            <span>中山路-步行街</span>
-                        </h3>
-                        <div class="pst">
-                            <img class="hotelMap" src="__STATIC__/images/region/hotel/hotel1.gif" alt="">
-                            <div class="introduceMsg">
-                                <span>四季如季如春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾酒店+赠往返船票+VI北京往返厦门4-5天自由行（鼓浪屿四季如春度假酒店+市区君帝湾酒店+赠往返船票+VIP专车接送机）</span>
-                            </div>
-                        </div>
-                        <div class="comTop">
-                            <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
-                            <span class="comName">梨窝浅浅</span>
-                            <span class="comMsg">“四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
-                        </div>
-                    </div>
+                    {/volist}
                     <div class="dashed">
-                        <a href=""><span>600</span>家酒店<i class="orgIcon"></i></a>
+                        <a href=""><span>{$hotelMsg.count}</span>家酒店<i class="orgIcon"></i></a>
                     </div>
                 </div>
             </div>
             <div class="layui-col-sm4">
                 <div class="hotelW middleDiv">
                     <h2 class="hotelMsg"><a href="">必游景点排行<i class="innerIcon"></i></a></h2>
-                    <div class="innerDiv">
-                        <h3>
-                            <span class="layui-badge layui-bg-orange">1</span>
-                            <span>中山路-步行街</span>
-                        </h3>
-                        <div class="pst">
-                            <img class="hotelMap" src="__STATIC__/images/region/hotel/hotel1.gif" alt="">
-                            <div class="introduceMsg">
-                                <span>四季如季如春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾酒店+赠往返船票+VI北京往返厦门4-5天自由行（鼓浪屿四季如春度假酒店+市区君帝湾酒店+赠往返船票+VIP专车接送机）</span>
+                    {volist name="scenicMsg.list" id="value"}
+                        <div class="innerDiv">
+                            <h3>
+                                <span class="layui-badge layui-bg-orange">{$i}</span>
+                                <span>{$value.scenicName}</span>
+                            </h3>
+                            <div class="pst">
+                                <img class="hotelMap" src="__STATIC__/{$value.scenicImg}" alt="加载失败">
+                                <div class="introduceMsg">
+                                    <span>{$value.scenicDescribe}</span>
+                                </div>
+                            </div>
+                            <div class="comTop">
+                                <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
+                                <span class="comName">梨窝浅浅</span>
+                                <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
                             </div>
                         </div>
-                        <div class="comTop">
-                            <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
-                            <span class="comName">梨窝浅浅</span>
-                            <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
-                        </div>
-                    </div>
+                    {/volist}
                     <div class="dashed">
-                        <a href=""><span>600</span>家酒店<i class="orgIcon"></i></a>
+                        <a href=""><span>{$scenicMsg.count}</span>个景点<i class="orgIcon"></i></a>
                     </div>
                 </div>
             </div>
             <div class="layui-col-sm4">
                 <div class="hotelW rightDiv">
                     <h2 class="hotelMsg"><a href="">必吃美食排行<i class="innerIcon"></i></a></h2>
+                    {volist name='foodMsg.msg' id='value'}
                     <div class="innerDiv">
                         <h3>
-                            <span class="layui-badge layui-bg-orange">1</span>
-                            <span>中山路-步行街</span>
+                            <span class="layui-badge layui-bg-orange">{$i}</span>
+                            <span>{$value.foodName}</span>
                         </h3>
                         <div class="pst">
-                            <img class="hotelMap" src="__STATIC__/images/region/hotel/hotel1.gif" alt="">
+                            <img class="hotelMap" src="__STATIC__/{$value.foodImg}" alt="">
                             <div class="introduceMsg">
-                                <span>四季如季如春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾酒店+赠往返船票+VI北京往返厦门4-5天自由行（鼓浪屿四季如春度假酒店+市区君帝湾酒店+赠往返船票+VIP专车接送机）</span>
+                                <span>{$value.foodDescribe}</span>
                             </div>
                         </div>
                         <div class="comTop">
@@ -251,8 +217,9 @@
                             <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
                         </div>
                     </div>
+                    {/volist}
                     <div class="dashed">
-                        <a href=""><span>600</span>家酒店<i class="orgIcon"></i></a>
+                        <a href=""><span>{$foodMsg.count}</span>种美食<i class="orgIcon"></i></a>
                     </div>
                 </div>
             </div>

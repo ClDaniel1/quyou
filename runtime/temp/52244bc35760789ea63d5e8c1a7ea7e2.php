@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:71:"D:\wamp64\www\quyou\QY\public/../application/home\view\index\index.html";i:1517029671;s:71:"D:\wamp64\www\quyou\QY\public/../application/home\view\public\base.html";i:1517040643;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\index\index.html";i:1517043587;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517043587;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

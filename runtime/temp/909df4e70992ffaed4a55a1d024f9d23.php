@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517075846;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517117638;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517134233;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517139842;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -131,6 +131,7 @@
     </style>
 </head>
 <body class="body">
+
 
 
 
@@ -318,7 +319,7 @@
                 <ul class="layui-tab-title">
                     <li class="layui-this">热门游记</li>
                     <li>最新游记</li>
-                    <input class="layui-btn" type="button" value="写游记" style="float: right;margin-bottom: 10px">
+                    <a href="<?php echo url('home/Notes/notes'); ?>"><input class="layui-btn" type="button" value="写游记" style="float: right;margin-bottom: 10px"></a>
                 </ul>
 
                 <div class="layui-tab-content">
@@ -401,7 +402,6 @@
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
 <script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
-
 <script>
     $("#menu").click(showSideBar);
     function showSideBar() {
