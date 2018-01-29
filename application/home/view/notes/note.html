@@ -38,15 +38,15 @@
         z-index: 1000;
         display: none;
         text-align: center;
+        padding-top: 75px;
     }
     #imgView div{
         display: inline-block;
-
     }
     #imgView>img{
         display: inline-block;
         max-width: 90%;
-        max-height: 90%;
+        max-height: 85%;
     }
     #btn{
         margin-top: 1%;
@@ -57,8 +57,42 @@
         text-align: center;
     }
     #title input{
+        height: 50px;
+        width: 85%;
         display: inline-block;
-        width: 75%;
+    }
+    #noteConten{
+        min-height: 1000px;
+    }
+    #btnBar{
+     }
+    #btnBar button{
+        display: inline-block;
+        margin: 10px 20px;
+    }
+    #save div{
+
+    }
+    #saving{
+        display: none;
+    }
+    #saved{
+        display: none;
+
+        text-align: center;
+    }
+    #catal{
+        margin-top: 20px;
+    }
+    #catal i{
+        padding-left: 30px;
+       width: 100%;
+        font-style: normal;
+        display: inline-block;
+    }
+    #leftBar{
+        padding: 10px;
+        padding-left:7.5%;
     }
 </style>
 {/block}
@@ -73,7 +107,6 @@
         <input type="button" value="提交" class="layui-btn navBg" id="subBI">
         <input type="button" value="取消" class="layui-btn navBg" id="escBI">
     </div>
-
 </div>
 {/block}
 
@@ -89,14 +122,42 @@
     </button>
 </div>
 
-<div id="title">
+<div id="title" class="layui-container">
 
         <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入游记标题" class="layui-input">
 
 </div>
 
 
-
+<div id="noteConten" class="layui-container">
+    <div class="layui-col-sm9" id="leftBar">
+dfsdf
+    </div>
+    <div class="layui-col-sm3" id="rightBar" style="position: sticky;top: 15px;">
+        <div id="btnBar">
+            <button class="layui-btn layui-btn-radius">
+                <i class="layui-icon">&#xe64a;</i> 添加图片
+            </button>
+            <button class="layui-btn layui-btn-radius">
+                <i class="layui-icon">&#xe638;</i> 添加段落
+            </button>
+            <button class="layui-btn layui-btn-radius">
+                <i class="layui-icon">&#xe6fc;</i> 添加音乐
+            </button>
+            <button class="layui-btn layui-btn-radius" id="save">
+                <div id="toSave"><i class="layui-icon">&#xe60e;</i> 保存草稿</div>
+                <div id="saving"><i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop" ></i> 正在保存</div>
+                <div id="saved"><i class="layui-icon">&#xe605;</i> 保存完成</div>
+            </button>
+            <button class="layui-btn layui-btn-radius">
+                <i class="layui-icon">&#xe609;</i> 发布游记
+            </button>
+        </div>
+        <div id="catal">
+            <i>游记目录</i>
+        </div>
+    </div>
+</div>
 
 
     {/block}
@@ -205,7 +266,31 @@
         $("#imgView").fadeOut(300,function () {
             jcropApi.destroy();
         })
-    })
+    });
+
+    $("#save").click(function () {
+        $("#toSave").fadeOut(300,function () {
+            $("#saving").fadeIn(300);
+        });
+
+        setTimeout(function () {
+            $("#saving").fadeOut(300,function () {
+                $("#saved").fadeIn(300);
+            });
+
+            setTimeout(function () {
+                $("#saved").fadeOut(300,function () {
+                    $("#toSave").fadeIn(300);
+                });
+
+            },2000)
+        },2000)
+
+
+
+    });
+
+
 
 </script>
 {/block}
