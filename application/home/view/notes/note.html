@@ -73,7 +73,6 @@
         <input type="button" value="提交" class="layui-btn navBg" id="subBI">
         <input type="button" value="取消" class="layui-btn navBg" id="escBI">
     </div>
-
 </div>
 {/block}
 
@@ -192,7 +191,7 @@
                         //do something
                         $("#imgView").fadeOut(300,function () {
                             jcropApi.destroy();
-                        })
+                        });
                         layer.close(index); //如果设定了yes回调，需进行手工关闭
                     }
                 });
