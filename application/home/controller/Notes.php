@@ -12,7 +12,15 @@ namespace app\home\controller;
 class Notes extends \think\Controller
 {
     public function notes(){
-       return $this->fetch("note");
+        $um = new User();
+        $res = $um->checkLogin();
+        if($res){
+            $uphone = cookie("uphone");
+
+            return $this->fetch("note");
+        }else{
+            $this->error('很抱歉，请登录后再试');
+        }
     }
 
     public function setUp(){
@@ -92,4 +100,5 @@ class Notes extends \think\Controller
 
 
     }
+
 }

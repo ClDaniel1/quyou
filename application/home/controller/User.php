@@ -73,7 +73,7 @@ class User extends \think\Controller
         $um->setKey($result['uphone'],$loginKey);
 
         // 设置
-        cookie('uphone',$result['uphone'], 3600);
+        cookie('uid',$result['uid'], 3600);
         cookie('ukey',$loginKey, 3600);
 
 
@@ -87,6 +87,48 @@ class User extends \think\Controller
 
     }
 
+    public function checkLogin(){
+
+        //判断是否有用户信息
+        if(cookie("uid")==null){
+            if(cookie("ukey")!=null){
+                cookie("ukey",null);
+            }
+            //用户没有登录
+            return false;
+        }
+        else{
+            //用户key为空，取消登陆状态，需要重新登录
+            if(cookie("ukey")==null){
+                cookie("uid",null);
+                return false;
+            }
+            else{
+                $uid = cookie('uid');
+                $ukey = cookie('ukey');
+                $where=[
+                    'uid' =>  $uid,
+                    'loginKey'   =>   $ukey
+                ];
+
+                //检查登录信息
+                $um = new \app\home\model\User();
+                $res = $um->checkLogin($where);
+
+                if(empty($res)){
+                    //检查失败
+                    cookie("uid",null);
+                    cookie("ukey",null);
+                    return false;
+                }
+                else{
+                    //检查成功
+                    return true;
+                }
+            }
+        }
+    }
+
     public function check(){
         $returnMsg=[
             'code' =>  "",
@@ -94,7 +136,7 @@ class User extends \think\Controller
             'data' =>  []
         ];
         //判断是否有用户信息
-        if(cookie("uphone")==null){
+        if(cookie("uid")==null){
             if(cookie("ukey")!=null){
                 cookie("ukey",null);
             }
@@ -106,15 +148,15 @@ class User extends \think\Controller
             //用户key为空，取消登陆状态，需要重新登录
             if(cookie("ukey")==null){
                 $returnMsg['code'] = 10009;
-                cookie("uphone",null);
+                cookie("uid",null);
                 $returnMsg['msg'] = config('msg')['loginChek']['err'];
                 return json($returnMsg);
             }
             else{
-                $uphone = cookie('uphone');
+                $uid = cookie('uid');
                 $ukey = cookie('ukey');
                 $where=[
-                    'uphone' =>  $uphone,
+                    'uid' =>  $uid,
                     'loginKey'   =>   $ukey
                 ];
 
@@ -124,7 +166,7 @@ class User extends \think\Controller
 
                 if(empty($res)){
                     //检查失败
-                    cookie("uphone",null);
+                    cookie("uid",null);
                     cookie("ukey",null);
                     $returnMsg['code'] = 10009;
                     $returnMsg['msg'] = config('msg')['loginChek']['err'];

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517134233;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517188492;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517197614;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517206921;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -150,8 +150,8 @@
             <li class="layui-nav-item layui-this"><a href="<?php echo url('home/Index/index'); ?>">首页</a></li>
             <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
             <li class="layui-nav-item"><a href="">旅途直播</a></li>
-            <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
-            <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
+            <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
+            <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
             <li class="layui-nav-item loginIn">
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
@@ -182,8 +182,8 @@
                 <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
 
-       <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
-        <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
+       <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
+        <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
 
     </ul>
 </div>
@@ -295,8 +295,8 @@
 </div>
 
 <div class="layui-container">
-    <div class="layui-row layui-col-space30">
-        <div class="layui-col-md3" id="leftBar">
+    <div class="layui-row layui-col-space30" >
+        <div style="position: sticky" class="layui-col-md3" id="leftBar">
             <div class="am-panel am-panel-primary panel" id="ad">
                 <div class="am-panel-hd">广告</div>
                 <div class="am-panel-bd">
@@ -429,7 +429,7 @@
         $("#sideBar li").eq(i).addClass("layui-this");
     }
 
-    var checkUrl = "<?php echo url('home/Login/check'); ?>";
+    var checkUrl = "<?php echo url('home/User/check'); ?>";
 
 </script>
 <script src="__JS__/home/public/public.js"></script>
