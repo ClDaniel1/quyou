@@ -24,10 +24,42 @@ $(function () {
    })
 });
 
+
+function checkLogin(errCallback,succCallback,noLCallback) {
+    $.ajax({
+        url:checkUrl,
+        type:"get",
+        async:false,
+        dataType:"json",
+        success:function (res) {
+            //检查失败
+            if(res["code"] != 10010 && res["code"] != 10011){
+                if(errCallback!=null){
+                    errCallback();
+                }
+
+            }
+            else if(res["code"] == 10011){
+                //检查成功
+                if(succCallback!=null){
+                    succCallback();
+                }
+
+            }
+            else {
+                if(noLCallback!=null){
+                    noLCallback();
+                }
+
+            }
+        }
+    })
+}
+
 function loginOut() {
     layer.confirm('确定退出登录?', {icon: 3, title:'退出登录'}, function(index){
         //do something
-        clearCookie("quyou_uphone");
+        clearCookie("qy_uid");
         location.reload();
         layer.close(index);
     });

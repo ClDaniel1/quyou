@@ -12,7 +12,16 @@ namespace app\home\controller;
 class Notes extends \think\Controller
 {
     public function notes(){
-       return $this->fetch("note");
+        $um = new User();
+        $res = $um->checkLogin();
+        if($res){
+            $id = cookie("uid");
+            $nm = new \app\home\model\Notes();
+            $id = $nm->creatNote($id);
+            $this->redirect('home/Notes/edit',["id"=>$id]);
+        }else{
+            $this->error('很抱歉，请登录后再试');
+        }
     }
 
     public function setUp(){
@@ -23,6 +32,12 @@ class Notes extends \think\Controller
             session("img",$w);
         }
         else{
+
+            $resMsg = ["code"=>50001,
+                                "msg"=>"",
+                                "data"=>[]];
+
+
             $uphone = cookie("quyou_uphone");
             $userDir = "static/images/user/".$uphone;
             if(!(is_dir($userDir))){
@@ -35,6 +50,12 @@ class Notes extends \think\Controller
             $im = imagecreatefromstring($imgstream);
             $x = imagesx($im);//获取图片的宽
             $y = imagesy($im);//获取图片的高
+
+            if($x<1350 || $y < 480){
+                $resMsg["code"] = 50002;
+                $resMsg["msg"] = config("msg")["note"]["imgTooSmall"];
+                return json($resMsg);
+            }
 
             $size = json_decode(session("img"),true);
 
@@ -51,7 +72,16 @@ class Notes extends \think\Controller
             $rew = $ew/$scale;
             $reh = $eh/$scale;
 
-
+            if($rew-$rsw<900 || $reh-$rsh < 300){
+                $resMsg["code"] = 50003;
+                $resMsg["msg"] = config("msg")["note"]["imgSelectTooSmall"];
+                return json($resMsg);
+            }
+            if(round(($rew-$rsw)/($reh-$rsh)) != 3){
+                $resMsg["code"] = 50004;
+                $resMsg["msg"] = config("msg")["note"]["scaleErr"];
+                return json($resMsg);
+            }
 
 
             $source=imagecreatefromjpeg($image);
@@ -63,18 +93,19 @@ class Notes extends \think\Controller
 
             $userDir = "images/user/".$uphone;
 
-            $resMsg = '{
-                                    "code": 5001
-                                  ,"msg": ""
-                                  ,"data": {
-                                    "src": "'.$userDir."/temp.jpg".'"
-                                  }
-                                }   ';
+            $resMsg["data"]["url"] = $userDir."/temp.jpg";
 
-            echo $resMsg;
+            return json($resMsg);
         }
 
 
 
+    }
+
+    public function edit(){
+        $id = input("param.id");
+        $nm = new \app\home\model\Notes();
+        $nm->getNoteCont($id);
+        return $this->fetch("note");
     }
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"D:\wamp64\www\quyou\public/../application/home\view\region\region.html";i:1517188027;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517188492;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:71:"D:\AppServ\www\quyou\public/../application/home\view\region\region.html";i:1517043262;s:69:"D:\AppServ\www\quyou\public/../application/home\view\public\base.html";i:1517043262;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,16 +30,17 @@
         .navBg{
             background: #F9851D ;
         }
-        .body {
+<<<<<<< HEAD
+        .body{
             background-color: #efefef;
-        }
+=======
         footer{
             margin-top:25px;
+>>>>>>> e79f6f254ff1825636c527baa2f2ad3069c1603d
         }
     </style>
 </head>
 <body class="body">
-
 
 
 
@@ -58,14 +59,12 @@
             <li class="layui-nav-item layui-this"><a href="<?php echo url('home/Index/index'); ?>">首页</a></li>
             <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
             <li class="layui-nav-item"><a href="">旅途直播</a></li>
-            <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
-            <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
-            <li class="layui-nav-item loginIn">
+            <li class="layui-nav-item">
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
                     <dd><a href="">我的消息</a></dd>
-                    <dd><a href="" class="toCenter">个人中心</a></dd>
-                    <dd  onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
+                    <dd><a href="">个人中心</a></dd>
+                    <dd><a href="">退出登录</a></dd>
                 </dl>
             </li>
             <li style="height: 30px; text-align: center"></li>
@@ -81,18 +80,16 @@
         <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
         <li class="layui-nav-item"><a href="">旅途直播</a></li>
     </ul>
-    <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
-        <li class="layui-nav-item loginIn">
-            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
-
+    <ul class="layui-nav navBg" lay-filter="" style="float: right">
+        <li class="layui-nav-item">
+            <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
             <dl class="layui-nav-child">
                 <dd><a href="">我的消息</a></dd>
-                <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
+                <dd><a href="javascript:;">退出登录</a></dd>
             </dl>
-
-       <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
-        <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
-
+        </li>
+       <!-- <li class="layui-nav-item"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
+        <li class="layui-nav-item"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>-->
     </ul>
 </div>
 
@@ -108,7 +105,7 @@
             </div>
             <div class="layui-row layui-hide-xs">
                 <ul class="layui-nav catalog">
-                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>首页</a></li>
+                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>概况</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst2"></i>玩法路线</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
                     <li class="layui-nav-item"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=1000"><i class="icon1 iconPst4"></i>酒店</a></li>
@@ -162,23 +159,24 @@
 <div id="content2">
     <div class="layui-container navTop">
         <div class="layui-row">
-            <div class="layui-col-sm6 layui-col-xs12">
+            <div class="layui-col-sm6 siteNav">
                 <div>
                     <span class="layui-breadcrumb" lay-separator=">">
                         <a href="">目的地</a>
-                        <a href=""><?php echo $region_name; ?><i class="layui-icon orangeIcon">&#xe625;</i></a>
-                        <a ><cite style="color: #ff7000;font-weight: bold;"><span><?php echo $region_name; ?></span>旅游攻略</cite></a>
+                        <a href="">美国<i class="layui-icon orangeIcon">&#xe625;</i></a>
+                        <a href="">旧金山<i class="layui-icon orangeIcon">&#xe625;</i></a>
+                        <a ><cite style="color: #ff7000;font-weight: bold;">旧金山旅游攻略</cite></a>
                     </span>
                 </div>
                 <div class="siteMsg">
                     <div class="siteName">
-                        <h1 class="disB"><?php echo $region_name; ?></h1>
-                        <a href="">(<span><?php echo $count; ?></span>张照片)</a>
+                        <h1 class="disB">喜马拉雅山脉</h1>
+                        <a href="">(<span>42344</span>张照片)</a>
                     </div>
                 </div>
             </div>
-            <div class="layui-col-sm3 layui-col-xs12 layui-col-sm-offset3">
-               <ul class="imgA am-text-middle">
+            <div class="layui-col-sm3 layui-col-sm-offset3">
+               <ul class="imgA">
                    <li>
                        <a href=""><i class="icon imgPst1"></i>收藏</a>
                    </li>
@@ -241,21 +239,22 @@
 <!--景点路线区域-->
 <div id="content3">
     <div class="layui-container">
-        <h1 class="lineFont"><span><?php echo $region_name; ?></span><span>2</span>条经典路线</h1>
+        <h1 class="lineFont"><span>厦门</span><span>3</span>条景点路线</h1>
         <div class="layui-row">
-
             <div class="layui-col-sm6">
                 <div class="mapBorder1 scenicMsg">
                     <h1>
                         <span class="layui-badge layui-bg-orange mapNo">1</span>
-                        <span><?php echo $region_name; ?>鼓浪屿1日游</span>
+                        <span>厦门鼓浪屿5日游</span>
                     </h1>
                     <div class="map">
-                        <div id="map"></div>
-                    </div>
+
+                    <div id="map">
+
+                    </div></div>
                     <div class="selectLine">
                         <span class="percent">45%</span>
-                        <h3>初次访问<span><?php echo $region_name; ?></span>的蜂蜂会选择这条路线</h3>
+                        <h3>初次访问<span>旧金山</span>的蜂蜂会选择这条路线</h3>
                     </div>
                     <div class="pathShow">
                         <div>
@@ -267,7 +266,27 @@
                               <a><cite>花海公园</cite></a>
                             </span>
                         </div>
+                        <div>
+                            <span class="pathSpan">D<span>1</span></span>
+                            <span class="layui-breadcrumb" lay-separator="->">
+                              <a href=""><cite>西湖</cite></a>
+                              <a href=""><cite>大学城</cite></a>
+                              <a href=""><cite>光亚广场</cite></a>
+                              <a><cite>花海公园</cite></a>
+                            </span>
+                        </div>
                         <a href="" class="lookA">查看></a>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm6 ">
+                <div class="mapBorder2 scenicMsg">
+                    <h1>
+                        <span class="layui-badge layui-bg-orange mapNo">1</span>
+                        <span>厦门鼓浪屿5日游</span>
+                    </h1>
+                    <div class="map1">
+
                     </div>
                 </div>
             </div>
@@ -291,16 +310,15 @@
             <div class="layui-col-sm4">
                 <div class="hotelW">
                     <h2 class="hotelMsg"><a href="">酒店住宿攻略<i class="innerIcon"></i></a></h2>
-                    <?php if(is_array($hotelMsg['msg']) || $hotelMsg['msg'] instanceof \think\Collection || $hotelMsg['msg'] instanceof \think\Paginator): $i = 0; $__LIST__ = $hotelMsg['msg'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$value): $mod = ($i % 2 );++$i;?>
-                        <div class="innerDiv">
+                    <div class="innerDiv">
                         <h3>
-                            <span class="layui-badge layui-bg-orange"><?php echo $i; ?></span>
-                            <span><?php echo $value['hotelName']; ?></span>
+                            <span class="layui-badge layui-bg-orange">1</span>
+                            <span>中山路-步行街</span>
                         </h3>
                         <div class="pst">
-                            <img class="hotelMap" src="__STATIC__/<?php echo $value['img']; ?>" alt="">
+                            <img class="hotelMap" src="__STATIC__/images/region/hotel/hotel1.gif" alt="">
                             <div class="introduceMsg">
-                                <span><?php echo $value['hotelDescribe']; ?></span>
+                                <span>四季如季如春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾酒店+赠往返船票+VI北京往返厦门4-5天自由行（鼓浪屿四季如春度假酒店+市区君帝湾酒店+赠往返船票+VIP专车接送机）</span>
                             </div>
                         </div>
                         <div class="comTop">
@@ -309,52 +327,40 @@
                             <span class="comMsg">“呆过四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
                         </div>
                     </div>
-                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                    <div class="innerDiv">
+                        <h3>
+                            <span class="layui-badge layui-bg-orange">1</span>
+                            <span>中山路-步行街</span>
+                        </h3>
+                        <div class="pst">
+                            <img class="hotelMap" src="__STATIC__/images/region/hotel/hotel1.gif" alt="">
+                            <div class="introduceMsg">
+                                <span>四季如季如春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾酒店+赠往返船票+VI北京往返厦门4-5天自由行（鼓浪屿四季如春度假酒店+市区君帝湾酒店+赠往返船票+VIP专车接送机）</span>
+                            </div>
+                        </div>
+                        <div class="comTop">
+                            <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
+                            <span class="comName">梨窝浅浅</span>
+                            <span class="comMsg">“四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
+                        </div>
+                    </div>
                     <div class="dashed">
-                        <a href=""><span><?php echo $hotelMsg['count']; ?></span>家酒店<i class="orgIcon"></i></a>
+                        <a href=""><span>600</span>家酒店<i class="orgIcon"></i></a>
                     </div>
                 </div>
             </div>
             <div class="layui-col-sm4">
                 <div class="hotelW middleDiv">
                     <h2 class="hotelMsg"><a href="">必游景点排行<i class="innerIcon"></i></a></h2>
-                    <?php if(is_array($scenicMsg['list']) || $scenicMsg['list'] instanceof \think\Collection || $scenicMsg['list'] instanceof \think\Paginator): $i = 0; $__LIST__ = $scenicMsg['list'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$value): $mod = ($i % 2 );++$i;?>
-                        <div class="innerDiv">
-                            <h3>
-                                <span class="layui-badge layui-bg-orange"><?php echo $i; ?></span>
-                                <span><?php echo $value['scenicName']; ?></span>
-                            </h3>
-                            <div class="pst">
-                                <img class="hotelMap" src="__STATIC__/<?php echo $value['scenicImg']; ?>" alt="加载失败">
-                                <div class="introduceMsg">
-                                    <span><?php echo $value['scenicDescribe']; ?></span>
-                                </div>
-                            </div>
-                            <div class="comTop">
-                                <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
-                                <span class="comName">梨窝浅浅</span>
-                                <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
-                            </div>
-                        </div>
-                    <?php endforeach; endif; else: echo "" ;endif; ?>
-                    <div class="dashed">
-                        <a href=""><span><?php echo $scenicMsg['count']; ?></span>个景点<i class="orgIcon"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="layui-col-sm4">
-                <div class="hotelW rightDiv">
-                    <h2 class="hotelMsg"><a href="">必吃美食排行<i class="innerIcon"></i></a></h2>
-                    <?php if(is_array($foodMsg['msg']) || $foodMsg['msg'] instanceof \think\Collection || $foodMsg['msg'] instanceof \think\Paginator): $i = 0; $__LIST__ = $foodMsg['msg'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$value): $mod = ($i % 2 );++$i;?>
                     <div class="innerDiv">
                         <h3>
-                            <span class="layui-badge layui-bg-orange"><?php echo $i; ?></span>
-                            <span><?php echo $value['foodName']; ?></span>
+                            <span class="layui-badge layui-bg-orange">1</span>
+                            <span>中山路-步行街</span>
                         </h3>
                         <div class="pst">
-                            <img class="hotelMap" src="__STATIC__/<?php echo $value['foodImg']; ?>" alt="">
+                            <img class="hotelMap" src="__STATIC__/images/region/hotel/hotel1.gif" alt="">
                             <div class="introduceMsg">
-                                <span><?php echo $value['foodDescribe']; ?></span>
+                                <span>四季如季如春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾酒店+赠往返船票+VI北京往返厦门4-5天自由行（鼓浪屿四季如春度假酒店+市区君帝湾酒店+赠往返船票+VIP专车接送机）</span>
                             </div>
                         </div>
                         <div class="comTop">
@@ -363,9 +369,33 @@
                             <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
                         </div>
                     </div>
-                    <?php endforeach; endif; else: echo "" ;endif; ?>
                     <div class="dashed">
-                        <a href=""><span><?php echo $foodMsg['count']; ?></span>种美食<i class="orgIcon"></i></a>
+                        <a href=""><span>600</span>家酒店<i class="orgIcon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm4">
+                <div class="hotelW rightDiv">
+                    <h2 class="hotelMsg"><a href="">必吃美食排行<i class="innerIcon"></i></a></h2>
+                    <div class="innerDiv">
+                        <h3>
+                            <span class="layui-badge layui-bg-orange">1</span>
+                            <span>中山路-步行街</span>
+                        </h3>
+                        <div class="pst">
+                            <img class="hotelMap" src="__STATIC__/images/region/hotel/hotel1.gif" alt="">
+                            <div class="introduceMsg">
+                                <span>四季如季如春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾春度假酒店+市区君帝湾酒店+赠往返船票+VI北京往返厦市区君帝湾酒店+赠往返船票+VI北京往返厦门4-5天自由行（鼓浪屿四季如春度假酒店+市区君帝湾酒店+赠往返船票+VIP专车接送机）</span>
+                            </div>
+                        </div>
+                        <div class="comTop">
+                            <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
+                            <span class="comName">梨窝浅浅</span>
+                            <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
+                        </div>
+                    </div>
+                    <div class="dashed">
+                        <a href=""><span>600</span>家酒店<i class="orgIcon"></i></a>
                     </div>
                 </div>
             </div>
@@ -415,6 +445,7 @@
 
 
 
+<<<<<<< HEAD
 
 
 <footer style="background: #3c3c3c">
@@ -462,6 +493,8 @@
         </div>
     </div>
 </footer>
+=======
+>>>>>>> af1153db015604462702e242cb521fd40c46e4e9
 </body>
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
@@ -491,10 +524,7 @@
         $("#sideBar li").eq(i).addClass("layui-this");
     }
 
-    var checkUrl = "<?php echo url('home/Login/check'); ?>";
-
 </script>
-<script src="__JS__/home/public/public.js"></script>
 
 <!--JS、引用 /示例如下-->
 <!--引用百度地图api文件-->

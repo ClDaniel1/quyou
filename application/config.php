@@ -203,7 +203,7 @@ return [
         // SESSION_ID的提交变量,解决flash上传跨域
         'var_session_id' => '',
         // SESSION 前缀
-        'prefix'         => 'think',
+        'prefix'         => 'qy_',
         // 驱动方式 支持redis memcache memcached
         'type'           => '',
         // 是否自动开启 SESSION
@@ -215,7 +215,7 @@ return [
     // +----------------------------------------------------------------------
     'cookie'                 => [
         // cookie 名称前缀
-        'prefix'    => '',
+        'prefix'    => 'qy_',
         // cookie 保存时间
         'expire'    => 0,
         // cookie 保存路径
@@ -249,6 +249,11 @@ return [
         ],
         'loginChek'     =>[
             'err'=>"登录信息有误，请重新登录"
+        ],
+        'note'      =>[
+            'imgTooSmall'=>"图片过小，请选择宽度大于1350，并且高度大于480的图片",
+            'imgSelectTooSmall'=>'裁剪完图片过小，请重新裁剪',
+            'scaleErr'=>'图片比例不对，请重新裁剪'
         ]
     ],
 
@@ -273,6 +278,6 @@ return [
     'length'   => 4,
 
     // 验证成功后是否重置
-    'reset'    => false],
+    'reset'    => true],
 
 ];

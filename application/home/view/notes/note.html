@@ -6,6 +6,9 @@
     #aspectration[data-ratio="9:3"] {
         padding-top:33.33%;
         position: relative;
+        border: none;
+        background: url("__STATIC__/images/bg.jpg") no-repeat;
+        background-size: cover;
     }
     #aspectration img{
         float: left;
@@ -24,7 +27,7 @@
         width: 100%;
         height: 100%;
         text-align: center;
-        color: #101010;
+        color: white;
         font-size: 35px;
     }
     #aspectration i{
@@ -38,15 +41,15 @@
         z-index: 1000;
         display: none;
         text-align: center;
+        padding-top: 75px;
     }
     #imgView div{
         display: inline-block;
-
     }
     #imgView>img{
         display: inline-block;
         max-width: 90%;
-        max-height: 90%;
+        max-height: 85%;
     }
     #btn{
         margin-top: 1%;
@@ -57,8 +60,60 @@
         text-align: center;
     }
     #title input{
+        height: 50px;
+        width: 85%;
         display: inline-block;
-        width: 75%;
+    }
+    #noteConten{
+        min-height: 1000px;
+    }
+    #btnBar{
+     }
+    #btnBar button{
+        display: inline-block;
+        margin: 10px 20px;
+    }
+    #save div{
+
+    }
+    #saving{
+        display: none;
+    }
+    #saved{
+        display: none;
+
+        text-align: center;
+    }
+    #catal{
+        margin-top: 20px;
+    }
+    #catal i{
+        padding-left: 30px;
+       width: 100%;
+        font-style: normal;
+        display: inline-block;
+    }
+    #leftBar{
+        padding: 10px;
+        padding-left:7.5%;
+    }
+    @media (min-width:768px ) {
+        .navBg{
+            background: none!important;
+            z-index: 100;
+        }
+        .navBg img{
+            z-index: 101;
+            position: relative;
+        }
+        #baseMain{
+            margin-top: -60px;
+            display: inline-block;
+            width: 100%;
+        }
+        .layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after{
+            display: none;
+        }
     }
 </style>
 {/block}
@@ -73,7 +128,6 @@
         <input type="button" value="提交" class="layui-btn navBg" id="subBI">
         <input type="button" value="取消" class="layui-btn navBg" id="escBI">
     </div>
-
 </div>
 {/block}
 
@@ -82,21 +136,49 @@
 
 
 <div class="layui-upload">
-    <button type="button" class="layui-btn" id="aspectration" data-ratio="9:3" style="width: 100%;background: gainsboro">
+    <button type="button" id="aspectration" data-ratio="9:3" style="width: 100%">
         <div>
             <span><i class="layui-icon"></i>上传头图</span>
         </div>
     </button>
 </div>
 
-<div id="title">
+<div id="title" class="layui-container">
 
         <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入游记标题" class="layui-input">
 
 </div>
 
 
-
+<div id="noteConten" class="layui-container">
+    <div class="layui-col-sm9" id="leftBar">
+dfsdf
+    </div>
+    <div class="layui-col-sm3" id="rightBar" style="position: sticky;top: 15px;">
+        <div id="btnBar">
+            <button class="layui-btn layui-btn-radius">
+                <i class="layui-icon">&#xe64a;</i> 添加图片
+            </button>
+            <button class="layui-btn layui-btn-radius">
+                <i class="layui-icon">&#xe638;</i> 添加段落
+            </button>
+            <button class="layui-btn layui-btn-radius">
+                <i class="layui-icon">&#xe6fc;</i> 添加音乐
+            </button>
+            <button class="layui-btn layui-btn-radius" id="save">
+                <div id="toSave"><i class="layui-icon">&#xe60e;</i> 保存草稿</div>
+                <div id="saving"><i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop" ></i> 正在保存</div>
+                <div id="saved"><i class="layui-icon">&#xe605;</i> 保存完成</div>
+            </button>
+            <button class="layui-btn layui-btn-radius">
+                <i class="layui-icon">&#xe609;</i> 发布游记
+            </button>
+        </div>
+        <div id="catal">
+            <i>游记目录</i>
+        </div>
+    </div>
+</div>
 
 
     {/block}
@@ -123,21 +205,44 @@
             //预读本地文件示例，不支持ie8
             obj.preview(function(index, file, result){
                 $('#imgShow').attr('src', result); //图片链接（base64）
-                $("#imgView").fadeIn(300,function () {
 
-                    $('#imgShow').Jcrop({
-                        allowSelect:false,
-                        aspectRatio:3/1
-                    }, function() {
-                        jcropApi = this;
-                    });
-                    var size = jcropApi.getBounds();
+                setTimeout(function () {
+                    var wid = document.getElementById('imgShow').naturalWidth;
+                    var hei = document.getElementById('imgShow').naturalHeight;
+                    if(wid<1350 || hei < 480){
+                        layer.open({
+                            content:"请选择宽度大于1350，并且高度大于480的图片",
+                            yes: function(index, layero){
+                                //do something
+                                layer.close(index); //如果设定了yes回调，需进行手工关闭
+                            }
+                        });
+                    }
+                    else {
+                        $("#imgView").fadeIn(300,function () {
 
-                    jcropApi.setOptions({
-                        setSelect:[0,0,size[0],size[0]/3],
-                        boxWidth:"1000"
-                    })
-                });
+                            $('#imgShow').Jcrop({
+                                allowSelect:false,
+                                aspectRatio:3/1
+                            }, function() {
+                                jcropApi = this;
+                            });
+                            var size = jcropApi.getBounds();
+
+                            var scale = wid/size[0];
+
+                            var x = 900/scale;
+                            var y = 300/scale;
+
+                            jcropApi.setOptions({
+                                setSelect:[0,0,size[0],size[0]/3],
+                                minSize:[x,y]
+                            })
+                        });
+                    }
+
+                },300)
+
             });
         }
         ,before:function () {
@@ -152,15 +257,27 @@
             })
         }
         ,done: function(res){
-            if(res.code == 5001){
+            if(res["code"]== 50001){
                 $("#aspectration div").empty();
-                $img = "<img src='/quyou/public/static/"+res.data.src+"?"+Math.random()+"'/>";
+                $img = "<img src='/quyou/public/static/"+res["data"]["url"]+"?"+Math.random()+"'/>";
                 $("#aspectration div").append($img);
 
                 layer.msg("上传成功");
                 $("#imgView").fadeOut(300,function () {
                     jcropApi.destroy();
                 })
+            }
+            else{
+                layer.open({
+                    content:res["msg"],
+                    yes: function(index, layero){
+                        //do something
+                        $("#imgView").fadeOut(300,function () {
+                            jcropApi.destroy();
+                        });
+                        layer.close(index); //如果设定了yes回调，需进行手工关闭
+                    }
+                });
             }
         }
     });
@@ -170,7 +287,29 @@
         $("#imgView").fadeOut(300,function () {
             jcropApi.destroy();
         })
-    })
+    });
+
+    $("#save").click(function () {
+        $("#toSave").fadeOut(300,function () {
+            $("#saving").fadeIn(300);
+        });
+
+        setTimeout(function () {
+            $("#saving").fadeOut(300,function () {
+                $("#saved").fadeIn(300);
+            });
+
+            setTimeout(function () {
+                $("#saved").fadeOut(300,function () {
+                    $("#toSave").fadeIn(300);
+                });
+
+            },2000)
+        },2000)
+
+    });
+
+
 
 </script>
 {/block}

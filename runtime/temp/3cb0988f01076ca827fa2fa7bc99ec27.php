@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"D:\AppServ\www\quyou\public/../application/home\view\login\login.html";i:1517196011;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -138,7 +139,7 @@
     <div class="layui-container">
             <div id="center">
                 <div id="logo">
-                    <a href="{:url('home/index/index')}">
+                    <a href="<?php echo url('home/index/index'); ?>">
                         <img src="__STATIC__/images/logo1.png" alt="" style="margin: 30px 20px;height: 60px;">
                     </a>
                 </div>
@@ -146,10 +147,18 @@
                     <p><input id="uphone" type="text" class="am-form-field am-round logInput" value="1001" placeholder="您的手机号"/></p>
                     <p><input id="upwd" type="password" class="am-form-field am-round logInput" value="123123" placeholder="您的密码"/></p>
                     <div class="logInput">
-                        <img id="codeImg" style="" src="{:captcha_src()}" alt="captcha" onclick="changeCode(this)"/>
+                        <img id="codeImg" style="" src="<?php echo captcha_src(); ?>" alt="captcha" onclick="changeCode(this)"/>
                         <p><input id="code" style="width: 120px;height:40px;float: right;text-align: center" type="text" class="am-form-field am-round" placeholder="验证码"/></p>
                     </div>
-                    <button id="loginBtn" class="layui-btn layui-btn-radius layui-btn-warm logBtn"><p>登&nbsp;&nbsp;录</p></button>
+                    <button id="loginBtn" class="layui-btn layui-btn-radius layui-btn-warm logBtn " data-am-modal="{target: '#loading'}"><p>登&nbsp;&nbsp;录</p></button>
+                    <div class="am-modal am-modal-loading am-modal-no-btn" style="background-color: white" tabindex="-1" id="loading">
+                        <div class="am-modal-dialog">
+                            <div class="am-modal-hd">正在登录...</div>
+                            <div class="am-modal-bd">
+                                <span class="am-icon-spinner am-icon-spin"></span>
+                            </div>
+                        </div>
+                    </div>
                     <div id="thirdParty">
                         <div id="line"></div>
                         <span>用合作网站账户直接登录</span>
@@ -169,7 +178,7 @@
                         </div>
                         <div id="goToReg">
                             <p>还没有账号？</p>
-                            <a href="{:url('home/register/register')}"><p>马上注册</p></a>
+                            <a href="<?php echo url('home/register/register'); ?>"><p>马上注册</p></a>
                         </div>
                     </div>
 
@@ -180,19 +189,21 @@
 
 
 
+
 </div>
 </body>
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
 <script src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.js"></script>
 <script>
-    var dologinUrl='{:url("home/Login/doLogin")}';
-    var userCenterUrl='{:url("home/index/index")}';
+    var dologinUrl='<?php echo url("home/Login/doLogin"); ?>';
+    var userCenterUrl='<?php echo url("home/index/index"); ?>';
     function changeCode(obj){
-        $(obj).attr('src','{:captcha_src()}?'+Math.random());
+        $(obj).attr('src','<?php echo captcha_src(); ?>?'+Math.random());
     }
 
     $('#loginBtn').click(function(){
+        var index = layer.load();
         var data={
           'uphone': $('#uphone').val(),
             'upwd': $('#upwd').val(),
@@ -209,17 +220,24 @@
                 console.log(res);
 //                console.log(json.stringify(res));
                 if(res.code==10001){
+                    $('#loading').modal(close);
+                    layer.close(index);
                     layer.open({
                         content:res.msg,
                         yes: function(index, layero){
+
                             //do something
                             location.href=userCenterUrl;
                             layer.close(index); //如果设定了yes回调，需进行手工关闭
                         }
                     });
                 }else if(res.code==10003){    //账号密码错误
+                    layer.close(index);
+                    $('#loading').modal(close);
                     layer.msg(res.msg);
                 }else if(res.code==10002){    //验证码错误
+                    $('#loading').modal(close);
+                    layer.close(index);
                     layer.msg(res.msg);
                 }
             }
@@ -229,3 +247,15 @@
 
 </script>
 </html>
+
+
+
+
+<div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="my-modal-loading">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">正在登录...</div>
+        <div class="am-modal-bd">
+            <span class="am-icon-spinner am-icon-spin"></span>
+        </div>
+    </div>
+</div>

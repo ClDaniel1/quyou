@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517211698;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517206921;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"D:\AppServ\www\quyou\public/../application/home\view\index\index.html";i:1517187160;s:69:"D:\AppServ\www\quyou\public/../application/home\view\public\base.html";i:1517200047;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,9 +111,6 @@
         .am-list-main div{
             font-size: 14px;
         }
-
-    }
-    @media (min-width: 768px) {
 
     }
 </style>
@@ -298,8 +295,8 @@
 </div>
 
 <div class="layui-container">
-    <div class="layui-row layui-col-space30" >
-        <div style="position: sticky" class="layui-col-md3" id="leftBar">
+    <div class="layui-row layui-col-space30">
+        <div class="layui-col-md3" id="leftBar">
             <div class="am-panel am-panel-primary panel" id="ad">
                 <div class="am-panel-hd">广告</div>
                 <div class="am-panel-bd">
