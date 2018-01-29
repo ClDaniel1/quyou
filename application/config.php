@@ -278,6 +278,6 @@ return [
     'length'   => 4,
 
     // 验证成功后是否重置
-    'reset'    => false],
+    'reset'    => true],
 
 ];

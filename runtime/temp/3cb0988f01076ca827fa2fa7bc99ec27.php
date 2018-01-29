@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"D:\AppServ\www\quyou\public/../application/home\view\login\login.html";i:1517043262;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"D:\AppServ\www\quyou\public/../application/home\view\login\login.html";i:1517192340;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -150,7 +150,15 @@
                         <img id="codeImg" style="" src="<?php echo captcha_src(); ?>" alt="captcha" onclick="changeCode(this)"/>
                         <p><input id="code" style="width: 120px;height:40px;float: right;text-align: center" type="text" class="am-form-field am-round" placeholder="验证码"/></p>
                     </div>
-                    <button id="loginBtn" class="layui-btn layui-btn-radius layui-btn-warm logBtn"><p>登&nbsp;&nbsp;录</p></button>
+                    <button id="loginBtn" class="layui-btn layui-btn-radius layui-btn-warm logBtn " data-am-modal="{target: '#loading'}"><p>登&nbsp;&nbsp;录</p></button>
+                    <div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="loading">
+                        <div class="am-modal-dialog">
+                            <div class="am-modal-hd">正在登录...</div>
+                            <div class="am-modal-bd">
+                                <span class="am-icon-spinner am-icon-spin"></span>
+                            </div>
+                        </div>
+                    </div>
                     <div id="thirdParty">
                         <div id="line"></div>
                         <span>用合作网站账户直接登录</span>
@@ -178,6 +186,7 @@
             </div>
 
     </div>
+
 
 
 
@@ -210,6 +219,7 @@
                 console.log(res);
 //                console.log(json.stringify(res));
                 if(res.code==10001){
+                    $('#loading').modal(close);
                     layer.open({
                         content:res.msg,
                         yes: function(index, layero){
@@ -219,8 +229,10 @@
                         }
                     });
                 }else if(res.code==10003){    //账号密码错误
+                    $('#loading').modal(close);
                     layer.msg(res.msg);
                 }else if(res.code==10002){    //验证码错误
+                    $('#loading').modal(close);
                     layer.msg(res.msg);
                 }
             }
@@ -230,3 +242,15 @@
 
 </script>
 </html>
+
+
+
+
+<div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="my-modal-loading">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">正在登录...</div>
+        <div class="am-modal-bd">
+            <span class="am-icon-spinner am-icon-spin"></span>
+        </div>
+    </div>
+</div>
