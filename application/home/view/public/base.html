@@ -50,8 +50,8 @@
             <li class="layui-nav-item layui-this"><a href="{:url('home/Index/index')}">首页</a></li>
             <li class="layui-nav-item"><a href="{:url('home/Desti/desti')}">目的地</a></li>
             <li class="layui-nav-item"><a href="">旅途直播</a></li>
-            <li class="layui-nav-item nologin"><a href="{:url('home/login/login')}">登录</a></li>
-            <li class="layui-nav-item nologin"><a href="{:url('home/register/register')}"> 注册</a></li>
+            <li class="layui-nav-item nologin"><a href="{:url('home/User/login')}">登录</a></li>
+            <li class="layui-nav-item nologin"><a href="{:url('home/User/register')}"> 注册</a></li>
             <li class="layui-nav-item loginIn">
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
@@ -82,8 +82,8 @@
                 <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
 
-       <li class="layui-nav-item nologin"><a href="{:url('home/login/login')}">登录</a></li>
-        <li class="layui-nav-item nologin"><a href="{:url('home/register/register')}"> 注册</a></li>
+       <li class="layui-nav-item nologin"><a href="{:url('home/User/login')}">登录</a></li>
+        <li class="layui-nav-item nologin"><a href="{:url('home/User/register')}"> 注册</a></li>
 
     </ul>
 </div>
@@ -233,7 +233,7 @@
         $("#sideBar li").eq(i).addClass("layui-this");
     }
 
-    var checkUrl = "{:url('home/Login/check')}";
+    var checkUrl = "{:url('home/User/check')}";
 
 </script>
 <script src="__JS__/home/public/public.js"></script>

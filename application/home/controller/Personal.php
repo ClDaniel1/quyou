@@ -15,5 +15,10 @@ class Personal extends \think\Controller
         return $this->fetch('personal');
     }
 
+    public function setting()
+    {
+        return $this->fetch('setting');
+    }
+
 }
 

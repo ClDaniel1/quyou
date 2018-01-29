@@ -1,19 +1,28 @@
 <?php
+/**
+ * Created by lqr.
+ * User: lenovo
+ * Date: 2018/1/29
+ * Time: 12:05
+ */
 namespace app\home\controller;
-
-use app\home\model\User;
-use \think\Request;
 use \think\Response;
 use \think\Db;
-use \think\Loader;
 use \think\Session;
 use org\RadomStr;
 
-class Login extends \think\Controller
+class User extends \think\Controller
 {
+    //登录页面显示
     public function login()
     {
         return $this->fetch('login');
+    }
+
+    //注册页面显示
+    public function register()
+    {
+        return $this->fetch('register');
     }
 
     //登录方法
@@ -31,8 +40,8 @@ class Login extends \think\Controller
                 'msg'   =>  config('msg')['login']['codeError'],
                 'data'  =>  []
             ];
-	 	return json($returnMsg);
- 	    }
+            return json($returnMsg);
+        }
         $where=[
             'uphone' =>  $uphone,
             'upwd'   =>   $upwd
@@ -40,8 +49,8 @@ class Login extends \think\Controller
 
 
         //查询数据库
-       $um = new User();
-       $result = $um->login($where);
+        $um = new \app\home\model\User();
+        $result = $um->login($where);
 
         //登录失败
         if(empty($result)){
@@ -110,7 +119,7 @@ class Login extends \think\Controller
                 ];
 
                 //检查登录信息
-                $um = new User();
+                $um = new \app\home\model\User();
                 $res = $um->checkLogin($where);
 
                 if(empty($res)){
@@ -128,6 +137,65 @@ class Login extends \think\Controller
                     $returnMsg["data"]=["userImg" => "/quyou/public/static/".$res["uheadImg"],"userUrl"=>$url];
                     return json($returnMsg);
                 }
+            }
+        }
+    }
+
+    public function doRegister(){
+        $uphone=input('?post.uphone')? input('uphone'):'';
+        $uname=input('?post.uname')? input('uname'):'';
+        $upwd=input('?post.upwd')? input('upwd'):'';
+        $code=input('?post.code')? input('code'):'';
+
+        //验证码验证
+        if(!captcha_check($code)){
+            //验证失败
+            $returnMsg=[
+                'code'  =>  10002,
+                'msg'   =>  config('msg')['login']['codeError'],
+                'data'  =>  []
+            ];
+            return json($returnMsg);
+        }
+
+
+        $data = ['uphone' => $uphone, 'uname' => $uname,
+            'upwd' =>$upwd,
+        ];
+        $where=[
+            'uphone' => $uphone
+        ];
+
+        //账号查重
+        $result=db('t_user') -> where($where) -> find();
+
+        //数据库添加数据
+        if(!empty($result)){
+            //用户重复
+            $returnMsg=[
+                'code' =>  10006,
+                'msg'  =>  config('msg')['login']['haveUser'],
+                'data' =>  []
+            ];
+            return json($returnMsg);
+        }else{
+            $addres=Db::table('t_user')->insert($data);
+            if($addres){
+                //添加成功
+                $returnMsg=[
+                    'code' =>  10005,
+                    'msg'  =>  config('msg')['login']['successReg'],
+                    'data' =>  []
+                ];
+                return json($returnMsg);
+            }else{
+                //添加失败
+                $returnMsg=[
+                    'code' =>  10004,
+                    'msg'  =>  config('msg')['login']['regError'],
+                    'data' =>  []
+                ];
+                return json($returnMsg);
             }
         }
     }
