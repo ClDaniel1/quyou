@@ -14,7 +14,6 @@
     margin: 20px 100px;
     width: 200px;
     height: 300px;
-
 }
 .menuList li{
     display: table;
@@ -47,13 +46,13 @@
     color: #3f3f3f;
     width: 100px;
 }
-#myInfo tr td{
+.myInfo tr td{
     padding: 20px 0;
     width: 150px;
     height: 74px;
 }
-#myInfo{
-    margin: 0 250px;
+.myInfo{
+    margin: 0 220px;
 }
 .setInput{
     padding: 5px 10px;
@@ -64,7 +63,7 @@
     text-align: center;
     background-color: hsla(0,0%,71%,.1);
 }
-#myInfo tr{
+.myInfo tr{
     border-bottom: 1px solid #f0f0f0;
     display: table-row;
     vertical-align: inherit;
@@ -76,7 +75,28 @@
     float: left;
 }
 .setRadio input{
-    margin: 0 20px;
+    margin: 11px 11px;
+}
+.saveInfo{
+    margin:0 120px;
+    width: 100px;
+    border-bottom: none;
+    /*background-color: #F9851D;*/
+}
+.codeImg{
+    float: left;
+    width: 80px;
+    height: 36px;
+    border: 1px solid #b2b2b2;
+    text-align: center;
+    background: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#f2f2f2));
+    border-radius: 4px;
+    line-height: 34px;
+    margin: 0 10px;
+}
+.codeImg p{
+    color: #8e8e8e;
+    font-size: 14px;
 }
 
 
@@ -94,18 +114,24 @@
 <div id="menuList">
     <div class="layui-tab layui-tab-brief" lay-filter="test1">
         <ul class="layui-tab-title menuList">
-            <li class="layui-this " lay-id="myInfo" >我的信息</li>
+            <li class="layui-this" lay-id="1" >我的信息</li>
             <li lay-id="2">我的头像</li>
-            <li lay-id="3">账号安全</li>
+            <li lay-id="3">修改密码</li>
             <li lay-id="4">我的钱包</li>
             <li lay-id="5">绑定设置</li>
         </ul>
         <div class="layui-tab-content menuCon">
             <div class="layui-tab-item layui-show">
                 <div class="title">
-                    <p>我的信息</p>
+                    <span class="layui-breadcrumb">
+                        <a href="{:url('home/Index/index')}">首页</a>
+                        <a href="{:url('home/Personal/personal')}">个人中心</a>
+                        <a href="">设置中心</a>
+                        <a><cite>我的信息</cite></a>
+                    </span>
+                    <!--<p>我的信息</p>-->
                 </div>
-                <table id="myInfo">
+                <table class="myInfo">
                     <tr>
                         <td class="setTitle">昵称</td>
                         <td><input class="am-form-field am-round setInput" type="text" placeholder="请输入昵称"></td>
@@ -117,9 +143,9 @@
                     <tr>
                         <td class="setTitle">性别</td>
                         <td class="setRadio">
-                            <input type="radio" value="1">男
+                            <input type="radio" value="1" name="sex" checked="checked">男
 
-                            <input style=""  type="radio" value="2">女
+                            <input style=""  type="radio" value="2" name="sex">女
 
                         </td>
                     </tr>
@@ -128,22 +154,28 @@
                         <td><input class="am-form-field am-round setInput" type="text" placeholder="请输入您的年龄"></td>
                     </tr>
                     <tr>
-                        <td><input type="button" style="margin:0 200px;width: 100px" class="layui-btn layui-btn-radius saveInfo" value="保存"></td>
+                        <td colspan="2">
+                            <input type="button" class="layui-btn layui-btn-radius saveInfo" value="保存">
+                        </td>
                     </tr>
-
-
-
                 </table>
-
-
-
-
-
-
             </div>
             <div class="layui-tab-item">
                 <div class="title">
-                    <p>我的头像</p>
+                    <span class="layui-breadcrumb">
+                        <a href="{:url('home/Index/index')}">首页</a>
+                        <a href="{:url('home/Personal/personal')}">个人中心</a>
+                        <a href="">设置中心</a>
+                        <a><cite>我的头像</cite></a>
+                    </span>
+                    <!--<p>我的头像</p>-->
+                </div>
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn layui-btn-radius" id="test1">上传图片</button>
+                    <div class="layui-upload-list">
+                        <img class="layui-upload-img" id="demo1">
+                        <p id="demoText"></p>
+                    </div>
                 </div>
 
 
@@ -152,19 +184,75 @@
             </div>
             <div class="layui-tab-item">
                 <div class="title">
-                    <p>账号安全</p>
+                    <span class="layui-breadcrumb">
+                        <a href="{:url('home/Index/index')}">首页</a>
+                        <a href="{:url('home/Personal/personal')}">个人中心</a>
+                        <a href="">设置中心</a>
+                        <a><cite>修改登录密码</cite></a>
+                    </span>
+                    <!--<p>修改登录密码</p>-->
                 </div>
-
-
+                <table class="myInfo">
+                    <tr>
+                        <td class="setTitle">新密码</td>
+                        <td><input class="am-form-field am-round setInput" type="password" placeholder="请输入新密码"></td>
+                    </tr>
+                    <tr>
+                        <td class="setTitle">确认密码</td>
+                        <td><input class="am-form-field am-round setInput" type="password" placeholder="请确认密码"></td>
+                    </tr>
+                    <tr>
+                        <td class="setTitle">验证码</td>
+                        <td><input class="am-form-field am-round setInput" type="password" placeholder="短信验证码"></td>
+                        <td class="setTitle"><button class="codeImg" type="button" class="am-btn am-btn-default"><p>获取验证码</p></button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="button" class="layui-btn layui-btn-radius saveInfo" value="确认修改">
+                        </td>
+                    </tr>
+                </table>
             </div>
             <div class="layui-tab-item">
                 <div class="title">
-                    <p>我的钱包</p>
+                    <span class="layui-breadcrumb">
+                        <a href="{:url('home/Index/index')}">首页</a>
+                        <a href="{:url('home/Personal/personal')}">个人中心</a>
+                        <a href="">设置中心</a>
+                        <a><cite>我的钱包</cite></a>
+                    </span>
+                    <!--<p>我的钱包</p>-->
                 </div>
+                <table class="myInfo">
+                    <tr>
+                        <td class="setTitle">设置支付密码</td>
+                        <td><input class="am-form-field am-round setInput" type="password" placeholder="请输入新密码"></td>
+                    </tr>
+                    <tr>
+                        <td class="setTitle">确认支付密码</td>
+                        <td><input class="am-form-field am-round setInput" type="password" placeholder="请确认密码"></td>
+                    </tr>
+                    <tr>
+                        <td class="setTitle">验证码</td>
+                        <td><input class="am-form-field am-round setInput" type="password" placeholder="短信验证码"></td>
+                        <td class="setTitle"><button class="codeImg" type="button" class="am-btn am-btn-default"><p>获取验证码</p></button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="button" class="layui-btn layui-btn-radius saveInfo" value="确认修改">
+                        </td>
+                    </tr>
+                </table>
             </div>
             <div class="layui-tab-item">
                 <div class="title">
-                    <p>绑定设置</p>
+                    <span class="layui-breadcrumb">
+                        <a href="{:url('home/Index/index')}">首页</a>
+                        <a href="{:url('home/Personal/personal')}">个人中心</a>
+                        <a href="">设置中心</a>
+                        <a><cite>绑定设置</cite></a>
+                    </span>
+                    <!--<p>绑定设置</p>-->
                 </div>
 
             </div>
@@ -188,6 +276,14 @@
     //JavaScript代码区域
     layui.use('element', function(){
         var element = layui.element;
+        //获取hash来切换选项卡，假设当前地址的hash为lay-id对应的值
+        var layid = location.hash.replace(/^#test1=/, '');
+        element.tabChange('test1', layid); //假设当前地址为：http://a.com#test1=222，那么选项卡会自动切换到“发送消息”这一项
+
+        //监听Tab切换，以改变地址hash值
+        element.on('tab(test1)', function(){
+            location.hash = 'set='+ this.getAttribute('lay-id');
+        });
 
     });
 </script>
