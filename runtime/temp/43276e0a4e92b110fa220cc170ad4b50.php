@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517108336;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517043587;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517222305;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517152143;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,17 +30,16 @@
         .navBg{
             background: #F9851D ;
         }
-<<<<<<< HEAD
-        .body{
+        .body {
             background-color: #efefef;
-=======
+        }
         footer{
             margin-top:25px;
->>>>>>> e79f6f254ff1825636c527baa2f2ad3069c1603d
         }
     </style>
 </head>
 <body class="body">
+
 
 
 
@@ -59,12 +58,14 @@
             <li class="layui-nav-item layui-this"><a href="<?php echo url('home/Index/index'); ?>">首页</a></li>
             <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
             <li class="layui-nav-item"><a href="">旅途直播</a></li>
-            <li class="layui-nav-item">
+            <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
+            <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
+            <li class="layui-nav-item loginIn">
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
                     <dd><a href="">我的消息</a></dd>
-                    <dd><a href="">个人中心</a></dd>
-                    <dd><a href="">退出登录</a></dd>
+                    <dd><a href="" class="toCenter">个人中心</a></dd>
+                    <dd  onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
                 </dl>
             </li>
             <li style="height: 30px; text-align: center"></li>
@@ -80,16 +81,16 @@
         <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
         <li class="layui-nav-item"><a href="">旅途直播</a></li>
     </ul>
-    <ul class="layui-nav navBg" lay-filter="" style="float: right">
-        <li class="layui-nav-item">
-            <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
+    <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
+        <li class="layui-nav-item loginIn">
+            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
             <dl class="layui-nav-child">
                 <dd><a href="">我的消息</a></dd>
-                <dd><a href="javascript:;">退出登录</a></dd>
+                <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
         </li>
-       <!-- <li class="layui-nav-item"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>-->
+       <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
+        <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
     </ul>
 </div>
 
@@ -105,7 +106,7 @@
             </div>
             <div class="layui-row layui-hide-xs">
                 <ul class="layui-nav catalog">
-                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>概况</a></li>
+                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>首页</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst2"></i>玩法路线</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
                     <li class="layui-nav-item"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=1000"><i class="icon1 iconPst4"></i>酒店</a></li>
@@ -232,6 +233,24 @@
                     </ul>
                 </li>
             </ul>
+        </div>
+    </div>
+</div>
+<!--地区百科信息-->
+<div id="regionBk">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-sm5 layui-col-xs6">
+                <div class="msgDiv">
+                    <span>攻略：</span>
+                    <p class=" ">
+                        <?php echo $bkMsg['intro']; ?>
+                    </p>
+                </div>
+            </div>
+            <div class="layui-col-sm5 regionImg layui-col-sm-offset2 layui-col-xs-offset1 layui-col-xs5 ">
+                <?php echo $bkMsg['img']; ?>
+            </div>
         </div>
     </div>
 </div>
@@ -412,7 +431,6 @@
 
 
 
-<<<<<<< HEAD
 
 
 <footer style="background: #3c3c3c">
@@ -460,8 +478,6 @@
         </div>
     </div>
 </footer>
-=======
->>>>>>> af1153db015604462702e242cb521fd40c46e4e9
 </body>
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
@@ -491,17 +507,20 @@
         $("#sideBar li").eq(i).addClass("layui-this");
     }
 
+    var checkUrl = "<?php echo url('home/Login/check'); ?>";
+
 </script>
+<script src="__JS__/home/public/public.js"></script>
 
 <!--JS、引用 /示例如下-->
 <!--引用百度地图api文件-->
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=TRYU1lcQ2YkgXRzerqXODMOKkAGrETrL"></script>
 <script>
+
     nav(2);
     layui.use('element', function(){
         var element = layui.element;
     });
-
 //   到时候需要封装起来
     var map = new BMap.Map("map");//创建地图实例
     map.enableScrollWheelZoom(true);//地图的鼠标滚轮缩放默认是关闭的，需要配置开启。

@@ -47,4 +47,15 @@ class Region extends Model
         $arr['count']=$count;
         return $arr;
     }
+    public function routeCount($id)//根据地区id获取对应的路线总条数
+    {
+        $count=db('t_route')->where('desId',$id)->count();
+        return $count;
+    }
+    public function routeMsg($id)//根据地区id获取对应的路线信息
+    {
+        $routeNew=db('t_route')->alias('a')->join('t_routecon b','a.routeId=b.routeId')->join('t_scenic c','c.scenicId=b.scenicId')->where('a.desId',$id)->field('a.title,a.chose,b.routeId,b.num,c.scenicName')->select();
+//        $routeMsg=db($routeNew.'d')->fetchSql(true)->select();
+        return $routeNew;
+    }
 }
