@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517134233;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517188387;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517134233;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517188492;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -176,24 +176,15 @@
     <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
         <li class="layui-nav-item loginIn">
             <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
-<<<<<<< HEAD
-=======
 
->>>>>>> 4cb417c86d8b2eca4a5697e389a876e34bc0db39
             <dl class="layui-nav-child">
                 <dd><a href="">我的消息</a></dd>
                 <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
-<<<<<<< HEAD
-        </li>
-       <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
-        <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
-=======
 
        <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
         <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
 
->>>>>>> 4cb417c86d8b2eca4a5697e389a876e34bc0db39
     </ul>
 </div>
 
