@@ -59,7 +59,7 @@ function checkLogin(errCallback,succCallback,noLCallback) {
 function loginOut() {
     layer.confirm('确定退出登录?', {icon: 3, title:'退出登录'}, function(index){
         //do something
-        clearCookie("qy_uphone");
+        clearCookie("qy_uid");
         location.reload();
         layer.close(index);
     });

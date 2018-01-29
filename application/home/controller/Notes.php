@@ -15,9 +15,10 @@ class Notes extends \think\Controller
         $um = new User();
         $res = $um->checkLogin();
         if($res){
-            $uphone = cookie("uphone");
-
-            return $this->fetch("note");
+            $id = cookie("uid");
+            $nm = new \app\home\model\Notes();
+            $id = $nm->creatNote($id);
+            $this->redirect('home/Notes/edit',["id"=>$id]);
         }else{
             $this->error('很抱歉，请登录后再试');
         }
@@ -101,4 +102,10 @@ class Notes extends \think\Controller
 
     }
 
+    public function edit(){
+        $id = input("param.id");
+        $nm = new \app\home\model\Notes();
+        $nm->getNoteCont($id);
+        return $this->fetch("note");
+    }
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517197614;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517206921;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517211698;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517206921;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,6 +111,9 @@
         .am-list-main div{
             font-size: 14px;
         }
+
+    }
+    @media (min-width: 768px) {
 
     }
 </style>
