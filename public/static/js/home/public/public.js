@@ -27,7 +27,7 @@ $(function () {
 function loginOut() {
     layer.confirm('确定退出登录?', {icon: 3, title:'退出登录'}, function(index){
         //do something
-        clearCookie("quyou_uphone");
+        clearCookie("qy_uphone");
         location.reload();
         layer.close(index);
     });

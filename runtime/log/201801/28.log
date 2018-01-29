@@ -42021,3 +42021,3673 @@
 >>>>>>> 2bbcd460caafcc2ea81eb7d0e3cc66671ccb046f
 
 ---------------------------------------------------------------
+[ 2018-01-28T23:02:02+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/
+[ log ] 127.0.0.1/quyou/public/ [运行时间：0.051135s][吞吐率：19.56req/s] [内存消耗：2,254.62kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\wamp64\www\quyou\application\home\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:02:03+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.038178s][吞吐率：26.19req/s] [内存消耗：2,232.60kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:02:06+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.040455s][吞吐率：24.72req/s] [内存消耗：2,251.98kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:02:06+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.031157s][吞吐率：32.10req/s] [内存消耗：2,232.63kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:05:39+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.076049s][吞吐率：13.15req/s] [内存消耗：2,467.72kb] [文件加载：48]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:05:39+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.035097s][吞吐率：28.49req/s] [内存消耗：2,232.63kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:05:42+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.034207s][吞吐率：29.23req/s] [内存消耗：2,252.05kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:05:42+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.031501s][吞吐率：31.74req/s] [内存消耗：2,232.63kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:06:42+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.084871s][吞吐率：11.78req/s] [内存消耗：2,468.22kb] [文件加载：48]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:06:42+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.052570s][吞吐率：19.02req/s] [内存消耗：2,252.05kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:06:43+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.042610s][吞吐率：23.47req/s] [内存消耗：2,232.63kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:13:50+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.065623s][吞吐率：15.24req/s] [内存消耗：2,469.22kb] [文件加载：48]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:13:50+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.033299s][吞吐率：30.03req/s] [内存消耗：2,232.63kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:21:55+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.066361s][吞吐率：15.07req/s] [内存消耗：2,486.72kb] [文件加载：48]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:21:56+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.032770s][吞吐率：30.52req/s] [内存消耗：2,233.27kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:22:24+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.048628s][吞吐率：20.56req/s] [内存消耗：2,486.72kb] [文件加载：48]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:22:25+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.033543s][吞吐率：29.81req/s] [内存消耗：2,233.27kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:22:28+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B790%2C-110%2C0%2C790%2C300%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B790%2C-110%2C0%2C790%2C300%5D [运行时间：0.031611s][吞吐率：31.63req/s] [内存消耗：2,182.44kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[790,-110,0,790,300]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:22:28+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.042656s][吞吐率：23.44req/s] [内存消耗：2,218.59kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '16760',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryBUQFe8EMQFb3Ymsj',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:22:31+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.037733s][吞吐率：26.50req/s] [内存消耗：2,269.55kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:22:32+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.026952s][吞吐率：37.10req/s] [内存消耗：2,233.27kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:22:33+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.028453s][吞吐率：35.15req/s] [内存消耗：2,269.55kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:22:33+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.026877s][吞吐率：37.21req/s] [内存消耗：2,233.27kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:22:44+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B72%2C-828%2C-228%2C72%2C72%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B72%2C-828%2C-228%2C72%2C72%5D [运行时间：0.036213s][吞吐率：27.61req/s] [内存消耗：2,182.44kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[72,-828,-228,72,72]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:22:44+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.032897s][吞吐率：30.40req/s] [内存消耗：2,218.59kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '3090',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarydlaAB4GOFaFXyQvp',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:23:33+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.065986s][吞吐率：15.15req/s] [内存消耗：2,486.72kb] [文件加载：48]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:23:34+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.052586s][吞吐率：19.02req/s] [内存消耗：2,233.27kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:23:37+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B553%2C-77%2C0%2C553%2C210%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B553%2C-77%2C0%2C553%2C210%5D [运行时间：0.039657s][吞吐率：25.22req/s] [内存消耗：2,182.44kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[553,-77,0,553,210]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:23:38+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.049605s][吞吐率：20.16req/s] [内存消耗：2,218.59kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '16760',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary2sAo5Goo5tTHAVIR',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:23:56+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.087680s][吞吐率：11.41req/s] [内存消耗：2,486.72kb] [文件加载：48]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:23:57+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.045653s][吞吐率：21.90req/s] [内存消耗：2,233.27kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:24:00+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B553%2C-77%2C0%2C553%2C210%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B553%2C-77%2C0%2C553%2C210%5D [运行时间：0.036763s][吞吐率：27.20req/s] [内存消耗：2,182.44kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[553,-77,0,553,210]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:24:00+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.065788s][吞吐率：15.20req/s] [内存消耗：2,218.59kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '16760',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarypqxRBFfUDA7gLkku',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:24:07+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B553%2C-276.5%2C0%2C553%2C276.5%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B553%2C-276.5%2C0%2C553%2C276.5%5D [运行时间：0.031545s][吞吐率：31.70req/s] [内存消耗：2,182.45kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[553,-276.5,0,553,276.5]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:24:07+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.043942s][吞吐率：22.76req/s] [内存消耗：2,218.59kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '13149',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryhiTA1Er0LjBGotaY',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:24:19+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.050937s][吞吐率：19.63req/s] [内存消耗：2,490.72kb] [文件加载：48]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:24:19+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.049085s][吞吐率：20.37req/s] [内存消耗：2,233.27kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:24:22+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B72%2C-828%2C-228%2C72%2C72%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B72%2C-828%2C-228%2C72%2C72%5D [运行时间：0.038083s][吞吐率：26.26req/s] [内存消耗：2,182.44kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[72,-828,-228,72,72]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:24:22+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.036357s][吞吐率：27.50req/s] [内存消耗：2,218.59kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '3090',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryB5DRxNwLEB8XsGM8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:28:49+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.087763s][吞吐率：11.39req/s] [内存消耗：2,496.13kb] [文件加载：48]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:28:49+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.047375s][吞吐率：21.11req/s] [内存消耗：2,233.38kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:29:05+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1242%2C993%2C0%2C1242%2C83%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1242%2C993%2C0%2C1242%2C83%5D [运行时间：0.041881s][吞吐率：23.88req/s] [内存消耗：2,187.84kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1242,993,0,1242,83]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:29:06+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.104773s][吞吐率：9.54req/s] [内存消耗：2,227.54kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '615926',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryV9ytmrymcasgZXBT',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:29:22+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.065057s][吞吐率：15.37req/s] [内存消耗：2,492.13kb] [文件加载：48]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:29:23+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.046476s][吞吐率：21.52req/s] [内存消耗：2,233.38kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:29:29+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C153%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C153%5D [运行时间：0.040037s][吞吐率：24.98req/s] [内存消耗：2,187.84kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1242,0,0,1242,153]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:29:30+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.362846s][吞吐率：2.76req/s] [内存消耗：2,227.54kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '1743750',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryMxOjyYK1TAoIq51B',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:29:37+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C414%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C414%5D [运行时间：0.033840s][吞吐率：29.55req/s] [内存消耗：2,187.84kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1242,0,0,1242,414]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:29:37+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.101352s][吞吐率：9.87req/s] [内存消耗：2,227.54kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '510469',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarypcwmdykjnOhlf02N',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:29:43+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.044011s][吞吐率：22.72req/s] [内存消耗：2,496.13kb] [文件加载：48]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:29:43+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.052945s][吞吐率：18.89req/s] [内存消耗：2,233.38kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:29:46+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C414%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C414%5D [运行时间：0.042516s][吞吐率：23.52req/s] [内存消耗：2,187.84kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1242,0,0,1242,414]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:29:46+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.088072s][吞吐率：11.35req/s] [内存消耗：2,227.54kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '510469',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryzYxQH39fOzaGm648',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:30:31+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.053752s][吞吐率：18.60req/s] [内存消耗：2,275.05kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:30:32+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.048939s][吞吐率：20.43req/s] [内存消耗：2,233.38kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:30:35+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C414%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C414%5D [运行时间：0.038514s][吞吐率：25.96req/s] [内存消耗：2,187.93kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1242,0,0,1242,414]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:30:35+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.099906s][吞吐率：10.01req/s] [内存消耗：2,227.63kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '615926',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary6SHwv2Ox3OmZJdQ1',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:31:03+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C414%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C414%5D [运行时间：0.044786s][吞吐率：22.33req/s] [内存消耗：2,188.61kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1242,0,0,1242,414]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:31:04+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.129415s][吞吐率：7.73req/s] [内存消耗：2,228.30kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '615926',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryl4KW52TOXb5v51z7',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:31:44+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C414%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C414%5D [运行时间：0.048091s][吞吐率：20.79req/s] [内存消耗：2,188.62kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1242,0,0,1242,414]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:31:44+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.201545s][吞吐率：4.96req/s] [内存消耗：2,228.31kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '615926',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryX1bXovHEhvf4WmV6',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:31:55+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C414%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C414%5D [运行时间：0.044594s][吞吐率：22.42req/s] [内存消耗：1,791.93kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1242,0,0,1242,414]',
+)
+[ info ] [ LOG ] INIT File
+[ error ] [0]语法解析错误: syntax error, unexpected ')'[D:\wamp64\www\quyou\application\home\controller\Notes.php:71]
+
+---------------------------------------------------------------
+[ 2018-01-28T23:31:55+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.149047s][吞吐率：6.71req/s] [内存消耗：1,791.71kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '615926',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryiYgwV2Ar4JWt72w0',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [0]语法解析错误: syntax error, unexpected ')'[D:\wamp64\www\quyou\application\home\controller\Notes.php:71]
+
+---------------------------------------------------------------
+[ 2018-01-28T23:32:03+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C414%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1242%2C0%2C0%2C1242%2C414%5D [运行时间：0.045004s][吞吐率：22.22req/s] [内存消耗：2,188.53kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1242,0,0,1242,414]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:32:04+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.221577s][吞吐率：4.51req/s] [内存消耗：2,228.23kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '615926',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryQUijy6QFC3YBzO0l',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:32:15+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1242%2C466%2C0%2C1242%2C258.6666666666667%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1242%2C466%2C0%2C1242%2C258.6666666666667%5D [运行时间：0.048605s][吞吐率：20.57req/s] [内存消耗：2,188.56kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1242,466,0,1242,258.6666666666667]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:32:15+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.284758s][吞吐率：3.51req/s] [内存消耗：2,228.24kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '615926',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryKBiD7vxBSDKhhXkr',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:33:30+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.052323s][吞吐率：19.11req/s] [内存消耗：2,274.97kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:33:31+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.033724s][吞吐率：29.65req/s] [内存消耗：2,233.38kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:33:37+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1457%2C0%2C157%2C1457%2C642.6666666666667%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1457%2C0%2C157%2C1457%2C642.6666666666667%5D [运行时间：0.043040s][吞吐率：23.23req/s] [内存消耗：2,187.88kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1457,0,157,1457,642.6666666666667]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:33:37+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.102848s][吞吐率：9.72req/s] [内存消耗：2,227.56kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '873962',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryeJspABAyBuIupBSA',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:33:40+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.048528s][吞吐率：20.61req/s] [内存消耗：2,274.97kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:33:40+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.038318s][吞吐率：26.10req/s] [内存消耗：2,233.38kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:33:44+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1457%2C0%2C0%2C1457%2C485.6666666666667%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1457%2C0%2C0%2C1457%2C485.6666666666667%5D [运行时间：0.026528s][吞吐率：37.70req/s] [内存消耗：2,187.88kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1457,0,0,1457,485.6666666666667]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:33:44+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.087697s][吞吐率：11.40req/s] [内存消耗：2,227.56kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '805697',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarydkOFDWOzdIUs5FgK',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:34:00+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.034994s][吞吐率：28.58req/s] [内存消耗：2,274.97kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:34:00+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.032772s][吞吐率：30.51req/s] [内存消耗：2,233.38kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:34:04+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1619%2C0%2C0%2C1619%2C539.6666666666666%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1619%2C0%2C0%2C1619%2C539.6666666666666%5D [运行时间：0.028955s][吞吐率：34.54req/s] [内存消耗：2,187.88kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1619,0,0,1619,539.6666666666666]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:34:04+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.082523s][吞吐率：12.12req/s] [内存消耗：2,227.56kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '510469',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryiS1piIXwtfYsGnBI',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:34:24+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.034736s][吞吐率：28.79req/s] [内存消耗：2,275.05kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:34:24+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.025368s][吞吐率：39.42req/s] [内存消耗：2,233.38kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:34:27+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1619%2C0%2C0%2C1619%2C539.6666666666666%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1619%2C0%2C0%2C1619%2C539.6666666666666%5D [运行时间：0.026997s][吞吐率：37.04req/s] [内存消耗：2,187.97kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1619,0,0,1619,539.6666666666666]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:34:28+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.224651s][吞吐率：4.45req/s] [内存消耗：2,227.65kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '690428',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryAhBReULIp7ABQyp6',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:34:28+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/undefined?0.8298185951504209
+[ log ] 127.0.0.1/quyou/public/static/undefined?0.8298185951504209 [运行时间：0.061478s][吞吐率：16.27req/s] [内存消耗：1,786.87kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'undefined',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  '0_8298185951504209' => '',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:34:42+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1619%2C0%2C0%2C1619%2C539.6666666666666%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1619%2C0%2C0%2C1619%2C539.6666666666666%5D [运行时间：0.033129s][吞吐率：30.19req/s] [内存消耗：2,187.97kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1619,0,0,1619,539.6666666666666]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:34:42+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.230002s][吞吐率：4.35req/s] [内存消耗：2,227.65kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '873962',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryAHY5XDlDpqW6YmBH',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:34:42+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/undefined?0.22147604501367146
+[ log ] 127.0.0.1/quyou/public/static/undefined?0.22147604501367146 [运行时间：0.060695s][吞吐率：16.48req/s] [内存消耗：1,786.87kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'undefined',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  '0_22147604501367146' => '',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:01+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/login.html
+[ log ] 127.0.0.1/quyou/public/home/login/login.html [运行时间：0.035423s][吞吐率：28.23req/s] [内存消耗：2,268.21kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->login[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:01+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/captcha.html
+[ log ] 127.0.0.1/quyou/public/captcha.html [运行时间：0.046051s][吞吐率：21.72req/s] [内存消耗：1,821.67kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'id' => '',
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\wamp64\www\quyou\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:06+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/login/dologin.html
+[ log ] 127.0.0.1/quyou/public/home/login/dologin.html [运行时间：0.348669s][吞吐率：2.87req/s] [内存消耗：3,325.55kb] [文件加载：56]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '33',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2',
+)
+[ info ] [ PARAM ] array (
+  'uphone' => '1001',
+  'upwd' => '123123',
+  'code' => '8faq',
+)
+[ info ] [ RUN ] app\home\controller\Login->doLogin[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.071060s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.048300s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uphone` = 1001  AND `upwd` = '123123' LIMIT 1 [ RunTime:0.050347s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.070027s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `t_user`  SET `loginKey`='5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8'  WHERE  `uphone` = 1001 [ RunTime:0.048304s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:07+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/index/index.html
+[ log ] 127.0.0.1/quyou/public/home/index/index.html [运行时间：0.040218s][吞吐率：24.86req/s] [内存消耗：2,256.19kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/login/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\wamp64\www\quyou\application\home\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:08+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.210277s][吞吐率：4.76req/s] [内存消耗：3,288.38kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.069461s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.047669s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uphone` = 1001  AND `loginKey` = '5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8' LIMIT 1 [ RunTime:0.043731s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:10+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.034534s][吞吐率：28.96req/s] [内存消耗：2,275.19kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:11+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.238025s][吞吐率：4.20req/s] [内存消耗：3,288.38kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.072124s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.067915s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uphone` = 1001  AND `loginKey` = '5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8' LIMIT 1 [ RunTime:0.049944s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:14+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B1032%2C0%2C0%2C1032%2C344%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B1032%2C0%2C0%2C1032%2C344%5D [运行时间：0.033524s][吞吐率：29.83req/s] [内存消耗：2,188.13kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[1032,0,0,1032,344]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:14+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.251551s][吞吐率：3.98req/s] [内存消耗：2,227.82kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '510469',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryzUp63rx0WVDjvy7S',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:14+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/undefined?0.0418322939452862
+[ log ] 127.0.0.1/quyou/public/static/undefined?0.0418322939452862 [运行时间：0.060918s][吞吐率：16.42req/s] [内存消耗：1,787.05kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'undefined',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+  '0_0418322939452862' => '',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:42+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.079177s][吞吐率：12.63req/s] [内存消耗：2,496.43kb] [文件加载：48]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:43+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.234704s][吞吐率：4.26req/s] [内存消耗：3,288.38kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.073589s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.052288s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uphone` = 1001  AND `loginKey` = '5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8' LIMIT 1 [ RunTime:0.052343s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:46+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B880%2C0%2C0%2C880%2C293.3333333333333%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B880%2C0%2C0%2C880%2C293.3333333333333%5D [运行时间：0.029319s][吞吐率：34.11req/s] [内存消耗：2,188.16kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[880,0,0,880,293.3333333333333]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:46+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.224534s][吞吐率：4.45req/s] [内存消耗：2,227.83kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '615926',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryCIdggzzFWWQTlLYB',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:46+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/user/1001temp.jpg?0.8935520227985767
+[ log ] 127.0.0.1/quyou/public/static/images/user/1001temp.jpg?0.8935520227985767 [运行时间：0.048074s][吞吐率：20.80req/s] [内存消耗：1,787.10kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'user',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+  '0_8935520227985767' => '',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:54+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B762%2C0%2C0%2C762%2C254%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B762%2C0%2C0%2C762%2C254%5D [运行时间：0.033691s][吞吐率：29.68req/s] [内存消耗：2,188.13kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[762,0,0,762,254]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:55+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.227732s][吞吐率：4.39req/s] [内存消耗：2,227.82kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '615926',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryPOB8A6ytARTUSPXJ',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:35:55+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/user/1001temp.jpg?0.1780703091259459
+[ log ] 127.0.0.1/quyou/public/static/images/user/1001temp.jpg?0.1780703091259459 [运行时间：0.044591s][吞吐率：22.43req/s] [内存消耗：1,787.10kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'user',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+  '0_1780703091259459' => '',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:36:15+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/notes.html
+[ log ] 127.0.0.1/quyou/public/home/notes/notes.html [运行时间：0.034117s][吞吐率：29.31req/s] [内存消耗：2,275.27kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'notes',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->notes[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\notes\note.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:36:16+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/login/check.html
+[ log ] 127.0.0.1/quyou/public/home/login/check.html [运行时间：0.233507s][吞吐率：4.28req/s] [内存消耗：3,288.38kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->check[ D:\wamp64\www\quyou\application\home\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.079853s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.049632s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uphone` = 1001  AND `loginKey` = '5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8' LIMIT 1 [ RunTime:0.054082s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T23:36:19+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/notes/setup.html?size=%5B762%2C0%2C0%2C762%2C254%5D
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html?size=%5B762%2C0%2C0%2C762%2C254%5D [运行时间：0.032289s][吞吐率：30.97req/s] [内存消耗：2,188.13kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+  'size' => '[762,0,0,762,254]',
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T23:36:19+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/notes/setup.html
+[ log ] 127.0.0.1/quyou/public/home/notes/setup.html [运行时间：0.233711s][吞吐率：4.28req/s] [内存消耗：2,227.82kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'notes',
+    2 => 'setup',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '615926',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryXfvycIcQO7xafNas',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/notes.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=73v118dmvaau9s22mi53tq2on2; quyou_uphone=1001; quyou_ukey=5vCsCIO4GlvB35dzMm5jhpHktk6RZQH8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Notes->setUp[ D:\wamp64\www\quyou\application\home\controller\Notes.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

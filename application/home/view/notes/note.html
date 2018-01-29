@@ -123,21 +123,44 @@
             //预读本地文件示例，不支持ie8
             obj.preview(function(index, file, result){
                 $('#imgShow').attr('src', result); //图片链接（base64）
-                $("#imgView").fadeIn(300,function () {
 
-                    $('#imgShow').Jcrop({
-                        allowSelect:false,
-                        aspectRatio:3/1
-                    }, function() {
-                        jcropApi = this;
-                    });
-                    var size = jcropApi.getBounds();
+                setTimeout(function () {
+                    var wid = document.getElementById('imgShow').naturalWidth;
+                    var hei = document.getElementById('imgShow').naturalHeight;
+                    if(wid<1350 || hei < 480){
+                        layer.open({
+                            content:"请选择宽度大于1350，并且高度大于480的图片",
+                            yes: function(index, layero){
+                                //do something
+                                layer.close(index); //如果设定了yes回调，需进行手工关闭
+                            }
+                        });
+                    }
+                    else {
+                        $("#imgView").fadeIn(300,function () {
 
-                    jcropApi.setOptions({
-                        setSelect:[0,0,size[0],size[0]/3],
-                        boxWidth:"1000"
-                    })
-                });
+                            $('#imgShow').Jcrop({
+                                allowSelect:false,
+                                aspectRatio:3/1
+                            }, function() {
+                                jcropApi = this;
+                            });
+                            var size = jcropApi.getBounds();
+
+                            var scale = wid/size[0];
+
+                            var x = 900/scale;
+                            var y = 300/scale;
+
+                            jcropApi.setOptions({
+                                setSelect:[0,0,size[0],size[0]/3],
+                                minSize:[x,y]
+                            })
+                        });
+                    }
+
+                },300)
+
             });
         }
         ,before:function () {
@@ -152,15 +175,27 @@
             })
         }
         ,done: function(res){
-            if(res.code == 5001){
+            if(res["code"]== 50001){
                 $("#aspectration div").empty();
-                $img = "<img src='/quyou/public/static/"+res.data.src+"?"+Math.random()+"'/>";
+                $img = "<img src='/quyou/public/static/"+res["data"]["url"]+"?"+Math.random()+"'/>";
                 $("#aspectration div").append($img);
 
                 layer.msg("上传成功");
                 $("#imgView").fadeOut(300,function () {
                     jcropApi.destroy();
                 })
+            }
+            else{
+                layer.open({
+                    content:res["msg"],
+                    yes: function(index, layero){
+                        //do something
+                        $("#imgView").fadeOut(300,function () {
+                            jcropApi.destroy();
+                        })
+                        layer.close(index); //如果设定了yes回调，需进行手工关闭
+                    }
+                });
             }
         }
     });
