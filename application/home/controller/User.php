@@ -27,7 +27,7 @@ class User extends \think\Controller
 
     //登录方法
     public function doLogin(){
-        $uid=input('?post.uid')? input('uid'):'';
+        $uphone=input('?post.uphone')? input('uphone'):'';
         $upwd=input('?post.upwd')? input('upwd'):'';
         $code=input('?post.code')? input('code'):'';
 
@@ -43,7 +43,7 @@ class User extends \think\Controller
             return json($returnMsg);
         }
         $where=[
-            'uid' =>  $uid,
+            'uphone' =>  $uphone,
             'upwd'   =>   $upwd
         ];
 
@@ -70,11 +70,11 @@ class User extends \think\Controller
         $loginKey = $radom->get(32);
 
         //登录key存入数据库
-        $um->setKey($result['uid'],$loginKey);
+        $um->setKey($result['uphone'],$loginKey);
 
         // 设置
-        cookie('uid',$result['uid']);
-        cookie('ukey',$loginKey);
+        cookie('uid',$result['uid'], 3600);
+        cookie('ukey',$loginKey, 3600);
 
 
 
@@ -184,7 +184,7 @@ class User extends \think\Controller
     }
 
     public function doRegister(){
-        $uid=input('?post.uid')? input('uid'):'';
+        $uphone=input('?post.uphone')? input('uphone'):'';
         $uname=input('?post.uname')? input('uname'):'';
         $upwd=input('?post.upwd')? input('upwd'):'';
         $code=input('?post.code')? input('code'):'';
@@ -201,11 +201,11 @@ class User extends \think\Controller
         }
 
 
-        $data = ['uid' => $uid, 'uname' => $uname,
+        $data = ['uphone' => $uphone, 'uname' => $uname,
             'upwd' =>$upwd,
         ];
         $where=[
-            'uid' => $uid
+            'uphone' => $uphone
         ];
 
         //账号查重
