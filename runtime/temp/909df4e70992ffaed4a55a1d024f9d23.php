@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517134233;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517188027;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517134233;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517188387;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -173,28 +173,27 @@
         <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
         <li class="layui-nav-item"><a href="">旅途直播</a></li>
     </ul>
-<<<<<<< HEAD
-    <ul class="layui-nav navBg" lay-filter="" style="float: right">
-        <!--<li class="layui-nav-item">
-            <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
-=======
     <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
         <li class="layui-nav-item loginIn">
             <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
->>>>>>> f5f0e81dfc640f2741dad867b6339c50058b78ce
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4cb417c86d8b2eca4a5697e389a876e34bc0db39
             <dl class="layui-nav-child">
                 <dd><a href="">我的消息</a></dd>
                 <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
 <<<<<<< HEAD
-        </li>-->
-       <li class="layui-nav-item"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
-=======
         </li>
        <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
         <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
->>>>>>> f5f0e81dfc640f2741dad867b6339c50058b78ce
+=======
+
+       <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
+        <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
+
+>>>>>>> 4cb417c86d8b2eca4a5697e389a876e34bc0db39
     </ul>
 </div>
 
