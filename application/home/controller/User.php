@@ -27,7 +27,7 @@ class User extends \think\Controller
 
     //登录方法
     public function doLogin(){
-        $uphone=input('?post.uphone')? input('uphone'):'';
+        $uid=input('?post.uid')? input('uid'):'';
         $upwd=input('?post.upwd')? input('upwd'):'';
         $code=input('?post.code')? input('code'):'';
 
@@ -43,7 +43,7 @@ class User extends \think\Controller
             return json($returnMsg);
         }
         $where=[
-            'uphone' =>  $uphone,
+            'uid' =>  $uid,
             'upwd'   =>   $upwd
         ];
 
@@ -70,10 +70,10 @@ class User extends \think\Controller
         $loginKey = $radom->get(32);
 
         //登录key存入数据库
-        $um->setKey($result['uphone'],$loginKey);
+        $um->setKey($result['uid'],$loginKey);
 
         // 设置
-        cookie('uphone',$result['uid']);
+        cookie('uid',$result['uid']);
         cookie('ukey',$loginKey);
 
 
@@ -90,7 +90,7 @@ class User extends \think\Controller
     public function checkLogin(){
 
         //判断是否有用户信息
-        if(cookie("uphone")==null){
+        if(cookie("uid")==null){
             if(cookie("ukey")!=null){
                 cookie("ukey",null);
             }
@@ -100,14 +100,14 @@ class User extends \think\Controller
         else{
             //用户key为空，取消登陆状态，需要重新登录
             if(cookie("ukey")==null){
-                cookie("uphone",null);
+                cookie("uid",null);
                 return false;
             }
             else{
-                $uphone = cookie('uphone');
+                $uid = cookie('uid');
                 $ukey = cookie('ukey');
                 $where=[
-                    'uid' =>  $uphone,
+                    'uid' =>  $uid,
                     'loginKey'   =>   $ukey
                 ];
 
@@ -117,7 +117,7 @@ class User extends \think\Controller
 
                 if(empty($res)){
                     //检查失败
-                    cookie("uphone",null);
+                    cookie("uid",null);
                     cookie("ukey",null);
                     return false;
                 }
@@ -136,7 +136,7 @@ class User extends \think\Controller
             'data' =>  []
         ];
         //判断是否有用户信息
-        if(cookie("uphone")==null){
+        if(cookie("uid")==null){
             if(cookie("ukey")!=null){
                 cookie("ukey",null);
             }
@@ -148,15 +148,15 @@ class User extends \think\Controller
             //用户key为空，取消登陆状态，需要重新登录
             if(cookie("ukey")==null){
                 $returnMsg['code'] = 10009;
-                cookie("uphone",null);
+                cookie("uid",null);
                 $returnMsg['msg'] = config('msg')['loginChek']['err'];
                 return json($returnMsg);
             }
             else{
-                $uphone = cookie('uphone');
+                $uid = cookie('uid');
                 $ukey = cookie('ukey');
                 $where=[
-                    'uid' =>  $uphone,
+                    'uid' =>  $uid,
                     'loginKey'   =>   $ukey
                 ];
 
@@ -166,7 +166,7 @@ class User extends \think\Controller
 
                 if(empty($res)){
                     //检查失败
-                    cookie("uphone",null);
+                    cookie("uid",null);
                     cookie("ukey",null);
                     $returnMsg['code'] = 10009;
                     $returnMsg['msg'] = config('msg')['loginChek']['err'];
@@ -184,7 +184,7 @@ class User extends \think\Controller
     }
 
     public function doRegister(){
-        $uphone=input('?post.uphone')? input('uphone'):'';
+        $uid=input('?post.uid')? input('uid'):'';
         $uname=input('?post.uname')? input('uname'):'';
         $upwd=input('?post.upwd')? input('upwd'):'';
         $code=input('?post.code')? input('code'):'';
@@ -201,11 +201,11 @@ class User extends \think\Controller
         }
 
 
-        $data = ['uphone' => $uphone, 'uname' => $uname,
+        $data = ['uid' => $uid, 'uname' => $uname,
             'upwd' =>$upwd,
         ];
         $where=[
-            'uphone' => $uphone
+            'uid' => $uid
         ];
 
         //账号查重

@@ -11,11 +11,11 @@ namespace app\home\model;
 
 use think\Model;
 
-class Note extends Model
+class Notes extends Model
 {
-    public function creatNote($uphone){
+    public function creatNote($uid){
         $data =[
-
+            "uid"
         ];
         db("t_note")->insert($data);
     }
