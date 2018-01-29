@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"D:\AppServ\www\quyou\public/../application/home\view\register\register.html";i:1517043262;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"D:\AppServ\www\quyou\public/../application/home\view\register\register.html";i:1517195826;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,7 +155,15 @@
                         <button class="codeImg" type="button" class="am-btn am-btn-default"><p>免费获取验证码</p></button>
                         <p><input  style="width: 120px;float: right;font-size:14px;height: 36px;text-align: center" type="text" class="am-form-field am-round" placeholder="短信验证码"/></p>
                     </div>
-                    <button id="regBtn" class="layui-btn layui-btn-radius layui-btn-warm logBtn"><p>注&nbsp;&nbsp;册</p></button>
+                    <button id="regBtn" class="layui-btn layui-btn-radius layui-btn-warm logBtn" data-am-modal="{target: '#loading'}"><p>注&nbsp;&nbsp;册</p></button>
+                    <div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="loading">
+                        <div class="am-modal-dialog">
+                            <div class="am-modal-hd">正在注册...</div>
+                            <div class="am-modal-bd">
+                                <span class="am-icon-spinner am-icon-spin"></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="goToLog">
                     <p>已经有账号？</p>
@@ -175,6 +183,7 @@
 <script src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.js"></script>
 <script>
     var doRegUrl='<?php echo url("home/Register/doRegister"); ?>';
+    var doLogUrl='<?php echo url("home/Login/login"); ?>';
 
     function changeCode(obj){
         $(obj).attr('src','<?php echo captcha_src(); ?>?'+Math.random());
@@ -197,36 +206,28 @@
 
                 console.log(res);
                 if(res.code==10002){   //验证码错误
+                    $('#loading').modal(close);
                     layer.msg(res.msg);
-                }else if(res.code=10004){    //添加失败
+                }else if(res.code==10004){    //添加失败
+                    $('#loading').modal(close);
                     layer.msg(res.msg);
                 }
                 else if(res.code==10005){    //添加成功
+                    $('#loading').modal(close);
                     layer.msg(res.msg);
+                    layer.confirm('是否马上登录?', {icon: 3, title:'提示'}, function(index){
+                        //do something
+                        window.location.href=doLogUrl;
+
+                        layer.close(index);
+                    });
+
                 }else if(res.code==10006){    //用户重复
+                    $('#loading').modal(close);
                     layer.msg(res.msg);
                 }
-
-
             }
-
-
-
         })
-
-
-
-
-
-
-
-
     })
-
-
-
-
-
-
 </script>
 </html>

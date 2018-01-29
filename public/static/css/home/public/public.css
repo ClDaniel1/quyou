@@ -241,3 +241,6 @@ html::-webkit-scrollbar-thumb {
 .layui-input:hover, .layui-textarea:hover {
     border-color: orange!important;
 }
+.am-dimmer{
+    background-color: rgba(0,0,0,0.1);
+}
