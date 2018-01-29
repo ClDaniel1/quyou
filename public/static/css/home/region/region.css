@@ -48,10 +48,11 @@
 .imgA
 {
     padding-left: 0;
+    line-height: 30px;
 }
 .imgA li
 {
-    float: left;
+    display: inline-block;
     margin-right: 15px;
 }
 #content2 ul li a{
@@ -240,10 +241,11 @@
 }
 .introduceMsg
 {
+    height: 150px;
     position: absolute;
     transition: all 0.5s;
-    background-color: rgba(255,255,255,0.5);
-    top:88px;
+    background-color: rgba(255,255,255,0.8);
+    top:96px;
     left: 0;
     width: 100%;
 }
@@ -396,6 +398,20 @@
     .mgLeft
     {
         margin-left: 0;
+    }
+    .disB
+    {
+        display: block;
+        margin-right: 0;
+    }
+    .navTop
+    {
+        text-align: center;
+    }
+    .siteName a
+    {
+        margin: 5px 0;
+        display: block;
     }
 }
 @media screen and (max-width: 992px)

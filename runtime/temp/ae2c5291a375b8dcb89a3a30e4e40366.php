@@ -1,0 +1,596 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\desti\desti.html";i:1517049813;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517043587;}*/ ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" href="__STATIC__/images/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/amazeui.min.css">
+    <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
+    <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
+    <link rel="stylesheet" href="__CSS__\home\public\public.css">
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    
+<!--页面样式、引用/示例如下-->
+<style>
+    #bannerText{
+        transition: all 0.5s;
+        display: inline-block;
+        left: auto;
+        right: 15%;
+    }
+    #bannerText div{
+        display: inline-block;
+        padding: 25px;
+    }
+    #editer{
+        text-align: right;
+        margin-top: 15px;
+    }
+    #search{
+        width: 300px;
+        display: inline-block;
+    }
+    #searchBar{
+        transition: all 0.5s;
+        display: inline-block;
+        bottom: 35%;
+        left: 15%;
+    }
+    #searchBar>div{
+        padding: 30px;
+        padding-top: 35px;
+        display: inline-block;
+    }
+    @media (max-width: 768px) {
+        #searchBar{
+            display: none;
+        }
+    }
+    #banner li{
+        display: block;
+        max-height: 800px;
+        overflow: hidden;
+    }
+    #banner img{
+        margin-top: -35px;
+    }
+    #title{
+        font-size: 2em;
+        text-align: center;
+        line-height: 75px;
+        height: 75px;
+        width: 100%;
+        display: inline-block;
+    }
+    dl{
+        width: 100%;
+        border-bottom: dashed 1px #EEEEEE;
+        padding: 20px 0;
+        list-style: none;
+        padding-left: 130px;
+    }
+    #des dt{
+        float: left;
+        font-size: 1.2em;
+        display: inline-block;
+        font-weight: normal;
+        padding-right: 15px;
+        margin-left: -130px;
+    }
+    #des a{
+        transition: all 0.3s;
+        margin-right: 10px;
+    }
+    #des a:hover{
+        color: #F9851D;
+
+    }
+    #des dd{
+        display: inline-block;
+        margin-top: 0;
+    }
+    #des dd a{
+
+        line-height: 30px;
+        color: grey;
+    }
+
+</style>
+
+    <title>
+趣游
+</title>
+    <style>
+        .navBg{
+            background: #F9851D ;
+        }
+<<<<<<< HEAD
+        .body{
+            background-color: #efefef;
+=======
+        footer{
+            margin-top:25px;
+>>>>>>> e79f6f254ff1825636c527baa2f2ad3069c1603d
+        }
+    </style>
+</head>
+<body class="body">
+
+
+
+<div class="layui-header header layui-show-xs-block layui-hide-sm navBg" id="liteNav" >
+    <ul class="layui-nav navBg" lay-filter="" style="text-align: center">
+        <i class="layui-icon"  style="float: left;font-size: 30px; line-height: 60px" id="menu">&#xe671;</i>
+        <img src="__STATIC__/images/logo2.png" alt="" style="height: 45px;margin-top: 7px">
+        <i class="layui-icon" style="float: right;font-size: 30px; line-height: 60px">&#xe615;</i>
+    </ul>
+</div>
+<div class="site-mobile-shade"></div>
+<div class="layui-side navBg header layui-show-xs-block layui-hide-sm" id="sideBar">
+    <div class="layui-side-scroll">
+
+        <ul class="layui-nav layui-nav-tree site-demo-nav navBg">
+            <li class="layui-nav-item layui-this"><a href="<?php echo url('home/Index/index'); ?>">首页</a></li>
+            <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
+            <li class="layui-nav-item"><a href="">旅途直播</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">我</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">我的消息</a></dd>
+                    <dd><a href="">个人中心</a></dd>
+                    <dd><a href="">退出登录</a></dd>
+                </dl>
+            </li>
+            <li style="height: 30px; text-align: center"></li>
+        </ul>
+
+    </div>
+</div>
+
+<div class="navBg layui-show-sm-block layui-hide-xs" style="width: 100%;height: 60px" >
+    <img src="__STATIC__/images/logo1.png" alt="" style="float: left;margin: 7px 35px;height:45px;">
+    <ul class="layui-nav navBg" lay-filter="" style="float: left" id="navBar">
+        <li class="layui-nav-item layui-this"><a href="<?php echo url('home/Index/index'); ?>">首页</a></li>
+        <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
+        <li class="layui-nav-item"><a href="">旅途直播</a></li>
+    </ul>
+    <ul class="layui-nav navBg" lay-filter="" style="float: right">
+        <li class="layui-nav-item">
+            <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
+            <dl class="layui-nav-child">
+                <dd><a href="">我的消息</a></dd>
+                <dd><a href="javascript:;">退出登录</a></dd>
+            </dl>
+        </li>
+       <!-- <li class="layui-nav-item"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
+        <li class="layui-nav-item"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>-->
+    </ul>
+</div>
+
+<div id="baseMain">
+    <div id="desNav">
+        <div class="layui-container" >
+            <div class="layui-row siteNav">
+                 <span class="layui-breadcrumb" lay-separator=">">
+                    <a href="">目的地</a>
+                    
+                    
+                </span>
+            </div>
+            <div class="layui-row layui-hide-xs">
+                <ul class="layui-nav catalog">
+                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>概况</a></li>
+                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst2"></i>玩法路线</a></li>
+                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
+                    <li class="layui-nav-item"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=1000"><i class="icon1 iconPst4"></i>酒店</a></li>
+                    <li class="layui-nav-item">
+                        <a href=""><i class="icon1 iconPst5"></i>美食</a>
+                        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                            <dd><a href="">移动模块</a></dd>
+                            <dd><a href="">后台模版</a></dd>
+                            <dd><a href="">电商平台</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item"><a href="0"><i class="icon1 iconPst6"></i>游记</a></li>
+                </ul>
+            </div>
+            <div class="layui-hide-sm">
+                <ul class="layui-nav catalog">
+                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>概况</a></li>
+                    <li class="layui-nav-item allMsg">
+                        <a href=""><i class="icon1 iconPst7"></i>展开全部</a>
+                        <ul class="catalog treeNav">
+                            <li class="">
+                                <a href="">
+                                    <i class="icon1 iconPst2"></i>玩法路线
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="">
+                                    <i class="icon1 iconPst3"></i>景点
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="<?php echo url('home/Region/hotel'); ?>?rgId=1000">
+                                    <i class="icon1 iconPst4"></i>酒店
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href=""><i class="icon1 iconPst5"></i>美食</a>
+                            </li>
+                            <li class="">
+                                <a href=""><i class="icon1 iconPst6"></i>游记</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+<!--页面内容 /示例如下-->
+
+<div data-am-widget="" class="am-slider am-slider-d2" data-am-slider='{&quot;directionNav&quot;:false}'  id="banner">
+    <ul class="am-slides">
+        <li>
+            <img src="https://b2-q.mafengwo.net/s11/M00/A9/F2/wKgBEFpd5fCASAWeAApM2WMZ60s74.jpeg">
+            <div class="am-slider-desc" id="bannerText">
+                <div class="am-slider-content">
+                    <h2 class="am-slider-title" id="text"></h2>
+                    <p id="editer"></p>
+                </div>
+            </div>
+            <div class="am-slider-desc"  id="searchBar">
+                <div class="am-slider-content">
+                    <form class="layui-form" action="" >
+                        <h2 class="am-slider-title">请输入目的地</h2>
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入搜索内容" autocomplete="off" class="layui-input"    id="search">
+                        <div class="layui-form-item" style="display: inline-block;" >
+                            <div class="layui-input-block" style="margin-left: 10px">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo"><i class="layui-icon">&#xe615;</i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div id="title">
+    热门目的地
+</div>
+<div class="layui-container" id="des">
+    <div class="layui-row layui-col-space30" >
+        <div class="layui-col-sm6">
+            <dl class=" am-text-top">
+                <dt>直辖市</dt>
+                <dd>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">北京</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">上海</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">重庆</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">天津</a>
+                </dd>
+            </dl>
+            <dl class=" am-text-top">
+                <dt><a href="<?php echo url('home/region/region','des=2'); ?>">云南</a></dt>
+                <dd>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">丽江</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">大理</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">昆明</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">香格里拉</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">泸沽湖</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">双廊</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">西双版纳</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">束河</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">腾冲</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">雨崩</a>
+                </dd>
+            </dl>
+            <dl class=" am-text-top">
+                <dt>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">四川</a>
+                </dt>
+                <dd>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">成都</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">九寨沟</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">稻城</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">色达</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">若尔盖</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">都江堰</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">亚丁</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">阿坝</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">峨眉山</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">牛背山</a>
+                </dd>
+            </dl>
+            <dl class=" am-text-top">
+                <dt>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">浙江</a>
+                </dt>
+                <dd>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">杭州</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">乌镇</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">西塘</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">千岛湖</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">普陀山</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">东极岛</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">南浔</a>
+                </dd>
+            </dl>
+            <dl class=" am-text-top">
+                <dt>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">福建</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">浙江</a>
+                </dt>
+                <dd>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">三亚</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">蜈支洲岛</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">海口</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">厦门</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">鼓浪屿</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">武夷山</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">泉州</a>
+                </dd>
+            </dl>
+            <dl class=" am-text-top">
+                <dt>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">江苏</a>
+                </dt>
+                <dd>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">南京</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">苏州</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">无锡</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">扬州</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">周庄</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">常州</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">连云港</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">同里</a>
+                </dd>
+            </dl>
+            <dl class=" am-text-top">
+                <dt>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">广东</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">广西</a>
+                </dt>
+                <dd>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">广州</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">深圳</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">珠海</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">汕头</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">桂林</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">阳朔</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">北海</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">黄姚古镇</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">涠洲岛</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">龙脊梯田</a>
+                </dd>
+            </dl>
+        </div>
+        <div class="layui-col-sm6">
+            <dl>
+                <dt>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">西藏</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">贵州</a>
+                </dt>
+                <dd>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">拉萨</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">林芝</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">阿里</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">黔东南</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">荔波</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">镇远</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">西江</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">黄果树</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">西北</a>
+                </dt>
+                <dd>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">西安</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">青海湖</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">西宁</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">祁连</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">敦煌</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">兰州</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">甘南</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">张掖</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">嘉峪关</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">新疆</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">山东</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">山西</a>
+                </dt>
+                <dd>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">青岛</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">泰山</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">日照</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">威海</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">烟台</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">长岛</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">蓬莱</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">平遥</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">大同</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">五台山</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">壶口瀑布</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">湖南</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">湖北</a>
+                </dt>
+                <dd>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">张家界</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">凤凰</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">郴州</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">武汉</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">恩施</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">神农架</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">安徽</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">江西</a>
+                </dt>
+                <dd>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">黄山</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">宏村</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">婺源</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">景德镇</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">庐山</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">三清山</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">南昌</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">河北</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">河南</a>
+                </dt>
+                <dd>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">北戴河</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">秦皇岛</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">承德</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">张北</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">少林寺</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">洛阳</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">龙门石窟</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">内蒙古</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">东北</a>
+                </dt>
+                <dd>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">呼伦贝尔</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">阿尔山</a>
+                    <a href="<?php echo url('home/region/region','des=2'); ?>">海拉尔</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">哈尔滨</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">漠河</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">雪乡</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">大连</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">丹东</a>
+                    <a href="<?php echo url('home/region/region','des=10'); ?>">盘锦</a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+<<<<<<< HEAD
+
+
+<footer style="background: #3c3c3c">
+    <div class="layui-container">
+        <div class="layui-row layui-col-space30">
+            <div class="layui-col-sm10"  id="footL">
+                <div class="footer">
+                  <ul class="footerUl">
+                      <li class="footerHd">关于我们</li>
+                      <li><a href="">关于趣游</a></li>
+                      <li><a href="">联系我们</a></li>
+                      <li><a href="">关于趣游</a></li>
+                  </ul>
+                </div>
+                <div class="footer">
+                    <ul class="footerUl">
+                        <li class="footerHd">友情链接</li>
+                        <li><a href="">乐淘</a></li>
+                        <li><a href="">蚂蜂窝</a></li>
+                        <li><a href="">穷游网</a></li>
+                    </ul>
+                </div>
+                <div class="footer">
+                    <ul class="footerUl">
+                        <li class="footerHd">网站条款</li>
+                        <li><a href="">会员条款</a></li>
+                        <li><a href="">版权声明</a></li>
+                        <li><a href="">免责声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer">
+                    <ul class="footerUl">
+                        <li class="footerHd">帮助中心</li>
+                        <li><a href="">新手上路</a></li>
+                        <li><a href="">使用帮助</a></li>
+                        <li><a href="">网站地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="layui-col-sm2" id="footerR">
+                <img src="__STATIC__/images/logof1.png" alt="">
+                <p>2017 © 趣游</p>
+                <p>All rights reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
+=======
+>>>>>>> af1153db015604462702e242cb521fd40c46e4e9
+</body>
+<script src="__STATIC__\lib\layui\layui.all.js"></script>
+<script src="__STATIC__\lib\jquery-3.2.1.js"></script>
+<script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
+<script>
+    $("#menu").click(showSideBar);
+    function showSideBar() {
+        $("#sideBar").addClass("show");
+        $("#menu").unbind("click");
+        $("#menu").click(hideSideBar);
+        $(".site-mobile-shade").css("display","block");
+        $(".site-mobile-shade").unbind("click");
+        $(".site-mobile-shade").click(hideSideBar);
+    }
+    function hideSideBar() {
+        $("#sideBar").removeClass("show");
+        $("#menu").unbind("click");
+        $("#menu").click(showSideBar);
+        $(".site-mobile-shade").css("display","none");
+    }
+
+    function nav(i){
+        i = i-1;
+        $("#sideBar li").eq(0).removeClass("layui-this");
+        $("#navBar li").eq(0).removeClass("layui-this");
+        $("#navBar li").eq(i).addClass("layui-this");
+        $("#sideBar li").eq(i).addClass("layui-this");
+    }
+
+</script>
+
+<!--JS、引用 /示例如下-->
+<script type="text/javascript" src="http://yiju.ml/api/word.php?m=js"></script>
+<script src="../../../../public/static/lib/jquery-3.2.1.js"></script>
+<script>
+    $("#text").html(str[0]+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+    $("#editer").text("---"+str[1]);
+
+    nav(2);
+</script>
+
+</html>
