@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517211698;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517206921;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1517211698;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517233798;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -404,6 +404,7 @@
     </div>
 </footer>
 </body>
+<script src="__STATIC__/lib/vue.js"></script>
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
 <script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
