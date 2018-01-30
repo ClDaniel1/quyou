@@ -21,4 +21,9 @@ class User
     public function setKey($id,$key){
         db('t_user')->where('uphone',$id)->setField('loginKey', $key);
     }
+
+    //用户名的检查
+    public function checkName($data){
+        return db('t_user') -> where('uname',$data) ->select();
+    }
 }

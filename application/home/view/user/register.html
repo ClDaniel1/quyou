@@ -183,6 +183,7 @@
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
 <script src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.js"></script>
+<script src="__JS__/home/public/userPublic.js"></script>
 <script>
     var doRegUrl='{:url("home/User/doRegister")}';
     var doLogUrl='{:url("home/User/login")}';
@@ -214,14 +215,15 @@
                     $('#loading').modal(close);
                     layer.msg(res.msg);
                     changeCode();
-                }
-                else if(res.code==10005){    //添加成功
+                }else if(res.code=="haveName"){
+                    $('#loading').modal(close);
+                    layer.msg(res.msg);
+                } else if(res.code==10005){    //添加成功
                     $('#loading').modal(close);
                     layer.confirm('注册成功,是否马上登录?', {icon: 3, title:'提示'}, function(index){
                         window.location.href=doLogUrl;    //跳转到登录页
 //                        $('#account').val(uid);      //登录页面的输入框自动显示刚注册的用户名
                     });
-
                 }else if(res.code==10006){    //用户重复
                     $('#loading').modal(close);
                     layer.msg(res.msg);
@@ -229,6 +231,13 @@
                 }
             }
         })
+    });
+
+    //失焦验证用户名是否重复
+    $('#uname').blur(function () {
+        var uname=$('#uname').val();
+        var checkNameUrl='{:url("home/User/checkName")}';
+        checkReName(checkNameUrl,uname);
     })
 </script>
 </html>
