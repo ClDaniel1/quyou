@@ -47,7 +47,7 @@ class Region extends \think\Controller
     }
     public function hotel()//显示地区酒店
     {
-        $rgId=isset($_GET['rgId'])?$_GET['rgId']:"";
+        $regionId=cookie('regionId');
         return $this->fetch('hotel');
     }
     public function route()

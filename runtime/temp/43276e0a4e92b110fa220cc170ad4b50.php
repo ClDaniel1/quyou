@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517292980;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517279023;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517297786;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517293544;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -259,7 +259,6 @@
 </div>
 <!--景点路线区域-->
 <div id="content3">
-    <div id="map"></div>
     <div class="layui-container">
         <h1 class="lineFont"><span><?php echo $region_name; ?></span><span>2</span>条经典路线</h1>
         <div class="layui-row">
@@ -272,7 +271,7 @@
                         </span>
                     </h1>
                     <div class="map">
-
+                        <div :id="map+key"></div>
                     </div>
                     <div class="selectLine">
                         <span class="percent">
@@ -490,6 +489,7 @@
     </div>
 </footer>
 </body>
+<script src="__STATIC__/lib/vue.js"></script>
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
 <script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
@@ -532,18 +532,20 @@
         var element = layui.element;
     });
 //   到时候需要封装起来
-    new Vue({
+    var vm = new Vue({
         el: '#baseMain',
         data:{
             routeMsg:[],
             routeS:false,
-            type:false
+            type:false,
+            map:"map"
         },
-        created: function () {
+        mounted: function () {
             var _this=this;
             $.ajax({
                 type:"get",
                 url:"<?php echo url('home/Region/route'); ?>",
+                async:false,
                 dataType:"json",
                 success: function (res) {
                     console.log(res);
@@ -557,36 +559,47 @@
                             routeArr[i].push(res.msg[i][j].scenicName);
                         }
                     }
+
                 },error: function (res) {
                     console.log(res);
                 }
             });
+            //window.onload = function () {
+                //_this.$nextTick(
+
+                //)
+            //};
+
             _this.type=true;
-            _this.bdMap(['福州西湖','福州三坊七巷','福州花海公园']);
         },
         methods: {
             bdMap:function(scenicArr) {
-                var map = new BMap.Map('map');//创建地图实例
-                map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+
+//                var map = new BMap.Map("allmap");    // 创建Map实例
+//                map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
                 //添加地图类型控件
-                map.addControl(new BMap.MapTypeControl({
-                    mapTypes:[
-                        BMAP_NORMAL_MAP,
-                        BMAP_HYBRID_MAP
-                    ]}));
-                map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
-                map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+//                map.addControl(new BMap.MapTypeControl({
+//                    mapTypes:[
+//                        BMAP_NORMAL_MAP,
+//                        BMAP_HYBRID_MAP
+//                    ]}));
+//                map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+//                map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+//                map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+//                //添加地图类型控件
+//                map.addControl(new BMap.MapTypeControl({
+//                    mapTypes:[
+//                        BMAP_NORMAL_MAP,
+//                        BMAP_HYBRID_MAP
+//                    ]}));
+//                map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+//                map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+//
+
 //                map.enableScrollWheelZoom(true);//地图的鼠标滚轮缩放默认是关闭的，需要配置开启。
 //                var opts = {type: BMAP_NAVIGATION_CONTROL_LARGE};//平移控件外观
 //                map.addControl(new BMap.NavigationControl(opts));//添加平移缩放控件
-//                var myGeo = new BMap.Geocoder();
-//                myGeo.getPoint('福州', function (point) {
-//                    if (point) {
-//                        var address = new BMap.Point(point.lng, point.lat);
-//                        map.centerAndZoom(address,10);           // 初始化地图，设置中心点坐标和地图级别
-//                    }
-//                });
-                var arr = scenicArr;
+//                var arr = scenicArr;
 //                var marArr = [];
 //                var index = 0;
 //                bdGEO();
@@ -631,61 +644,12 @@
         }
     });
 
-//    function bdMap(showId,regionName,scenicArr,max) {
-//        var map = new BMap.Map(showId);//创建地图实例
-//        map.enableScrollWheelZoom(true);//地图的鼠标滚轮缩放默认是关闭的，需要配置开启。
-//        var opts = {type: BMAP_NAVIGATION_CONTROL_LARGE};//平移控件外观
-//        map.addControl(new BMap.NavigationControl(opts));//添加平移缩放控件
-//        var myGeo = new BMap.Geocoder();
-//        myGeo.getPoint(regionName, function (point) {
-//            if (point) {
-//                var address = new BMap.Point(point.lng, point.lat);
-//                map.centerAndZoom(address, max);           // 初始化地图，设置中心点坐标和地图级别
-//            }
-//        });
-//        var arr = scenicArr;
-//        var marArr = [];
-//        var index = 0;
-//        bdGEO();
-//        for (var i = 0; i < arr.length; i++) {
-//            myGeo.getPoint(arr[i], function (point) {
-//                if (point) {
-//                    var address = new BMap.Point(point.lng, point.lat);
-//                    var marker = new BMap.Marker(address);
-//                    map.addOverlay(marker);
-//                    marArr.push(address);
-//                }
-//            });
-//        }
-//        function bdGEO() {
-//            var add = arr[index];
-//            geocodeSearch(add);
-//            index++;
-//        }
-//
-//        function geocodeSearch(add) {
-//            if (index < arr.length) {
-//                setTimeout(window.bdGEO, 400);//如果缺少，for循环和地图加载异步，线程速度不一样，会造成只显示最后一个标注点。
-//            }
-//            myGeo.getPoint(add, function (point) {
-//                if (point) {
-//                    var address = new BMap.Point(point.lng, point.lat);
-//                    addMarker(address, new BMap.Label(index + ":" + add, {offset: new BMap.Size(20, -10)}));
-//                }
-//            });
-//        }
-//
-//        function addMarker(point, label) {
-//            var marker = new BMap.Marker(point);
-//            map.addOverlay(marker);
-//            marker.setLabel(label);
-//            var polyline = new BMap.Polyline(marArr[index],
-//                    {strokeColor: "orange", strokeWeight: 4, strokeOpacity: 1}//设置属性
-//            );
-//            map.addOverlay(polyline);//跟polyline一块使用，添加上线
-//        }
-//    }
-//    bdMap('map','福州',['福州西湖','福州三坊七巷','福州花海公园'],10);
+    vm.$nextTick(function(){
+        var map = new BMap.Map('map1');//创建地图实例
+        /*_this.bdMap(['福州西湖','福州三坊七巷','福州花海公园']);*/
+        var myGeo = new BMap.Geocoder();
+        map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);           // 初始化地图，设置中心点坐标和地图级别
+    })
 </script>
 
 </html>
