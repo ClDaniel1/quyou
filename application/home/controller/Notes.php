@@ -143,7 +143,7 @@ class Notes extends \think\Controller
 
         return $this->fetch("note");
         }else{
-            $this->error('很抱歉，请登录后再试');
+            $this->error('很抱歉，请登录后再试',url("home/User/login"));
         }
     }
 
@@ -159,5 +159,11 @@ class Notes extends \think\Controller
         ];
 
         return json($reMsg);
+    }
+
+    public function save(){
+       $data = input("param.sData/a");
+
+       var_dump($data);
     }
 }
