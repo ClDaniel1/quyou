@@ -63,4 +63,25 @@ class Notes extends Model
     public function setUp($noteId,$path){
         db("t_note")->where("noteId=$noteId")->update(["img"=>$path]);
     }
+
+
+    public function delCon($noteId){
+        db('t_notecon')->where('noteId',$noteId)->delete();
+    }
+
+    public function upCon($noteId,$con,$type,$num,$title){
+        $data = [
+            "noteId" => $noteId,
+            "title" => $title,
+            "content" => $con,
+            "type" => $type,
+            "num"=>$num
+        ];
+        db('t_notecon')->insert($data);
+
+    }
+
+    public function setTitle($noteId,$title){
+        db("t_note")->where("noteId=$noteId")->update(["title"=>$title]);
+    }
 }

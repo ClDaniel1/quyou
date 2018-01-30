@@ -9,6 +9,8 @@
 namespace app\home\controller;
 
 
+use org\RadomStr;
+
 class Notes extends \think\Controller
 {
     //编辑游记入口
@@ -109,7 +111,7 @@ class Notes extends \think\Controller
 
             $image->crop($rew-$rsw, $reh-$rsh,$rsw,$rsh)->save($path);
 
-            $userPath = "images/user/".$uid."/note/".$noteId."/head".".".$type;;
+            $userPath = "images/user/".$uid."/note/".$noteId."/head".".".$type;
 
             $resMsg["data"]["url"] = $userPath;
 
@@ -163,7 +165,68 @@ class Notes extends \think\Controller
 
     public function save(){
        $data = input("param.sData/a");
+       $noteId = input("param.id");
 
-       var_dump($data);
+       $nm = new \app\home\model\Notes();
+       $nm ->delCon($noteId);
+
+       foreach ($data as $val){
+           $nm->upCon($noteId,$val["content"],$val["type"],$val["num"],$val["title"]);
+       }
+    }
+
+    public function addImg(){
+        $noteId = input("param.noteId");
+        //检查是否有用户文件夹
+        $uid = cookie("uid");
+        $userDir = "static/images/user/".$uid;
+        if(!(is_dir($userDir))){
+            mkdir($userDir);
+        }
+        $userDir = $userDir."/note/";
+        if(!(is_dir($userDir))){
+            mkdir($userDir);
+        }
+        $userDir = $userDir.$noteId;
+        if(!(is_dir($userDir))){
+            mkdir($userDir);
+        }
+
+        $radom = new RadomStr();
+        $fileName = $radom->get("16").time();
+
+        //移动文件到用户文件夹
+        $type = $_FILES["file"]["type"];
+        $type = explode("/",$type)[1];
+        $path = $userDir."/".$fileName.".".$type;
+        move_uploaded_file($_FILES["file"]["tmp_name"],$path);
+
+        $userPath = "images/user/".$uid."/note/".$noteId."/".$fileName.".".$type;
+
+        $reMsg=[
+            "code"=>50005,
+            "msg" => "",
+            "data"=>[$userPath]
+        ];
+
+        return json($reMsg);
+    }
+
+    public function removeImg(){
+        $path = "static/".input("param.src");
+        if(file_exists($path)){
+            unlink($path);
+        }
+    }
+
+    public function setTitle(){
+        $title = input("param.title");
+        $noteId = input("param.id");
+        $nm = new \app\home\model\Notes();
+        $nm->setTitle($noteId,$title);
+        $resMsg=[
+            "code"=>"50006"
+        ];
+        return json($resMsg);
     }
 }

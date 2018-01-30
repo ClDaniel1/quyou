@@ -15,7 +15,6 @@ class Scenic extends \think\Model
     {
         $sql=db('t_scenic')->field('count(scenicId) COUNT')->select();
         return $sql;
-
     }
     public function ScenicRelease()
     {
