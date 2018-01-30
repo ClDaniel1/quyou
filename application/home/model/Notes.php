@@ -80,4 +80,8 @@ class Notes extends Model
         db('t_notecon')->insert($data);
 
     }
+
+    public function setTitle($noteId,$title){
+        db("t_note")->where("noteId=$noteId")->update(["title"=>$title]);
+    }
 }

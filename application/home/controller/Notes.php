@@ -218,4 +218,15 @@ class Notes extends \think\Controller
             unlink($path);
         }
     }
+
+    public function setTitle(){
+        $title = input("param.title");
+        $noteId = input("param.id");
+        $nm = new \app\home\model\Notes();
+        $nm->setTitle($noteId,$title);
+        $resMsg=[
+            "code"=>"50006"
+        ];
+        return json($resMsg);
+    }
 }

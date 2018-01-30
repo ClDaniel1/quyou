@@ -130,7 +130,7 @@
         opacity: 0;
         display: block;
         width: 100%;
-        height: 110%;
+        height: 100%;
         line-height: 20px;
         font-size: 16px;
         word-break:break-all;
@@ -141,7 +141,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 110%;
+        height: 100%;
         line-height: 20px;
         font-size:16px;
         border: none;
@@ -242,7 +242,7 @@
 
 <div id="title" class="layui-container">
 
-        <input type="text" value="{$info["title"]}" name="title" lay-verify="title" autocomplete="off" placeholder="请输入游记标题" class="layui-input">
+        <input type="text" onchange="setTitle()" value="{$info["title"]}" name="title" lay-verify="title" autocomplete="off" placeholder="请输入游记标题" class="layui-input" >
 
 </div>
 
@@ -321,8 +321,35 @@ JS、引用 /示例如下
     var upload = layui.upload;
     var jcropApi;
     var noteId = {$noteId};
+    var title = "{$info["title"]}";
 
     var $modal = $('#my-modal-loading');
+
+    function setTitle() {
+        var newTitle = $("#title input").eq(0).val();
+        if(newTitle != title){
+            $.ajax({
+                url:"{:url('home/Notes/setTitle')}",
+                data:{title:newTitle,id:noteId},
+                type:"post",
+                dataType:"json",
+                success:function (res) {
+                    if(res["code"]==50006){
+                        layer.msg("标题修改成功");
+                    }
+                    else {
+                        layer.open({
+                            content:"标题修改失败",
+                            yes: function(index, layero){
+                                //do something
+                                layer.close(index); //如果设定了yes回调，需进行手工关闭
+                            }
+                        });
+                    }
+                }
+            })
+        }
+    }
 
     //执行实例
     upload.render({
@@ -443,7 +470,7 @@ JS、引用 /示例如下
                     url:"{:url('home/Notes/getCon')}",
                     type:"post",
                     data:{"id":{$noteId}},
-                    textType:"json",
+                    dataType:"json",
                     success:function (data) {
                         this.conData = data.data;
                     }.bind(this)
@@ -536,7 +563,7 @@ JS、引用 /示例如下
                             var preId = "C"+(i);
                             var value1 = document.getElementById(nextId).value;
                             var value2 = document.getElementById(preId).value;
-                            value2 = value2+value1;
+                            value2 = value2+'\r'+value1;
                             conData[i-1]["content"] = value2;
                             document.getElementById(preId).value = value2;
                             this.conData.splice(i,2);
@@ -561,7 +588,7 @@ JS、引用 /示例如下
                             var value1 = document.getElementById(myId).value;
                             var value2 = document.getElementById(preId).value;
 
-                            value2 = value2+value1;
+                            value2 = value2+'\r'+value1;
                             conData[i-1]["content"] = value2;
                             document.getElementById(preId).value = value2;
                             this.conData.splice(i,1);
