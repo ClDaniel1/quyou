@@ -254,7 +254,14 @@ return [
             'imgTooSmall'=>"图片过小，请选择宽度大于1350，并且高度大于480的图片",
             'imgSelectTooSmall'=>'裁剪完图片过小，请重新裁剪',
             'scaleErr'=>'图片比例不对，请重新裁剪'
-        ]
+        ],
+        'personal'=> [
+            'changeOK' => "修改成功",
+            'changeErr'=>"信息为原信息，请修改",
+            'haveName'=>"昵称已被使用，换一个吧",
+            'repeatPwd'=>"密码为原密码，修改不成功",
+            'withoutName'=>"昵称没有重复，可以使用"
+        ],
     ],
 
     //验证码

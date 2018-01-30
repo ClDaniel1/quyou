@@ -210,6 +210,8 @@ class User extends \think\Controller
 
         //账号查重
         $result=db('t_user') -> where($where) -> find();
+        $model=new \app\home\model\Personal();
+        $arr = $model->checkName($uname);
 
         //数据库添加数据
         if(!empty($result)){
@@ -217,6 +219,14 @@ class User extends \think\Controller
             $returnMsg=[
                 'code' =>  10006,
                 'msg'  =>  config('msg')['login']['haveUser'],
+                'data' =>  []
+            ];
+            return json($returnMsg);
+        }else if(count($arr) >= 2){
+            //用户名重复
+            $returnMsg=[
+                'code' =>  "haveName",
+                'msg'  =>  config('msg')['personal']['haveName'],
                 'data' =>  []
             ];
             return json($returnMsg);
@@ -239,6 +249,29 @@ class User extends \think\Controller
                 ];
                 return json($returnMsg);
             }
+        }
+    }
+
+    public function checkName(){
+        //账号查重
+        $uname=input('?post.uname')? input('uname'):'';
+        $model=new \app\home\model\Personal();
+        $arr = $model->checkName($uname);
+        if(count($arr) >= 2){
+            //用户名重复
+            $returnMsg=[
+                'code' =>  "haveName",
+                'msg'  =>  config('msg')['personal']['haveName'],
+                'data' =>  []
+            ];
+            return json($returnMsg);
+        }else{
+            $returnMsg=[
+                'code' =>  "withoutName",
+                'msg'  =>  config('msg')['personal']['withoutName'],
+                'data' =>  []
+            ];
+            return json($returnMsg);
         }
     }
 }

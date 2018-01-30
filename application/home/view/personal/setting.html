@@ -134,28 +134,28 @@
                 <table class="myInfo">
                     <tr>
                         <td class="setTitle">昵称</td>
-                        <td><input class="am-form-field am-round setInput" type="text" placeholder="请输入昵称"></td>
+                        <td><input id="userName" class="am-form-field am-round setInput" type="text" placeholder="请输入昵称"></td>
                     </tr>
                     <tr>
                         <td class="setTitle">电子邮箱</td>
-                        <td><input class="am-form-field am-round setInput" type="text" placeholder="请输入您的常用邮箱"></td>
+                        <td><input id="userEmail" class="am-form-field am-round setInput" type="text" placeholder="请输入您的常用邮箱"></td>
                     </tr>
                     <tr>
                         <td class="setTitle">性别</td>
-                        <td class="setRadio">
-                            <input type="radio" value="1" name="sex" checked="checked">男
+                        <td class="setRadio" id="userSex">
+                            <input type="radio" class="userSex" value="男" name="sex">男
 
-                            <input style=""  type="radio" value="2" name="sex">女
+                            <input type="radio" class="userSex" value="女" name="sex">女
 
                         </td>
                     </tr>
                     <tr>
                         <td class="setTitle">年龄</td>
-                        <td><input class="am-form-field am-round setInput" type="text" placeholder="请输入您的年龄"></td>
+                        <td><input id="userAge" class="am-form-field am-round setInput" type="text" placeholder="请输入您的年龄"></td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="button" class="layui-btn layui-btn-radius saveInfo" value="保存">
+                            <input id="saveInfo" type="button" class="layui-btn layui-btn-radius saveInfo" value="保存">
                         </td>
                     </tr>
                 </table>
@@ -195,11 +195,11 @@
                 <table class="myInfo">
                     <tr>
                         <td class="setTitle">新密码</td>
-                        <td><input class="am-form-field am-round setInput" type="password" placeholder="请输入新密码"></td>
+                        <td><input id="newPwd" class="am-form-field am-round setInput" type="password" placeholder="请输入新密码"></td>
                     </tr>
                     <tr>
                         <td class="setTitle">确认密码</td>
-                        <td><input class="am-form-field am-round setInput" type="password" placeholder="请确认密码"></td>
+                        <td><input id="surePwd" class="am-form-field am-round setInput" type="password" placeholder="请确认密码"></td>
                     </tr>
                     <tr>
                         <td class="setTitle">验证码</td>
@@ -208,7 +208,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="button" class="layui-btn layui-btn-radius saveInfo" value="确认修改">
+                            <input id="savePwd" type="button" class="layui-btn layui-btn-radius saveInfo" value="确认修改">
                         </td>
                     </tr>
                 </table>
@@ -272,20 +272,114 @@
 <script>
     nav(4);
 </script>
+<script src="__JS__/home/public/userPublic.js"></script>
 <script>
-    //JavaScript代码区域
-    layui.use('element', function(){
-        var element = layui.element;
-        //获取hash来切换选项卡，假设当前地址的hash为lay-id对应的值
-        var layid = location.hash.replace(/^#test1=/, '');
-        element.tabChange('test1', layid); //假设当前地址为：http://a.com#test1=222，那么选项卡会自动切换到“发送消息”这一项
+//JavaScript代码区域
+layui.use('element', function(){
+    var element = layui.element;
+    //获取hash来切换选项卡，假设当前地址的hash为lay-id对应的值
+    var layid = location.hash.replace(/^#test1=/, '');
+    element.tabChange('test1', layid); //假设当前地址为：http://a.com#test1=222，那么选项卡会自动切换到“发送消息”这一项
 
-        //监听Tab切换，以改变地址hash值
-        element.on('tab(test1)', function(){
-            location.hash = 'set='+ this.getAttribute('lay-id');
-        });
-
+    //监听Tab切换，以改变地址hash值
+    element.on('tab(test1)', function(){
+        location.hash = 'set='+ this.getAttribute('lay-id');
     });
+
+});
+var uid = getCookie("qy_uid");
+var getInfoUrl='{:url("home/Personal/getInfo")}'
+$(function(){
+    //获取个人信息
+    $.ajax({
+        type:"post",
+        url:getInfoUrl,
+        data:{uid:uid},
+        dataType:"JSON",
+        success: function (res) {
+            console.log(res);
+            $('#userName').val(res.uname);
+            $('#userEmail').val(res.email);
+//                $('.userSex').val(res.usex);
+            if(res.usex=='男'){
+                $("input:radio[name='sex']").eq(0).attr("checked",true);
+            }else if(res.usex=='女'){
+                $("input:radio[name='sex']").eq(1).attr("checked",true);
+            }else{
+                $("input:radio").attr("checked",false);
+            }
+            $('#userAge').val(res.uage);
+        }
+    })
+});
+$('#saveInfo').click(function () {
+    var uname=$('#userName').val();
+    var email=$('#userEmail').val();
+    var usex=$("input:radio[name='sex']:checked").val() ;
+    var uage=$('#userAge').val();
+    var changeInfoUrl='{:url("home/Personal/changeInfo")}';
+    if(uname=='' || email=='' || usex==undefined || uage==''){
+        layer.msg('输入不能为空');
+    }else if(checkUserName(uname) && checkEmail(email) && checkAge(uage)){
+//        layer.msg('输入合法');
+        $.ajax({
+            type:'post',
+            url:changeInfoUrl,
+            data:{uid:uid,uname:uname,email:email,usex:usex,uage:uage},
+            dataType:'json',
+            success: function (res) {
+                console.log(res);
+                if(res.code=="changeOK"){
+                    layer.msg(res.msg);
+                }else if(res.code=="changeErr"){
+                    layer.msg(res.msg);
+                }else if(res.code=="haveName"){
+                    layer.msg(res.msg);
+                }
+            }
+        })
+    }
+});
+
+
+
+//修改用户密码
+$('#savePwd').click(function () {
+    var newPwd=$('#newPwd').val();
+    var surdPwd=$('#surePwd').val();
+    var changPwdUrl='{:url("home/Personal/changePwd")}';
+    if(newPwd=='' || surdPwd ==''){
+        layer.msg('输入不能为空');
+    }else if(isPassword(newPwd) && isPassword(surdPwd) && samePwd(newPwd,surdPwd))
+    {
+        $.ajax({
+            type:'post',
+            url:changPwdUrl,
+            data:{uid:uid,upwd:newPwd},
+            dataType:'json',
+            success: function (res) {
+                console.log(res);
+                if(res.code=="changeOK"){
+                    layer.msg(res.msg);
+                }else if(res.code=="changeErr"){
+                    layer.msg(res.msg);
+                }else if(res.code=="repeat"){
+                    layer.msg(res.msg);
+                }
+            }
+        })
+    }
+});
+
+
+
+//昵称重复验证
+$('#userName').blur(function () {
+    var uname=$('#userName').val();
+    var checkNameUrl='{:url("home/User/checkName")}';
+    checkReName(checkNameUrl,uname);
+})
+
 </script>
 <!--JS、引用 /示例如下-->
 {/block}
