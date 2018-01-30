@@ -6,6 +6,9 @@
     #aspectration[data-ratio="9:3"] {
         padding-top:33.33%;
         position: relative;
+        border: none;
+        background: url("__STATIC__/images/bg.jpg") no-repeat;
+        background-size: cover;
     }
     #aspectration img{
         float: left;
@@ -24,7 +27,7 @@
         width: 100%;
         height: 100%;
         text-align: center;
-        color: #101010;
+        color: white;
         font-size: 35px;
     }
     #aspectration i{
@@ -94,6 +97,113 @@
         padding: 10px;
         padding-left:7.5%;
     }
+    @media (min-width:768px ) {
+        .navBg {
+            background: none !important;
+            z-index: 100;
+        }
+
+        .navBg img {
+            z-index: 101;
+            position: relative;
+        }
+
+        #baseMain {
+            margin-top: -60px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after {
+            display: none;
+        }
+
+    }
+    .textarea-wrapper {
+        position: relative;
+        display: block;
+        width: 100%
+    }
+    .content-editable {
+        position: relative;
+        z-index: -1;
+        opacity: 0;
+        display: block;
+        width: 100%;
+        height: 110%;
+        line-height: 20px;
+        font-size: 16px;
+        word-break:break-all;
+        white-space: pre-line;
+    }
+    .field-textarea {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 110%;
+        line-height: 20px;
+        font-size:16px;
+        border: none;
+        text-align: left;
+        resize: none;
+        overflow: hidden;
+        background-color: transparent;
+        word-break:break-all;
+        white-space: pre-wrap;
+    }
+    #leftBar div{
+        margin-bottom: 35px;
+
+    }
+    #leftBar img{
+        width: 100%;
+    }
+    #addImg{
+        overflow: hidden;
+    }
+    #addImg input{
+        width: 100%;
+        position: absolute;
+        top: 15px;
+        opacity: 0;
+    }
+    .am-active{
+        color: orange;
+    }
+    nav li{
+        margin: 10px 30px;
+    }
+    nav a:visited{
+        text-decoration:none;
+    }
+    nav a:hover{
+        color: orange;
+    }
+    nav a{
+        color: #3c3c3c;
+    }
+    .imgDiv .layui-icon{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 16px;
+        background: rgba(0,0,0,0.9);
+        color: white;
+        padding: 5px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        transition: all 0.3s;
+    }
+    .imgDiv{
+        position: relative;
+    }
+    .imgDiv:hover .layui-icon{
+        display: inline-block;
+    }
+
+
 </style>
 {/block}
 
@@ -115,36 +225,58 @@
 
 
 <div class="layui-upload">
-    <button type="button" class="layui-btn" id="aspectration" data-ratio="9:3" style="width: 100%;background: gainsboro">
+    <button type="button" id="aspectration" data-ratio="9:3" style="width: 100%">
         <div>
+        {if $info["img"]!= null}
+        <img src="__STATIC__/{$info["img"]}" alt="">
+
+       {else /}
+
             <span><i class="layui-icon"></i>上传头图</span>
+
+
+        {/if}
         </div>
     </button>
 </div>
 
 <div id="title" class="layui-container">
 
-        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入游记标题" class="layui-input">
+        <input type="text" value="{$info["title"]}" name="title" lay-verify="title" autocomplete="off" placeholder="请输入游记标题" class="layui-input">
 
 </div>
 
 
+
 <div id="noteConten" class="layui-container">
     <div class="layui-col-sm9" id="leftBar">
-dfsdf
+        <!-- 加载编辑器的容器 -->
+       <!-- <script id="container" name="content" type="text/plain">
+        这里写你的初始化内容
+    </script>-->
+
+        <div><div v-for="con in conData" :id="con.conId">
+            <h1 v-if="con.num == 1" :id="con.conId" style="opacity: 0">{{con.title}}</h1>
+            <h1 v-if="con.title != null && con.num != 1 && con.type==0" class="imgDiv">{{con.title}}<i class="layui-icon" @click="removeTitle(con.num)">&#x1006;</i></h1>
+            <div v-if="con.type==0" class="textarea-wrapper">
+                <div class="content-editable" contenteditable="true">{{con.content}}</div>
+                <textarea v-model="con.content" contenteditable="true" class="field-textarea" placeholder="在这里输入您的游记内容" v-on:focus="foc" :id="conId+con.num"></textarea>
+            </div>
+            <div v-if="con.type==1" class="imgDiv"><img v-bind:src="imgurl+con.content" alt="" @click="foc" :id="conId+con.num"><i class="layui-icon" @click="removeImg(con.num)">&#x1006;</i>  </div>
+            </div></div>
     </div>
-    <div class="layui-col-sm3" id="rightBar" style="position: sticky;top: 15px;">
-        <div id="btnBar">
-            <button class="layui-btn layui-btn-radius">
+    <div class="layui-col-sm3" id="rightBar"  >
+        <div id="btnBar" data-am-sticky>
+            <button class="layui-btn layui-btn-radius" id="addImg">
                 <i class="layui-icon">&#xe64a;</i> 添加图片
             </button>
-            <button class="layui-btn layui-btn-radius">
+            <button class="layui-btn layui-btn-radius" @click="add">
                 <i class="layui-icon">&#xe638;</i> 添加段落
             </button>
             <button class="layui-btn layui-btn-radius">
                 <i class="layui-icon">&#xe6fc;</i> 添加音乐
             </button>
-            <button class="layui-btn layui-btn-radius" id="save">
+            <button class="layui-btn layui-btn-radius" @click="save">
                 <div id="toSave"><i class="layui-icon">&#xe60e;</i> 保存草稿</div>
                 <div id="saving"><i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop" ></i> 正在保存</div>
                 <div id="saved"><i class="layui-icon">&#xe605;</i> 保存完成</div>
@@ -152,9 +284,28 @@ dfsdf
             <button class="layui-btn layui-btn-radius">
                 <i class="layui-icon">&#xe609;</i> 发布游记
             </button>
+
+            <div id="catal">
+                <i>游记目录</i>
+                <nav class="scrollspy-nav" id="catalNav">
+                    <ul>
+                        <li v-for="title in conData" v-if="title.type==0">
+                            <a v-if="title.num==1" :href="id+title.conId">默认段落</a>
+                            <a v-if="title.num!=1 && title.type==0" :href="id+title.conId">{{title.title}}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div id="catal">
-            <i>游记目录</i>
+
+    </div>
+</div>
+
+<div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="my-modal-loading">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">图片上传中...</div>
+        <div class="am-modal-bd">
+            <span class="am-icon-spinner am-icon-spin"></span>
         </div>
     </div>
 </div>
@@ -164,11 +315,14 @@ dfsdf
 
 
 {block name='script'}
-<!--JS、引用 /示例如下-->
+JS、引用 /示例如下
 <script src="__STATIC__/lib/jcrop/js/jquery.Jcrop.js"></script>
 <script>
     var upload = layui.upload;
     var jcropApi;
+    var noteId = {$noteId};
+
+    var $modal = $('#my-modal-loading');
 
     //执行实例
     upload.render({
@@ -179,6 +333,7 @@ dfsdf
         ,number:1
         //,multiple: true
         ,bindAction: '#subBI'
+        ,data:{noteId:noteId}
         ,bgOpacity:0.1
         ,choose: function(obj){
             //预读本地文件示例，不支持ie8
@@ -225,6 +380,7 @@ dfsdf
             });
         }
         ,before:function () {
+            $modal.modal();
             var select = jcropApi.tellSelect();
             var size = jcropApi.getBounds();
             console.log(select);
@@ -236,6 +392,7 @@ dfsdf
             })
         }
         ,done: function(res){
+            $modal.modal('close');
             if(res["code"]== 50001){
                 $("#aspectration div").empty();
                 $img = "<img src='/quyou/public/static/"+res["data"]["url"]+"?"+Math.random()+"'/>";
@@ -261,6 +418,8 @@ dfsdf
         }
     });
 
+
+
     $("#escBI").click(function () {
 
         $("#imgView").fadeOut(300,function () {
@@ -268,29 +427,289 @@ dfsdf
         })
     });
 
-    $("#save").click(function () {
-        $("#toSave").fadeOut(300,function () {
-            $("#saving").fadeIn(300);
-        });
+    var bus = new Vue();
+    var con = new Vue({
+        el:"#noteConten",
+        data:{
+            conData:[],
+            imgurl:"__STATIC__/",
+            id:"#",
+            conId:"C",
+            textArea:""
+        },
+        methods:{
+            init:function () {
+                $.ajax({
+                    url:"{:url('home/Notes/getCon')}",
+                    type:"post",
+                    data:{"id":{$noteId}},
+                    textType:"json",
+                    success:function (data) {
+                        this.conData = data.data;
+                    }.bind(this)
+                })
+            },
+            save:function () {
+                $("#toSave").fadeOut(300,function () {
+                    $("#saving").fadeIn(300);
+                    $.ajax({
+                        url:"{:url('home/Notes/save')}",
+                        data:{id:noteId,sData:this.conData},
+                        type:"post",
+                        textType:"json",
+                        success:function (res) {
+                            $("#saving").fadeOut(300,function () {
+                                $("#saved").fadeIn(300);
+                            });
 
-        setTimeout(function () {
-            $("#saving").fadeOut(300,function () {
-                $("#saved").fadeIn(300);
-            });
+                            setTimeout(function () {
+                                $("#saved").fadeOut(300,function () {
+                                    $("#toSave").fadeIn(300);
+                                });
 
+                            },2000)
+                        }
+                    })
+                    $("#catalNav").scrollspynav();
+                }.bind(this));
+
+
+
+            },
+            add:function () {
+                layer.prompt({title: '请输入段落名', formType: 3}, function(pass, index){
+                    layer.close(index);
+                    var conData = this.conData;
+                    var id = this.textArea;
+                    var num = id.substring(1);
+                    var tx = document.getElementById(id);
+                    if(tx == null){
+                        var newCon1 ={num:0,conId:0,content:"",title:pass,type:0,noteId:conData[0]["noteId"]};
+                        this.conData.push(newCon1);
+                    }
+                    else if(tx.src != undefined){
+                        for(var i = 0;i < conData.length;i++){
+                            if(conData[i]["num"] == num){
+                                var newCon0 ={num:0,conId:0,content:"",title:pass,type:0,noteId:conData[i]["noteId"]};
+                                this.conData.splice(i+2,0,newCon0);
+                            }
+                        }
+                    }
+                    else {
+                        var arr =  cursorPosition.re(tx);
+
+                        for(var i = 0;i < conData.length;i++){
+                            if(conData[i]["num"] == num){
+                                this.conData[i]["content"] = arr[0];
+                                var newCon ={num:0,conId:0,content:arr[1],title:pass,type:0,noteId:conData[i]["noteId"]};
+                                this.conData.splice(i+1,0,newCon);
+                                break;
+                            }
+                        }
+                    }
+                    for(var i = 0;i < this.conData.length;i++){
+                        this.conData[i]["num"] = i+1;
+                    }
+                    this.save();
+
+                }.bind(this));
+            },
+            addImg:function () {
+
+            },
+            foc:function (event){
+               var id = event.target.id;
+               console.log(event.target);
+               this.textArea = id;
+            },
+            removeImg:function (num) {
+                layer.confirm('确定删除该图片？', {icon: 3, title:'删除图片？'}, function(index){
+                    //do something
+                    var conData = this.conData;
+                    for(var i = 0;i < conData.length;i++){
+                        if(conData[i]["num"] == num){
+                            $.ajax({
+                                url:"{:url('home/Notes/removeImg')}",
+                                data:{src:conData[i]["content"]}
+                            })
+                            var nextId = "C"+(i+2);
+                            var preId = "C"+(i);
+                            var value1 = document.getElementById(nextId).value;
+                            var value2 = document.getElementById(preId).value;
+                            value2 = value2+value1;
+                            conData[i-1]["content"] = value2;
+                            document.getElementById(preId).value = value2;
+                            this.conData.splice(i,2);
+                            break;
+                        }
+                    }
+                    for(var i = 0;i < this.conData.length;i++){
+                        this.conData[i]["num"] = i+1;
+                    }
+                    layer.close(index);
+                    this.save();
+                }.bind(this));
+            },
+            removeTitle:function (num) {
+                layer.confirm('确定删除该段落标题？段落内容会移至上一段', {icon: 3, title:'删除段落标题？'}, function(index){
+                    //do something
+                    var conData = this.conData;
+                    for(var i = 0;i < conData.length;i++){
+                        if(conData[i]["num"] == num){
+                            var myId = "C"+(i+1);
+                            var preId = "C"+(i);
+                            var value1 = document.getElementById(myId).value;
+                            var value2 = document.getElementById(preId).value;
+
+                            value2 = value2+value1;
+                            conData[i-1]["content"] = value2;
+                            document.getElementById(preId).value = value2;
+                            this.conData.splice(i,1);
+                            break;
+                        }
+                    }
+                    for(var i = 0;i < this.conData.length;i++){
+                        this.conData[i]["num"] = i+1;
+                    }
+                    layer.close(index);
+                    this.save();
+                }.bind(this));
+            }
+        },
+        created:function () {
+            this.init();
             setTimeout(function () {
-                $("#saved").fadeOut(300,function () {
-                    $("#toSave").fadeIn(300);
+                $("#catalNav").scrollspynav();
+            },3000);
+
+            bus.$on('addImg', function (url) {
+                var conData = this.conData;
+                var id = this.textArea;
+                var num = id.substring(1);
+                var tx = document.getElementById(id);
+                if(tx == null){
+                        var newCon ={num:0,conId:0,content:url,title:"",type:1,noteId:conData[0]["noteId"]};
+                        this.conData.push(newCon);
+                        var newCon1 ={num:0,conId:0,content:"",title:"",type:0,noteId:conData[0]["noteId"]};
+                        this.conData.push(newCon1);
+                }
+                else if(tx.src != undefined){
+                    for(var i = 0;i < conData.length;i++){
+                        if(conData[i]["num"] == num){
+                            var newCon0 ={num:0,conId:0,content:url,title:"",type:1,noteId:conData[i]["noteId"]};
+                            this.conData.splice(i+2,0,newCon0);
+                            var newCon1 ={num:0,conId:0,content:"",title:"",type:0,noteId:conData[i]["noteId"]};
+                            this.conData.splice(i+3,0,newCon1);
+                            break;
+                        }
+                    }
+                }
+                else {
+                    var arr =  cursorPosition.re(tx);
+
+                    for(var i = 0;i < conData.length;i++){
+                        if(conData[i]["num"] == num){
+                            this.conData[i]["content"] = arr[0];
+                            var newCon ={num:0,conId:0,content:url,title:"",type:1,noteId:conData[i]["noteId"]};
+                            this.conData.splice(i+1,0,newCon);
+                            var newCon1 ={num:0,conId:0,content:arr[1],title:"",type:0,noteId:conData[i]["noteId"]};
+                            this.conData.splice(i+2,0,newCon1);
+                            break;
+                        }
+                    }
+                }
+
+                for(var i = 0;i < this.conData.length;i++){
+                    this.conData[i]["num"] = i+1;
+                }
+                this.save();
+            }.bind(this))
+        }
+    })
+
+    var cursorPosition = {
+        get: function (textarea) {
+            var rangeData = { text: "", start: 0, end: 0 };
+            if (textarea.setSelectionRange) { // W3C
+                textarea.focus();
+                rangeData.start = textarea.selectionStart;
+                rangeData.end = textarea.selectionEnd;
+                rangeData.text = (rangeData.start != rangeData.end) ? textarea.value.substring(rangeData.start, rangeData.end) : "";
+            } else if (document.selection) { // IE
+                textarea.focus();
+                var i,
+                    oS = document.selection.createRange(),
+                    // Don't: oR = textarea.createTextRange()
+                    oR = document.body.createTextRange();
+                oR.moveToElementText(textarea);
+
+                rangeData.text = oS.text;
+                rangeData.bookmark = oS.getBookmark();
+
+                // object.moveStart(sUnit [, iCount])
+                // Return Value: Integer that returns the number of units moved.
+                for (i = 0; oR.compareEndPoints('StartToStart', oS) < 0 && oS.moveStart("character", -1) !== 0; i++) {
+                    // Why? You can alert(textarea.value.length)
+                    if (textarea.value.charAt(i) == '\r') {
+                        i++;
+                    }
+                }
+                rangeData.start = i;
+                rangeData.end = rangeData.text.length + rangeData.start;
+            }
+
+            return rangeData;
+        },
+
+        re: function (textarea) {
+            var oValue, value1, value2;
+            var rangeData = this.get(textarea);
+
+                oValue = textarea.value;
+                value1 = oValue.substring(0, rangeData.start);
+                value2 = oValue.substring(rangeData.end);
+
+                return[value1,value2];
+
+        }
+    }
+
+
+ upload.render({
+        elem: '#addImg'
+        ,url: '{:url("home/Notes/addImg")}'
+        ,accept:"imgaes"
+        ,number:1
+        ,data:{noteId:{$noteId}}
+        ,bgOpacity:0.1
+        ,before:function () {
+         $modal.modal();
+        }
+        ,done: function(res){
+            $modal.modal("close");
+            if(res["code"]==50005){
+                layer.msg("上传成功");
+                bus.$emit('addImg',res["data"][0]);
+            }
+            else {
+                layer.open({
+                    content:res["上传失败"],
+                    yes: function(index, layero){
+                        layer.close(index); //如果设定了yes回调，需进行手工关闭
+                    }
                 });
-
-            },2000)
-        },2000)
-
-
-
+            }
+        }
     });
 
 
-
 </script>
+<!--&lt;!&ndash; 配置文件 &ndash;&gt;
+<script type="text/javascript" src="__STATIC__/lib/ueditor/1.4.3/ueditor.config.js"></script>
+&lt;!&ndash; 编辑器源码文件 &ndash;&gt;
+<script type="text/javascript" src="__STATIC__/lib/ueditor/1.4.3/ueditor.all.js"></script>
+&lt;!&ndash; 实例化编辑器 &ndash;&gt;
+<script type="text/javascript">
+    var ue = UE.getEditor('container');
+</script>-->
 {/block}

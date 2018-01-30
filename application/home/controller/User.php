@@ -73,8 +73,8 @@ class User extends \think\Controller
         $um->setKey($result['uphone'],$loginKey);
 
         // 设置
-        cookie('uid',$result['uid'], 3600);
-        cookie('ukey',$loginKey, 3600);
+        cookie('uid',$result['uid']);
+        cookie('ukey',$loginKey);
 
 
 

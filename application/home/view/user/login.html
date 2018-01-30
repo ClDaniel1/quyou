@@ -225,7 +225,7 @@
                     layer.open({
                         content:res.msg,
                         yes: function(index, layero){
-                            location.href=userCenterUrl;   //跳转到首页
+                            history.back();  //回到前一页
                             layer.close(index); //如果设定了yes回调，需进行手工关闭
                         }
                     });
@@ -241,6 +241,8 @@
             }
         });
     });
+
+
 
 
 </script>

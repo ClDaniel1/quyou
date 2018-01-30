@@ -1082,6 +1082,7 @@ class Request
      */
     private function typeCast(&$data, $type)
     {
+
         switch (strtolower($type)) {
             // 数组
             case 'a':
@@ -1102,6 +1103,7 @@ class Request
             // 字符串
             case 's':
             default:
+
                 if (is_scalar($data)) {
                     $data = (string) $data;
                 } else {

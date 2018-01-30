@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517108336;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517043587;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517297786;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517293544;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
     <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
     <link rel="stylesheet" href="__CSS__\home\public\public.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
@@ -30,17 +31,16 @@
         .navBg{
             background: #F9851D ;
         }
-<<<<<<< HEAD
-        .body{
+        .body {
             background-color: #efefef;
-=======
+        }
         footer{
             margin-top:25px;
->>>>>>> e79f6f254ff1825636c527baa2f2ad3069c1603d
         }
     </style>
 </head>
 <body class="body">
+
 
 
 
@@ -59,12 +59,14 @@
             <li class="layui-nav-item layui-this"><a href="<?php echo url('home/Index/index'); ?>">首页</a></li>
             <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
             <li class="layui-nav-item"><a href="">旅途直播</a></li>
-            <li class="layui-nav-item">
+            <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
+            <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
+            <li class="layui-nav-item loginIn">
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
                     <dd><a href="">我的消息</a></dd>
-                    <dd><a href="">个人中心</a></dd>
-                    <dd><a href="">退出登录</a></dd>
+                    <dd><a href="" class="toCenter">个人中心</a></dd>
+                    <dd  onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
                 </dl>
             </li>
             <li style="height: 30px; text-align: center"></li>
@@ -80,16 +82,18 @@
         <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
         <li class="layui-nav-item"><a href="">旅途直播</a></li>
     </ul>
-    <ul class="layui-nav navBg" lay-filter="" style="float: right">
-        <li class="layui-nav-item">
-            <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
+    <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
+        <li class="layui-nav-item loginIn">
+            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
+
             <dl class="layui-nav-child">
                 <dd><a href="">我的消息</a></dd>
-                <dd><a href="javascript:;">退出登录</a></dd>
+                <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
-        </li>
-       <!-- <li class="layui-nav-item"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>-->
+
+       <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
+        <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
+
     </ul>
 </div>
 
@@ -105,7 +109,7 @@
             </div>
             <div class="layui-row layui-hide-xs">
                 <ul class="layui-nav catalog">
-                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>概况</a></li>
+                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>首页</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst2"></i>玩法路线</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
                     <li class="layui-nav-item"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=1000"><i class="icon1 iconPst4"></i>酒店</a></li>
@@ -190,7 +194,7 @@
                 <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>概况</a></li>
                 <li class="layui-nav-item"><a href=""><i class="icon1 iconPst2"></i>玩法路线</a></li>
                 <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
-                <li class="layui-nav-item"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=1000"><i class="icon1 iconPst4"></i>酒店</a></li>
+                <li class="layui-nav-item"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=<?php echo $sId; ?>"><i class="icon1 iconPst4"></i>酒店</a></li>
                 <li class="layui-nav-item">
                     <a href=""><i class="icon1 iconPst5"></i>美食</a>
                     <dl class="layui-nav-child"> <!-- 二级菜单 -->
@@ -219,7 +223,7 @@
                             </a>
                         </li>
                         <li class="">
-                            <a href="<?php echo url('home/Region/hotel'); ?>?rgId=1000">
+                            <a href="<?php echo url('home/Region/hotel'); ?>?rgId=<?php echo $sId; ?>">
                                 <i class="icon1 iconPst4"></i>酒店
                             </a>
                         </li>
@@ -235,38 +239,61 @@
         </div>
     </div>
 </div>
+<!--地区百科信息-->
+<div id="regionBk">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-sm5 layui-col-xs6">
+                <div class="msgDiv">
+                    <span>攻略：</span>
+                    <p class=" ">
+                        <?php echo $bkMsg['intro']; ?>
+                    </p>
+                </div>
+            </div>
+            <div class="layui-col-sm5 regionImg layui-col-sm-offset2 layui-col-xs-offset1 layui-col-xs5 ">
+                <?php echo $bkMsg['img']; ?>
+            </div>
+        </div>
+    </div>
+</div>
 <!--景点路线区域-->
 <div id="content3">
     <div class="layui-container">
         <h1 class="lineFont"><span><?php echo $region_name; ?></span><span>2</span>条经典路线</h1>
         <div class="layui-row">
-
-            <div class="layui-col-sm6">
+            <div class="layui-col-sm6" v-if="type==true" v-for="(value,key) in routeMsg.msg">
                 <div class="mapBorder1 scenicMsg">
                     <h1>
-                        <span class="layui-badge layui-bg-orange mapNo">1</span>
-                        <span><?php echo $region_name; ?>鼓浪屿1日游</span>
+                        <span class="layui-badge layui-bg-orange mapNo">{{key+1}}</span>
+                        <span>
+                            {{routeMsg.name}}{{value[0].title}}
+                        </span>
                     </h1>
                     <div class="map">
-                        <div id="map"></div>
+                        <div :id="map+key"></div>
                     </div>
                     <div class="selectLine">
-                        <span class="percent">45%</span>
-                        <h3>初次访问<span><?php echo $region_name; ?></span>的蜂蜂会选择这条路线</h3>
+                        <span class="percent">
+                            {{value[0].chose}}%
+                        </span>
+                        <h3>初次访问<span>
+                        </span>的蜂蜂会选择这条路线</h3>
                     </div>
                     <div class="pathShow">
                         <div>
                             <span class="pathSpan">D<span>1</span></span>
-                            <span class="layui-breadcrumb" lay-separator="->">
-                              <a href=""><cite>西湖</cite></a>
-                              <a href=""><cite>大学城</cite></a>
-                              <a href=""><cite>光亚广场</cite></a>
-                              <a><cite>花海公园</cite></a>
+                            <span v-for="(val,k) in value" class="layui-breadcrumb">
+                                <a href=""><cite>{{val.scenicName}}</cite></a>
+                                <span v-if="k<value.length-1">-></span>
                             </span>
                         </div>
                         <a href="" class="lookA">查看></a>
                     </div>
                 </div>
+            </div>
+            <div v-else>
+                <i class="layui-icon" style="font-size: 30px; color: orange;">&#xe63d;</i>
             </div>
         </div>
         <div class="lookAll">
@@ -275,7 +302,7 @@
                     <i class="i-blue"></i>
                     <i class="i-orange"></i>
                 </span>
-                查看全部<span class="numOrange"><span>3</span>条</span>路线>
+                查看全部<span class="numOrange"><span>{{routeMsg.count}}</span>条</span>路线>
             </a>
         </div>
         <div style="clear: both"></div>
@@ -287,28 +314,30 @@
         <div class="layui-row strategy">
             <div class="layui-col-sm4">
                 <div class="hotelW">
-                    <h2 class="hotelMsg"><a href="">酒店住宿攻略<i class="innerIcon"></i></a></h2>
+                    <h2 class="hotelMsg"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=<?php echo $sId; ?>">酒店住宿攻略<i class="innerIcon"></i></a></h2>
                     <?php if(is_array($hotelMsg['msg']) || $hotelMsg['msg'] instanceof \think\Collection || $hotelMsg['msg'] instanceof \think\Paginator): $i = 0; $__LIST__ = $hotelMsg['msg'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$value): $mod = ($i % 2 );++$i;?>
+                    <a href="<?php echo url('home/Region/hotel'); ?>?rgId=<?php echo $sId; ?>">
                         <div class="innerDiv">
-                        <h3>
-                            <span class="layui-badge layui-bg-orange"><?php echo $i; ?></span>
-                            <span><?php echo $value['hotelName']; ?></span>
-                        </h3>
-                        <div class="pst">
-                            <img class="hotelMap" src="__STATIC__/<?php echo $value['img']; ?>" alt="">
-                            <div class="introduceMsg">
-                                <span><?php echo $value['hotelDescribe']; ?></span>
+                            <h3>
+                                <span class="layui-badge layui-bg-orange"><?php echo $i; ?></span>
+                                <span><?php echo $value['hotelName']; ?></span>
+                            </h3>
+                            <div class="pst">
+                                <img class="hotelMap" src="__STATIC__/<?php echo $value['img']; ?>" alt="">
+                                <div class="introduceMsg">
+                                    <span><?php echo $value['hotelDescribe']; ?></span>
+                                </div>
+                            </div>
+                            <div class="comTop">
+                                <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
+                                <span class="comName">梨窝浅浅</span>
+                                <span class="comMsg">“呆过四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
                             </div>
                         </div>
-                        <div class="comTop">
-                            <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
-                            <span class="comName">梨窝浅浅</span>
-                            <span class="comMsg">“呆过四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
-                        </div>
-                    </div>
+                    </a>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
                     <div class="dashed">
-                        <a href=""><span><?php echo $hotelMsg['count']; ?></span>家酒店<i class="orgIcon"></i></a>
+                        <a href="<?php echo url('home/Region/hotel'); ?>?rgId=<?php echo $sId; ?>"><span><?php echo $hotelMsg['count']; ?></span>家酒店<i class="orgIcon"></i></a>
                     </div>
                 </div>
             </div>
@@ -412,7 +441,6 @@
 
 
 
-<<<<<<< HEAD
 
 
 <footer style="background: #3c3c3c">
@@ -460,9 +488,8 @@
         </div>
     </div>
 </footer>
-=======
->>>>>>> af1153db015604462702e242cb521fd40c46e4e9
 </body>
+<script src="__STATIC__/lib/vue.js"></script>
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
 <script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
@@ -491,7 +518,10 @@
         $("#sideBar li").eq(i).addClass("layui-this");
     }
 
+    var checkUrl = "<?php echo url('home/User/check'); ?>";
+
 </script>
+<script src="__JS__/home/public/public.js"></script>
 
 <!--JS、引用 /示例如下-->
 <!--引用百度地图api文件-->
@@ -501,76 +531,125 @@
     layui.use('element', function(){
         var element = layui.element;
     });
-
 //   到时候需要封装起来
-    var map = new BMap.Map("map");//创建地图实例
-    map.enableScrollWheelZoom(true);//地图的鼠标滚轮缩放默认是关闭的，需要配置开启。
-    var opts = {type: BMAP_NAVIGATION_CONTROL_LARGE};//平移控件外观
-    map.addControl(new BMap.NavigationControl(opts));//添加平移缩放控件
-//    var point = new BMap.Point(116.402, 39.915);//设置坐标定义区域
-//    var point1 = new BMap.Point(116.405, 39.920);//设置坐标定义区域
-//    var marker = new BMap.Marker(point);        // 创建标注
-//    var marker1 = new BMap.Marker(point1);        // 创建标注
-    var myGeo = new BMap.Geocoder();
-    var arr=['福建省'];
-    var marArr=[];
-    var index=0;
-//    bdGEO();
-//    for(var i=0;i<arr.length;i++)
-//    {
-//        myGeo.getPoint(arr[i], function (point) {
-//            if (point) {
-//                var address = new BMap.Point(point.lng, point.lat);
-//                var marker = new BMap.Marker(address);
-//                map.addOverlay(marker);
-//                marArr.push(address);
-//                console.log(marArr);
-//            }
-//        });
-//    }
+    var vm = new Vue({
+        el: '#baseMain',
+        data:{
+            routeMsg:[],
+            routeS:false,
+            type:false,
+            map:"map"
+        },
+        mounted: function () {
+            var _this=this;
+            $.ajax({
+                type:"get",
+                url:"<?php echo url('home/Region/route'); ?>",
+                async:false,
+                dataType:"json",
+                success: function (res) {
+                    console.log(res);
+                    _this.routeMsg=res;
+                    var routeArr=[];
+                    for(var i=0;i<res.msg.length;i++)
+                    {
+                        routeArr.push([]);
+                        for(var j=0;j<res.msg[i].length;j++)
+                        {
+                            routeArr[i].push(res.msg[i][j].scenicName);
+                        }
+                    }
 
-//    function bdGEO(){
-//        var add = arr[index];
-//        geocodeSearch(add);
-//        index++;
-//    }
-//    function geocodeSearch(add){
-//        if(index < arr.length){
-//            setTimeout(window.bdGEO,400);
-//        }
-//        else {
-//            var polyline = new BMap.Polyline(marArr,
-//                    {strokeColor:"orange", strokeWeight:4, strokeOpacity:1}//设置属性
-//            );
-//            map.addOverlay(polyline);//跟polyline一块使用，添加上线
-//        }
-//        myGeo.getPoint(add, function(point){
-//            if (point) {
-//                var address = new BMap.Point(point.lng, point.lat);
-//                var marker = new BMap.Marker(address);
-//                map.addOverlay(marker);
+                },error: function (res) {
+                    console.log(res);
+                }
+            });
+            //window.onload = function () {
+                //_this.$nextTick(
+
+                //)
+            //};
+
+            _this.type=true;
+        },
+        methods: {
+            bdMap:function(scenicArr) {
+
+//                var map = new BMap.Map("allmap");    // 创建Map实例
+//                map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+                //添加地图类型控件
+//                map.addControl(new BMap.MapTypeControl({
+//                    mapTypes:[
+//                        BMAP_NORMAL_MAP,
+//                        BMAP_HYBRID_MAP
+//                    ]}));
+//                map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+//                map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+//                map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+//                //添加地图类型控件
+//                map.addControl(new BMap.MapTypeControl({
+//                    mapTypes:[
+//                        BMAP_NORMAL_MAP,
+//                        BMAP_HYBRID_MAP
+//                    ]}));
+//                map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+//                map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
 //
-//                marArr.push(address);
-////                document.getElementById("result").innerHTML +=  index + "、" + add + ":" + point.lng + "," + point.lat + "</br>";
-////                var address = new BMap.Point(point.lng, point.lat);
-////                addMarker(address,new BMap.Label(index+":"+add,{offset:new BMap.Size(20,-10)}));
-//            }
-//        }, "福建省");
-//    }
-    myGeo.getPoint('福建省', function (point) {
-        if (point) {
-            var address = new BMap.Point(point.lng, point.lat);
-            var marker = new BMap.Marker(address);
-            map.addOverlay(marker);
-            map.centerAndZoom(address,12);//设置地图中心点和地图缩放级别
+
+//                map.enableScrollWheelZoom(true);//地图的鼠标滚轮缩放默认是关闭的，需要配置开启。
+//                var opts = {type: BMAP_NAVIGATION_CONTROL_LARGE};//平移控件外观
+//                map.addControl(new BMap.NavigationControl(opts));//添加平移缩放控件
+//                var arr = scenicArr;
+//                var marArr = [];
+//                var index = 0;
+//                bdGEO();
+//                for (var i = 0; i < arr.length; i++) {
+//                    myGeo.getPoint(arr[i], function (point) {
+//                        if (point) {
+//                            var address = new BMap.Point(point.lng, point.lat);
+//                            var marker = new BMap.Marker(address);
+//                            map.addOverlay(marker);
+//                            marArr.push(address);
+//                        }
+//                    });
+//                }
+//                function bdGEO() {
+//                    var add = arr[index];
+//                    geocodeSearch(add);
+//                    index++;
+//                }
+//
+//                function geocodeSearch(add) {
+//                    if (index < arr.length) {
+//                        setTimeout(window.bdGEO, 400);//如果缺少，for循环和地图加载异步，线程速度不一样，会造成只显示最后一个标注点。
+//                    }
+//                    myGeo.getPoint(add, function (point) {
+//                        if (point) {
+//                            var address = new BMap.Point(point.lng, point.lat);
+//                            addMarker(address, new BMap.Label(index + ":" + add, {offset: new BMap.Size(20, -10)}));
+//                        }
+//                    });
+//                }
+//
+//                function addMarker(point, label) {
+//                    var marker = new BMap.Marker(point);
+//                    map.addOverlay(marker);
+//                    marker.setLabel(label);
+//                    var polyline = new BMap.Polyline(marArr[index],
+//                            {strokeColor: "orange", strokeWeight: 4, strokeOpacity: 1}//设置属性
+//                    );
+//                    map.addOverlay(polyline);//跟polyline一块使用，添加上线
+//                }
+            }
         }
     });
 
-//    var marker1 = new BMap.Marker(point1);        // 创建标注
-//    map.addOverlay(marker1);// 将标注添加到地图中
-//    map.addOverlay(marker);                     // 将标注添加到地图中
-
-
+    vm.$nextTick(function(){
+        var map = new BMap.Map('map1');//创建地图实例
+        /*_this.bdMap(['福州西湖','福州三坊七巷','福州花海公园']);*/
+        var myGeo = new BMap.Geocoder();
+        map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);           // 初始化地图，设置中心点坐标和地图级别
+    })
 </script>
 
 </html>

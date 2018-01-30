@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\hotel.html";i:1517130996;s:75:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\regionNav.html";i:1517043587;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517110113;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\hotel.html";i:1517189173;s:75:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\regionNav.html";i:1517043587;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517293544;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
     <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
     <link rel="stylesheet" href="__CSS__\home\public\public.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
@@ -32,17 +33,16 @@
         .navBg{
             background: #F9851D ;
         }
-<<<<<<< HEAD
-        .body{
+        .body {
             background-color: #efefef;
-=======
+        }
         footer{
             margin-top:25px;
->>>>>>> e79f6f254ff1825636c527baa2f2ad3069c1603d
         }
     </style>
 </head>
 <body class="body">
+
 
 
 
@@ -61,12 +61,14 @@
             <li class="layui-nav-item layui-this"><a href="<?php echo url('home/Index/index'); ?>">首页</a></li>
             <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
             <li class="layui-nav-item"><a href="">旅途直播</a></li>
-            <li class="layui-nav-item">
+            <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
+            <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
+            <li class="layui-nav-item loginIn">
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
                     <dd><a href="">我的消息</a></dd>
-                    <dd><a href="">个人中心</a></dd>
-                    <dd><a href="">退出登录</a></dd>
+                    <dd><a href="" class="toCenter">个人中心</a></dd>
+                    <dd  onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
                 </dl>
             </li>
             <li style="height: 30px; text-align: center"></li>
@@ -82,16 +84,18 @@
         <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
         <li class="layui-nav-item"><a href="">旅途直播</a></li>
     </ul>
-    <ul class="layui-nav navBg" lay-filter="" style="float: right">
-        <li class="layui-nav-item">
-            <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
+    <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
+        <li class="layui-nav-item loginIn">
+            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
+
             <dl class="layui-nav-child">
                 <dd><a href="">我的消息</a></dd>
-                <dd><a href="javascript:;">退出登录</a></dd>
+                <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
-        </li>
-       <!-- <li class="layui-nav-item"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>-->
+
+       <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
+        <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
+
     </ul>
 </div>
 
@@ -159,29 +163,6 @@
     </div>
     
     <div class="layui-container">
-        <div class="layui-row">
-            <div class="layui-col-sm5 layui-col-xs6">
-                <div class="am-input-group souInput">
-                    <input type="text" class="am-form-field">
-                     <span class="am-input-group-btn">
-                        <button class="am-btn am-btn-default" type="button">
-                            <span class="am-icon-search"></span>
-                        </button>
-                    </span>
-                </div>
-                <div class="msgDiv">
-                    <span>攻略：</span>
-                    <p class=" ">
-                        西湖醋鱼选用西湖鲲鱼作原料，烹制前一般先要在鱼笼中饿养一两天，使其排泄肠内杂物，除去泥土味。烹制时火候要求非常严格，仅能用三四...
-                        西湖醋鱼选用西湖鲲鱼作原料，烹制前一般先要在鱼笼中饿养一两天，使其排泄肠内杂物，除去泥土味。烹制时火候要求非常严格，仅能用三四...
-                        西湖醋鱼选用西湖鲲鱼作原料，烹制前一般先要在鱼笼中饿养一两天，使其排泄肠内杂物，除去泥土味。烹制时火候要求非常严格，仅能用三四...
-                    </p>
-                </div>
-            </div>
-            <div class="layui-col-sm5 layui-col-sm-offset2 layui-col-xs-offset1 layui-col-xs5 ">
-                <img class="regionImg" src="http://p1-q.mafengwo.net/s8/M00/C8/AD/wKgBpVWR1OWATgwpAAC6kG1-XPU02.jpeg?imageMogr2%2Fthumbnail%2F%21660x480r%2Fgravity%2FCenter%2Fcrop%2F%21660x480%2Fquality%2F90" alt="加载失败">
-            </div>
-        </div>
         <div class="layui-row priContent">
             <div class="layui-col-sm5 ">
                     <span class="priceF">价格:</span>
@@ -238,7 +219,6 @@
 
 
 
-<<<<<<< HEAD
 
 
 <footer style="background: #3c3c3c">
@@ -286,9 +266,8 @@
         </div>
     </div>
 </footer>
-=======
->>>>>>> af1153db015604462702e242cb521fd40c46e4e9
 </body>
+<script src="__STATIC__/lib/vue.js"></script>
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
 <script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
@@ -317,7 +296,10 @@
         $("#sideBar li").eq(i).addClass("layui-this");
     }
 
+    var checkUrl = "<?php echo url('home/User/check'); ?>";
+
 </script>
+<script src="__JS__/home/public/public.js"></script>
 
 
 </html>

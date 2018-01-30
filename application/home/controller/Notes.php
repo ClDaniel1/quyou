@@ -9,25 +9,36 @@
 namespace app\home\controller;
 
 
+use org\RadomStr;
+
 class Notes extends \think\Controller
 {
+    //编辑游记入口
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     public function notes(){
         $um = new User();
-        $res = $um->checkLogin();
+        $res = $um->checkLogin();//验证是否登录
         if($res){
-            $uphone = cookie("uphone");
+            $id = cookie("uid");
+            $nm = new \app\home\model\Notes();
+            //创建游记
+            $id = $nm->creatNote($id);
 
-            return $this->fetch("note");
+            $this->redirect('home/Notes/edit',["id"=>$id]);
         }else{
             $this->error('很抱歉，请登录后再试');
         }
     }
 
+
+    //设置游记头图
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     public function setUp(){
 
         if(empty($_FILES)){
             $w = input("param.size");
-            var_dump($w);
             session("img",$w);
         }
         else{
@@ -36,20 +47,33 @@ class Notes extends \think\Controller
                                 "msg"=>"",
                                 "data"=>[]];
 
-
-            $uphone = cookie("quyou_uphone");
-            $userDir = "static/images/user/".$uphone;
+            $noteId = input("param.noteId");
+            //检查是否有用户文件夹
+            $uid = cookie("uid");
+            $userDir = "static/images/user/".$uid;
             if(!(is_dir($userDir))){
                 mkdir($userDir);
             }
-            move_uploaded_file($_FILES["file"]["tmp_name"],$userDir."/temp.jpg");
+            $userDir = $userDir."/note/";
+            if(!(is_dir($userDir))){
+                mkdir($userDir);
+            }
+            $userDir = $userDir.$noteId;
+            if(!(is_dir($userDir))){
+                mkdir($userDir);
+            }
+            //移动文件到用户文件夹
+            $type = $_FILES["file"]["type"];
+            $type = explode("/",$type)[1];
+            $path = $userDir."/head".".".$type;
+            move_uploaded_file($_FILES["file"]["tmp_name"],$path);
 
-            $image = $userDir."/temp.jpg"; // 原图
-            $imgstream = file_get_contents($image);
-            $im = imagecreatefromstring($imgstream);
-            $x = imagesx($im);//获取图片的宽
-            $y = imagesy($im);//获取图片的高
+            $image = \think\Image::open($path);// 原图
+            $x = $width = $image->width();//获取图片的宽
+            $y = $height = $image->height(); //获取图片的高
 
+
+            //原图宽高确认
             if($x<1350 || $y < 480){
                 $resMsg["code"] = 50002;
                 $resMsg["msg"] = config("msg")["note"]["imgTooSmall"];
@@ -58,41 +82,41 @@ class Notes extends \think\Controller
 
             $size = json_decode(session("img"),true);
 
-            $w = $size[0];
-            $sw = $size[1];
-            $sh = $size[2];
-            $ew = $size[3];
-            $eh = $size[4];
+            $w = $size[0]; //切图时图片宽高
+            $sw = $size[1];//选择区域开始x
+            $sh = $size[2];//选择区域开始y
+            $ew = $size[3];//选择区域结束x
+            $eh = $size[4];//选择区域结束y
 
+            //计算比例
             $scale = $w/$x;
 
-            $rsw = $sw/$scale;
-            $rsh = $sh/$scale;
-            $rew = $ew/$scale;
-            $reh = $eh/$scale;
+            $rsw = $sw/$scale;//实际选择区域开始x
+            $rsh = $sh/$scale;//实际选择区域开始y
+            $rew = $ew/$scale;//实际选择区域结束x
+            $reh = $eh/$scale;//实际选择区域结束y
 
+            //裁剪后大小确认
             if($rew-$rsw<900 || $reh-$rsh < 300){
                 $resMsg["code"] = 50003;
                 $resMsg["msg"] = config("msg")["note"]["imgSelectTooSmall"];
                 return json($resMsg);
             }
+            //确认裁剪比例
             if(round(($rew-$rsw)/($reh-$rsh)) != 3){
                 $resMsg["code"] = 50004;
                 $resMsg["msg"] = config("msg")["note"]["scaleErr"];
                 return json($resMsg);
             }
 
+            $image->crop($rew-$rsw, $reh-$rsh,$rsw,$rsh)->save($path);
 
-            $source=imagecreatefromjpeg($image);
-            $croped=imagecreatetruecolor($rew-$rsw, $reh-$rsh);
-            imagecopy($croped, $source, 0, 0, $rsw, $rsh,$rew-$rsw , $reh-$rsh);
+            $userPath = "images/user/".$uid."/note/".$noteId."/head".".".$type;
 
-            imagejpeg($croped, $userDir."/temp.jpg");
-            imagedestroy($croped);
+            $resMsg["data"]["url"] = $userPath;
 
-            $userDir = "images/user/".$uphone;
-
-            $resMsg["data"]["url"] = $userDir."/temp.jpg";
+            $nm = new \app\home\model\Notes();
+            $nm->setUp($noteId,$userPath);
 
             return json($resMsg);
         }
@@ -101,4 +125,97 @@ class Notes extends \think\Controller
 
     }
 
+    public function edit(){
+        $um = new User();
+        $res = $um->checkLogin();//验证是否登录
+        if($res){
+        $id = input("param.id");
+        $nm = new \app\home\model\Notes();
+
+
+        //获取游记基本信息
+        $info = $nm->getNoteInfo($id)[0];
+
+        //获取游记内容
+        $con = $nm->getNoteCont($id);
+
+        $this->assign("info",$info);
+        $this->assign("con",$con);
+        $this->assign("noteId",$id);
+
+        return $this->fetch("note");
+        }else{
+            $this->error('很抱歉，请登录后再试',url("home/User/login"));
+        }
+    }
+
+    public function getCon(){
+        $id = input("param.id");
+        $nm = new \app\home\model\Notes();
+        $con = $nm->getNoteCont($id);
+
+        $reMsg=[
+            "code" =>"",
+            "msg" =>"",
+            "data"=>$con
+        ];
+
+        return json($reMsg);
+    }
+
+    public function save(){
+       $data = input("param.sData/a");
+       $noteId = input("param.id");
+
+       $nm = new \app\home\model\Notes();
+       $nm ->delCon($noteId);
+
+       foreach ($data as $val){
+           $nm->upCon($noteId,$val["content"],$val["type"],$val["num"],$val["title"]);
+       }
+    }
+
+    public function addImg(){
+        $noteId = input("param.noteId");
+        //检查是否有用户文件夹
+        $uid = cookie("uid");
+        $userDir = "static/images/user/".$uid;
+        if(!(is_dir($userDir))){
+            mkdir($userDir);
+        }
+        $userDir = $userDir."/note/";
+        if(!(is_dir($userDir))){
+            mkdir($userDir);
+        }
+        $userDir = $userDir.$noteId;
+        if(!(is_dir($userDir))){
+            mkdir($userDir);
+        }
+
+        $radom = new RadomStr();
+        $fileName = $radom->get("16").time();
+
+        //移动文件到用户文件夹
+        $type = $_FILES["file"]["type"];
+        $type = explode("/",$type)[1];
+        $path = $userDir."/".$fileName.".".$type;
+        move_uploaded_file($_FILES["file"]["tmp_name"],$path);
+
+        $userPath = "images/user/".$uid."/note/".$noteId."/".$fileName.".".$type;
+
+        $reMsg=[
+            "code"=>50005,
+            "msg" => "",
+            "data"=>[$userPath]
+        ];
+
+        return json($reMsg);
+    }
+
+    public function removeImg(){
+        $path = "static/".input("param.src");
+        if(file_exists($path)){
+            unlink($path);
+        }
+    }
 }
