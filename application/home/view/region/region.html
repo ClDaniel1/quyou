@@ -115,7 +115,7 @@
     <div class="layui-container">
         <h1 class="lineFont"><span>{$region_name}</span><span>2</span>条经典路线</h1>
         <div class="layui-row">
-            <div class="layui-col-sm6" v-if="type==true" v-for="(value,key) in routeMsg.msg">
+            <div class="layui-col-sm6" v-for="(value,key) in routeMsg.msg">
                 <div class="mapBorder1 scenicMsg">
                     <h1>
                         <span class="layui-badge layui-bg-orange mapNo">{{key+1}}</span>
@@ -123,8 +123,8 @@
                             {{routeMsg.name}}{{value[0].title}}
                         </span>
                     </h1>
-                    <div class="map">
-                        <div :id="map+key"></div>
+                    <div class="map" :id="mapp+key">
+
                     </div>
                     <div class="selectLine">
                         <span class="percent">
@@ -144,9 +144,6 @@
                         <a href="" class="lookA">查看></a>
                     </div>
                 </div>
-            </div>
-            <div v-else>
-                <i class="layui-icon" style="font-size: 30px; color: orange;">&#xe63d;</i>
             </div>
         </div>
         <div class="lookAll">
@@ -299,67 +296,79 @@
         var element = layui.element;
     });
 //   到时候需要封装起来
-    var vm = new Vue({
+    new Vue({
         el: '#baseMain',
         data:{
             routeMsg:[],
             routeS:false,
             type:false,
-            map:"map"
+            mapp:"map",
+            region:"{$region_name}"
         },
-        mounted: function () {
+        created: function () {
             var _this=this;
             $.ajax({
                 type:"get",
                 url:"{:url('home/Region/route')}",
-                async:false,
                 dataType:"json",
                 success: function (res) {
                     console.log(res);
                     _this.routeMsg=res;
                     var routeArr=[];
-                    for(var i=0;i<res.msg.length;i++)
-                    {
-                        routeArr.push([]);
-                        for(var j=0;j<res.msg[i].length;j++)
+                    setTimeout(function () {
+                        for(var i=0;i<res.msg.length;i++)
                         {
-                            routeArr[i].push(res.msg[i][j].scenicName);
+                            routeArr=[];
+                            for(var j=0;j<res.msg[i].length;j++)
+                            {
+                                routeArr.push(_this.region+res.msg[i][j].scenicName);
+                            }
+                                _this.bdMap(_this.mapp+i,routeArr,13);
                         }
-                    }
+                    },1000);
 
+                    _this.type=true;
                 },error: function (res) {
                     console.log(res);
                 }
             });
-            _this.type=true;
+
         },
         methods: {
-            bdMap:function (id,scenicArr) {
-                var map = new BMap.Map(id);//创建地图实例
-                var myGeo = new BMap.Geocoder();
-//                map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);           // 初始化地图，设置中心点坐标和地图级别
-                myGeo.getPoint('福州', function (point) {
-                    if (point){
-                        var address = new BMap.Point(point.lng, point.lat);
-                        map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
-                    }
-                });
+            bdMap:function(showId,scenicArr,max) {
+                var map = new BMap.Map(showId);//创建地图实例
                 map.enableScrollWheelZoom(true);//地图的鼠标滚轮缩放默认是关闭的，需要配置开启。
                 var opts = {type: BMAP_NAVIGATION_CONTROL_LARGE};//平移控件外观
                 map.addControl(new BMap.NavigationControl(opts));//添加平移缩放控件
+                var myGeo = new BMap.Geocoder();
+                myGeo.getPoint('{$region_name}', function (point) {
+                    if (point) {
+                        var address = new BMap.Point(point.lng, point.lat);
+                        map.centerAndZoom(address, max);           // 初始化地图，设置中心点坐标和地图级别
+                    }
+                });
                 var arr = scenicArr;
                 var marArr = [];
                 var index = 0;
                 bdGEO();
                 for (var i = 0; i < arr.length; i++) {
-                    myGeo.getPoint(arr[i], function (point) {
-                        if (point) {
-                            var address = new BMap.Point(point.lng, point.lat);
-                            var marker = new BMap.Marker(address);
-                            map.addOverlay(marker);
-                            marArr.push(address);
-                        }
-                    });
+                    go(i);
+                    function go(i) {
+                        myGeo.getPoint(arr[i], function (point) {
+                            if (point) {
+                                var address = new BMap.Point(point.lng, point.lat);
+                                var marker = new BMap.Marker(address);
+                                map.addOverlay(marker);
+                                marArr.push(address);
+                                if(i == arr.length-1){
+                                    setLine();
+                                }
+                            }
+                        });
+
+
+                    }
+
                 }
                 function bdGEO() {
                     var add = arr[index];
@@ -383,17 +392,16 @@
                     var marker = new BMap.Marker(point);
                     map.addOverlay(marker);
                     marker.setLabel(label);
-                    var polyline = new BMap.Polyline(marArr[index],
-                            {strokeColor: "orange", strokeWeight: 4, strokeOpacity: 1}//设置属性
+                }
+
+                function setLine() {
+                    var polyline = new BMap.Polyline(marArr,
+                        {strokeColor: "orange", strokeWeight: 4, strokeOpacity: 1}//设置属性
                     );
                     map.addOverlay(polyline);//跟polyline一块使用，添加上线
                 }
-            }
+        }
         }
     });
-
-    vm.$nextTick(function(){
-
-    })
 </script>
 {/block}
