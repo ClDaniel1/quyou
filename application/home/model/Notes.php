@@ -13,6 +13,9 @@ use think\Model;
 
 class Notes extends Model
 {
+    //创建游记
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     public function creatNote($uid){
         $time = date("Y-m-d H:i:s",time());
         $data =[
@@ -30,8 +33,34 @@ class Notes extends Model
         return $id;
     }
 
+    //获取游记基本信息
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public function getNoteInfo($noteId){
+        $data =db('t_note')
+            ->where("noteId= $noteId")
+            ->select();
+        return $data;
+    }
+
+    //获取游记内容
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     public function getNoteCont($noteId){
-        $data = db(['t_note'=>'noteId','t_notecon'=>'noteId'])->where("noteId= $noteId")->select();
-        var_dump($data);
+        $data =db('t_note')
+            ->alias('a')
+            ->join('t_notecon b','a.noteId = b.noteId')
+            ->field("b.*")
+            ->where("a.noteId= $noteId")
+            ->order("num ASC")
+            ->select();
+        return $data;
+    }
+
+    //将头图传到数据库
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    public function setUp($noteId,$path){
+        db("t_note")->where("noteId=$noteId")->update(["img"=>$path]);
     }
 }
