@@ -24,12 +24,11 @@ class Region extends Model
         $arr=array();
         $sql=db('t_scenic')->where('desId',$id)->limit(0,2)->select();
         $count=db('t_scenic')->where('desId',$id)->count();
-
         $arr['list']=$sql;
         $arr['count']=$count;
         return $arr;
     }
-    public function hotelMsg($id)//根据地区id查找对应地区酒店信息
+    public function hotelMsg($id)//根据地区id查找对应地区酒店2条信息
     {
         $arr=array();
         $sql=db('t_hotel')->where('desId',$id)->limit(0,2)->select();
@@ -37,6 +36,16 @@ class Region extends Model
         $arr['msg']=$sql;
         $arr['count']=$count;
         return $arr;
+    }
+    public function htCount($id)
+    {
+        $sql=db('t_hotel')->where('desId',$id)->count();
+        return $sql;
+    }
+    public function hotelCount($id,$start,$end)//根据地区id查找对应地区酒店全部信息
+    {
+        $sql=db('t_hotel')->where('desId',$id)->limit($start,$end)->select();
+        return $sql;
     }
     public function foodMsg($id)//根据地区id查找对应地区食物信息
     {
@@ -57,5 +66,9 @@ class Region extends Model
         $routeNew=db('t_route')->alias('a')->join('t_routecon b','a.routeId=b.routeId')->join('t_scenic c','c.scenicId=b.scenicId')->where('a.desId',$id)->field('a.title,a.chose,b.routeId,b.num,c.scenicName')->select();
 //        $routeMsg=db($routeNew.'d')->fetchSql(true)->select();
         return $routeNew;
+    }
+    public function hotelPay()
+    {
+
     }
 }

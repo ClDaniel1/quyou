@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\hotel.html";i:1517189173;s:75:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\regionNav.html";i:1517043587;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517293544;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\hotel.html";i:1517319262;s:75:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\regionNav.html";i:1517043587;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517304502;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
     <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
     <link rel="stylesheet" href="__CSS__\home\public\public.css">
+
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -182,34 +183,7 @@
             </div>
         </div>
         </div>
-        <div class="layui-row hotelBd">
-            <div class="layui-col-sm4 layui-col-xs6">
-                <img src="http://p1-q.mafengwo.net/s8/M00/C8/AD/wKgBpVWR1OWATgwpAAC6kG1-XPU02.jpeg?imageMogr2%2Fthumbnail%2F%21660x480r%2Fgravity%2FCenter%2Fcrop%2F%21660x480%2Fquality%2F90" alt="加载失败">
-            </div>
-            <div class="layui-col-sm8 layui-col-xs6">
-                <div class="hotelR">
-                    <div class="hTile">
-                        <span>杭州尚途酒店公寓 </span>
-                        <a class="addA">
-                            <i class="layui-icon">&#xe658;</i>
-                            <i>收藏</i>
-                        </a>
-                    </div>
-                    <div class="reply">
-                        <a href="">
-                            <span><span>2</span>条</span><br>
-                            <span>峰峰评价</span>
-                        </a>
-                        <p>房间很大，很干净，旁边就是超市和丁兰广场，很方便，下次还住！</p>
-                    </div>
-                    <div class="payBt">
-                        <a href="">
-                            立即预订
-                            <span>￥<span>2000</span></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div id="hotelDiv">
         </div>
     </div>
 
@@ -301,5 +275,70 @@
 </script>
 <script src="__JS__/home/public/public.js"></script>
 
+<script>
+    var pageIndex=1;
+    var pageSize=5;
+    var dataT=[];
+    var pageNum=0;
+    layui.use('flow', function () {
+        var $ = layui.jquery;
+        var flow = layui.flow;
+        flow.load({
+            elem: '#hotelDiv',//存放每条数据的容器
+            done: function (pageIndex, next) { //到达临界点（默认滚动触发），触发下一页
+                var lis = [];
+                //以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
+                $.ajax({
+                    type: "POST",
+                    async:false,
+                    url: "<?php echo url('home/Region/ajaxHotel'); ?>",
+                    data: { size: pageSize, page: pageIndex},
+                    dataType:"json",
+                    success: function (data) {
+                        console.log(data[1]);
+                        pageIndex++; //服务端返回的json字符必须包含pageIndex和pageCount属性，pageIndex表示页码，pageCount是总页数
+                        dataT=data[1];
+                        pageNum=data[0];
+                    }
+                });
+                for (var i = 0; i < dataT.length; i++) {
+                    var d = '<div class="layui-row hotelBd">'+
+                            '<div class="layui-col-sm4 layui-col-xs6">'+
+                            '<a href="<?php echo url('home/Region/hotelPay'); ?>?id='+dataT[i].hotelId+'"><img src="__STATIC__/'+dataT[i].img+'" alt="加载失败"></a>'+
+                            '</div>'+
+                            '<div class="layui-col-sm8 layui-col-xs6">'+
+                            '<div class="hotelR">'+
+                            '<div class="hTile">'+
+                            '<a href="<?php echo url('home/Region/hotelPay'); ?>?id='+dataT[i].hotelId+'"><span>'+dataT[i].hotelName+'</span></a>'+
+                            '<a class="addA" id="'+dataT[i].hotelId+'">'+
+                            '<i class="layui-icon">&#xe658;</i>'+
+                            '<i>收藏</i>'+
+                            '</a>'+
+                            '</div>'+
+                            '<div class="reply">'+
+                            '<a href="<?php echo url('home/Region/hotelPay'); ?>?id='+dataT[i].hotelId+'">'+
+                            '<span><span>2</span>条</span><br>'+
+                            '<span>峰峰评价</span>'+
+                            '</a>'+
+                            '<p>'+dataT[i].hotelDescribe+'</p>'+
+                            '</div>'+
+                            '<div class="payBt">'+
+                            '<a href="<?php echo url('home/Region/hotelPay'); ?>?id='+dataT[i].hotelId+'">'+
+                            '立即预订'+
+                            '<span>￥<span>'+dataT[i].hotelPrice+'</span></span>'+
+                            '</a>'+
+                            '</div>'+
+                            '</div>'+
+                            '</div>'+
+                            '</div>';
+                    lis.push(d);//每条数据都压入数组，LayUI会自动将每条信息插入Html的ID为#divArticle的元素
+                }
+                //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+                //只有当前页小于总页数的情况下，才会继续出现加载更多
+                next(lis.join(''), pageIndex <=pageNum );
+            }
+        });
+    });
+</script>
 
 </html>
