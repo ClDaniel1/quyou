@@ -1,0 +1,95 @@
+.imgUl
+{
+    display: inline-block;
+    margin-left: 10px;
+    width: 45%;
+}
+.imgUl li
+{
+    margin-bottom:10px;
+}
+.imgUl img
+{
+    height: 120px;
+    border-radius: 10px;
+    width: 100%;
+}
+.bigImg
+{
+    width: 100%;
+    height: 380px;
+    border-radius: 10px;
+}
+.hotelName
+{
+    font-size: 25px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.leftUl li,.rightUl li
+{
+    display: inline-block;
+    font-size: 18px;
+}
+.leftUl a,.rightUl a
+{
+    padding: 0 20px;
+    display: inline-block;
+}
+.rightUl
+{
+    text-align: right;
+}
+.rightUl i
+{
+    float: left;
+    margin-top: -2px;
+}
+.addH
+{
+    display: none;
+    font-size: 18px;
+    /*float: left;*/
+
+}
+.addH i
+{
+    float: left;
+    margin-top: -4px;
+}
+.borderB
+{
+    border-bottom: 1px solid #dedede;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    padding: 10px 0;
+}
+#test1,#test2
+{
+    width: 150px;
+    display: inline-block;
+}
+.dateB
+{
+    margin:20px 0;
+}
+@media screen and (max-width: 768px){
+    .imgUl{
+        margin-left: 3px;
+    }
+    .leftUl a,.rightUl a
+    {
+        padding: 0 5px;
+    }
+    #hideH
+    {
+        display: none;
+    }
+    .addH
+    {
+        display: inline-block;
+    }
+    #test1,#test2
+    {
+        width: 93px;
+    }
+}

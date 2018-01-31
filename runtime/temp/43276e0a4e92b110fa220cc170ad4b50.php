@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517297786;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517293544;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517300207;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517304502;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
     <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
     <link rel="stylesheet" href="__CSS__\home\public\public.css">
+
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -262,7 +263,7 @@
     <div class="layui-container">
         <h1 class="lineFont"><span><?php echo $region_name; ?></span><span>2</span>条经典路线</h1>
         <div class="layui-row">
-            <div class="layui-col-sm6" v-if="type==true" v-for="(value,key) in routeMsg.msg">
+            <div class="layui-col-sm6" v-for="(value,key) in routeMsg.msg">
                 <div class="mapBorder1 scenicMsg">
                     <h1>
                         <span class="layui-badge layui-bg-orange mapNo">{{key+1}}</span>
@@ -270,8 +271,8 @@
                             {{routeMsg.name}}{{value[0].title}}
                         </span>
                     </h1>
-                    <div class="map">
-                        <div :id="map+key"></div>
+                    <div class="map" :id="mapp+key">
+
                     </div>
                     <div class="selectLine">
                         <span class="percent">
@@ -291,9 +292,6 @@
                         <a href="" class="lookA">查看></a>
                     </div>
                 </div>
-            </div>
-            <div v-else>
-                <i class="layui-icon" style="font-size: 30px; color: orange;">&#xe63d;</i>
             </div>
         </div>
         <div class="lookAll">
@@ -532,124 +530,110 @@
         var element = layui.element;
     });
 //   到时候需要封装起来
-    var vm = new Vue({
+    new Vue({
         el: '#baseMain',
         data:{
             routeMsg:[],
             routeS:false,
             type:false,
-            map:"map"
+            mapp:"map",
+            region:"<?php echo $region_name; ?>"
         },
-        mounted: function () {
+        created: function () {
             var _this=this;
             $.ajax({
                 type:"get",
                 url:"<?php echo url('home/Region/route'); ?>",
-                async:false,
                 dataType:"json",
                 success: function (res) {
                     console.log(res);
                     _this.routeMsg=res;
                     var routeArr=[];
-                    for(var i=0;i<res.msg.length;i++)
-                    {
-                        routeArr.push([]);
-                        for(var j=0;j<res.msg[i].length;j++)
+                    setTimeout(function () {
+                        for(var i=0;i<res.msg.length;i++)
                         {
-                            routeArr[i].push(res.msg[i][j].scenicName);
+                            routeArr=[];
+                            for(var j=0;j<res.msg[i].length;j++)
+                            {
+                                routeArr.push(_this.region+res.msg[i][j].scenicName);
+                            }
+                                _this.bdMap(_this.mapp+i,routeArr,13);
                         }
-                    }
+                    },1000);
 
+                    _this.type=true;
                 },error: function (res) {
                     console.log(res);
                 }
             });
-            //window.onload = function () {
-                //_this.$nextTick(
-
-                //)
-            //};
-
-            _this.type=true;
         },
         methods: {
-            bdMap:function(scenicArr) {
+            bdMap:function(showId,scenicArr,max) {
+                var map = new BMap.Map(showId);//创建地图实例
+                map.enableScrollWheelZoom(true);//地图的鼠标滚轮缩放默认是关闭的，需要配置开启。
+                var opts = {type: BMAP_NAVIGATION_CONTROL_LARGE};//平移控件外观
+                map.addControl(new BMap.NavigationControl(opts));//添加平移缩放控件
+                var myGeo = new BMap.Geocoder();
+                myGeo.getPoint('<?php echo $region_name; ?>', function (point) {
+                    if (point) {
+                        var address = new BMap.Point(point.lng, point.lat);
+                        map.centerAndZoom(address, max);           // 初始化地图，设置中心点坐标和地图级别
+                    }
+                });
+                var arr = scenicArr;
+                var marArr = [];
+                var index = 0;
+                bdGEO();
+                for (var i = 0; i < arr.length; i++) {
+                    go(i);
+                    function go(i) {
+                        myGeo.getPoint(arr[i], function (point) {
+                            if (point) {
+                                var address = new BMap.Point(point.lng, point.lat);
+                                var marker = new BMap.Marker(address);
+                                map.addOverlay(marker);
+                                marArr.push(address);
+                                if(i == arr.length-1){
+                                    setLine();
+                                }
+                            }
+                        });
 
-//                var map = new BMap.Map("allmap");    // 创建Map实例
-//                map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
-                //添加地图类型控件
-//                map.addControl(new BMap.MapTypeControl({
-//                    mapTypes:[
-//                        BMAP_NORMAL_MAP,
-//                        BMAP_HYBRID_MAP
-//                    ]}));
-//                map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
-//                map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
-//                map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
-//                //添加地图类型控件
-//                map.addControl(new BMap.MapTypeControl({
-//                    mapTypes:[
-//                        BMAP_NORMAL_MAP,
-//                        BMAP_HYBRID_MAP
-//                    ]}));
-//                map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
-//                map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
-//
 
-//                map.enableScrollWheelZoom(true);//地图的鼠标滚轮缩放默认是关闭的，需要配置开启。
-//                var opts = {type: BMAP_NAVIGATION_CONTROL_LARGE};//平移控件外观
-//                map.addControl(new BMap.NavigationControl(opts));//添加平移缩放控件
-//                var arr = scenicArr;
-//                var marArr = [];
-//                var index = 0;
-//                bdGEO();
-//                for (var i = 0; i < arr.length; i++) {
-//                    myGeo.getPoint(arr[i], function (point) {
-//                        if (point) {
-//                            var address = new BMap.Point(point.lng, point.lat);
-//                            var marker = new BMap.Marker(address);
-//                            map.addOverlay(marker);
-//                            marArr.push(address);
-//                        }
-//                    });
-//                }
-//                function bdGEO() {
-//                    var add = arr[index];
-//                    geocodeSearch(add);
-//                    index++;
-//                }
-//
-//                function geocodeSearch(add) {
-//                    if (index < arr.length) {
-//                        setTimeout(window.bdGEO, 400);//如果缺少，for循环和地图加载异步，线程速度不一样，会造成只显示最后一个标注点。
-//                    }
-//                    myGeo.getPoint(add, function (point) {
-//                        if (point) {
-//                            var address = new BMap.Point(point.lng, point.lat);
-//                            addMarker(address, new BMap.Label(index + ":" + add, {offset: new BMap.Size(20, -10)}));
-//                        }
-//                    });
-//                }
-//
-//                function addMarker(point, label) {
-//                    var marker = new BMap.Marker(point);
-//                    map.addOverlay(marker);
-//                    marker.setLabel(label);
-//                    var polyline = new BMap.Polyline(marArr[index],
-//                            {strokeColor: "orange", strokeWeight: 4, strokeOpacity: 1}//设置属性
-//                    );
-//                    map.addOverlay(polyline);//跟polyline一块使用，添加上线
-//                }
+                    }
+
+                }
+                function bdGEO() //做到加载每一个景点
+                {
+                    var add = arr[index];
+                    geocodeSearch(add);
+                    index++;
+                }
+                function geocodeSearch(add) {
+                    if (index < arr.length) {
+                        setTimeout(window.bdGEO, 400);//如果缺少，for循环和地图加载异步，线程速度不一样，会造成只显示最后一个标注点。
+                    }
+                    myGeo.getPoint(add, function (point) {
+                        if (point) {
+                            var address = new BMap.Point(point.lng, point.lat);
+                            addMarker(address, new BMap.Label(index + ":" + add, {offset: new BMap.Size(20, -10)}));
+                        }
+                    });
+                }
+                function addMarker(point, label) {
+                    var marker = new BMap.Marker(point);
+                    map.addOverlay(marker);
+                    marker.setLabel(label);
+                }
+                function setLine() {
+                    var polyline = new BMap.Polyline(marArr,
+                        {strokeColor: "orange", strokeWeight: 4, strokeOpacity: 1}//设置属性
+                    );
+                    map.addOverlay(polyline);//跟polyline一块使用，添加上线
+                }
             }
         }
     });
-
-    vm.$nextTick(function(){
-        var map = new BMap.Map('map1');//创建地图实例
-        /*_this.bdMap(['福州西湖','福州三坊七巷','福州花海公园']);*/
-        var myGeo = new BMap.Geocoder();
-        map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);           // 初始化地图，设置中心点坐标和地图级别
-    })
 </script>
 
 </html>
