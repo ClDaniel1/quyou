@@ -22912,3 +22912,821 @@
 [ info ] [ LOG ] INIT File
 
 ---------------------------------------------------------------
+[ 2018-01-31T22:36:57+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/index
+[ log ] 127.0.0.1/quyou/public/admin/index/index [运行时间：0.532031s][吞吐率：1.88req/s] [内存消耗：4,947.69kb] [文件加载：58]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\index.html [ array (
+  0 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.157009s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_menu` [ RunTime:0.056003s ]
+[ sql ] [ SQL ] SELECT * FROM `t_menu` [ RunTime:0.063004s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T22:36:57+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/welcome.html
+[ log ] 127.0.0.1/quyou/public/admin/index/welcome.html [运行时间：0.230013s][吞吐率：4.35req/s] [内存消耗：3,113.77kb] [文件加载：50]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:36:59+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/temp/200x150.jpg
+[ log ] 127.0.0.1/quyou/public/admin/index/temp/200x150.jpg [运行时间：0.091005s][吞吐率：10.99req/s] [内存消耗：3,175.96kb] [文件加载：52]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'temp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:37:19+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/hotel/hotel.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotel.html [运行时间：0.117007s][吞吐率：8.55req/s] [内存消耗：3,295.83kb] [文件加载：51]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotel',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotel[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\hotel\hotel.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:37:20+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/hotel/hotelspot.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotelspot.html [运行时间：0.397022s][吞吐率：2.52req/s] [内存消耗：4,848.23kb] [文件加载：54]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotelspot',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotel.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotelSpot[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.155008s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.064003s ]
+[ sql ] [ SQL ] SELECT count(hotelId) COUNT FROM `t_hotel` [ RunTime:0.065003s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T22:37:20+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/hotel/hotelrelease.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotelrelease.html [运行时间：0.399022s][吞吐率：2.51req/s] [内存消耗：4,913.59kb] [文件加载：54]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotelrelease',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotel.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotelRelease[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.148008s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.052003s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`REGION_NAME` FROM `t_hotel` `a` INNER JOIN `t_region` `b` ON `a`.`desId`=`b`.`REGION_ID` [ RunTime:0.091005s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T22:37:24+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/hotel/hotelappend.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotelappend.html [运行时间：0.342019s][吞吐率：2.92req/s] [内存消耗：5,127.92kb] [文件加载：58]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotelappend',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotel.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotelAppend[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\hotel\hotelAppend.html [ array (
+  0 => 'region',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.086005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_region` [ RunTime:0.058003s ]
+[ sql ] [ SQL ] SELECT * FROM `t_region` WHERE  `PARENT_ID` = 1 [ RunTime:0.061004s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T22:37:58+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/admin/hotel/hotelselect.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotelselect.html [运行时间：0.325019s][吞吐率：3.08req/s] [内存消耗：4,865.13kb] [文件加载：54]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotelselect',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '11',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotelappend.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+  'regionId' => '13',
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotelSelect[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.080005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_region` [ RunTime:0.065004s ]
+[ sql ] [ SQL ] SELECT * FROM `t_region` WHERE  `PARENT_ID` = 13 [ RunTime:0.067004s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T22:38:13+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/admin/hotel/uploadimg.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/uploadimg.html [运行时间：0.118007s][吞吐率：8.47req/s] [内存消耗：3,183.36kb] [文件加载：49]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'uploadimg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '65217',
+  'origin' => 'http://127.0.0.1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryb9PhbQyJ7BEIyp8z',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotelappend.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '123',
+  'id' => 'WU_FILE_0',
+  'name' => '01_1.jpg',
+  'type' => 'image/jpeg',
+  'lastModifiedDate' => 'Sun Oct 29 2017 10:28:55 GMT+0800 (中国标准时间)',
+  'size' => '64391',
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->uploadImg[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:38:14+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/admin/hotel/uploadimg.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/uploadimg.html [运行时间：0.115006s][吞吐率：8.70req/s] [内存消耗：3,183.05kb] [文件加载：49]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'uploadimg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '48962',
+  'origin' => 'http://127.0.0.1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryodLwoTzCD4DEvu3K',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotelappend.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '123',
+  'id' => 'WU_FILE_2',
+  'name' => '01_3.jpg',
+  'type' => 'image/jpeg',
+  'lastModifiedDate' => 'Sun Oct 29 2017 10:29:36 GMT+0800 (中国标准时间)',
+  'size' => '48136',
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->uploadImg[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:38:14+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/admin/hotel/uploadimg.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/uploadimg.html [运行时间：0.207011s][吞吐率：4.83req/s] [内存消耗：3,183.36kb] [文件加载：49]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'uploadimg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '67294',
+  'origin' => 'http://127.0.0.1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryVfh1vs2AcLoCG3Et',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotelappend.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '123',
+  'id' => 'WU_FILE_1',
+  'name' => '01_2.jpg',
+  'type' => 'image/jpeg',
+  'lastModifiedDate' => 'Sun Oct 29 2017 10:29:25 GMT+0800 (中国标准时间)',
+  'size' => '66468',
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->uploadImg[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:38:14+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/admin/hotel/uploadimg.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/uploadimg.html [运行时间：0.128007s][吞吐率：7.81req/s] [内存消耗：3,183.23kb] [文件加载：49]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'uploadimg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '46483',
+  'origin' => 'http://127.0.0.1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary41tttVNuX3NjG9NM',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotelappend.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '123',
+  'id' => 'WU_FILE_3',
+  'name' => '01_4.jpg',
+  'type' => 'image/jpeg',
+  'lastModifiedDate' => 'Sun Oct 29 2017 10:29:47 GMT+0800 (中国标准时间)',
+  'size' => '45657',
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->uploadImg[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:38:14+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/admin/hotel/uploadimg.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/uploadimg.html [运行时间：0.108006s][吞吐率：9.26req/s] [内存消耗：3,183.25kb] [文件加载：49]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'uploadimg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '179398',
+  'origin' => 'http://127.0.0.1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryNc5Q41CZ3B59rV5T',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotelappend.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '123',
+  'id' => 'WU_FILE_4',
+  'name' => '02.05.jpg',
+  'type' => 'image/jpeg',
+  'lastModifiedDate' => 'Sat Oct 28 2017 22:29:04 GMT+0800 (中国标准时间)',
+  'size' => '178569',
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->uploadImg[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:38:15+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/admin/hotel/uploadimg.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/uploadimg.html [运行时间：0.131008s][吞吐率：7.63req/s] [内存消耗：3,183.23kb] [文件加载：49]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'uploadimg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '81008',
+  'origin' => 'http://127.0.0.1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryeqrhoNDGCeYVcitu',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotelappend.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '123',
+  'id' => 'WU_FILE_5',
+  'name' => '02_1.jpg',
+  'type' => 'image/jpeg',
+  'lastModifiedDate' => 'Sun Oct 29 2017 10:31:08 GMT+0800 (中国标准时间)',
+  'size' => '80182',
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->uploadImg[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:38:15+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/admin/hotel/uploadimg.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/uploadimg.html [运行时间：0.131007s][吞吐率：7.63req/s] [内存消耗：3,183.36kb] [文件加载：49]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'uploadimg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '63666',
+  'origin' => 'http://127.0.0.1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryMMEATHcSEcJ5l1N6',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotelappend.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '123',
+  'id' => 'WU_FILE_6',
+  'name' => '02_2.jpg',
+  'type' => 'image/jpeg',
+  'lastModifiedDate' => 'Sun Oct 29 2017 10:31:18 GMT+0800 (中国标准时间)',
+  'size' => '62840',
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->uploadImg[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:38:15+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/admin/hotel/uploadimg.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/uploadimg.html [运行时间：0.124007s][吞吐率：8.06req/s] [内存消耗：3,183.23kb] [文件加载：49]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'uploadimg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '22009',
+  'origin' => 'http://127.0.0.1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryaATFsdBPf5rq2DbA',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotelappend.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '123',
+  'id' => 'WU_FILE_7',
+  'name' => '02_3.jpg',
+  'type' => 'image/jpeg',
+  'lastModifiedDate' => 'Sun Oct 29 2017 10:31:28 GMT+0800 (中国标准时间)',
+  'size' => '21183',
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->uploadImg[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:38:19+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/admin/hotel/hotelfind.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotelfind.html [运行时间：0.328018s][吞吐率：3.05req/s] [内存消耗：4,852.23kb] [文件加载：54]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotelfind',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '135',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotelappend.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+  'hotelName' => '天上人间',
+  'hotelDescribe' => '美不可言',
+  'hotelNum' => '272',
+  'hotelPrice' => '133',
+  'desId' => '135',
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotelFind[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.084005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.066004s ]
+[ sql ] [ SQL ] SELECT count(hotelId) COUNT FROM `t_hotel` WHERE  `hotelName` = '天上人间' [ RunTime:0.060003s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T22:38:19+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/admin/hotel/hotelaappend.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotelaappend.html [运行时间：0.395023s][吞吐率：2.53req/s] [内存消耗：5,152.66kb] [文件加载：58]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotelaappend',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '172965',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotelappend.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+  'hotelName' => '天上人间',
+  'hotelDescribe' => '美不可言',
+  'hotelNum' => '272',
+  'hotelPrice' => '133',
+  'desId' => '135',
+  'img' => '[\\"1141517409493.jpeg<div id=\\\\\\"think_page_trace\\\\\\" style=\\\\\\"position: fixed;bottom:0;right:0;font-size:14px;width:100%;z-index: 999999;color: #000;text-align:left;font-family:\\\'微软雅黑\\\';\\\\\\">\\\\r\\\\n    <div id=\\\\\\"think_page_trace_tab\\\\\\" style=\\\\\\"display: none;background:white;margin:0;height: 250px;\\\\\\">\\\\r\\\\n        <div id=\\\\\\"think_page_trace_tab_tit\\\\\\" style=\\\\\\"height:30px;padding: 6px 12px 0;border-bottom:1px solid #ececec;border-top:1px solid #ececec;font-size:16px\\\\\\">\\\\r\\\\n                        <span style=\\\\\\"color:#000;padding-right:12px;height:30px;line-height:30px;display:inline-block;margin-right:3px;cursor:pointer;font-weight:700\\\\\\">基本</span>\\\\r\\\\n                        <span style=\\\\\\"color:#000;padding-right:12px;height:30px;line-height:30px;display:inline-block;margin-right:3px;cursor:pointer;font-weight:700\\\\\\">文件</span>\\\\r\\\\n                        <span style=\\\\\\"color:#000;padding-right:12px;height:30px;line-height:30px;display:inline-block;margin-right:3px;cursor:pointer;font-weight:700\\\\\\">流程</span>\\\\r\\\\n                        <span style=\\\\\\"color:#000;padding-right:12px;height:30px;line-height:30px;display:inline-block;margin-right:3px;cursor:pointer;font-weight:700\\\\\\">错误</span>\\\\r\\\\n                        <span style=\\\\\\"color:#000;padding-right:12px;height:30px;line-height:30px;display:inline-block;margin-right:3px;cursor:pointer;font-weight:700\\\\\\">SQL</span>\\\\r\\\\n                        <span style=\\\\\\"color:#000;padding-right:12px;height:30px;line-height:30px;display:inline-block;margin-right:3px;cursor:pointer;font-weight:700\\\\\\">调试</span>\\\\r\\\\n                    </div>\\\\r\\\\n        <div id=\\\\\\"think_page_trace_tab_cont\\\\\\" style=\\\\\\"overflow:auto;height:212px;padding:0;line-height: 24px\\\\\\">\\\\r\\\\n                        <div style=\\\\\\"display:none;\\\\\\">\\\\r\\\\n                <ol style=\\\\\\"padding: 0; margin:0\\\\\\">\\\\r\\\\n                    <li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">请求信息 : 2018-01-31 22:38:13 HTTP/1.1 POST : 127.0.0.1/quyou/public/admin/hotel/uploadimg.html</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">运行时间 : 0.105006s [ 吞吐率：9.52req/s ] 内存消耗：2,963.71kb 文件加载：44</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">查询信息 : 0 queries 0 writes </li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">缓存信息 : 0 reads,0 writes</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">配置加载 : 64</li>                </ol>\\\\r\\\\n            </div>\\\\r\\\\n                        <div style=\\\\\\"display:none;\\\\\\">\\\\r\\\\n                <ol style=\\\\\\"padding: 0; margin:0\\\\\\">\\\\r\\\\n                    <li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\public\\\\\\\\index.php ( 0.80 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\start.php ( 0.73 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\base.php ( 2.66 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Loader.php ( 19.28 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\vendor\\\\\\\\composer\\\\\\\\autoload_namespaces.php ( 0.22 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\vendor\\\\\\\\composer\\\\\\\\autoload_psr4.php ( 1.73 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\vendor\\\\\\\\composer\\\\\\\\autoload_classmap.php ( 44.85 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\vendor\\\\\\\\composer\\\\\\\\autoload_files.php ( 0.72 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\vendor\\\\\\\\topthink\\\\\\\\think-helper\\\\\\\\src\\\\\\\\helper.php ( 1.88 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\vendor\\\\\\\\symfony\\\\\\\\polyfill-mbstring\\\\\\\\bootstrap.php ( 4.34 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\vendor\\\\\\\\topthink\\\\\\\\think-captcha\\\\\\\\src\\\\\\\\helper.php ( 1.66 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Route.php ( 59.43 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Config.php ( 6.02 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Validate.php ( 39.74 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\vendor\\\\\\\\topthink\\\\\\\\think-migration\\\\\\\\src\\\\\\\\config.php ( 0.79 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Console.php ( 21.22 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\vendor\\\\\\\\topthink\\\\\\\\think-queue\\\\\\\\src\\\\\\\\common.php ( 1.22 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\vendor\\\\\\\\topthink\\\\\\\\think-testing\\\\\\\\src\\\\\\\\config.php ( 0.67 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Error.php ( 3.59 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\convention.php ( 10.30 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\App.php ( 20.37 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Request.php ( 48.61 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\application\\\\\\\\config.php ( 10.41 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\application\\\\\\\\database.php ( 2.05 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\application\\\\\\\\extra\\\\\\\\queue.php ( 0.63 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Hook.php ( 4.76 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\application\\\\\\\\tags.php ( 0.99 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\application\\\\\\\\common.php ( 0.61 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Env.php ( 1.08 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\helper.php ( 17.72 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Lang.php ( 6.93 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Log.php ( 5.72 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\lang\\\\\\\\zh-cn.php ( 3.79 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\application\\\\\\\\route.php ( 0.83 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\application\\\\\\\\admin\\\\\\\\controller\\\\\\\\Hotel.php ( 7.24 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Controller.php ( 6.20 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\traits\\\\\\\\controller\\\\\\\\Jump.php ( 4.90 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\View.php ( 6.86 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\view\\\\\\\\driver\\\\\\\\Think.php ( 5.61 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Template.php ( 46.48 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\template\\\\\\\\driver\\\\\\\\File.php ( 2.24 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Response.php ( 8.42 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Debug.php ( 7.01 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\debug\\\\\\\\Html.php ( 4.27 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Db.php ( 6.42 KB )</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\library\\\\\\\\think\\\\\\\\Cache.php ( 6.33 KB )</li>                </ol>\\\\r\\\\n            </div>\\\\r\\\\n                        <div style=\\\\\\"display:none;\\\\\\">\\\\r\\\\n                <ol style=\\\\\\"padding: 0; margin:0\\\\\\">\\\\r\\\\n                    <li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">[ LANG ] E:\\\\\\\\wamp64\\\\\\\\www\\\\\\\\quyou\\\\\\\\thinkphp\\\\\\\\lang\\\\\\\\zh-cn.php</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">[ ROUTE ] array (\\\\n  \\\'type\\\' =',
+  'gt;_\'module\',\\n__\'module\'_' => '',
+  'gt;_\\n__array_(\\n____0_' => '',
+  'gt;_\'admin\',\\n____1_' => '',
+  'gt;_\'hotel\',\\n____2_' => '',
+  'gt;_\'uploadimg\',\\n__),\\n)</li><li_style' => '\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">[ HEADER ] array (\\\\n  \\\'host\\\' =',
+  'gt;_\'127_0_0_1\',\\n__\'connection\'_' => '',
+  'gt;_\'keep-alive\',\\n__\'content-length\'_' => '',
+  'gt;_\'65217\',\\n__\'origin\'_' => '',
+  'gt;_\'http://127_0_0_1\',\\n__\'user-agent\'_' => '',
+  'gt;_\'Mozilla/5_0_(Windows_NT_6_1;_WOW64)_AppleWebKit/537_36_(KHTML,_like_Gecko)_Chrome/59_0_3071_115_Safari/537_36\',\\n__\'content-type\'_' => '',
+  'gt;_\'multipart/form-data;_boundary' => '----WebKitFormBoundaryaATFsdBPf5rq2DbA\\\',\\\\n  \\\'accept\\\' =',
+  'gt;_\'*/*\',\\n__\'referer\'_' => '',
+  'gt;_\'http://127_0_0_1/quyou/public/admin/hotel/hotelappend_html\',\\n__\'accept-encoding\'_' => '',
+  'gt;_\'gzip,_deflate,_br\',\\n__\'accept-language\'_' => '',
+  'gt;_\'zh-CN,zh;q' => '0.8\\\',\\\\n  \\\'cookie\\\' =',
+  'gt;_\'thinkphp_show_page_trace' => '0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453\\\',\\\\n)</li><li style=\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">[ PARAM ] array (\\\\n  \\\'uid\\\' =',
+  'gt;_\'123\',\\n__\'id\'_' => '',
+  'gt;_\'WU_FILE_0\',\\n__\'name\'_' => '',
+  'gt;_\'01_1_jpg\',\\n__\'type\'_' => '',
+  'gt;_\'image/jpeg\',\\n__\'lastModifiedDate\'_' => '',
+  'gt;_\'Sun_Oct_29_2017_10:28:55_GMT_0800_(中国标准时间)\',\\n__\'size\'_' => '',
+  'gt;_\'64391\',\\n)</li><li_style' => '\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">[ RUN ] app\\\\\\\\admin\\\\\\\\controller\\\\\\\\Hotel-',
+  'gt;uploadImg' => 
+  array (
+    ' E:\\\\wamp64\\\\www\\\\quyou\\\\application\\\\admin\\\\controller\\\\Hotel.php ' => '\\\\\\"display:none;\\\\\\">\\\\r\\\\n                <ol style=\\\\\\"padding: 0; margin:0\\\\\\">\\\\r\\\\n                                    </ol>\\\\r\\\\n            </div>\\\\r\\\\n                        <div style=\\\\\\"display:none;\\\\\\">\\\\r\\\\n                <ol style=\\\\\\"padding: 0; margin:0\\\\\\">\\\\r\\\\n                                    </ol>\\\\r\\\\n            </div>\\\\r\\\\n                        <div style=\\\\\\"display:none;\\\\\\">\\\\r\\\\n                <ol style=\\\\\\"padding: 0; margin:0\\\\\\">\\\\r\\\\n                                    </ol>\\\\r\\\\n            </div>\\\\r\\\\n                    </div>\\\\r\\\\n    </div>\\\\r\\\\n    <div id=\\\\\\"think_page_trace_close\\\\\\" style=\\\\\\"display:none;text-align:right;height:15px;position:absolute;top:10px;right:12px;cursor:pointer;\\\\\\"><img style=\\\\\\"vertical-align:top;\\\\\\" src=\\\\\\"data:image/gif;base64,R0lGODlhDwAPAJEAAAAAAAMDA////wAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjAgNjEuMTM0Nzc3LCAyMDEwLzAyLzEyLTE3OjMyOjAwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MUQxMjc1MUJCQUJDMTFFMTk0OUVGRjc3QzU4RURFNkEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MUQxMjc1MUNCQUJDMTFFMTk0OUVGRjc3QzU4RURFNkEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxRDEyNzUxOUJBQkMxMUUxOTQ5RUZGNzdDNThFREU2QSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxRDEyNzUxQUJBQkMxMUUxOTQ5RUZGNzdDNThFREU2QSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38 /r5 Pf29fTz8vHw7 7t7Ovq6ejn5uXk4 Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK urayrqqmop6alpKOioaCfnp2cm5qZmJeWlZSTkpGQj46NjIuKiYiHhoWEg4KBgH9 fXx7enl4d3Z1dHNycXBvbm1sa2ppaGdmZWRjYmFgX15dXFtaWVhXVlVUU1JRUE9OTUxLSklIR0ZFRENCQUA/Pj08Ozo5ODc2NTQzMjEwLy4tLCsqKSgnJiUkIyIhIB8eHRwbGhkYFxYVFBMSERAPDg0MCwoJCAcGBQQDAgEAACH5BAAAAAAALAAAAAAPAA8AAAIdjI6JZqotoJPR1fnsgRR3C2jZl3Ai9aWZZooV RQAOw==\\\\\\" /></div>\\\\r\\\\n</div>\\\\r\\\\n<div id=\\\\\\"think_page_trace_open\\\\\\" style=\\\\\\"height:30px;float:right;text-align:right;overflow:hidden;position:fixed;bottom:0;right:0;color:#000;line-height:30px;cursor:pointer;\\\\\\">\\\\r\\\\n    <div style=\\\\\\"background:#232323;color:#FFF;padding:0 6px;float:right;line-height:30px;font-size:14px\\\\\\">0.117007s </div>\\\\r\\\\n    <img width=\\\\\\"30\\\\\\" style=\\\\\\"\\\\\\" title=\\\\\\"ShowPageTrace\\\\\\" src=\\\\\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8 IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjVERDVENkZGQjkyNDExRTE5REY3RDQ5RTQ2RTRDQUJCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjVERDVENzAwQjkyNDExRTE5REY3RDQ5RTQ2RTRDQUJCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NURENUQ2RkRCOTI0MTFFMTlERjdENDlFNDZFNENBQkIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NURENUQ2RkVCOTI0MTFFMTlERjdENDlFNDZFNENBQkIiLz4gPC9yZGY6RGVzY3JpcHRpb24 IDwvcmRmOlJERj4gPC94OnhtcG1ldGE IDw/eHBhY2tldCBlbmQ9InIiPz5fx6IRAAAMCElEQVR42sxae3BU1Rk/9 69 8xuNtkHJAFCSIAkhMgjCCJQUi0GtEIVbP8Qq9LH2No6TmfaztjO2OnUdvqHFMfOVFTqIK0vUEEeqUBARCsEeYQkEPJoEvIiELLvvc9z p27u2F3s5tsBB1OZiebu5dzf7/v/L7f952zMM8cWIwY Mk2ulCp92Fnq3XvnzArr2NZnYNldDp0Gw /OEQ4 obQn5D 4Ubb22 YOGsWi/Todh8AHglKEGkEsnHBQ162511GZFgW6ZCBM9/W4H3iNSQqIe09O196dLKX7d1O39OViP/wthtkND62if/wj/DbMpph8BY/m9xy8BoBmQk mHqZQGNy4JYRwCoRbwa8l4JXw6M orJxpU0U6ToKy/5bQsAiTeokGKkTx46RRxxEUgrwGgF4MWNNEJCGgYTvpgnY1IJWg5RzfqLgvcIgktX0i8dmMlFA8qCQ5L0Z/WObPLUxT1i4lWSYDISoEfBYGvM LlMQQdkLHoWRRZ8zYQI62Thswe5WTORGwNXDcGjqeOA9AF7B8rhzsxMBEoJ8oJKaqPu4hblHMCMPwl9XeNWyb8xkB/DDGYKfMAE6aFL7xesZ389JlgG3XHEMI6UPDOP6JHHu67T2pwNPI69mCP4rEaBDUAJaKc/AOuXiwH07VCS3w5 UQMAuF/WqGI yFIwVNBwemBD4r0wgQiKoFZa00sEYTwss32lA1tPwVxtc8jQ5/gWCwmGCyUD8vRT0sHBFW4GJDvZmrJFWRY1EkrGA6ZB8/10fOZSSj0E6F BSP7xidiIzhBmKB09lEwHPkG UQIyEN44EBiT5vrv2uJXyPQqSqO930fxvcvwbR/ JAkD9EfASgI9EHlp6YiHO4W cAB20SnrFqxBbNljiXf1Pl1K2S0HCWfiog3YlAD5RGwwxK6oUjTweuVigLjyB0mX410mAFnMoVK1lvvUvgt8fUJH0JVyjuvcmg4dE5mUiFtD24AZ4qBVELxXKS pMxN43kSdzNwudJ bQbLlmnxvPOQoCugSap1GnSRoG8KOiKbH rIA0lEeSAg3y6eeQ6XI2nrYnrPM89bUTgI0Pdqvl50vlNbtZxDUBcLBK0kPd5jPziyLdojJIN0pq5/mdzwL4UVvVInV5ncQEPNOUxa9d0TU CW5l FoI0GSDKHVVSOs 0KOsZoxwOzSZNFGv0mQ9avyLCh2Hpm 70Y0YJoJVgmQv822wnDC8Miq6VjJ5IFed0QD1YiAbT nQE8v/RMZfmgmcCRHIIu7Bmcp39oM9fqEychcA747KxQ/AEyqQonl7hATtJmnhO2XYtgcia01aSbVMenAXrIomPcLgEBA4liGBzFZAT8zBYqW6brI67wg8sFVhxBhwLwBP2 tqBQqqK7VJKGh/BRrfTr6nWL7nYBaZdBJHqrX3kPEPap56xwE/GvjJTRMADeMCdcGpGXL1Xh4ZL8BDOlWkUpegfi0CeDzeA5YITzEnddv IXL UYCmqIvqC9UlUC/ki9FipwVjunL3yX7dOTLeXmVMAhbsGporPfyOBTm/BJ23gTVehsvXRnSewagUfpBXF3p5pygKS7OceqTjb7h2vjr/XKm0ZofKSI2Q/J102wHzatZkJPYQ5JoKsuK EoHJakVzubzuLQDepCKllTZi9AG0DYg9ZLxhFaZsOu7bvlmVI5oPXJMQJcHxHClSln1apFTvAimeg48u0RWFeZW4lVcjbQWZuIQK1KozZfIDO6CSQmQQXdpBaiKZyEWThVK1uEc6v7V7uK0ysduExPZx4vysDR 4SelhBYm0R6LBuR4PXts8MYMcJPsINo4YZCDLj0sgB0/vLpPXvA2Tn42Cv5rsLulGubzW0sEd3d4W/mJt2Kck DzDMijfPLOjyrDhXSh852B OvflqAkoyXO1cYfujtc/i3jJSAwhgfFlp20laMLOku/bC7prgqW7lCn4auE5NhcXPd3M7x70 IceSgZvNljCd9k3fLjYsPElqLR14PXQZqD2ZNkkrAB79UeJUebFQmXpf8ZcAQt2XrMQdyNUVBqZoUzAFyp3V3xi/MubUA/mCT4Fhf038PC8XplhWnCmnK/ZzyC2BSTRSqKVOuY2kB8Jia0lvvRIVoP vVWJbYarf6p655E2/nANBMCWkgD49DA0VAMyI1OLFMYCXiU9bmzi9/y5i/vsaTpHPHidTofzLbM65vMPva9HlovgXp0AvjtaqYMfDD0/4mAsYE92pxa 9k1QgCnRVObCpojpzsKTPvayPetTEgBdwnssjuc0kOBFX q3HwRQxdrOLAqeYRjkMk/trTSu2Z9Lik7CfF0AvjtqAhS4NHobGXUnB5DQs8hG8p/wMX1r4 8xkmyvQ50JVq72TVeXbz3HvpWaQJi57hJYTw4kGbtS C2TigQUtZUX X27QQq2ePBZBru/0lxTm8fOOQ5yaZOZMAV he4FqIMB LQB0UgMSajANX29j vbmly8ipRvHeSQoQOkM5iFXcPQCVwDMs5RBCQmaPOyvbNd6uwvQJ183BZQG3Zc Eiv7vQOKu8YeDmMcJlt2ckyftVeMIGLBCmdMHl/tFILYwGPjXWO3zOfSq/ om oa7Mlh2fpSsRGLp7RAW3FUVjNHgiMhyE6zBFjM2BdkdJGO7nP1kJXWAtBuBpPIAu7f hhu7bFXIuC5xWrf0X2xreykOsUyKkF2gwadbrXDcXrfKxR43zGcSj4t/cCgr a1iy6EjE5GYktUCl9fwfMeylyooGF48bN2IGLTw8x7StS7sj8TF9FmPGWQhm3rRR o9lhvjJvSYAdfDUevI1M6bnX/OwWaDMOQ8RPgKRo0eulBTdT8AW2kl8e9L7UHghHwMfLiZPNoSpx0yugpQZaFqKWqxVSM3a2pN1SAhC2jf94I7ybBI7EL5A2Wvu5ht3xsoEt4 Ay/abXgCQAxyOeDsDlTCQzy75ohcGgv9Tra9uiymRUYTLrswOLlCdfAQf7HPDQQ4ErAH5EDXB9cMxWYpjtXApRncojS0sbV/cCgHTHwGNBJy 1PQE2x56FpaVR7wfQGZ37V V 19EiHNvR6q1fRUjqvbjbMq1/qfHxbTrE10ePY2gPFk48D2CVMTf1AF4PXvyYR9dV6Wf7H413m3xTWQvYGhQ7mfYwA5mAX 18Vue05v/8jG/fZX/IW5MKPKtjSYlt0ellxh /BOCPAwYaeVr0QofZFxJWVWC8znG70au6llVmktsF0bfHF6k8fvZ5esZJbwHwwnjg59tXz6sL/P0NUZDuSNu1mnJ8Vab17 cy005A9wtOpp3i0bZdpJLUil00semAwN45LgEViZYe3amNye0B6A9chviSlzXVsFtyN5/1H3gaNmMpn8Fz0GpYFp6Zw615H/LpUuRQQDMCL82n5DpBSawkvzIdN2ypiT8nSLth8Pk9jnjwdFzH3W4XW6KMBfwB569NdcGX93mC16tTflcArcYUc/mFuYbV 8zY0SAjAVoNErNgWjtwumJ3wbn/HlBFYdxHvSkJJEc Ngal9opSwyo9YlITX2C/P/ gf8sxURSLR mcZUmeqaS9wrh6vxW5zxFCOqFi90RbDWq/YwZmnu1 a6OvdpvRqkNxxe44lyl4OobEnpKA6Uox5EfH9xzPs/HRKrTPWdIQrK1VZDU7ETiD3Obpl 8wPPCRBbkbwNtpW9AbBe5L1SMlj3tdTxk/9W47JUmqS5HU JzYymUKXjtWVmT9RenIhgXc nroWLyxXJhmL112OdB8GCsk4f8oZJucnvmmtR85mBn10GZ0EKSCMUSAR3ukcXd5s7LvLD3me61WkuTCpJzYAyRurMB44EdEJzTfU271lUJC03YjXJXzYOGZwN4D8eB5jlfLrdWfzGRW7icMPfiSO6Oe7s20bmhdgLX4Z23B s3JgQESzUDiMboSzDMHFpNMwccGePauhfwjzwnI2wu9zKGgEFg80jcZ7MHllk07s1H 5yojtUQTlH4nFdLKTGwDmPbIklOb1L1zO4T6N8NCuDLFLS/C63c0eNRimZ  s5BMBHxU11jHchI9oFVUxRh/eMDzHEzGYu0Lg8gJ7oS/tFCwoic44fyUtix0n/46vP4bf //BRgAYwDDar4ncHIAAAAASUVORK5CYII=\\\\\\">\\\\r\\\\n</div>\\\\r\\\\n\\\\r\\\\n<script type=\\\\\\"text/javascript\\\\\\">\\\\r\\\\n    (function(){\\\\r\\\\n        var tab_tit  = document.getElementById(\\\'think_page_trace_tab_tit\\\').getElementsByTagName(\\\'span\\\');\\\\r\\\\n        var tab_cont = document.getElementById(\\\'think_page_trace_tab_cont\\\').getElementsByTagName(\\\'div\\\');\\\\r\\\\n        var open     = document.getElementById(\\\'think_page_trace_open\\\');\\\\r\\\\n        var close    = document.getElementById(\\\'think_page_trace_close\\\').children[0];\\\\r\\\\n        var trace    = document.getElementById(\\\'think_page_trace_tab\\\');\\\\r\\\\n        var cookie   = document.cookie.match(/thinkphp_show_page_trace=(\\\\\\\\d\\\\\\\\|\\\\\\\\d)/);\\\\r\\\\n        var history  = (cookie ',
+  ),
+  'typeof_cookie' => 
+  array (
+    1 => ' \\\'undefined\\\' ',
+  ),
+  'cookie' => 
+  array (
+    1 => ' function(){\\\\r\\\\n            trace.style.display = \\\'block\\\';\\\\r\\\\n            this.style.display = \\\'none\\\';\\\\r\\\\n            close.parentNode.style.display = \\\'block\\\';\\\\r\\\\n            history[0] = 1;\\\\r\\\\n            document.cookie = \\\'thinkphp_show_page_trace=\\\' history.join(\\\'|\\\')\\\\r\\\\n        }\\\\r\\\\n        close.onclick = function(){\\\\r\\\\n            trace.style.display = \\\'none\\\';\\\\r\\\\n            this.parentNode.style.display = \\\'none\\\';\\\\r\\\\n            open.style.display = \\\'block\\\';\\\\r\\\\n            history[0] = 0;\\\\r\\\\n            document.cookie = \\\'thinkphp_show_page_trace=\\\' history.join(\\\'|\\\')\\\\r\\\\n        }\\\\r\\\\n        for(var i = 0; i < tab_tit.length; i  ){\\\\r\\\\n            tab_tit[i].onclick = (function(i){\\\\r\\\\n                return function(){\\\\r\\\\n                    for(var j = 0; j < tab_cont.length; j  ){\\\\r\\\\n                        tab_cont[j].style.display = \\\'none\\\';\\\\r\\\\n                        tab_tit[j].style.color = \\\'#999\\\';\\\\r\\\\n                    }\\\\r\\\\n                    tab_cont[i].style.display = \\\'block\\\';\\\\r\\\\n                    tab_tit[i].style.color = \\\'#000\\\';\\\\r\\\\n                    history[1] = i;\\\\r\\\\n                    document.cookie = \\\'thinkphp_show_page_trace=\\\' history.join(\\\'|\\\')\\\\r\\\\n                }\\\\r\\\\n            })(i)\\\\r\\\\n        }\\\\r\\\\n        parseInt(history[0]) ',
+  ),
+  'open_click();\\r\\n________tab_tit' => 
+  array (
+    'history[1' => '',
+  ),
+  'gt;_\'48962\',\\n__\'origin\'_' => '',
+  'gt;_\'WU_FILE_2\',\\n__\'name\'_' => '',
+  'gt;_\'01_3_jpg\',\\n__\'type\'_' => '',
+  'gt;_\'Sun_Oct_29_2017_10:29:36_GMT_0800_(中国标准时间)\',\\n__\'size\'_' => '',
+  'gt;_\'48136\',\\n)</li><li_style' => '\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">[ RUN ] app\\\\\\\\admin\\\\\\\\controller\\\\\\\\Hotel-',
+  'gt;_\'67294\',\\n__\'origin\'_' => '',
+  'gt;_\'WU_FILE_1\',\\n__\'name\'_' => '',
+  'gt;_\'01_2_jpg\',\\n__\'type\'_' => '',
+  'gt;_\'Sun_Oct_29_2017_10:29:25_GMT_0800_(中国标准时间)\',\\n__\'size\'_' => '',
+  'gt;_\'66468\',\\n)</li><li_style' => '\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">[ RUN ] app\\\\\\\\admin\\\\\\\\controller\\\\\\\\Hotel-',
+  'gt;_\'46483\',\\n__\'origin\'_' => '',
+  'gt;_\'WU_FILE_3\',\\n__\'name\'_' => '',
+  'gt;_\'01_4_jpg\',\\n__\'type\'_' => '',
+  'gt;_\'Sun_Oct_29_2017_10:29:47_GMT_0800_(中国标准时间)\',\\n__\'size\'_' => '',
+  'gt;_\'45657\',\\n)</li><li_style' => '\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">[ RUN ] app\\\\\\\\admin\\\\\\\\controller\\\\\\\\Hotel-',
+  'gt;_\'179398\',\\n__\'origin\'_' => '',
+  'gt;_\'WU_FILE_4\',\\n__\'name\'_' => '',
+  'gt;_\'02_05_jpg\',\\n__\'type\'_' => '',
+  'gt;_\'Sat_Oct_28_2017_22:29:04_GMT_0800_(中国标准时间)\',\\n__\'size\'_' => '',
+  'gt;_\'178569\',\\n)</li><li_style' => '\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">[ RUN ] app\\\\\\\\admin\\\\\\\\controller\\\\\\\\Hotel-',
+  'gt;_\'81008\',\\n__\'origin\'_' => '',
+  'gt;_\'WU_FILE_5\',\\n__\'name\'_' => '',
+  'gt;_\'02_1_jpg\',\\n__\'type\'_' => '',
+  'gt;_\'Sun_Oct_29_2017_10:31:08_GMT_0800_(中国标准时间)\',\\n__\'size\'_' => '',
+  'gt;_\'80182\',\\n)</li><li_style' => '\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">[ RUN ] app\\\\\\\\admin\\\\\\\\controller\\\\\\\\Hotel-',
+  'gt;_\'63666\',\\n__\'origin\'_' => '',
+  'gt;_\'WU_FILE_6\',\\n__\'name\'_' => '',
+  'gt;_\'02_2_jpg\',\\n__\'type\'_' => '',
+  'gt;_\'Sun_Oct_29_2017_10:31:18_GMT_0800_(中国标准时间)\',\\n__\'size\'_' => '',
+  'gt;_\'62840\',\\n)</li><li_style' => '\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">[ RUN ] app\\\\\\\\admin\\\\\\\\controller\\\\\\\\Hotel-',
+  'gt;_\'22009\',\\n__\'origin\'_' => '',
+  'gt;_\'WU_FILE_7\',\\n__\'name\'_' => '',
+  'gt;_\'02_3_jpg\',\\n__\'type\'_' => '',
+  'gt;_\'Sun_Oct_29_2017_10:31:28_GMT_0800_(中国标准时间)\',\\n__\'size\'_' => '',
+  'gt;_\'21183\',\\n)</li><li_style' => '\\\\\\"border-bottom:1px solid #EEE;font-size:14px;padding:0 12px\\\\\\">[ RUN ] app\\\\\\\\admin\\\\\\\\controller\\\\\\\\Hotel-',
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotelAappend[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.079005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.057003s ]
+[ sql ] [ SQL ] INSERT INTO `t_hotel` (`hotelName` , `hotelDescribe` , `hotelPrice` , `hotelNum` , `desId` , `img` , `hotelType`) VALUES ('天上人间' , '美不可言' , 133 , 272 , 135 , 'images/hotel/330/330_0.jpeg' , '0') [ RunTime:0.058004s ]
+[ error ] [2]Invalid argument supplied for foreach()[E:\wamp64\www\quyou\application\admin\controller\Hotel.php:115]
+
+---------------------------------------------------------------
+[ 2018-01-31T22:44:23+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/index
+[ log ] 127.0.0.1/quyou/public/admin/index/index [运行时间：0.353021s][吞吐率：2.83req/s] [内存消耗：4,947.90kb] [文件加载：58]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\index.html [ array (
+  0 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.077005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_menu` [ RunTime:0.057003s ]
+[ sql ] [ SQL ] SELECT * FROM `t_menu` [ RunTime:0.055003s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T22:44:23+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/welcome.html
+[ log ] 127.0.0.1/quyou/public/admin/index/welcome.html [运行时间：0.099006s][吞吐率：10.10req/s] [内存消耗：3,113.66kb] [文件加载：50]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:44:23+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/temp/200x150.jpg
+[ log ] 127.0.0.1/quyou/public/admin/index/temp/200x150.jpg [运行时间：0.132008s][吞吐率：7.58req/s] [内存消耗：3,175.98kb] [文件加载：52]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'temp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655,1517204469,1517369453',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
