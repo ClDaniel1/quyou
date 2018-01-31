@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517300207;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517304502;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517388442;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517304502;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -341,8 +341,9 @@
             </div>
             <div class="layui-col-sm4">
                 <div class="hotelW middleDiv">
-                    <h2 class="hotelMsg"><a href="">必游景点排行<i class="innerIcon"></i></a></h2>
+                    <h2 class="hotelMsg"><a href="<?php echo url('home/Region/scenicShow'); ?>?rgId=<?php echo $sId; ?>">必游景点排行<i class="innerIcon"></i></a></h2>
                     <?php if(is_array($scenicMsg['list']) || $scenicMsg['list'] instanceof \think\Collection || $scenicMsg['list'] instanceof \think\Paginator): $i = 0; $__LIST__ = $scenicMsg['list'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$value): $mod = ($i % 2 );++$i;?>
+                    <a href="<?php echo url('home/Region/scenicShow'); ?>?rgId=<?php echo $sId; ?>">
                         <div class="innerDiv">
                             <h3>
                                 <span class="layui-badge layui-bg-orange"><?php echo $i; ?></span>
@@ -360,9 +361,10 @@
                                 <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
                             </div>
                         </div>
+                    </a>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
                     <div class="dashed">
-                        <a href=""><span><?php echo $scenicMsg['count']; ?></span>个景点<i class="orgIcon"></i></a>
+                        <a href="<?php echo url('home/Region/scenicShow'); ?>?rgId=<?php echo $sId; ?>"><span><?php echo $scenicMsg['count']; ?></span>个景点<i class="orgIcon"></i></a>
                     </div>
                 </div>
             </div>

@@ -193,8 +193,9 @@
             </div>
             <div class="layui-col-sm4">
                 <div class="hotelW middleDiv">
-                    <h2 class="hotelMsg"><a href="">必游景点排行<i class="innerIcon"></i></a></h2>
+                    <h2 class="hotelMsg"><a href="{:url('home/Region/scenicShow')}?rgId={$sId}">必游景点排行<i class="innerIcon"></i></a></h2>
                     {volist name="scenicMsg.list" id="value"}
+                    <a href="{:url('home/Region/scenicShow')}?rgId={$sId}">
                         <div class="innerDiv">
                             <h3>
                                 <span class="layui-badge layui-bg-orange">{$i}</span>
@@ -212,9 +213,10 @@
                                 <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
                             </div>
                         </div>
+                    </a>
                     {/volist}
                     <div class="dashed">
-                        <a href=""><span>{$scenicMsg.count}</span>个景点<i class="orgIcon"></i></a>
+                        <a href="{:url('home/Region/scenicShow')}?rgId={$sId}"><span>{$scenicMsg.count}</span>个景点<i class="orgIcon"></i></a>
                     </div>
                 </div>
             </div>
