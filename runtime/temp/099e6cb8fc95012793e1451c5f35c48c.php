@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"E:\wamp64\www\quyou\public/../application/admin\view\hotel\hotelAppend.html";i:1517370840;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"E:\wamp64\www\quyou\public/../application/admin\view\hotel\hotelAppend.html";i:1517409940;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -88,8 +88,8 @@
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-                <button onClick="Release();" class="btn btn-primary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 酒店上传并发布</button>
-                <button onClick="NoRelease();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 酒店上传不发布</button>
+                <button onClick="Release()" class="btn btn-primary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 酒店上传并发布</button>
+                <button onClick="NoRelease()" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 酒店上传不发布</button>
                 <button onClick="Cancel();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
             </div>
         </div>

@@ -212,4 +212,16 @@ class Hotel extends \think\Controller
         }
 
     }//封面图更换
+    public function hotelDeleteMore()
+    {
+        $img=json_decode(stripslashes(input('param.img')));
+        $str=new \app\admin\model\Hotel();
+        foreach($img as $key=>$val)
+        {
+            $path = "static/{$val}";//照片保存路劲
+            $str->hotelDeleteMore($val);
+            unlink($path);
+        }
+        echo 1;
+    }
 }
