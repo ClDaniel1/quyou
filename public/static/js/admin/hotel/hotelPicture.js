@@ -71,7 +71,22 @@ function datadel()
         $("input:checkbox[name='secondary']:checked").each(function() { // 遍历name=test的多选框
             i.push($(this).val());  // 每一个被选中项的值
         });
-        console.log(i);
+        var img=JSON.stringify(i);
+        console.log(img)
+        /*$.ajax({
+            type: 'post',
+            url: hotelDeleteMore,
+            data:{'main':main,'secondary':secondary,'hotelId':hotelId},
+            async: false,
+            dataType: 'json',
+            success: function (res) {
+                layer.open({
+                    title: '正确'
+                    ,content: '修改成功！'
+                });
+                window.location.href='';
+            }
+        })*/
     }
 }
 
