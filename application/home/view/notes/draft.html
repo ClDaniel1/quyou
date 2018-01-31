@@ -1,0 +1,76 @@
+{extend name="public/base"}
+{block name='style'}
+<!--页面样式、引用/示例如下-->
+<style>
+    .am-titlebar-default .am-titlebar-title:before{
+        border-left: 3px solid orange;
+    }
+    .am-titlebar-default .am-titlebar-title{
+        color: orange;
+    }
+    #tips{
+        text-align: center;
+        font-size: 22px;
+        color: grey;
+        padding: 30px 0;
+    }
+    .am-gallery-item div{
+        width: 100%;
+        height: 200px;
+
+    }
+    .am-gallery-item p{
+      padding: 0;
+        text-align: left;
+    }
+    #content{
+        min-height: 700px;
+    }
+</style>
+{/block}
+
+{block name='title'}
+游记草稿--趣游
+{/block}
+
+{block name='body'}
+<!--页面内容 /示例如下-->
+<div class="layui-container">
+    <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default" >
+        <h2 class="am-titlebar-title ">
+            游记草稿
+        </h2>
+
+        <nav class="am-titlebar-nav">
+            <a href="{:url('home/Notes/notes',["new"=>1])}"><input class="layui-btn" type="button" value="新游记" style="float: right;margin-bottom: 10px"></a>
+        </nav>
+    </div>
+
+    <p id="tips">小游为你找到下面的草稿~</p>
+
+    <div id="content">
+        <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2
+  am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }" >
+        {volist name="notes" id="vo"}
+                <li>
+                    <div class="am-gallery-item">
+                        <a href="{:url('home/Notes/edit',["id"=>$vo.noteId])}" class="">
+                             <div style="background: url('{if $vo.img!=""}__STATIC__/{$vo.img}{else /} __STATIC__/images/bg.jpg{/if}');background-size: auto 100%"></div>
+                            <h3 class="am-gallery-title">{if $vo.title!=""} {$vo.title} {else /} 未命名 {/if}</h3>
+                            <p class="am-gallery-desc">{$vo.createTime}</p>
+                        </a>
+                    </div>
+                </li>
+        {/volist}
+        </ul>
+    </div>
+</div>
+
+
+{/block}
+
+
+{block name='script'}
+
+
+{/block}

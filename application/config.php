@@ -19,7 +19,7 @@ return [
     // 应用调试模式
     'app_debug'              => true,
     // 应用Trace
-    'app_trace'              => false,
+    'app_trace'              => true,
     // 应用模式状态
     'app_status'             => '',
     // 是否支持多模块
@@ -253,7 +253,9 @@ return [
         'note'      =>[
             'imgTooSmall'=>"图片过小，请选择宽度大于1350，并且高度大于480的图片",
             'imgSelectTooSmall'=>'裁剪完图片过小，请重新裁剪',
-            'scaleErr'=>'图片比例不对，请重新裁剪'
+            'scaleErr'=>'图片比例不对，请重新裁剪',
+            'musicSuccess'=>"音乐设置成功",
+            "remusicSuccess"=>"移除游记音乐成功"
         ],
         'personal'=> [
             'changeOK' => "修改成功",

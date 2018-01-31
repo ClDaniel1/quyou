@@ -84,4 +84,29 @@ class Notes extends Model
     public function setTitle($noteId,$title){
         db("t_note")->where("noteId=$noteId")->update(["title"=>$title]);
     }
+
+    public function draft($userId){
+        $data =db('t_note')
+            ->where("uid= $userId")
+            ->where('noteType',0)
+            ->select();
+        return $data;
+    }
+
+    public function setMusic($noteId,$path){
+        db("t_note")->where("noteId=$noteId")->update(["music"=>$path]);
+    }
+
+    public function reMusic($noteId){
+        db("t_note")->where("noteId=$noteId")->update(["music"=>""]);
+    }
+
+    public function getRegion(){
+        $data = db("t_region")->where("PARENT_ID=1")->select();
+        return $data;
+    }
+    public function getCity($prId){
+        $data = db("t_region")->where("PARENT_ID=$prId")->select();
+        return $data;
+    }
 }

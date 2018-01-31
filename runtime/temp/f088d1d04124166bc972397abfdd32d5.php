@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"D:\wamp64\www\quyou\public/../application/home\view\region\region.html";i:1517299783;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517293581;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"D:\wamp64\www\quyou\public/../application/home\view\region\region.html";i:1517361757;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517361757;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
     <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
     <link rel="stylesheet" href="__CSS__\home\public\public.css">
+
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -565,7 +566,6 @@
                     console.log(res);
                 }
             });
-
         },
         methods: {
             bdMap:function(showId,scenicArr,max) {
@@ -603,12 +603,12 @@
                     }
 
                 }
-                function bdGEO() {
+                function bdGEO() //做到加载每一个景点
+                {
                     var add = arr[index];
                     geocodeSearch(add);
                     index++;
                 }
-
                 function geocodeSearch(add) {
                     if (index < arr.length) {
                         setTimeout(window.bdGEO, 400);//如果缺少，for循环和地图加载异步，线程速度不一样，会造成只显示最后一个标注点。
@@ -620,20 +620,18 @@
                         }
                     });
                 }
-
                 function addMarker(point, label) {
                     var marker = new BMap.Marker(point);
                     map.addOverlay(marker);
                     marker.setLabel(label);
                 }
-
                 function setLine() {
                     var polyline = new BMap.Polyline(marArr,
                         {strokeColor: "orange", strokeWeight: 4, strokeOpacity: 1}//设置属性
                     );
                     map.addOverlay(polyline);//跟polyline一块使用，添加上线
                 }
-        }
+            }
         }
     });
 </script>

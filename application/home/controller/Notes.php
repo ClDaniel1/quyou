@@ -19,13 +19,23 @@ class Notes extends \think\Controller
     public function notes(){
         $um = new User();
         $res = $um->checkLogin();//验证是否登录
+        $uid = cookie("uid");
         if($res){
-            $id = cookie("uid");
             $nm = new \app\home\model\Notes();
-            //创建游记
-            $id = $nm->creatNote($id);
+            $data = $nm->draft($uid);
+            if(count($data)>0 && !input("?param.new")){
+                $this->assign("notes",$data);
+                return $this->fetch("draft");
+            }
+            else{
+                $id = cookie("uid");
+                $nm = new \app\home\model\Notes();
+                //创建游记
+                $id = $nm->creatNote($id);
 
-            $this->redirect('home/Notes/edit',["id"=>$id]);
+                $this->redirect('home/Notes/edit',["id"=>$id]);
+            }
+
         }else{
             $this->error('很抱歉，请登录后再试');
         }
@@ -212,6 +222,54 @@ class Notes extends \think\Controller
         return json($reMsg);
     }
 
+    public function addMusic(){
+        $noteId = input("param.noteId");
+        //检查是否有用户文件夹
+        $uid = cookie("uid");
+        $userDir = "static/music/user/".$uid;
+        if(!(is_dir($userDir))){
+            mkdir($userDir);
+        }
+        $userDir = $userDir."/note/";
+        if(!(is_dir($userDir))){
+            mkdir($userDir);
+        }
+        $userDir = $userDir.$noteId;
+        if(!(is_dir($userDir))){
+            mkdir($userDir);
+        }
+        else{
+            $filehand = opendir($userDir);
+            while(($filesname = readdir($filehand))!=false){
+                if($filesname!="."&&$filesname!=".."){
+                        unlink($userDir."/".$filesname);
+                }
+            }
+            closedir($filehand);
+        }
+
+        $radom = new RadomStr();
+        $fileName = $radom->get("16").time();
+
+        //移动文件到用户文件夹
+        $type = $_FILES["file"]["type"];
+        $type = explode("/",$type)[1];
+        $path = $userDir."/".$fileName.".".$type;
+        move_uploaded_file($_FILES["file"]["tmp_name"],$path);
+
+        $userPath = "music/user/".$uid."/note/".$noteId."/".$fileName.".".$type;
+
+        $nm = new \app\home\model\Notes();
+        $nm->setMusic($noteId,$userPath);
+
+        $reMsg=[
+            "code"=>50007,
+            "msg" => config("msg")["note"]["musicSuccess"],
+            "data"=>[$userPath]
+        ];
+        return json($reMsg);
+    }
+
     public function removeImg(){
         $path = "static/".input("param.src");
         if(file_exists($path)){
@@ -227,6 +285,50 @@ class Notes extends \think\Controller
         $resMsg=[
             "code"=>"50006"
         ];
+        return json($resMsg);
+    }
+
+    public function reMusic(){
+        $uid = cookie("uid");
+        $noteId = input("param.noteId");
+        $userDir = "static/music/user/".$uid."/note/".$noteId;
+        $filehand = opendir($userDir);
+        while(($filesname = readdir($filehand))!=false){
+            if($filesname!="."&&$filesname!=".."){
+                unlink($userDir."/".$filesname);
+            }
+        }
+        closedir($filehand);
+        $nm = new \app\home\model\Notes();
+        $nm->reMusic($noteId);
+        $reMsg=[
+            "code"=>50008,
+            "msg" => config("msg")["note"]["remusicSuccess"],
+            "data"=>[]
+        ];
+        return json($reMsg);
+    }
+
+    public function getRegion(){
+        $resMsg =[
+          "code"=>"",
+          "msg" => "",
+          "data" => []
+        ];
+        $nm = new \app\home\model\Notes();
+        if(input("?param.pr")){
+            $data = $nm->getCity(input("param.pr"));
+            $resMsg["data"][0]=$data;
+        }
+        else{
+            $data1 = $nm->getRegion();
+            $data2 = $nm->getCity($data1[0]["REGION_ID"]);
+
+            $resMsg["data"][0]=$data1;
+            $resMsg["data"][1]=$data2;
+
+
+        }
         return json($resMsg);
     }
 }

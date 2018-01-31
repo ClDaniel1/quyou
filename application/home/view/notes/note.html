@@ -134,7 +134,7 @@
         line-height: 20px;
         font-size: 16px;
         word-break:break-all;
-        white-space: pre-line;
+        white-space: pre-wrap;
     }
     .field-textarea {
         position: absolute;
@@ -150,7 +150,6 @@
         overflow: hidden;
         background-color: transparent;
         word-break:break-all;
-        white-space: pre-wrap;
     }
     #leftBar div{
         margin-bottom: 35px;
@@ -168,15 +167,16 @@
         top: 15px;
         opacity: 0;
     }
+    nav a:visited{
+        color: #3c3c3c;
+    }
     .am-active{
         color: orange;
     }
     nav li{
         margin: 10px 30px;
     }
-    nav a:visited{
-        text-decoration:none;
-    }
+
     nav a:hover{
         color: orange;
     }
@@ -202,7 +202,37 @@
     .imgDiv:hover .layui-icon{
         display: inline-block;
     }
+    h1{
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    h1  .layui-icon{
+        top: 0;
 
+    }
+    h1  .edit{
+        top: 0;
+        right: 50px!important;
+    }
+#submit{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.9);
+    z-index: 1000;
+    text-align: center;
+    padding-top: 75px;
+    display: none;
+}
+#submit form{
+    margin-top: 5%;
+}
+    .layui-form-label{
+        width: 100px;
+    }
+    .layui-input-inline{
+        margin-left:10px;
+    }
 
 </style>
 {/block}
@@ -214,9 +244,46 @@
 <div id="imgView">
     <img id="imgShow" src="">
     <div id='btn'>
-        <input type="button" value="提交" class="layui-btn navBg" id="subBI">
-        <input type="button" value="取消" class="layui-btn navBg" id="escBI">
+        <input type="button" value="提交" class="layui-btn" id="subBI">
+        <input type="button" value="取消" class="layui-btn" id="escBI">
     </div>
+</div>
+<div id="submit">
+    <form class="layui-form layui-container" action="" >
+        <div class="layui-form-item">
+            <label class="layui-form-label">游玩人数</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" lay-verify="required|number" autocomplete="off" placeholder="请输入游玩人数" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">人均费用</label>
+            <div class="layui-input-block">
+                <input type="text" name="price" lay-verify="required|number" autocomplete="off" placeholder="￥" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">游记目的地</label>
+            <div class="layui-input-inline">
+                <select name="pr" id="pr"  lay-filter="pr">
+
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <select name="city" id="city"  lay-filter="city ">
+
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                <button type="reset" class="layui-btn ">重置</button>
+            </div>
+        </div>
+    </form>
 </div>
 {/block}
 
@@ -244,7 +311,9 @@
 
         <input type="text" onchange="setTitle()" value="{$info["title"]}" name="title" lay-verify="title" autocomplete="off" placeholder="请输入游记标题" class="layui-input" >
 
+    {if $info["music"]!=null}<audio  controls style="width: 85%;margin-top:10px" autoplay  loop><source src="__STATIC__/{$info["music"]}" ></audio>{/if}
 </div>
+
 
 
 
@@ -256,11 +325,11 @@
     </script>-->
 
         <div><div v-for="con in conData" :id="con.conId">
-            <h1 v-if="con.num == 1" :id="con.conId" style="opacity: 0">{{con.title}}</h1>
-            <h1 v-if="con.title != null && con.num != 1 && con.type==0" class="imgDiv">{{con.title}}<i class="layui-icon" @click="removeTitle(con.num)">&#x1006;</i></h1>
+            <h1 v-if="con.num == 1" style="opacity: 0">{{con.title}}</h1>
+            <h1 v-if="con.title != null && con.num != 1 && con.type==0" class="imgDiv">{{con.title}}<i class="layui-icon" @click="removeTitle(con.num)">&#x1006;</i><i class="layui-icon edit" @click="editTitle(con.num)">&#xe642;</i></h1>
             <div v-if="con.type==0" class="textarea-wrapper">
                 <div class="content-editable" contenteditable="true">{{con.content}}</div>
-                <textarea v-model="con.content" contenteditable="true" class="field-textarea" placeholder="在这里输入您的游记内容" v-on:focus="foc" :id="conId+con.num"></textarea>
+                <textarea v-model="con.content" contenteditable="true" class="field-textarea" placeholder="在这里输入您的游记内容" v-on:focus="foc" :id="conId+con.num" @blur="save"></textarea>
             </div>
             <div v-if="con.type==1" class="imgDiv"><img v-bind:src="imgurl+con.content" alt="" @click="foc" :id="conId+con.num"><i class="layui-icon" @click="removeImg(con.num)">&#x1006;</i>  </div>
             </div></div>
@@ -273,9 +342,14 @@
             <button class="layui-btn layui-btn-radius" @click="add">
                 <i class="layui-icon">&#xe638;</i> 添加段落
             </button>
-            <button class="layui-btn layui-btn-radius">
+            <button class="layui-btn layui-btn-radius"  id="addMusic">
                 <i class="layui-icon">&#xe6fc;</i> 添加音乐
             </button>
+            {if $info["music"]!=null}
+                <button class="layui-btn layui-btn-radius"   onclick="removeMusic()">
+                    <i class="layui-icon">&#xe6fc;</i> 移除音乐
+                </button>
+            {/if}
             <button class="layui-btn layui-btn-radius" @click="save">
                 <div id="toSave"><i class="layui-icon">&#xe60e;</i> 保存草稿</div>
                 <div id="saving"><i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop" ></i> 正在保存</div>
@@ -303,7 +377,7 @@
 
 <div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="my-modal-loading">
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">图片上传中...</div>
+        <div class="am-modal-hd">上传中...</div>
         <div class="am-modal-bd">
             <span class="am-icon-spinner am-icon-spin"></span>
         </div>
@@ -462,7 +536,8 @@ JS、引用 /示例如下
             imgurl:"__STATIC__/",
             id:"#",
             conId:"C",
-            textArea:""
+            textArea:"",
+            saving:0
         },
         methods:{
             init:function () {
@@ -477,31 +552,35 @@ JS、引用 /示例如下
                 })
             },
             save:function () {
-                $("#toSave").fadeOut(300,function () {
-                    $("#saving").fadeIn(300);
-                    $.ajax({
-                        url:"{:url('home/Notes/save')}",
-                        data:{id:noteId,sData:this.conData},
-                        type:"post",
-                        textType:"json",
-                        success:function (res) {
-                            $("#saving").fadeOut(300,function () {
-                                $("#saved").fadeIn(300);
-                            });
-
-                            setTimeout(function () {
-                                $("#saved").fadeOut(300,function () {
-                                    $("#toSave").fadeIn(300);
+                var _this = this;
+                if(  this.saving==0){
+                    this.saving=1;
+                    $("#toSave").fadeOut(300,function () {
+                        $("#saving").fadeIn(300);
+                        $.ajax({
+                            url: "{:url('home/Notes/save')}",
+                            data: {id: noteId, sData: this.conData},
+                            type: "post",
+                            textType: "json",
+                            success: function (res) {
+                                $("#saving").fadeOut(300, function () {
+                                    $("#saved").fadeIn(300);
                                 });
 
-                            },2000)
-                        }
-                    })
-                    $("#catalNav").scrollspynav();
-                }.bind(this));
+                                setTimeout(function () {
+                                    $("#saved").fadeOut(300, function () {
+                                        $("#toSave").fadeIn(300);
+                                        _this.saving = 0;
+                                    });
 
-
-
+                                }, 2000)
+                            }
+                        })
+                        setTimeout(function () {
+                            $("#catalNav").scrollspynav();
+                        },3000);
+                    }.bind(this));
+                }
             },
             add:function () {
                 layer.prompt({title: '请输入段落名', formType: 3}, function(pass, index){
@@ -540,9 +619,6 @@ JS、引用 /示例如下
                     this.save();
 
                 }.bind(this));
-            },
-            addImg:function () {
-
             },
             foc:function (event){
                var id = event.target.id;
@@ -601,6 +677,18 @@ JS、引用 /示例如下
                     layer.close(index);
                     this.save();
                 }.bind(this));
+            },
+            editTitle:function (num) {
+                var ovalue = this.conData[num-1]["title"];
+                layer.prompt({title: '请输入新段落名', formType: 3, value: ovalue}, function(pass, index){
+                    layer.close(index);
+                    this.conData[num-1]["title"]=pass;
+                    this.save();
+
+                }.bind(this));
+            },
+            removeMusic:function () {
+                alert(123)
             }
         },
         created:function () {
@@ -729,6 +817,110 @@ JS、引用 /示例如下
         }
     });
 
+ upload.render({
+        elem: '#addMusic'
+        ,url: '{:url("home/Notes/addMusic")}'
+        ,accept:"audio"
+        ,number:1
+        ,data:{noteId:{$noteId}}
+        ,bgOpacity:0.1
+        ,before:function () {
+            $modal.modal();
+        }
+        ,done: function(res){
+            $modal.modal("close");
+            if(res["code"]==50007){
+                layer.msg(res["msg"]);
+                var music = $('<audio  controls style="width: 85%;margin-top:10px" autoplay  loop><source src="__STATIC__/'+res["data"][0]+'" ></audio>')
+                $("#title").append(music);
+                $("#addMusic").after(' <button class="layui-btn layui-btn-radius" onclick="removeMusic()">' +
+                    '                    <i class="layui-icon">&#xe6fc;</i> 移除音乐' +
+                    '                </button>')
+            }
+            else {
+                layer.open({
+                    content:res["上传失败"],
+                    yes: function(index, layero){
+                        layer.close(index); //如果设定了yes回调，需进行手工关闭
+                    }
+                });
+            }
+        }
+    });
+
+    function removeMusic() {
+        layer.confirm('确定移除游记音乐?', {icon: 3, title:'移除游记音乐'}, function(index){
+            //do something
+            $.ajax({
+                url:"{:url('home/Notes/reMusic')}",
+                data:{noteId:noteId},
+                success:function (res) {
+                    if(res["code"]==50008){
+                        layer.msg(res["msg"]);
+                       $("audio").remove();
+                       $("#addMusic").next().remove();
+                    }
+                    else {
+                        layer.open({
+                            content:"移除失败",
+                            yes: function(index, layero){
+                                layer.close(index); //如果设定了yes回调，需进行手工关闭
+                            }
+                        });
+                    }
+                }
+            })
+            layer.close(index);
+        });
+    }
+    var form = layui.form;
+    $.ajax({
+        url:"{:url('home/Notes/getRegion')}",
+        success:function (res) {
+            for(var i = 0;i < res["data"][0].length;i++){
+                var op = "<option value='"+res["data"][0][i]["REGION_ID"]+"'>"+res["data"][0][i]["REGION_NAME"]+"</option>";
+                $("#pr").append(op);
+            }
+            for(var i = 0;i < res["data"][1].length;i++){
+                var op = "<option value='"+res["data"][1][i]["REGION_ID"]+"'>"+res["data"][1][i]["REGION_NAME"]+"</option>";
+                $("#city").append(op);
+            }
+
+            form.render('select');
+        }
+    })
+
+    form.on('select(pr)', function(data){
+        $.ajax({
+            url:"{:url('home/Notes/getRegion')}",
+            data:{pr:data.value},
+            success:function (res) {
+                $("#city").empty();
+                for(var i = 0;i < res["data"][0].length;i++){
+                    var op = "<option value='"+res["data"][0][i]["REGION_ID"]+"'>"+res["data"][0][i]["REGION_NAME"]+"</option>";
+                    $("#city").append(op);
+                }
+
+                form.render('select');
+            }
+        })
+    });
+
+    form.on('submit()', function(data){
+        $.ajax({
+            url:"{:url('home/Notes/getRegion')}",
+            data:data.field,
+            success:function (res) {
+                $("#city").empty();
+                for(var i = 0;i < res["data"][0].length;i++){
+                    var op = "<option value='"+res["data"][0][i]["REGION_ID"]+"'>"+res["data"][0][i]["REGION_NAME"]+"</option>";
+                    $("#city").append(op);
+                }
+
+                form.render('select');
+            }
+        })
+    });
 
 </script>
 <!--&lt;!&ndash; 配置文件 &ndash;&gt;
