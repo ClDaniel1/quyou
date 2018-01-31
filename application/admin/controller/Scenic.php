@@ -40,4 +40,35 @@ class Scenic extends \think\Controller
         ];
         echo json_encode($returnMsg);
     }
+    public function scenicShelves()
+    {
+        $id=input('param.id');
+        $str=new \app\admin\model\Scenic();
+        $run=$str->scenicShelves($id);
+        $returnMsg=[
+            'code'  =>  "ok",
+            'msg'   =>  "",
+            'data'  =>  [$run]
+        ];
+        echo json_encode($returnMsg);
+    }
+    public function scenicOn()
+    {
+        $id=input('param.id');
+        $str=new \app\admin\model\Scenic();
+        $run=$str->scenicOn($id);
+        $returnMsg=[
+            'code'  =>  "ok",
+            'msg'   =>  "",
+            'data'  =>  [$run]
+        ];
+        echo json_encode($returnMsg);
+    }
+    public function  scenicDelete()
+    {
+        $id=input('param.id');
+        $str=new \app\admin\model\Scenic();
+        $run=$str->scenicDelete($id);
+        echo json_encode($run);
+    }
 }

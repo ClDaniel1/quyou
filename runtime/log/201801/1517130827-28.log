@@ -1,0 +1,28 @@
+[ 2018-01-28T17:13:47+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10335/10335_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10335/10335_0.jpeg [运行时间：0.287016s][吞吐率：3.48req/s] [内存消耗：2,488.83kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10335_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

@@ -19,7 +19,23 @@ class Food extends \think\Model
     }
     public function foodRelease()
     {
-        $sql=db('t_food')->select();
+        $sql=db('t_food')->alias('a')
+            ->join('t_region b','a.desId = b.REGION_ID')->field('a.*,b.REGION_NAME')->select();
+        return $sql;
+    }
+    public function foodShelves($id)
+    {
+        $sql=db('t_food')->where('foodId', $id)->update(['foodType' => '1']);
+        return $sql;
+    }
+    public function foodOn($id)
+    {
+        $sql=db('t_food')->where('foodId', $id)->update(['foodType' => '0']);
+        return $sql;
+    }
+    public function foodDelete($id)
+    {
+        $sql=db('t_food')->where('foodId',$id)->delete();
         return $sql;
     }
 }

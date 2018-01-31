@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\wamp64\www\quyou\public/../application/admin\view\index\index.html";i:1517042947;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\wamp64\www\quyou\public/../application/admin\view\index\index.html";i:1517193557;}*/ ?>
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
@@ -70,7 +70,18 @@
 </div>
 </header>
 <aside class="Hui-aside">
-	<div class="menu_dropdown bk_2"></div>
+	<div class="menu_dropdown bk_2">
+		<?php if(is_array($menu) || $menu instanceof \think\Collection || $menu instanceof \think\Paginator): $i = 0; $__LIST__ = $menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><!--免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for-->
+			<dl>
+				<?php if($vo['fid']==0): ?><!--判断数据库输送过来的数据，进行挑选vo即代表数据-->
+					<dt><i class="Hui-iconfont">&#xe616;</i><?php echo $vo['menuName']; ?><i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+					<dd><ul>
+						<?php if(is_array($menu) || $menu instanceof \think\Collection || $menu instanceof \think\Paginator): $i = 0; $__LIST__ = $menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$so): $mod = ($i % 2 );++$i;if($vo['menuId']==$so['fid']): ?><li><a data-href="<?php echo url(''.$so['menuUrl'].''); ?>" data-title="<?php echo $so['menuName']; ?>" href="javascript:void(0)"><?php echo $so['menuName']; ?></a></li><?php endif; endforeach; endif; else: echo "" ;endif; ?></ul>
+					</dd>
+				<?php endif; ?>
+			</dl>
+		<?php endforeach; endif; else: echo "" ;endif; ?>
+	</div>
 </aside>
 <div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
 <section class="Hui-article-box">

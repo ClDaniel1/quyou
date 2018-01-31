@@ -1,0 +1,3006 @@
+[ 2018-01-28T17:13:47+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10336/10336_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10336/10336_0.jpeg [运行时间：0.169010s][吞吐率：5.92req/s] [内存消耗：2,488.83kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10336_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:13:50+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/admin/scenic/scenicshelves.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenicshelves.html [运行时间：0.624036s][吞吐率：1.60req/s] [内存消耗：4,710.45kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenicshelves',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '8',
+  'origin' => 'http://127.0.0.1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  'id' => '10337',
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->scenicShelves[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.086005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.067003s ]
+[ sql ] [ SQL ] UPDATE `t_scenic`  SET `scenicType`='1'  WHERE  `scenicId` = 10337 [ RunTime:0.057003s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:04+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/index
+[ log ] 127.0.0.1/quyou/public/admin/index/index [运行时间：0.269015s][吞吐率：3.72req/s] [内存消耗：3,033.99kb] [文件加载：46]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:04+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/welcome.html
+[ log ] 127.0.0.1/quyou/public/admin/index/welcome.html [运行时间：0.084005s][吞吐率：11.90req/s] [内存消耗：2,923.30kb] [文件加载：45]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:05+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/getmenu.html
+[ log ] 127.0.0.1/quyou/public/admin/index/getmenu.html [运行时间：0.433025s][吞吐率：2.31req/s] [内存消耗：4,699.59kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'getmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->getMenu[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.091005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_menu` [ RunTime:0.073004s ]
+[ sql ] [ SQL ] SELECT * FROM `t_menu` [ RunTime:0.063004s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:06+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/temp/200x150.jpg
+[ log ] 127.0.0.1/quyou/public/admin/index/temp/200x150.jpg [运行时间：0.240014s][吞吐率：4.17req/s] [内存消耗：3,001.59kb] [文件加载：47]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'temp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:09+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/Scenic/scenic.html
+[ log ] 127.0.0.1/quyou/public/admin/Scenic/scenic.html [运行时间：0.303017s][吞吐率：3.30req/s] [内存消耗：3,043.27kb] [文件加载：46]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Scenic',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->scenic[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\scenic\scenic.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:10+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/scenic/scenicspot.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenicspot.html [运行时间：0.407023s][吞吐率：2.46req/s] [内存消耗：4,708.65kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenicspot',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->ScenicSpot[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.089005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.064004s ]
+[ sql ] [ SQL ] SELECT count(scenicId) COUNT FROM `t_scenic` [ RunTime:0.058003s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:10+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/scenic/scenicrelease.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenicrelease.html [运行时间：0.433025s][吞吐率：2.31req/s] [内存消耗：4,968.02kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenicrelease',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->ScenicRelease[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.098005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.055004s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`REGION_NAME` FROM `t_scenic` `a` INNER JOIN `t_region` `b` ON `a`.`desId`=`b`.`REGION_ID` [ RunTime:0.133007s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:15+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10290/10290_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10290/10290_0.jpeg [运行时间：0.493028s][吞吐率：2.03req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10290_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:15+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10289/10289_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10289/10289_0.jpeg [运行时间：0.519030s][吞吐率：1.93req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10289_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:15+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10296/10296_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10296/10296_0.jpeg [运行时间：0.164010s][吞吐率：6.10req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10296_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:15+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10294/10294_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10294/10294_0.jpeg [运行时间：0.280016s][吞吐率：3.57req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10294_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:15+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10291/10291_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10291/10291_0.jpeg [运行时间：0.370021s][吞吐率：2.70req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10291_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:15+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10297/10297_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10297/10297_0.jpeg [运行时间：0.177010s][吞吐率：5.65req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10297_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:15+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10292/10292_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10292/10292_0.jpeg [运行时间：0.478027s][吞吐率：2.09req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10292_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:15+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10295/10295_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10295/10295_0.jpeg [运行时间：0.452026s][吞吐率：2.21req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10295_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:15+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10293/10293_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10293/10293_0.jpeg [运行时间：0.543031s][吞吐率：1.84req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10293_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:16+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10302/10302_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10302/10302_0.jpeg [运行时间：0.191011s][吞吐率：5.24req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10302_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:16+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10299/10299_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10299/10299_0.jpeg [运行时间：0.331019s][吞吐率：3.02req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10299_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:16+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10298/10298_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10298/10298_0.jpeg [运行时间：0.163009s][吞吐率：6.13req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10298_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:16+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10303/10303_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10303/10303_0.jpeg [运行时间：0.179010s][吞吐率：5.59req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10303_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:16+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10304/10304_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10304/10304_0.jpeg [运行时间：0.230014s][吞吐率：4.35req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10304_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:16+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10300/10300_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10300/10300_0.jpeg [运行时间：0.583033s][吞吐率：1.72req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10300_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:16+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10301/10301_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10301/10301_0.jpeg [运行时间：0.550032s][吞吐率：1.82req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10301_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:16+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10305/10305_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10305/10305_0.jpeg [运行时间：0.330019s][吞吐率：3.03req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10305_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:16+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10308/10308_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10308/10308_0.jpeg [运行时间：0.194011s][吞吐率：5.15req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10308_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10307/10307_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10307/10307_0.jpeg [运行时间：0.278016s][吞吐率：3.60req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10307_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10311/10311_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10311/10311_0.jpeg [运行时间：0.262015s][吞吐率：3.82req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10311_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10310/10310_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10310/10310_0.jpeg [运行时间：0.250014s][吞吐率：4.00req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10310_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10306/10306_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10306/10306_0.jpeg [运行时间：0.349020s][吞吐率：2.87req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10306_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10309/10309_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10309/10309_0.jpeg [运行时间：0.306018s][吞吐率：3.27req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10309_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10313/10313_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10313/10313_0.jpeg [运行时间：0.168009s][吞吐率：5.95req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10313_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10316/10316_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10316/10316_0.jpeg [运行时间：0.157009s][吞吐率：6.37req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10316_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10314/10314_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10314/10314_0.jpeg [运行时间：0.214012s][吞吐率：4.67req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10314_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10312/10312_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10312/10312_0.jpeg [运行时间：0.237014s][吞吐率：4.22req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10312_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10315/10315_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10315/10315_0.jpeg [运行时间：0.228013s][吞吐率：4.39req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10315_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10317/10317_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10317/10317_0.jpeg [运行时间：0.369021s][吞吐率：2.71req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10317_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10322/10322_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10322/10322_0.jpeg [运行时间：0.167010s][吞吐率：5.99req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10322_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10320/10320_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10320/10320_0.jpeg [运行时间：0.290017s][吞吐率：3.45req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10320_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10324/10324_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10324/10324_0.jpeg [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10324_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:17+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10321/10321_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10321/10321_0.jpeg [运行时间：0.429024s][吞吐率：2.33req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10321_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:18+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10318/10318_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10318/10318_0.jpeg [运行时间：0.126007s][吞吐率：7.94req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10318_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:18+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10325/10325_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10325/10325_0.jpeg [运行时间：0.287016s][吞吐率：3.48req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10325_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:18+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10326/10326_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10326/10326_0.jpeg [运行时间：0.207012s][吞吐率：4.83req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10326_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:18+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10319/10319_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10319/10319_0.jpeg [运行时间：0.161009s][吞吐率：6.21req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10319_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:18+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10327/10327_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10327/10327_0.jpeg [运行时间：0.206012s][吞吐率：4.85req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10327_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:18+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10329/10329_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10329/10329_0.jpeg [运行时间：0.173010s][吞吐率：5.78req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10329_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:18+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10332/10332_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10332/10332_0.jpeg [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10332_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:18+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10333/10333_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10333/10333_0.jpeg [运行时间：0.077004s][吞吐率：12.99req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10333_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:18+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10323/10323_0.png
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10323/10323_0.png [运行时间：0.297017s][吞吐率：3.37req/s] [内存消耗：2,489.16kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10323_0.png',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:18+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10328/10328_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10328/10328_0.jpeg [运行时间：0.236014s][吞吐率：4.24req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10328_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:18+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10331/10331_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10331/10331_0.jpeg [运行时间：0.252014s][吞吐率：3.97req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10331_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:18+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10330/10330_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10330/10330_0.jpeg [运行时间：0.258015s][吞吐率：3.88req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10330_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:18+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10334/10334_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10334/10334_0.jpeg [运行时间：0.283016s][吞吐率：3.53req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10334_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:18+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10335/10335_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10335/10335_0.jpeg [运行时间：0.286016s][吞吐率：3.50req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10335_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:18+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/static/images/scenic/10336/10336_0.jpeg
+[ log ] 127.0.0.1/quyou/public/static/images/scenic/10336/10336_0.jpeg [运行时间：0.186011s][吞吐率：5.38req/s] [内存消耗：2,488.89kb] [文件加载：40]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  0 => '10336_0.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T17:14:21+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/admin/scenic/scenicon.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenicon.html [运行时间：0.446026s][吞吐率：2.24req/s] [内存消耗：4,709.86kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenicon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '8',
+  'origin' => 'http://127.0.0.1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+  'id' => '10337',
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->scenicOn[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.093006s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.064003s ]
+[ sql ] [ SQL ] UPDATE `t_scenic`  SET `scenicType`='0'  WHERE  `scenicId` = 10337 [ RunTime:0.081005s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:22:19+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/index
+[ log ] 127.0.0.1/quyou/public/admin/index/index [运行时间：1.612092s][吞吐率：0.62req/s] [内存消耗：3,033.99kb] [文件加载：46]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:22:21+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/welcome.html
+[ log ] 127.0.0.1/quyou/public/admin/index/welcome.html [运行时间：0.480028s][吞吐率：2.08req/s] [内存消耗：2,923.30kb] [文件加载：45]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:22:24+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/getmenu.html
+[ log ] 127.0.0.1/quyou/public/admin/index/getmenu.html [运行时间：1.153066s][吞吐率：0.87req/s] [内存消耗：4,699.59kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'getmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->getMenu[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.090005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_menu` [ RunTime:0.077005s ]
+[ sql ] [ SQL ] SELECT * FROM `t_menu` [ RunTime:0.068004s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:22:25+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/temp/200x150.jpg
+[ log ] 127.0.0.1/quyou/public/admin/index/temp/200x150.jpg [运行时间：0.282016s][吞吐率：3.55req/s] [内存消耗：3,001.59kb] [文件加载：47]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'temp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:22:30+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/index
+[ log ] 127.0.0.1/quyou/public/admin/index/index [运行时间：0.143008s][吞吐率：6.99req/s] [内存消耗：3,033.99kb] [文件加载：46]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:22:31+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/welcome.html
+[ log ] 127.0.0.1/quyou/public/admin/index/welcome.html [运行时间：0.117007s][吞吐率：8.55req/s] [内存消耗：2,923.30kb] [文件加载：45]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:22:34+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/getmenu.html
+[ log ] 127.0.0.1/quyou/public/admin/index/getmenu.html [运行时间：3.597206s][吞吐率：0.28req/s] [内存消耗：4,699.59kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'getmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->getMenu[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:3.155181s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_menu` [ RunTime:0.057004s ]
+[ sql ] [ SQL ] SELECT * FROM `t_menu` [ RunTime:0.055003s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:22:35+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/temp/200x150.jpg
+[ log ] 127.0.0.1/quyou/public/admin/index/temp/200x150.jpg [运行时间：0.246014s][吞吐率：4.06req/s] [内存消耗：3,001.59kb] [文件加载：47]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'temp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:22:41+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/Hotel/hotel.html
+[ log ] 127.0.0.1/quyou/public/admin/Hotel/hotel.html [运行时间：0.276015s][吞吐率：3.62req/s] [内存消耗：3,042.99kb] [文件加载：46]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Hotel',
+    2 => 'hotel',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotel[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\hotel\hotel.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:22:41+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/hotel/hotelspot.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotelspot.html [运行时间：0.452026s][吞吐率：2.21req/s] [内存消耗：4,708.62kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotelspot',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Hotel/hotel.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotelSpot[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.097006s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT count(hotelId) COUNT FROM `t_hotel` [ RunTime:0.057003s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:22:42+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/hotel/hotelrelease.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotelrelease.html [运行时间：0.312018s][吞吐率：3.20req/s] [内存消耗：4,773.72kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotelrelease',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Hotel/hotel.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotelRelease[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.080005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.053003s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`REGION_NAME` FROM `t_hotel` `a` INNER JOIN `t_region` `b` ON `a`.`desId`=`b`.`REGION_ID` [ RunTime:0.064004s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:23:14+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/Scenic/scenic.html
+[ log ] 127.0.0.1/quyou/public/admin/Scenic/scenic.html [运行时间：0.384022s][吞吐率：2.60req/s] [内存消耗：3,043.27kb] [文件加载：46]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Scenic',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->scenic[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\scenic\scenic.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:23:14+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/null
+[ log ] 127.0.0.1/quyou/public/admin/index/null [运行时间：0.729042s][吞吐率：1.37req/s] [内存消耗：3,002.25kb] [文件加载：47]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'null',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:23:16+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/scenic/scenicspot.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenicspot.html [运行时间：0.341019s][吞吐率：2.93req/s] [内存消耗：4,708.65kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenicspot',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->ScenicSpot[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.081005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT count(scenicId) COUNT FROM `t_scenic` [ RunTime:0.054003s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:23:16+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/scenic/scenicrelease.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenicrelease.html [运行时间：0.408024s][吞吐率：2.45req/s] [内存消耗：4,968.02kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenicrelease',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->ScenicRelease[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.087005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.055003s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`REGION_NAME` FROM `t_scenic` `a` INNER JOIN `t_region` `b` ON `a`.`desId`=`b`.`REGION_ID` [ RunTime:0.146008s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:25:37+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/index
+[ log ] 127.0.0.1/quyou/public/admin/index/index [运行时间：0.112006s][吞吐率：8.93req/s] [内存消耗：3,033.99kb] [文件加载：46]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:25:37+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/welcome.html
+[ log ] 127.0.0.1/quyou/public/admin/index/welcome.html [运行时间：0.110006s][吞吐率：9.09req/s] [内存消耗：2,923.30kb] [文件加载：45]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:25:38+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/getmenu.html
+[ log ] 127.0.0.1/quyou/public/admin/index/getmenu.html [运行时间：0.567032s][吞吐率：1.76req/s] [内存消耗：4,699.59kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'getmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->getMenu[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.098005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_menu` [ RunTime:0.056004s ]
+[ sql ] [ SQL ] SELECT * FROM `t_menu` [ RunTime:0.055003s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:25:39+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/temp/200x150.jpg
+[ log ] 127.0.0.1/quyou/public/admin/index/temp/200x150.jpg [运行时间：0.120007s][吞吐率：8.33req/s] [内存消耗：3,001.59kb] [文件加载：47]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'temp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:25:41+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/Scenic/scenic.html
+[ log ] 127.0.0.1/quyou/public/admin/Scenic/scenic.html [运行时间：0.192011s][吞吐率：5.21req/s] [内存消耗：3,306.01kb] [文件加载：48]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Scenic',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->scenic[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\scenic\scenic.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:25:42+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/scenic/scenicspot.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenicspot.html [运行时间：0.317018s][吞吐率：3.15req/s] [内存消耗：4,708.65kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenicspot',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->ScenicSpot[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.086005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.058003s ]
+[ sql ] [ SQL ] SELECT count(scenicId) COUNT FROM `t_scenic` [ RunTime:0.058004s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:25:42+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/scenic/scenicrelease.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenicrelease.html [运行时间：0.420024s][吞吐率：2.38req/s] [内存消耗：4,968.02kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenicrelease',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->ScenicRelease[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.084004s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.058003s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`REGION_NAME` FROM `t_scenic` `a` INNER JOIN `t_region` `b` ON `a`.`desId`=`b`.`REGION_ID` [ RunTime:0.125007s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:26:42+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/index
+[ log ] 127.0.0.1/quyou/public/admin/index/index [运行时间：0.167010s][吞吐率：5.99req/s] [内存消耗：3,033.99kb] [文件加载：46]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:26:43+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/welcome.html
+[ log ] 127.0.0.1/quyou/public/admin/index/welcome.html [运行时间：0.311018s][吞吐率：3.22req/s] [内存消耗：2,923.30kb] [文件加载：45]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:26:43+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/getmenu.html
+[ log ] 127.0.0.1/quyou/public/admin/index/getmenu.html [运行时间：0.392023s][吞吐率：2.55req/s] [内存消耗：4,699.59kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'getmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->getMenu[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.086005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_menu` [ RunTime:0.072004s ]
+[ sql ] [ SQL ] SELECT * FROM `t_menu` [ RunTime:0.074004s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:26:44+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/temp/200x150.jpg
+[ log ] 127.0.0.1/quyou/public/admin/index/temp/200x150.jpg [运行时间：0.171009s][吞吐率：5.85req/s] [内存消耗：3,001.59kb] [文件加载：47]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'temp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:26:46+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/Scenic/scenic.html
+[ log ] 127.0.0.1/quyou/public/admin/Scenic/scenic.html [运行时间：0.176010s][吞吐率：5.68req/s] [内存消耗：3,306.01kb] [文件加载：48]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Scenic',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->scenic[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\scenic\scenic.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:26:47+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/scenic/scenicspot.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenicspot.html [运行时间：0.340020s][吞吐率：2.94req/s] [内存消耗：4,708.65kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenicspot',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->ScenicSpot[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.079004s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.060004s ]
+[ sql ] [ SQL ] SELECT count(scenicId) COUNT FROM `t_scenic` [ RunTime:0.060003s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:26:47+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/scenic/scenicrelease.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenicrelease.html [运行时间：0.463026s][吞吐率：2.16req/s] [内存消耗：4,968.02kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenicrelease',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->ScenicRelease[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.098005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.061004s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`REGION_NAME` FROM `t_scenic` `a` INNER JOIN `t_region` `b` ON `a`.`desId`=`b`.`REGION_ID` [ RunTime:0.174010s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:27:54+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/index
+[ log ] 127.0.0.1/quyou/public/admin/index/index [运行时间：0.307017s][吞吐率：3.26req/s] [内存消耗：3,033.99kb] [文件加载：46]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:27:55+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/welcome.html
+[ log ] 127.0.0.1/quyou/public/admin/index/welcome.html [运行时间：0.183011s][吞吐率：5.46req/s] [内存消耗：2,923.30kb] [文件加载：45]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:27:55+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/getmenu.html
+[ log ] 127.0.0.1/quyou/public/admin/index/getmenu.html [运行时间：0.409024s][吞吐率：2.44req/s] [内存消耗：4,699.59kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'getmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->getMenu[ E:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.082005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_menu` [ RunTime:0.057003s ]
+[ sql ] [ SQL ] SELECT * FROM `t_menu` [ RunTime:0.057003s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:27:55+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/temp/200x150.jpg
+[ log ] 127.0.0.1/quyou/public/admin/index/temp/200x150.jpg [运行时间：0.210012s][吞吐率：4.76req/s] [内存消耗：3,001.59kb] [文件加载：47]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'temp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:27:57+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/Scenic/scenic.html
+[ log ] 127.0.0.1/quyou/public/admin/Scenic/scenic.html [运行时间：0.155009s][吞吐率：6.45req/s] [内存消耗：3,306.01kb] [文件加载：48]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Scenic',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->scenic[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\scenic\scenic.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:27:58+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/scenic/scenicspot.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenicspot.html [运行时间：0.355021s][吞吐率：2.82req/s] [内存消耗：4,708.65kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenicspot',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->ScenicSpot[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.087005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.069004s ]
+[ sql ] [ SQL ] SELECT count(scenicId) COUNT FROM `t_scenic` [ RunTime:0.071004s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:27:58+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/scenic/scenicrelease.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenicrelease.html [运行时间：0.397022s][吞吐率：2.52req/s] [内存消耗：4,968.02kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenicrelease',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->ScenicRelease[ E:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.089006s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.056003s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`REGION_NAME` FROM `t_scenic` `a` INNER JOIN `t_region` `b` ON `a`.`desId`=`b`.`REGION_ID` [ RunTime:0.137008s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:28:57+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/Food/food.html
+[ log ] 127.0.0.1/quyou/public/admin/Food/food.html [运行时间：0.208012s][吞吐率：4.81req/s] [内存消耗：3,303.91kb] [文件加载：48]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Food',
+    2 => 'food',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Food->food[ E:\wamp64\www\quyou\application\admin\controller\Food.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\food\food.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:28:57+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/food/foodspot.html
+[ log ] 127.0.0.1/quyou/public/admin/food/foodspot.html [运行时间：0.356020s][吞吐率：2.81req/s] [内存消耗：4,709.86kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'food',
+    2 => 'foodspot',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Food/food.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Food->foodSpot[ E:\wamp64\www\quyou\application\admin\controller\Food.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.092006s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_food` [ RunTime:0.062003s ]
+[ sql ] [ SQL ] SELECT count(foodId) COUNT FROM `t_food` [ RunTime:0.056004s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:28:58+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/food/foodrelease.html
+[ log ] 127.0.0.1/quyou/public/admin/food/foodrelease.html [运行时间：0.483027s][吞吐率：2.07req/s] [内存消耗：4,895.52kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'food',
+    2 => 'foodrelease',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Food/food.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Food->foodRelease[ E:\wamp64\www\quyou\application\admin\controller\Food.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.094006s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_food` [ RunTime:0.068004s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`REGION_NAME` FROM `t_food` `a` INNER JOIN `t_region` `b` ON `a`.`desId`=`b`.`REGION_ID` [ RunTime:0.155009s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:29:32+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/Hotel/hotel.html
+[ log ] 127.0.0.1/quyou/public/admin/Hotel/hotel.html [运行时间：0.235014s][吞吐率：4.26req/s] [内存消耗：3,042.99kb] [文件加载：46]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Hotel',
+    2 => 'hotel',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotel[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ VIEW ] E:\wamp64\www\quyou\public/../application/admin\view\hotel\hotel.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-28T22:29:32+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/hotel/hotelspot.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotelspot.html [运行时间：0.399022s][吞吐率：2.51req/s] [内存消耗：4,708.62kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotelspot',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Hotel/hotel.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotelSpot[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.081005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.062004s ]
+[ sql ] [ SQL ] SELECT count(hotelId) COUNT FROM `t_hotel` [ RunTime:0.076004s ]
+
+---------------------------------------------------------------
+[ 2018-01-28T22:29:33+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/hotel/hotelrelease.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotelrelease.html [运行时间：0.364021s][吞吐率：2.75req/s] [内存消耗：4,773.72kb] [文件加载：53]
+[ info ] [ LANG ] E:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotelrelease',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/Hotel/hotel.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Hm_lvt_080836300300be57b7f34f4b3e97d911=1516846112,1516955655',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotelRelease[ E:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.087005s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.059004s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`REGION_NAME` FROM `t_hotel` `a` INNER JOIN `t_region` `b` ON `a`.`desId`=`b`.`REGION_ID` [ RunTime:0.067003s ]
+
+---------------------------------------------------------------

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\wamp64\www\quyou\public/../application/admin\view\hotel\hotel.html";i:1517042946;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\wamp64\www\quyou\public/../application/admin\view\hotel\hotel.html";i:1517370840;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -117,36 +117,11 @@
         $(obj).parents("tr").find(".td-manage").html("");
         layer.msg('已提交申请，耐心等待审核!', {icon: 1,time:2000});
     }
-
-    /*图片-编辑*/
-    function picture_edit(title,url,id){
-        var index = layer.open({
-            type: 2,
-            title: title,
-            content: url
-        });
-        layer.full(index);
-    }
-
-    /*图片-删除*/
-    function picture_del(obj,id){
-        layer.confirm('确认要删除吗？',function(index){
-            $.ajax({
-                type: 'POST',
-                url: '',
-                dataType: 'json',
-                success: function(data){
-                    $(obj).parents("tr").remove();
-                    layer.msg('已删除!',{icon:1,time:1000});
-                },
-                error:function(data) {
-                    console.log(data.msg);
-                },
-            });
-        });
-    }
     var menuUrl="<?php echo url('admin/Hotel/hotelSpot'); ?>";
     var hotelUrl="<?php echo url('admin/Hotel/hotelRelease'); ?>";
+    var staticc = "__STATIC__/";
+    var hotelDelete="<?php echo url('admin/Hotel/hotelDelete'); ?>";
+    var hotelPicture="<?php echo url('admin/Hotel/hotelPicture'); ?>";
 </script>
 <script type="text/javascript" src="__JS__/admin/hotel/hotel.js"></script>
 <script type="text/javascript">

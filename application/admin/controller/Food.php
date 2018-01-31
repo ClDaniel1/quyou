@@ -41,4 +41,35 @@ class Food extends \think\Controller
         ];
         echo json_encode($returnMsg);
     }
+    public function foodShelves()
+    {
+        $id=input('param.id');
+        $str=new \app\admin\model\Food();
+        $run=$str->foodShelves($id);
+        $returnMsg=[
+            'code'  =>  "ok",
+            'msg'   =>  "",
+            'data'  =>  [$run]
+        ];
+        echo json_encode($returnMsg);
+    }
+    public function foodOn()
+    {
+        $id=input('param.id');
+        $str=new \app\admin\model\Food();
+        $run=$str->foodOn($id);
+        $returnMsg=[
+            'code'  =>  "ok",
+            'msg'   =>  "",
+            'data'  =>  [$run]
+        ];
+        echo json_encode($returnMsg);
+    }
+    public function foodDelete()
+    {
+        $id=input('param.id');
+        $str=new \app\admin\model\Food();
+        $run=$str->foodDelete($id);
+        echo json_encode($id);
+    }
 }

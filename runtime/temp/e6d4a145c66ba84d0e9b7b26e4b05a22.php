@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\wamp64\www\quyou\public/../application/admin\view\scenic\scenic.html";i:1517044418;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\wamp64\www\quyou\public/../application/admin\view\scenic\scenic.html";i:1517196098;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -37,13 +37,13 @@
                 <th width="40"><input name="" type="checkbox" value=""></th>
                 <th width="80">景点ID</th>
                 <th width="100">景点名称</th>
-                <th width="100">景点描述</th>
-                <th width="100">景点票数</th>
+                <th width="270">景点描述</th>
+                <th width="70">景点票数</th>
                 <th>景点一角</th>
-                <th width="150">景点价格</th>
-                <th width="150">景点位置</th>
+                <th width="100">景点价格</th>
+                <th width="80">景点位置</th>
                 <th width="60">发布状态</th>
-                <th width="100">操作</th>
+                <th width="80">操作</th>
             </tr>
             </thead>
             <tbody id="scenicList">
@@ -170,6 +170,10 @@
     }
     var menuUrl="<?php echo url('admin/Scenic/ScenicSpot'); ?>";
     var scenicUrl="<?php echo url('admin/Scenic/ScenicRelease'); ?>";
+    var scenicShelves="<?php echo url('admin/Scenic/scenicShelves'); ?>";
+    var scenicOn="<?php echo url('admin/Scenic/scenicOn'); ?>";
+    var staticc = "__STATIC__/";
+    var scenicDelete="<?php echo url('admin/Scenic/scenicDelete'); ?>";
 </script>
 <script type="text/javascript" src="__JS__/admin/scenic/scenic.js"></script>
 <script type="text/javascript">

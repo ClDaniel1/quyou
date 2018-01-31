@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"E:\wamp64\www\quyou\public/../application/admin\view\hotel\hotelAppend.html";i:1517370840;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -54,9 +55,9 @@
             <div class="formControls col-xs-8 col-sm-9">
                 <select onchange="province()" id="regionId">
                     <option>请选择一个地区</option>
-                    {volist name="region" id="vo"}<!--免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for-->
-                    <option value="{$vo.REGION_ID}">{$vo.REGION_NAME}</option>
-                    {/volist}
+                    <?php if(is_array($region) || $region instanceof \think\Collection || $region instanceof \think\Paginator): $i = 0; $__LIST__ = $region;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><!--免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for-->
+                    <option value="<?php echo $vo['REGION_ID']; ?>"><?php echo $vo['REGION_NAME']; ?></option>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
                 </select>
                     <select id="regionCity"  name="desId">
                     <option value="0"></option>
@@ -374,7 +375,7 @@
                 swf: '__STATIC__/lib/webuploader/0.1.5/Uploader.swf',
                 chunked: false,
                 chunkSize: 512 * 1024,
-                server: '{:url("admin/Hotel/uploadImg")}',
+                server: '<?php echo url("admin/Hotel/uploadImg"); ?>',
                 // runtimeOrder: 'flash',
 
                 // accept: {
@@ -781,10 +782,10 @@
 
     })( jQuery );
 
-    var hotelSelect="{:url('admin/Hotel/hotelSelect')}";
-    var hotelAappend="{:url('admin/Hotel/hotelAappend')}";
-    var hotelAappendNo="{:url('admin/Hotel/hotelAappendNo')}";
-    var hotelFind="{:url('admin/Hotel/hotelFind')}";
+    var hotelSelect="<?php echo url('admin/Hotel/hotelSelect'); ?>";
+    var hotelAappend="<?php echo url('admin/Hotel/hotelAappend'); ?>";
+    var hotelAappendNo="<?php echo url('admin/Hotel/hotelAappendNo'); ?>";
+    var hotelFind="<?php echo url('admin/Hotel/hotelFind'); ?>";
 
 </script>
 <script type="text/javascript" src="__JS__/admin/hotel/hotelAppend.js"></script>

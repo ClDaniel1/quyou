@@ -23,4 +23,19 @@ class Scenic extends \think\Model
             ->join('t_region b','a.desId = b.REGION_ID')->field('a.*,b.REGION_NAME')->select();
         return $sql;
     }
+    public function scenicShelves($id)
+    {
+        $sql=db('t_scenic')->where('scenicId', $id)->update(['scenicType' => '1']);
+        return $sql;
+    }
+    public function scenicOn($id)
+    {
+        $sql=db('t_scenic')->where('scenicId', $id)->update(['scenicType' => '0']);
+        return $sql;
+    }
+    public function scenicDelete($id)
+    {
+        $sql=db('t_scenic')->where('scenicId',$id)->delete();
+        return $sql;
+    }
 }
