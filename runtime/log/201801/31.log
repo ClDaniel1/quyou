@@ -23868,3 +23868,1647 @@
 [ info ] [ LOG ] INIT File
 
 ---------------------------------------------------------------
+[ 2018-01-31T21:46:26+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/index
+[ log ] 127.0.0.1/quyou/public/admin/index/index [运行时间：0.336221s][吞吐率：2.97req/s] [内存消耗：3,538.64kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Huiskin=default; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%A4%A9%E6%B4%A5%E5%B8%82; qy_regionId=3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/admin\view\index\index.html [ array (
+  0 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.083014s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_menu` [ RunTime:0.054809s ]
+[ sql ] [ SQL ] SELECT * FROM `t_menu` [ RunTime:0.051429s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:46:26+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/welcome.html
+[ log ] 127.0.0.1/quyou/public/admin/index/welcome.html [运行时间：0.054057s][吞吐率：18.50req/s] [内存消耗：2,171.00kb] [文件加载：45]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Huiskin=default; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%A4%A9%E6%B4%A5%E5%B8%82; qy_regionId=3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ D:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T21:46:27+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/getmenu.html
+[ log ] 127.0.0.1/quyou/public/admin/index/getmenu.html [运行时间：0.064867s][吞吐率：15.42req/s] [内存消耗：2,215.21kb] [文件加载：47]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'getmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Huiskin=default; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%A4%A9%E6%B4%A5%E5%B8%82; qy_regionId=3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T21:46:27+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/temp/200x150.jpg
+[ log ] 127.0.0.1/quyou/public/admin/index/temp/200x150.jpg [运行时间：0.064871s][吞吐率：15.42req/s] [内存消耗：2,214.73kb] [文件加载：47]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'temp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Huiskin=default; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%A4%A9%E6%B4%A5%E5%B8%82; qy_regionId=3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T21:46:28+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/picture-add.html
+[ log ] 127.0.0.1/quyou/public/admin/index/picture-add.html [运行时间：0.115849s][吞吐率：8.63req/s] [内存消耗：2,215.27kb] [文件加载：47]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'picture-add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Huiskin=default; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%A4%A9%E6%B4%A5%E5%B8%82; qy_regionId=3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T21:47:13+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/hotel/hotel.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotel.html [运行时间：0.144598s][吞吐率：6.92req/s] [内存消耗：2,297.05kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotel',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%A4%A9%E6%B4%A5%E5%B8%82; qy_regionId=3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotel[ D:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/admin\view\hotel\hotel.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T21:47:14+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/hotel/hotelspot.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotelspot.html [运行时间：0.294515s][吞吐率：3.40req/s] [内存消耗：3,525.12kb] [文件加载：53]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotelspot',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotel.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%A4%A9%E6%B4%A5%E5%B8%82; qy_regionId=3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotelSpot[ D:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.087435s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.050980s ]
+[ sql ] [ SQL ] SELECT count(hotelId) COUNT FROM `t_hotel` [ RunTime:0.053411s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:47:14+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/hotel/hotelrelease.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotelrelease.html [运行时间：0.279704s][吞吐率：3.58req/s] [内存消耗：3,577.80kb] [文件加载：53]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotelrelease',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotel.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%A4%A9%E6%B4%A5%E5%B8%82; qy_regionId=3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotelRelease[ D:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.074225s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.048330s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`REGION_NAME` FROM `t_hotel` `a` INNER JOIN `t_region` `b` ON `a`.`desId`=`b`.`REGION_ID` [ RunTime:0.048548s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:47:26+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/desti/desti.html
+[ log ] 127.0.0.1/quyou/public/home/desti/desti.html [运行时间：0.166737s][吞吐率：6.00req/s] [内存消耗：2,257.58kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'desti',
+    2 => 'desti',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/notes/edit/id/31.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%A4%A9%E6%B4%A5%E5%B8%82; qy_regionId=3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Desti->desti[ D:\wamp64\www\quyou\application\home\controller\Desti.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\desti\desti.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T21:47:28+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/user/check.html
+[ log ] 127.0.0.1/quyou/public/home/user/check.html [运行时间：0.326480s][吞吐率：3.06req/s] [内存消耗：3,316.73kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'user',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/desti/desti.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%A4%A9%E6%B4%A5%E5%B8%82; qy_regionId=3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\User->check[ D:\wamp64\www\quyou\application\home\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.079325s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.048982s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uid` = 27  AND `loginKey` = '2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG' LIMIT 1 [ RunTime:0.050562s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:47:32+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/region/region/des/2.html
+[ log ] 127.0.0.1/quyou/public/home/region/region/des/2.html [运行时间：1.378429s][吞吐率：0.73req/s] [内存消耗：4,312.72kb] [文件加载：60]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'region',
+    2 => 'region',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/desti/desti.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%A4%A9%E6%B4%A5%E5%B8%82; qy_regionId=3',
+)
+[ info ] [ PARAM ] array (
+  'des' => '2',
+)
+[ info ] [ RUN ] app\home\controller\Region->region[ D:\wamp64\www\quyou\application\home\controller\Region.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\region\region.html [ array (
+  0 => 'sId',
+  1 => 'region_name',
+  2 => 'bkMsg',
+  3 => 'count',
+  4 => 'scenicMsg',
+  5 => 'hotelMsg',
+  6 => 'foodMsg',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.076941s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_region` [ RunTime:0.049190s ]
+[ sql ] [ SQL ] SELECT `REGION_NAME` FROM `t_region` WHERE  `REGION_ID` = 2 LIMIT 1 [ RunTime:0.052925s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.073317s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.054218s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_scenic` `a` INNER JOIN `t_scenicimg` `b` ON `a`.`scenicId`=`b`.`scenicId` WHERE  `a`.`desId` = '2' LIMIT 1 [ RunTime:0.051001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.076372s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `t_scenic` WHERE  `desId` = 2 LIMIT 0,2 [ RunTime:0.053791s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.080272s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_scenic` WHERE  `desId` = 2 LIMIT 1 [ RunTime:0.057120s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.084055s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.049360s ]
+[ sql ] [ SQL ] SELECT * FROM `t_hotel` WHERE  `desId` = 2 LIMIT 0,2 [ RunTime:0.049201s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.076521s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_hotel` WHERE  `desId` = 2 LIMIT 1 [ RunTime:0.052726s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.078257s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_food` [ RunTime:0.054890s ]
+[ sql ] [ SQL ] SELECT * FROM `t_food` WHERE  `desId` = 2 LIMIT 0,2 [ RunTime:0.055061s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.071274s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_food` WHERE  `desId` = 2 LIMIT 1 [ RunTime:0.049720s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:47:34+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/region/route.html
+[ log ] 127.0.0.1/quyou/public/home/region/route.html [运行时间：0.444454s][吞吐率：2.25req/s] [内存消耗：3,594.93kb] [文件加载：54]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'region',
+    2 => 'route',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/region/region/des/2.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%8C%97%E4%BA%AC%E5%B8%82; qy_regionId=2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Region->route[ D:\wamp64\www\quyou\application\home\controller\Region.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.078546s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_route` [ RunTime:0.060873s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_route` WHERE  `desId` = 2 LIMIT 1 [ RunTime:0.053265s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.081584s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `a`.`title`,`a`.`chose`,`b`.`routeId`,`b`.`num`,`c`.`scenicName` FROM `t_route` `a` INNER JOIN `t_routecon` `b` ON `a`.`routeId`=`b`.`routeId` INNER JOIN `t_scenic` `c` ON `c`.`scenicId`=`b`.`scenicId` WHERE  `a`.`desId` = '2' [ RunTime:0.050090s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:47:34+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/user/check.html
+[ log ] 127.0.0.1/quyou/public/home/user/check.html [运行时间：0.283521s][吞吐率：3.53req/s] [内存消耗：3,316.74kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'user',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/region/region/des/2.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%8C%97%E4%BA%AC%E5%B8%82; qy_regionId=2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\User->check[ D:\wamp64\www\quyou\application\home\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.076093s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.049045s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uid` = 27  AND `loginKey` = '2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG' LIMIT 1 [ RunTime:0.053867s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:48:19+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/region/region/des/273.html
+[ log ] 127.0.0.1/quyou/public/home/region/region/des/273.html [运行时间：6.263179s][吞吐率：0.16req/s] [内存消耗：27,105.04kb] [文件加载：61]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'region',
+    2 => 'region',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/desti/desti.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%8C%97%E4%BA%AC%E5%B8%82; qy_regionId=2',
+)
+[ info ] [ PARAM ] array (
+  'des' => '273',
+)
+[ info ] [ RUN ] app\home\controller\Region->region[ D:\wamp64\www\quyou\application\home\controller\Region.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\region\region.html [ array (
+  0 => 'sId',
+  1 => 'region_name',
+  2 => 'bkMsg',
+  3 => 'count',
+  4 => 'scenicMsg',
+  5 => 'hotelMsg',
+  6 => 'foodMsg',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.072930s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_region` [ RunTime:0.048331s ]
+[ sql ] [ SQL ] SELECT `REGION_NAME` FROM `t_region` WHERE  `REGION_ID` = 273 LIMIT 1 [ RunTime:0.047265s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.081405s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.056544s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_scenic` `a` INNER JOIN `t_scenicimg` `b` ON `a`.`scenicId`=`b`.`scenicId` WHERE  `a`.`desId` = '273' LIMIT 1 [ RunTime:0.049872s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.075940s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `t_scenic` WHERE  `desId` = 273 LIMIT 0,2 [ RunTime:0.051869s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.069548s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_scenic` WHERE  `desId` = 273 LIMIT 1 [ RunTime:0.053571s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.074116s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.050841s ]
+[ sql ] [ SQL ] SELECT * FROM `t_hotel` WHERE  `desId` = 273 LIMIT 0,2 [ RunTime:0.046922s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.083343s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_hotel` WHERE  `desId` = 273 LIMIT 1 [ RunTime:0.054380s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.093001s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_food` [ RunTime:0.056278s ]
+[ sql ] [ SQL ] SELECT * FROM `t_food` WHERE  `desId` = 273 LIMIT 0,2 [ RunTime:0.055608s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.086213s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_food` WHERE  `desId` = 273 LIMIT 1 [ RunTime:0.048522s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:48:22+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/region/route.html
+[ log ] 127.0.0.1/quyou/public/home/region/route.html [运行时间：0.434317s][吞吐率：2.30req/s] [内存消耗：3,592.45kb] [文件加载：54]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'region',
+    2 => 'route',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/region/region/des/273.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E6%88%90%E9%83%BD%E5%B8%82; qy_regionId=273',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Region->route[ D:\wamp64\www\quyou\application\home\controller\Region.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.085163s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_route` [ RunTime:0.060311s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_route` WHERE  `desId` = 273 LIMIT 1 [ RunTime:0.055247s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.073494s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `a`.`title`,`a`.`chose`,`b`.`routeId`,`b`.`num`,`c`.`scenicName` FROM `t_route` `a` INNER JOIN `t_routecon` `b` ON `a`.`routeId`=`b`.`routeId` INNER JOIN `t_scenic` `c` ON `c`.`scenicId`=`b`.`scenicId` WHERE  `a`.`desId` = '273' [ RunTime:0.051025s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:48:22+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/user/check.html
+[ log ] 127.0.0.1/quyou/public/home/user/check.html [运行时间：0.295362s][吞吐率：3.39req/s] [内存消耗：3,316.74kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'user',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/region/region/des/273.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E6%88%90%E9%83%BD%E5%B8%82; qy_regionId=273',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\User->check[ D:\wamp64\www\quyou\application\home\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.071129s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.050437s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uid` = 27  AND `loginKey` = '2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG' LIMIT 1 [ RunTime:0.047366s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:48:43+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/region/region/des/24.html
+[ log ] 127.0.0.1/quyou/public/home/region/region/des/24.html [运行时间：1.437157s][吞吐率：0.70req/s] [内存消耗：4,299.55kb] [文件加载：60]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'region',
+    2 => 'region',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/desti/desti.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E6%88%90%E9%83%BD%E5%B8%82; qy_regionId=273',
+)
+[ info ] [ PARAM ] array (
+  'des' => '24',
+)
+[ info ] [ RUN ] app\home\controller\Region->region[ D:\wamp64\www\quyou\application\home\controller\Region.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\region\region.html [ array (
+  0 => 'sId',
+  1 => 'region_name',
+  2 => 'bkMsg',
+  3 => 'count',
+  4 => 'scenicMsg',
+  5 => 'hotelMsg',
+  6 => 'foodMsg',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.082028s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_region` [ RunTime:0.048366s ]
+[ sql ] [ SQL ] SELECT `REGION_NAME` FROM `t_region` WHERE  `REGION_ID` = 24 LIMIT 1 [ RunTime:0.049511s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.082415s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.059816s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_scenic` `a` INNER JOIN `t_scenicimg` `b` ON `a`.`scenicId`=`b`.`scenicId` WHERE  `a`.`desId` = '24' LIMIT 1 [ RunTime:0.054350s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.072222s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `t_scenic` WHERE  `desId` = 24 LIMIT 0,2 [ RunTime:0.052697s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.076283s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_scenic` WHERE  `desId` = 24 LIMIT 1 [ RunTime:0.046772s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.071743s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.050670s ]
+[ sql ] [ SQL ] SELECT * FROM `t_hotel` WHERE  `desId` = 24 LIMIT 0,2 [ RunTime:0.061613s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.075453s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_hotel` WHERE  `desId` = 24 LIMIT 1 [ RunTime:0.055537s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.083359s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_food` [ RunTime:0.058514s ]
+[ sql ] [ SQL ] SELECT * FROM `t_food` WHERE  `desId` = 24 LIMIT 0,2 [ RunTime:0.050147s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.076754s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_food` WHERE  `desId` = 24 LIMIT 1 [ RunTime:0.047822s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:48:44+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/region/route.html
+[ log ] 127.0.0.1/quyou/public/home/region/route.html [运行时间：0.400135s][吞吐率：2.50req/s] [内存消耗：3,592.45kb] [文件加载：54]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'region',
+    2 => 'route',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/region/region/des/24.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Region->route[ D:\wamp64\www\quyou\application\home\controller\Region.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.071167s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_route` [ RunTime:0.049547s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_route` WHERE  `desId` = 24 LIMIT 1 [ RunTime:0.046786s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.086414s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `a`.`title`,`a`.`chose`,`b`.`routeId`,`b`.`num`,`c`.`scenicName` FROM `t_route` `a` INNER JOIN `t_routecon` `b` ON `a`.`routeId`=`b`.`routeId` INNER JOIN `t_scenic` `c` ON `c`.`scenicId`=`b`.`scenicId` WHERE  `a`.`desId` = '24' [ RunTime:0.056360s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:48:45+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/user/check.html
+[ log ] 127.0.0.1/quyou/public/home/user/check.html [运行时间：0.295668s][吞吐率：3.38req/s] [内存消耗：3,316.74kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'user',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/region/region/des/24.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\User->check[ D:\wamp64\www\quyou\application\home\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.078227s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.052754s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uid` = 27  AND `loginKey` = '2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG' LIMIT 1 [ RunTime:0.050135s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:50:53+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/region/region/des/24.html
+[ log ] 127.0.0.1/quyou/public/home/region/region/des/24.html [运行时间：1.424904s][吞吐率：0.70req/s] [内存消耗：4,299.57kb] [文件加载：60]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'region',
+    2 => 'region',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/region/region/des/24.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+  'des' => '24',
+)
+[ info ] [ RUN ] app\home\controller\Region->region[ D:\wamp64\www\quyou\application\home\controller\Region.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\region\region.html [ array (
+  0 => 'sId',
+  1 => 'region_name',
+  2 => 'bkMsg',
+  3 => 'count',
+  4 => 'scenicMsg',
+  5 => 'hotelMsg',
+  6 => 'foodMsg',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.073224s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_region` [ RunTime:0.049684s ]
+[ sql ] [ SQL ] SELECT `REGION_NAME` FROM `t_region` WHERE  `REGION_ID` = 24 LIMIT 1 [ RunTime:0.055136s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.082365s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.053949s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_scenic` `a` INNER JOIN `t_scenicimg` `b` ON `a`.`scenicId`=`b`.`scenicId` WHERE  `a`.`desId` = '24' LIMIT 1 [ RunTime:0.052628s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.074476s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `t_scenic` WHERE  `desId` = 24 LIMIT 0,2 [ RunTime:0.051601s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.073968s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_scenic` WHERE  `desId` = 24 LIMIT 1 [ RunTime:0.049349s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.076598s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.051966s ]
+[ sql ] [ SQL ] SELECT * FROM `t_hotel` WHERE  `desId` = 24 LIMIT 0,2 [ RunTime:0.050540s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.077309s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_hotel` WHERE  `desId` = 24 LIMIT 1 [ RunTime:0.050644s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.072971s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_food` [ RunTime:0.047440s ]
+[ sql ] [ SQL ] SELECT * FROM `t_food` WHERE  `desId` = 24 LIMIT 0,2 [ RunTime:0.058607s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.085760s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_food` WHERE  `desId` = 24 LIMIT 1 [ RunTime:0.053994s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:50:54+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/region/route.html
+[ log ] 127.0.0.1/quyou/public/home/region/route.html [运行时间：0.433956s][吞吐率：2.30req/s] [内存消耗：3,592.45kb] [文件加载：54]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'region',
+    2 => 'route',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/region/region/des/24.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Region->route[ D:\wamp64\www\quyou\application\home\controller\Region.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.075112s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_route` [ RunTime:0.058339s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_route` WHERE  `desId` = 24 LIMIT 1 [ RunTime:0.050381s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.078050s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT `a`.`title`,`a`.`chose`,`b`.`routeId`,`b`.`num`,`c`.`scenicName` FROM `t_route` `a` INNER JOIN `t_routecon` `b` ON `a`.`routeId`=`b`.`routeId` INNER JOIN `t_scenic` `c` ON `c`.`scenicId`=`b`.`scenicId` WHERE  `a`.`desId` = '24' [ RunTime:0.059315s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:50:55+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/user/check.html
+[ log ] 127.0.0.1/quyou/public/home/user/check.html [运行时间：0.335186s][吞吐率：2.98req/s] [内存消耗：3,316.74kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'user',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/region/region/des/24.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\User->check[ D:\wamp64\www\quyou\application\home\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.077014s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.048159s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uid` = 27  AND `loginKey` = '2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG' LIMIT 1 [ RunTime:0.055223s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:50:56+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/region/hotel.html?rgId=24
+[ log ] 127.0.0.1/quyou/public/home/region/hotel.html?rgId=24 [运行时间：0.077709s][吞吐率：12.87req/s] [内存消耗：2,266.73kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'region',
+    2 => 'hotel',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/region/region/des/24.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+  'rgId' => '24',
+)
+[ info ] [ RUN ] app\home\controller\Region->hotel[ D:\wamp64\www\quyou\application\home\controller\Region.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\region\hotel.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T21:50:57+08:00 ] 127.0.0.1 127.0.0.1 POST /quyou/public/home/region/ajaxhotel.html
+[ log ] 127.0.0.1/quyou/public/home/region/ajaxhotel.html [运行时间：0.403879s][吞吐率：2.48req/s] [内存消耗：3,595.84kb] [文件加载：54]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'region',
+    2 => 'ajaxhotel',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '13',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://127.0.0.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/region/hotel.html?rgId=24',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+  'size' => '5',
+  'page' => '1',
+)
+[ info ] [ RUN ] app\home\controller\Region->ajaxHotel[ D:\wamp64\www\quyou\application\home\controller\Region.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.083387s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.049052s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_hotel` WHERE  `desId` = 24 LIMIT 1 [ RunTime:0.049199s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.075839s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `t_hotel` WHERE  `desId` = 24 LIMIT 0,5 [ RunTime:0.053601s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:50:57+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/user/check.html
+[ log ] 127.0.0.1/quyou/public/home/user/check.html [运行时间：0.257296s][吞吐率：3.89req/s] [内存消耗：3,316.74kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'user',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/region/hotel.html?rgId=24',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\User->check[ D:\wamp64\www\quyou\application\home\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.074421s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.050366s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uid` = 27  AND `loginKey` = '2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG' LIMIT 1 [ RunTime:0.048643s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:51:00+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/desti/desti.html
+[ log ] 127.0.0.1/quyou/public/home/desti/desti.html [运行时间：0.128376s][吞吐率：7.79req/s] [内存消耗：2,257.58kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'desti',
+    2 => 'desti',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/region/hotel.html?rgId=24',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Desti->desti[ D:\wamp64\www\quyou\application\home\controller\Desti.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\desti\desti.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T21:51:03+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/user/check.html
+[ log ] 127.0.0.1/quyou/public/home/user/check.html [运行时间：0.350298s][吞吐率：2.85req/s] [内存消耗：3,316.73kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'user',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/desti/desti.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\User->check[ D:\wamp64\www\quyou\application\home\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.077079s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.051068s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uid` = 27  AND `loginKey` = '2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG' LIMIT 1 [ RunTime:0.048030s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:51:04+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/index/index.html
+[ log ] 127.0.0.1/quyou/public/home/index/index.html [运行时间：0.090370s][吞吐率：11.07req/s] [内存消耗：2,257.56kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/desti/desti.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\wamp64\www\quyou\application\home\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T21:51:06+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/user/check.html
+[ log ] 127.0.0.1/quyou/public/home/user/check.html [运行时间：0.301393s][吞吐率：3.32req/s] [内存消耗：3,316.73kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'user',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\User->check[ D:\wamp64\www\quyou\application\home\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.095513s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.054013s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uid` = 27  AND `loginKey` = '2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG' LIMIT 1 [ RunTime:0.059834s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:51:14+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/index.html
+[ log ] 127.0.0.1/quyou/public/admin/index/index.html [运行时间：0.320762s][吞吐率：3.12req/s] [内存消耗：3,538.73kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Huiskin=default; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/admin\view\index\index.html [ array (
+  0 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.074806s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_menu` [ RunTime:0.051290s ]
+[ sql ] [ SQL ] SELECT * FROM `t_menu` [ RunTime:0.048528s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:51:14+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/welcome.html
+[ log ] 127.0.0.1/quyou/public/admin/index/welcome.html [运行时间：0.095141s][吞吐率：10.51req/s] [内存消耗：2,171.00kb] [文件加载：45]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Huiskin=default; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ D:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T21:51:14+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/getmenu.html
+[ log ] 127.0.0.1/quyou/public/admin/index/getmenu.html [运行时间：0.061547s][吞吐率：16.25req/s] [内存消耗：2,215.21kb] [文件加载：47]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'getmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Huiskin=default; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T21:51:14+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/temp/200x150.jpg
+[ log ] 127.0.0.1/quyou/public/admin/index/temp/200x150.jpg [运行时间：0.063294s][吞吐率：15.80req/s] [内存消耗：2,214.73kb] [文件加载：47]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'temp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Huiskin=default; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T21:51:29+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/index.html
+[ log ] 127.0.0.1/quyou/public/admin/index/index.html [运行时间：0.326040s][吞吐率：3.07req/s] [内存消耗：3,538.73kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Huiskin=default; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/admin\view\index\index.html [ array (
+  0 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.071231s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_menu` [ RunTime:0.047930s ]
+[ sql ] [ SQL ] SELECT * FROM `t_menu` [ RunTime:0.050606s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T21:51:29+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/welcome.html
+[ log ] 127.0.0.1/quyou/public/admin/index/welcome.html [运行时间：0.067439s][吞吐率：14.83req/s] [内存消耗：2,171.00kb] [文件加载：45]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Huiskin=default; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ D:\wamp64\www\quyou\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/admin\view\index\welcome.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T21:51:29+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/getmenu.html
+[ log ] 127.0.0.1/quyou/public/admin/index/getmenu.html [运行时间：0.058135s][吞吐率：17.20req/s] [内存消耗：2,215.21kb] [文件加载：47]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'getmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Huiskin=default; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T21:51:29+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/index/temp/200x150.jpg
+[ log ] 127.0.0.1/quyou/public/admin/index/temp/200x150.jpg [运行时间：0.196638s][吞吐率：5.09req/s] [内存消耗：2,214.73kb] [文件加载：47]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'temp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/welcome.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Huiskin=default; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:01:19+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/desti/desti.html
+[ log ] 127.0.0.1/quyou/public/home/desti/desti.html [运行时间：0.281732s][吞吐率：3.55req/s] [内存消耗：2,257.56kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'desti',
+    2 => 'desti',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/home/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Desti->desti[ D:\wamp64\www\quyou\application\home\controller\Desti.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/home\view\desti\desti.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:01:20+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/home/user/check.html
+[ log ] 127.0.0.1/quyou/public/home/user/check.html [运行时间：0.296979s][吞吐率：3.37req/s] [内存消耗：3,316.73kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'user',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/home/desti/desti.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\User->check[ D:\wamp64\www\quyou\application\home\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.071626s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.051081s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `uid` = 27  AND `loginKey` = '2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG' LIMIT 1 [ RunTime:0.061693s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T22:01:28+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/hotel/hotel.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotel.html [运行时间：0.099970s][吞吐率：10.00req/s] [内存消耗：2,297.05kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotel',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotel[ D:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/admin\view\hotel\hotel.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:01:29+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/hotel/hotelspot.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotelspot.html [运行时间：0.264514s][吞吐率：3.78req/s] [内存消耗：3,525.12kb] [文件加载：53]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotelspot',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotel.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotelSpot[ D:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.080314s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.047398s ]
+[ sql ] [ SQL ] SELECT count(hotelId) COUNT FROM `t_hotel` [ RunTime:0.047660s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T22:01:29+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/hotel/hotelrelease.html
+[ log ] 127.0.0.1/quyou/public/admin/hotel/hotelrelease.html [运行时间：0.275082s][吞吐率：3.64req/s] [内存消耗：3,577.80kb] [文件加载：53]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hotel',
+    2 => 'hotelrelease',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/hotel/hotel.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Hotel->hotelRelease[ D:\wamp64\www\quyou\application\admin\controller\Hotel.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.084612s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_hotel` [ RunTime:0.050283s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`REGION_NAME` FROM `t_hotel` `a` INNER JOIN `t_region` `b` ON `a`.`desId`=`b`.`REGION_ID` [ RunTime:0.057291s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T22:01:34+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/scenic/scenic.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenic.html [运行时间：0.057307s][吞吐率：17.45req/s] [内存消耗：2,253.00kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/index/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->scenic[ D:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/admin\view\scenic\scenic.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-01-31T22:01:34+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/scenic/scenicspot.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenicspot.html [运行时间：0.266377s][吞吐率：3.75req/s] [内存消耗：3,461.95kb] [文件加载：53]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenicspot',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->ScenicSpot[ D:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.087691s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.055115s ]
+[ sql ] [ SQL ] SELECT count(scenicId) COUNT FROM `t_scenic` [ RunTime:0.047595s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T22:01:35+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/scenic/scenicrelease.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenicrelease.html [运行时间：0.397280s][吞吐率：2.52req/s] [内存消耗：3,761.73kb] [文件加载：53]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenicrelease',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->ScenicRelease[ D:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.084933s ] mysql:dbname=db_hf1707_quyou;host=120.78.77.164;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_scenic` [ RunTime:0.054253s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`REGION_NAME` FROM `t_scenic` `a` INNER JOIN `t_region` `b` ON `a`.`desId`=`b`.`REGION_ID` [ RunTime:0.158045s ]
+
+---------------------------------------------------------------
+[ 2018-01-31T22:01:37+08:00 ] 127.0.0.1 127.0.0.1 GET /quyou/public/admin/scenic/scenicappend.html
+[ log ] 127.0.0.1/quyou/public/admin/scenic/scenicappend.html [运行时间：0.190740s][吞吐率：5.24req/s] [内存消耗：2,430.87kb] [文件加载：47]
+[ info ] [ LANG ] D:\wamp64\www\quyou\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'scenic',
+    2 => 'scenicappend',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/quyou/public/admin/scenic/scenic.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'en-US,en;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=3oiskg4b302068n1b9d37q8uk6; qy_uid=27; qy_ukey=2KQPzKF6n9Xsl90KJtzKNlhJWYz7jjyG; Hm_lvt_080836300300be57b7f34f4b3e97d911=1517369408; Hm_lpvt_080836300300be57b7f34f4b3e97d911=1517369408; qy_regionName=%E5%9B%9B%E5%B7%9D%E7%9C%81; qy_regionId=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Scenic->scenicAppend[ D:\wamp64\www\quyou\application\admin\controller\Scenic.php ]
+[ info ] [ VIEW ] D:\wamp64\www\quyou\public/../application/admin\view\scenic\scenicAppend.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
