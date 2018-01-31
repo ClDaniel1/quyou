@@ -96,7 +96,7 @@ html::-webkit-scrollbar-thumb {
         left: 0;
     }
     #baseMain{
-        padding-top: 50px;
+        padding-top: 60px;
     }
     .siteNav
     {
@@ -146,6 +146,7 @@ html::-webkit-scrollbar-thumb {
  #desNav{
      display: none;
      padding-top: 30px;
+     margin-bottom: 30px;
      background-color: #fafafa;
      border-bottom: 1px solid #e6e6e6;
  }
@@ -233,4 +234,13 @@ html::-webkit-scrollbar-thumb {
 .treeNav li:hover
 {
     border-bottom: 5px solid orange;
+}
+.layui-nav .loginIn{
+    display: none;
+}
+.layui-input:hover, .layui-textarea:hover {
+    border-color: orange!important;
+}
+.am-dimmer{
+    background-color: rgba(0,0,0,0.1);
 }

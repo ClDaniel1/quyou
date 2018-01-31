@@ -95,6 +95,9 @@
         }
 
     }
+    @media (min-width: 768px) {
+
+    }
 </style>
 {/block}
 
@@ -104,7 +107,6 @@
 
 {block name='body'}
 <!--页面内容 /示例如下-->
-
 <div data-am-widget="slider" class="am-slider am-slider-c3" data-am-slider='{&quot;controlNav&quot;:false}' >
     <ul class="am-slides">
         <li>
@@ -150,8 +152,8 @@
 </div>
 
 <div class="layui-container">
-    <div class="layui-row layui-col-space30">
-        <div class="layui-col-md3" id="leftBar">
+    <div class="layui-row layui-col-space30" >
+        <div style="position: sticky" class="layui-col-md3" id="leftBar">
             <div class="am-panel am-panel-primary panel" id="ad">
                 <div class="am-panel-hd">广告</div>
                 <div class="am-panel-bd">
@@ -176,7 +178,7 @@
                 <ul class="layui-tab-title">
                     <li class="layui-this">热门游记</li>
                     <li>最新游记</li>
-                    <input class="layui-btn" type="button" value="写游记" style="float: right;margin-bottom: 10px">
+                    <a href="{:url('home/Notes/notes')}"><input class="layui-btn" type="button" value="写游记" style="float: right;margin-bottom: 10px"></a>
                 </ul>
 
                 <div class="layui-tab-content">

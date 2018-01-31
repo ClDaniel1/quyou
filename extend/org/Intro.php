@@ -7,24 +7,39 @@
  */
 namespace org;
 
-use think\response\Json;
 
 class Intro{
     public $page = 1;
     public $num = 0;
     public function getIntro($name){//获取百科
-        $html = new simple_html_dom();
-        $html->load_file("https://baike.baidu.com/item/{$name}");
-        $intro = $html->find('div[class=para]',0);
-        $intro2 = $html->find('div[class=para]',1);
-        $intro = $intro.$intro2;
-        $img = $html->find('div[class=summary-pic]',0)->first_child()->first_child ();
-        $img = $img->attr['src'];
-        $img = "<img src='".$img."' alt=''>";
-        $intro = preg_replace("/<a[^>]*>(.*?)<\/a>/is", "$1", $intro);
-        $intro = preg_replace("/<div[^>]*>(.*?)<\/div>/is", "$1", $intro);
-        $intro = preg_replace("/<sup[^>]*>.*?<\/sup>/is", "$1", $intro);
-       return ["intro"=>$intro,"img"=>$img];
+
+
+
+        if(cache($name)==false){
+            $html = new simple_html_dom();
+            $html->load_file("https://baike.baidu.com/item/{$name}");
+            $intro = $html->find('div[class=para]',0);
+            $intro2 = $html->find('div[class=para]',1);
+            $intro = $this->str($intro);
+            $intro2 = $this->str($intro2);
+            $img = $html->find('div[class=summary-pic]',0)->first_child()->first_child ();
+            $img = $img->attr['src'];
+            $img = "<img src='".$img."' alt=''>";
+            cache($name, ["intro"=>$intro,"intro2"=>$intro2,"img"=>$img]);
+            return ["intro"=>$intro,"intro2"=>$intro2,"img"=>$img];
+        }
+        else{
+            return cache($name);
+        }
+
+    }
+
+    public function str($str){
+        $str = preg_replace("/<a[^>]*>(.*?)<\/a>/is", "$1", $str);
+        $str = preg_replace("/<div[^>]*>(.*?)<\/div>/is", "$1", $str);
+        $str = preg_replace("/<sup[^>]*>.*?<\/sup>/is", "$1", $str);
+
+        return $str;
     }
 
     public function getAll($desId,$id1){

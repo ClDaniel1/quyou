@@ -19,7 +19,7 @@ return [
     // 应用调试模式
     'app_debug'              => true,
     // 应用Trace
-    'app_trace'              => false,
+    'app_trace'              => true,
     // 应用模式状态
     'app_status'             => '',
     // 是否支持多模块
@@ -203,7 +203,7 @@ return [
         // SESSION_ID的提交变量,解决flash上传跨域
         'var_session_id' => '',
         // SESSION 前缀
-        'prefix'         => 'think',
+        'prefix'         => 'qy_',
         // 驱动方式 支持redis memcache memcached
         'type'           => '',
         // 是否自动开启 SESSION
@@ -215,7 +215,7 @@ return [
     // +----------------------------------------------------------------------
     'cookie'                 => [
         // cookie 名称前缀
-        'prefix'    => '',
+        'prefix'    => 'qy_',
         // cookie 保存时间
         'expire'    => 0,
         // cookie 保存路径
@@ -246,7 +246,24 @@ return [
             'successReg'=>'注册成功',
             'regError'=>'注册失败',
             'haveUser'=>'用户重复了'
-        ]
+        ],
+        'loginChek'     =>[
+            'err'=>"登录信息有误，请重新登录"
+        ],
+        'note'      =>[
+            'imgTooSmall'=>"图片过小，请选择宽度大于1350，并且高度大于480的图片",
+            'imgSelectTooSmall'=>'裁剪完图片过小，请重新裁剪',
+            'scaleErr'=>'图片比例不对，请重新裁剪',
+            'musicSuccess'=>"音乐设置成功",
+            "remusicSuccess"=>"移除游记音乐成功"
+        ],
+        'personal'=> [
+            'changeOK' => "修改成功",
+            'changeErr'=>"信息为原信息，请修改",
+            'haveName'=>"昵称已被使用，换一个吧",
+            'repeatPwd'=>"密码为原密码，修改不成功",
+            'withoutName'=>"昵称没有重复，可以使用"
+        ],
     ],
 
     //验证码
@@ -255,7 +272,7 @@ return [
     'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY',
 
     // 验证码字体大小(px)
-    'fontSize' => 25,
+    'fontSize' => 35,
 
     // 是否画混淆曲线
     'useCurve' => false,
@@ -270,8 +287,6 @@ return [
     'length'   => 4,
 
     // 验证成功后是否重置
-    'reset'    => false],
-
-
+    'reset'    => true],
 
 ];

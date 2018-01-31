@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
     <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
     <link rel="stylesheet" href="__CSS__\home\public\public.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
@@ -22,18 +24,17 @@
         .navBg{
             background: #F9851D ;
         }
-<<<<<<< HEAD
-        .body{
+        .body {
             background-color: #efefef;
-=======
+        }
         footer{
             margin-top:25px;
->>>>>>> e79f6f254ff1825636c527baa2f2ad3069c1603d
         }
     </style>
 </head>
 <body class="body">
-
+{block name='first'}
+{/block}
 
 
 <div class="layui-header header layui-show-xs-block layui-hide-sm navBg" id="liteNav" >
@@ -51,12 +52,14 @@
             <li class="layui-nav-item layui-this"><a href="{:url('home/Index/index')}">首页</a></li>
             <li class="layui-nav-item"><a href="{:url('home/Desti/desti')}">目的地</a></li>
             <li class="layui-nav-item"><a href="">旅途直播</a></li>
-            <li class="layui-nav-item">
+            <li class="layui-nav-item nologin"><a href="{:url('home/User/login')}">登录</a></li>
+            <li class="layui-nav-item nologin"><a href="{:url('home/User/register')}"> 注册</a></li>
+            <li class="layui-nav-item loginIn">
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
                     <dd><a href="">我的消息</a></dd>
-                    <dd><a href="">个人中心</a></dd>
-                    <dd><a href="">退出登录</a></dd>
+                    <dd><a href="" class="toCenter">个人中心</a></dd>
+                    <dd  onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
                 </dl>
             </li>
             <li style="height: 30px; text-align: center"></li>
@@ -72,16 +75,18 @@
         <li class="layui-nav-item"><a href="{:url('home/Desti/desti')}">目的地</a></li>
         <li class="layui-nav-item"><a href="">旅途直播</a></li>
     </ul>
-    <ul class="layui-nav navBg" lay-filter="" style="float: right">
-        <li class="layui-nav-item">
-            <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
+    <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
+        <li class="layui-nav-item loginIn">
+            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
+
             <dl class="layui-nav-child">
                 <dd><a href="">我的消息</a></dd>
-                <dd><a href="javascript:;">退出登录</a></dd>
+                <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
-        </li>
-       <!-- <li class="layui-nav-item"><a href="{:url('home/login/login')}">登录</a></li>
-        <li class="layui-nav-item"><a href="{:url('home/register/register')}"> 注册</a></li>-->
+
+       <li class="layui-nav-item nologin"><a href="{:url('home/User/login')}">登录</a></li>
+        <li class="layui-nav-item nologin"><a href="{:url('home/User/register')}"> 注册</a></li>
+
     </ul>
 </div>
 
@@ -97,7 +102,7 @@
             </div>
             <div class="layui-row layui-hide-xs">
                 <ul class="layui-nav catalog">
-                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>概况</a></li>
+                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>首页</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst2"></i>玩法路线</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
                     <li class="layui-nav-item"><a href="{:url('home/Region/hotel')}?rgId=1000"><i class="icon1 iconPst4"></i>酒店</a></li>
@@ -154,7 +159,6 @@
 
 
 
-<<<<<<< HEAD
 
 
 <footer style="background: #3c3c3c">
@@ -202,9 +206,8 @@
         </div>
     </div>
 </footer>
-=======
->>>>>>> af1153db015604462702e242cb521fd40c46e4e9
 </body>
+<script src="__STATIC__/lib/vue.js"></script>
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
 <script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
@@ -233,6 +236,9 @@
         $("#sideBar li").eq(i).addClass("layui-this");
     }
 
+    var checkUrl = "{:url('home/User/check')}";
+
 </script>
+<script src="__JS__/home/public/public.js"></script>
 {block name='script'}{/block}
 </html>
