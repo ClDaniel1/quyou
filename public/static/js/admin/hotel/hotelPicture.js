@@ -72,21 +72,20 @@ function datadel()
             i.push($(this).val());  // 每一个被选中项的值
         });
         var img=JSON.stringify(i);
-        console.log(img)
-        /*$.ajax({
+        $.ajax({
             type: 'post',
             url: hotelDeleteMore,
-            data:{'main':main,'secondary':secondary,'hotelId':hotelId},
+            data:{'img':img},
             async: false,
             dataType: 'json',
             success: function (res) {
                 layer.open({
-                    title: '正确'
-                    ,content: '修改成功！'
+                    title: 'OK'
+                    ,content: '删除成功！'
                 });
                 window.location.href='';
             }
-        })*/
+        })
     }
 }
 

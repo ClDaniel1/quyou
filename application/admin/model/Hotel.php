@@ -120,4 +120,9 @@ class Hotel extends \think\Model
         $sql=db('t_hotelimg')->where('url', $secondary)->update(['url' => $main]);
         return $sql;
     }
+    public function hotelDeleteMore($val)
+    {
+        $sql=db('t_hotelimg')->where('url',$val)->delete();
+        return $sql;
+    }
 }

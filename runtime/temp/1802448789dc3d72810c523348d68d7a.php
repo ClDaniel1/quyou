@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\wamp64\www\quyou\public/../application/admin\view\hotel\hotelPicture.html";i:1517386871;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"E:\wamp64\www\quyou\public/../application/admin\view\hotel\hotelPicture.html";i:1517404784;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -65,6 +65,7 @@
         $(".portfolio-area li").Huihover();
     });
     var hotelPictureImg="<?php echo url('admin/Hotel/hotelPictureImg'); ?>";
+    var hotelDeleteMore="<?php echo url('admin/Hotel/hotelDeleteMore'); ?>";
 </script>
 <script type="text/javascript" src="__JS__/admin/hotel/hotelPicture.js"></script>
 </body>
