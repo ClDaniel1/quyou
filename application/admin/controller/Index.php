@@ -7,6 +7,9 @@ class Index extends \think\Controller
 {
     public function index()
     {
+        $am=new \app\admin\model\Index();
+        $data=$am->getMenu();
+        $this->assign("menu",$data);
         return $this->fetch('index');
     }
 
@@ -17,17 +20,10 @@ class Index extends \think\Controller
     public function login(){
         return $this->fetch('login');
     }
-
-    public function getMenu()
+    public function folderAppend()
     {
-        $str=new \app\admin\model\Index();
-        $run=$str->getMenu();
-        $returnMsg=[
-            'code'  =>  "ok",
-            'msg'   =>  "",
-            'data'  =>  [$run]
-        ];
-        echo json_encode($returnMsg);
-    }
+        $id=10001;
 
+        mkdir("static/".$id,0777,true);
+    }
 }

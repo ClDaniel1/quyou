@@ -1,0 +1,41 @@
+{extend name="public/base"}
+{block name='style'}
+<!--页面样式、引用/示例如下-->
+<style>
+    #aspectration[data-ratio="9:3"] {
+        padding-top:33.33%;
+    }
+    #aspectration img{
+        float: left;
+        width: 100%;
+    }
+
+</style>
+{/block}
+
+{block name='title'}
+游记草稿--趣游
+{/block}
+
+{block name='body'}
+
+<div>
+    <div v-for="con in conData" :id="con.conId">
+    <h1 v-if="con.num == 1" style="opacity: 0">{{con.title}}</h1>
+    <h1 v-if="con.title != null && con.num != 1 && con.type==0" class="imgDiv">
+        {{con.title}}
+    </h1>
+    <div v-if="con.type==0" class="textarea-wrapper">
+        <div class="content-editable" contenteditable="true">{{con.content}}</div>
+        <textarea v-model="con.content" contenteditable="true" class="field-textarea" placeholder="在这里输入您的游记内容" v-on:focus="foc" :id="conId+con.num" @blur="save"></textarea>
+    </div>
+    <div v-if="con.type==1" class="imgDiv"><img v-bind:src="imgurl+con.content" alt="" @click="foc" :id="conId+con.num"><i class="layui-icon" @click="removeImg(con.num)">&#x1006;</i>  </div>
+</div></div>
+
+{/block}
+
+
+{block name='script'}
+
+
+{/block}

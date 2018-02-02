@@ -332,7 +332,6 @@
                     console.log(res);
                 }
             });
-
         },
         methods: {
             bdMap:function(showId,scenicArr,max) {
@@ -368,12 +367,12 @@
                     }
 
                 }
-                function bdGEO() {
+                function bdGEO() //做到加载每一个景点
+                {
                     var add = arr[index];
                     geocodeSearch(add);
                     index++;
                 }
-
                 function geocodeSearch(add) {
                     if (index < arr.length) {
                         setTimeout(window.bdGEO, 400);//如果缺少，for循环和地图加载异步，线程速度不一样，会造成只显示最后一个标注点。
@@ -385,20 +384,18 @@
                         }
                     });
                 }
-
                 function addMarker(point, label) {
                     var marker = new BMap.Marker(point);
                     map.addOverlay(marker);
                     marker.setLabel(label);
                 }
-
                 function setLine() {
                     var polyline = new BMap.Polyline(marArr,
                         {strokeColor: "orange", strokeWeight: 4, strokeOpacity: 1}//设置属性
                     );
                     map.addOverlay(polyline);//跟polyline一块使用，添加上线
                 }
-        }
+            }
         }
     });
 </script>

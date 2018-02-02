@@ -1,0 +1,119 @@
+{extend name="public/regionNav"}
+<!--页面样式-->
+{block name='style'}
+<style>
+    #desNav
+    {
+        display:block;
+    }
+
+</style>
+<link rel="stylesheet" href="__CSS__/home/region/hotelPay.css">
+{/block}
+{block  name="site"}
+<a href="">厦门<i class="layui-icon orangeIcon">&#xe625;</i></a>
+<a><cite style="color: #ff7000;font-weight: bold;">重庆酒店预订</cite></a>
+{/block}
+{block name='body'}
+    <div class="layui-container">
+        <div class="layui-row">
+            <h1 class="hotelName">上海大酒店</h1>
+            <a class="addH"><i class="layui-icon" style="font-size: 30px; color: orange;">&#xe600;</i>收藏</a>
+        </div>
+        <div class="layui-row">
+            <div class="layui-col-sm7 layui-col-xs7">
+                <img class="bigImg" src="http://p4-q.mafengwo.net/s10/M00/E6/E1/wKgBZ1l5Uj2AaEXkAAJvFpOW7sU07.jpeg?imageMogr2%2Fthumbnail%2F%211360x760r%2Fgravity%2FCenter%2Fcrop%2F%211360x760%2Fquality%2F90" alt="">
+            </div>
+            <div class="layui-col-sm5 layui-col-xs5">
+                <ul class="imgUl">
+                    <li>
+                        <img src="http://p4-q.mafengwo.net/s10/M00/E6/E1/wKgBZ1l5Uj2AaEXkAAJvFpOW7sU07.jpeg?imageMogr2%2Fthumbnail%2F%211360x760r%2Fgravity%2FCenter%2Fcrop%2F%211360x760%2Fquality%2F90" alt="">
+                    </li>
+                    <li>
+                        <img src="http://p4-q.mafengwo.net/s10/M00/E6/E1/wKgBZ1l5Uj2AaEXkAAJvFpOW7sU07.jpeg?imageMogr2%2Fthumbnail%2F%211360x760r%2Fgravity%2FCenter%2Fcrop%2F%211360x760%2Fquality%2F90" alt="">
+                    </li>
+                    <li>
+                        <img src="http://p4-q.mafengwo.net/s10/M00/E6/E1/wKgBZ1l5Uj2AaEXkAAJvFpOW7sU07.jpeg?imageMogr2%2Fthumbnail%2F%211360x760r%2Fgravity%2FCenter%2Fcrop%2F%211360x760%2Fquality%2F90" alt="">
+                    </li>
+                </ul>
+                <ul class="imgUl">
+                    <li>
+                        <img src="http://p4-q.mafengwo.net/s10/M00/E6/E1/wKgBZ1l5Uj2AaEXkAAJvFpOW7sU07.jpeg?imageMogr2%2Fthumbnail%2F%211360x760r%2Fgravity%2FCenter%2Fcrop%2F%211360x760%2Fquality%2F90" alt="">
+                    </li>
+                    <li>
+                        <img src="http://p4-q.mafengwo.net/s10/M00/E6/E1/wKgBZ1l5Uj2AaEXkAAJvFpOW7sU07.jpeg?imageMogr2%2Fthumbnail%2F%211360x760r%2Fgravity%2FCenter%2Fcrop%2F%211360x760%2Fquality%2F90" alt="">
+                    </li>
+                    <li>
+                        <img src="http://p4-q.mafengwo.net/s10/M00/E6/E1/wKgBZ1l5Uj2AaEXkAAJvFpOW7sU07.jpeg?imageMogr2%2Fthumbnail%2F%211360x760r%2Fgravity%2FCenter%2Fcrop%2F%211360x760%2Fquality%2F90" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="borderB">
+        <div class="layui-container">
+            <div class="layui-row souNav">
+                <ul class="layui-col-sm7 layui-col-xs7 leftUl">
+                    <li>
+                        <a>预订</a>
+                    </li>
+                    <li>
+                        <a>攻略</a>
+                    </li>
+                    <li>
+                        <a>点评</a>
+                    </li>
+                </ul>
+                <ul class="layui-col-sm5 layui-col-xs5 rightUl">
+                    <li>
+                        <a><i class="layui-icon" style="font-size: 30px; color: orange;">&#xe61f;</i>点评</a>
+                    </li>
+                    <li id="hideH">
+                        <a><i class="layui-icon" style="font-size: 30px; color: orange;">&#xe600;</i>收藏</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="layui-container ">
+        <div class="layui-row dateB">
+            <input type="text" class="layui-input" id="test1">
+            <input type="text" class="layui-input" id="test2">
+            <button class="layui-btn layui-btn-warm">查看价格</button>
+        </div>
+        <div class="layui-row">
+            <table class="layui-table" lay-skin="line">
+                <thead>
+                <tr>
+                    <th>数据来源</th>
+                    <th>最低价房型</th>
+                    <th>最低价格/每晚</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>趣游旅游网</td>
+                    <td>次日期暂无可选房型</td>
+                    <td>￥<span>2000</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{/block}
+{block name='script'}
+<script>
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#test1'//指定元
+            ,value: new Date()
+        });
+        laydate.render({
+            elem: '#test2'//指定元
+            ,value: new Date()
+        });
+    });
+</script>
+{/block}

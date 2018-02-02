@@ -40,6 +40,9 @@
     border-bottom: 1px solid #ececec;
     padding-bottom: 15px;
 }
+.hotelBd:hover{
+    background-color: whitesmoke;
+}
 .hotelBd img
 {
     width: 90%;

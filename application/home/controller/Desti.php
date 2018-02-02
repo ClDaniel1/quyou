@@ -11,6 +11,10 @@ namespace app\home\controller;
 
 class Desti extends \think\Controller
 {
+    /**
+     * 显示目的地页面
+     * @return mixed
+     */
     public function desti(){
         return $this->fetch("desti");
     }

@@ -33,22 +33,30 @@ class Region extends \think\Controller
         $this->assign('hotelMsg',$hotel);
         $food=$a->foodMsg($rgId);//根据地区id查找对应地区食物信息
         $this->assign('foodMsg',$food);
-//        $routeCount=$a->routeCount($rgId);//根据地区id查找对应路线总条数
-//        $this->assign('routeCount',$routeCount);
-//        $routeMsg=$a->routeMsg($rgId);
-//        $arr=array();
-//        foreach($routeMsg as $value)
-//        {
-//            $arr[$value['routeId']][]=$value;
-//        }
-//        $tArr=array_slice($arr,0,2);
-//        $this->assign('routeMsg',$tArr);
         return $this->fetch();
     }
     public function hotel()//显示地区酒店
     {
-        $regionId=cookie('regionId');
+
+//        $msg=$model->hotelCount($regionId);
+//        $this->assign('htCount',$msg);
         return $this->fetch('hotel');
+    }
+    public function ajaxHotel()//根据ajax发送过来的请求获取酒店信息
+    {
+        $regionId=cookie('regionId');
+        $model=new model\Region();
+        $pageIndex=input('?param.page')?input('page'):"";
+        $size=input('?param.size')?input('size'):"";
+        $count=$model->htCount($regionId);
+        $num=ceil($count/$size);
+        $start=($pageIndex-1)*$size;
+        $end=$start+$size;
+        $msg=$model->hotelCount($regionId,$start,$end);
+        $arr=[];
+        array_push($arr,$num);
+        array_push($arr,$msg);
+        echo json_encode($arr);
     }
     public function route()
     {
@@ -69,5 +77,10 @@ class Region extends \think\Controller
         $routeArr['msg']=$tArr;
         $routeArr['count']=$routeCount;
         echo json_encode($routeArr);
+    }
+    public function hotelPay()//酒店下单详情页
+    {
+        $hotelId=input('?param.id')?input('id'):"";
+        return $this->fetch('hotelPay');
     }
 }

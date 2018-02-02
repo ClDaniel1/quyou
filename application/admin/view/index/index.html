@@ -21,13 +21,12 @@
 <script type="text/javascript" src="__STATIC__/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>H-ui.admin v3.1</title>
+<title>趣游后台管理系统</title>
 </head>
 <body>
 <header class="navbar-wrapper">
 	<div class="navbar navbar-fixed-top">
-		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">H-ui.admin</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml">H-ui</a> 
-			<span class="logo navbar-slogan f-l mr-10 hidden-xs">v3.1</span> 
+		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">趣游后台管理系统</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml">趣游</a>
 			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
 			<nav class="nav navbar-nav">
 				<ul class="cl">
@@ -69,7 +68,22 @@
 </div>
 </header>
 <aside class="Hui-aside">
-	<div class="menu_dropdown bk_2"></div>
+	<div class="menu_dropdown bk_2">
+		{volist name="menu" id="vo"}<!--免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for-->
+			<dl>
+				{if $vo.fid==0}<!--判断数据库输送过来的数据，进行挑选vo即代表数据-->
+					<dt><i class="Hui-iconfont">&#xe616;</i>{$vo.menuName}<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+					<dd><ul>
+						{volist name="menu" id="so"}
+
+						{if $vo.menuId==$so.fid}<li><a data-href="{:url(''.$so.menuUrl.'')}" data-title="{$so.menuName}" href="javascript:void(0)">{$so.menuName}</a></li>{/if}
+
+						{/volist}</ul>
+					</dd>
+				{/if}
+			</dl>
+		{/volist}
+	</div>
 </aside>
 <div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
 <section class="Hui-article-box">

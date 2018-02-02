@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\desti\desti.html";i:1517152143;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517293544;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\desti\desti.html";i:1517152143;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517304502;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
     <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
     <link rel="stylesheet" href="__CSS__\home\public\public.css">
+
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>

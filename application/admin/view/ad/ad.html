@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>广告管理</title>
+    <link rel="stylesheet" href="__STATIC__/lib/layui/css/layui.css">
+
+    <link href="__STATIC__/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+    <style>
+        img{
+            max-width: 85%;
+        }
+        #addList img{
+            width: 85%;
+        }
+        div{
+            text-align: center;
+            margin: 15px 0;
+        }
+        #add{
+            width: 500px;
+            max-width: 85%;
+            border: grey 3px solid;
+            height: 76px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        #add img{
+            height: 50px;
+            width: auto;
+            margin-top: 10px;
+        }
+        #addList{
+            position: absolute;
+            background: white;
+            top: 0;
+            width: 96%;
+            min-height: 96%;
+            display: none;
+            margin: 0;
+            padding-top: 50px;
+        }
+        #addList div{
+            padding: 10%;
+            margin: 35px 5%;
+            display: inline-block;
+            border: 2px grey solid;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        #addList div:hover{
+            box-shadow: 0 0 10px orange;
+            border: 2px orange solid;
+        }
+        #addList div p {
+             font-size:20px;
+            margin-top:15px
+        }
+        #addList button{
+                margin-top:35px
+        }
+        h2{
+            text-indent: 20px;
+        }
+        #addMain {
+            position: absolute;
+            background: white;
+            top: 0;
+            width: 96%;
+            min-height: 96%;
+            margin: 0;
+            display: none;
+            padding-top: 50px;
+        }
+        .uploader-list-container div{
+            margin: 0;
+        }
+        .layui-btn{
+            background: orange;
+        }
+        .ads p{
+            font-size: 16px;
+
+        }
+        .ads{
+            border-bottom: dashed 2px grey;
+            padding: 20px 0;
+            position: relative;
+        }
+        .ads a{
+            display: none;
+        }
+
+        .ads  .layui-icon{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 16px;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            transition: all 0.3s;
+        }
+        .ads  .edit{
+            right: 50px!important;
+        }
+        .ads:hover .layui-icon{
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="body">
+    <h2>当前广告</h2>
+    {if count($ad) == 0}
+        <h3>当前无广告</h3>
+    {/if}
+    {volist name="ad" id="vo" key="k"}
+    <div class="ads" id="A{$vo.adId}">
+        <i class="layui-icon" onclick="removeAd('{$vo.adId}')">&#x1006;</i>
+        <i class="layui-icon edit" onclick="editAd('{$vo.adId}')">&#xe642;</i>
+        <p>广告{$k}</p>
+        <div class="am-panel am-panel-primary panel" id="ad">
+            {if $vo.adType == 0}
+                <div class="am-panel-bd" >
+                    <p>{$vo.content}</p>
+                    <img src="__STATIC__/{$vo.img}"  class="am-img-responsive"/>
+                    <a href="{$vo.url}"></a>
+                </div>
+            {else/}
+                <div class="am-panel-bd">
+                    <p>{$vo.content}</p>
+                    <a href="{$vo.url}"></a>
+                </div>
+            {/if}
+        </div>
+    </div>
+    {/volist}
+    <div>
+        <div id="add">
+            <img src="__STATIC__/images/add.png" alt="">
+        </div>
+    </div>
+</div>
+
+
+<div id="addList">
+        <h1>请选择广告类型</h1>
+     <div id="imgTA">
+         <img src="__STATIC__/images/img.png" alt="">
+         <p>图文广告</p>
+     </div>
+      <div  id="TA">
+          <img src="__STATIC__/images/text.png" alt="">
+            <p>文字广告</p>
+       </div>
+        <br>
+        <button class="layui-btn out">取消</button>
+    </div>
+
+<div id="addMain">
+        <div>
+            <form class="layui-form layui-container" action="" id="upForm">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">广告文字</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="content" lay-verify="required" autocomplete="off" placeholder="请输入广告文字" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">链接地址</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="url" lay-verify="required|url" autocomplete="off" value="http://" placeholder="请输入链接地址" class="layui-input">
+                    </div>
+                </div>
+                <input type="text" id="type" name="type" style="display:none">
+                <input type="text" id="img" name="img" style="display:none">
+                <div class="layui-upload" id="upImg">
+                    <button type="button" class="layui-btn" id="test1">上传图片</button>
+                    <div class="layui-upload-list">
+                        <img class="layui-upload-img" id="demo1">
+                        <p id="demoText"></p>
+                    </div>
+                </div>
+                <button class="layui-btn" lay-submit=""  lay-filter="sub">立即提交</button>
+                <input type="button" value="返回" class="out1 layui-btn" >
+            </form>
+
+        </div>
+    </div>
+
+
+</body>
+<script src="__STATIC__\lib\layui\layui.all.js"></script>
+<script src="__STATIC__\lib\jquery-3.2.1.js"></script>
+<script>
+    $("#imgTA").click(function () {
+        $("#upForm")[0].reset();
+        $("#addList").fadeOut(300,function () {
+            $("#addMain").fadeIn(300);
+        });
+        $("#upImg").show();
+        $("#type").val(0);
+    });
+
+    $("#TA").click(function () {
+        $("#upForm")[0].reset();
+        $("#addList").fadeOut(300,function () {
+            $("#addMain").fadeIn(300);
+        });
+        $("#upImg").hide();
+        $("#type").val(1);
+    });
+    $(".out").click(function () {
+        $("#addList").fadeOut(300,function () {
+            $("#body").fadeIn(300);
+        });
+    });
+    $(".out1").click(function () {
+        $("#addMain").fadeOut(300,function () {
+            $("#addList").fadeIn(300);
+        });
+    });
+    $("#add").click(function () {
+        $("#body").fadeOut(300,function () {
+            $("#addList").fadeIn(300);
+        })
+
+    })
+
+    var upload = layui.upload;
+    var form = layui.form;
+
+    var uploadInst = upload.render({
+        elem: '#test1'
+        ,url: '{:url("admin/Ad/upImg")}'
+        ,before: function(obj){
+            //预读本地文件示例，不支持ie8
+            obj.preview(function(index, file, result){
+                $('#demo1').attr('src', result); //图片链接（base64）
+            });
+        }
+        ,done: function(res){
+            //如果上传失败
+            if(res["code"] == 60001){
+                layer.msg('上传成功');
+                $("#img").val(res["data"][0])
+            }
+            //上传成功
+        }
+        ,error: function(){
+            //演示失败状态，并实现重传
+            var demoText = $('#demoText');
+            demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+            demoText.find('.demo-reload').on('click', function(){
+                uploadInst.upload();
+            });
+        }
+    });
+
+    form.on('submit(sub)', function(data){
+        var updata = data.field;
+        if(updata.type == 0 && updata.img == ""){
+            layer.msg("请上传一张图片");
+        }
+        else {
+            $.ajax({
+                url:"{:url('admin/Ad/setAd')}",
+                data:updata,
+                type:"post",
+                dataType:"json",
+                success:function (res) {
+                    if(res==1){
+                        layer.open({
+                            content:"添加广告成功",
+                            yes: function(index, layero){
+                                location.reload();
+                                layer.close(index); //如果设定了yes回调，需进行手工关闭
+                            }
+                        });
+
+                    }
+                }
+            })
+        }
+        return false;
+    });
+
+    function removeAd(adId) {
+        layer.confirm('确定删除该广告?', {icon: 3, title:'删除广告'}, function(index){
+            //do something
+            $.ajax({
+                url:"{:url('admin/Ad/delAd')}",
+                data:{"adId":adId},
+                type:"post",
+                dataType:"json",
+                success:function (res) {
+                    if(res==1){
+                        layer.open({
+                            content:"移除广告成功",
+                            yes: function(index, layero){
+                                $("#A"+adId).remove();
+                                layer.close(index); //如果设定了yes回调，需进行手工关闭
+                            }
+                        });
+
+                    }
+                }
+            })
+            layer.close(index);
+        });
+
+    }
+
+    function editAd(adId) {
+        var _this = $("#A"+adId);
+        console.log(_this.find("img"));
+    }
+
+</script>
+</html>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\index\index.html";i:1517152143;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517152143;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\index\index.html";i:1517225494;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517304502;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
     <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
     <link rel="stylesheet" href="__CSS__\home\public\public.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
@@ -113,6 +115,9 @@
         }
 
     }
+    @media (min-width: 768px) {
+
+    }
 </style>
 
     <title>
@@ -150,8 +155,8 @@
             <li class="layui-nav-item layui-this"><a href="<?php echo url('home/Index/index'); ?>">首页</a></li>
             <li class="layui-nav-item"><a href="<?php echo url('home/Desti/desti'); ?>">目的地</a></li>
             <li class="layui-nav-item"><a href="">旅途直播</a></li>
-            <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
-            <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
+            <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
+            <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
             <li class="layui-nav-item loginIn">
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
@@ -176,13 +181,15 @@
     <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
         <li class="layui-nav-item loginIn">
             <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
+
             <dl class="layui-nav-child">
                 <dd><a href="">我的消息</a></dd>
                 <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
-        </li>
-       <li class="layui-nav-item nologin"><a href="<?php echo url('home/login/login'); ?>">登录</a></li>
-        <li class="layui-nav-item nologin"><a href="<?php echo url('home/register/register'); ?>"> 注册</a></li>
+
+       <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
+        <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
+
     </ul>
 </div>
 
@@ -293,8 +300,8 @@
 </div>
 
 <div class="layui-container">
-    <div class="layui-row layui-col-space30">
-        <div class="layui-col-md3" id="leftBar">
+    <div class="layui-row layui-col-space30" >
+        <div style="position: sticky" class="layui-col-md3" id="leftBar">
             <div class="am-panel am-panel-primary panel" id="ad">
                 <div class="am-panel-hd">广告</div>
                 <div class="am-panel-bd">
@@ -399,6 +406,7 @@
     </div>
 </footer>
 </body>
+<script src="__STATIC__/lib/vue.js"></script>
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
 <script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
@@ -427,7 +435,7 @@
         $("#sideBar li").eq(i).addClass("layui-this");
     }
 
-    var checkUrl = "<?php echo url('home/Login/check'); ?>";
+    var checkUrl = "<?php echo url('home/User/check'); ?>";
 
 </script>
 <script src="__JS__/home/public/public.js"></script>

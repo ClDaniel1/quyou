@@ -255,7 +255,9 @@ return [
         'note'      =>[
             'imgTooSmall'=>"图片过小，请选择宽度大于1350，并且高度大于480的图片",
             'imgSelectTooSmall'=>'裁剪完图片过小，请重新裁剪',
-            'scaleErr'=>'图片比例不对，请重新裁剪'
+            'scaleErr'=>'图片比例不对，请重新裁剪',
+            'musicSuccess'=>"音乐设置成功",
+            "remusicSuccess"=>"移除游记音乐成功"
         ],
         'personal'=> [
             'changeOK' =>["code"=>30002,"msg"=>'修改成功',"data"=>[]],

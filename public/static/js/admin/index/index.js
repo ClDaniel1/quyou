@@ -1,6 +1,7 @@
 /**
  * Created by yydashen on 2018/1/25.
  */
+/*
 $.ajax({
     type:'get',
     url:menuUrl,
@@ -36,4 +37,4 @@ $.ajax({
         }
     }
 
-});
+});*/
