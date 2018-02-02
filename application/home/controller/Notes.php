@@ -155,24 +155,34 @@ class Notes extends \think\Controller
     public function edit(){
         $um = new User();
         $res = $um->checkLogin();//验证是否登录
-        if($res){
         $id = input("param.id");
-        $nm = new \app\home\model\Notes();
+        if($res){
+            $res = $this->isUserNote($id);
+
+            if($res){
+                $nm = new \app\home\model\Notes();
 
 
-        //获取游记基本信息
-        $info = $nm->getNoteInfo($id)[0];
+                //获取游记基本信息
+                $info = $nm->getNoteInfo($id)[0];
 
-        //获取游记内容
-        $con = $nm->getNoteCont($id);
+                //获取游记内容
+                $con = $nm->getNoteCont($id);
 
-        $this->assign("info",$info);
-        $this->assign("con",$con);
-        $this->assign("noteId",$id);
+                $this->assign("info",$info);
+                $this->assign("con",$con);
+                $this->assign("noteId",$id);
 
-        return $this->fetch("note");
+                return $this->fetch("note");
+            }
+            else{
+                $im = new Index();
+                return $im->err();
+            }
+
         }else{
-            $this->error('很抱歉，请登录后再试',url("home/User/login"));
+            $im = new Index();
+            return $im->err("很抱歉，请先登录",url("home/User/login"));
         }
     }
 

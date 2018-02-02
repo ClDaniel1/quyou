@@ -20,7 +20,7 @@ class Index extends \think\Controller
         return $this->fetch('index');
     }
 
-    public function err($str="404!<br>页面找不到了",$url=""){
+    public function err($str="OHH~<br>好像出错了，请重试",$url=""){
         if($url == ""){
             $url = url("home/index/index");
         }
