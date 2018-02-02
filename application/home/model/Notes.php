@@ -109,4 +109,5 @@ class Notes extends Model
         $data = db("t_region")->where("PARENT_ID=$prId")->select();
         return $data;
     }
+
 }

@@ -89,6 +89,10 @@ class Hotel extends \think\Controller
         ];
         echo json_encode($returnMsg);
     }
+
+    /**
+     *
+     */
     public function hotelDelete()
     {
         $id=input('param.id');
