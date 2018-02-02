@@ -13,40 +13,51 @@ use org\RadomStr;
 
 class Notes extends \think\Controller
 {
-    //编辑游记入口
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    /**
+     * 写游记入口
+     * @return mixed
+     */
     public function notes(){
+        //用户控制器
         $um = new User();
-        $res = $um->checkLogin();//验证是否登录
+        //验证是否登录
+        $res = $um->checkLogin();
+        //获取登录用户Id
         $uid = cookie("uid");
+        //新建游记模型对象
+        $nm = new \app\home\model\Notes();
         if($res){
-            $nm = new \app\home\model\Notes();
+            //获取游记草稿数据
             $data = $nm->draft($uid);
+            //判断是否有游记草稿
             if(count($data)>0 && !input("?param.new")){
+                //有，绑定数据到notes变量，引用草稿列表页面
                 $this->assign("notes",$data);
                 return $this->fetch("draft");
             }
             else{
-                $id = cookie("uid");
-                $nm = new \app\home\model\Notes();
                 //创建游记
-                $id = $nm->creatNote($id);
+                $id = $nm->creatNote($uid);
 
+                //转到游记编辑方法，附上游记Id
                 $this->redirect('home/Notes/edit',["id"=>$id]);
             }
 
         }else{
-            $this->error('很抱歉，请登录后再试');
+            //用户没登陆
+            $im = new Index();
+            return $im->err("很抱歉，请先登录",url("home/User/login"));
         }
     }
 
 
-    //设置游记头图
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    /**
+     * 用户上传游记头图
+     * @return \think\response\Json
+     */
     public function setUp(){
 
+        //获取裁图数据
         if(empty($_FILES)){
             $w = input("param.size");
             session("img",$w);
@@ -119,7 +130,9 @@ class Notes extends \think\Controller
                 return json($resMsg);
             }
 
+            //裁图
             $image->crop($rew-$rsw, $reh-$rsh,$rsw,$rsh)->save($path);
+
 
             $userPath = "images/user/".$uid."/note/".$noteId."/head".".".$type;
 
@@ -135,6 +148,10 @@ class Notes extends \think\Controller
 
     }
 
+    /**
+     * 用户编辑游记
+     * @return mixed
+     */
     public function edit(){
         $um = new User();
         $res = $um->checkLogin();//验证是否登录
@@ -159,6 +176,10 @@ class Notes extends \think\Controller
         }
     }
 
+    /**
+     * 获取游记内容
+     * @return \think\response\Json
+     */
     public function getCon(){
         $id = input("param.id");
         $nm = new \app\home\model\Notes();
@@ -173,6 +194,9 @@ class Notes extends \think\Controller
         return json($reMsg);
     }
 
+    /**
+     * 保存游记
+     */
     public function save(){
        $data = input("param.sData/a");
        $noteId = input("param.id");
@@ -185,6 +209,10 @@ class Notes extends \think\Controller
        }
     }
 
+    /**
+     * 添加图片
+     * @return \think\response\Json
+     */
     public function addImg(){
         $noteId = input("param.noteId");
         //检查是否有用户文件夹
@@ -222,6 +250,10 @@ class Notes extends \think\Controller
         return json($reMsg);
     }
 
+    /**
+     * 添加游记音乐
+     * @return \think\response\Json
+     */
     public function addMusic(){
         $noteId = input("param.noteId");
         //检查是否有用户文件夹
@@ -330,5 +362,23 @@ class Notes extends \think\Controller
 
         }
         return json($resMsg);
+    }
+
+    public function isUserNote($noteId){
+        $uid = cookie("uid");
+        $nm = new \app\home\model\Notes();
+
+        $noteInfo = $nm->getNoteInfo($noteId);
+        if(count($noteInfo)==0){
+            return false;
+        }
+        else{
+            if ($noteInfo[0]["uid"]==$uid){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
     }
 }

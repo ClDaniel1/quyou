@@ -6,7 +6,7 @@
  * Time: 13:27
  */
 
-namespace app\admin\model;
+namespace app\home\model;
 
 
 class Ad
