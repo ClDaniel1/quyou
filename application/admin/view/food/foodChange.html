@@ -1,4 +1,3 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"E:\wamp64\www\quyou\public/../application/admin\view\hotel\hotelAppend.html";i:1517467517;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -23,31 +22,35 @@
     <title>新增图片</title>
     <link href="__STATIC__/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body><input type="button" id="foodId" style="display:none;">
 <div class="page-container">
     <form class="form form-horizontal" id="form-article-add">
+        {volist name="foodInformation" id="vo"}
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>酒店名称：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder=""  name="hotelName">
+                <input type="text" class="input-text" value="{$vo.foodName}" placeholder=""  name="foodName">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">酒店描述：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" name="hotelDescribe">
+                <input type="text" class="input-text" value="{$vo.foodDescribe}" placeholder="" name="foodDescribe">
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">酒店房间：</label>
+            <label class="form-label col-xs-4 col-sm-2">美食类型：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="number" class="input-text" value="0" placeholder="" name="hotelNum">
-            </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">酒店价格：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="number" class="input-text" value="0" placeholder="" name="hotelPrice">
+                <select name="foodType" id="foodtype">
+                    <option value="0"></option>
+                    {volist name="foodtype" id="typevo"}<!--免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for-->
+                    {if $typevo.foodTypeId==$foodInformation[0]["foodTypeId"]}
+                    <option value="{$typevo.foodTypeId}" selected>{$typevo.foodTypeName}</option>
+                    {else /}
+                    <option value="{$typevo.foodTypeId}">{$typevo.foodTypeName}</option>
+                    {/if}
+                    {/volist}
+                </select>
             </div>
         </div>
         <div class="row cl">
@@ -55,16 +58,35 @@
             <div class="formControls col-xs-8 col-sm-9">
                 <select onchange="province()" id="regionId">
                     <option>请选择一个地区</option>
-                    <?php if(is_array($region) || $region instanceof \think\Collection || $region instanceof \think\Paginator): $i = 0; $__LIST__ = $region;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><!--免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for-->
-                    <option value="<?php echo $vo['REGION_ID']; ?>"><?php echo $vo['REGION_NAME']; ?></option>
-                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                    {volist name="region" id="voone"}<!--免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for-->
+                    {if $voone.REGION_ID==$regionFood[0]["PARENT_ID"]}
+                    <option value="{$voone.REGION_ID}" selected>{$voone.REGION_NAME}</option>
+                    {else /}
+                    <option value="{$voone.REGION_ID}">{$voone.REGION_NAME}</option>
+                    {/if}
+
+                    {/volist}
                 </select>
-                    <select id="regionCity"  name="desId">
-                    <option value="0"></option>
+                <select id="regionCity"  name="desId">
+                    {volist name="regionFood" id="voone"}<!--免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for-->
+                    {if $voone.REGION_ID==$vo.desId}
+                    <option value="{$voone.REGION_ID}" selected>{$voone.REGION_NAME}</option>
+                    {else /}
+                    <option value="{$voone.REGION_ID}">{$voone.REGION_NAME}</option>
+                    {/if}
+                    {/volist}
                 </select>
 
             </div>
         </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">美食街道：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="{$vo.address}" placeholder="" name="address">
+            </div>
+        </div>
+        {/volist}
+
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">酒店图片：</label>
             <div class="formControls col-xs-8 col-sm-9">
@@ -72,7 +94,7 @@
                     <div class="queueList">
                         <div id="dndArea" class="placeholder">
                             <div id="filePicker-2"></div>
-                            <p>或将照片拖到这里，单次最多可选300张</p>
+                            <p>添加图片请将图片放置此处，单次最多可选300张</p>
                         </div>
                     </div>
                     <div class="statusBar" style="display:none;">
@@ -88,8 +110,7 @@
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-                <button onClick="Release()" class="btn btn-primary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 酒店上传并发布</button>
-                <button onClick="NoRelease()" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 酒店上传不发布</button>
+                <button onClick="Release()" class="btn btn-primary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 修改</button>
                 <button onClick="Cancel();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
             </div>
         </div>
@@ -375,7 +396,7 @@
                 swf: '__STATIC__/lib/webuploader/0.1.5/Uploader.swf',
                 chunked: false,
                 chunkSize: 512 * 1024,
-                server: '<?php echo url("admin/Hotel/uploadImg"); ?>',
+                server: '{:url("admin/Hotel/uploadImg")}',
                 // runtimeOrder: 'flash',
 
                 // accept: {
@@ -447,7 +468,7 @@
 
                         $btns = $('<div class="file-panel">' +
                                 '<span class="cancel">删除</span>' +
-                               '</div>').appendTo( $li ),
+                                '</div>').appendTo( $li ),
                         $prgress = $li.find('p.progress span'),
                         $wrap = $li.find( 'p.imgWrap' ),
                         $info = $('<p class="error"></p>'),
@@ -781,13 +802,10 @@
         });
 
     })( jQuery );
-
-    var hotelSelect="<?php echo url('admin/Hotel/hotelSelect'); ?>";
-    var hotelAappend="<?php echo url('admin/Hotel/hotelAappend'); ?>";
-    var hotelAappendNo="<?php echo url('admin/Hotel/hotelAappendNo'); ?>";
-    var hotelFind="<?php echo url('admin/Hotel/hotelFind'); ?>";
-    var hotelIndex="<?php echo url('admin/Hotel/hotel'); ?>";
+    var foodSelect="{:url('admin/Food/foodSelect')}";
+    var foodChangeAppend="{:url('admin/Food/foodChangeAppend')}";
+    var foodIndex="{:url('admin/Food/food')}";
 </script>
-<script type="text/javascript" src="__JS__/admin/hotel/hotelAppend.js"></script>
+<script type="text/javascript" src="__JS__/admin/food/foodChange.js"></script>
 </body>
 </html>

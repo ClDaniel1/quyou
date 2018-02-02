@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\wamp64\www\quyou\public/../application/admin\view\food\foodAppend.html";i:1517042946;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"E:\wamp64\www\quyou\public/../application/admin\view\food\foodAppend.html";i:1517556132;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -29,36 +29,49 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>美食名称：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder=""  name="">
+                <input type="text" class="input-text" value="" placeholder=""  name="foodName">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">美食描述：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" name="">
+                <input type="text" class="input-text" value="" placeholder="" name="foodDescribe">
             </div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">美食数量：</label>
+            <label class="form-label col-xs-4 col-sm-2">美食类型：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="number" class="input-text" value="0" placeholder="" name="">
-            </div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">美食价格：</label>
-            <div class="formControls col-xs-8 col-sm-9">
-                <input type="number" class="input-text" value="0" placeholder="" name="">
+                <select name="foodType" id="foodtype">
+                    <option value="0"></option>
+                    <?php if(is_array($foodtype) || $foodtype instanceof \think\Collection || $foodtype instanceof \think\Paginator): $i = 0; $__LIST__ = $foodtype;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><!--免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for-->
+                    <option value="<?php echo $vo['foodTypeId']; ?>"><?php echo $vo['foodTypeName']; ?></option>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </select>
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">美食位置：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="" placeholder="" name="">
+                <select onchange="province()" id="regionId">
+                    <option>请选择一个地区</option>
+                    <?php if(is_array($region) || $region instanceof \think\Collection || $region instanceof \think\Paginator): $i = 0; $__LIST__ = $region;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><!--免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for-->
+                    <option value="<?php echo $vo['REGION_ID']; ?>"><?php echo $vo['REGION_NAME']; ?></option>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </select>
+                <select id="regionCity"  name="desId">
+                    <option value="0"></option>
+                </select>
+
             </div>
         </div>
-
         <div class="row cl">
-            <label class="form-label col-xs-4 col-sm-2">美食图片：</label>
+            <label class="form-label col-xs-4 col-sm-2">美食街道：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="" name="address">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">酒店图片：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <div class="uploader-list-container">
                     <div class="queueList">
@@ -80,9 +93,9 @@
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-                <button onClick="article_save_submit();" class="btn btn-primary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
-                <button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存草稿</button>
-                <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                <button onClick="Release()" class="btn btn-primary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 美食上传并发布</button>
+                <button onClick="NoRelease()" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 美食上传不发布</button>
+                <button onClick="Cancel();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
             </div>
         </div>
     </form>
@@ -135,7 +148,7 @@
             accept: {
                 title: 'Images',
                 extensions: 'gif,jpg,jpeg,bmp,png',
-                mimeTypes: 'image/*'
+                mimeTypes: 'image/!*'
             }
         });
         uploader.on( 'fileQueued', function( file ) {
@@ -213,7 +226,7 @@
         });
 
     });
-
+    var imgTemporary=[];
     (function( $ ){
         // 当domReady的时候开始初始化
         $(function() {
@@ -367,13 +380,13 @@
                 swf: '__STATIC__/lib/webuploader/0.1.5/Uploader.swf',
                 chunked: false,
                 chunkSize: 512 * 1024,
-                server: '__STATIC__/lib/webuploader/0.1.5/server/fileupload.php',
+                server: '<?php echo url("admin/Hotel/uploadImg"); ?>',
                 // runtimeOrder: 'flash',
 
                 // accept: {
                 //     title: 'Images',
                 //     extensions: 'gif,jpg,jpeg,bmp,png',
-                //     mimeTypes: 'image/*'
+                //     mimeTypes: 'image/!*'
                 // },
 
                 // 禁掉全局的拖拽功能。这样不会出现图片拖进页面的时候，把图片打开。
@@ -401,9 +414,12 @@
 
                 return !denied;
             });
+            uploader.on( 'uploadSuccess', function( file ,obj) {
+                imgTemporary.push(obj._raw);
 
+            });
             uploader.on('dialogOpen', function() {
-                console.log('here');
+
             });
 
             // uploader.on('filesQueued', function() {
@@ -436,8 +452,7 @@
 
                         $btns = $('<div class="file-panel">' +
                                 '<span class="cancel">删除</span>' +
-                                '<span class="rotateRight">向右旋转</span>' +
-                                '<span class="rotateLeft">向左旋转</span></div>').appendTo( $li ),
+                                '</div>').appendTo( $li ),
                         $prgress = $li.find('p.progress span'),
                         $wrap = $li.find( 'p.imgWrap' ),
                         $info = $('<p class="error"></p>'),
@@ -506,7 +521,6 @@
 
                     // 成功
                     if ( cur === 'error' || cur === 'invalid' ) {
-                        console.log( file.statusText );
                         showError( file.statusText );
                         percentages[ file.id ][ 1 ] = 1;
                     } else if ( cur === 'interrupt' ) {
@@ -772,6 +786,13 @@
         });
 
     })( jQuery );
+
+    var foodSelect="<?php echo url('admin/Food/foodSelect'); ?>";
+    var foodAappend="<?php echo url('admin/Food/foodAappend'); ?>";
+    var foodAappendNo="<?php echo url('admin/Food/foodAappendNo'); ?>";
+    var foodFind="<?php echo url('admin/Food/foodFind'); ?>";
+    var foodIndex="<?php echo url('admin/Food/food'); ?>";
 </script>
+<script type="text/javascript" src="__JS__/admin/food/foodAppend.js"></script>
 </body>
 </html>

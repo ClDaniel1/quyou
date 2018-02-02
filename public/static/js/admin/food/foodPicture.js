@@ -1,11 +1,10 @@
 /**
- * Created by yydashen on 2018/1/31.
+ * Created by yydashen on 2018/2/2.
  */
-
 function Switch()//更换封面图
 {
     /*attr -》 获取DOM标签的字符串属性
-       prop -> 获取dom标签的boolean 属性 checkbox / radio*/
+     prop -> 获取dom标签的boolean 属性 checkbox / radio*/
     var isChecked = $("input:checkbox[name='main']").prop('checked');
     if(isChecked==true)
     {
@@ -29,21 +28,21 @@ function Switch()//更换封面图
         {
             var main=$("input:checkbox[name='main']").val();
             var secondary=i[0];
-            var hotelId=$('#hotelId').val();
-             $.ajax({
-             type: 'post',
-             url: hotelPictureImg,
-             data:{'main':main,'secondary':secondary,'hotelId':hotelId},
-             async: false,
-             dataType: 'json',
-             success: function (res) {
-                 layer.open({
-                     title: '正确'
-                     ,content: '修改成功！'
-                 });
-                 window.location.href='';
-             }
-             })
+            var foodId=$('#foodId').val();
+            $.ajax({
+                type: 'post',
+                url: foodPictureImg,
+                data:{'main':main,'secondary':secondary,'foodId':foodId},
+                async: false,
+                dataType: 'json',
+                success: function (res) {
+                    layer.open({
+                        title: '正确'
+                        ,content: '修改成功！'
+                    });
+                    window.location.href='';
+                }
+            })
         }
         else
         {
@@ -74,7 +73,7 @@ function datadel()//删除图片
         var img=JSON.stringify(i);
         $.ajax({
             type: 'post',
-            url: hotelDeleteMore,
+            url: foodDeleteMore,
             data:{'img':img},
             async: false,
             dataType: 'json',
@@ -88,4 +87,3 @@ function datadel()//删除图片
         })
     }
 }
-

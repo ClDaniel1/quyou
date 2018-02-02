@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\wamp64\www\quyou\public/../application/admin\view\hotel\hotel.html";i:1517370840;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\wamp64\www\quyou\public/../application/admin\view\hotel\hotel.html";i:1517468566;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -25,10 +25,6 @@
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 酒店管理 <span class="c-gray en">&gt;</span> 酒店列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-    <div class="text-c"> 酒店搜索：
-        <input type="text" onfocus="" id="logmin" class="input-text" style="width:400px;margin-right:200px; ">
-        <button name=""  class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜酒店</button>
-    </div>
     <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="picture_add('酒店添加','<?php echo url('admin/Hotel/hotelAppend'); ?>')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>添加酒店</a></span> <span class="r">共有数据：<strong id="foodSpot"></strong> 条</span> </div>
     <div class="mt-20">
         <table class="table table-border table-bordered table-bg table-hover table-sort">
@@ -122,6 +118,7 @@
     var staticc = "__STATIC__/";
     var hotelDelete="<?php echo url('admin/Hotel/hotelDelete'); ?>";
     var hotelPicture="<?php echo url('admin/Hotel/hotelPicture'); ?>";
+    var hotelChange="<?php echo url('admin/Hotel/hotelChange'); ?>";
 </script>
 <script type="text/javascript" src="__JS__/admin/hotel/hotel.js"></script>
 <script type="text/javascript">

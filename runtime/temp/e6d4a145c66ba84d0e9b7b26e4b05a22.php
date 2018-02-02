@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\wamp64\www\quyou\public/../application/admin\view\scenic\scenic.html";i:1517196098;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\wamp64\www\quyou\public/../application/admin\view\scenic\scenic.html";i:1517536104;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -25,10 +25,6 @@
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 景点管理 <span class="c-gray en">&gt;</span> 景点列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-    <div class="text-c"> 景点搜索：
-        <input type="text" onfocus="" id="logmin" class="input-text" style="width:400px;margin-right:200px; ">
-        <button name=""  class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜景点</button>
-    </div>
     <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="picture_add('景点添加','<?php echo url('admin/Scenic/scenicAppend'); ?>')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>添加景点</a></span> <span class="r">共有数据：<strong id="scenicSpot"></strong> 条</span> </div>
     <div class="mt-20">
         <table class="table table-border table-bordered table-bg table-hover table-sort">
@@ -140,40 +136,14 @@
         $(obj).parents("tr").find(".td-manage").html("");
         layer.msg('已提交申请，耐心等待审核!', {icon: 1,time:2000});
     }
-
-    /*图片-编辑*/
-    function picture_edit(title,url,id){
-        var index = layer.open({
-            type: 2,
-            title: title,
-            content: url
-        });
-        layer.full(index);
-    }
-
-    /*图片-删除*/
-    function picture_del(obj,id){
-        layer.confirm('确认要删除吗？',function(index){
-            $.ajax({
-                type: 'POST',
-                url: '',
-                dataType: 'json',
-                success: function(data){
-                    $(obj).parents("tr").remove();
-                    layer.msg('已删除!',{icon:1,time:1000});
-                },
-                error:function(data) {
-                    console.log(data.msg);
-                },
-            });
-        });
-    }
     var menuUrl="<?php echo url('admin/Scenic/ScenicSpot'); ?>";
     var scenicUrl="<?php echo url('admin/Scenic/ScenicRelease'); ?>";
     var scenicShelves="<?php echo url('admin/Scenic/scenicShelves'); ?>";
     var scenicOn="<?php echo url('admin/Scenic/scenicOn'); ?>";
     var staticc = "__STATIC__/";
     var scenicDelete="<?php echo url('admin/Scenic/scenicDelete'); ?>";
+    var scenicPicture="<?php echo url('admin/Scenic/scenicPicture'); ?>";
+    var scenicChange="<?php echo url('admin/Scenic/scenicChange'); ?>";
 </script>
 <script type="text/javascript" src="__JS__/admin/scenic/scenic.js"></script>
 <script type="text/javascript">

@@ -31,6 +31,18 @@ class Hotel extends \think\Controller
         $this->assign("hotelImgData",$hotelImgData);
         return $this->fetch('hotelPicture');
     }
+    public function hotelChange(){
+        $hotelId=input("param.id");
+        $am=new \app\admin\model\Hotel();
+        $hotelInformation=$am->hotelInformation($hotelId);
+        $desId=$hotelInformation[0]['desId'];
+        $region=$am->region();
+        $regionHotel=$am->regionHotel($desId);
+        $this->assign("hotelInformation",$hotelInformation);
+        $this->assign("region",$region);
+        $this->assign("regionHotel",$regionHotel);
+        return $this->fetch('hotelChange');
+    }
     public function hotelSpot()
     {
         $str=new \app\admin\model\Hotel();
@@ -221,6 +233,40 @@ class Hotel extends \think\Controller
             $path = "static/{$val}";//照片保存路劲
             $str->hotelDeleteMore($val);
             unlink($path);
+        }
+        echo 1;
+    }//删除照片操作
+    public function hotelChangeAppend(){
+        $hotelName=input('param.hotelName');
+        $hotelDescribe=input('param.hotelDescribe');
+        $hotelNum=intval(input('param.hotelNum'));
+        $hotelPrice=intval(input('param.hotelPrice'));
+        $desId=input('param.desId');
+        $hotelId=input("param.id");
+        $img=json_decode(stripslashes(input('param.img')));
+        $str=new \app\admin\model\Hotel();
+        $run=$str->hotelChangeAppend($hotelName,$hotelDescribe,$hotelNum,$hotelPrice,$desId,$hotelId);
+        foreach($img as $key=>$val)
+        {
+            $path = "static/upload/{$val}";//照片保存路劲
+            $type =explode(".",$val)[1];//文件的格式后缀
+            $dir = "static/images/hotel/".$hotelId."/";
+            while(1)//循环遍历是否存在自动生成的照片名
+            {
+                $fileName = $hotelId.'_'.mt_rand(0,999).'.'.$type;//随机生成的照片名
+                $newpath = $dir.$fileName;//照片保存路劲
+
+                if (file_exists($newpath))
+                {}
+                else{
+                    break;
+                }
+            }
+
+            copy($path,$newpath);//添加图片到该路径
+            unlink($path);//删除图片
+            $sqlNewImg="images/hotel/".$hotelId."/".$fileName;
+            $str->timeImg($hotelId,$sqlNewImg);
         }
         echo 1;
     }

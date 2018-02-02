@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"E:\wamp64\www\quyou\public/../application/admin\view\food\food.html";i:1517197800;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"E:\wamp64\www\quyou\public/../application/admin\view\food\food.html";i:1517554254;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -127,6 +127,8 @@
     var foodOn="<?php echo url('admin/Food/foodOn'); ?>";
     var staticc = "__STATIC__/";
     var foodDelete="<?php echo url('admin/Food/foodDelete'); ?>";
+    var foodPicture="<?php echo url('admin/Food/foodPicture'); ?>";
+    var foodChange="<?php echo url('admin/Food/foodChange'); ?>";
 </script>
 <script type="text/javascript" src="__JS__/admin/food/food.js"></script>
 <script type="text/javascript">

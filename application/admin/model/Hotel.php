@@ -99,30 +99,50 @@ class Hotel extends \think\Model
     {
         $sql=db('t_hotelimg')->where('hotelId',$id)->delete();
         return $sql;
-    }//删除酒店图片
+    }//删除酒店
     public function ImgFindMin($hotelId)
     {
         $sql=db('t_hotel')->where('hotelId',$hotelId)->field('img')->select();
         return $sql;
-    }
+    }//封面照片查询  查hotel表的img
     public function ImgFindMan($hotelId)
     {
         $sql=db('t_hotelimg')->where('hotelId',$hotelId)->field('url')->select();
         return $sql;
-    }
+    }//其余照片查询  查hotelimg表的url
     public function hotelMain($hotelId,$secondary)
     {
         $sql=db('t_hotel')->where('hotelId', $hotelId)->update(['img' => $secondary]);
         return $sql;
-    }
+    }//图片替换封面图换上去
     public function hotelSecondary($secondary,$main)
     {
         $sql=db('t_hotelimg')->where('url', $secondary)->update(['url' => $main]);
         return $sql;
-    }
+    }//图片替换封面图换下来
     public function hotelDeleteMore($val)
     {
         $sql=db('t_hotelimg')->where('url',$val)->delete();
         return $sql;
-    }
+    }//删除图片操作
+    public function hotelInformation($hotelId){
+        $sql=db('t_hotel')->where('hotelId',$hotelId)->select();
+        return $sql;
+    }//获取当前点击的酒店
+    public function regionHotel($desId){
+        $fid=db('t_region')->where('REGION_ID',$desId)->select()[0]["PARENT_ID"];
+        $sql=db('t_region')->where('PARENT_ID',$fid)->select();
+        return $sql;
+    }//地区表查询
+    public function hotelChangeAppend($hotelName,$hotelDescribe,$hotelNum,$hotelPrice,$desId,$hotelId){
+        $sql=db('t_hotel')->where('hotelId', $hotelId)->
+        update([
+            'hotelName' => $hotelName,
+            'hotelDescribe'=>$hotelDescribe,
+            'hotelNum'=>$hotelNum,
+            'hotelPrice'=>$hotelPrice,
+            'desId'=>$desId
+        ]);
+        return $sql;
+    }//修改酒店数据
 }
