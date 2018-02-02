@@ -253,11 +253,25 @@ return [
             'err'=>["code"=>10009,"msg"=>'登录信息有误，请重新登录',"data"=>[]]
         ],
         'note'      =>[
-            'imgTooSmall'=>"图片过小，请选择宽度大于1350，并且高度大于480的图片",
-            'imgSelectTooSmall'=>'裁剪完图片过小，请重新裁剪',
-            'scaleErr'=>'图片比例不对，请重新裁剪',
-            'musicSuccess'=>"音乐设置成功",
-            "remusicSuccess"=>"移除游记音乐成功"
+            'notUserNote'=>["code"=>20001,"msg"=>'这不是您的游记',"data"=>[]],
+            'imgTooSmall'=>["code"=>20002,"msg"=>"图片过小，请选择宽度大于1350，并且高度大于480的图片","data"=>[]],
+            'imgSelectTooSmall'=>["code"=>20003,"msg"=>"裁剪完图片过小，请重新裁剪","data"=>[]],
+            'scaleErr'=>["code"=>20004,"msg"=>"图片比例不对，请重新裁剪","data"=>[]],
+            'musicSuccess'=>["code"=>20004,"msg"=>"音乐设置成功，请重新裁剪","data"=>[]],
+            "remusicSuccess"=>["code"=>20005,"msg"=>"移除游记音乐成功","data"=>[]],
+            "upImgSuccess"=>["code"=>20006,"msg"=>"游记头图上传成功","data"=>[]],
+            "musicErr"=>["code"=>20008,"msg"=>"游记音乐设置失败","data"=>[]],
+            "remusicErr"=>["code"=>20009,"msg"=>"移除游记音乐失败","data"=>[]],
+            "titleSuccess"=>["code"=>20010,"msg"=>"游记标题设置成功","data"=>[]],
+            "titleErr"=>["code"=>20011,"msg"=>"游记标题设置失败","data"=>[]],
+            "imgSuccess"=>["code"=>20012,"msg"=>"游记图片添加成功","data"=>[]],
+            "imgErr"=>["code"=>20013,"msg"=>"游记图片添加失败","data"=>[]],
+            "getCon"=>["code"=>20014,"msg"=>"获取内容成功","data"=>[]],
+            "getConErr"=>["code"=>20015,"msg"=>"获取内容失败","data"=>[]],
+            "saveSuccess"=>["code"=>20016,"msg"=>"草稿保存成功","data"=>[]],
+            "saveErr"=>["code"=>20017,"msg"=>"草稿保存失败","data"=>[]],
+            "reImgSuccess"=>["code"=>20018,"msg"=>"移除游记图片成功","data"=>[]],
+            "reImgErr"=>["code"=>20019,"msg"=>"移除游记图片失败","data"=>[]]
         ],
         'personal'=> [
             'changeOK' =>["code"=>30002,"msg"=>'修改成功',"data"=>[]],
