@@ -1,12 +1,35 @@
 {extend name="public/base"}
+
+
+
 {block name='style'}
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
 <!--页面样式、引用/示例如下-->
-<!--<link rel="stylesheet" href="__CSS__/scenic/region/region.css">-->
+<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
 <style>
+    #container{
+        width:100%;
+        height: 480px;
+        position: absolute;
+        bottom: 0;
+    }
+    .info-tip {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 12px;
+        background-color: #fff;
+        height: 35px;
+        text-align: left;
+    }
+
+
     #myFootmark{
         width: 100%;
         height: 480px;
         background-color: #b2e2fa;
+        position: relative;
     }
 
     #tags_bar{
@@ -21,7 +44,7 @@
         width: 980px;
         height: 1000px;
         margin: 0 auto;
-        background-color: #3f3f3f;
+        background-color: #ffffff;
     }
     #left{
         width: 280px;
@@ -78,9 +101,12 @@
     .rightBtn{
         margin: 20px 280px;
     }
-
-
-
+    .orderTable th{
+        text-align: center;
+    }
+    .orderTable td{
+        text-align: center;
+    }
 
 
 </style>
@@ -93,11 +119,27 @@
 {block name='body'}
 <!--页面内容 /示例如下-->
 <div>
-    <div id="myFootmark"></div>
-    <!--<div id="tags_bar">-->
+    <div id="myFootmark">
+        <div id="container" tabindex="0"></div>
+        <div class='button-group' style="background-color: #0d9bf2;">
+            <input type='radio' onclick='refresh(this.value)' checked name='mapStyle' value='normal'>标准
+            <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='dark'>幻影黑
+            <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='light'>月光银
+            <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='fresh'>草色青
+            <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='grey'>雅士灰<br>
+            <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='graffiti'>涂鸦
+            <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='whitesmoke'>远山黛
+            <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='macaron'>马卡龙
+            <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='blue'>靛青蓝
+            <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='darkblue'>极夜蓝<br>
+            <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='wine'>酱籽
+    </div>
+        </div>
     <div class="safewidth">
         <div id="left">
-            <div id="uheadImg"></div>
+            <div id="uheadImg0">
+                <img src="/quyou/public/static/images/default.jpg" id="uheadImg" alt="">
+            </div>
             <div id="uname">用户名</div>
             <a href="{:url('home/Personal/setting')}" class="layui-btn layui-btn-radius setBtn">设置中心</a>
             <div class="myPation">
@@ -186,8 +228,77 @@
                                 <li>未支付订单</li>
                             </ul>
                             <div class="layui-tab-content" style="height: 100px;">
-                                <div class="layui-tab-item layui-show">1</div>
-                                <div class="layui-tab-item">2</div>
+                                <div class="layui-tab-item layui-show">
+                                    <table class="layui-table orderTable" lay-skin="line">
+                                        <colgroup>
+                                            <col width="80">
+                                            <col width="350">
+                                            <col width="110">
+                                            <col width="100">
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                        <tr>
+                                            <th>订单号</th>
+                                            <th>订单信息</th>
+                                            <th>下单时间</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>信息</td>
+                                            <td>2016-11-29</td>
+                                            <td><button class="layui-btn">立即支付</button><br><br>
+                                                <button class="layui-btn">申请退款</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>信息</td>
+                                            <td>2016-11-28</td>
+                                            <td><button class="layui-btn">立即支付</button><br><br>
+                                                <button class="layui-btn">申请退款</button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <div class="layui-tab-item">
+                                    <table class="layui-table orderTable" lay-skin="line">
+                                        <colgroup>
+                                            <col width="80">
+                                            <col width="350">
+                                            <col width="110">
+                                            <col width="100">
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                        <tr>
+                                            <th>订单号</th>
+                                            <th>订单信息</th>
+                                            <th>下单时间</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>信息</td>
+                                            <td>2016-11-29</td>
+                                            <td><button class="layui-btn">去支付</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>信息</td>
+                                            <td>2016-11-28</td>
+                                            <td><button class="layui-btn">去支付</button></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -196,7 +307,7 @@
             </div>
         </div>
     </div>
-    </div>
+
 </div>
 
 
@@ -207,8 +318,10 @@
 <script>
     nav(4);
 </script>
+
 <script>
-    layui.use('element', function(){
+
+layui.use('element', function(){
         var element = layui.element;
 
         //获取hash来切换选项卡，假设当前地址的hash为lay-id对应的值
@@ -220,11 +333,108 @@
             location.hash = 'test1='+ this.getAttribute('lay-id');
         });
     });
+var uid = getCookie("qy_uid");
 
-    var uid = getCookie("qy_uid");
-//    var suid = getCookieVal("qy_uid");
-//    console.log(uid);
-//    console.log(suid);
+</script>
+<script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=b016935a890cb2bc1003d64f83da1fa4&plugin=AMap.Geocoder"></script>
+<script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+<script type="text/javascript">
+var map = new AMap.Map('container',{
+    resizeEnable: true,
+    zoom: 10,
+    center: [116.480983, 40.0958]
+});
+// map.setZoomAndCenter(4);   //设置缩放级别
+
+var lnglats=[];
+var c= 0;
+
+//地址解析
+function geocoder(cityArr) {
+    var geocoder = new AMap.Geocoder({
+        city: "全国", //城市，默认：“全国”
+        radius: 1000 //范围，默认：500
+    });
+    for(var i=0;i < cityArr.length;i++){
+
+        console.log(cityArr[i]);
+        //地理编码,返回地理编码结果
+        geocoder.getLocation(cityArr[i], function(status, result) {
+
+            lngss=[result.geocodes[0].location.lng,result.geocodes[0].location.lat];
+
+            // console.log(lngss);
+
+            if (status === 'complete' && result.info === 'OK') {
+
+            }
+            lnglats.push(lngss);
+            if(c == cityArr.length-1){
+                dodot();
+            }
+            c++;
+        });
+
+    }
+}
+var citys=["北京","长沙","温州","成都"];
+geocoder(citys);
+function dodot(){
+    console.log(lnglats);
+    //标记
+    var infoWindow = new AMap.InfoWindow({offset: new AMap.Pixel(0, -30)});
+    AMapUI.loadUI(['overlay/SimpleMarker'], function(SimpleMarker) {
+        for (var i = 0, marker; i < lnglats.length; i++) {
+
+
+            marker = new SimpleMarker({
+                //显示定位基点
+                showPositionPoint: {
+                    color:  "#F9851D",
+                    radius: 5
+                },
+                iconStyle: 'beige',
+                position: lnglats[i],
+                map: map
+
+            });
+
+            marker.content = '我的第' + (i + 1) + '个足迹';
+            marker.on('click', markerClick);
+            marker.emit('click', {target: marker});
+        }
+    });
+}
+
+//刷新主题
+function refresh(enName) {
+    map.setMapStyle('amap://styles/'+enName);
+}
+// 设置缩放级别和中心点
+map.setZoomAndCenter(4);
+//标记
+var infoWindow = new AMap.InfoWindow({offset: new AMap.Pixel(0, -30)});
+for (var i = 0, marker; i < lnglats.length; i++) {
+    var marker = new AMap.Marker({
+        position: lnglats[i],
+        map: map
+    });
+    marker.content = '我的第' + (i + 1) + '个足迹';
+    marker.on('click', markerClick);
+    marker.emit('click', {target: marker});
+}
+//标记点的点击事件
+function markerClick(e) {
+
+    infoWindow.setContent(e.target.content);
+    infoWindow.open(map, e.target.getPosition());
+}
+
+//自适应显示
+map.setFitView();
+
 </script>
 <!--JS、引用 /示例如下-->
 {/block}

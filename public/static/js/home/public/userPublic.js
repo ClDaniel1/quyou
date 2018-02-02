@@ -13,9 +13,9 @@ function checkReName(checkNameUrl,uname){
             type:'post',
             success: function (res){
                 console.log(res);
-                if(res.code=="haveName"){
+                if(res.code==30001){
                     layer.msg(res.msg);
-                }else if(res.code=="withoutName"){
+                }else if(res.code==30005){
                     layer.msg(res.msg);
                 }
             }

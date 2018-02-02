@@ -219,13 +219,17 @@
             type:'post',
             success: function (res) {
                 console.log(res);
-//                console.log(json.stringify(res));
                 if(res.code==10001){
                     $('#loading').modal(close);
                     layer.open({
                         content:res.msg,
                         yes: function(index, layero){
-                            history.back();  //回到前一页
+                            if(sessionStorage.qySucceedReg != undefined){    //回到前两页
+                                window.location.href=userCenterUrl;
+                                sessionStorage.removeItem('qySucceedReg');
+                            }else{
+                                window.location.href=document.referrer;
+                            }
                             layer.close(index); //如果设定了yes回调，需进行手工关闭
                         }
                     });
@@ -241,10 +245,6 @@
             }
         });
     });
-
-
-
-
 </script>
 </html>
 

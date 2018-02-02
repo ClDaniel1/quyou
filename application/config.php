@@ -240,15 +240,17 @@ return [
     //提示消息
     'msg'                     =>[
         'login'             => [
-            'successLogin' => '登录成功',
-            'codeError' => '验证码错误',
-            'accountError' => '用户名或密码错误',
-            'successReg'=>'注册成功',
-            'regError'=>'注册失败',
-            'haveUser'=>'用户重复了'
+            'successLogin' => ["code"=>10001,"msg"=>'登录成功',"data"=>[]],
+            'codeError' =>["code"=>10002,"msg"=>'验证码错误',"data"=>[]],
+            'accountError' =>["code"=>10003,"msg"=>'用户名或密码错误',"data"=>[]],
+            'successReg'=>["code"=>10005,"msg"=>'注册成功',"data"=>[]],
+            'regError'=>["code"=>10004,"msg"=>'注册失败',"data"=>[]],
+            'haveUser'=>["code"=>10006,"msg"=>'用户重复了',"data"=>[]],
+            'havePhone'=>["code"=>10006,"msg"=>'您的手机号已经注册了，请前往登录',"data"=>[]],
+            'withoutPhone'=>["code"=>10007,"msg"=>'您的手机号未被注册，可以使用',"data"=>[]]
         ],
         'loginChek'     =>[
-            'err'=>"登录信息有误，请重新登录"
+            'err'=>["code"=>10009,"msg"=>'登录信息有误，请重新登录',"data"=>[]]
         ],
         'note'      =>[
             'imgTooSmall'=>"图片过小，请选择宽度大于1350，并且高度大于480的图片",
@@ -256,11 +258,11 @@ return [
             'scaleErr'=>'图片比例不对，请重新裁剪'
         ],
         'personal'=> [
-            'changeOK' => "修改成功",
-            'changeErr'=>"信息为原信息，请修改",
-            'haveName'=>"昵称已被使用，换一个吧",
-            'repeatPwd'=>"密码为原密码，修改不成功",
-            'withoutName'=>"昵称没有重复，可以使用"
+            'changeOK' =>["code"=>30002,"msg"=>'修改成功',"data"=>[]],
+            'changeErr'=>["code"=>30003,"msg"=>'信息为原信息，请修改',"data"=>[]],
+            'haveName'=>["code"=>30001,"msg"=>'昵称已被使用，换一个吧',"data"=>[]],
+            'repeatPwd'=>["code"=>30004,"msg"=>'密码为原密码，修改不成功',"data"=>[]],
+            'withoutName'=>["code"=>30005,"msg"=>'昵称没有重复，可以使用',"data"=>[]]
         ],
     ],
 
