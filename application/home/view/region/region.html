@@ -49,7 +49,7 @@
                 <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
                 <li class="layui-nav-item"><a href="{:url('home/Region/hotel')}?rgId={$sId}"><i class="icon1 iconPst4"></i>酒店</a></li>
                 <li class="layui-nav-item">
-                    <a href=""><i class="icon1 iconPst5"></i>美食</a>
+                    <a href="{:url('home/Region/food')}?rgId={$sId}"><i class="icon1 iconPst5"></i>美食</a>
                 </li>
                 <li class="layui-nav-item"><a href="0"><i class="icon1 iconPst6"></i>游记</a></li>
             </ul>
@@ -76,7 +76,7 @@
                             </a>
                         </li>
                         <li class="">
-                            <a href=""><i class="icon1 iconPst5"></i>美食</a>
+                            <a href="{:url('home/Region/food')}?rgId={$sId}"><i class="icon1 iconPst5"></i>美食</a>
                         </li>
                         <li class="">
                             <a href=""><i class="icon1 iconPst6"></i>游记</a>
@@ -217,28 +217,30 @@
             </div>
             <div class="layui-col-sm4">
                 <div class="hotelW rightDiv">
-                    <h2 class="hotelMsg"><a href="">必吃美食排行<i class="innerIcon"></i></a></h2>
+                    <h2 class="hotelMsg"><a href="{:url('home/Region/food')}?rgId={$sId}">必吃美食排行<i class="innerIcon"></i></a></h2>
                     {volist name='foodMsg.msg' id='value'}
-                    <div class="innerDiv">
-                        <h3>
-                            <span class="layui-badge layui-bg-orange">{$i}</span>
-                            <span>{$value.foodName}</span>
-                        </h3>
-                        <div class="pst">
-                            <img class="hotelMap" src="__STATIC__/{$value.foodImg}" alt="">
-                            <div class="introduceMsg">
-                                <span>{$value.foodDescribe}</span>
+                    <a href="{:url('home/Region/food')}?rgId={$sId}">
+                        <div class="innerDiv">
+                            <h3>
+                                <span class="layui-badge layui-bg-orange">{$i}</span>
+                                <span>{$value.foodName}</span>
+                            </h3>
+                            <div class="pst">
+                                <img class="hotelMap" src="__STATIC__/{$value.foodImg}" alt="">
+                                <div class="introduceMsg">
+                                    <span>{$value.foodDescribe}</span>
+                                </div>
+                            </div>
+                            <div class="comTop">
+                                <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
+                                <span class="comName">梨窝浅浅</span>
+                                <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
                             </div>
                         </div>
-                        <div class="comTop">
-                            <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
-                            <span class="comName">梨窝浅浅</span>
-                            <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
-                        </div>
-                    </div>
+                    </a>
                     {/volist}
                     <div class="dashed">
-                        <a href=""><span>{$foodMsg.count}</span>种美食<i class="orgIcon"></i></a>
+                        <a href="{:url('home/Region/food')}?rgId={$sId}"><span>{$foodMsg.count}</span>种美食<i class="orgIcon"></i></a>
                     </div>
                 </div>
             </div>

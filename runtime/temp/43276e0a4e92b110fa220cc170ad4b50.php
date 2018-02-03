@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517450050;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517449649;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517664939;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517639624;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
-
     <link rel="icon" href="__STATIC__/images/logo.png" type="image/x-icon"/>
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/amazeui.min.css">
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
@@ -192,7 +191,7 @@
                 <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
                 <li class="layui-nav-item"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=<?php echo $sId; ?>"><i class="icon1 iconPst4"></i>酒店</a></li>
                 <li class="layui-nav-item">
-                    <a href=""><i class="icon1 iconPst5"></i>美食</a>
+                    <a href="<?php echo url('home/Region/food'); ?>?rgId=<?php echo $sId; ?>"><i class="icon1 iconPst5"></i>美食</a>
                 </li>
                 <li class="layui-nav-item"><a href="0"><i class="icon1 iconPst6"></i>游记</a></li>
             </ul>
@@ -219,7 +218,7 @@
                             </a>
                         </li>
                         <li class="">
-                            <a href=""><i class="icon1 iconPst5"></i>美食</a>
+                            <a href="<?php echo url('home/Region/food'); ?>?rgId=<?php echo $sId; ?>"><i class="icon1 iconPst5"></i>美食</a>
                         </li>
                         <li class="">
                             <a href=""><i class="icon1 iconPst6"></i>游记</a>
@@ -360,28 +359,30 @@
             </div>
             <div class="layui-col-sm4">
                 <div class="hotelW rightDiv">
-                    <h2 class="hotelMsg"><a href="">必吃美食排行<i class="innerIcon"></i></a></h2>
+                    <h2 class="hotelMsg"><a href="<?php echo url('home/Region/food'); ?>?rgId=<?php echo $sId; ?>">必吃美食排行<i class="innerIcon"></i></a></h2>
                     <?php if(is_array($foodMsg['msg']) || $foodMsg['msg'] instanceof \think\Collection || $foodMsg['msg'] instanceof \think\Paginator): $i = 0; $__LIST__ = $foodMsg['msg'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$value): $mod = ($i % 2 );++$i;?>
-                    <div class="innerDiv">
-                        <h3>
-                            <span class="layui-badge layui-bg-orange"><?php echo $i; ?></span>
-                            <span><?php echo $value['foodName']; ?></span>
-                        </h3>
-                        <div class="pst">
-                            <img class="hotelMap" src="__STATIC__/<?php echo $value['foodImg']; ?>" alt="">
-                            <div class="introduceMsg">
-                                <span><?php echo $value['foodDescribe']; ?></span>
+                    <a href="<?php echo url('home/Region/food'); ?>?rgId=<?php echo $sId; ?>">
+                        <div class="innerDiv">
+                            <h3>
+                                <span class="layui-badge layui-bg-orange"><?php echo $i; ?></span>
+                                <span><?php echo $value['foodName']; ?></span>
+                            </h3>
+                            <div class="pst">
+                                <img class="hotelMap" src="__STATIC__/<?php echo $value['foodImg']; ?>" alt="">
+                                <div class="introduceMsg">
+                                    <span><?php echo $value['foodDescribe']; ?></span>
+                                </div>
+                            </div>
+                            <div class="comTop">
+                                <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
+                                <span class="comName">梨窝浅浅</span>
+                                <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
                             </div>
                         </div>
-                        <div class="comTop">
-                            <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
-                            <span class="comName">梨窝浅浅</span>
-                            <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
-                        </div>
-                    </div>
+                    </a>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
                     <div class="dashed">
-                        <a href=""><span><?php echo $foodMsg['count']; ?></span>种美食<i class="orgIcon"></i></a>
+                        <a href="<?php echo url('home/Region/food'); ?>?rgId=<?php echo $sId; ?>"><span><?php echo $foodMsg['count']; ?></span>种美食<i class="orgIcon"></i></a>
                     </div>
                 </div>
             </div>
@@ -590,8 +591,6 @@
                                 }
                             }
                         });
-
-
                     }
 
                 }

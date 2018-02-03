@@ -97,9 +97,21 @@ class Region extends \think\Controller
         $id=input('?param.rgId')?input('rgId'):"";
         return $this->fetch('scenic');
     }
-    public function scenicPay()//显示景点详情页
+    public function scenicMsg()//显示景点详情页
     {
-
+        return $this->fetch('scenicMsg');
+    }
+    public function scenicPay()//显示景点购买页面
+    {
         return $this->fetch('scenicPay');
+    }
+    public function food()//显示美食页面
+    {
+        $id=input('?param.rgId')?input('rgId'):"";
+        return $this->fetch('food');
+    }
+    public function foodMsg()//显示美食详情页面
+    {
+        return $this->fetch('foodMsg');
     }
 }

@@ -2,151 +2,136 @@
 {block name='style'}
 <link rel="stylesheet" href="__CSS__/home/region/scenicPay.css">
 {/block}
-
 {block name='body'}
-<div class="layui-container">
+<div class="layui-container" id="app">
     <div class="layui-row">
         <div class="layui-row breadcrumb">
              <span class="layui-breadcrumb" lay-separator=">">
                 <a href="">目的地</a>
                 <a href="">上海</a>
-                <a><cite>上海景点</cite></a>
+                <a><cite>景点门票</cite></a>
             </span>
         </div>
     </div>
-    <div class="layui-row borderB">
-        <div class="layui-col-sm6 layui-col-xs6">
-            <h1 class="scenicH1">
-                外滩
-            </h1>
-        </div>
-        <div class="layui-col-sm6 layui-col-xs6">
-            <ul class="imgA am-text-middle">
-                <li>
-                    <a href=""><i class="icon imgPst1"></i>收藏</a>
-                </li>
-                <li>
-                    <a href=""><i class="icon imgPst2"></i>去过</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="scBd">
-    <div class="layui-container">
-        <div class="layui-row">
-            <div class="layui-col-sm6 layui-col-xs6">
-                <ul class="hrefUl">
-                    <li class="orangeB">
-                        <a href="">概况</a>
-                    </li>
-                    <li>
-                        <a href="">门票预订</a>
-                    </li>
-                    <li>
-                        <a href="">趣游点评<span></span></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="layui-col-sm6 layui-col-xs6 aBtn">
-                <a href="" class="layui-btn layui-btn-warm">我要点评</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="whiteB">
-    <div class="layui-container">
-    <div class="layui-row ">
-        <div class="layui-col-sm8 layui-col-xs8 scMaxImg">
-            <a href="">
-                <img src="http://p2-q.mafengwo.net/s2/M00/92/AB/wKgBpU7hX8G6QwT2AAfE1QOwzZc32.jpeg?imageMogr2%2Fthumbnail%2F%21690x370r%2Fgravity%2FCenter%2Fcrop%2F%21690x370%2Fquality%2F100" alt="">
-            </a>
-        </div>
-        <div class="layui-col-sm4 layui-col-xs4 scMinImg">
-        <a href="">
-            <img src="http://p2-q.mafengwo.net/s2/M00/92/AB/wKgBpU7hX8G6QwT2AAfE1QOwzZc32.jpeg?imageMogr2%2Fthumbnail%2F%21690x370r%2Fgravity%2FCenter%2Fcrop%2F%21690x370%2Fquality%2F100" alt="">
-        </a>
-        <a href="">
-            <img class="topImg" src="http://p2-q.mafengwo.net/s2/M00/92/AB/wKgBpU7hX8G6QwT2AAfE1QOwzZc32.jpeg?imageMogr2%2Fthumbnail%2F%21690x370r%2Fgravity%2FCenter%2Fcrop%2F%21690x370%2Fquality%2F100" alt="">
-        </a>
-    </div>
-    </div>
-</div>
-</div>
-<div class="grayB">
-    <div class="layui-container">
-        <div class="layui-row">
-            <p class="introP">
-                --位于上海市中心黄浦区的黄浦江畔，是最具上海城市象征意义的景点之一。
-                --位于上海市中心黄浦区的黄浦江畔，是最具上海城市象征意义的景点之一。
-                --位于上海市中心黄浦区的黄浦江畔，是最具上海城市象征意义的景点之一。
-            </p>
-        </div>
-        <div class="layui-row">
-            <dl class="msgDl">
-                <dt>
-                    门票
-                </dt>
-                <dd>
+    <div class="layui-row">
+        <div class="layui-col-sm5">
+            <div class="layui-carousel" id="test1">
+                <div carousel-item>
                     <div>
-                        <span>80</span>元/人
+                        <img src="__STATIC__/images/region/scenic/scenic1.jpeg" alt="">
                     </div>
-                </dd>
-            </dl>
-        </div>
-        <div class="layui-row">
-            <dl class="msgDl">
-                <dt>
-                    开放时间
-                </dt>
-                <dd>
-                    <div>
-                        夏6:00-22:00 ，冬7:00-21:30
-                    </div>
-                </dd>
-            </dl>
-        </div>
-    </div>
-</div>
-<div class="whiteB">
-    <div class="layui-container">
-        <div class="layui-row">
-            <h1>门票预订</h1>
-        </div>
-        <div class="layui-row" style="margin-top: 25px">
-            <table class="layui-table" lay-skin="line">
-                <thead>
-                <tr>
-                    <th>数据来源</th>
-                    <th>类型</th>
-                    <th>价格</th>
-                    <th>操作</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>趣游旅游网</td>
-                    <td>景点门票</td>
-                    <td id="priColor">￥<span>150</span></td>
-                    <td>
-                        <button class="layui-btn">预订</button>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
-<div class="grayB">
-    <div class="layui-container" id="vueComment">
-        <div class="layui-row">
-            <div class="margB">
-                <h1>趣游点评</h1>
+                    <div><img src="__STATIC__/images/region/scenic/scenic1.jpeg" alt=""></div>
+                    <div><img src="__STATIC__/images/region/scenic/scenic1.jpeg" alt=""></div>
+                    <div><img src="__STATIC__/images/region/scenic/scenic1.jpeg" alt=""></div>
+                    <div><img src="__STATIC__/images/region/scenic/scenic1.jpeg" alt=""></div>
+                </div>
             </div>
         </div>
-        <my-module url="{:url('home/Region/htComMsg')}" scenic-id="275"></my-module>
+        <div class="layui-col-sm7">
+            <div class="pdDiv">
+                <h1><span>北京故宫</span>电子票</h1>
+                <div class="msgSpan">
+                    <span>刷身份证检票</span>
+                    <span>无需排队</span>
+                    <span>未用可退</span>
+                </div>
+                <div>
+                    <span>
+                        实名购票(购票数与实名数保持一致)
+                    </span>
+                    <h1 class="sMoney">￥<span>2000</span></h1>
+                </div>
+                <div>
+                    <button class="layui-btn layui-btn-warm addBtn" v-if="addMsg" @click="change">关闭</button>
+                    <button class="layui-btn layui-btn-warm addBtn" @click="change" v-else>实名添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--到时候先隐藏，后面通过vue来开关-->
+    <transition name="fade">
+        <div class="layui-row magTop" v-if="addMsg">
+            <div class="layui-form">
+                <div class="layui-col-sm4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">姓名</label>
+                        <div class="layui-input-inline">
+                            <input type="text" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-sm4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">身份证</label>
+                        <div class="layui-input-inline">
+                            <input type="text" required lay-verify="required" placeholder="请输入身份证" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-sm4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">手机号</label>
+                        <div class="layui-input-inline">
+                            <input type="text" required lay-verify="required" placeholder="请输入手机号" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+    <div class="layui-row tableSc">
+        <table class="layui-table">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>身份证</th>
+                <th>电话号码</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>张德长</td>
+                <td>35465451314564512</td>
+                <td>15259052697</td>
+                <td>
+                    <button class="layui-btn layui-btn-warm " >删除</button>
+                    <button class="layui-btn layui-btn-warm " id="btnS">修改</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="layui-row payDiv">
+        <h3>总价：￥<span>2000</span></h3>
+        <button class="layui-btn layui-btn-warm " >立即购买</button>
     </div>
 </div>
 {/block}
 {block name='script'}
-<script src="__JS__/home/public/vueComment.js"></script>
+<script>
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,arrow: 'hover' //始终显示箭头
+            //,anim: 'fade' //切换动画方式
+        });
+    });
+    new Vue({
+        el:"#app",
+        data:{
+            addMsg:false
+        },
+        methods:{
+            change: function () {
+                this.addMsg=!this.addMsg;
+            }
+        }
+    })
+</script>
 {/block}

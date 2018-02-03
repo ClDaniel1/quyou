@@ -1,241 +1,75 @@
-.scenicH1
-{
-    font-size: 30px;
-}
 .breadcrumb
 {
-    margin: 20px 0;
+    margin: 30px 0;
 }
-.icon
-{
-    background:url("../../../images/region/icon.png") no-repeat ;
-    width: 30px;
-    height: 30px;
-    overflow: hidden;
-    float: left;
-    margin-right: 5px;
-}
-.imgPst1{
-    background-position: -230px 0;
-}
-.imgPst2
-{
-    background-position: -230px -30px;
-}
-.imgA
-{
-    padding-left: 0;
-    line-height: 30px;
-    text-align: right;
-}
-.imgA li
-{
-    display: inline-block;
-    margin-right: 15px;
-}
-.borderB
-{
-    border-bottom: 1px solid #e6e6e6;
-    padding-bottom: 20px ;
-}
-.aBtn
-{
-    text-align: right;
-}
-.hrefUl
-{
-    height: 60px;
-    line-height: 57px;
-}
-.hrefUl li{
-    float: left;
-}
-.hrefUl a
-{
-    font-size: 18px;
-    padding: 0 15px;
-}
-.orangeB
-{
-    border-bottom: 3px solid orange;
-}
-.scBd
-{
-    border-bottom: 1px solid #e6e6e6;
-    height: 60px;
-    line-height: 60px;
-}
-.scMaxImg  img
+#test1 img
 {
     width: 100%;
-    /*height: 370px;*/
-    display: block;
+    height: 280px;
 }
-.scMinImg  img
-{
-    float: right;
-    width: 97%;
-    /*height: 180px ;*/
-}
-.topImg{
-    margin-top: 13px;
-}
-.whiteB
-{
-    background-color: #ffffff45;
-    border-bottom: 1px solid #e6e6e6;
-    padding:30px 0;
-}
-.grayB
-{
-    background-color: #efefef;
-    border-bottom: 1px solid #e6e6e6;
-    padding:30px 0;
-}
-.introP
-{
-    font-size: 18px;
-    color: #666;
-    text-indent: 2em;
-    border-bottom: 1px solid #e6e6e6;
-    padding-bottom: 20px;
-}
-.msgDl
-{
-    margin-top: 20px;
-}
-.margB
-{
-    margin-bottom: 30px;
-}
-/*vue组件样式*/
-.headImg
-{
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    display: inline-block;
-    vertical-align: middle;
-}
-.userA
-{
-    color: orange;
-}
-.comTxt
-{
-    width: 80%;
-    float: left;
-}
-.comUpImg
+.msgSpan
 {
     margin: 20px 0;
 }
-.comUpImg img
-{
-    width: 25%;
-    /*height: 160px;*/
-    margin: 0 5px;
-    border-radius: 10px;
-}
-.goodIcon
-{
-    float: right;
-    margin: 0 auto;
-    width: 27px;
-    height: 27px;
-    background: url("../../../images/region/icon5.png") no-repeat;
-    overflow: hidden;
-}
-.starIcon
-{
-
-    vertical-align: middle;
-    display: inline-block;
-    width: 22px;
-    height: 22px;
-    background: url("../../../images/region/icon5.png") no-repeat -67px -108px;
-    overflow: hidden;
-}
-.good1
-{
-    background-position: -160px 0;
-}
-.dateSpan
-{
-    margin-left: 25px;
-}
-.textArea
-{
-    width: 90%;
-    margin-top: 20px;
-    border: 1px solid #e5e5e5;
-    border-radius: 4px;
-    padding: 5px 8px;
-    height: 80px;
-    resize: none;
-    line-height: 20px;
-    color: #666;
-    vertical-align: top;
-    transition:all .5s;
-}
-.repBtn
-{
-    margin-top: 44px;
-}
-.repArea
-{
-    display: block;
-}
-.replay
-{
-    float: right;
-}
-.replayMsg
-{
-    border-bottom: 1px solid #e5e5e5;
-    clear: both;
-    padding: 20px 0;
-}
-.replayMsg img
-{
-    width: 30px;
-    height: 30px;
-    border-radius: 25px;
-    /*float: left;*/
-    display: inline-block;
-}
-.replayMsg p
+.msgSpan span
 {
     display: inline-block;
-    width: 70%;
-    margin: 0 20px;
-}
-.userA1
-{
+    border: 1px dashed orange;
     color: orange;
-    float: left;
 }
-.operate
+.pdDiv
 {
-    float: right;
+    padding-left: 20px;
 }
-.operate span
+.sMoney
 {
-    color: #d08500;
+    color: #ff6f00;
+    font-size: 30px;
+    margin-top: 10px;
 }
-.replayArea
+.tableSc
 {
-    border-bottom: 1px solid #e5e5e5;
-    padding: 20px 0;
+    overflow-y: hidden;
 }
-/*vue组件样式*/
-@media screen and (max-width: 992px){
-    .topImg{
-        margin-top: 7px;
+.addBtn
+{
+    margin: 20px 0;
+}
+.layui-table thead th,.layui-table tbody td
+{
+    text-align: center;
+}
+.magTop
+{
+    margin-top: 25px;
+}
+.payDiv
+{
+    text-align: right;
+}
+.payDiv h3
+{
+    font-size: 25px;
+    color: orange;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity:0;
+}
+@media screen and (max-width: 768px) {
+    .pdDiv
+    {
+        padding-left: 0;
     }
-}
-@media (min-width: 992px) and (max-width: 1200px){
-    .topImg{
-        margin-top: 10px;
+    .msgSpan
+    {
+        margin: 10px 0;
+    }
+    #btnS
+    {
+        margin-left: 0;
+        margin-top: 2px;
     }
 }
