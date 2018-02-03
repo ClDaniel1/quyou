@@ -215,13 +215,17 @@
                     $('#loading').modal(close);
                     layer.msg(res.msg);
                     changeCode();
-                }else if(res.code=="haveName"){
+                }else if(res.code==10006){
+                    $('#loading').modal(close);
+                    layer.msg(res.msg);
+                }else if(res.code==30001){
                     $('#loading').modal(close);
                     layer.msg(res.msg);
                 } else if(res.code==10005){    //添加成功
                     $('#loading').modal(close);
                     layer.confirm('注册成功,是否马上登录?', {icon: 3, title:'提示'}, function(index){
                         window.location.href=doLogUrl;    //跳转到登录页
+                        sessionStorage.qySucceedReg ="succeedReg";
 //                        $('#account').val(uid);      //登录页面的输入框自动显示刚注册的用户名
                     });
                 }else if(res.code==10006){    //用户重复
@@ -231,6 +235,29 @@
                 }
             }
         })
+    });
+
+    //失焦验证手机号是否重复
+    $('#uphone').blur(function () {
+        var uphone=$('#uphone').val();
+        var checkPhoneUrl='{:url("home/User/checkPhone")}';
+        if(uphone == ""){
+        }else{
+            $.ajax({
+                url:checkPhoneUrl,
+                data:{uphone:uphone},
+                dataType:'json',
+                type:'post',
+                success: function (res){
+                    console.log(res);
+                    if(res.code==30001){
+                        layer.msg(res.msg);
+                    }else if(res.code==10007){
+                        layer.msg(res.msg);
+                    }
+                }
+            })
+        }
     });
 
     //失焦验证用户名是否重复

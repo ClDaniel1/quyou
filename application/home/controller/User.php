@@ -54,11 +54,7 @@ class User extends \think\Controller
 
         //登录失败
         if(empty($result)){
-            $returnMsg=[
-                'code' =>  10003,
-                'msg'  =>  config('msg')['login']['accountError'],
-                'data' =>  []
-            ];
+            $returnMsg=config('msg')['login']['accountError'];
             return json($returnMsg);
         }
         //登录成功 存入session
@@ -76,13 +72,7 @@ class User extends \think\Controller
         cookie('uid',$result['uid']);
         cookie('ukey',$loginKey);
 
-
-
-        $returnMsg=[
-            'code' =>  10001,
-            'msg'  =>  config('msg')['login']['successLogin'],
-            'data' =>  []
-        ];
+        $returnMsg=config('msg')['login']['successLogin'];
         return json($returnMsg);
 
     }
@@ -147,9 +137,8 @@ class User extends \think\Controller
         else{
             //用户key为空，取消登陆状态，需要重新登录
             if(cookie("ukey")==null){
-                $returnMsg['code'] = 10009;
                 cookie("uid",null);
-                $returnMsg['msg'] = config('msg')['loginChek']['err'];
+                $returnMsg=config('msg')['loginChek']['err'];
                 return json($returnMsg);
             }
             else{
@@ -168,8 +157,7 @@ class User extends \think\Controller
                     //检查失败
                     cookie("uid",null);
                     cookie("ukey",null);
-                    $returnMsg['code'] = 10009;
-                    $returnMsg['msg'] = config('msg')['loginChek']['err'];
+                    $returnMsg = config('msg')['loginChek']['err'];
                     return json($returnMsg);
                 }
                 else{
@@ -188,89 +176,85 @@ class User extends \think\Controller
         $uname=input('?post.uname')? input('uname'):'';
         $upwd=input('?post.upwd')? input('upwd'):'';
         $code=input('?post.code')? input('code'):'';
-
         //验证码验证
         if(!captcha_check($code)){
             //验证失败
-            $returnMsg=[
-                'code'  =>  10002,
-                'msg'   =>  config('msg')['login']['codeError'],
-                'data'  =>  []
-            ];
+            $returnMsg=config('msg')['login']['codeError'];
             return json($returnMsg);
         }
-
-
+        //新建时间
+        $nowTime=date("Y-m-d H:i:s",time());
+        $defaultImg="images/default.jpg";
         $data = ['uphone' => $uphone, 'uname' => $uname,
-            'upwd' =>$upwd,
+            'upwd' =>$upwd, 'uheadImg'=>$defaultImg,'uregTime'=>$nowTime
         ];
         $where=[
             'uphone' => $uphone
         ];
 
+        //手机号查重
+        $uphone=input('?post.uphone')? input('uphone'):'';
+        $model=new \app\home\model\User();
+        $phoneArr = $model->checkPhone($uphone);
+
+
         //账号查重
         $result=db('t_user') -> where($where) -> find();
         $model=new \app\home\model\Personal();
-        $arr = $model->checkName($uname);
+        $nameArr = $model->checkName($uname);
 
         //数据库添加数据
         if(!empty($result)){
             //用户重复
-            $returnMsg=[
-                'code' =>  10006,
-                'msg'  =>  config('msg')['login']['haveUser'],
-                'data' =>  []
-            ];
+            $returnMsg=config('msg')['login']['haveUser'];;
             return json($returnMsg);
-        }else if(count($arr) >= 2){
+        }else if(count($phoneArr) >= 1){
+            //手机号重复
+            $returnMsg=config('msg')['login']['havePhone'];
+            return json($returnMsg);
+        }else if(count($nameArr) >= 1){
             //用户名重复
-            $returnMsg=[
-                'code' =>  "haveName",
-                'msg'  =>  config('msg')['personal']['haveName'],
-                'data' =>  []
-            ];
+            $returnMsg=config('msg')['personal']['haveName'];
             return json($returnMsg);
         }else{
             $addres=Db::table('t_user')->insert($data);
             if($addres){
                 //添加成功
-                $returnMsg=[
-                    'code' =>  10005,
-                    'msg'  =>  config('msg')['login']['successReg'],
-                    'data' =>  []
-                ];
+                $returnMsg=config('msg')['login']['successReg'];
                 return json($returnMsg);
             }else{
                 //添加失败
-                $returnMsg=[
-                    'code' =>  10004,
-                    'msg'  =>  config('msg')['login']['regError'],
-                    'data' =>  []
-                ];
+                $returnMsg=config('msg')['login']['regError'];
                 return json($returnMsg);
             }
         }
     }
 
-    public function checkName(){
-        //账号查重
-        $uname=input('?post.uname')? input('uname'):'';
-        $model=new \app\home\model\Personal();
-        $arr = $model->checkName($uname);
-        if(count($arr) >= 2){
+    //手机号查重
+    public function checkPhone(){
+        $uphone=input('?post.uphone')? input('uphone'):'';
+        $model=new \app\home\model\User();
+        $arr = $model->checkPhone($uphone);
+        if(count($arr) >= 1){
             //用户名重复
-            $returnMsg=[
-                'code' =>  "haveName",
-                'msg'  =>  config('msg')['personal']['haveName'],
-                'data' =>  []
-            ];
+            $returnMsg= config('msg')['login']['havePhone'];
             return json($returnMsg);
         }else{
-            $returnMsg=[
-                'code' =>  "withoutName",
-                'msg'  =>  config('msg')['personal']['withoutName'],
-                'data' =>  []
-            ];
+            $returnMsg=config('msg')['login']['withoutPhone'];
+            return json($returnMsg);
+        }
+    }
+        //昵称查重
+    public function checkName(){
+        $uname=input('?post.uname')? input('uname'):'';
+        $model=new \app\home\model\User();
+        $arr = $model->checkName($uname);
+        if(count($arr) >= 1){
+            //用户名重复
+            $returnMsg=config('msg')['personal']['haveName'];
+            return json($returnMsg);
+        }else{
+            $returnMsg=config('msg')['personal']['withoutName'];;
             return json($returnMsg);
         }
     }

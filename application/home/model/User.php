@@ -22,6 +22,11 @@ class User
         db('t_user')->where('uphone',$id)->setField('loginKey', $key);
     }
 
+    //手机号的检查
+    public function checkPhone($data){
+        return db('t_user') -> where('uphone',$data) ->select();
+    }
+
     //用户名的检查
     public function checkName($data){
         return db('t_user') -> where('uname',$data) ->select();

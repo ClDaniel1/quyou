@@ -2,6 +2,7 @@
 {block name='style'}
 <!--页面样式、引用/示例如下-->
 <link rel="stylesheet" href="__STATIC__/lib/jcrop/css/jquery.Jcrop.css">
+<link rel="stylesheet" href="__CSS__/home/note/note.css">
 <style>
     #aspectration[data-ratio="9:3"] {
         padding-top:33.33%;
@@ -10,200 +11,6 @@
         background: url("__STATIC__/images/bg.jpg") no-repeat;
         background-size: cover;
     }
-    #aspectration img{
-        float: left;
-        width: 100%;
-    }
-    #aspectration span{
-        position: absolute;
-        width: 100%;
-        top:45%;
-        left: 0;
-    }
-    #aspectration div{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        color: white;
-        font-size: 35px;
-    }
-    #aspectration i{
-        font-size: 35px;
-    }
-    #imgView{
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.9);
-        z-index: 1000;
-        display: none;
-        text-align: center;
-        padding-top: 75px;
-    }
-    #imgView div{
-        display: inline-block;
-    }
-    #imgView>img{
-        display: inline-block;
-        max-width: 90%;
-        max-height: 85%;
-    }
-    #btn{
-        margin-top: 1%;
-        display: block!important;
-    }
-    #title{
-        padding: 25px 0;
-        text-align: center;
-    }
-    #title input{
-        height: 50px;
-        width: 85%;
-        display: inline-block;
-    }
-    #noteConten{
-        min-height: 1000px;
-    }
-    #btnBar{
-     }
-    #btnBar button{
-        display: inline-block;
-        margin: 10px 20px;
-    }
-    #save div{
-
-    }
-    #saving{
-        display: none;
-    }
-    #saved{
-        display: none;
-
-        text-align: center;
-    }
-    #catal{
-        margin-top: 20px;
-    }
-    #catal i{
-        padding-left: 30px;
-       width: 100%;
-        font-style: normal;
-        display: inline-block;
-    }
-    #leftBar{
-        padding: 10px;
-        padding-left:7.5%;
-    }
-    @media (min-width:768px ) {
-        .navBg {
-            background: none !important;
-            z-index: 100;
-        }
-
-        .navBg img {
-            z-index: 101;
-            position: relative;
-        }
-
-        #baseMain {
-            margin-top: -60px;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after {
-            display: none;
-        }
-
-    }
-    .textarea-wrapper {
-        position: relative;
-        display: block;
-        width: 100%
-    }
-    .content-editable {
-        position: relative;
-        z-index: -1;
-        opacity: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        line-height: 20px;
-        font-size: 16px;
-        word-break:break-all;
-        white-space: pre-line;
-    }
-    .field-textarea {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        line-height: 20px;
-        font-size:16px;
-        border: none;
-        text-align: left;
-        resize: none;
-        overflow: hidden;
-        background-color: transparent;
-        word-break:break-all;
-        white-space: pre-wrap;
-    }
-    #leftBar div{
-        margin-bottom: 35px;
-
-    }
-    #leftBar img{
-        width: 100%;
-    }
-    #addImg{
-        overflow: hidden;
-    }
-    #addImg input{
-        width: 100%;
-        position: absolute;
-        top: 15px;
-        opacity: 0;
-    }
-    .am-active{
-        color: orange;
-    }
-    nav li{
-        margin: 10px 30px;
-    }
-    nav a:visited{
-        text-decoration:none;
-    }
-    nav a:hover{
-        color: orange;
-    }
-    nav a{
-        color: #3c3c3c;
-    }
-    .imgDiv .layui-icon{
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 16px;
-        background: rgba(0,0,0,0.9);
-        color: white;
-        padding: 5px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        transition: all 0.3s;
-    }
-    .imgDiv{
-        position: relative;
-    }
-    .imgDiv:hover .layui-icon{
-        display: inline-block;
-    }
-
-
 </style>
 {/block}
 
@@ -214,9 +21,46 @@
 <div id="imgView">
     <img id="imgShow" src="">
     <div id='btn'>
-        <input type="button" value="提交" class="layui-btn navBg" id="subBI">
-        <input type="button" value="取消" class="layui-btn navBg" id="escBI">
+        <input type="button" value="提交" class="layui-btn" id="subBI">
+        <input type="button" value="取消" class="layui-btn" id="escBI">
     </div>
+</div>
+<div id="submit">
+    <form class="layui-form layui-container" action="" >
+        <div class="layui-form-item">
+            <label class="layui-form-label">游玩人数</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" lay-verify="required|number" autocomplete="off" placeholder="请输入游玩人数" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">人均费用</label>
+            <div class="layui-input-block">
+                <input type="text" name="price" lay-verify="required|number" autocomplete="off" placeholder="￥" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">游记目的地</label>
+            <div class="layui-input-inline">
+                <select name="pr" id="pr"  lay-filter="pr">
+
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <select name="city" id="city"  lay-filter="city ">
+
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                <button type="reset" class="layui-btn ">重置</button>
+            </div>
+        </div>
+    </form>
 </div>
 {/block}
 
@@ -244,7 +88,9 @@
 
         <input type="text" onchange="setTitle()" value="{$info["title"]}" name="title" lay-verify="title" autocomplete="off" placeholder="请输入游记标题" class="layui-input" >
 
+    {if $info["music"]!=null}<audio  controls style="width: 85%;margin-top:10px" autoplay  loop><source src="__STATIC__/{$info["music"]}" ></audio>{/if}
 </div>
+
 
 
 
@@ -256,11 +102,11 @@
     </script>-->
 
         <div><div v-for="con in conData" :id="con.conId">
-            <h1 v-if="con.num == 1" :id="con.conId" style="opacity: 0">{{con.title}}</h1>
-            <h1 v-if="con.title != null && con.num != 1 && con.type==0" class="imgDiv">{{con.title}}<i class="layui-icon" @click="removeTitle(con.num)">&#x1006;</i></h1>
+            <h1 v-if="con.num == 1" style="opacity: 0">{{con.title}}</h1>
+            <h1 v-if="con.title != null && con.num != 1 && con.type==0" class="imgDiv">{{con.title}}<i class="layui-icon" @click="removeTitle(con.num)">&#x1006;</i><i class="layui-icon edit" @click="editTitle(con.num)">&#xe642;</i></h1>
             <div v-if="con.type==0" class="textarea-wrapper">
                 <div class="content-editable" contenteditable="true">{{con.content}}</div>
-                <textarea v-model="con.content" contenteditable="true" class="field-textarea" placeholder="在这里输入您的游记内容" v-on:focus="foc" :id="conId+con.num"></textarea>
+                <textarea v-model="con.content" contenteditable="true" class="field-textarea" placeholder="在这里输入您的游记内容" v-on:focus="foc" :id="conId+con.num" @blur="save"></textarea>
             </div>
             <div v-if="con.type==1" class="imgDiv"><img v-bind:src="imgurl+con.content" alt="" @click="foc" :id="conId+con.num"><i class="layui-icon" @click="removeImg(con.num)">&#x1006;</i>  </div>
             </div></div>
@@ -273,9 +119,14 @@
             <button class="layui-btn layui-btn-radius" @click="add">
                 <i class="layui-icon">&#xe638;</i> 添加段落
             </button>
-            <button class="layui-btn layui-btn-radius">
+            <button class="layui-btn layui-btn-radius"  id="addMusic">
                 <i class="layui-icon">&#xe6fc;</i> 添加音乐
             </button>
+            {if $info["music"]!=null}
+                <button class="layui-btn layui-btn-radius"   onclick="removeMusic()">
+                    <i class="layui-icon">&#xe6fc;</i> 移除音乐
+                </button>
+            {/if}
             <button class="layui-btn layui-btn-radius" @click="save">
                 <div id="toSave"><i class="layui-icon">&#xe60e;</i> 保存草稿</div>
                 <div id="saving"><i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop" ></i> 正在保存</div>
@@ -303,7 +154,7 @@
 
 <div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="my-modal-loading">
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">图片上传中...</div>
+        <div class="am-modal-hd">上传中...</div>
         <div class="am-modal-bd">
             <span class="am-icon-spinner am-icon-spin"></span>
         </div>
@@ -318,30 +169,46 @@
 JS、引用 /示例如下
 <script src="__STATIC__/lib/jcrop/js/jquery.Jcrop.js"></script>
 <script>
-    var upload = layui.upload;
-    var jcropApi;
+   var staticDir= "__STATIC__/";
+
     var noteId = {$noteId};
     var title = "{$info["title"]}";
 
+    var titleUrl = "{:url('home/Notes/setTitle')}";
+    var imgUrl = '{:url("home/Notes/setUp")}';
+    var getCon = "{:url('home/Notes/getCon')}";
+    var indexUrl = "{:url('home/Index/index')}";
+   var delImgUrl = "{:url('home/Notes/removeImg')}";
+   var addImgUrl = '{:url("home/Notes/addImg")}';
+   var addMusicUrl = '{:url("home/Notes/addMusic")}';
+   var reMusicUrl = "{:url('home/Notes/reMusic')}";
+
+    var upload = layui.upload;
+    var jcropApi;
+
     var $modal = $('#my-modal-loading');
 
+    //设置标题
     function setTitle() {
         var newTitle = $("#title input").eq(0).val();
         if(newTitle != title){
             $.ajax({
-                url:"{:url('home/Notes/setTitle')}",
+                url:titleUrl,
                 data:{title:newTitle,id:noteId},
                 type:"post",
                 dataType:"json",
                 success:function (res) {
-                    if(res["code"]==50006){
-                        layer.msg("标题修改成功");
+                    if(res["code"]==20010){
+                        layer.msg(res["msg"]);
                     }
                     else {
                         layer.open({
-                            content:"标题修改失败",
+                            content:res["msg"],
                             yes: function(index, layero){
                                 //do something
+                                if(res["code"]==20001){
+                                    toIndex();
+                                }
                                 layer.close(index); //如果设定了yes回调，需进行手工关闭
                             }
                         });
@@ -351,10 +218,10 @@ JS、引用 /示例如下
         }
     }
 
-    //执行实例
+    //设置头图
     upload.render({
         elem: '#aspectration'
-        ,url: '{:url("home/Notes/setUp")}'
+        ,url: imgUrl
         ,auto: false
         ,accept:"imgaes"
         ,number:1
@@ -413,40 +280,40 @@ JS、引用 /示例如下
             console.log(select);
             var data = [size[0],select["x"],select["y"],select["x2"],select["y2"]];
             $.ajax({
-                url: '{:url("home/Notes/setUp")}',
+                url: imgUrl,
                 data:{"size":JSON.stringify(data)},
                 async:false
             })
         }
         ,done: function(res){
             $modal.modal('close');
-            if(res["code"]== 50001){
+            if(res["code"]== 20006){
                 $("#aspectration div").empty();
                 $img = "<img src='/quyou/public/static/"+res["data"]["url"]+"?"+Math.random()+"'/>";
                 $("#aspectration div").append($img);
 
-                layer.msg("上传成功");
-                $("#imgView").fadeOut(300,function () {
-                    jcropApi.destroy();
-                })
+                layer.msg(res["msg"]);
             }
             else{
                 layer.open({
                     content:res["msg"],
                     yes: function(index, layero){
                         //do something
-                        $("#imgView").fadeOut(300,function () {
-                            jcropApi.destroy();
-                        });
+                        if(res["code"]==20001){
+                            toIndex();
+                        }
                         layer.close(index); //如果设定了yes回调，需进行手工关闭
                     }
                 });
             }
+            $("#imgView").fadeOut(300,function () {
+                jcropApi.destroy();
+            });
         }
     });
 
 
-
+    //取消头图设置
     $("#escBI").click(function () {
 
         $("#imgView").fadeOut(300,function () {
@@ -459,50 +326,91 @@ JS、引用 /示例如下
         el:"#noteConten",
         data:{
             conData:[],
-            imgurl:"__STATIC__/",
+            imgurl:staticDir,
             id:"#",
             conId:"C",
-            textArea:""
+            textArea:"",
+            saving:0
         },
         methods:{
+            //获取数据
             init:function () {
                 $.ajax({
-                    url:"{:url('home/Notes/getCon')}",
+                    url:getCon,
                     type:"post",
-                    data:{"id":{$noteId}},
+                    data:{"id":noteId},
                     dataType:"json",
-                    success:function (data) {
-                        this.conData = data.data;
+                    success:function (res) {
+                        if(res["code"]==20014){
+                            this.conData = res.data;
+                        }
+                        else {
+                            layer.open({
+                                content:res["msg"],
+                                yes: function(index, layero){
+                                    //do something
+                                    if(res["code"]==20001){
+                                        toIndex();
+                                    }
+                                    layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                }
+                            });
+                        }
+
                     }.bind(this)
                 })
             },
+            //保存草稿
             save:function () {
-                $("#toSave").fadeOut(300,function () {
-                    $("#saving").fadeIn(300);
-                    $.ajax({
-                        url:"{:url('home/Notes/save')}",
-                        data:{id:noteId,sData:this.conData},
-                        type:"post",
-                        textType:"json",
-                        success:function (res) {
-                            $("#saving").fadeOut(300,function () {
-                                $("#saved").fadeIn(300);
-                            });
+                var _this = this;
+                if(  this.saving==0){
+                    this.saving=1;
+                    $("#toSave").fadeOut(300,function () {
+                        $("#saving").fadeIn(300);
+                        $.ajax({
+                            url: "{:url('home/Notes/save')}",
+                            data: {id: noteId, sData: this.conData},
+                            type: "post",
+                            textType: "json",
+                            success: function (res) {
+                                if(res["code"] == 20016){
+                                    $("#saving").fadeOut(300, function () {
+                                        $("#saved").fadeIn(300);
+                                    });
 
-                            setTimeout(function () {
-                                $("#saved").fadeOut(300,function () {
-                                    $("#toSave").fadeIn(300);
-                                });
+                                    setTimeout(function () {
+                                        $("#saved").fadeOut(300, function () {
+                                            $("#toSave").fadeIn(300);
+                                            _this.saving = 0;
+                                        });
 
-                            },2000)
-                        }
-                    })
-                    $("#catalNav").scrollspynav();
-                }.bind(this));
+                                    }, 2000)
+                                }
+                                else {
+                                    $("#saving").fadeOut(300, function () {
+                                        $("#toSave").fadeIn(300);
+                                    });
+                                    layer.open({
+                                        content:res["msg"],
+                                        yes: function(index, layero){
+                                            //do something
+                                            if(res["code"]==20001){
+                                                toIndex();
+                                            }
+                                            layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                        }
+                                    });
+                                }
 
-
-
+                            }
+                        })
+                        setTimeout(function () {
+                            $("#catalNav").scrollspynav();
+                        },3000);
+                    }.bind(this));
+                }
             },
+            //添加段落
             add:function () {
                 layer.prompt({title: '请输入段落名', formType: 3}, function(pass, index){
                     layer.close(index);
@@ -541,42 +449,61 @@ JS、引用 /示例如下
 
                 }.bind(this));
             },
-            addImg:function () {
-
-            },
+            //点击监测
             foc:function (event){
                var id = event.target.id;
-               console.log(event.target);
                this.textArea = id;
             },
+            //删除游记图片
             removeImg:function (num) {
                 layer.confirm('确定删除该图片？', {icon: 3, title:'删除图片？'}, function(index){
                     //do something
+                    $modal.modal();
+                    layer.close(index);
                     var conData = this.conData;
                     for(var i = 0;i < conData.length;i++){
                         if(conData[i]["num"] == num){
                             $.ajax({
-                                url:"{:url('home/Notes/removeImg')}",
-                                data:{src:conData[i]["content"]}
+                                url:delImgUrl,
+                                data:{src:conData[i]["content"]},
+                                success:function (res) {
+                                    $modal.modal('close');
+                                    if(res["code"]==20018){
+                                        layer.msg(res["msg"]);
+                                        var nextId = "C"+(i+2);
+                                        var preId = "C"+(i);
+                                        var value1 = document.getElementById(nextId).value;
+                                        var value2 = document.getElementById(preId).value;
+                                        value2 = value2+'\r'+value1;
+                                        conData[i-1]["content"] = value2;
+                                        document.getElementById(preId).value = value2;
+                                        this.conData.splice(i,2);
+                                    }
+                                    else {
+                                        layer.open({
+                                            content:res["msg"],
+                                            yes: function(index, layero){
+                                                //do something
+                                                if(res["code"]==20001){
+                                                    toIndex();
+                                                }
+                                                layer.close(index); //如果设定了yes回调，需进行手工关闭
+                                            }
+                                        });
+                                    }
+                                }
                             })
-                            var nextId = "C"+(i+2);
-                            var preId = "C"+(i);
-                            var value1 = document.getElementById(nextId).value;
-                            var value2 = document.getElementById(preId).value;
-                            value2 = value2+'\r'+value1;
-                            conData[i-1]["content"] = value2;
-                            document.getElementById(preId).value = value2;
-                            this.conData.splice(i,2);
                             break;
                         }
                     }
                     for(var i = 0;i < this.conData.length;i++){
                         this.conData[i]["num"] = i+1;
                     }
-                    layer.close(index);
+
                     this.save();
                 }.bind(this));
             },
+            //移除段落标题
             removeTitle:function (num) {
                 layer.confirm('确定删除该段落标题？段落内容会移至上一段', {icon: 3, title:'删除段落标题？'}, function(index){
                     //do something
@@ -600,6 +527,16 @@ JS、引用 /示例如下
                     }
                     layer.close(index);
                     this.save();
+                }.bind(this));
+            },
+            //添加新段落标题
+            editTitle:function (num) {
+                var ovalue = this.conData[num-1]["title"];
+                layer.prompt({title: '请输入新段落名', formType: 3, value: ovalue}, function(pass, index){
+                    layer.close(index);
+                    this.conData[num-1]["title"]=pass;
+                    this.save();
+
                 }.bind(this));
             }
         },
@@ -654,6 +591,7 @@ JS、引用 /示例如下
         }
     })
 
+   //textArea处理函数
     var cursorPosition = {
         get: function (textarea) {
             var rangeData = { text: "", start: 0, end: 0 };
@@ -701,34 +639,155 @@ JS、引用 /示例如下
         }
     }
 
-
+//添加图片
  upload.render({
         elem: '#addImg'
-        ,url: '{:url("home/Notes/addImg")}'
+        ,url:addImgUrl
         ,accept:"imgaes"
         ,number:1
-        ,data:{noteId:{$noteId}}
+        ,data:{noteId:noteId}
         ,bgOpacity:0.1
         ,before:function () {
          $modal.modal();
         }
         ,done: function(res){
             $modal.modal("close");
-            if(res["code"]==50005){
-                layer.msg("上传成功");
-                bus.$emit('addImg',res["data"][0]);
-            }
-            else {
-                layer.open({
-                    content:res["上传失败"],
-                    yes: function(index, layero){
-                        layer.close(index); //如果设定了yes回调，需进行手工关闭
-                    }
-                });
-            }
+             if(res["code"]==20012){
+                 layer.msg(res["msg"]);
+                 bus.$emit('addImg',res["data"][0]);
+             }
+             else {
+                 layer.open({
+                     content: res["msg"],
+                     yes: function (index, layero) {
+                         //do something
+                         if (res["code"] == 20001) {
+                             toIndex();
+                         }
+                         layer.close(index); //如果设定了yes回调，需进行手工关闭
+                     }
+                 });
+             }
         }
     });
 
+    //添加游记音乐
+ upload.render({
+        elem: '#addMusic'
+        ,url: addMusicUrl
+        ,accept:"audio"
+        ,number:1
+        ,data:{noteId:noteId}
+        ,bgOpacity:0.1
+        ,before:function () {
+            $modal.modal();
+        }
+        ,done: function(res){
+            $modal.modal("close");
+             if(res["code"]==20004){
+                 layer.msg(res["msg"]);
+                 var music = $('<audio  controls style="width: 85%;margin-top:10px" autoplay  loop><source src="__STATIC__/'+res["data"][0]+'" ></audio>')
+                 $("#title").append(music);
+                 $("#addMusic").after(' <button class="layui-btn layui-btn-radius" onclick="removeMusic()">' +
+                     '                    <i class="layui-icon">&#xe6fc;</i> 移除音乐' +
+                     '                </button>')
+             }
+             else {
+                 layer.open({
+                     content:res["msg"],
+                     yes: function(index, layero){
+                         //do something
+                         if(res["code"]==20001){
+                             toIndex();
+                         }
+                         layer.close(index); //如果设定了yes回调，需进行手工关闭
+                     }
+                 });
+             }
+        }
+    });
+
+ //移除游记音乐
+function removeMusic() {
+    layer.confirm('确定移除游记音乐?', {icon: 3, title:'移除游记音乐'}, function(index){
+        //do something
+        $.ajax({
+            url:reMusicUrl,
+            data:{noteId:noteId},
+            success:function (res) {
+                if(res["code"]==20005){
+                    layer.msg(res["msg"]);
+                    $("audio").remove();
+                    $("#addMusic").next().remove();
+                }
+                else {
+                    layer.open({
+                        content:res["msg"],
+                        yes: function(index, layero){
+                            //do something
+                            if(res["code"]==20001){
+                                toIndex();
+                            }
+                            layer.close(index); //如果设定了yes回调，需进行手工关闭
+                        }
+                    });
+                }
+            }
+        })
+        layer.close(index);
+    });
+}
+var form = layui.form;
+$.ajax({
+    url:"{:url('home/Notes/getRegion')}",
+    success:function (res) {
+        for(var i = 0;i < res["data"][0].length;i++){
+            var op = "<option value='"+res["data"][0][i]["REGION_ID"]+"'>"+res["data"][0][i]["REGION_NAME"]+"</option>";
+            $("#pr").append(op);
+        }
+        for(var i = 0;i < res["data"][1].length;i++){
+            var op = "<option value='"+res["data"][1][i]["REGION_ID"]+"'>"+res["data"][1][i]["REGION_NAME"]+"</option>";
+            $("#city").append(op);
+        }
+        form.render('select');
+    }
+});
+
+form.on('select(pr)', function(data){
+    $.ajax({
+        url:"{:url('home/Notes/getRegion')}",
+        data:{pr:data.value},
+        success:function (res) {
+            $("#city").empty();
+            for(var i = 0;i < res["data"][0].length;i++){
+                var op = "<option value='"+res["data"][0][i]["REGION_ID"]+"'>"+res["data"][0][i]["REGION_NAME"]+"</option>";
+                $("#city").append(op);
+            }
+
+            form.render('select');
+        }
+    })
+});
+
+form.on('submit()', function(data){
+    $.ajax({
+        url:"{:url('home/Notes/getRegion')}",
+        data:data.field,
+        success:function (res) {
+            $("#city").empty();
+            for(var i = 0;i < res["data"][0].length;i++){
+                var op = "<option value='"+res["data"][0][i]["REGION_ID"]+"'>"+res["data"][0][i]["REGION_NAME"]+"</option>";
+                $("#city").append(op);
+            }
+
+            form.render('select');
+        }
+    })
+});
+
+function toIndex() {
+    location.herf=indexUrl;
+}
 
 </script>
 <!--&lt;!&ndash; 配置文件 &ndash;&gt;

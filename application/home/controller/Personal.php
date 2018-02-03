@@ -51,7 +51,7 @@ class Personal extends \think\Controller
         //账号查重
         $model=new \app\home\model\Personal();
         $arr = $model->checkName($uname);
-        if(count($arr) >= 2){
+        if(count($arr) >1){
             //用户名重复
             $returnMsg=[
                 'code' =>  "haveName",
@@ -63,18 +63,11 @@ class Personal extends \think\Controller
             $model=new \app\home\model\Personal();
             $res=$model->changeInfo($uid,$data);
             if($res){
-                $returnMsg=[
-                    'code'  =>  "changeOK",
-                    'msg'   =>  config('msg')['personal']['changeOK'],
-                    'data'  =>  []
-                ];
+                $returnMsg=config('msg')['personal']['changeOK'];
                 return json($returnMsg);
             }else{
-                $returnMsg=[
-                    'code'  =>  "changeErr",
-                    'msg'   =>  config('msg')['personal']['changeErr'],
-                    'data'  =>  []
-                ];return json($returnMsg);
+                $returnMsg=config('msg')['personal']['changeErr'];
+                return json($returnMsg);
             }
         }
     }
@@ -99,28 +92,94 @@ class Personal extends \think\Controller
         $result = $model->checkPwd($where);
 
         if(!empty($result)){
-            $returnMsg=[
-                'code'  =>  "repeat",
-                'msg'   =>  config('msg')['personal']['repeatPwd'],
-                'data'  =>  []
-            ];
+            $returnMsg=config('msg')['personal']['repeatPwd'];
             return json($returnMsg);
         }else{
             $res=$model->changePwd($uid,$data);
             if($res){
-                $returnMsg=[
-                    'code'  =>  "changeOK",
-                    'msg'   =>  config('msg')['personal']['changeOK'],
-                    'data'  =>  []
-                ];
+                $returnMsg=config('msg')['personal']['changeOK'];
                 return json($returnMsg);
             }else{
-                $returnMsg=[
-                    'code'  =>  "changeErr",
-                    'msg'   =>  config('msg')['personal']['changeErr'],
-                    'data'  =>  []
-                ];return json($returnMsg);
+                $returnMsg=config('msg')['personal']['changeErr'];
+                return json($returnMsg);
             }
+        }
+    }
+
+
+    //头像上传
+    public function upload(){
+        if(empty($_FILES)){
+            $w = input("param.size");
+            session("img",$w);
+        }
+        else{
+            $resMsg = ["code"=>50001,
+                "msg"=>"",
+                "data"=>[]];
+
+            //检查是否有用户文件夹
+            $uid = cookie("uid");
+            $userDir = "static/images/user/".$uid;
+            if(!(is_dir($userDir))){
+                mkdir($userDir);
+            }
+            //移动文件到用户文件夹
+            $type = $_FILES["file"]["type"];
+            $type = explode("/",$type)[1];
+            $path = $userDir."/head".".".$type;
+            move_uploaded_file($_FILES["file"]["tmp_name"],$path);
+
+            $image = \think\Image::open($path);// 原图
+            $x = $width = $image->width();//获取图片的宽
+            $y = $height = $image->height(); //获取图片的高
+
+
+            //原图宽高确认
+           /* if($x<1350 || $y < 480){
+                $resMsg["code"] = 50002;
+                $resMsg["msg"] = config("msg")["note"]["imgTooSmall"];
+                return json($resMsg);
+            }*/
+
+            $size = json_decode(session("img"),true);
+
+            $w = $size[0]; //切图时图片宽高
+            $sw = $size[1];//选择区域开始x
+            $sh = $size[2];//选择区域开始y
+            $ew = $size[3];//选择区域结束x
+            $eh = $size[4];//选择区域结束y
+
+            //计算比例
+            $scale = $w/$x;
+            $rsw = $sw/$scale;//实际选择区域开始x
+            $rsh = $sh/$scale;//实际选择区域开始y
+            $rew = $ew/$scale;//实际选择区域结束x
+            $reh = $eh/$scale;//实际选择区域结束y
+
+            //裁剪后大小确认
+            /*if($rew-$rsw<900 || $reh-$rsh < 300){
+                $resMsg["code"] = 50003;
+                $resMsg["msg"] = config("msg")["note"]["imgSelectTooSmall"];
+                return json($resMsg);
+            }
+            //确认裁剪比例
+            if(round(($rew-$rsw)/($reh-$rsh)) != 3){
+                $resMsg["code"] = 50004;
+                $resMsg["msg"] = config("msg")["note"]["scaleErr"];
+                return json($resMsg);
+            }*/
+
+            //裁图
+            $image->crop($rew-$rsw, $reh-$rsh,$rsw,$rsh)->save($path);
+
+            $userPath = "images/user/".$uid."/head".".".$type;
+
+            //存数据库
+            $resMsg["data"]["url"] = $userPath;
+            $model = new \app\home\model\Personal();
+            $model->upload($uid,$userPath);
+            return json($resMsg);
         }
     }
 

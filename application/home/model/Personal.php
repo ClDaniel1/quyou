@@ -26,4 +26,9 @@ class Personal{
     public function checkPwd($data){
         return db('t_user') -> where($data) ->find();
     }
+
+    //上传头像
+    public function upload($uid,$userPath){
+        return db("t_user")->where("uid=$uid")->update(["uheadImg"=>$userPath]);
+    }
 }
