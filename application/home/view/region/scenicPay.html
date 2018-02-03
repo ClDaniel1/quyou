@@ -1,0 +1,152 @@
+{extend name="public/base"}
+{block name='style'}
+<link rel="stylesheet" href="__CSS__/home/region/scenicPay.css">
+{/block}
+
+{block name='body'}
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-row breadcrumb">
+             <span class="layui-breadcrumb" lay-separator=">">
+                <a href="">目的地</a>
+                <a href="">上海</a>
+                <a><cite>上海景点</cite></a>
+            </span>
+        </div>
+    </div>
+    <div class="layui-row borderB">
+        <div class="layui-col-sm6 layui-col-xs6">
+            <h1 class="scenicH1">
+                外滩
+            </h1>
+        </div>
+        <div class="layui-col-sm6 layui-col-xs6">
+            <ul class="imgA am-text-middle">
+                <li>
+                    <a href=""><i class="icon imgPst1"></i>收藏</a>
+                </li>
+                <li>
+                    <a href=""><i class="icon imgPst2"></i>去过</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="scBd">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-sm6 layui-col-xs6">
+                <ul class="hrefUl">
+                    <li class="orangeB">
+                        <a href="">概况</a>
+                    </li>
+                    <li>
+                        <a href="">门票预订</a>
+                    </li>
+                    <li>
+                        <a href="">趣游点评<span></span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="layui-col-sm6 layui-col-xs6 aBtn">
+                <a href="" class="layui-btn layui-btn-warm">我要点评</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="whiteB">
+    <div class="layui-container">
+    <div class="layui-row ">
+        <div class="layui-col-sm8 layui-col-xs8 scMaxImg">
+            <a href="">
+                <img src="http://p2-q.mafengwo.net/s2/M00/92/AB/wKgBpU7hX8G6QwT2AAfE1QOwzZc32.jpeg?imageMogr2%2Fthumbnail%2F%21690x370r%2Fgravity%2FCenter%2Fcrop%2F%21690x370%2Fquality%2F100" alt="">
+            </a>
+        </div>
+        <div class="layui-col-sm4 layui-col-xs4 scMinImg">
+        <a href="">
+            <img src="http://p2-q.mafengwo.net/s2/M00/92/AB/wKgBpU7hX8G6QwT2AAfE1QOwzZc32.jpeg?imageMogr2%2Fthumbnail%2F%21690x370r%2Fgravity%2FCenter%2Fcrop%2F%21690x370%2Fquality%2F100" alt="">
+        </a>
+        <a href="">
+            <img class="topImg" src="http://p2-q.mafengwo.net/s2/M00/92/AB/wKgBpU7hX8G6QwT2AAfE1QOwzZc32.jpeg?imageMogr2%2Fthumbnail%2F%21690x370r%2Fgravity%2FCenter%2Fcrop%2F%21690x370%2Fquality%2F100" alt="">
+        </a>
+    </div>
+    </div>
+</div>
+</div>
+<div class="grayB">
+    <div class="layui-container">
+        <div class="layui-row">
+            <p class="introP">
+                --位于上海市中心黄浦区的黄浦江畔，是最具上海城市象征意义的景点之一。
+                --位于上海市中心黄浦区的黄浦江畔，是最具上海城市象征意义的景点之一。
+                --位于上海市中心黄浦区的黄浦江畔，是最具上海城市象征意义的景点之一。
+            </p>
+        </div>
+        <div class="layui-row">
+            <dl class="msgDl">
+                <dt>
+                    门票
+                </dt>
+                <dd>
+                    <div>
+                        <span>80</span>元/人
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="layui-row">
+            <dl class="msgDl">
+                <dt>
+                    开放时间
+                </dt>
+                <dd>
+                    <div>
+                        夏6:00-22:00 ，冬7:00-21:30
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="whiteB">
+    <div class="layui-container">
+        <div class="layui-row">
+            <h1>门票预订</h1>
+        </div>
+        <div class="layui-row" style="margin-top: 25px">
+            <table class="layui-table" lay-skin="line">
+                <thead>
+                <tr>
+                    <th>数据来源</th>
+                    <th>类型</th>
+                    <th>价格</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>趣游旅游网</td>
+                    <td>景点门票</td>
+                    <td id="priColor">￥<span>150</span></td>
+                    <td>
+                        <button class="layui-btn">预订</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="grayB">
+    <div class="layui-container" id="vueComment">
+        <div class="layui-row">
+            <div class="margB">
+                <h1>趣游点评</h1>
+            </div>
+        </div>
+        <my-module url="{:url('home/Region/htComMsg')}" scenic-id="275"></my-module>
+    </div>
+</div>
+{/block}
+{block name='script'}
+<script src="__JS__/home/public/vueComment.js"></script>
+{/block}

@@ -92,9 +92,14 @@ class Region extends \think\Controller
         echo json_encode($res);
     }
 
-    public function scenicShow()
+    public function scenicShow()//显示地区景点页面
     {
         $id=input('?param.rgId')?input('rgId'):"";
         return $this->fetch('scenic');
+    }
+    public function scenicPay()//显示景点详情页
+    {
+
+        return $this->fetch('scenicPay');
     }
 }

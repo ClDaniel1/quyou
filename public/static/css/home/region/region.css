@@ -24,11 +24,13 @@
 }
 .disB
 {
-    display: inline;
+    display: inline-block;
     margin-right: 15px;
     font-weight: normal;
     font-size: 34px;
     color: #333;
+    margin-bottom: 15px;
+    margin-top: 20px;
 }
 .icon
 {
@@ -37,6 +39,7 @@
     height: 30px;
     overflow: hidden;
     float: left;
+    margin-right: 5px;
 }
 .imgPst1{
     background-position: -230px 0;
@@ -90,14 +93,8 @@
     line-height: 25px;
     color: #666;
     text-indent: 2em;
-    text-overflow: ellipsis;
     height: 125px;
-    overflow: hidden;
-    /*white-space:nowrap;*/
     width: 100%;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 7;
 }
 .regionImg img
 {
@@ -439,11 +436,6 @@
     .mgLeft
     {
         margin-left: 0;
-    }
-    .disB
-    {
-        display: block;
-        margin-right: 0;
     }
     .navTop
     {

@@ -145,7 +145,7 @@ html::-webkit-scrollbar-thumb {
 
  #desNav{
      display: none;
-     padding-top: 30px;
+     padding-top: 20px;
      margin-bottom: 30px;
      background-color: #fafafa;
      border-bottom: 1px solid #e6e6e6;
@@ -169,7 +169,12 @@ html::-webkit-scrollbar-thumb {
  }
  .siteNav
  {
-     margin-left: 23px;
+     margin-bottom: 20px;
+ }
+ #navUl li a
+ {
+     padding-left: 0;
+     padding-right: 40px;
  }
 .icon1
 {

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517388442;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517304502;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517450050;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517449649;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,20 +109,15 @@
                 </span>
             </div>
             <div class="layui-row layui-hide-xs">
-                <ul class="layui-nav catalog">
+                <ul class="layui-nav catalog " id="navUl">
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>首页</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst2"></i>玩法路线</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
                     <li class="layui-nav-item"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=1000"><i class="icon1 iconPst4"></i>酒店</a></li>
                     <li class="layui-nav-item">
                         <a href=""><i class="icon1 iconPst5"></i>美食</a>
-                        <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                            <dd><a href="">移动模块</a></dd>
-                            <dd><a href="">后台模版</a></dd>
-                            <dd><a href="">电商平台</a></dd>
-                        </dl>
                     </li>
-                    <li class="layui-nav-item"><a href="0"><i class="icon1 iconPst6"></i>游记</a></li>
+                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst6"></i>游记</a></li>
                 </ul>
             </div>
             <div class="layui-hide-sm">
@@ -191,18 +186,13 @@
             </div>
         </div>
         <div class="layui-row layui-hide-xs">
-            <ul class="layui-nav catalog">
+            <ul class="layui-nav catalog " id="navUl">
                 <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>概况</a></li>
                 <li class="layui-nav-item"><a href=""><i class="icon1 iconPst2"></i>玩法路线</a></li>
                 <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
                 <li class="layui-nav-item"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=<?php echo $sId; ?>"><i class="icon1 iconPst4"></i>酒店</a></li>
                 <li class="layui-nav-item">
                     <a href=""><i class="icon1 iconPst5"></i>美食</a>
-                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                        <dd><a href="">移动模块</a></dd>
-                        <dd><a href="">后台模版</a></dd>
-                        <dd><a href="">电商平台</a></dd>
-                    </dl>
                 </li>
                 <li class="layui-nav-item"><a href="0"><i class="icon1 iconPst6"></i>游记</a></li>
             </ul>
@@ -247,7 +237,7 @@
             <div class="layui-col-sm5 layui-col-xs6">
                 <div class="msgDiv">
                     <span>攻略：</span>
-                    <p class=" ">
+                    <p class="">
                         <?php echo $bkMsg['intro']; ?>
                     </p>
                 </div>
