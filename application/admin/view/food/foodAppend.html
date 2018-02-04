@@ -53,12 +53,23 @@
             <div class="formControls col-xs-8 col-sm-9">
                 <select onchange="province()" id="regionId">
                     <option>请选择一个地区</option>
-                    {volist name="region" id="vo"}<!--免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for-->
-                    <option value="{$vo.REGION_ID}">{$vo.REGION_NAME}</option>
+                    {volist name="region" id="voone"}<!--免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for-->
+                    {if $voone.REGION_ID==$regionFood[0]["PARENT_ID"]}
+                    <option value="{$voone.REGION_ID}" selected>{$voone.REGION_NAME}</option>
+                    {else /}
+                    <option value="{$voone.REGION_ID}">{$voone.REGION_NAME}</option>
+                    {/if}
+
                     {/volist}
                 </select>
                 <select id="regionCity"  name="desId">
-                    <option value="0"></option>
+                    {volist name="regionFood" id="voone"}<!--免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for-->
+                    {if $voone.REGION_ID==$vo.desId}
+                    <option value="{$voone.REGION_ID}" selected>{$voone.REGION_NAME}</option>
+                    {else /}
+                    <option value="{$voone.REGION_ID}">{$voone.REGION_NAME}</option>
+                    {/if}
+                    {/volist}
                 </select>
 
             </div>
@@ -114,7 +125,7 @@
 <script type="text/javascript" src="__STATIC__/lib/webuploader/0.1.5/webuploader.min.js"></script>
 <script type="text/javascript">
     function article_save(){
-        alert("刷新父级的时候会自动关闭弹层。")
+        alert("刷新父级的时候会自动关闭弹层。");
         window.parent.location.reload();
     }
 
@@ -275,7 +286,7 @@
                             if( this.width != 1 || this.height != 1 ) {
                                 support = false;
                             }
-                        }
+                        };
                         data.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
                         return support;
                     } )(),
