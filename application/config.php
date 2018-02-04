@@ -257,7 +257,7 @@ return [
             'imgTooSmall'=>["code"=>20002,"msg"=>"图片过小，请选择宽度大于1350，并且高度大于480的图片","data"=>[]],
             'imgSelectTooSmall'=>["code"=>20003,"msg"=>"裁剪完图片过小，请重新裁剪","data"=>[]],
             'scaleErr'=>["code"=>20004,"msg"=>"图片比例不对，请重新裁剪","data"=>[]],
-            'musicSuccess'=>["code"=>20004,"msg"=>"音乐设置成功，请重新裁剪","data"=>[]],
+            'musicSuccess'=>["code"=>20004,"msg"=>"音乐设置成功","data"=>[]],
             "remusicSuccess"=>["code"=>20005,"msg"=>"移除游记音乐成功","data"=>[]],
             "upImgSuccess"=>["code"=>20006,"msg"=>"游记头图上传成功","data"=>[]],
             "musicErr"=>["code"=>20008,"msg"=>"游记音乐设置失败","data"=>[]],
@@ -271,7 +271,12 @@ return [
             "saveSuccess"=>["code"=>20016,"msg"=>"草稿保存成功","data"=>[]],
             "saveErr"=>["code"=>20017,"msg"=>"草稿保存失败","data"=>[]],
             "reImgSuccess"=>["code"=>20018,"msg"=>"移除游记图片成功","data"=>[]],
-            "reImgErr"=>["code"=>20019,"msg"=>"移除游记图片失败","data"=>[]]
+            "reImgErr"=>["code"=>20019,"msg"=>"移除游记图片失败","data"=>[]],
+            "upImgErr"=>["code"=>20020,"msg"=>"游记头图上传失败","data"=>[]],
+            "submitErr"=>["code"=>20021,"msg"=>"游记提交失败","data"=>[]],
+            "submitSuccess"=>["code"=>20022,"msg"=>"游记提交成功","data"=>[]],
+            "submitTitleErr"=>["code"=>20023,"msg"=>"游记标题没设置","data"=>[]],
+            "submitImgErr"=>["code"=>20024,"msg"=>"游记头图没设置","data"=>[]]
         ],
         'personal'=> [
             'changeOK' =>["code"=>30002,"msg"=>'修改成功',"data"=>[]],
@@ -288,7 +293,7 @@ return [
     'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY',
 
     // 验证码字体大小(px)
-    'fontSize' => 35,
+    'fontSize' => 50,
 
     // 是否画混淆曲线
     'useCurve' => false,
@@ -303,6 +308,7 @@ return [
     'length'   => 4,
 
     // 验证成功后是否重置
-    'reset'    => true],
+    'reset'    => true
+    ],
 
 ];

@@ -14,77 +14,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Notes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/home/controller/Notes.php">
+      <file leaf-file-name="Ad.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/admin/controller/Ad.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="196" column="28" lean-forward="false" selection-start-line="196" selection-start-column="28" selection-end-line="196" selection-end-column="28" />
+            <state relative-caret-position="408">
+              <caret line="89" column="1" lean-forward="true" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
               <folding>
-                <element signature="e#230#1110#0#PHP" expanded="false" />
-                <element signature="e#1185#4100#0#PHP" expanded="false" />
-                <element signature="e#1341#3964#0#PHP" expanded="false" />
-                <element signature="e#1608#1687#0#PHP" expanded="false" />
-                <element signature="e#1750#1829#0#PHP" expanded="false" />
-                <element signature="e#1891#1970#0#PHP" expanded="false" />
-                <element signature="e#4157#4990#0#PHP" expanded="false" />
-                <element signature="e#9842#10247#0#PHP" expanded="false" />
+                <element signature="e#176#339#0#PHP" expanded="false" />
+                <element signature="e#345#893#0#PHP" expanded="false" />
+                <element signature="e#899#1769#0#PHP" expanded="false" />
+                <element signature="e#1775#2087#0#PHP" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="268" column="19" lean-forward="false" selection-start-line="268" selection-start-column="13" selection-end-line="268" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="note.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/home/view/notes/note.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="174" column="35" lean-forward="true" selection-start-line="174" selection-start-column="35" selection-end-line="174" selection-end-column="35" />
-              <folding>
-                <element signature="n#div#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#button#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#audio#0;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-                <element signature="e#6942#7900#0" expanded="false" />
-                <element signature="e#7931#11128#0" expanded="false" />
-                <element signature="e#11180#11279#0" expanded="false" />
-                <element signature="e#11371#11525#0" expanded="false" />
-                <element signature="e#12605#14863#0" expanded="false" />
-                <element signature="e#14912#16692#0" expanded="false" />
-                <element signature="e#16745#16836#0" expanded="false" />
-                <element signature="e#16896#19351#0" expanded="false" />
-                <element signature="e#19413#20555#0" expanded="false" />
-                <element signature="e#20616#20950#0" expanded="false" />
-                <element signature="e#20990#23244#0" expanded="false" />
-                <element signature="e#21168#23222#0" expanded="false" />
-                <element signature="e#23296#25117#0" expanded="false" />
-                <element signature="e#25141#26006#0" expanded="false" />
-                <element signature="e#26038#27295#0" expanded="false" />
-                <element signature="e#27332#28263#0" expanded="false" />
-                <element signature="e#28294#28843#0" expanded="false" />
-                <element signature="e#28883#29329#0" expanded="false" />
-                <element signature="e#29367#29808#0" expanded="false" />
-                <marker date="1517582747171" expanded="true" signature="26453:26479" ph="..." />
-                <marker date="1517582747171" expanded="true" signature="26771:26779" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="note.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/css/home/note/note.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -94,8 +34,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -103,6 +44,8 @@
     <findStrings>
       <find>edit</find>
       <find>20012</find>
+      <find>setTitle</find>
+      <find>reMusic</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -114,20 +57,23 @@
         <option value="$PROJECT_DIR$/application/home/view/index/index.html" />
         <option value="$PROJECT_DIR$/application/admin/model/Ad.php" />
         <option value="$PROJECT_DIR$/application/admin/view/ad/ad.html" />
-        <option value="$PROJECT_DIR$/application/admin/controller/Ad.php" />
         <option value="$PROJECT_DIR$/application/home/view/notes/show.html" />
         <option value="$PROJECT_DIR$/application/admin/controller/Hotel.php" />
         <option value="$PROJECT_DIR$/application/home/model/Ad.php" />
         <option value="$PROJECT_DIR$/application/home/controller/Desti.php" />
-        <option value="$PROJECT_DIR$/application/home/model/Notes.php" />
-        <option value="$PROJECT_DIR$/application/home/controller/Index.php" />
-        <option value="$PROJECT_DIR$/application/home/view/index/err.html" />
         <option value="$PROJECT_DIR$/public/static/css/home/note/draft.css" />
         <option value="$PROJECT_DIR$/application/home/view/notes/draft.html" />
         <option value="$PROJECT_DIR$/public/static/css/home/note/note.css" />
         <option value="$PROJECT_DIR$/application/config.php" />
-        <option value="$PROJECT_DIR$/application/home/controller/Notes.php" />
+        <option value="$PROJECT_DIR$/application/home/model/Notes.php" />
         <option value="$PROJECT_DIR$/application/home/view/notes/note.html" />
+        <option value="$PROJECT_DIR$/application/home/view/index/suceess.html" />
+        <option value="$PROJECT_DIR$/application/home/view/index/err.html" />
+        <option value="$PROJECT_DIR$/public/static/js/home/note/note.js" />
+        <option value="$PROJECT_DIR$/application/home/controller/Notes.php" />
+        <option value="$PROJECT_DIR$/application/home/controller/Index.php" />
+        <option value="$PROJECT_DIR$/application/home/view/index/success.html" />
+        <option value="$PROJECT_DIR$/application/admin/controller/Ad.php" />
       </list>
     </option>
   </component>
@@ -177,7 +123,7 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="357" />
     <option name="y" value="258" />
     <option name="width" value="1400" />
@@ -214,8 +160,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -232,92 +176,28 @@
               <item name="quyou" type="b2602c69:ProjectViewProjectNode" />
               <item name="quyou" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="quyou" type="b2602c69:ProjectViewProjectNode" />
               <item name="quyou" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="quyou" type="b2602c69:ProjectViewProjectNode" />
               <item name="quyou" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="quyou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quyou" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="notes" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="quyou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quyou" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="quyou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quyou" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="quyou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quyou" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="static" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="quyou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quyou" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="static" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="quyou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quyou" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="static" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="quyou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quyou" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="static" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="note" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="quyou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quyou" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="static" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="quyou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quyou" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="static" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -360,18 +240,19 @@
       <workItem from="1517454296800" duration="13673000" />
       <workItem from="1517537076206" duration="3037000" />
       <workItem from="1517553964935" duration="5885000" />
-      <workItem from="1517568493991" duration="6822000" />
+      <workItem from="1517568493991" duration="26230000" />
+      <workItem from="1517643953275" duration="1319000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29417000" />
+    <option name="totallyTimeSpent" value="50144000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26126608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26502147" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -401,23 +282,161 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/application/home/controller/Notes.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2232">
+          <caret line="526" column="7" lean-forward="false" selection-start-line="526" selection-start-column="7" selection-end-line="526" selection-end-column="7" />
+          <folding>
+            <element signature="e#231#1111#0#PHP" expanded="false" />
+            <element signature="e#1186#4099#0#PHP" expanded="false" />
+            <element signature="e#1609#1688#0#PHP" expanded="false" />
+            <element signature="e#1751#1830#0#PHP" expanded="false" />
+            <element signature="e#1892#1971#0#PHP" expanded="false" />
+            <element signature="e#4156#5274#0#PHP" expanded="false" />
+            <element signature="e#5346#5878#0#PHP" expanded="false" />
+            <element signature="e#5950#6639#0#PHP" expanded="false" />
+            <element signature="e#6709#8232#0#PHP" expanded="false" />
+            <element signature="e#8304#10205#0#PHP" expanded="false" />
+            <element signature="e#10277#11177#0#PHP" expanded="false" />
+            <element signature="e#11250#11935#0#PHP" expanded="false" />
+            <element signature="e#12007#13031#0#PHP" expanded="false" />
+            <element signature="e#13103#13644#0#PHP" expanded="false" />
+            <element signature="e#13728#14133#0#PHP" expanded="false" />
+            <element signature="e#14362#17198#0#PHP" expanded="false" />
+            <element signature="e#14593#17190#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="32" column="51" lean-forward="false" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home/view/index/err.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home/view/index/success.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home/model/Notes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4872">
+          <caret line="203" column="21" lean-forward="false" selection-start-line="203" selection-start-column="13" selection-end-line="203" selection-end-column="21" />
+          <folding>
+            <element signature="e#112#125#0#PHP" expanded="true" />
+            <element signature="e#262#627#0#PHP" expanded="false" />
+            <element signature="e#1639#1753#0#PHP" expanded="false" />
+            <element signature="e#1875#2591#0#PHP" expanded="false" />
+            <element signature="e#2783#2932#0#PHP" expanded="false" />
+            <element signature="e#3177#3358#0#PHP" expanded="false" />
+            <element signature="e#3549#3696#0#PHP" expanded="false" />
+            <element signature="e#3862#3999#0#PHP" expanded="false" />
+            <element signature="e#4252#4372#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6624">
+          <caret line="276" column="43" lean-forward="false" selection-start-line="276" selection-start-column="38" selection-end-line="276" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home/view/notes/note.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4680">
+          <caret line="195" column="52" lean-forward="false" selection-start-line="195" selection-start-column="42" selection-end-line="195" selection-end-column="52" />
+          <folding>
+            <element signature="n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#1;n#div#0;n#div#1;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#audio#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/css/home/note/note.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/js/home/note/note.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15192">
+          <caret line="633" column="18" lean-forward="true" selection-start-line="633" selection-start-column="18" selection-end-line="633" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!block;n#setTitle#0" expanded="false" />
+            <element signature="e#1009#3888#0" expanded="false" />
+            <element signature="e#1225#2711#0" expanded="false" />
+            <element signature="e#3932#4015#0" expanded="false" />
+            <element signature="e#4273#5139#0" expanded="false" />
+            <element signature="e#5181#7239#0" expanded="false" />
+            <element signature="e#7280#8920#0" expanded="false" />
+            <element signature="e#8965#9046#0" expanded="false" />
+            <element signature="e#9098#11455#0" expanded="false" />
+            <element signature="e#9209#11432#0" expanded="false" />
+            <element signature="e#11509#12559#0" expanded="false" />
+            <element signature="e#12612#12918#0" expanded="false" />
+            <element signature="e#12966#14632#0" expanded="false" />
+            <element signature="e#14664#16722#0" expanded="false" />
+            <element signature="e#16764#18417#0" expanded="false" />
+            <element signature="e#18441#19177#0" expanded="false" />
+            <element signature="e#19204#20312#0" expanded="false" />
+            <element signature="n#!!block;n#removeMusic#0" expanded="false" />
+            <element signature="e#21426#21849#0" expanded="false" />
+            <element signature="e#22600#22639#0" expanded="false" />
+            <element signature="n#!!block;n#toIndex#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home/controller/Notes.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
           <caret line="55" column="35" lean-forward="false" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
           <folding>
-            <element signature="e#230#1110#0#PHP" expanded="false" />
-            <element signature="e#1341#3964#0#PHP" expanded="false" />
-            <element signature="e#1608#1687#0#PHP" expanded="false" />
-            <element signature="e#1750#1829#0#PHP" expanded="false" />
-            <element signature="e#1891#1970#0#PHP" expanded="false" />
-            <element signature="e#4157#4990#0#PHP" expanded="false" />
-            <element signature="e#9842#10247#0#PHP" expanded="false" />
+            <element signature="e#231#1111#0#PHP" expanded="false" />
+            <element signature="e#1186#4099#0#PHP" expanded="false" />
+            <element signature="e#1609#1688#0#PHP" expanded="false" />
+            <element signature="e#1751#1830#0#PHP" expanded="false" />
+            <element signature="e#1892#1971#0#PHP" expanded="false" />
+            <element signature="e#4156#5274#0#PHP" expanded="false" />
+            <element signature="e#5346#5878#0#PHP" expanded="false" />
+            <element signature="e#5950#6639#0#PHP" expanded="false" />
+            <element signature="e#6709#8232#0#PHP" expanded="false" />
+            <element signature="e#8304#10205#0#PHP" expanded="false" />
+            <element signature="e#10277#11177#0#PHP" expanded="false" />
+            <element signature="e#11250#11935#0#PHP" expanded="false" />
+            <element signature="e#12007#13031#0#PHP" expanded="false" />
+            <element signature="e#13103#13644#0#PHP" expanded="false" />
+            <element signature="e#13728#14133#0#PHP" expanded="false" />
+            <element signature="e#14362#17198#0#PHP" expanded="false" />
+            <element signature="e#14593#17190#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -472,13 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controller/Ad.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="73" column="34" lean-forward="false" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/ad/ad.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1224">
@@ -504,6 +516,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -545,14 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/home/model/Notes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="38" column="31" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/home/view/public/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -560,28 +565,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/home/view/index/err.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/home/controller/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/home/view/notes/draft.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="40" column="10" lean-forward="true" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -589,7 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="696">
           <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -601,61 +587,135 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/home/controller/Notes.php">
+    <entry file="file://$PROJECT_DIR$/application/home/view/notes/note.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="196" column="28" lean-forward="false" selection-start-line="196" selection-start-column="28" selection-end-line="196" selection-end-column="28" />
+        <state relative-caret-position="396">
+          <caret line="195" column="20" lean-forward="false" selection-start-line="195" selection-start-column="7" selection-end-line="195" selection-end-column="20" />
           <folding>
-            <element signature="e#230#1110#0#PHP" expanded="false" />
-            <element signature="e#1185#4100#0#PHP" expanded="false" />
-            <element signature="e#1341#3964#0#PHP" expanded="false" />
-            <element signature="e#1608#1687#0#PHP" expanded="false" />
-            <element signature="e#1750#1829#0#PHP" expanded="false" />
-            <element signature="e#1891#1970#0#PHP" expanded="false" />
-            <element signature="e#4157#4990#0#PHP" expanded="false" />
-            <element signature="e#9842#10247#0#PHP" expanded="false" />
+            <element signature="n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#1;n#div#0;n#div#1;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#audio#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/js/home/note/note.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="632" column="46" lean-forward="false" selection-start-line="632" selection-start-column="46" selection-end-line="632" selection-end-column="46" />
+          <folding>
+            <element signature="n#!!block;n#setTitle#0" expanded="false" />
+            <element signature="e#1009#3888#0" expanded="false" />
+            <element signature="e#1225#2711#0" expanded="false" />
+            <element signature="e#3932#4015#0" expanded="false" />
+            <element signature="e#4273#5139#0" expanded="false" />
+            <element signature="e#5181#7239#0" expanded="false" />
+            <element signature="e#7280#8920#0" expanded="false" />
+            <element signature="e#8965#9046#0" expanded="false" />
+            <element signature="e#9098#11455#0" expanded="false" />
+            <element signature="e#9209#11432#0" expanded="false" />
+            <element signature="e#11509#12559#0" expanded="false" />
+            <element signature="e#12612#12918#0" expanded="false" />
+            <element signature="e#12966#14632#0" expanded="false" />
+            <element signature="e#14664#16722#0" expanded="false" />
+            <element signature="e#16764#18417#0" expanded="false" />
+            <element signature="e#18441#19177#0" expanded="false" />
+            <element signature="e#19204#20312#0" expanded="false" />
+            <element signature="n#!!block;n#removeMusic#0" expanded="false" />
+            <element signature="e#21426#21849#0" expanded="false" />
+            <element signature="e#22600#22639#0" expanded="false" />
+            <element signature="n#!!block;n#toIndex#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="268" column="19" lean-forward="false" selection-start-line="268" selection-start-column="13" selection-end-line="268" selection-end-column="19" />
+        <state relative-caret-position="792">
+          <caret line="276" column="43" lean-forward="false" selection-start-line="276" selection-start-column="38" selection-end-line="276" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/home/view/notes/note.html">
+    <entry file="file://$PROJECT_DIR$/application/home/model/Notes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="174" column="35" lean-forward="true" selection-start-line="174" selection-start-column="35" selection-end-line="174" selection-end-column="35" />
+        <state relative-caret-position="510">
+          <caret line="203" column="21" lean-forward="false" selection-start-line="203" selection-start-column="13" selection-end-line="203" selection-end-column="21" />
           <folding>
-            <element signature="n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#audio#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="e#6942#7900#0" expanded="false" />
-            <element signature="e#7931#11128#0" expanded="false" />
-            <element signature="e#11180#11279#0" expanded="false" />
-            <element signature="e#11371#11525#0" expanded="false" />
-            <element signature="e#12605#14863#0" expanded="false" />
-            <element signature="e#14912#16692#0" expanded="false" />
-            <element signature="e#16745#16836#0" expanded="false" />
-            <element signature="e#16896#19351#0" expanded="false" />
-            <element signature="e#19413#20555#0" expanded="false" />
-            <element signature="e#20616#20950#0" expanded="false" />
-            <element signature="e#20990#23244#0" expanded="false" />
-            <element signature="e#21168#23222#0" expanded="false" />
-            <element signature="e#23296#25117#0" expanded="false" />
-            <element signature="e#25141#26006#0" expanded="false" />
-            <element signature="e#26038#27295#0" expanded="false" />
-            <element signature="e#27332#28263#0" expanded="false" />
-            <element signature="e#28294#28843#0" expanded="false" />
-            <element signature="e#28883#29329#0" expanded="false" />
-            <element signature="e#29367#29808#0" expanded="false" />
-            <marker date="1517582747171" expanded="true" signature="26453:26479" ph="..." />
-            <marker date="1517582747171" expanded="true" signature="26771:26779" ph="..." />
+            <element signature="e#112#125#0#PHP" expanded="true" />
+            <element signature="e#262#627#0#PHP" expanded="false" />
+            <element signature="e#1639#1753#0#PHP" expanded="false" />
+            <element signature="e#1875#2591#0#PHP" expanded="false" />
+            <element signature="e#2783#2932#0#PHP" expanded="false" />
+            <element signature="e#3177#3358#0#PHP" expanded="false" />
+            <element signature="e#3549#3696#0#PHP" expanded="false" />
+            <element signature="e#3862#3999#0#PHP" expanded="false" />
+            <element signature="e#4252#4372#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home/view/index/err.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home/view/index/success.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="49" column="21" lean-forward="true" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home/controller/Notes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="527" column="29" lean-forward="false" selection-start-line="527" selection-start-column="29" selection-end-line="527" selection-end-column="29" />
+          <folding>
+            <element signature="e#231#1111#0#PHP" expanded="false" />
+            <element signature="e#1186#4099#0#PHP" expanded="false" />
+            <element signature="e#1609#1688#0#PHP" expanded="false" />
+            <element signature="e#1751#1830#0#PHP" expanded="false" />
+            <element signature="e#1892#1971#0#PHP" expanded="false" />
+            <element signature="e#4156#5274#0#PHP" expanded="false" />
+            <element signature="e#5346#5878#0#PHP" expanded="false" />
+            <element signature="e#5950#6639#0#PHP" expanded="false" />
+            <element signature="e#6709#8232#0#PHP" expanded="false" />
+            <element signature="e#8304#10205#0#PHP" expanded="false" />
+            <element signature="e#10277#11177#0#PHP" expanded="false" />
+            <element signature="e#11250#11935#0#PHP" expanded="false" />
+            <element signature="e#12007#13031#0#PHP" expanded="false" />
+            <element signature="e#13103#13644#0#PHP" expanded="false" />
+            <element signature="e#13728#14133#0#PHP" expanded="false" />
+            <element signature="e#14362#17198#0#PHP" expanded="false" />
+            <element signature="e#14593#17190#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/Ad.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="89" column="1" lean-forward="true" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+          <folding>
+            <element signature="e#176#339#0#PHP" expanded="false" />
+            <element signature="e#345#893#0#PHP" expanded="false" />
+            <element signature="e#899#1769#0#PHP" expanded="false" />
+            <element signature="e#1775#2087#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

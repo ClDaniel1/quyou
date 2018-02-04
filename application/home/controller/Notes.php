@@ -11,6 +11,7 @@ namespace app\home\controller;
 
 use org\RadomStr;
 
+
 class Notes extends \think\Controller
 {
     /**
@@ -124,17 +125,16 @@ class Notes extends \think\Controller
                 }
 
                 //裁图
-                $image->crop($rew-$rsw, $reh-$rsh,$rsw,$rsh)->save($path);
-
+               $image->crop($rew-$rsw, $reh-$rsh,$rsw,$rsh)->save($path);
 
                 $userPath = "images/user/".$uid."/note/".$noteId."/head".".".$type;
 
-                $resMsg["data"]["url"] = $userPath;
+
 
                 $nm = new \app\home\model\Notes();
                 $nm->setUp($noteId,$userPath);
-
                 $resMsg= config("msg")["note"]["upImgSuccess"];
+                $resMsg["data"]["url"] = $userPath;
                 return json($resMsg);
             }
         }
@@ -155,6 +155,7 @@ class Notes extends \think\Controller
         $res = $um->checkLogin();//验证是否登录
         $id = input("param.id");
         if($res){
+            //是否用户游记
             $res = $this->isUserNote($id);
 
             if($res){
@@ -163,15 +164,22 @@ class Notes extends \think\Controller
 
                 //获取游记基本信息
                 $info = $nm->getNoteInfo($id)[0];
+                if($info["noteType"] == 2){
+                    $im = new Index();
+                    return $im->err("该游记审核中，请审核结束后再修改",url("home/personal/personal")."#test1=2");
+                }
+                else{
+                    //获取游记内容
+                    $con = $nm->getNoteCont($id);
 
-                //获取游记内容
-                $con = $nm->getNoteCont($id);
+                    $this->assign("info",$info);
+                    $this->assign("con",$con);
+                    $this->assign("noteId",$id);
 
-                $this->assign("info",$info);
-                $this->assign("con",$con);
-                $this->assign("noteId",$id);
+                    return $this->fetch("note");
+                }
 
-                return $this->fetch("note");
+
             }
             else{
                 $im = new Index();
@@ -189,29 +197,52 @@ class Notes extends \think\Controller
      * @return \think\response\Json
      */
     public function getCon(){
+        $um = new User();
+        $res = $um->checkLogin();//验证是否登录
         $id = input("param.id");
-        $nm = new \app\home\model\Notes();
-        $con = $nm->getNoteCont($id);
+        $res2 = $this->isUserNote($id);
+        if($res && $res2){
+            $nm = new \app\home\model\Notes();
+            $con = $nm->getNoteCont($id);
 
-        $reMsg=config("msg")["note"]["getCon"];
-        $reMsg["data"]=$con;
+            $reMsg=config("msg")["note"]["getCon"];
+            $reMsg["data"]=$con;
+            return json($reMsg);
+        }
+        else{
+            $reMsg=config("msg")["note"]["notUserNote"];
+            return json($reMsg);
+        }
 
-        return json($reMsg);
     }
 
     /**
-     * 保存游记
+     * 保存游记草稿
+     * @return \think\response\Json
      */
     public function save(){
        $data = input("param.sData/a");
        $noteId = input("param.id");
+        $um = new User();
+        $res = $um->checkLogin();//验证是否登录
+        $res2 = $this->isUserNote($noteId);//是否本人游记
 
-       $nm = new \app\home\model\Notes();
-       $nm ->delCon($noteId);
+        if($res && $res2){
+            $nm = new \app\home\model\Notes();
+            $res = $nm->upCon($noteId,$data);
+            if($res){
+                $reMsg=config("msg")["note"]["saveSuccess"];
+            }
+            else{
+                $reMsg=config("msg")["note"]["saveErr"];
+            }
+            return json($reMsg);
+        }
+        else{
+            $reMsg=config("msg")["note"]["notUserNote"];
+            return json($reMsg);
+        }
 
-       foreach ($data as $val){
-           $nm->upCon($noteId,$val["content"],$val["type"],$val["num"],$val["title"]);
-       }
     }
 
     /**
@@ -220,39 +251,54 @@ class Notes extends \think\Controller
      */
     public function addImg(){
         $noteId = input("param.noteId");
-        //检查是否有用户文件夹
-        $uid = cookie("uid");
-        $userDir = "static/images/user/".$uid;
-        if(!(is_dir($userDir))){
-            mkdir($userDir);
+        $um = new User();
+        $res = $um->checkLogin();//验证是否登录
+        $res2 = $this->isUserNote($noteId);//是否本人游记
+
+        if($res && $res2){
+            $nm = new \app\home\model\Notes();
+            //检查是否有用户文件夹
+            $uid = cookie("uid");
+            $userDir = "static/images/user/".$uid;
+            if(!(is_dir($userDir))){
+                mkdir($userDir);
+            }
+            $userDir = $userDir."/note/";
+            if(!(is_dir($userDir))){
+                mkdir($userDir);
+            }
+            $userDir = $userDir.$noteId;
+            if(!(is_dir($userDir))){
+                mkdir($userDir);
+            }
+
+            $radom = new RadomStr();
+            $fileName = $radom->get("16").time();
+
+            //移动文件到用户文件夹
+            $type = $_FILES["file"]["type"];
+            $type = explode("/",$type)[1];
+            $path = $userDir."/".$fileName.".".$type;
+            $res = move_uploaded_file($_FILES["file"]["tmp_name"],$path);
+
+            if ($res){
+                $userPath = "images/user/".$uid."/note/".$noteId."/".$fileName.".".$type;
+
+                $reMsg=config("msg")["note"]["imgSuccess"];
+                $reMsg["data"]=[$userPath];
+            }
+            else{
+                $reMsg=config("msg")["note"]["imgErr"];
+            }
+
+
+            return json($reMsg);
         }
-        $userDir = $userDir."/note/";
-        if(!(is_dir($userDir))){
-            mkdir($userDir);
-        }
-        $userDir = $userDir.$noteId;
-        if(!(is_dir($userDir))){
-            mkdir($userDir);
+        else{
+            $reMsg=config("msg")["note"]["notUserNote"];
+            return json($reMsg);
         }
 
-        $radom = new RadomStr();
-        $fileName = $radom->get("16").time();
-
-        //移动文件到用户文件夹
-        $type = $_FILES["file"]["type"];
-        $type = explode("/",$type)[1];
-        $path = $userDir."/".$fileName.".".$type;
-        move_uploaded_file($_FILES["file"]["tmp_name"],$path);
-
-        $userPath = "images/user/".$uid."/note/".$noteId."/".$fileName.".".$type;
-
-        $reMsg=[
-            "code"=>50005,
-            "msg" => "",
-            "data"=>[$userPath]
-        ];
-
-        return json($reMsg);
     }
 
     /**
@@ -260,92 +306,172 @@ class Notes extends \think\Controller
      * @return \think\response\Json
      */
     public function addMusic(){
+        $um = new User();
+        $res = $um->checkLogin();//验证是否登录
         $noteId = input("param.noteId");
-        //检查是否有用户文件夹
-        $uid = cookie("uid");
-        $userDir = "static/music/user/".$uid;
-        if(!(is_dir($userDir))){
-            mkdir($userDir);
-        }
-        $userDir = $userDir."/note/";
-        if(!(is_dir($userDir))){
-            mkdir($userDir);
-        }
-        $userDir = $userDir.$noteId;
-        if(!(is_dir($userDir))){
-            mkdir($userDir);
+        $res2 = $this->isUserNote($noteId);
+        if($res && $res2){
+            //检查是否有用户文件夹
+            $uid = cookie("uid");
+            $userDir = "static/music/user/".$uid;
+            if(!(is_dir($userDir))){
+                mkdir($userDir);
+            }
+            $userDir = $userDir."/note/";
+            if(!(is_dir($userDir))){
+                mkdir($userDir);
+            }
+            $userDir = $userDir.$noteId;
+            if(!(is_dir($userDir))){
+                mkdir($userDir);
+            }
+            else{
+                $filehand = opendir($userDir);
+                while(($filesname = readdir($filehand))!=false){
+                    if($filesname!="."&&$filesname!=".."){
+                        unlink($userDir."/".$filesname);
+                    }
+                }
+                closedir($filehand);
+            }
+
+            $radom = new RadomStr();
+            $fileName = $radom->get("16").time();
+
+            //移动文件到用户文件夹
+            $type = $_FILES["file"]["type"];
+            $type = explode("/",$type)[1];
+            $path = $userDir."/".$fileName.".".$type;
+            move_uploaded_file($_FILES["file"]["tmp_name"],$path);
+
+            $userPath = "music/user/".$uid."/note/".$noteId."/".$fileName.".".$type;
+
+            $nm = new \app\home\model\Notes();
+            $res = $nm->setMusic($noteId,$userPath);
+            if($res){
+                $reMsg = config("msg")["note"]["musicSuccess"];
+                $reMsg["data"]=[$userPath];
+            }
+            else{
+                $reMsg = config("msg")["note"]["musicErr"];
+            }
+
+
+            return json($reMsg);
         }
         else{
-            $filehand = opendir($userDir);
-            while(($filesname = readdir($filehand))!=false){
-                if($filesname!="."&&$filesname!=".."){
-                        unlink($userDir."/".$filesname);
+            $reMsg=config("msg")["note"]["notUserNote"];
+            return json($reMsg);
+        }
+
+
+    }
+
+    /**
+     * 移除游记图片
+     * @return \think\response\Json
+     */
+    public function removeImg(){
+        $um = new User();
+        $res = $um->checkLogin();//验证是否登录
+        $noteId = input("param.noteId");
+        $res2 = $this->isUserNote($noteId);
+        if($res && $res2){
+
+            $path = "static/".input("param.src");
+            if(file_exists($path)){
+                $res = unlink($path);
+                if ($res){
+                    $reMsg=config("msg")["note"]["reImgSuccess"];
+                    return json($reMsg);
+                }
+                else{
+                    $reMsg=config("msg")["note"]["reImgErr"];
+                    return json($reMsg);
                 }
             }
-            closedir($filehand);
+            else{
+                $reMsg=config("msg")["note"]["reImgErr"];
+                return json($reMsg);
+            }
+        }
+        else{
+            $reMsg=config("msg")["note"]["notUserNote"];
+            return json($reMsg);
         }
 
-        $radom = new RadomStr();
-        $fileName = $radom->get("16").time();
-
-        //移动文件到用户文件夹
-        $type = $_FILES["file"]["type"];
-        $type = explode("/",$type)[1];
-        $path = $userDir."/".$fileName.".".$type;
-        move_uploaded_file($_FILES["file"]["tmp_name"],$path);
-
-        $userPath = "music/user/".$uid."/note/".$noteId."/".$fileName.".".$type;
-
-        $nm = new \app\home\model\Notes();
-        $nm->setMusic($noteId,$userPath);
-
-        $reMsg=[
-            "code"=>50007,
-            "msg" => config("msg")["note"]["musicSuccess"],
-            "data"=>[$userPath]
-        ];
-        return json($reMsg);
     }
 
-    public function removeImg(){
-        $path = "static/".input("param.src");
-        if(file_exists($path)){
-            unlink($path);
-        }
-    }
 
+    /**
+     * 设置游记标题
+     * @return \think\response\Json
+     */
     public function setTitle(){
         $title = input("param.title");
         $noteId = input("param.id");
-        $nm = new \app\home\model\Notes();
-        $nm->setTitle($noteId,$title);
-        $resMsg=[
-            "code"=>"50006"
-        ];
-        return json($resMsg);
-    }
-
-    public function reMusic(){
-        $uid = cookie("uid");
-        $noteId = input("param.noteId");
-        $userDir = "static/music/user/".$uid."/note/".$noteId;
-        $filehand = opendir($userDir);
-        while(($filesname = readdir($filehand))!=false){
-            if($filesname!="."&&$filesname!=".."){
-                unlink($userDir."/".$filesname);
-            }
+        $um = new User();
+        $res = $um->checkLogin();//验证是否登录
+        $res2 = $this->isUserNote($noteId);
+        if($res && $res2){
+            $nm = new \app\home\model\Notes();
+            $res = $nm->setTitle($noteId,$title);
+           if($res){
+               $reMsg=config("msg")["note"]["titleSuccess"];
+           }
+           else{
+               $reMsg=config("msg")["note"]["titleErr"];
+           }
+            return json($reMsg);
         }
-        closedir($filehand);
-        $nm = new \app\home\model\Notes();
-        $nm->reMusic($noteId);
-        $reMsg=[
-            "code"=>50008,
-            "msg" => config("msg")["note"]["remusicSuccess"],
-            "data"=>[]
-        ];
-        return json($reMsg);
+        else{
+            $reMsg=config("msg")["note"]["notUserNote"];
+            return json($reMsg);
+        }
+
     }
 
+    /**
+     * 移除游记音乐
+     * @return \think\response\Json
+     */
+    public function reMusic(){
+        $noteId = input("param.noteId");
+        $um = new User();
+        $res = $um->checkLogin();//验证是否登录
+        $res2 = $this->isUserNote($noteId);
+        if($res && $res2){
+            $uid = cookie("uid");
+            $userDir = "static/music/user/".$uid."/note/".$noteId;
+            $filehand = opendir($userDir);
+            while(($filesname = readdir($filehand))!=false){
+                if($filesname!="."&&$filesname!=".."){
+                    unlink($userDir."/".$filesname);
+                }
+            }
+            closedir($filehand);
+            $nm = new \app\home\model\Notes();
+            $res = $nm->reMusic($noteId);
+           if ($res){
+               $reMsg=config("msg")["note"]["remusicSuccess"];
+           }
+           else{
+               $reMsg=config("msg")["note"]["remusicErr"];
+           }
+            return json($reMsg);
+        }
+        else{
+            $reMsg=config("msg")["note"]["notUserNote"];
+            return json($reMsg);
+        }
+
+    }
+
+
+    /**
+     * 获取目的地
+     * @return \think\response\Json
+     */
     public function getRegion(){
         $resMsg =[
           "code"=>"",
@@ -369,6 +495,11 @@ class Notes extends \think\Controller
         return json($resMsg);
     }
 
+    /**
+     * 是否该用户游记
+     * @param $noteId 游记Id
+     * @return bool
+     */
     public function isUserNote($noteId){
         $uid = cookie("uid");
         $nm = new \app\home\model\Notes();
@@ -385,5 +516,92 @@ class Notes extends \think\Controller
                 return false;
             }
         }
+    }
+
+    /**
+     * 提交游记
+     * @return \think\response\Json
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function subMit(){
+
+        $noteId = input("param.noteId");
+        $um = new User();
+        $res = $um->checkLogin();//验证是否登录
+        $res2 = $this->isUserNote($noteId);
+        $nm = new \app\home\model\Notes();
+        if($res && $res2){
+            //判断数据是否有误
+            if(input("?param.num") && input("?param.price") && input("?param.date") && input("?param.pr") && input("?param.city")){
+                $num = input("param.num");
+                $price = input("param.price");
+                $date = input("param.date");
+                $pr = input("param.pr");
+                $city = input("param.city");
+                //判断数据是否为空
+                if(empty($num) || empty($price) || empty($date) || empty($pr) || empty($city)){
+                    $reMsg=config("msg")["note"]["submitErr"];
+                    return json($reMsg);
+                }
+                else{
+                    $noteInfo = $nm->getNoteInfo($noteId);
+                    //判断游记标题是否设置
+                    if($noteInfo[0]["title"] == ""){
+                        $reMsg=config("msg")["note"]["submitTitleErr"];
+                        return json($reMsg);
+                    }
+                    //判断游记头图是否设置
+                    else if($noteInfo[0]["img"] == ""){
+                        $reMsg=config("msg")["note"]["submitImgErr"];
+                        return json($reMsg);
+                    }
+                    else{
+                        $regionInfo = $nm->regionInfo($city);
+                        if(count($regionInfo) == 0){
+                            $reMsg=config("msg")["note"]["submitErr"];
+                            return json($reMsg);
+                        }
+                        else{
+                            if($regionInfo[0]["REGION_NAME"] == "市辖区" || $regionInfo[0]["REGION_NAME"] == "县"){
+                                $desId = $pr;
+                            }
+                            else{
+                                $desId = $city;
+                            }
+
+                            $res = $nm->submit($noteId,$num,$price,$date,$desId);
+
+                            if($res){
+                                $reMsg=config("msg")["note"]["submitSuccess"];
+                                return json($reMsg);
+                            }
+                            else{
+                                $reMsg=config("msg")["note"]["submitErr"];
+                                return json($reMsg);
+                            }
+                        }
+                    }
+
+                }
+            }
+            else{
+                $reMsg=config("msg")["note"]["submitErr"];
+                return json($reMsg);
+            }
+        }
+        else{
+            $reMsg=config("msg")["note"]["notUserNote"];
+            return json($reMsg);
+        }
+
+
+    }
+
+
+    public function subSuccess(){
+            $im = new Index();
+            return $im->succ("游记提交成功，请等待审核",url("home/personal/personal")."#test1=2",1);
     }
 }
