@@ -67,8 +67,10 @@ class Region extends Model
 //        $routeMsg=db($routeNew.'d')->fetchSql(true)->select();
         return $routeNew;
     }
-    public function hotelPay()
+    public function htComMsg($id)//获取酒店评价信息
     {
-
+        $res=db('t_hotelcomment')->alias('a')->join('t_user b','a.uid = b.uid')->field('a.*,b.uname,b.uheadImg')->where('a.hotelId',$id)->select();
+        return $res;
     }
+
 }

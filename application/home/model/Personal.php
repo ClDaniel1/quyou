@@ -31,4 +31,19 @@ class Personal{
     public function upload($uid,$userPath){
         return db("t_user")->where("uid=$uid")->update(["uheadImg"=>$userPath]);
     }
+
+
+    //获取城市
+    public function getCitys($regionId){
+        $sql=db('t_region')->where('PARENT_ID',$regionId)->select();
+        return $sql;
+
+    }
+
+    //地区一级select列表
+    public function region()
+    {
+        $sql=db('t_region')->where('PARENT_ID',1)->select();
+        return $sql;
+    }
 }

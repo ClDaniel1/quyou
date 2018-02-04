@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"D:\AppServ\www\quyou\public/../application/home\view\desti\desti.html";i:1517187160;s:69:"D:\AppServ\www\quyou\public/../application/home\view\public\base.html";i:1517324508;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"D:\AppServ\www\quyou\public/../application/home\view\desti\desti.html";i:1517187160;s:69:"D:\AppServ\www\quyou\public/../application/home\view\public\base.html";i:1517560739;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
-
     <link rel="icon" href="__STATIC__/images/logo.png" type="image/x-icon"/>
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/amazeui.min.css">
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
     <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
     <link rel="stylesheet" href="__CSS__\home\public\public.css">
+
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>

@@ -1,0 +1,75 @@
+.breadcrumb
+{
+    margin: 30px 0;
+}
+#test1 img
+{
+    width: 100%;
+    height: 280px;
+}
+.msgSpan
+{
+    margin: 20px 0;
+}
+.msgSpan span
+{
+    display: inline-block;
+    border: 1px dashed orange;
+    color: orange;
+}
+.pdDiv
+{
+    padding-left: 20px;
+}
+.sMoney
+{
+    color: #ff6f00;
+    font-size: 30px;
+    margin-top: 10px;
+}
+.tableSc
+{
+    overflow-y: hidden;
+}
+.addBtn
+{
+    margin: 20px 0;
+}
+.layui-table thead th,.layui-table tbody td
+{
+    text-align: center;
+}
+.magTop
+{
+    margin-top: 25px;
+}
+.payDiv
+{
+    text-align: right;
+}
+.payDiv h3
+{
+    font-size: 25px;
+    color: orange;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity:0;
+}
+@media screen and (max-width: 768px) {
+    .pdDiv
+    {
+        padding-left: 0;
+    }
+    .msgSpan
+    {
+        margin: 10px 0;
+    }
+    #btnS
+    {
+        margin-left: 0;
+        margin-top: 2px;
+    }
+}
