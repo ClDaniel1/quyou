@@ -1,0 +1,131 @@
+{extend name="public/base"}
+{block name='style'}
+<link rel="stylesheet" href="__CSS__/home/region/scenicMsg.css">
+{/block}
+
+{block name='body'}
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-row breadcrumb">
+             <span class="layui-breadcrumb" lay-separator=">">
+                <a href="">目的地</a>
+                <a href="">北京</a>
+                <a><cite>北京美食</cite></a>
+            </span>
+        </div>
+    </div>
+    <div class="layui-row borderB">
+        <div class="layui-col-sm6 layui-col-xs6">
+            <h1 class="scenicH1">
+                北京烤鸭
+            </h1>
+        </div>
+        <div class="layui-col-sm6 layui-col-xs6">
+            <ul class="imgA am-text-middle">
+                <li>
+                    <a href=""><i class="icon imgPst1"></i>收藏</a>
+                </li>
+                <li>
+                    <a href=""><i class="icon imgPst2"></i>去过</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="scBd">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-sm6 layui-col-xs6">
+                <ul class="hrefUl">
+                    <li class="orangeB">
+                        <a href="">概况</a>
+                    </li>
+                    <li>
+                        <a href="">趣游点评<span></span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="layui-col-sm6 layui-col-xs6 aBtn">
+                <a href="" class="layui-btn layui-btn-warm">我要点评</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="whiteB">
+    <div class="layui-container">
+    <div class="layui-row ">
+        <div class="layui-col-sm8 layui-col-xs8 scMaxImg">
+            <a href="">
+                <img src="http://p4-q.mafengwo.net/s9/M00/FE/49/wKgBs1ZEQIuAdxAtAAKBoGN1nrw95.jpeg?imageMogr2%2Fthumbnail%2F680x%2Fquality%2F90" alt="">
+            </a>
+        </div>
+        <div class="layui-col-sm4 layui-col-xs4 scMinImg">
+        <a href="">
+            <img src="http://p4-q.mafengwo.net/s9/M00/FE/49/wKgBs1ZEQIuAdxAtAAKBoGN1nrw95.jpeg?imageMogr2%2Fthumbnail%2F680x%2Fquality%2F90" alt="">
+        </a>
+        <a href="">
+            <img class="topImg" src="http://p4-q.mafengwo.net/s9/M00/FE/49/wKgBs1ZEQIuAdxAtAAKBoGN1nrw95.jpeg?imageMogr2%2Fthumbnail%2F680x%2Fquality%2F90" alt="">
+        </a>
+    </div>
+    </div>
+</div>
+</div>
+<div class="grayB">
+    <div class="layui-container">
+        <div class="layui-row">
+            <p class="introP">
+                北京烤鸭有“天下第一美味”之称，可以说是北京饮食的代表菜。烤鸭分为以全聚德为代表的挂炉烤鸭和以便宜坊为代表的焖炉烤鸭两种，均选用北京填鸭为原料，经过数道工序后入炉烤制而成。成品金黄油亮、干松酥嫩。吃的时候，用烙好的薄荷叶饼抹上甜面酱，加上切好的京葱段儿，铺上鸭片，卷成筒状食用。一口咬下去，香酥嫩一起涌心间。
+            </p>
+        </div>
+        <div class="layui-row">
+            <dl class="msgDl">
+                <dt>
+                    地址
+                </dt>
+                <dd>
+                    <div>
+                        <span>崇文门外大街3-5号新世界百货青春馆3层</span>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="layui-row">
+            <dl class="msgDl">
+                <dt>
+                    开放时间
+                </dt>
+                <dd>
+                    <div>
+                        夏6:00-24:00 ，冬7:00-24:00
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="layui-row">
+            <dl class="msgDl">
+                <dt>
+                    人均消费
+                </dt>
+                <dd>
+                    <div>
+                        人均<span>120</span>左右
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="grayB">
+    <div class="layui-container" id="vueComment">
+        <div class="layui-row">
+            <div class="margB">
+                <h1>趣游点评</h1>
+            </div>
+        </div>
+        <my-module url="{:url('home/Region/htComMsg')}" scenic-id="275"></my-module>
+    </div>
+</div>
+{/block}
+{block name='script'}
+<script src="__JS__/home/public/vueComment.js"></script>
+{/block}
