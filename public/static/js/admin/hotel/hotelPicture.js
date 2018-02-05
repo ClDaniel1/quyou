@@ -67,25 +67,39 @@ function datadel()//删除图片
     }
     else
     {
-        var i=[];
-        $("input:checkbox[name='secondary']:checked").each(function() { // 遍历name=test的多选框
-            i.push($(this).val());  // 每一个被选中项的值
+        layer.confirm('确定删除？', {
+            btn: ['确定','取消'] //按钮
+        }, function(){
+            var index = layer.load(); //换了种风格
+            var i=[];
+            $("input:checkbox[name='secondary']:checked").each(function() { // 遍历name=test的多选框
+                i.push($(this).val());  // 每一个被选中项的值
+            });
+            var img=JSON.stringify(i);
+            $.ajax({
+                type: 'post',
+                url: hotelDeleteMore,
+                data:{'img':img},
+                dataType: 'json',
+                success: function (res) {
+                    layer.close(index);
+                    layer.open({
+                        title: 'OK'
+                        ,content: '删除成功！'
+                        ,yes:function() {
+                            window.location.href='';
+                        }
+                    });
+                }
+            })
+        }, function(){
+            layer.msg('取消', {
+                time: 20000, //20s后自动关闭
+                btn: ['取消删除']
+            });
         });
-        var img=JSON.stringify(i);
-        $.ajax({
-            type: 'post',
-            url: hotelDeleteMore,
-            data:{'img':img},
-            async: false,
-            dataType: 'json',
-            success: function (res) {
-                layer.open({
-                    title: 'OK'
-                    ,content: '删除成功！'
-                });
-                window.location.href='';
-            }
-        })
+
+
     }
 }
 

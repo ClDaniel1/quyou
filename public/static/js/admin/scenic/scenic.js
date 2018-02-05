@@ -49,7 +49,7 @@ $.ajax({
                     '<td class="text-c">'+res.data[0][i]['price']+'</td>'+
                     '<td>'+res.data[0][i]['REGION_NAME']+'</td>'+
                     '<td class="td-status"><span class="label label-defaunt radius">已下架</span></td>'+
-                    '<td class="td-manage"><a style="text-decoration:none" onClick="picture_start(this,'+res.data[0][i]['scenicId']+')" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe6de;</i></a>'+
+                    '<td class="td-manage"><a style="text-decoration:none" onClick="picture_start(this,'+res.data[0][i]['scenicId']+')" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'+
                     '<a style="text-decoration:none" class="ml-5" onClick="picture_scenic(\'图库编辑\',scenicChange,'+res.data[0][i]['scenicId']+')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>'+
                     '<a style="text-decoration:none" class="ml-5" onClick="picture_del(this,'+res.data[0][i]['scenicId']+')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>'+
                     '</tr>');

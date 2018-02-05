@@ -33,7 +33,6 @@ function Switch()//更换封面图
                 type: 'post',
                 url: foodPictureImg,
                 data:{'main':main,'secondary':secondary,'foodId':foodId},
-                async: false,
                 dataType: 'json',
                 success: function (res) {
                     layer.open({
@@ -71,19 +70,32 @@ function datadel()//删除图片
             i.push($(this).val());  // 每一个被选中项的值
         });
         var img=JSON.stringify(i);
-        $.ajax({
-            type: 'post',
-            url: foodDeleteMore,
-            data:{'img':img},
-            async: false,
-            dataType: 'json',
-            success: function (res) {
-                layer.open({
-                    title: 'OK'
-                    ,content: '删除成功！'
-                });
-                window.location.href='';
-            }
-        })
+        layer.confirm('确定删除图片？', {
+            btn: ['确定','取消'] //按钮
+        }, function(){
+            var index = layer.load();
+            $.ajax({
+                type: 'post',
+                url: foodDeleteMore,
+                data:{'img':img},
+                dataType: 'json',
+                success: function (res) {
+                    layer.close(index);
+                    layer.open({
+                        title: 'OK'
+                        ,content: '删除成功！'
+                        ,yes:function(){
+                            window.location.href='';
+                        }
+                    });
+                }
+            })
+        }, function(){
+            layer.msg('取消删除', {
+                time: 20000, //20s后自动关闭
+                btn: ['取消删除']
+            });
+        });
+
     }
 }

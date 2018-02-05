@@ -24,19 +24,30 @@ function Release()
     var scenic=$('#form-article-add').serialize();
     var scenicId=$('#scenicId').val();
     scenic=scenic+'&'+'img='+JSON.stringify(imgTemporary)+'&'+'id='+scenicId;
-    $.ajax({
-        type: 'post',
-        url: scenicChangeAppend,
-        data: scenic,
-        async: false,
-        dataType: 'json',
-        success: function (res) {
-            layer.open({
-                title: 'OK'
-                ,content: '修改成功！'
-            });
-            window.location.href=scenicIndex;
-        }
-    })
-
+    layer.confirm('确定修改？', {
+        btn: ['确定','取消'] //按钮
+    }, function(){
+        var index = layer.load();
+        $.ajax({
+            type: 'post',
+            url: scenicChangeAppend,
+            data: scenic,
+            dataType: 'json',
+            success: function (res) {
+                layer.close(index);
+                layer.open({
+                    title: 'OK'
+                    ,content: '修改成功！'
+                    ,yes:function(){
+                        window.location.href=scenicIndex;
+                    }
+                });
+            }
+        })
+    }, function(){
+        layer.msg('取消修改', {
+            time: 20000, //20s后自动关闭
+            btn: ['取消修改']
+        });
+    });
 }
