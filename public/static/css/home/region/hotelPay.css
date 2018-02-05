@@ -36,6 +36,11 @@
     padding: 0 20px;
     display: inline-block;
 }
+#priColor
+{
+    color: orange;
+    font-size: 25px;
+}
 .rightUl
 {
     text-align: right;
@@ -72,6 +77,198 @@
 {
     margin:20px 0;
 }
+.minIcon
+{
+    background: url("../../../images/region/icon5.png") no-repeat;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+.min1
+{
+    background-position: -110px -70px;
+}
+.min2
+{
+    background-position: -130px -70px;
+}
+.min3
+{
+    background-position: -170px -70px;
+}
+.min4
+{
+    background-position: -190px -70px;
+}
+.min5
+{
+    background-position: -210px -70px;
+}
+.min6
+{
+    background-position: -230px -70px;
+}
+.min7
+{
+    background-position: -250px -70px;
+}
+.min8
+{
+    background-position: -270px -70px;
+}
+.main li,.checkIn li
+{
+    display: inline-block;
+}
+.main li,.checkIn li
+{
+    font-size: 15px;
+    color: #666;
+    width: 140px;
+}
+.checkDt
+{
+    color: #666;
+    font-weight: 100;
+    font-size: 22px;
+    padding-right: 30px;
+}
+.checkDl
+{
+    border-bottom:1px solid #66666640;
+    padding: 15px 0;
+}
+.footC
+{
+    color: #666;
+}
+.commonH
+{
+    text-align: center;
+    padding: 20px 0;
+    color: orange;
+}
+.headImg
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.userA
+{
+    color: orange;
+}
+.comTxt
+{
+    width: 80%;
+    float: left;
+}
+.comUpImg
+{
+    margin: 20px 0;
+}
+.comUpImg img
+{
+    width: 25%;
+    height: 160px;
+    margin: 0 5px;
+    border-radius: 10px;
+}
+.goodIcon
+{
+    float: right;
+    margin: 0 auto;
+    width: 27px;
+    height: 27px;
+    background: url("../../../images/region/icon5.png") no-repeat;
+    overflow: hidden;
+}
+.starIcon
+{
+
+    vertical-align: middle;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url("../../../images/region/icon5.png") no-repeat -67px -108px;
+    overflow: hidden;
+}
+.good1
+{
+    background-position: -160px 0;
+}
+.dateSpan
+{
+    margin-left: 25px;
+}
+.textArea
+{
+    width: 90%;
+    margin-top: 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 5px 8px;
+    height: 80px;
+    resize: none;
+    line-height: 20px;
+    color: #666;
+    vertical-align: top;
+    transition:all .5s;
+}
+.repBtn
+{
+    margin-top: 44px;
+}
+.repArea
+{
+    display: block;
+}
+.replay
+{
+    float: right;
+}
+.replayMsg
+{
+    border-bottom: 1px solid #e5e5e5;
+    clear: both;
+    padding: 20px 0;
+}
+.replayMsg img
+{
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    /*float: left;*/
+    display: inline-block;
+}
+.replayMsg p
+{
+    display: inline-block;
+    width: 70%;
+    margin: 0 20px;
+}
+.userA1
+{
+    color: orange;
+    float: left;
+}
+.operate
+{
+    float: right;
+}
+.operate span
+{
+    color: #d08500;
+}
+.replayArea
+{
+    border-bottom: 1px solid #e5e5e5;
+    padding: 20px 0;
+}
 @media screen and (max-width: 768px){
     .imgUl{
         margin-left: 3px;
@@ -91,5 +288,14 @@
     #test1,#test2
     {
         width: 93px;
+    }
+    .dateSpan
+    {
+        margin-left: 0;
+    }
+    .repBtn
+    {
+        margin-top: 0;
+        margin-right: 65px;
     }
 }

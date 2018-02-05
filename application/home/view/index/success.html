@@ -40,8 +40,9 @@
 
 <h1>{$str}</h1>
 
-<p><span>3</span>秒后将会 <a href="{$url}">跳转</a></p>
-
+    {if  $type==0}
+        <p><span>3</span>秒后将会 <a href="{$url}">跳转</a></p>
+    {/if}
 
 {/block}
 
@@ -49,6 +50,7 @@
 {block name='script'}
 <!--JS、引用 /示例如下-->
 <script>
+    {if $type == 0}
     var s= 3;
     setInterval(function () {
         s--;
@@ -59,6 +61,7 @@
             $("#baseMain span").text(s);
         }
     },1000)
+    {/if}
 </script>
 
 {/block}

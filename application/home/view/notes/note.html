@@ -2,6 +2,7 @@
 {block name='style'}
 <!--页面样式、引用/示例如下-->
 <link rel="stylesheet" href="__STATIC__/lib/jcrop/css/jquery.Jcrop.css">
+<link rel="stylesheet" href="__CSS__/home/note/note.css">
 <style>
     #aspectration[data-ratio="9:3"] {
         padding-top:33.33%;
@@ -10,230 +11,6 @@
         background: url("__STATIC__/images/bg.jpg") no-repeat;
         background-size: cover;
     }
-    #aspectration img{
-        float: left;
-        width: 100%;
-    }
-    #aspectration span{
-        position: absolute;
-        width: 100%;
-        top:45%;
-        left: 0;
-    }
-    #aspectration div{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        color: white;
-        font-size: 35px;
-    }
-    #aspectration i{
-        font-size: 35px;
-    }
-    #imgView{
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.9);
-        z-index: 1000;
-        display: none;
-        text-align: center;
-        padding-top: 75px;
-    }
-    #imgView div{
-        display: inline-block;
-    }
-    #imgView>img{
-        display: inline-block;
-        max-width: 90%;
-        max-height: 85%;
-    }
-    #btn{
-        margin-top: 1%;
-        display: block!important;
-    }
-    #title{
-        padding: 25px 0;
-        text-align: center;
-    }
-    #title input{
-        height: 50px;
-        width: 85%;
-        display: inline-block;
-    }
-    #noteConten{
-        min-height: 1000px;
-    }
-    #btnBar{
-     }
-    #btnBar button{
-        display: inline-block;
-        margin: 10px 20px;
-    }
-    #save div{
-
-    }
-    #saving{
-        display: none;
-    }
-    #saved{
-        display: none;
-
-        text-align: center;
-    }
-    #catal{
-        margin-top: 20px;
-    }
-    #catal i{
-        padding-left: 30px;
-       width: 100%;
-        font-style: normal;
-        display: inline-block;
-    }
-    #leftBar{
-        padding: 10px;
-        padding-left:7.5%;
-    }
-    @media (min-width:768px ) {
-        .navBg {
-            background: none !important;
-            z-index: 100;
-        }
-
-        .navBg img {
-            z-index: 101;
-            position: relative;
-        }
-
-        #baseMain {
-            margin-top: -60px;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after {
-            display: none;
-        }
-
-    }
-    .textarea-wrapper {
-        position: relative;
-        display: block;
-        width: 100%
-    }
-    .content-editable {
-        position: relative;
-        z-index: -1;
-        opacity: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        line-height: 20px;
-        font-size: 16px;
-        word-break:break-all;
-        white-space: pre-wrap;
-    }
-    .field-textarea {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        line-height: 20px;
-        font-size:16px;
-        border: none;
-        text-align: left;
-        resize: none;
-        overflow: hidden;
-        background-color: transparent;
-        word-break:break-all;
-    }
-    #leftBar div{
-        margin-bottom: 35px;
-
-    }
-    #leftBar img{
-        width: 100%;
-    }
-    #addImg{
-        overflow: hidden;
-    }
-    #addImg input{
-        width: 100%;
-        position: absolute;
-        top: 15px;
-        opacity: 0;
-    }
-    nav a:visited{
-        color: #3c3c3c;
-    }
-    .am-active{
-        color: orange;
-    }
-    nav li{
-        margin: 10px 30px;
-    }
-
-    nav a:hover{
-        color: orange;
-    }
-    nav a{
-        color: #3c3c3c;
-    }
-    .imgDiv .layui-icon{
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 16px;
-        background: rgba(0,0,0,0.9);
-        color: white;
-        padding: 5px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        transition: all 0.3s;
-    }
-    .imgDiv{
-        position: relative;
-    }
-    .imgDiv:hover .layui-icon{
-        display: inline-block;
-    }
-    h1{
-        margin-bottom: 15px;
-        font-weight: bold;
-    }
-    h1  .layui-icon{
-        top: 0;
-
-    }
-    h1  .edit{
-        top: 0;
-        right: 50px!important;
-    }
-#submit{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(255,255,255,0.9);
-    z-index: 1000;
-    text-align: center;
-    padding-top: 75px;
-    display: none;
-}
-#submit form{
-    margin-top: 5%;
-}
-    .layui-form-label{
-        width: 100px;
-    }
-    .layui-input-inline{
-        margin-left:10px;
-    }
-
 </style>
 {/block}
 
@@ -253,14 +30,21 @@
         <div class="layui-form-item">
             <label class="layui-form-label">游玩人数</label>
             <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="required|number" autocomplete="off" placeholder="请输入游玩人数" class="layui-input">
+                <input type="text" value="{$info["travelNum"]}" name="num" lay-verify="required|number" autocomplete="off" placeholder="请输入游玩人数" class="layui-input">
             </div>
         </div>
 
         <div class="layui-form-item">
             <label class="layui-form-label">人均费用</label>
             <div class="layui-input-block">
-                <input type="text" name="price" lay-verify="required|number" autocomplete="off" placeholder="￥" class="layui-input">
+                <input type="text" name="price" lay-verify="required|number" autocomplete="off" placeholder="￥" class="layui-input"  value="{$info["ppMoney"]}">
+                <input type="text" name="noteId" style="display: none" id="noteId">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">出发日期</label>
+            <div class="layui-input-inline">
+                <input type="text" name="date" value="{$info["travelDay"]}" id="date" lay-verify="required|date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -281,6 +65,7 @@
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
                 <button type="reset" class="layui-btn ">重置</button>
+                <span class="layui-btn" onclick="escSub()">取消</span>
             </div>
         </div>
     </form>
@@ -355,7 +140,7 @@
                 <div id="saving"><i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop" ></i> 正在保存</div>
                 <div id="saved"><i class="layui-icon">&#xe605;</i> 保存完成</div>
             </button>
-            <button class="layui-btn layui-btn-radius">
+            <button class="layui-btn layui-btn-radius" @click="submitNote">
                 <i class="layui-icon">&#xe609;</i> 发布游记
             </button>
 
@@ -377,7 +162,7 @@
 
 <div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="my-modal-loading">
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">上传中...</div>
+        <div class="am-modal-hd">请稍后...</div>
         <div class="am-modal-bd">
             <span class="am-icon-spinner am-icon-spin"></span>
         </div>
@@ -392,537 +177,27 @@
 JS、引用 /示例如下
 <script src="__STATIC__/lib/jcrop/js/jquery.Jcrop.js"></script>
 <script>
-    var upload = layui.upload;
-    var jcropApi;
+   var staticDir= "__STATIC__/";
+
     var noteId = {$noteId};
     var title = "{$info["title"]}";
 
-    var $modal = $('#my-modal-loading');
+    var titleUrl = "{:url('home/Notes/setTitle')}";
+    var imgUrl = '{:url("home/Notes/setUp")}';
+    var getCon = "{:url('home/Notes/getCon')}";
+    var indexUrl = "{:url('home/Index/index')}";
+   var delImgUrl = "{:url('home/Notes/removeImg')}";
+   var addImgUrl = '{:url("home/Notes/addImg")}';
+   var addMusicUrl = '{:url("home/Notes/addMusic")}';
+   var reMusicUrl = "{:url('home/Notes/reMusic')}";
+   var regionUrl = "{:url('home/Notes/getRegion')}";
+   var saveUrl = "{:url('home/Notes/save')}";
+   var subUrl = "{:url('home/Notes/subMit')}";
+   var subSuccessUrl = "{:url('home/Notes/subSuccess')}";
 
-    function setTitle() {
-        var newTitle = $("#title input").eq(0).val();
-        if(newTitle != title){
-            $.ajax({
-                url:"{:url('home/Notes/setTitle')}",
-                data:{title:newTitle,id:noteId},
-                type:"post",
-                dataType:"json",
-                success:function (res) {
-                    if(res["code"]==50006){
-                        layer.msg("标题修改成功");
-                    }
-                    else {
-                        layer.open({
-                            content:"标题修改失败",
-                            yes: function(index, layero){
-                                //do something
-                                layer.close(index); //如果设定了yes回调，需进行手工关闭
-                            }
-                        });
-                    }
-                }
-            })
-        }
-    }
-
-    //执行实例
-    upload.render({
-        elem: '#aspectration'
-        ,url: '{:url("home/Notes/setUp")}'
-        ,auto: false
-        ,accept:"imgaes"
-        ,number:1
-        //,multiple: true
-        ,bindAction: '#subBI'
-        ,data:{noteId:noteId}
-        ,bgOpacity:0.1
-        ,choose: function(obj){
-            //预读本地文件示例，不支持ie8
-            obj.preview(function(index, file, result){
-                $('#imgShow').attr('src', result); //图片链接（base64）
-
-                setTimeout(function () {
-                    var wid = document.getElementById('imgShow').naturalWidth;
-                    var hei = document.getElementById('imgShow').naturalHeight;
-                    if(wid<1350 || hei < 480){
-                        layer.open({
-                            content:"请选择宽度大于1350，并且高度大于480的图片",
-                            yes: function(index, layero){
-                                //do something
-                                layer.close(index); //如果设定了yes回调，需进行手工关闭
-                            }
-                        });
-                    }
-                    else {
-                        $("#imgView").fadeIn(300,function () {
-
-                            $('#imgShow').Jcrop({
-                                allowSelect:false,
-                                aspectRatio:3/1
-                            }, function() {
-                                jcropApi = this;
-                            });
-                            var size = jcropApi.getBounds();
-
-                            var scale = wid/size[0];
-
-                            var x = 900/scale;
-                            var y = 300/scale;
-
-                            jcropApi.setOptions({
-                                setSelect:[0,0,size[0],size[0]/3],
-                                minSize:[x,y]
-                            })
-                        });
-                    }
-
-                },300)
-
-            });
-        }
-        ,before:function () {
-            $modal.modal();
-            var select = jcropApi.tellSelect();
-            var size = jcropApi.getBounds();
-            console.log(select);
-            var data = [size[0],select["x"],select["y"],select["x2"],select["y2"]];
-            $.ajax({
-                url: '{:url("home/Notes/setUp")}',
-                data:{"size":JSON.stringify(data)},
-                async:false
-            })
-        }
-        ,done: function(res){
-            $modal.modal('close');
-            if(res["code"]== 50001){
-                $("#aspectration div").empty();
-                $img = "<img src='/quyou/public/static/"+res["data"]["url"]+"?"+Math.random()+"'/>";
-                $("#aspectration div").append($img);
-
-                layer.msg("上传成功");
-                $("#imgView").fadeOut(300,function () {
-                    jcropApi.destroy();
-                })
-            }
-            else{
-                layer.open({
-                    content:res["msg"],
-                    yes: function(index, layero){
-                        //do something
-                        $("#imgView").fadeOut(300,function () {
-                            jcropApi.destroy();
-                        });
-                        layer.close(index); //如果设定了yes回调，需进行手工关闭
-                    }
-                });
-            }
-        }
-    });
-
-
-
-    $("#escBI").click(function () {
-
-        $("#imgView").fadeOut(300,function () {
-            jcropApi.destroy();
-        })
-    });
-
-    var bus = new Vue();
-    var con = new Vue({
-        el:"#noteConten",
-        data:{
-            conData:[],
-            imgurl:"__STATIC__/",
-            id:"#",
-            conId:"C",
-            textArea:"",
-            saving:0
-        },
-        methods:{
-            init:function () {
-                $.ajax({
-                    url:"{:url('home/Notes/getCon')}",
-                    type:"post",
-                    data:{"id":{$noteId}},
-                    dataType:"json",
-                    success:function (data) {
-                        this.conData = data.data;
-                    }.bind(this)
-                })
-            },
-            save:function () {
-                var _this = this;
-                if(  this.saving==0){
-                    this.saving=1;
-                    $("#toSave").fadeOut(300,function () {
-                        $("#saving").fadeIn(300);
-                        $.ajax({
-                            url: "{:url('home/Notes/save')}",
-                            data: {id: noteId, sData: this.conData},
-                            type: "post",
-                            textType: "json",
-                            success: function (res) {
-                                $("#saving").fadeOut(300, function () {
-                                    $("#saved").fadeIn(300);
-                                });
-
-                                setTimeout(function () {
-                                    $("#saved").fadeOut(300, function () {
-                                        $("#toSave").fadeIn(300);
-                                        _this.saving = 0;
-                                    });
-
-                                }, 2000)
-                            }
-                        })
-                        setTimeout(function () {
-                            $("#catalNav").scrollspynav();
-                        },3000);
-                    }.bind(this));
-                }
-            },
-            add:function () {
-                layer.prompt({title: '请输入段落名', formType: 3}, function(pass, index){
-                    layer.close(index);
-                    var conData = this.conData;
-                    var id = this.textArea;
-                    var num = id.substring(1);
-                    var tx = document.getElementById(id);
-                    if(tx == null){
-                        var newCon1 ={num:0,conId:0,content:"",title:pass,type:0,noteId:conData[0]["noteId"]};
-                        this.conData.push(newCon1);
-                    }
-                    else if(tx.src != undefined){
-                        for(var i = 0;i < conData.length;i++){
-                            if(conData[i]["num"] == num){
-                                var newCon0 ={num:0,conId:0,content:"",title:pass,type:0,noteId:conData[i]["noteId"]};
-                                this.conData.splice(i+2,0,newCon0);
-                            }
-                        }
-                    }
-                    else {
-                        var arr =  cursorPosition.re(tx);
-
-                        for(var i = 0;i < conData.length;i++){
-                            if(conData[i]["num"] == num){
-                                this.conData[i]["content"] = arr[0];
-                                var newCon ={num:0,conId:0,content:arr[1],title:pass,type:0,noteId:conData[i]["noteId"]};
-                                this.conData.splice(i+1,0,newCon);
-                                break;
-                            }
-                        }
-                    }
-                    for(var i = 0;i < this.conData.length;i++){
-                        this.conData[i]["num"] = i+1;
-                    }
-                    this.save();
-
-                }.bind(this));
-            },
-            foc:function (event){
-               var id = event.target.id;
-               console.log(event.target);
-               this.textArea = id;
-            },
-            removeImg:function (num) {
-                layer.confirm('确定删除该图片？', {icon: 3, title:'删除图片？'}, function(index){
-                    //do something
-                    var conData = this.conData;
-                    for(var i = 0;i < conData.length;i++){
-                        if(conData[i]["num"] == num){
-                            $.ajax({
-                                url:"{:url('home/Notes/removeImg')}",
-                                data:{src:conData[i]["content"]}
-                            })
-                            var nextId = "C"+(i+2);
-                            var preId = "C"+(i);
-                            var value1 = document.getElementById(nextId).value;
-                            var value2 = document.getElementById(preId).value;
-                            value2 = value2+'\r'+value1;
-                            conData[i-1]["content"] = value2;
-                            document.getElementById(preId).value = value2;
-                            this.conData.splice(i,2);
-                            break;
-                        }
-                    }
-                    for(var i = 0;i < this.conData.length;i++){
-                        this.conData[i]["num"] = i+1;
-                    }
-                    layer.close(index);
-                    this.save();
-                }.bind(this));
-            },
-            removeTitle:function (num) {
-                layer.confirm('确定删除该段落标题？段落内容会移至上一段', {icon: 3, title:'删除段落标题？'}, function(index){
-                    //do something
-                    var conData = this.conData;
-                    for(var i = 0;i < conData.length;i++){
-                        if(conData[i]["num"] == num){
-                            var myId = "C"+(i+1);
-                            var preId = "C"+(i);
-                            var value1 = document.getElementById(myId).value;
-                            var value2 = document.getElementById(preId).value;
-
-                            value2 = value2+'\r'+value1;
-                            conData[i-1]["content"] = value2;
-                            document.getElementById(preId).value = value2;
-                            this.conData.splice(i,1);
-                            break;
-                        }
-                    }
-                    for(var i = 0;i < this.conData.length;i++){
-                        this.conData[i]["num"] = i+1;
-                    }
-                    layer.close(index);
-                    this.save();
-                }.bind(this));
-            },
-            editTitle:function (num) {
-                var ovalue = this.conData[num-1]["title"];
-                layer.prompt({title: '请输入新段落名', formType: 3, value: ovalue}, function(pass, index){
-                    layer.close(index);
-                    this.conData[num-1]["title"]=pass;
-                    this.save();
-
-                }.bind(this));
-            },
-            removeMusic:function () {
-                alert(123)
-            }
-        },
-        created:function () {
-            this.init();
-            setTimeout(function () {
-                $("#catalNav").scrollspynav();
-            },3000);
-
-            bus.$on('addImg', function (url) {
-                var conData = this.conData;
-                var id = this.textArea;
-                var num = id.substring(1);
-                var tx = document.getElementById(id);
-                if(tx == null){
-                        var newCon ={num:0,conId:0,content:url,title:"",type:1,noteId:conData[0]["noteId"]};
-                        this.conData.push(newCon);
-                        var newCon1 ={num:0,conId:0,content:"",title:"",type:0,noteId:conData[0]["noteId"]};
-                        this.conData.push(newCon1);
-                }
-                else if(tx.src != undefined){
-                    for(var i = 0;i < conData.length;i++){
-                        if(conData[i]["num"] == num){
-                            var newCon0 ={num:0,conId:0,content:url,title:"",type:1,noteId:conData[i]["noteId"]};
-                            this.conData.splice(i+2,0,newCon0);
-                            var newCon1 ={num:0,conId:0,content:"",title:"",type:0,noteId:conData[i]["noteId"]};
-                            this.conData.splice(i+3,0,newCon1);
-                            break;
-                        }
-                    }
-                }
-                else {
-                    var arr =  cursorPosition.re(tx);
-
-                    for(var i = 0;i < conData.length;i++){
-                        if(conData[i]["num"] == num){
-                            this.conData[i]["content"] = arr[0];
-                            var newCon ={num:0,conId:0,content:url,title:"",type:1,noteId:conData[i]["noteId"]};
-                            this.conData.splice(i+1,0,newCon);
-                            var newCon1 ={num:0,conId:0,content:arr[1],title:"",type:0,noteId:conData[i]["noteId"]};
-                            this.conData.splice(i+2,0,newCon1);
-                            break;
-                        }
-                    }
-                }
-
-                for(var i = 0;i < this.conData.length;i++){
-                    this.conData[i]["num"] = i+1;
-                }
-                this.save();
-            }.bind(this))
-        }
-    })
-
-    var cursorPosition = {
-        get: function (textarea) {
-            var rangeData = { text: "", start: 0, end: 0 };
-            if (textarea.setSelectionRange) { // W3C
-                textarea.focus();
-                rangeData.start = textarea.selectionStart;
-                rangeData.end = textarea.selectionEnd;
-                rangeData.text = (rangeData.start != rangeData.end) ? textarea.value.substring(rangeData.start, rangeData.end) : "";
-            } else if (document.selection) { // IE
-                textarea.focus();
-                var i,
-                    oS = document.selection.createRange(),
-                    // Don't: oR = textarea.createTextRange()
-                    oR = document.body.createTextRange();
-                oR.moveToElementText(textarea);
-
-                rangeData.text = oS.text;
-                rangeData.bookmark = oS.getBookmark();
-
-                // object.moveStart(sUnit [, iCount])
-                // Return Value: Integer that returns the number of units moved.
-                for (i = 0; oR.compareEndPoints('StartToStart', oS) < 0 && oS.moveStart("character", -1) !== 0; i++) {
-                    // Why? You can alert(textarea.value.length)
-                    if (textarea.value.charAt(i) == '\r') {
-                        i++;
-                    }
-                }
-                rangeData.start = i;
-                rangeData.end = rangeData.text.length + rangeData.start;
-            }
-
-            return rangeData;
-        },
-
-        re: function (textarea) {
-            var oValue, value1, value2;
-            var rangeData = this.get(textarea);
-
-                oValue = textarea.value;
-                value1 = oValue.substring(0, rangeData.start);
-                value2 = oValue.substring(rangeData.end);
-
-                return[value1,value2];
-
-        }
-    }
-
-
- upload.render({
-        elem: '#addImg'
-        ,url: '{:url("home/Notes/addImg")}'
-        ,accept:"imgaes"
-        ,number:1
-        ,data:{noteId:{$noteId}}
-        ,bgOpacity:0.1
-        ,before:function () {
-         $modal.modal();
-        }
-        ,done: function(res){
-            $modal.modal("close");
-            if(res["code"]==50005){
-                layer.msg("上传成功");
-                bus.$emit('addImg',res["data"][0]);
-            }
-            else {
-                layer.open({
-                    content:res["上传失败"],
-                    yes: function(index, layero){
-                        layer.close(index); //如果设定了yes回调，需进行手工关闭
-                    }
-                });
-            }
-        }
-    });
-
- upload.render({
-        elem: '#addMusic'
-        ,url: '{:url("home/Notes/addMusic")}'
-        ,accept:"audio"
-        ,number:1
-        ,data:{noteId:{$noteId}}
-        ,bgOpacity:0.1
-        ,before:function () {
-            $modal.modal();
-        }
-        ,done: function(res){
-            $modal.modal("close");
-            if(res["code"]==50007){
-                layer.msg(res["msg"]);
-                var music = $('<audio  controls style="width: 85%;margin-top:10px" autoplay  loop><source src="__STATIC__/'+res["data"][0]+'" ></audio>')
-                $("#title").append(music);
-                $("#addMusic").after(' <button class="layui-btn layui-btn-radius" onclick="removeMusic()">' +
-                    '                    <i class="layui-icon">&#xe6fc;</i> 移除音乐' +
-                    '                </button>')
-            }
-            else {
-                layer.open({
-                    content:res["上传失败"],
-                    yes: function(index, layero){
-                        layer.close(index); //如果设定了yes回调，需进行手工关闭
-                    }
-                });
-            }
-        }
-    });
-
-    function removeMusic() {
-        layer.confirm('确定移除游记音乐?', {icon: 3, title:'移除游记音乐'}, function(index){
-            //do something
-            $.ajax({
-                url:"{:url('home/Notes/reMusic')}",
-                data:{noteId:noteId},
-                success:function (res) {
-                    if(res["code"]==50008){
-                        layer.msg(res["msg"]);
-                       $("audio").remove();
-                       $("#addMusic").next().remove();
-                    }
-                    else {
-                        layer.open({
-                            content:"移除失败",
-                            yes: function(index, layero){
-                                layer.close(index); //如果设定了yes回调，需进行手工关闭
-                            }
-                        });
-                    }
-                }
-            })
-            layer.close(index);
-        });
-    }
-    var form = layui.form;
-    $.ajax({
-        url:"{:url('home/Notes/getRegion')}",
-        success:function (res) {
-            for(var i = 0;i < res["data"][0].length;i++){
-                var op = "<option value='"+res["data"][0][i]["REGION_ID"]+"'>"+res["data"][0][i]["REGION_NAME"]+"</option>";
-                $("#pr").append(op);
-            }
-            for(var i = 0;i < res["data"][1].length;i++){
-                var op = "<option value='"+res["data"][1][i]["REGION_ID"]+"'>"+res["data"][1][i]["REGION_NAME"]+"</option>";
-                $("#city").append(op);
-            }
-
-            form.render('select');
-        }
-    })
-
-    form.on('select(pr)', function(data){
-        $.ajax({
-            url:"{:url('home/Notes/getRegion')}",
-            data:{pr:data.value},
-            success:function (res) {
-                $("#city").empty();
-                for(var i = 0;i < res["data"][0].length;i++){
-                    var op = "<option value='"+res["data"][0][i]["REGION_ID"]+"'>"+res["data"][0][i]["REGION_NAME"]+"</option>";
-                    $("#city").append(op);
-                }
-
-                form.render('select');
-            }
-        })
-    });
-
-    form.on('submit()', function(data){
-        $.ajax({
-            url:"{:url('home/Notes/getRegion')}",
-            data:data.field,
-            success:function (res) {
-                $("#city").empty();
-                for(var i = 0;i < res["data"][0].length;i++){
-                    var op = "<option value='"+res["data"][0][i]["REGION_ID"]+"'>"+res["data"][0][i]["REGION_NAME"]+"</option>";
-                    $("#city").append(op);
-                }
-
-                form.render('select');
-            }
-        })
-    });
 
 </script>
+<script src="__JS__/home/note/note.js"></script>
 <!--&lt;!&ndash; 配置文件 &ndash;&gt;
 <script type="text/javascript" src="__STATIC__/lib/ueditor/1.4.3/ueditor.config.js"></script>
 &lt;!&ndash; 编辑器源码文件 &ndash;&gt;

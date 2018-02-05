@@ -58,7 +58,7 @@ class Region extends \think\Controller
         array_push($arr,$msg);
         echo json_encode($arr);
     }
-    public function route()
+    public function route()//地图处页面加载完成发送ajax请求路线
     {
         $route=new model\Region();
         $regionName=cookie('regionName');
@@ -81,6 +81,37 @@ class Region extends \think\Controller
     public function hotelPay()//酒店下单详情页
     {
         $hotelId=input('?param.id')?input('id'):"";
+        $this->assign('hId',$hotelId);
         return $this->fetch('hotelPay');
+    }
+    public function htComMsg()//获取酒店评论信息
+    {
+        $id=input("?param.id")?input('id'):"";
+        $model=new model\Region();
+        $res=$model->htComMsg($id);
+        echo json_encode($res);
+    }
+
+    public function scenicShow()//显示地区景点页面
+    {
+        $id=input('?param.rgId')?input('rgId'):"";
+        return $this->fetch('scenic');
+    }
+    public function scenicMsg()//显示景点详情页
+    {
+        return $this->fetch('scenicMsg');
+    }
+    public function scenicPay()//显示景点购买页面
+    {
+        return $this->fetch('scenicPay');
+    }
+    public function food()//显示美食页面
+    {
+        $id=input('?param.rgId')?input('rgId'):"";
+        return $this->fetch('food');
+    }
+    public function foodMsg()//显示美食详情页面
+    {
+        return $this->fetch('foodMsg');
     }
 }

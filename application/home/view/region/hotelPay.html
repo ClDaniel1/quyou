@@ -17,7 +17,7 @@
 {block name='body'}
     <div class="layui-container">
         <div class="layui-row">
-            <h1 class="hotelName">上海大酒店</h1>
+            <h1 class="hotelName" >上海大酒店</h1>
             <a class="addH"><i class="layui-icon" style="font-size: 30px; color: orange;">&#xe600;</i>收藏</a>
         </div>
         <div class="layui-row">
@@ -75,7 +75,7 @@
             </div>
         </div>
     </div>
-    <div class="layui-container ">
+    <div class="layui-container" id="vueComment">
         <div class="layui-row dateB">
             <input type="text" class="layui-input" id="test1">
             <input type="text" class="layui-input" id="test2">
@@ -94,11 +94,77 @@
                 <tr>
                     <td>趣游旅游网</td>
                     <td>次日期暂无可选房型</td>
-                    <td>￥<span>2000</span></td>
+                    <td id="priColor">￥<span>2000</span></td>
                 </tr>
                 </tbody>
             </table>
         </div>
+        <div class="layui-row">
+            <dl class="checkDl">
+                <dt class="checkDt">基本信息</dt>
+                <dd class="checkDd">
+                    <ul class="checkIn">
+                        <li>入住时间:14:00之后</li>
+                        <li>离店时间:13:00之前</li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="layui-row">
+            <dl class="checkDl">
+                <dt class="checkDt">主要设施</dt>
+                <dd class="checkDd">
+                    <ul class="main">
+                        <li>
+                            <i class="minIcon min1"></i>
+                            <span>免费wifi</span>
+                        </li>
+                        <li>
+                            <i class="minIcon min2"></i>
+                            <span>免费停车场</span>
+                        </li>
+                        <li>
+                            <i class="minIcon min3"></i>
+                            <span>电梯</span>
+                        </li>
+                        <li>
+                            <i class="minIcon min4"></i>
+                            <span>餐厅</span>
+                        </li>
+                        <li>
+                            <i class="minIcon min5"></i>
+                            <span>行李寄存</span>
+                        </li>
+                        <li>
+                            <i class="minIcon min6"></i>
+                            <span>24小时服务</span>
+                        </li>
+                        <li>
+                            <i class="minIcon min7"></i>
+                            <span>热水壶</span>
+                        </li>
+                        <li>
+                            <i class="minIcon min8"></i>
+                            <span>吹风机</span>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="layui-row">
+            <dl class="checkDl">
+                <dt class="checkDt" id="{$hId}">酒店介绍</dt>
+                <dd class="checkDd">
+                    <span class="footC">酒店周围遍布各种时尚餐厅和购物商场，客人步行即达三里屯酒吧街及工人体育场。酒店周围遍布各种时尚餐厅和购物商场，客人步行即达三里屯酒吧街及工人体育场。酒店周围遍布各种时尚餐厅和购物商场，客人步行即达三里屯酒吧街及工人体育场。酒店周围遍布各种时尚餐厅和购物商场，客人步行即达三里屯酒吧街及工人体育场。酒店周围遍布各种时尚餐厅和购物商场，客人步行即达三里屯酒吧街及工人体育场。酒店周围遍布各种时尚餐厅和购物商场，客人步行即达三里屯酒吧街及工人体育场。</span>
+                </dd>
+            </dl>
+        </div>
+        <div class="layui-row">
+            <h1 class="commonH">真实用户点评</h1>
+        </div>
+        <!--放评论组件区域-->
+        <my-module url="{:url('home/Region/htComMsg')}" scenic-id="{$hId}"></my-module>
+        <!--放评论组件区域-->
     </div>
 {/block}
 {block name='script'}
@@ -115,5 +181,7 @@
             ,value: new Date()
         });
     });
+
 </script>
+<script src="__JS__/home/public/vueComment.js"></script>
 {/block}

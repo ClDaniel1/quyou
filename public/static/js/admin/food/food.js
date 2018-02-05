@@ -9,7 +9,7 @@ $.ajax({
     success: function (res) {
         $('#foodSpot').html(res.data[0]);
     }
-})
+});
 $.ajax({
     type: 'get',
     url: foodUrl,

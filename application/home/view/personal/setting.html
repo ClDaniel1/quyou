@@ -159,8 +159,8 @@
             <li class="layui-this" lay-id="1" >我的信息</li>
             <li lay-id="2">我的头像</li>
             <li lay-id="3">修改密码</li>
-            <li lay-id="4">地址管理</li>
-            <li lay-id="5">绑定设置</li>
+            <li lay-id="4">账号绑定</li>
+            <li lay-id="5">联系人管理</li>
         </ul>
         <div class="layui-tab-content menuCon">
             <div class="layui-tab-item layui-show">
@@ -260,7 +260,7 @@
                         <a href="{:url('home/Index/index')}">首页</a>
                         <a href="{:url('home/Personal/personal')}">个人中心</a>
                         <a href="">设置中心</a>
-                        <a><cite>地址管理</cite></a>
+                        <a><cite>账号绑定</cite></a>
                     </span>
                 </div>
                 <div>
@@ -298,10 +298,36 @@
                         <a href="{:url('home/Index/index')}">首页</a>
                         <a href="{:url('home/Personal/personal')}">个人中心</a>
                         <a href="">设置中心</a>
-                        <a><cite>绑定设置</cite></a>
+                        <a><cite>联系人管理</cite></a>
                     </span>
                     <!--<p>绑定设置</p>-->
                 </div>
+                <table class="layui-table">
+                    <colgroup>
+                        <col width="150">
+                        <col width="200">
+                        <col>
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>昵称</th>
+                        <th>加入时间</th>
+                        <th>签名</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>贤心</td>
+                        <td>2016-11-29</td>
+                        <td>人生就像是一场修行</td>
+                    </tr>
+                    <tr>
+                        <td>许闲心</td>
+                        <td>2016-11-28</td>
+                        <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>

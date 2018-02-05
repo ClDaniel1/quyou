@@ -14,6 +14,9 @@ class Personal extends \think\Controller
 {
     public function personal()
     {
+        $am=new \app\home\model\Personal();
+        $data=$am->region();
+        $this->assign("region",$data);
         return $this->fetch('personal');
     }
 
@@ -183,5 +186,17 @@ class Personal extends \think\Controller
         }
     }
 
+    //获取城市
+    public function getCitys(){
+        $regionId=input('param.regionId');
+        $str=new \app\home\model\Personal();
+        $run=$str->getCitys($regionId);
+        $returnMsg=[
+            'code'  =>  "ok",
+            'msg'   =>  "",
+            'data'  =>  [$run]
+        ];
+        echo json_encode($returnMsg);
+    }
 }
 

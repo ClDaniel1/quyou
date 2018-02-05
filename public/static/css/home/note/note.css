@@ -1,0 +1,224 @@
+
+#aspectration img{
+    float: left;
+    width: 100%;
+}
+#aspectration span{
+    position: absolute;
+    width: 100%;
+    top:45%;
+    left: 0;
+}
+#aspectration div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+}
+#aspectration i{
+    font-size: 35px;
+}
+#imgView{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    display: none;
+    text-align: center;
+    padding-top: 75px;
+}
+#imgView div{
+    display: inline-block;
+}
+#imgView>img{
+    display: inline-block;
+    max-width: 90%;
+    max-height: 85%;
+}
+#btn{
+    margin-top: 1%;
+    display: block!important;
+}
+#title{
+    padding: 25px 0;
+    text-align: center;
+}
+#title input{
+    height: 50px;
+    width: 85%;
+    display: inline-block;
+}
+#noteConten{
+    min-height: 1000px;
+}
+#btnBar{
+}
+#btnBar button{
+    display: inline-block;
+    margin: 10px 20px;
+}
+#save div{
+
+}
+#saving{
+    display: none;
+}
+#saved{
+    display: none;
+
+    text-align: center;
+}
+#catal{
+    margin-top: 20px;
+}
+#catal i{
+    padding-left: 30px;
+    width: 100%;
+    font-style: normal;
+    display: inline-block;
+}
+#leftBar{
+    padding: 10px;
+    padding-left:7.5%;
+}
+@media (min-width:768px ) {
+    .navBg {
+        background: none !important;
+        z-index: 100;
+    }
+
+    .navBg img {
+        z-index: 101;
+        position: relative;
+    }
+
+    #baseMain {
+        margin-top: -60px;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after {
+        display: none;
+    }
+
+}
+.textarea-wrapper {
+    position: relative;
+    display: block;
+    width: 100%
+}
+.content-editable {
+    position: relative;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 20px;
+    font-size: 16px;
+    word-break:break-all;
+    white-space: pre-wrap;
+}
+.field-textarea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 20px;
+    font-size:16px;
+    border: none;
+    text-align: left;
+    resize: none;
+    overflow: hidden;
+    background-color: transparent;
+    word-break:break-all;
+}
+#leftBar div{
+    margin-bottom: 35px;
+
+}
+#leftBar img{
+    width: 100%;
+}
+#addImg{
+    overflow: hidden;
+}
+#addImg input{
+    width: 100%;
+    position: absolute;
+    top: 15px;
+    opacity: 0;
+}
+nav a:visited{
+    color: #3c3c3c;
+}
+.am-active{
+    color: orange;
+}
+nav li{
+    margin: 10px 30px;
+}
+
+nav a:hover{
+    color: orange;
+}
+nav a{
+    color: #3c3c3c;
+}
+.imgDiv .layui-icon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+    background: rgba(0,0,0,0.9);
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: all 0.3s;
+}
+.imgDiv{
+    position: relative;
+}
+.imgDiv:hover .layui-icon{
+    display: inline-block;
+}
+h1{
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+h1  .layui-icon{
+    top: 0;
+
+}
+h1  .edit{
+    top: 0;
+    right: 50px!important;
+}
+#submit{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.9);
+    z-index: 1000;
+    text-align: center;
+    padding-top: 75px;
+    display: none;
+}
+#submit form{
+    margin-top: 5%;
+}
+.layui-form-label{
+    width: 100px;
+}
+.layui-input-inline{
+    margin-left:10px;
+}
