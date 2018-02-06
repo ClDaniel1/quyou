@@ -107,7 +107,18 @@
     .orderTable td{
         text-align: center;
     }
-
+    #gotoImg{
+        margin: -40px;
+        position: absolute;
+        left: 700px;
+        /*background-color: #F9851D;*/
+        /*border-radius: 5px;*/
+        /*padding: 3px 3px 3px 3px;*/
+    }
+    .myModal{
+        background-color: white;
+        border-radius: 5px;
+    }
 
 </style>
 {/block}
@@ -133,9 +144,10 @@
             <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='blue'>靛青蓝
             <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='darkblue'>极夜蓝<br>
             <input type='radio' onclick='refresh(this.value)' name='mapStyle' value='wine'>酱籽
-    </div>
         </div>
-    <div class="safewidth">
+    </div>
+    <img src="__STATIC__/images/down.png" class="goto" id="gotoImg" alt="">
+    <div class="safewidth" id="gotodiv">
         <div id="left">
             <div id="uheadImg0">
                 <img src="/quyou/public/static/images/default.jpg" id="uheadImg" alt="">
@@ -158,7 +170,7 @@
         <div id="right">
             <div class="layui-tab layui-tab-brief" lay-filter="test1">
                 <ul class="layui-tab-title rightList">
-                    <li class="layui-this " lay-id="1" >我的足迹</li>
+                    <li class="layui-this" lay-id="1" >我的足迹</li>
                     <li lay-id="2">我的游记</li>
                     <li lay-id="3">我的点评</li>
                     <li lay-id="4">订单管理</li>
@@ -209,11 +221,63 @@
                                 </div>
                             </li>
                         </ul>
+                        <button
+                                type="button"
+                                class="layui-btn layui-btn-radius rightBtn"
+                                id="addFootMark"
+                                data-am-modal="{target: '#doc-modal-1', closeViaDimmer: 0, width: 500, height: 360}">
+                            添加足迹
+                        </button>
+                        <div class="am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-1">
+                            <div class="am-modal-dialog myModal">
+                                <div class="am-modal-hd"  style="margin: 17px 0">添加足迹
+                                    <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+                                </div>
+                                <div class="am-modal-bd">
+                                    <form class="layui-form layui-form-pane" action="">
+                                        <div class="layui-form-item">
+                                            <div class="layui-inline" style="margin: 22px 61px;width: 324px">
+                                                <label class="layui-form-label">日期选择</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" name="date" id="date1" autocomplete="off" class="layui-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item" style="margin: 0 76px;width: 340px">
+                                            <label class="layui-form-label">选择地点</label>
+                                            <select onchange="province()" id="regionId">
+                                                <option>请选择一个地区</option>
+                                                {volist name="region" id="vo"}<!--免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for-->
+                                                <option value="{$vo.REGION_ID}">{$vo.REGION_NAME}</option>
+                                                {/volist}
+                                            </select>
+                                            <select id="regionCity"  name="desId">
+                                                <option value="0"></option>
+                                            </select>
+
+
+                                            <!--<div class="layui-input-inline" style="width: 100px;">-->
+
+                                                <!--<select name="s_province" id="s_province">-->
+                                                    <!--<option value="">请选择省</option>-->
+                                                <!--</select>-->
+                                            <!--</div>-->
+                                            <!--<div class="layui-input-inline" style="width: 100px;margin: 0 10px">-->
+                                                <!--<select name="s_city" id="s_city" style="width: 200px">-->
+
+                                                <!--</select>-->
+                                            <!--</div>-->
+                                        </div>
+                                        <div class="layui-form-item" style="margin: 50px">
+                                            <button class="layui-btn layui-btn-radius" style="width: 100px" lay-submit="" lay-filter="demo2">提交</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="layui-tab-item">
-                        <a href="" class="layui-btn layui-btn-radius rightBtn">写游记</a>
-
-
+                        <a href="{:url('home/Notes/notes')}" class="layui-btn layui-btn-radius rightBtn">写游记</a>
 
 
 
@@ -320,7 +384,6 @@
 </script>
 
 <script>
-
 layui.use('element', function(){
         var element = layui.element;
 
@@ -340,6 +403,7 @@ var uid = getCookie("qy_uid");
 <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=b016935a890cb2bc1003d64f83da1fa4&plugin=AMap.Geocoder"></script>
 <script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
 <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+<!--<script src="__JS__/home/public/allCitys.js"></script>-->
 <script type="text/javascript">
 var map = new AMap.Map('container',{
     resizeEnable: true,
@@ -347,6 +411,28 @@ var map = new AMap.Map('container',{
     center: [116.480983, 40.0958]
 });
 // map.setZoomAndCenter(4);   //设置缩放级别
+
+
+
+
+layui.use(['form', 'layedit', 'laydate'], function(){
+    var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+    //日期
+    laydate.render({
+        elem: '#date'
+    });
+    laydate.render({
+        elem: '#date1'
+    });
+
+    //创建一个编辑器
+    var editIndex = layedit.build('LAY_demo_editor');
+});
+
 
 var lnglats=[];
 var c= 0;
@@ -435,6 +521,84 @@ function markerClick(e) {
 //自适应显示
 map.setFitView();
 
+
+
+var getCitys="{:url('home/Personal/getCitys')}";
+function province()
+{
+    var regionId=$("#regionId option:selected").val();
+    $.ajax({
+        type:'post',
+        url:getCitys,
+        data:{'regionId':regionId},
+        async: false,
+        dataType: 'json',
+        success: function (res) {
+            $('#regionCity').empty();
+            for(var i=0;i<res.data[0].length;i++)
+            {
+                $('#regionCity').append('<option value="'+res.data[0][i]['REGION_ID']+'">'+res.data[0][i]['REGION_NAME']+'</option>')
+            }
+        }
+    })
+}
+
+
+//滚动监听
+window.onload = function(){
+    var aA=$('.goto');
+    var aDiv=$('#gotodiv');
+
+//    var aA = document.getElementsByTagName('a');
+//    var aDiv = document.getElementsByTagName('div');
+    var bBtn =true;
+
+    for(var i=0;i<aA.length;i++){
+
+        aA[i].i = i;
+
+        aA[i].onclick = function(){
+
+            Scroll(aDiv[this.i]);
+
+        };
+
+    }
+
+    function Scroll(obj/*要滚动到的位置的元素*/){
+
+        var scrollHeight = obj.offsetTop;
+
+        clearInterval(obj.timer);
+
+        if(bBtn){
+
+            bBtn = false;
+            obj.timer = setInterval(function(){
+
+                var bodyScroll = document.documentElement.scrollTop || document.body.scrollTop;
+
+                if(bodyScroll == scrollHeight ){
+
+                    clearInterval(obj.timer);
+                    bBtn = true;
+
+                }
+
+                var iSpeed = (scrollHeight - bodyScroll) / 5;
+
+                iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+                bodyScroll += iSpeed;
+                document.body.scrollTop = bodyScroll;
+                document.documentElement.scrollTop = bodyScroll;
+
+            },50);
+
+        }
+
+    }
+
+};
 </script>
 <!--JS、引用 /示例如下-->
 {/block}

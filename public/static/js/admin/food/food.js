@@ -9,7 +9,7 @@ $.ajax({
     success: function (res) {
         $('#foodSpot').html(res.data[0]);
     }
-})
+});
 $.ajax({
     type: 'get',
     url: foodUrl,
@@ -28,6 +28,7 @@ $.ajax({
                     '<td><a href="javascript:;" onClick="picture_edit(\'图库编辑\',foodPicture,'+res.data[0][i]['foodId']+')">'+
                     '<img width="210" class="picture-thumb" src="'+staticc+res.data[0][i]['foodImg']+'"></a></td>'+
                     '<td>'+res.data[0][i]['REGION_NAME']+'</td>'+
+                    '<td>'+res.data[0][i]['address']+'</td>'+
                     '<td class="td-status"><span class="label label-success radius">已发布</span></td>'+
                     '<td class="td-manage"><a style="text-decoration:none" onClick="picture_stop(this,'+res.data[0][i]['foodId']+')" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>'+
                     '<a style="text-decoration:none" class="ml-5" onClick="picture_food(\'图库编辑\',foodChange,'+res.data[0][i]['foodId']+')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>'+
@@ -44,8 +45,9 @@ $.ajax({
                     '<td><a href="javascript:;" onClick="picture_edit(\'图库编辑\',foodPicture,'+res.data[0][i]['foodId']+')">'+
                     '<img width="210" class="picture-thumb" src="'+staticc+res.data[0][i]['foodImg']+'"></a></td>'+
                     '<td>'+res.data[0][i]['REGION_NAME']+'</td>'+
+                    '<td>'+res.data[0][i]['address']+'</td>'+
                     '<td class="td-status"><span class="label label-defaunt radius">已下架</span></td>'+
-                    '<td class="td-manage"><a style="text-decoration:none" onClick="picture_start(this,'+res.data[0][i]['foodId']+')" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe6de;</i></a>'+
+                    '<td class="td-manage"><a style="text-decoration:none" onClick="picture_start(this,'+res.data[0][i]['foodId']+')" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>'+
                     '<a style="text-decoration:none" class="ml-5" onClick="picture_food(\'图库编辑\',foodChange,'+res.data[0][i]['foodId']+')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>'+
                     '<a style="text-decoration:none" class="ml-5" onClick="picture_del(this,'+res.data[0][i]['foodId']+')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>'+
                     '</tr>');

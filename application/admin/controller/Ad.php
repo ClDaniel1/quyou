@@ -21,7 +21,6 @@ class Ad extends \think\Controller
     }
 
     public function upImg(){
-
         $dir = "static/upload";
 
         $radom = new RadomStr();

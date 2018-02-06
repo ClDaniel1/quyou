@@ -9,13 +9,16 @@
 namespace app\home\model;
 
 
+use think\Db;
 use think\Model;
 
 class Notes extends Model
 {
-    //创建游记
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    /**
+     * 创建新游记
+     * @param $uid 用户Id
+     * @return int|string 返回游记Id
+     */
     public function creatNote($uid){
         $time = date("Y-m-d H:i:s",time());
         $data =[
@@ -33,9 +36,14 @@ class Notes extends Model
         return $id;
     }
 
-    //获取游记基本信息
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    /**
+     * 获取游记基本信息
+     * @param $noteId 游记Id
+     * @return false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function getNoteInfo($noteId){
         $data =db('t_note')
             ->where("noteId= $noteId")
@@ -43,9 +51,11 @@ class Notes extends Model
         return $data;
     }
 
-    //获取游记内容
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    /**
+     * 获取游记内容
+     * @param $noteId 游记Id
+     * @return mixed
+     */
     public function getNoteCont($noteId){
         $data =db('t_note')
             ->alias('a')
@@ -57,34 +67,72 @@ class Notes extends Model
         return $data;
     }
 
-    //将头图传到数据库
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    /**
+     * 设置游记头图
+     * @param $noteId 游记Id
+     * @param $path 头图路径
+     * @return int|string
+     * @throws \think\Exception
+     * @throws \think\exception\PDOException
+     */
     public function setUp($noteId,$path){
         db("t_note")->where("noteId=$noteId")->update(["img"=>$path]);
     }
 
 
-    public function delCon($noteId){
-        db('t_notecon')->where('noteId',$noteId)->delete();
+
+    /**
+     * 保存游记内容
+     * @param $noteId 游记Id
+     * @param $datas 游记数据 Arr
+     * @return bool 返回成功失败
+     */
+    public function upCon($noteId,$datas){
+        Db::startTrans();
+        try{
+            Db::table('t_notecon')->where('noteId',$noteId)->delete();
+            foreach ($datas as $val){
+                $data = [
+                    "noteId" => $noteId,
+                    "title" => $val["title"],
+                    "content" => $val["content"],
+                    "type" => $val["type"],
+                    "num"=>$val["num"]
+                ];
+                Db::table('t_notecon')->insert($data);
+            }
+            // 提交事务
+            Db::commit();
+            return true;
+        } catch (\Exception $e) {
+            // 回滚事务
+            Db::rollback();
+            return false;
+        }
+
     }
 
-    public function upCon($noteId,$con,$type,$num,$title){
-        $data = [
-            "noteId" => $noteId,
-            "title" => $title,
-            "content" => $con,
-            "type" => $type,
-            "num"=>$num
-        ];
-        db('t_notecon')->insert($data);
-
-    }
-
+    /**
+     * 修改游记标题
+     * @param $noteId 游记ID
+     * @param $title 游记标题
+     * @return int|string
+     * @throws \think\Exception
+     * @throws \think\exception\PDOException
+     */
     public function setTitle($noteId,$title){
-        db("t_note")->where("noteId=$noteId")->update(["title"=>$title]);
+        $res = db("t_note")->where("noteId=$noteId")->update(["title"=>$title]);
+        return $res;
     }
 
+    /**
+     * 获取用户游记草稿
+     * @param $userId 用户Id
+     * @return mixed
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function draft($userId){
         $data =db('t_note')
             ->where("uid= $userId")
@@ -93,21 +141,100 @@ class Notes extends Model
         return $data;
     }
 
+    /**
+     * 设置游记音乐
+     * @param $noteId 游记ID
+     * @param $path 音乐路径
+     * @return int|string
+     * @throws \think\Exception
+     * @throws \think\exception\PDOException
+     */
     public function setMusic($noteId,$path){
-        db("t_note")->where("noteId=$noteId")->update(["music"=>$path]);
+        $res = db("t_note")->where("noteId=$noteId")->update(["music"=>$path]);
+        return $res;
     }
 
+    /**
+     * 删除游记音乐
+     * @param $noteId 游记ID
+     * @return int|string
+     * @throws \think\Exception
+     * @throws \think\exception\PDOException
+     */
     public function reMusic($noteId){
-        db("t_note")->where("noteId=$noteId")->update(["music"=>""]);
+        $res = db("t_note")->where("noteId=$noteId")->update(["music"=>""]);
+        return $res;
     }
 
+    /**
+     * 获取省份
+     * @return false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function getRegion(){
         $data = db("t_region")->where("PARENT_ID=1")->select();
         return $data;
     }
+
+    /**
+     * 获取城市
+     * @param $prId 省份ID
+     * @return false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function getCity($prId){
         $data = db("t_region")->where("PARENT_ID=$prId")->select();
         return $data;
     }
 
+    public function regionInfo($id){
+        $data = db("t_region")->where("REGION_ID=$id")->select();
+        return $data;
+    }
+
+
+    public function submit($noteId,$num,$price,$date,$desId){
+        $data=[
+            "travelDay" => $date,
+            "travelNum" => $num,
+            "noteType"=>2,
+            "ppMoney" => $price,
+            "desId" => $desId,
+        ];
+
+        $res = db("t_note")->where("noteId=$noteId")->update($data);
+        return $res;
+    }
+
+    public function countNote(){
+        $data = db("t_note")->field('COUNT(noteId) num')->select();
+        return $data[0]["num"];
+    }
+
+    public function getNote($start,$num){
+        $data = db("t_note")
+                        ->alias('a')
+                        ->field("a.*,b.REGION_NAME,c.uname,d.content")
+                        ->join('t_region b','a.desId = b.REGION_ID')
+                        ->join('t_user c','a.uid = c.uid')
+                        ->join('t_notecon d','a.noteId = d.noteId')
+                        ->limit($start,$num)
+                        ->where("a.noteType=1 and d.num =1")->select();
+        return $data;
+    }
+
+    public function getNoteInfoS($noteId){
+        $data =db('t_note')
+            ->alias('a')
+            ->field("a.*,b.REGION_NAME,c.uname")
+            ->join('t_region b','a.desId = b.REGION_ID')
+            ->join('t_user c','a.uid = c.uid')
+            ->where("noteId= $noteId")
+            ->select();
+        return $data;
+    }
 }

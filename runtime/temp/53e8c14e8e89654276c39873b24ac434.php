@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"D:\AppServ\www\quyou\public/../application/home\view\index\index.html";i:1517324508;s:69:"D:\AppServ\www\quyou\public/../application/home\view\public\base.html";i:1517555457;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"D:\AppServ\www\quyou\public/../application/home\view\index\index.html";i:1517560738;s:69:"D:\AppServ\www\quyou\public/../application/home\view\public\base.html";i:1517647630;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
     <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
     <link rel="stylesheet" href="__CSS__\home\public\public.css">
+
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -91,6 +92,18 @@
     }
     #ad {
         width: 100%;
+    }
+    #ad .am-panel-bd{
+        border-bottom: #bbbbbb 1px dotted;
+        padding:  15px 10px;
+        text-align: center;
+    }
+    #ad .am-panel-bd a:hover{
+        color: orange;
+    }
+    #ad .am-panel-bd p{
+        font-size: 14px;
+        margin-bottom: 10px ;
     }
     @media(max-width: 768px) {
         #searchBar{
@@ -303,7 +316,21 @@
             <div class="am-panel am-panel-primary panel" id="ad">
                 <div class="am-panel-hd">广告</div>
                 <div class="am-panel-bd">
-                    <img src="https://b4-q.mafengwo.net/s11/M00/9E/70/wKgBEFplvumAEU6GAAuwkxzWAm802.jpeg?imageMogr2%2Finterlace%2F1" alt="我很囧，你保重....晒晒旅行中的那些囧！"  class="am-img-responsive"/>
+                    <?php if(is_array($ad) || $ad instanceof \think\Collection || $ad instanceof \think\Paginator): $i = 0; $__LIST__ = $ad;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['adType'] == 0): ?>
+                        <a href="<?php echo $vo['url']; ?>">
+                            <div class="am-panel-bd">
+                                <p><?php echo $vo['content']; ?></p>
+                                <img src="__STATIC__/<?php echo $vo['img']; ?>"  class="am-img-responsive"/>
+                            </div>
+                        </a>
+                        <?php else: ?>
+                        <a href="<?php echo $vo['url']; ?>">
+                            <div class="am-panel-bd">
+
+                                <p><?php echo $vo['content']; ?></p>
+                            </div>
+                        </a>
+                        <?php endif; endforeach; endif; else: echo "" ;endif; ?>
                 </div>
             </div>
 

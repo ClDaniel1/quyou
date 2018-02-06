@@ -20,12 +20,23 @@ class Index extends \think\Controller
         return $this->fetch('index');
     }
 
-    public function err($str="OHH~<br>好像出错了，请重试",$url=""){
+    public function err($str="OHH~<br>好像出错了，请重试",$url="",$type=0){
         if($url == ""){
             $url = url("home/index/index");
         }
         $this->assign("str",$str);
         $this->assign("url",$url);
+        $this->assign("type",$type);
         return $this->fetch("index/err");
+    }
+
+    public function succ($str="成功！",$url="",$type=0){
+        if($url == ""){
+            $url = url("home/index/index");
+        }
+        $this->assign("str",$str);
+        $this->assign("url",$url);
+        $this->assign("type",$type);
+        return $this->fetch("index/success");
     }
 }
