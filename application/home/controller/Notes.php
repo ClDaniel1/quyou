@@ -9,6 +9,7 @@
 namespace app\home\controller;
 
 
+use org\Page;
 use org\RadomStr;
 
 
@@ -603,5 +604,56 @@ class Notes extends \think\Controller
     public function subSuccess(){
             $im = new Index();
             return $im->succ("游记提交成功，请等待审核",url("home/personal/personal")."#test1=2",1);
+    }
+
+    public function lists(){
+        $page = input("param.page");
+
+        $nm = new \app\home\model\Notes();
+        $all = $nm->countNote();
+        $p = new Page($all,10,$page);
+
+        $start = $p -> getStart();
+        $num = $p -> getNum();
+
+        $data = $nm -> getNote($start,$num);
+        $allPage = $p->getAllPage();
+
+        $resMsg = config("msg")["note"]["getNoteList"];
+        $resMsg["data"] = [$data,$allPage];
+        return json($resMsg);
+    }
+
+    public function show(){
+
+                $id = input("param.id");
+                $nm = new \app\home\model\Notes();
+
+                //获取游记基本信息
+                $info = $nm->getNoteInfoS($id)[0];
+                if ($info["noteType"] == 2) {
+                    $im = new Index();
+                    return $im->err("该游记审核中，请审核结束后再修改", url("home/personal/personal") . "#test1=2");
+                } else {
+                    //获取游记内容
+                    $con = $nm->getNoteCont($id);
+
+                    $this->assign("info", $info);
+                    $this->assign("con", $con);
+                    $this->assign("noteId", $id);
+
+                    return $this->fetch("show");
+                }
+
+    }
+
+    public function getConS(){
+            $id = input("param.id");
+            $nm = new \app\home\model\Notes();
+            $con = $nm->getNoteCont($id);
+
+            $reMsg=config("msg")["note"]["getCon"];
+            $reMsg["data"]=$con;
+            return json($reMsg);
     }
 }
