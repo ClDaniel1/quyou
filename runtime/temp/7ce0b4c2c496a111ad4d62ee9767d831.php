@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"E:\wamp64\www\quyou\public/../application/admin\view\food\food.html";i:1517554254;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:67:"E:\wamp64\www\quyou\public/../application/admin\view\food\food.html";i:1517640002;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -42,6 +42,7 @@
                 <th>美食诱惑</th>
 
                 <th width="150">美食位置</th>
+                <th width="100">美食地点</th>
                 <th width="60">发布状态</th>
                 <th width="100">操作</th>
             </tr>
