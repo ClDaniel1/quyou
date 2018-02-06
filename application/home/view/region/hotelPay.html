@@ -77,17 +77,18 @@
     </div>
     <div class="layui-container" id="vueComment">
         <div class="layui-row dateB">
-            <input type="text" class="layui-input" id="test1">
-            <input type="text" class="layui-input" id="test2">
+            <input type="text" class="layui-input" id="time1">
+            <input type="text" class="layui-input" id="time2">
             <button class="layui-btn layui-btn-warm">查看价格</button>
         </div>
-        <div class="layui-row">
+        <div class="layui-row" style="overflow:auto;">
             <table class="layui-table" lay-skin="line">
                 <thead>
                 <tr>
                     <th>数据来源</th>
                     <th>最低价房型</th>
                     <th>最低价格/每晚</th>
+                    <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -95,6 +96,7 @@
                     <td>趣游旅游网</td>
                     <td>次日期暂无可选房型</td>
                     <td id="priColor">￥<span>2000</span></td>
+                    <td><button class="layui-btn" id="payBtn">预订</button></td>
                 </tr>
                 </tbody>
             </table>
@@ -173,11 +175,11 @@
         var laydate = layui.laydate;
         //执行一个laydate实例
         laydate.render({
-            elem: '#test1'//指定元
+            elem: '#time1'//指定元
             ,value: new Date()
         });
         laydate.render({
-            elem: '#test2'//指定元
+            elem: '#time2'//指定元
             ,value: new Date()
         });
     });
