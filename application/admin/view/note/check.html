@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" href="__STATIC__/images/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/amazeui.min.css">
+    <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
+    <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
+    <link rel="stylesheet" href="__CSS__\home\public\public.css">
+    <link rel="stylesheet" href="__CSS__/home/note/note.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+
+    <title>游记审核</title>
+    <style>
+        .navBg{
+            background: #F9851D ;
+        }
+        .body {
+            background-color: #efefef;
+        }
+        footer{
+            margin-top:25px;
+        }
+        #aspectration[data-ratio="9:3"] {
+            padding-top:33.33%;
+            border: none;
+            background: url("__STATIC__/images/bg.jpg") no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        #aspectration img{
+            position: absolute;
+            top: 0;
+        }
+        #leftBar{
+            white-space: pre-line;
+        }
+
+        #title{
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)); /* 标准的语法 */
+            display: inline-block;
+            padding: 25px 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        #btnBar > div{
+            padding-left: 30px;
+            margin-top: 15px;
+
+        }
+        #btnBar >div >p{
+            border-left: 3px #F9851D solid;
+            text-indent: 5px;
+            display: inline-block;
+        }
+        #btnBar > div li{
+            margin: 10px 0;
+        }
+        #btnBar > divv >p{
+            margin-top: 15px;
+            border-left: 3px #F9851D solid;
+            text-indent: 5px;
+            display: inline-block;
+        }
+        #btnBar > div p{
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        #catal> i{
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        #aspectration span {
+            position: relative;
+            font-size: 16px;
+        }
+        @media (max-width: 768px) {
+        }
+        #check{
+            text-align: center;
+            padding: 50px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div  id="aspectration"  data-ratio="9:3" style="width: 100%">
+
+    {if $info["img"]!= null}
+    <img src="__STATIC__/{$info["img"]}" alt="">
+    {/if}
+    <p id="title">
+        {$info["title"]}  <span>By {$info["uname"]} </span>
+    </p>
+</div>
+
+
+
+
+
+
+<div id="noteConten" class="layui-container">
+    <div class="layui-col-sm9" id="leftBar">
+        <!-- 加载编辑器的容器 -->
+        <!-- <script id="container" name="content" type="text/plain">
+         这里写你的初始化内容
+     </script>-->
+
+        <div><div v-for="con in conData" :id="con.conId">
+            <h1 v-if="con.num == 1" style="opacity: 0">{{con.title}}</h1>
+            <h1 v-if="con.title != null && con.num != 1 && con.type==0" class="imgDiv">{{con.title}}</h1>
+            <div v-if="con.type==0" class="textarea-wrapper">
+                <div>{{con.content}}</div>
+            </div>
+            <div v-if="con.type==1" class="imgDiv"><img v-bind:src="imgurl+con.content" alt=""></div>
+        </div></div>
+    </div>
+    <div class="layui-col-sm3" id="rightBar"  >
+        <div id="btnBar" data-am-sticky>
+            {if $info["music"]!=null}
+            <div>
+                <p>游记音乐</p>
+                <audio  controls style="width: 85%;margin-top:10px" autoplay  loop><source src="__STATIC__/{$info["music"]}" ></audio>
+            </div>
+            {/if}
+            <div>
+                <p>游记信息</p>
+                <div>旅游人数：{$info["travelNum"]}</div>
+                <div>人均费用：{$info["ppMoney"]}</div>
+                <div>出发日期：{$info["travelDay"]}</div>
+            </div>
+
+            <div id="catal">
+                <p>游记目录</p>
+                <nav class="scrollspy-nav" id="catalNav">
+                    <ul>
+                        <li v-for="title in conData" v-if="title.type==0">
+                            <a v-if="title.num==1" :href="id+title.conId">默认段落</a>
+                            <a v-if="title.num!=1 && title.type==0" :href="id+title.conId">{{title.title}}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="check">
+    <button class="btn layui-btn">审核通过</button>
+    <button class="btn layui-btn">审核未通过</button>
+</div>
+</body>
+<script src="__STATIC__/lib/vue.js"></script>
+<script src="__STATIC__\lib\layui\layui.all.js"></script>
+<script src="__STATIC__\lib\jquery-3.2.1.js"></script>
+<script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
+<script>
+    var staticDir= "__STATIC__/";
+
+    var noteId = {$noteId};
+    var title = "{$info["title"]}";
+
+    var getCon = "{:url('home/Notes/getConS')}";
+
+</script>
+<script src="__JS__/home/note/show.js"></script>
+</html>

@@ -277,7 +277,11 @@ return [
             "submitSuccess"=>["code"=>20022,"msg"=>"游记提交成功","data"=>[]],
             "submitTitleErr"=>["code"=>20023,"msg"=>"游记标题没设置","data"=>[]],
             "submitImgErr"=>["code"=>20024,"msg"=>"游记头图没设置","data"=>[]],
-            "getNoteList"=>["code"=>20025,"msg"=>"获取游记列表成功","data"=>[]]
+            "getNoteList"=>["code"=>20025,"msg"=>"获取游记列表成功","data"=>[]],
+
+            //后台
+            "getNoNoteListSuccess"=>["code"=>20026,"msg"=>"获取未审核游记列表成功","data"=>[]],
+            "getNoteListSuccess"=>["code"=>20027,"msg"=>"获取已审核游记列表成功","data"=>[]],
         ],
         'personal'=> [
             'changeOK' =>["code"=>30002,"msg"=>'修改成功',"data"=>[]],

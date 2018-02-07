@@ -633,7 +633,7 @@ class Notes extends \think\Controller
                 $info = $nm->getNoteInfoS($id)[0];
                 if ($info["noteType"] == 2) {
                     $im = new Index();
-                    return $im->err("该游记审核中，请审核结束后再修改", url("home/personal/personal") . "#test1=2");
+                    return $im->err("该游记审核中", url("home/index/index") . "#test1=2");
                 } else {
                     //获取游记内容
                     $con = $nm->getNoteCont($id);
