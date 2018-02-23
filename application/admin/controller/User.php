@@ -18,12 +18,30 @@ class User extends \think\Controller
         $this->assign('user',$data);
         return $this->fetch('user');
     }
+    public function userCheck()
+    {
+        $uid=input('param.id');
+        $user=new \app\admin\model\User();
+        $data=$user->userCheck($uid);
+        $this->assign('userCheck',$data);
+        return $this->fetch('userCheck');
+    }
+    public function userAdd()
+    {
+        $uid=input('param.id');
+        $user=new \app\admin\model\User();
+        $data=$user->userCheck($uid);
+        $this->assign('userAdd',$data);
+        return $this->fetch('userAdd');
+    }
     public function userTheShelves()
     {
         $uid=input('param.id');
         $ustatus=new \app\admin\model\User();
         $data=$ustatus->userTheShelves($uid);
-        echo $data;
+        $returnMsg=config("msg")["userCon"]["stop"];
+        $returnMsg["data"]=[$data];
+        echo json_encode($returnMsg);
 
     }//停用
     public function userShelves()
@@ -31,31 +49,38 @@ class User extends \think\Controller
         $uid=input('param.id');
         $ustatus=new \app\admin\model\User();
         $data=$ustatus->userShelves($uid);
-        echo $data;
+        $returnMsg=config("msg")["userCon"]["open"];
+        $returnMsg["data"]=[$data];
+        echo json_encode($returnMsg);
     }//启用
     public function userPawRepair()
     {
         $uid = input('param.id');
         $upwd = new \app\admin\model\User();
         $data = $upwd->userPawRepair($uid);
-        if($data==1)
-        {
-            $returnMsg=[
-                'code'  =>  "ok",
-                'msg'   =>  "密码重置成功!",
-                'data'  =>  [$data]
-            ];
-            echo json_encode($returnMsg);
-        }
-        else
-        {
-            $returnMsg=[
-                'code'  =>  "no",
-                'msg'   =>  "密码重置失败",
-                'data'  =>  [$data]
-            ];
-            echo json_encode($returnMsg);
-        }
-
+        $returnMsg=config("msg")["userCon"]["rePsw"];
+        $returnMsg["data"]=[$data];
+        echo json_encode($returnMsg);
     }//密码重置
+    public function userDel()
+    {
+        $uid=input('param.id');
+        $del=new \app\admin\model\User();
+        $data = $del->userDel($uid);
+        $returnMsg=config("msg")["userCon"]["del"];
+        $returnMsg["data"]=[$data];
+        echo json_encode($returnMsg);
+    }//删除用户
+    public function userRepair(){
+        $uid=input('param.uid');
+        $username=input('param.username');
+        $sex=input('param.sex');
+        $uphone=input('param.uphone');
+        $email=input('param.email');
+        $repair=new \app\admin\model\User();
+        $data = $repair->userRepair($uid,$username,$sex,$uphone,$email);
+        $returnMsg=config("msg")["userCon"]["Repair"];
+        $returnMsg["data"]=[$data];
+        echo json_encode($returnMsg);
+    }//用户修改
 }
