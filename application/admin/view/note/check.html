@@ -160,8 +160,8 @@
 </div>
 
 <div id="check">
-    <button class="btn layui-btn">审核通过</button>
-    <button class="btn layui-btn">审核未通过</button>
+    <button class="btn layui-btn" onclick="pass()">审核通过</button>
+    <button class="btn layui-btn" onclick="unPass()">审核未通过</button>
 </div>
 </body>
 <script src="__STATIC__/lib/vue.js"></script>
@@ -175,6 +175,52 @@
     var title = "{$info["title"]}";
 
     var getCon = "{:url('home/Notes/getConS')}";
+    var passUrl = "{:url('admin/Note/pass')}";
+    var unPassUrl = "{:url('admin/Note/unPass')}";
+
+    function pass() {
+        layer.confirm('确认通过审核?', function(index){
+            //do something
+            var loding = layer.load(1);
+            layer.close(index);
+            $.ajax({
+                url:passUrl,
+                data:{id:noteId},
+                dataType:"json",
+                success:function (res) {
+                    layer.msg(res["msg"]);
+                    layer.close(loding);
+                    setTimeout(function () {
+                        parent.location.reload();
+                    },2000)
+                }
+            })
+        });
+    }
+    
+    function unPass() {
+        layer.prompt({
+            title: '请输入审核未通过理由'
+        },function(value, index, elem){
+            layer.close(index);
+            var loding = layer.load(1);
+            $.ajax({
+                url:unPassUrl,
+                data:{id:noteId,unPass:value},
+                dataType:"json",
+                success:function (res) {
+                    layer.msg(res["msg"]);
+                    layer.close(loding);
+                    if(res["code"]==20030){
+                        setTimeout(function () {
+                            parent.location.reload();
+                        },2000)
+                    }
+
+                }
+            })
+        });
+    }
 
 </script>
 <script src="__JS__/home/note/show.js"></script>

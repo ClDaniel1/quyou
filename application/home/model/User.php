@@ -31,4 +31,17 @@ class User
     public function checkName($data){
         return db('t_user') -> where('uname',$data) ->select();
     }
+
+    //获取未读消息数量
+    public function getUnreadMsgNum($uid){
+        $res = db('t_msg')->field('count("msgId") num')->where('uid',$uid)->where('readType',0)->select();
+        return $res[0]["num"];
+    }
+
+    //获取系统消息
+    public function getSysMsg($uid){
+        $res = db('t_msg')->where('uid',$uid)->where('msgType',0)->order('readType desc,msgTime desc')->select();
+        db('t_msg')->where('uid',$uid)->setField('readType','1');
+        return $res;
+    }
 }

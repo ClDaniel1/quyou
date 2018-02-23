@@ -624,6 +624,24 @@ class Notes extends \think\Controller
         return json($resMsg);
     }
 
+    public function newLists(){
+        $page = input("param.page");
+
+        $nm = new \app\home\model\Notes();
+        $all = $nm->countNote();
+        $p = new Page($all,10,$page);
+
+        $start = $p -> getStart();
+        $num = $p -> getNum();
+
+        $data = $nm -> getNewNote($start,$num);
+        $allPage = $p->getAllPage();
+
+        $resMsg = config("msg")["note"]["getNoteList"];
+        $resMsg["data"] = [$data,$allPage];
+        return json($resMsg);
+    }
+
     public function show(){
 
                 $id = input("param.id");

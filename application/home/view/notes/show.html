@@ -60,6 +60,21 @@
         position: relative;
         font-size: 16px;
     }
+    #userInfo button{
+        margin: 5px;
+    }
+
+    .imgZone{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 15px 0;
+    }
+    .imgZone img{
+        width: 100px;
+    }
     @media (max-width: 768px) {
     }
 </style>
@@ -106,6 +121,16 @@
     </div>
     <div class="layui-col-sm3" id="rightBar"  >
         <div id="btnBar" data-am-sticky>
+            <div id="userInfo">
+                <div class="imgZone">
+                    <div>
+                        <img src="__STATIC__/{$info["uheadImg"]}" alt="">
+                    </div>
+                </div>
+                <div>{$info["uname"]} </div>
+                <button class="btn layui-btn layui-btn-xs">关注</button>
+                <button class="btn layui-btn layui-btn-xs">收藏</button>
+            </div>
             {if $info["music"]!=null}
             <div>
                 <p>游记音乐</p>

@@ -24,7 +24,7 @@ class Note extends \think\Controller
         return json($resMsg);
     }
 
-    public function NoteList(){
+    public function noteList(){
         $nm = new \app\admin\model\Note();
         $data = $nm->getNote();
 
@@ -43,5 +43,37 @@ class Note extends \think\Controller
         $this->assign("con", $con);
         $this->assign("noteId", $id);
         return $this->fetch("check");
+    }
+
+    public function escCheck(){
+        $id = input("param.id");
+        $nm = new \app\admin\model\Note();
+        $nm->escCheck($id);
+
+        $resMsg = config("msg")["note"]["escCheckSuccess"];
+        return json($resMsg);
+    }
+
+    public function pass(){
+        $id = input("param.id");
+        $nm = new \app\admin\model\Note();
+        $nm->pass($id);
+
+        $resMsg = config("msg")["note"]["passSuccess"];
+        return json($resMsg);
+    }
+
+    public function unPass(){
+        $id = input("param.id");
+        $unPass = input("param.unPass");
+
+        $nm = new \app\admin\model\Note();
+        $res = $nm->unPass($id,$unPass);
+
+        if($res)
+            $resMsg = config("msg")["note"]["unPassSuccess"];
+        else
+            $resMsg = config("msg")["note"]["unPassErr"];
+        return json($resMsg);
     }
 }

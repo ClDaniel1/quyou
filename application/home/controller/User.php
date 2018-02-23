@@ -25,6 +25,10 @@ class User extends \think\Controller
         return $this->fetch('register');
     }
 
+    public function myMsg(){
+        return $this->fetch('msg');
+    }
+
     //登录方法
     public function doLogin(){
         $uphone=input('?post.uphone')? input('uphone'):'';
@@ -164,7 +168,8 @@ class User extends \think\Controller
                     //检查成功
                     $returnMsg['code'] = 10011;
                     $url = url("home/personal/personal");
-                    $returnMsg["data"]=["userImg" => "/quyou/public/static/".$res["uheadImg"],"userUrl"=>$url];
+                    $unreadMsgNum = $um->getUnreadMsgNum($uid);
+                    $returnMsg["data"]=["userImg" => "/quyou/public/static/".$res["uheadImg"],"userUrl"=>$url,"msgNum"=>$unreadMsgNum];
                     return json($returnMsg);
                 }
             }
@@ -257,5 +262,22 @@ class User extends \think\Controller
             $returnMsg=config('msg')['personal']['withoutName'];;
             return json($returnMsg);
         }
+    }
+
+        //获取系统消息
+    public function getSysMsg(){
+        $res = $this->checkLogin();
+        if($res){
+            $um = new \app\home\model\User();
+            $uid = cookie('uid');
+
+            $data = $um->getSysMsg($uid);
+            $returnMsg = config("msg")["msg"]["getSysMsg"];
+            $returnMsg["data"] = $data;
+        }
+        else{
+            $returnMsg = config("msg")["login"]["noLogin"];
+        }
+        return json($returnMsg);
     }
 }

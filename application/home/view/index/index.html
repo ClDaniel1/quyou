@@ -229,7 +229,7 @@
                         </ul >
 
                     </div>
-                    <div class="layui-tab-item">内容2</div>
+                    <div class="layui-tab-item" id="timeList"></div>
 
                 </div>
             </div>
@@ -286,6 +286,45 @@
             });
 
             }
+    });
+
+    var flownew = layui.flow;
+    flownew.load({
+        elem: '#timeList',
+        isAuto:false//指定列表容器
+        ,done: function(page, next){ //到达临界点（默认滚动触发），触发下一页
+            $.ajax({
+                url:"{:url('home/Notes/newLists')}",
+                data:{page:page},
+                success:function (res) {
+                    var lis = [];
+                    var data = res.data[0];
+                    //以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
+                    for(var i =0;i<data.length;i++){
+                        lis.push('<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">'+
+                            '<div class="am-u-sm-4 am-list-thumb listImg">'+
+                            '<a href="{:url(\'home/Notes/show\')}?id='+data[i]["noteId"]+'" class="">'+
+                            '<img src="__STATIC__/'+data[i]["img"]+'" alt="" />'+
+                            '</a>'+
+                            '</div>'+
+                            ' <div class=" am-u-sm-8 am-list-main">'+
+                            '<h1 class="am-list-item-hd"><a href="{:url('home/Notes/show')}?id='+data[i]["noteId"]+'" class="">'+data[i]["title"]+'</a></h1>'+
+                        '<div class="am-list-item-text">'+data[i]["content"]+'</div>'+
+                        '<div class="am-list-item-text am-vertical-align-bottom "><i class="layui-icon">&#xe715;</i> '+data[i]["REGION_NAME"]+'  <i class="layui-icon">by</i> '+data[i]["uname"]+' </div>'+
+                        ' </div>'+
+                        '</li>');
+                    }
+
+
+
+                    //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+                    //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+                    next(lis.join(''), page < res.data[1]);
+                }
+
+            });
+
+        }
     });
 </script>
 {/block}

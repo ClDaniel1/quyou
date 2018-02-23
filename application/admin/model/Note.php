@@ -7,6 +7,7 @@
  */
 
 namespace app\admin\model;
+use think\Db;
 
 
 class Note
@@ -27,7 +28,7 @@ class Note
             ->field("a.*,b.REGION_NAME,c.uname")
             ->join('t_region b','a.desId = b.REGION_ID')
             ->join('t_user c','a.uid = c.uid')
-            ->where("noteType=1")->select();
+            ->where("noteType=1 or noteType=3")->select();
         return $data;
     }
 
@@ -64,5 +65,76 @@ class Note
             ->order("num ASC")
             ->select();
         return $data;
+    }
+
+    public function escCheck($noteId){
+        $noteInfo = Db::table('t_note')->where('noteId',$noteId)->find();
+        $uid = $noteInfo["uid"];
+        $noteName = $noteInfo["title"];
+        Db::startTrans();
+        try{
+            Db::table('t_note')->where('noteId', $noteId)->update(['noteType' => '2']);
+            $data = [
+                'uid' => $uid,
+                'msgCon' => "您的游记‘{$noteName}’审核结果已被撤回",
+                'msgTime' => date("Y-m-d H:i:s")
+            ];
+            Db::table('t_msg')->insert($data);
+            // 提交事务
+            Db::commit();
+            return true;
+        } catch (\Exception $e) {
+            // 回滚事务
+            Db::rollback();
+        }
+        return false;
+
+    }
+
+    public function pass($noteId){
+        $noteInfo = Db::table('t_note')->where('noteId',$noteId)->find();
+        $uid = $noteInfo["uid"];
+        $noteName = $noteInfo["title"];
+        Db::startTrans();
+        try{
+            Db::table('t_note')->where('noteId', $noteId)->update(['noteType' => '1']);
+            $data = [
+                'uid' => $uid,
+                'msgCon' => "您的游记‘{$noteName}’审核已通过",
+                'msgTime' => date("Y-m-d H:i:s")
+            ];
+            Db::table('t_msg')->insert($data);
+            // 提交事务
+            Db::commit();
+            return true;
+        } catch (\Exception $e) {
+            // 回滚事务
+            Db::rollback();
+        }
+        return false;
+
+    }
+
+    public function unPass($noteId,$unpass){
+        $noteInfo = Db::table('t_note')->where('noteId',$noteId)->find();
+        $uid = $noteInfo["uid"];
+        $noteName = $noteInfo["title"];
+        Db::startTrans();
+        try{
+            Db::table('t_note')->where('noteId', $noteId)->update(['noteType' => '3','unPass'=>$unpass]);
+            $data = [
+                'uid' => $uid,
+                'msgCon' => "很抱歉，您的游记‘{$noteName}’审核未通过，原因是{$unpass}",
+                'msgTime' => date("Y-m-d H:i:s")
+            ];
+            Db::table('t_msg')->insert($data);
+            // 提交事务
+            Db::commit();
+            return true;
+        } catch (\Exception $e) {
+            // 回滚事务
+            Db::rollback();
+        }
+        return false;
     }
 }
