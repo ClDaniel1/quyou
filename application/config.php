@@ -247,7 +247,9 @@ return [
             'regError'=>["code"=>10004,"msg"=>'注册失败',"data"=>[]],
             'haveUser'=>["code"=>10006,"msg"=>'用户重复了',"data"=>[]],
             'havePhone'=>["code"=>10006,"msg"=>'您的手机号已经注册了，请前往登录',"data"=>[]],
-            'withoutPhone'=>["code"=>10007,"msg"=>'您的手机号未被注册，可以使用',"data"=>[]]
+            'withoutPhone'=>["code"=>10007,"msg"=>'您的手机号未被注册，可以使用',"data"=>[]],
+
+            'noLogin'=>["code"=>19000,"msg"=>'您未登陆',"data"=>[]]
         ],
         'loginChek'     =>[
             'err'=>["code"=>10009,"msg"=>'登录信息有误，请重新登录',"data"=>[]]
@@ -276,7 +278,16 @@ return [
             "submitErr"=>["code"=>20021,"msg"=>"游记提交失败","data"=>[]],
             "submitSuccess"=>["code"=>20022,"msg"=>"游记提交成功","data"=>[]],
             "submitTitleErr"=>["code"=>20023,"msg"=>"游记标题没设置","data"=>[]],
-            "submitImgErr"=>["code"=>20024,"msg"=>"游记头图没设置","data"=>[]]
+            "submitImgErr"=>["code"=>20024,"msg"=>"游记头图没设置","data"=>[]],
+            "getNoteList"=>["code"=>20025,"msg"=>"获取游记列表成功","data"=>[]],
+
+            //后台
+            "getNoNoteListSuccess"=>["code"=>20026,"msg"=>"获取未审核游记列表成功","data"=>[]],
+            "getNoteListSuccess"=>["code"=>20027,"msg"=>"获取已审核游记列表成功","data"=>[]],
+            "escCheckSuccess" =>["code"=>20028,"msg"=>"撤销审核成功","data"=>[]],
+            "passSuccess" =>["code"=>20029,"msg"=>"审核成功","data"=>[]],
+            "unPassSuccess" =>["code"=>20030,"msg"=>"审核未通过成功","data"=>[]],
+            "unPassErr" =>["code"=>20031,"msg"=>"审核未通过失败","data"=>[]],
         ],
         'personal'=> [
             'changeOK' =>["code"=>30002,"msg"=>'修改成功',"data"=>[]],
@@ -285,12 +296,17 @@ return [
             'repeatPwd'=>["code"=>30004,"msg"=>'密码为原密码，修改不成功',"data"=>[]],
             'withoutName'=>["code"=>30005,"msg"=>'昵称没有重复，可以使用',"data"=>[]]
         ],
+<<<<<<< HEAD
         "userCon"=>[
             "rePsw"=>['code'  =>  "40001",'msg'   =>  "密码重置成功!",'data'  => []],
             "open"=>['code'   =>  "40002",'msg'  =>  "启用成功！" ,"data"=>[]],
             "stop"=>['code'   =>  "40003",'msg'  =>  "用户停用！" ,"data"=>[]],
             "del"=>['code'   =>  "40004",'msg'  =>  "删除成功！" ,"data"=>[]],
             "Repair"=>['code'   =>  "40005",'msg'  =>  "修改成功！" ,"data"=>[]]
+=======
+        "msg" => [
+            "getSysMsg" =>["code"=>40001,"msg"=>'获取系统消息成功',"data"=>[]]
+>>>>>>> d2674c7ed9d819b49dd177e8303ea4ffa98630d0
         ]
     ],
 

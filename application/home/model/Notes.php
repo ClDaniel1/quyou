@@ -210,4 +210,48 @@ class Notes extends Model
         return $res;
     }
 
+    public function countNote(){
+        $data = db("t_note")
+                        ->field('COUNT(noteId) num')
+                        ->where("noteType=1")->select();
+        return $data[0]["num"];
+    }
+
+    public function getNote($start,$num){
+        $data = db("t_note")
+                        ->alias('a')
+                        ->field("a.*,b.REGION_NAME,c.uname,d.content")
+                        ->join('t_region b','a.desId = b.REGION_ID')
+                        ->join('t_user c','a.uid = c.uid')
+                        ->join('t_notecon d','a.noteId = d.noteId')
+                        ->limit($start,$num)
+                        ->where("a.noteType=1 and d.num =1")
+                        ->order('tapNum desc')->select();
+        return $data;
+    }
+
+    public function getNewNote($start,$num){
+        $data = db("t_note")
+            ->alias('a')
+            ->field("a.*,b.REGION_NAME,c.uname,d.content")
+            ->join('t_region b','a.desId = b.REGION_ID')
+            ->join('t_user c','a.uid = c.uid')
+            ->join('t_notecon d','a.noteId = d.noteId')
+            ->limit($start,$num)
+            ->where("a.noteType=1 and d.num =1")
+            ->order('createTime desc')->select();
+        return $data;
+    }
+
+    public function getNoteInfoS($noteId){
+        $data =db('t_note')
+            ->alias('a')
+            ->field("a.*,b.REGION_NAME,c.uname,c.uheadImg")
+            ->join('t_region b','a.desId = b.REGION_ID')
+            ->join('t_user c','a.uid = c.uid')
+            ->where("noteId= $noteId")
+            ->select();
+        db('t_note')->where('noteId',$noteId)->setInc('tapNum');
+        return $data;
+    }
 }

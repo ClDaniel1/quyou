@@ -1,41 +1,178 @@
 {extend name="public/base"}
 {block name='style'}
 <!--页面样式、引用/示例如下-->
+<link rel="stylesheet" href="__CSS__/home/note/note.css">
 <style>
     #aspectration[data-ratio="9:3"] {
         padding-top:33.33%;
+        border: none;
+        background: url("__STATIC__/images/bg.jpg") no-repeat;
+        background-size: cover;
+        position: relative;
     }
     #aspectration img{
-        float: left;
-        width: 100%;
+        position: absolute;
+        top: 0;
+    }
+    #leftBar{
+        white-space: pre-line;
     }
 
+    #title{
+        color: white;
+        font-size: 35px;
+        font-weight: bold;
+        background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)); /* 标准的语法 */
+        display: inline-block;
+        padding: 25px 10px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    #btnBar > div{
+        padding-left: 30px;
+        margin-top: 15px;
+
+    }
+    #btnBar >div >p{
+        border-left: 3px #F9851D solid;
+        text-indent: 5px;
+        display: inline-block;
+    }
+    #btnBar > div li{
+        margin: 10px 0;
+    }
+    #btnBar > divv >p{
+        margin-top: 15px;
+        border-left: 3px #F9851D solid;
+        text-indent: 5px;
+        display: inline-block;
+    }
+    #btnBar > div p{
+        margin: 15px 0;
+        font-weight: bold;
+    }
+    #catal> i{
+        margin: 5px 0;
+        font-weight: bold;
+    }
+    #aspectration span {
+        position: relative;
+        font-size: 16px;
+    }
+    #userInfo button{
+        margin: 5px;
+    }
+
+    .imgZone{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 15px 0;
+    }
+    .imgZone img{
+        width: 100px;
+    }
+    @media (max-width: 768px) {
+    }
 </style>
 {/block}
 
 {block name='title'}
-游记草稿--趣游
+写游记—— 趣游
 {/block}
 
 {block name='body'}
+<!--页面内容 /示例如下-->
 
-<div>
-    <div v-for="con in conData" :id="con.conId">
-    <h1 v-if="con.num == 1" style="opacity: 0">{{con.title}}</h1>
-    <h1 v-if="con.title != null && con.num != 1 && con.type==0" class="imgDiv">
-        {{con.title}}
-    </h1>
-    <div v-if="con.type==0" class="textarea-wrapper">
-        <div class="content-editable" contenteditable="true">{{con.content}}</div>
-        <textarea v-model="con.content" contenteditable="true" class="field-textarea" placeholder="在这里输入您的游记内容" v-on:focus="foc" :id="conId+con.num" @blur="save"></textarea>
+
+<div  id="aspectration"  data-ratio="9:3" style="width: 100%">
+
+            {if $info["img"]!= null}
+                <img src="__STATIC__/{$info["img"]}" alt="">
+            {/if}
+    <p id="title">
+        {$info["title"]}  <span>By {$info["uname"]} </span>
+    </p>
+</div>
+
+
+
+
+
+
+<div id="noteConten" class="layui-container">
+    <div class="layui-col-sm9" id="leftBar">
+        <!-- 加载编辑器的容器 -->
+        <!-- <script id="container" name="content" type="text/plain">
+         这里写你的初始化内容
+     </script>-->
+
+        <div><div v-for="con in conData" :id="con.conId">
+            <h1 v-if="con.num == 1" style="opacity: 0">{{con.title}}</h1>
+            <h1 v-if="con.title != null && con.num != 1 && con.type==0" class="imgDiv">{{con.title}}</h1>
+            <div v-if="con.type==0" class="textarea-wrapper">
+                <div>{{con.content}}</div>
+            </div>
+            <div v-if="con.type==1" class="imgDiv"><img v-bind:src="imgurl+con.content" alt=""></div>
+        </div></div>
     </div>
-    <div v-if="con.type==1" class="imgDiv"><img v-bind:src="imgurl+con.content" alt="" @click="foc" :id="conId+con.num"><i class="layui-icon" @click="removeImg(con.num)">&#x1006;</i>  </div>
-</div></div>
+    <div class="layui-col-sm3" id="rightBar"  >
+        <div id="btnBar" data-am-sticky>
+            <div id="userInfo">
+                <div class="imgZone">
+                    <div>
+                        <img src="__STATIC__/{$info["uheadImg"]}" alt="">
+                    </div>
+                </div>
+                <div>{$info["uname"]} </div>
+                <button class="btn layui-btn layui-btn-xs">关注</button>
+                <button class="btn layui-btn layui-btn-xs">收藏</button>
+            </div>
+            {if $info["music"]!=null}
+            <div>
+                <p>游记音乐</p>
+                <audio  controls style="width: 85%;margin-top:10px" autoplay  loop><source src="__STATIC__/{$info["music"]}" ></audio>
+            </div>
+            {/if}
+            <div>
+                <p>游记信息</p>
+                <div>旅游人数：{$info["travelNum"]}</div>
+                <div>人均费用：{$info["ppMoney"]}</div>
+                <div>出发日期：{$info["travelDay"]}</div>
+            </div>
+
+            <div id="catal">
+                <p>游记目录</p>
+                <nav class="scrollspy-nav" id="catalNav">
+                    <ul>
+                        <li v-for="title in conData" v-if="title.type==0">
+                            <a v-if="title.num==1" :href="id+title.conId">默认段落</a>
+                            <a v-if="title.num!=1 && title.type==0" :href="id+title.conId">{{title.title}}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
 {/block}
 
 
 {block name='script'}
+<script>
+    var staticDir= "__STATIC__/";
 
+    var noteId = {$noteId};
+    var title = "{$info["title"]}";
 
+    var getCon = "{:url('home/Notes/getConS')}";
+
+</script>
+<script src="__JS__/home/note/show.js"></script>
 {/block}
