@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1519390270;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1519393441;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1519396764;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1519393441;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -373,7 +373,14 @@
                         </ul >
 
                     </div>
-                    <div class="layui-tab-item" id="timeList"></div>
+                    <div class="layui-tab-item">
+
+                        <ul class="am-list" id="timeList">
+                            <!--缩略图在标题左边-->
+
+                        </ul >
+
+                    </div>
 
                 </div>
             </div>

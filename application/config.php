@@ -296,17 +296,15 @@ return [
             'repeatPwd'=>["code"=>30004,"msg"=>'密码为原密码，修改不成功',"data"=>[]],
             'withoutName'=>["code"=>30005,"msg"=>'昵称没有重复，可以使用',"data"=>[]]
         ],
-<<<<<<< HEAD
         "userCon"=>[
             "rePsw"=>['code'  =>  "40001",'msg'   =>  "密码重置成功!",'data'  => []],
             "open"=>['code'   =>  "40002",'msg'  =>  "启用成功！" ,"data"=>[]],
             "stop"=>['code'   =>  "40003",'msg'  =>  "用户停用！" ,"data"=>[]],
             "del"=>['code'   =>  "40004",'msg'  =>  "删除成功！" ,"data"=>[]],
             "Repair"=>['code'   =>  "40005",'msg'  =>  "修改成功！" ,"data"=>[]]
-=======
+        ],
         "msg" => [
             "getSysMsg" =>["code"=>40001,"msg"=>'获取系统消息成功',"data"=>[]]
->>>>>>> d2674c7ed9d819b49dd177e8303ea4ffa98630d0
         ]
     ],
 
