@@ -31,4 +31,22 @@ class User extends \think\Model
         $sql=db('t_user')->where('uid', $uid)->update(['upwd' => '123456']);
         return $sql;
     }//密码重置
+    public function userDel($uid)
+    {
+        $sql=db('t_user')->where('uid',$uid)->delete();
+        return $sql;
+    }//用户删除
+    public function userCheck($uid)
+    {
+        $sql=db('t_user')->where('uid',$uid)->select();
+        return $sql;
+    }//用户信息展开
+    public function userRepair($uid,$username,$sex,$uphone,$email)
+    {
+        $sql=db('t_user')->where('uid',$uid)->update(['uname' => $username,
+            'usex'=>$sex,
+            'uphone'=>$uphone,
+            'email'=>$email]);
+        return $sql;
+    }
 }

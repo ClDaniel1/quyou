@@ -23,7 +23,7 @@ class Ad
     }
 
     public function getAd(){
-        $data = db("t_ad")->select();
+        $data = db("t_ad")->order('adId')->select();
         return $data;
     }
 

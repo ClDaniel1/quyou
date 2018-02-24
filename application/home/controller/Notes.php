@@ -624,6 +624,24 @@ class Notes extends \think\Controller
         return json($resMsg);
     }
 
+    public function newLists(){
+        $page = input("param.page");
+
+        $nm = new \app\home\model\Notes();
+        $all = $nm->countNote();
+        $p = new Page($all,10,$page);
+
+        $start = $p -> getStart();
+        $num = $p -> getNum();
+
+        $data = $nm -> getNewNote($start,$num);
+        $allPage = $p->getAllPage();
+
+        $resMsg = config("msg")["note"]["getNoteList"];
+        $resMsg["data"] = [$data,$allPage];
+        return json($resMsg);
+    }
+
     public function show(){
 
                 $id = input("param.id");
@@ -633,7 +651,7 @@ class Notes extends \think\Controller
                 $info = $nm->getNoteInfoS($id)[0];
                 if ($info["noteType"] == 2) {
                     $im = new Index();
-                    return $im->err("该游记审核中，请审核结束后再修改", url("home/personal/personal") . "#test1=2");
+                    return $im->err("该游记审核中", url("home/index/index") . "#test1=2");
                 } else {
                     //获取游记内容
                     $con = $nm->getNoteCont($id);
