@@ -49,7 +49,17 @@ class Personal{
 
     //我的足迹
     public function myFootMark($uid){
-        $sql=db('t_region')->alias('a')->join('t_footMark b','a.REGION_ID = b.desId')->where('b.uid',$uid)->field('a.REGION_NAME,b.*')->select();
+        $sql=db('t_region')->alias('a')->join('t_footmark b','a.REGION_ID = b.desId')->where('b.uid',$uid)->field('a.REGION_NAME,b.*')->select();
         return $sql;
+    }
+
+    //添加足迹
+    public function addFooter($uid,$date,$desId){
+        $data = [
+            "footTime" => $date,
+            "desId" => $desId,
+            "uid" => $uid
+        ];
+        db('t_footmark')->insert($data);
     }
 }

@@ -18,9 +18,15 @@ class Personal extends \think\Controller
         $am=new \app\home\model\Personal();
         $citys=$am->region();
         $this->assign("citys",$citys);
-        $uid=$_COOKIE['qy_uid'];
+        $uid=cookie("uid");
         $footMark=$am->myFootMark($uid);
         $this->assign("footMarkList",$footMark);
+        $nm = new \app\home\model\Notes();
+        $data = $nm->allNote($uid);
+        $this->assign("notes",$data);
+        $um = new \app\home\model\User();
+        $userInfo = $um->getUserInfo($uid)[0];
+        $this->assign("userInfo",$userInfo);
         return $this->fetch('personal');
     }
 
@@ -201,6 +207,45 @@ class Personal extends \think\Controller
             'data'  =>  [$run]
         ];
         echo json_encode($returnMsg);
+    }
+
+    public function addFooter(){
+        $date = input('param.date');
+        $pr = input('param.pr');
+        $city = input('param.city');
+
+        $uc = new User();
+        $res = $uc->checkLogin();
+        if($date!="" && $pr!="" && $city!="" && $res){
+
+            $nm = new \app\home\model\Notes();
+            $regionInfo = $nm->regionInfo($city);
+            if(count($regionInfo) == 0){
+                $resMsg = config("msg")["personal"]["addFooterErr"];
+            }
+            else {
+                if ($regionInfo[0]["REGION_NAME"] == "市辖区" || $regionInfo[0]["REGION_NAME"] == "县") {
+                    $desId = $pr;
+                } else {
+                    $desId = $city;
+                }
+                $uid = cookie("uid");
+                $pm = new \app\home\model\Personal();
+                $data = $pm->myFootMark($uid);
+                foreach ($data as $v){
+                    if($v["desId"] == $desId){
+                        $resMsg = config("msg")["personal"]["addFooterHave"];
+                        return json($resMsg);
+                    }
+                }
+                $pm->addFooter($uid,$date,$desId);
+                $resMsg = config("msg")["personal"]["addFooter"];
+            }
+        }
+        else{
+            $resMsg = config("msg")["personal"]["addFooterErr"];
+        }
+        return json($resMsg);
     }
 }
 

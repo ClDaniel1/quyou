@@ -201,8 +201,8 @@
 <script>
     var dologinUrl='{:url("home/User/doLogin")}';
     var userCenterUrl='{:url("home/index/index")}';
-    function changeCode(obj){
-        $(obj).attr('src','{:captcha_src()}?'+Math.random());
+    function changeCode(){
+        $("#codeImg").attr('src','{:captcha_src()}?'+Math.random());
     }
 
     $('#loginBtn').click(function(){

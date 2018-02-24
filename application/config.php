@@ -294,10 +294,11 @@ return [
             'changeErr'=>["code"=>30003,"msg"=>'信息为原信息，请修改',"data"=>[]],
             'haveName'=>["code"=>30001,"msg"=>'昵称已被使用，换一个吧',"data"=>[]],
             'repeatPwd'=>["code"=>30004,"msg"=>'密码为原密码，修改不成功',"data"=>[]],
-            'withoutName'=>["code"=>30005,"msg"=>'昵称没有重复，可以使用',"data"=>[]]
+            'withoutName'=>["code"=>30005,"msg"=>'昵称没有重复，可以使用',"data"=>[]],
+            'addFooterErr'=>["code"=>30006,"msg"=>'添加足迹失败',"data"=>[]],
+            'addFooter'=>["code"=>30007,"msg"=>'添加足迹成功',"data"=>[]],
+            "addFooterHave" =>["code"=>30008,"msg"=>'已经有该足迹了哦',"data"=>[]],
         ],
-<<<<<<< HEAD
-
         'manager'=>[
             'changeOK' =>["code"=>60001,"msg"=>'修改成功',"data"=>[]],
             'changeErr'=>["code"=>60002,"msg"=>'修改失败',"data"=>[]],
@@ -305,7 +306,6 @@ return [
             'delErr'=>["code"=>60004,"msg"=>'删除失败',"data"=>[]],
 
         ],
-=======
         "userCon"=>[
             "rePsw"=>['code'  =>  "40001",'msg'   =>  "密码重置成功!",'data'  => []],
             "open"=>['code'   =>  "40002",'msg'  =>  "启用成功！" ,"data"=>[]],
@@ -314,11 +314,9 @@ return [
             "Repair"=>['code'   =>  "40005",'msg'  =>  "修改成功！" ,"data"=>[]]
         ],
         "msg" => [
-            "getSysMsg" =>["code"=>40001,"msg"=>'获取系统消息成功',"data"=>[]]
+            "getSysMsg" =>["code"=>50001,"msg"=>'获取系统消息成功',"data"=>[]],
         ]
->>>>>>> 7c72b0071ebe239df62f9dd5a92736244b2bf2d5
     ],
-
     //验证码
     'captcha'  => [
     // 验证码字符集合

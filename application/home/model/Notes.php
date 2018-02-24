@@ -254,4 +254,23 @@ class Notes extends Model
         db('t_note')->where('noteId',$noteId)->setInc('tapNum');
         return $data;
     }
+
+    /**
+     * 获取用户游记
+     * @param $userId 用户Id
+     * @return mixed
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function allNote($userId){
+        $data =db('t_note')
+            ->where("uid= $userId")
+            ->select();
+        return $data;
+    }
+
+    public function toDraft($noteId){
+        db('t_note')->where('noteId', $noteId)->update(['noteType' => '0']);
+    }
 }

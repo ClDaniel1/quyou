@@ -39,11 +39,7 @@ class User extends \think\Controller
         //验证码验证
         if(!captcha_check($code)){
             //验证失败
-            $returnMsg=[
-                'code'  =>  10002,
-                'msg'   =>  config('msg')['login']['codeError'],
-                'data'  =>  []
-            ];
+            $returnMsg=config('msg')['login']['codeError'];
             return json($returnMsg);
         }
         $where=[
