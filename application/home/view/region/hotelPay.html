@@ -11,40 +11,27 @@
 <link rel="stylesheet" href="__CSS__/home/region/hotelPay.css">
 {/block}
 {block  name="site"}
-<a href="">厦门<i class="layui-icon orangeIcon">&#xe625;</i></a>
-<a><cite style="color: #ff7000;font-weight: bold;">重庆酒店预订</cite></a>
+<a href="">{$reName}<i class="layui-icon orangeIcon">&#xe625;</i></a>
+<a><cite style="color: #ff7000;font-weight: bold;">{$reName}酒店预订</cite></a>
 {/block}
 {block name='body'}
+<!--<div id="htImg">-->
     <div class="layui-container">
         <div class="layui-row">
-            <h1 class="hotelName" >上海大酒店</h1>
+            <h1 class="hotelName" >{$hotelMsg.hotelName}</h1>
             <a class="addH"><i class="layui-icon" style="font-size: 30px; color: orange;">&#xe600;</i>收藏</a>
         </div>
-        <div class="layui-row">
+        <div class="layui-row" id="htImg">
             <div class="layui-col-sm7 layui-col-xs7">
-                <img class="bigImg" src="http://p4-q.mafengwo.net/s10/M00/E6/E1/wKgBZ1l5Uj2AaEXkAAJvFpOW7sU07.jpeg?imageMogr2%2Fthumbnail%2F%211360x760r%2Fgravity%2FCenter%2Fcrop%2F%211360x760%2Fquality%2F90" alt="">
+                <img class="bigImg" src="__STATIC__/{$hotelMsg.img}" alt="">
             </div>
             <div class="layui-col-sm5 layui-col-xs5">
-                <ul class="imgUl">
-                    <li>
-                        <img src="http://p4-q.mafengwo.net/s10/M00/E6/E1/wKgBZ1l5Uj2AaEXkAAJvFpOW7sU07.jpeg?imageMogr2%2Fthumbnail%2F%211360x760r%2Fgravity%2FCenter%2Fcrop%2F%211360x760%2Fquality%2F90" alt="">
-                    </li>
-                    <li>
-                        <img src="http://p4-q.mafengwo.net/s10/M00/E6/E1/wKgBZ1l5Uj2AaEXkAAJvFpOW7sU07.jpeg?imageMogr2%2Fthumbnail%2F%211360x760r%2Fgravity%2FCenter%2Fcrop%2F%211360x760%2Fquality%2F90" alt="">
-                    </li>
-                    <li>
-                        <img src="http://p4-q.mafengwo.net/s10/M00/E6/E1/wKgBZ1l5Uj2AaEXkAAJvFpOW7sU07.jpeg?imageMogr2%2Fthumbnail%2F%211360x760r%2Fgravity%2FCenter%2Fcrop%2F%211360x760%2Fquality%2F90" alt="">
-                    </li>
-                </ul>
-                <ul class="imgUl">
-                    <li>
-                        <img src="http://p4-q.mafengwo.net/s10/M00/E6/E1/wKgBZ1l5Uj2AaEXkAAJvFpOW7sU07.jpeg?imageMogr2%2Fthumbnail%2F%211360x760r%2Fgravity%2FCenter%2Fcrop%2F%211360x760%2Fquality%2F90" alt="">
-                    </li>
-                    <li>
-                        <img src="http://p4-q.mafengwo.net/s10/M00/E6/E1/wKgBZ1l5Uj2AaEXkAAJvFpOW7sU07.jpeg?imageMogr2%2Fthumbnail%2F%211360x760r%2Fgravity%2FCenter%2Fcrop%2F%211360x760%2Fquality%2F90" alt="">
-                    </li>
-                    <li>
-                        <img src="http://p4-q.mafengwo.net/s10/M00/E6/E1/wKgBZ1l5Uj2AaEXkAAJvFpOW7sU07.jpeg?imageMogr2%2Fthumbnail%2F%211360x760r%2Fgravity%2FCenter%2Fcrop%2F%211360x760%2Fquality%2F90" alt="">
+                <div v-if="imgShow" style="text-align: center">
+                    <i class="layui-icon" style="font-size: 50px; color: orange;">&#xe63d;</i>
+                </div>
+                <ul class="imgUl" v-else>
+                    <li v-for="value in imgMsg">
+                        <img :src="site+value.url" alt="加载中">
                     </li>
                 </ul>
             </div>
@@ -77,8 +64,8 @@
     </div>
     <div class="layui-container" id="vueComment">
         <div class="layui-row dateB">
-            <input type="text" class="layui-input" id="time1">
-            <input type="text" class="layui-input" id="time2">
+            <input type="text" v-model="checkTime"  class="layui-input" id="time1">
+            <input type="text" v-model="outTime"  class="layui-input" id="time2">
             <button class="layui-btn layui-btn-warm">查看价格</button>
         </div>
         <div class="layui-row" style="overflow:auto;">
@@ -95,8 +82,8 @@
                 <tr>
                     <td>趣游旅游网</td>
                     <td>次日期暂无可选房型</td>
-                    <td id="priColor">￥<span>2000</span></td>
-                    <td><button class="layui-btn" id="payBtn">预订</button></td>
+                    <td id="priColor">￥<span>{$hotelMsg.hotelPrice}</span></td>
+                    <td><a :href="payUrl+'id='+{$hId}+'&checkTime='+checkTime+'&outTime='+outTime+'&num=1'" class="layui-btn" id="payBtn">预订</a></td>
                 </tr>
                 </tbody>
             </table>
@@ -157,7 +144,7 @@
             <dl class="checkDl">
                 <dt class="checkDt" id="{$hId}">酒店介绍</dt>
                 <dd class="checkDd">
-                    <span class="footC">酒店周围遍布各种时尚餐厅和购物商场，客人步行即达三里屯酒吧街及工人体育场。酒店周围遍布各种时尚餐厅和购物商场，客人步行即达三里屯酒吧街及工人体育场。酒店周围遍布各种时尚餐厅和购物商场，客人步行即达三里屯酒吧街及工人体育场。酒店周围遍布各种时尚餐厅和购物商场，客人步行即达三里屯酒吧街及工人体育场。酒店周围遍布各种时尚餐厅和购物商场，客人步行即达三里屯酒吧街及工人体育场。酒店周围遍布各种时尚餐厅和购物商场，客人步行即达三里屯酒吧街及工人体育场。</span>
+                    <span class="footC">{$hotelMsg.hotelDescribe}</span>
                 </dd>
             </dl>
         </div>
@@ -168,22 +155,36 @@
         <my-module url="{:url('home/Region/htComMsg')}" scenic-id="{$hId}"></my-module>
         <!--放评论组件区域-->
     </div>
+<!--</div>-->
 {/block}
 {block name='script'}
 <script>
-    layui.use('laydate', function(){
-        var laydate = layui.laydate;
-        //执行一个laydate实例
-        laydate.render({
-            elem: '#time1'//指定元
-            ,value: new Date()
-        });
-        laydate.render({
-            elem: '#time2'//指定元
-            ,value: new Date()
-        });
-    });
-
+    url="{:url('home/Region/hotelOrder')}?";//明天这里接下去做
+    new Vue({
+        el:"#htImg",
+        data:{
+            imgMsg:[],
+            htId:"{$hId}",
+            site:"__STATIC__/",
+            imgShow:true
+        },
+        created: function () {
+            var _this=this;
+            $.ajax({
+                url:"{:url('home/Region/htImg')}",
+                type:"get",
+                data:{htId:_this.htId},
+                dataType:"json",
+                success: function (res) {
+                    console.log(res);
+                    _this.imgMsg=res;
+                    _this.imgShow=false;
+                },error: function (res) {
+                    console.log(res);
+                }
+            })
+        }
+    })
 </script>
 <script src="__JS__/home/public/vueComment.js"></script>
 {/block}

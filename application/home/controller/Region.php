@@ -81,7 +81,12 @@ class Region extends \think\Controller
     public function hotelPay()//酒店下单详情页
     {
         $hotelId=input('?param.id')?input('id'):"";
+        $regionName=cookie('regionName');
+        $this->assign('reName',$regionName);
         $this->assign('hId',$hotelId);
+        $model=new model\Region();
+        $msg=$model->oneHotel($hotelId);
+        $this->assign('hotelMsg',$msg);
         return $this->fetch('hotelPay');
     }
     public function htComMsg()//获取酒店评论信息
@@ -90,6 +95,80 @@ class Region extends \think\Controller
         $model=new model\Region();
         $res=$model->htComMsg($id);
         echo json_encode($res);
+    }
+    public function htImg()//获取酒店图片信息
+    {
+        $htId=input('?param.htId')?input('htId'):"";
+        $model=new model\Region();
+        $msg=$model->htImg($htId);
+        echo json_encode($msg);
+    }
+    public function hotelOrder()//酒店下单
+    {
+        $hId=input("?param.id")?input("id"):"";
+        $checkTime=input("?param.checkTime")?input("checkTime"):"";
+        $outTime=input("?param.outTime")?input("outTime"):"";
+        $days=$this->days($outTime,$checkTime);
+        $num=input("?param.num")?input("num"):"";
+        $model=new model\Region();
+        $msg=$model->oneHotel($hId);
+        $price=$num*$msg['hotelPrice'];
+        $arr=['checkTime'=>$checkTime,'outTime'=>$outTime,'num'=>$num,'msg'=>$msg,'price'=>$price,'days'=>$days];
+        $this->assign('msg',$arr);
+        $this->assign('num',$num);
+        return $this->fetch('hotelOrder');
+    }
+
+    public function days($d1,$d2)
+    {
+        $second1 = strtotime($d1);
+        $second2 = strtotime($d2);
+        if ($second1 < $second2) {
+            $tmp = $second2;
+            $second2 = $second1;
+            $second1 = $tmp;
+        }
+        return round(($second1 - $second2) / 86400);
+    }
+
+    public function addHotel()//确认酒店订单信息
+    {
+        $user=input("?param.user")?input("user/a"):"";//联系人
+        $unitPrice=input("?param.unitPrice")?input("unitPrice"):"";//单价
+        $hotalPrice=input("?param.hotalPrice")?input("hotalPrice"):"";//总价
+        $num=input("?param.num")?input("num"):"";//订购数
+        $days=input("?param.days")?input("days"):"";//使用天数
+        $useTime=input("?param.useTime")?input("useTime"):"";//使用时间
+        $tradeId=input("?param.tradeId")?input("tradeId"):"";//订购商品id
+        $uId=cookie("uid");//用户id
+        $orderTime=time();//下单时间
+//        foreach($user as $value)//遍历联系人写入数据库
+//        {
+//            $data=['uid'=>$uId,'conName'=>$value.name,'conIdCard'=>$value.identity,'conPhone'=>$value.phone];
+//            echo json_encode($data);
+//        }
+//        $this->success("新增成功");
+    }
+    public function hOrderPay()
+    {
+        return $this->fetch('hOrderPay');
+    }
+
+
+    public function hSuccess()//酒店下单成功页面
+    {
+//        测试用到时候删除
+        $hId=275;
+        $checkTime=2018-2-7;
+        $outTime=2018-2-9;
+        $num=1;
+        $model=new model\Region();
+        $msg=$model->oneHotel($hId);
+        $price=$num*$msg['hotelPrice'];
+        $arr=['checkTime'=>$checkTime,'outTime'=>$outTime,'num'=>$num,'msg'=>$msg,'price'=>$price];
+        $this->assign('msg',$arr);
+//        测试用到时候删除
+        return $this->fetch('hSuccess');
     }
 
     public function scenicShow()//显示地区景点页面

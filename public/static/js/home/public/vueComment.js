@@ -1,9 +1,31 @@
 /**
  * Created by Administrator on 2018/2/1.
  */
+var date=new Date();
+$y=date.getFullYear();
+$m=date.getMonth()+1;
+if($m<10)
+{
+    $m="0"+$m;
+}
+$d=date.getDate();
+$d2=$d+1;
+if($d<10)
+{
+    $d="0"+$d;
+}
+if($d2<10)
+{
+    $d2="0"+$d2;
+}
+$now=$y+"-"+$m+"-"+$d;
+$tDay=$y+"-"+$m+"-"+$d2;
+
 var bus = new Vue();
 Vue.component('my-module',{
-    template: '<div><div class="layui-row replayArea" v-for="value in home">'+
+    template: '<div>' +
+    '<div v-if="showU"><h1>暂无相关评论</h1></div>'+
+    '<div class="layui-row replayArea" v-else v-for="value in home">'+
     '<div class="layui-col-sm2 layui-col-xs2" >'+
     '<a href="" class="userA">'+
     '<img class="headImg" :src="staticUrl+\'/\'+value.uheadImg" alt="">{{value.uname}}</a>'+
@@ -53,13 +75,17 @@ Vue.component('my-module',{
         return {
             home:[],
             staticUrl : "__STATIC__",
-            showId:0
+            showId:0,
+            showU:false
         }
     },
     props: ['url','scenicId'],
     created:function(){
         bus.$on('home', function (res) {
             this.home=res;
+        }.bind(this));
+        bus.$on('showU', function (res) {
+            this.showU=res;
         }.bind(this));
         bus.$emit('data',{ajaxUrl:this.url,sid:this.scenicId})
     },
@@ -73,13 +99,39 @@ Vue.component('my-module',{
     }
 });
 // 创建根实例
+
 new Vue({
     el: '#vueComment',
     data:{
         sId:"",
-        url:""
+        url:"",
+        checkTime:$now,
+        outTime:$tDay,
+        payUrl:url
     },
     created:function(){
+        var _this=this;
+        layui.use('laydate', function(){
+            var laydate = layui.laydate;
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#time1'//指定元
+                ,value: $now
+                ,done: function(value){
+                    console.log(value);
+                    _this.checkTime=value;
+                }
+            });
+            laydate.render({
+                elem: '#time2'//指定元
+                ,value: $tDay
+                ,done: function(value){
+                    console.log(value);
+                    _this.outTime=value;
+                }
+            });
+
+        });
         bus.$on('data', function (res) {
             console.log(res);
             this.url=res.ajaxUrl;
@@ -88,7 +140,7 @@ new Vue({
     },
     mounted: function () {
         var _this=this;
-        console.log(_this.url);
+
         $.ajax({
             type:'get',
             url:_this.url,
@@ -96,10 +148,14 @@ new Vue({
             dataType:"json",
             success: function (res) {
                 console.log(res);
+                if(res.length<=0)
+                {
+                    bus.$emit('showU',true)
+                }
                 bus.$emit('home', res)
             },error: function (res) {
                 console.log(res)
             }
         })
     }
-})
+});

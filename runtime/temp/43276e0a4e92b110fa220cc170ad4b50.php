@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517664939;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517665373;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517998611;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517665373;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +25,6 @@
 <link rel="stylesheet" href="__CSS__/home/region/region.css">
 
     <title>
-这个是某地区总体概览
 </title>
     <style>
         .navBg{
