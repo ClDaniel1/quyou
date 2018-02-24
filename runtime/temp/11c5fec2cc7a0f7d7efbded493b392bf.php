@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\desti\desti.html";i:1517188027;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1519393441;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\desti\desti.html";i:1517188027;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1519442327;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -171,7 +171,7 @@
         <li class="layui-nav-item loginIn"  style="float: right">
             <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
             <dl class="layui-nav-child">
-                <dd><a href="">我的游记</a></dd>
+                <dd><a href="<?php echo URL('home/personal/personal'); ?>#test1=2">我的游记</a></dd>
                 <dd><a href="">联系客服</a></dd>
                 <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
