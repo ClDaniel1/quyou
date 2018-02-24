@@ -9,14 +9,18 @@
 namespace app\home\controller;
 use \think\Response;
 use \think\Db;
+use \think\Cookie;
 
 class Personal extends \think\Controller
 {
     public function personal()
     {
         $am=new \app\home\model\Personal();
-        $data=$am->region();
-        $this->assign("region",$data);
+        $citys=$am->region();
+        $this->assign("citys",$citys);
+        $uid=$_COOKIE['qy_uid'];
+        $footMark=$am->myFootMark($uid);
+        $this->assign("footMarkList",$footMark);
         return $this->fetch('personal');
     }
 

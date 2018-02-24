@@ -52,7 +52,7 @@ $.ajax({
             }
         }
     }
-})
+});
 
 /* 美食上下架*/
 function picture_stop(obj,id) {

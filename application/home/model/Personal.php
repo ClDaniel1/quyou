@@ -46,4 +46,10 @@ class Personal{
         $sql=db('t_region')->where('PARENT_ID',1)->select();
         return $sql;
     }
+
+    //我的足迹
+    public function myFootMark($uid){
+        $sql=db('t_region')->alias('a')->join('t_footMark b','a.REGION_ID = b.desId')->where('b.uid',$uid)->field('a.REGION_NAME,b.*')->select();
+        return $sql;
+    }
 }

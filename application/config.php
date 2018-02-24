@@ -280,6 +280,14 @@ return [
             'repeatPwd'=>["code"=>30004,"msg"=>'密码为原密码，修改不成功',"data"=>[]],
             'withoutName'=>["code"=>30005,"msg"=>'昵称没有重复，可以使用',"data"=>[]]
         ],
+
+        'manager'=>[
+            'changeOK' =>["code"=>60001,"msg"=>'修改成功',"data"=>[]],
+            'changeErr'=>["code"=>60002,"msg"=>'修改失败',"data"=>[]],
+            'delOK'=>["code"=>60003,"msg"=>'删除成功',"data"=>[]],
+            'delErr'=>["code"=>60004,"msg"=>'删除失败',"data"=>[]],
+
+        ],
     ],
 
     //验证码
