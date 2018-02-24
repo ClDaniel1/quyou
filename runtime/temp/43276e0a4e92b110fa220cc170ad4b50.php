@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517664939;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517639624;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517998611;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517665373;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +25,6 @@
 <link rel="stylesheet" href="__CSS__/home/region/region.css">
 
     <title>
-这个是某地区总体概览
 </title>
     <style>
         .navBg{
@@ -111,10 +110,10 @@
                 <ul class="layui-nav catalog " id="navUl">
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>首页</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst2"></i>玩法路线</a></li>
-                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
+                    <li class="layui-nav-item"><a href="<?php echo url('home/Region/scenicShow'); ?>?rgId=1000"><i class="icon1 iconPst3"></i>景点</a></li>
                     <li class="layui-nav-item"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=1000"><i class="icon1 iconPst4"></i>酒店</a></li>
                     <li class="layui-nav-item">
-                        <a href=""><i class="icon1 iconPst5"></i>美食</a>
+                        <a href="<?php echo url('home/Region/food'); ?>"><i class="icon1 iconPst5"></i>美食</a>
                     </li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst6"></i>游记</a></li>
                 </ul>

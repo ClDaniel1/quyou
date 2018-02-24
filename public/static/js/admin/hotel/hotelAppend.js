@@ -68,43 +68,52 @@ function Release()//酒店添加并发布
     }
     else
     {
-        $.ajax({
-            type:'post',
-            url:hotelFind,
-            data:hotel,
-            async: false,
-            dataType: 'json',
-            success: function (res) {
-                if(res<1)
-                {
-                    hotel=hotel+'&'+'img='+JSON.stringify(imgTemporary);
-                    $.ajax({
-                        type: 'post',
-                        url: hotelAappend,
-                        data: hotel,
-                        async: false,
-                        dataType: 'json',
-                        success: function (res) {
-                            layer.open({
-                                title: '添加成功'
-                                ,content: '发布成功！'
-                                ,yes:function(){
-                                    window.location.href=hotelIndex;
+        layer.confirm('酒店添加？', {
+            btn: ['确定','取消'] //按钮
+        }, function(){
+            var index = layer.load();
+            $.ajax({
+                type:'post',
+                url:hotelFind,
+                data:hotel,
+                dataType: 'json',
+                success: function (res) {
+                    if(res<1)
+                    {
+                        hotel=hotel+'&'+'img='+JSON.stringify(imgTemporary);
+                        $.ajax({
+                            type: 'post',
+                            url: hotelAappend,
+                            data: hotel,
+                            dataType: 'json',
+                            success: function (res) {
+                                layer.close(index);
+                                layer.open({
+                                    title: '添加成功'
+                                    ,content: '发布成功！'
+                                    ,yes:function(){
+                                        window.location.href=hotelIndex;
+                                    }
+                                });
+                            }
+                        })
+                    }
+                    else
+                    {
+                        layer.open({
+                            title: '错误'
+                            ,content: '酒店名称不能重复！'
+                        });
+                    }
+                }
+            })
+        }, function(){
+            layer.msg('取消', {
+                time: 20000, //20s后自动关闭
+                btn: ['发布', '取消']
+            });
+        });
 
-                                }
-                            });
-                        }
-                    })
-                }
-                else
-                {
-                    layer.open({
-                        title: '错误'
-                        ,content: '酒店名称不能重复！'
-                    });
-                }
-            }
-        })
     }
 }
 function NoRelease()//酒店添加但不发布
@@ -154,43 +163,51 @@ function NoRelease()//酒店添加但不发布
     }
     else
     {
-        $.ajax({
-            type: 'post',
-            url: hotelFind,
-            data: hotel,
-            async: false,
-            dataType: 'json',
-            success: function (res) {
-                if(res<1)
-                {
-                    hotel=hotel+'&'+'img='+JSON.stringify(imgTemporary);
-                    $.ajax({
-                        type:'post',
-                        url:hotelAappendNo,
-                        data:hotel,
-                        async: false,
-                        dataType: 'json',
-                        success: function (res) {
-                            layer.open({
-                                title: '添加成功'
-                                ,content: '请尽快发布！'
-                                ,yes:function(){
+        layer.confirm('确定发布？', {
+            btn: ['确定','取消'] //按钮
+        }, function(){
+            var index = layer.load();
+            $.ajax({
+                type: 'post',
+                url: hotelFind,
+                data: hotel,
+                dataType: 'json',
+                success: function (res) {
+                    if(res<1)
+                    {
+                        hotel=hotel+'&'+'img='+JSON.stringify(imgTemporary);
+                        $.ajax({
+                            type:'post',
+                            url:hotelAappendNo,
+                            data:hotel,
+                            dataType: 'json',
+                            success: function (res) {
+                                layer.close(index);
+                                layer.open({
+                                    title: '添加成功'
+                                    ,content: '请尽快发布！'
+                                    ,yes:function(){
                                         window.location.href=hotelIndex;
+                                    }
+                                });
 
-                                }
-                            });
-
-                        }
-                    })
+                            }
+                        })
+                    }
+                    else
+                    {
+                        layer.open({
+                            title: '错误'
+                            ,content: '酒店名称不能相同！'
+                        });
+                    }
                 }
-                else
-                {
-                    layer.open({
-                        title: '错误'
-                        ,content: '酒店名称不能相同！'
-                    });
-                }
-            }
-        })
+            })
+        }, function(){
+            layer.msg('取消', {
+                time: 20000, //20s后自动关闭
+                btn: ['发布取消']
+            });
+        });
     }
 }

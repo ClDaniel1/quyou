@@ -247,7 +247,9 @@ return [
             'regError'=>["code"=>10004,"msg"=>'注册失败',"data"=>[]],
             'haveUser'=>["code"=>10006,"msg"=>'用户重复了',"data"=>[]],
             'havePhone'=>["code"=>10006,"msg"=>'您的手机号已经注册了，请前往登录',"data"=>[]],
-            'withoutPhone'=>["code"=>10007,"msg"=>'您的手机号未被注册，可以使用',"data"=>[]]
+            'withoutPhone'=>["code"=>10007,"msg"=>'您的手机号未被注册，可以使用',"data"=>[]],
+
+            'noLogin'=>["code"=>19000,"msg"=>'您未登陆',"data"=>[]]
         ],
         'loginChek'     =>[
             'err'=>["code"=>10009,"msg"=>'登录信息有误，请重新登录',"data"=>[]]
@@ -257,7 +259,7 @@ return [
             'imgTooSmall'=>["code"=>20002,"msg"=>"图片过小，请选择宽度大于1350，并且高度大于480的图片","data"=>[]],
             'imgSelectTooSmall'=>["code"=>20003,"msg"=>"裁剪完图片过小，请重新裁剪","data"=>[]],
             'scaleErr'=>["code"=>20004,"msg"=>"图片比例不对，请重新裁剪","data"=>[]],
-            'musicSuccess'=>["code"=>20004,"msg"=>"音乐设置成功，请重新裁剪","data"=>[]],
+            'musicSuccess'=>["code"=>20004,"msg"=>"音乐设置成功","data"=>[]],
             "remusicSuccess"=>["code"=>20005,"msg"=>"移除游记音乐成功","data"=>[]],
             "upImgSuccess"=>["code"=>20006,"msg"=>"游记头图上传成功","data"=>[]],
             "musicErr"=>["code"=>20008,"msg"=>"游记音乐设置失败","data"=>[]],
@@ -271,7 +273,21 @@ return [
             "saveSuccess"=>["code"=>20016,"msg"=>"草稿保存成功","data"=>[]],
             "saveErr"=>["code"=>20017,"msg"=>"草稿保存失败","data"=>[]],
             "reImgSuccess"=>["code"=>20018,"msg"=>"移除游记图片成功","data"=>[]],
-            "reImgErr"=>["code"=>20019,"msg"=>"移除游记图片失败","data"=>[]]
+            "reImgErr"=>["code"=>20019,"msg"=>"移除游记图片失败","data"=>[]],
+            "upImgErr"=>["code"=>20020,"msg"=>"游记头图上传失败","data"=>[]],
+            "submitErr"=>["code"=>20021,"msg"=>"游记提交失败","data"=>[]],
+            "submitSuccess"=>["code"=>20022,"msg"=>"游记提交成功","data"=>[]],
+            "submitTitleErr"=>["code"=>20023,"msg"=>"游记标题没设置","data"=>[]],
+            "submitImgErr"=>["code"=>20024,"msg"=>"游记头图没设置","data"=>[]],
+            "getNoteList"=>["code"=>20025,"msg"=>"获取游记列表成功","data"=>[]],
+
+            //后台
+            "getNoNoteListSuccess"=>["code"=>20026,"msg"=>"获取未审核游记列表成功","data"=>[]],
+            "getNoteListSuccess"=>["code"=>20027,"msg"=>"获取已审核游记列表成功","data"=>[]],
+            "escCheckSuccess" =>["code"=>20028,"msg"=>"撤销审核成功","data"=>[]],
+            "passSuccess" =>["code"=>20029,"msg"=>"审核成功","data"=>[]],
+            "unPassSuccess" =>["code"=>20030,"msg"=>"审核未通过成功","data"=>[]],
+            "unPassErr" =>["code"=>20031,"msg"=>"审核未通过失败","data"=>[]],
         ],
         'personal'=> [
             'changeOK' =>["code"=>30002,"msg"=>'修改成功',"data"=>[]],
@@ -280,6 +296,7 @@ return [
             'repeatPwd'=>["code"=>30004,"msg"=>'密码为原密码，修改不成功',"data"=>[]],
             'withoutName'=>["code"=>30005,"msg"=>'昵称没有重复，可以使用',"data"=>[]]
         ],
+<<<<<<< HEAD
 
         'manager'=>[
             'changeOK' =>["code"=>60001,"msg"=>'修改成功',"data"=>[]],
@@ -288,6 +305,18 @@ return [
             'delErr'=>["code"=>60004,"msg"=>'删除失败',"data"=>[]],
 
         ],
+=======
+        "userCon"=>[
+            "rePsw"=>['code'  =>  "40001",'msg'   =>  "密码重置成功!",'data'  => []],
+            "open"=>['code'   =>  "40002",'msg'  =>  "启用成功！" ,"data"=>[]],
+            "stop"=>['code'   =>  "40003",'msg'  =>  "用户停用！" ,"data"=>[]],
+            "del"=>['code'   =>  "40004",'msg'  =>  "删除成功！" ,"data"=>[]],
+            "Repair"=>['code'   =>  "40005",'msg'  =>  "修改成功！" ,"data"=>[]]
+        ],
+        "msg" => [
+            "getSysMsg" =>["code"=>40001,"msg"=>'获取系统消息成功',"data"=>[]]
+        ]
+>>>>>>> 7c72b0071ebe239df62f9dd5a92736244b2bf2d5
     ],
 
     //验证码
@@ -296,7 +325,7 @@ return [
     'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY',
 
     // 验证码字体大小(px)
-    'fontSize' => 35,
+    'fontSize' => 50,
 
     // 是否画混淆曲线
     'useCurve' => false,
@@ -311,6 +340,7 @@ return [
     'length'   => 4,
 
     // 验证成功后是否重置
-    'reset'    => true],
+    'reset'    => true
+    ],
 
 ];

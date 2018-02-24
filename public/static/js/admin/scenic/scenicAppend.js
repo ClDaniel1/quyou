@@ -68,40 +68,51 @@ function Release()//景点添加并发布
     }
     else
     {
-        $.ajax({
-            type:'post',
-            url:scenicFind,
-            data:hotel,
-            async: false,
-            dataType: 'json',
-            success: function (res) {
-                if(res<1)
-                {
-                    hotel=hotel+'&'+'img='+JSON.stringify(imgTemporary);
-                    $.ajax({
-                        type: 'post',
-                        url: scenicAappend,
-                        data: hotel,
-                        async: false,
-                        dataType: 'json',
-                        success: function (res) {
-                            layer.open({
-                                title: '添加成功'
-                                ,content: '发布成功！'
-                            });
-                            window.location.href=scenicIndex;
-                        }
-                    })
+        layer.confirm('确定添加？', {
+            btn: ['确定','取消'] //按钮
+        }, function(){
+            var index = layer.load();
+            $.ajax({
+                type:'post',
+                url:scenicFind,
+                data:hotel,
+                dataType: 'json',
+                success: function (res) {
+                    if(res<1)
+                    {
+                        hotel=hotel+'&'+'img='+JSON.stringify(imgTemporary);
+                        $.ajax({
+                            type: 'post',
+                            url: scenicAappend,
+                            data: hotel,
+                            dataType: 'json',
+                            success: function (res) {
+                                layer.close(index);
+                                layer.open({
+                                    title: '添加成功'
+                                    ,content: '发布成功！'
+                                    ,yes:function(){
+                                        window.location.href=scenicIndex;
+                                    }
+                                });
+                            }
+                        })
+                    }
+                    else
+                    {
+                        layer.open({
+                            title: '错误'
+                            ,content: '景点名称不能重复！'
+                        });
+                    }
                 }
-                else
-                {
-                    layer.open({
-                        title: '错误'
-                        ,content: '景点名称不能重复！'
-                    });
-                }
-            }
-        })
+            })
+        }, function(){
+            layer.msg('取消添加', {
+                time: 20000, //20s后自动关闭
+                btn: ['取消添加']
+            });
+        });
     }
 }
 function NoRelease()//景点添加但不发布
@@ -151,39 +162,51 @@ function NoRelease()//景点添加但不发布
     }
     else
     {
-        $.ajax({
-            type: 'post',
-            url: scenicFind,
-            data: hotel,
-            async: false,
-            dataType: 'json',
-            success: function (res) {
-                if(res<1)
-                {
-                    hotel=hotel+'&'+'img='+JSON.stringify(imgTemporary);
-                    $.ajax({
-                        type:'post',
-                        url:scenicAappendNo,
-                        data:hotel,
-                        async: false,
-                        dataType: 'json',
-                        success: function (res) {
-                            layer.open({
-                                title: '添加成功'
-                                ,content: '请尽快发布！'
-                            });
-                            window.location.href=scenicIndex;
-                        }
-                    })
+        layer.confirm('确定添加？', {
+            btn: ['确定','取消'] //按钮
+        }, function(){
+            var index = layer.load();
+            $.ajax({
+                type: 'post',
+                url: scenicFind,
+                data: hotel,
+                dataType: 'json',
+                success: function (res) {
+                    if(res<1)
+                    {
+                        hotel=hotel+'&'+'img='+JSON.stringify(imgTemporary);
+                        $.ajax({
+                            type:'post',
+                            url:scenicAappendNo,
+                            data:hotel,
+                            dataType: 'json',
+                            success: function (res) {
+                                layer.close(index);
+                                layer.open({
+                                    title: '添加成功'
+                                    ,content: '请尽快发布！'
+                                    ,yes:function(){
+                                        window.location.href=scenicIndex;
+                                    }
+                                });
+                            }
+                        })
+                    }
+                    else
+                    {
+                        layer.open({
+                            title: '错误'
+                            ,content: '景点名称不能相同！'
+                        });
+                    }
                 }
-                else
-                {
-                    layer.open({
-                        title: '错误'
-                        ,content: '景点名称不能相同！'
-                    });
-                }
-            }
-        })
+            })
+        }, function(){
+            layer.msg('取消添加', {
+                time: 20000, //20s后自动关闭
+                btn: ['取消添加']
+            });
+        });
+
     }
 }

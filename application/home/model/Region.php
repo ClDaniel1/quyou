@@ -28,6 +28,7 @@ class Region extends Model
         $arr['count']=$count;
         return $arr;
     }
+
     public function hotelMsg($id)//根据地区id查找对应地区酒店2条信息
     {
         $arr=array();
@@ -37,7 +38,7 @@ class Region extends Model
         $arr['count']=$count;
         return $arr;
     }
-    public function htCount($id)
+    public function htCount($id)//酒店总数
     {
         $sql=db('t_hotel')->where('desId',$id)->count();
         return $sql;
@@ -47,6 +48,19 @@ class Region extends Model
         $sql=db('t_hotel')->where('desId',$id)->limit($start,$end)->select();
         return $sql;
     }
+    public function oneHotel($id)//根据酒店id查找对应的酒店信息 单条
+    {
+        return db('t_hotel')->where('hotelId',$id)->find();
+    }
+    public function htImg($id)//根据酒店id查找显示的七张图片
+    {
+        return db('t_hotelimg')->field('url')->where('hotelId',$id)->limit(0,6)->select();
+    }
+    public function addUser($data)//添加联系人
+    {
+        return db('t_contact')->insert($data);
+    }
+
     public function foodMsg($id)//根据地区id查找对应地区食物信息
     {
         $arr=array();
@@ -72,5 +86,7 @@ class Region extends Model
         $res=db('t_hotelcomment')->alias('a')->join('t_user b','a.uid = b.uid')->field('a.*,b.uname,b.uheadImg')->where('a.hotelId',$id)->select();
         return $res;
     }
+
+
 
 }

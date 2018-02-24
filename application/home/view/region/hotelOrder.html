@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" href="__STATIC__/images/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/amazeui.min.css">
+    <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
+    <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
+    <link rel="stylesheet" href="__CSS__\home\public\public.css">
+    <link rel="stylesheet" href="__CSS__/home/region/hotelOrder.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <title>酒店预订</title>
+</head>
+<body>
+<div class="logoDiv">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div style="line-height: 95px">
+                <img class="logoImg" src="__STATIC__/images/logo1.png" alt="加载失败">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="layui-container">
+    <div class="layui-row msgDiv">
+        <div class="layui-col-sm3 layui-col-xs6">
+            <i class="layui-icon" style="color: #64ca80;">&#x1005;</i>   <span>1.选择房间</span>
+        </div>
+        <div class="layui-col-sm3 layui-col-xs6 resColor">
+            <span>2.填写入住详情</span>
+        </div>
+        <div class="layui-col-sm3 layui-col-xs6">
+            <span>3.确认支付信息</span>
+        </div>
+        <div class="layui-col-sm3 layui-col-xs6">
+            <span>4.预订完成</span>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-col-sm8">
+            <div class="divBd">
+                <div class="ctLeft">
+                    <div class="ctImg">
+                        <img src="__STATIC__/{$msg.msg.img}" alt="加载失败">
+
+                    </div>
+                    <div class="textDiv">
+                        <h1>{$msg.msg.hotelName}</h1>
+                        <h3><span>简介：</span>{$msg.msg.hotelDescribe}</h3>
+                        <div>
+                            <span>入住时间</span>
+                            <span>{$msg.checkTime}</span>
+                        </div>
+                        <div>
+                            <span>离店时间</span>
+                            <span>{$msg.outTime}</span>
+                        </div>
+                        <div>
+                            <span>客房数量</span>
+                            <span>{$msg.num}</span>
+                            <span class="blockS">间</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+
+            <div class="divBd" id="vueShow">
+                <div class="padding" v-for="value in 2">
+                    <h2>房间{{value}}-联系人信息（必填）</h2>
+                    <h3>填写一人即可,其他人员消费时出示证件</h3>
+                    <div>
+                        <span style="font-size: 18px">联系人列表中选择：</span>
+                        <select placeholder="请选择联系人" data-am-selected="{maxHeight: 100}">
+                            <option value=""></option>
+                            <option value="a">
+                            </option>
+                            <option value="b">Banana</option>
+                            <option value="o">Orange</option>
+                            <option value="m">Mango</option>
+                            <option value="d" disabled>禁用鸟</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="padding">
+                    <div style="margin: 15px 0">
+                        <button v-if="showT" class="layui-btn layui-btn-normal layui-btn-fluid " lay-submit @click="outU">关闭</button>
+                        <button v-else class="layui-btn layui-btn-normal layui-btn-fluid " lay-submit @click="addU">添加联系人</button>
+                    </div>
+                    <form v-if="showT" class="layui-form layui-form-pane" action="{:url('home/Region/addHotel')}">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">姓名</label>
+                            <div class="layui-input-block">
+                                <input name="name" class="layui-input" type="text" >
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">电话</label>
+                            <div class="layui-input-block">
+                                <input name="phone" class="layui-input" type="text" >
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">身份证</label>
+                            <div class="layui-input-block">
+                                <input name="identity" class="layui-input" type="text" >
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div>
+                <button style="background-color: #00a0e9;margin-top: 20px" class="layui-btn layui-btn-fluid layui-btn-warm" >提交订单</button>
+            </div>
+        </div>
+        <div class="layui-col-sm4">
+            <div class="rightD">
+                <div class="rTop">
+                    <h1>预订费用明细</h1>
+                </div>
+                <div class="rMiddle">
+                    <h3><span>{$msg.num}</span>间客房x<span>1</span>晚 <span class="floatR" style="text-align: right">￥<span>{$msg.price}</span></span></h3>
+                </div>
+                <div class="rBottom">
+                    <h1>总价（含税）<span class="floatR" style="text-align: right;color: orange;font-size: 18px">￥<span>{$msg.price}</span></span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="__STATIC__/lib/vue.js"></script>
+<script src="__STATIC__\lib\layui\layui.all.js"></script>
+<script src="__STATIC__\lib\jquery-3.2.1.js"></script>
+<script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
+<script>
+    (function($) {
+        if ($.AMUI && $.AMUI.validator) {
+            // 增加单个正则
+            $.AMUI.validator.patterns.card = /^(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}[0-9Xx]$)$/;
+        }
+    })(window.jQuery);
+    new Vue({
+        el:"#vueShow",
+        data:{
+            num:"{$msg.num}",
+            showT:false
+        },
+        methods:{
+            addU: function () {
+                this.showT=true;
+            },
+            outU: function () {
+                this.showT=false;
+            }
+        }
+    });
+    layui.use('form', function(){
+        var form = layui.form;
+        form.on('submit(addOrder)', function (data) {
+            var datas=data.field;
+//            var arr=[];
+            console.log(datas);
+//            for(var i=1;i<="{$num}";i++)
+//            {
+//                var name="name"+i;
+//                var phone="phone"+i;
+//                var identity="identity"+i;
+//                console.log(datas.name);1
+////                console.log(JSON.parse(name));
+//                arr.push({name:datas.name,phone:datas.phone,identity:datas.identity});
+//            }
+//            console.log(arr);
+            var action=data.form.action;
+//            $.ajax({
+//                url:action,
+//                data:{user:arr,unitPrice:"{$msg.msg.hotelPrice}",hotalPrice:"{$msg.price}",num:"{$num}",days:"{$msg.days}",useTime:"{$msg.checkTime}",tradeId:"{$msg.msg.hotelId}"},
+//                type:"POST",
+//                dataType:"json",
+//                success:function(msg){
+//                    console.log(msg);
+////                    window.location.href=msg.url;
+//                },
+//                error:function(error){
+//                    console.log(error)
+//                }
+//            });
+            return false;
+        });
+    });
+
+</script>
+</html>

@@ -1,0 +1,134 @@
+{extend name="public/base"}
+{block name='style'}
+<!--页面样式、引用/示例如下-->
+<style>
+    .layui-tab{
+        padding:0 35px;
+        margin-bottom:  0   ;
+    }
+    .am-list-item-desced{
+        padding: 10px;
+    }
+    .am-list-news-bd{
+        padding: 0 35px;
+    }
+    #loading{
+        font-size: 36px;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        position: relative;
+    }
+    .layui-icon{
+        font-size: 36px;
+        margin: 0 15px;
+    }
+    .am-list-item-text{
+        text-indent: 20px;
+    }
+    .am-list-date{
+        float: right;
+    }
+    @media (min-width: 768px) {
+        #body{
+            min-height: 900px;
+        }
+    }
+
+</style>
+{/block}
+
+{block name='title'}
+我的消息
+{/block}
+
+{block name='body'}
+<!--页面内容 /示例如下-->
+<div id="body">
+    <div class="layui-tab layui-tab-brief" >
+        <ul class="layui-tab-title">
+            <li class="layui-this" onclick="sysMsg()">系统消息</li>
+            <li onclick="myMsg()">我的私信</li>
+            <li onclick="chat()">客服聊天记录</li>
+        </ul>
+    </div>
+    <div id="loading">
+        <i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop"></i><span>加载中</span>
+    </div>
+
+
+    <div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+        <div class="am-list-news-bd">
+            <ul class="am-list" id="content">
+
+            </ul>
+        </div>
+    </div>
+</div>
+{/block}
+
+
+{block name='script'}
+<!--JS、引用 /示例如下-->
+<script>
+    var sysMsgUrl = "{:url('home/User/getSysMsg')}";
+
+    function sysMsg() {
+        $("#content").empty();
+        $("#loading").show(300);
+        $.ajax({
+            url:sysMsgUrl,
+            dataType:"json",
+            success:function (res) {
+                $("#loading").hide(300);
+                if(res["code"] == 40001){
+                    if(res["data"].length>0){
+                        for (var i = 0;i < res["data"].length;i++){
+                            var title = res["data"][i]["msgCon"].substring(0,15)+"...";
+                            var con = res["data"][i]["msgCon"];
+                            var msgTime = res["data"][i]["msgTime"];
+                            if(res["data"][i]["readType"] == 0){
+                                $("#content").append('<li class="am-g am-list-item-desced">\n' +
+                                    '<span class="am-list-item-hd "><span class="layui-badge-dot"></span>&nbsp;'+title+'</span><span class="am-list-date">'+msgTime+'</span>' +
+                                    '<div class="am-list-item-text">'+con+'</div>' +
+                                    '</li>');
+                            }
+                            else {
+                                $("#content").append('<li class="am-g am-list-item-desced" style="background: #eee">\n' +
+                                    '<span class="am-list-item-hd ">'+title+'</span><span class="am-list-date">'+msgTime+'</span>' +
+                                    '<div class="am-list-item-text">'+con+'</div>' +
+                                    '</li>');
+                            }
+                        }
+                    }
+                }
+            }
+        })
+    }
+    function myMsg() {
+        $("#content").empty();
+        $("#loading").show(300);
+        /*$.ajax({
+            url:sysMsgUrl,
+            dataType:"json",
+            success:function (res) {
+                $("#loading").hide(300);
+
+            }
+        })*/
+    }
+    function chat() {
+        $("#content").empty();
+        $("#loading").show(300);
+        /*$.ajax({
+            url:sysMsgUrl,
+            dataType:"json",
+            success:function (res) {
+                $("#loading").hide(300);
+
+            }
+        })*/
+    }
+    sysMsg();
+</script>
+{/block}

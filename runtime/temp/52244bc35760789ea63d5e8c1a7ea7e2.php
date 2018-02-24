@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\index\index.html";i:1517225494;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517304502;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\index\index.html";i:1517908165;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517665373;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
-
     <link rel="icon" href="__STATIC__/images/logo.png" type="image/x-icon"/>
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/amazeui.min.css">
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
@@ -94,6 +93,18 @@
     #ad {
         width: 100%;
     }
+    #ad .am-panel-bd{
+        border-bottom: #bbbbbb 1px dotted;
+        padding:  15px 10px;
+        text-align: center;
+    }
+    #ad .am-panel-bd a:hover{
+        color: orange;
+    }
+    #ad .am-panel-bd p{
+        font-size: 14px;
+        margin-bottom: 10px ;
+    }
     @media(max-width: 768px) {
         #searchBar{
             display: none;
@@ -116,7 +127,18 @@
 
     }
     @media (min-width: 768px) {
-
+        .am-list-main{
+            position: relative;
+        }
+        .am-vertical-align-bottom{
+            position:  absolute;
+            top: 135px;
+        }
+       .am-list-item-text{
+        overflow: hidden;
+        text-overflow:ellipsis;
+           max-height: 95px;
+       }
     }
 </style>
 
@@ -204,20 +226,15 @@
                 </span>
             </div>
             <div class="layui-row layui-hide-xs">
-                <ul class="layui-nav catalog">
+                <ul class="layui-nav catalog " id="navUl">
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>首页</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst2"></i>玩法路线</a></li>
-                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
+                    <li class="layui-nav-item"><a href="<?php echo url('home/Region/scenicShow'); ?>?rgId=1000"><i class="icon1 iconPst3"></i>景点</a></li>
                     <li class="layui-nav-item"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=1000"><i class="icon1 iconPst4"></i>酒店</a></li>
                     <li class="layui-nav-item">
-                        <a href=""><i class="icon1 iconPst5"></i>美食</a>
-                        <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                            <dd><a href="">移动模块</a></dd>
-                            <dd><a href="">后台模版</a></dd>
-                            <dd><a href="">电商平台</a></dd>
-                        </dl>
+                        <a href="<?php echo url('home/Region/food'); ?>"><i class="icon1 iconPst5"></i>美食</a>
                     </li>
-                    <li class="layui-nav-item"><a href="0"><i class="icon1 iconPst6"></i>游记</a></li>
+                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst6"></i>游记</a></li>
                 </ul>
             </div>
             <div class="layui-hide-sm">
@@ -305,7 +322,21 @@
             <div class="am-panel am-panel-primary panel" id="ad">
                 <div class="am-panel-hd">广告</div>
                 <div class="am-panel-bd">
-                    <img src="https://b4-q.mafengwo.net/s11/M00/9E/70/wKgBEFplvumAEU6GAAuwkxzWAm802.jpeg?imageMogr2%2Finterlace%2F1" alt="我很囧，你保重....晒晒旅行中的那些囧！"  class="am-img-responsive"/>
+                    <?php if(is_array($ad) || $ad instanceof \think\Collection || $ad instanceof \think\Paginator): $i = 0; $__LIST__ = $ad;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;if($vo['adType'] == 0): ?>
+                        <a href="<?php echo $vo['url']; ?>">
+                            <div class="am-panel-bd">
+                                <p><?php echo $vo['content']; ?></p>
+                                <img src="__STATIC__/<?php echo $vo['img']; ?>"  class="am-img-responsive"/>
+                            </div>
+                        </a>
+                        <?php else: ?>
+                        <a href="<?php echo $vo['url']; ?>">
+                            <div class="am-panel-bd">
+
+                                <p><?php echo $vo['content']; ?></p>
+                            </div>
+                        </a>
+                        <?php endif; endforeach; endif; else: echo "" ;endif; ?>
                 </div>
             </div>
 
@@ -448,28 +479,37 @@
         elem: '#list',
         isAuto:false//指定列表容器
         ,done: function(page, next){ //到达临界点（默认滚动触发），触发下一页
-            var lis = [];
-            //以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
-            for(var i =0;i<10;i++){
-                lis.push('<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">'+
-                    '<div class="am-u-sm-4 am-list-thumb listImg">'+
-                    '<a href="http://www.douban.com/online/11614662/" class="">'+
-                    '<img src="https://b4-q.mafengwo.net/s11/M00/9E/70/wKgBEFplvumAEU6GAAuwkxzWAm802.jpeg?imageMogr2%2Finterlace%2F1" alt="我很囧，你保重....晒晒旅行中的那些囧！" />'+
-                    '</a>'+
-                    '</div>'+
-                    ' <div class=" am-u-sm-8 am-list-main">'+
-                    '<h1 class="am-list-item-hd"><a href="http://www.douban.com/online/11614662/" class="">我很囧，你保重....晒晒旅行中的那些囧！</a></h1>'+
-                    '<div class="am-list-item-text">囧人囧事囧照，人在囧途，越囧越萌。标记《带你出发，陪我回家》http://book.douban.com/subject/25711202/为“想读”“在读”或“读过”，有机会获得此书本活动进行3个月，每月送出三本书。会有不定期bonus！</div>'+
-                    '<div class="am-list-item-text am-vertical-align-bottom "><i class="layui-icon">&#xe715;</i> 云南  <i class="layui-icon">by</i></div>'+
-                    ' </div>'+
-                    '</li>');
-            }
+            $.ajax({
+                url:"<?php echo url('home/Notes/lists'); ?>",
+                data:{page:page},
+                success:function (res) {
+                    var lis = [];
+                    var data = res.data[0];
+                    //以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
+                    for(var i =0;i<data.length;i++){
+                        lis.push('<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">'+
+                            '<div class="am-u-sm-4 am-list-thumb listImg">'+
+                            '<a href="<?php echo url('home/Notes/show'); ?>?id='+data[i]["noteId"]+'" class="">'+
+                            '<img src="__STATIC__/'+data[i]["img"]+'" alt="" />'+
+                            '</a>'+
+                            '</div>'+
+                            ' <div class=" am-u-sm-8 am-list-main">'+
+                            '<h1 class="am-list-item-hd"><a href="<?php echo url('home/Notes/show'); ?>?id='+data[i]["noteId"]+'" class="">'+data[i]["title"]+'</a></h1>'+
+                            '<div class="am-list-item-text">'+data[i]["content"]+'</div>'+
+                            '<div class="am-list-item-text am-vertical-align-bottom "><i class="layui-icon">&#xe715;</i> '+data[i]["REGION_NAME"]+'  <i class="layui-icon">by</i> '+data[i]["uname"]+' </div>'+
+                            ' </div>'+
+                            '</li>');
+                    }
 
 
 
-                //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
-                //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
-                next(lis.join(''), page < 10);
+                    //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+                    //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+                    next(lis.join(''), page < res.data[1]);
+                }
+
+            });
+
             }
     });
 </script>

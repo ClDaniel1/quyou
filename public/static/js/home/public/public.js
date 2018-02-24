@@ -16,6 +16,9 @@ $(function () {
                 $(".loginIn").show();
                 $(".uImg").attr("src",res["data"]["userImg"]);
                 $(".toCenter").attr("href",res["data"]["userUrl"]);
+                if(res["data"]["msgNum"] > 0){
+                    $(".msga").append('<span class="layui-badge layui-bg-green">'+res["data"]["msgNum"] +'</span>');
+                }
            }
            else {
                $(".loginIn").remove();

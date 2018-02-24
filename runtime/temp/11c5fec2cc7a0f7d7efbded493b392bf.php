@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\desti\desti.html";i:1517188027;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1517561697;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\desti\desti.html";i:1517188027;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1519393441;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -143,10 +143,12 @@
             <li class="layui-nav-item"><a href="">旅途直播</a></li>
             <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
             <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
+            <li class="layui-nav-item loginIn"><a href="<?php echo url('home/User/myMsg'); ?>" class="msga">我的消息</a></li>
             <li class="layui-nav-item loginIn">
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">我的消息</a></dd>
+                    <dd><a href="">我的游记</a></dd>
+                    <dd><a href="">联系客服</a></dd>
                     <dd><a href="" class="toCenter">个人中心</a></dd>
                     <dd  onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
                 </dl>
@@ -165,14 +167,16 @@
         <li class="layui-nav-item"><a href="">旅途直播</a></li>
     </ul>
     <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
-        <li class="layui-nav-item loginIn">
-            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
 
+        <li class="layui-nav-item loginIn"  style="float: right">
+            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
             <dl class="layui-nav-child">
-                <dd><a href="">我的消息</a></dd>
+                <dd><a href="">我的游记</a></dd>
+                <dd><a href="">联系客服</a></dd>
                 <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
-
+        </li>
+        <li class="layui-nav-item loginIn"  style="float: right"><a href="<?php echo url('home/User/myMsg'); ?>" class="msga">我的消息</a></li>
        <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
         <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
 
@@ -190,20 +194,15 @@
                 </span>
             </div>
             <div class="layui-row layui-hide-xs">
-                <ul class="layui-nav catalog">
+                <ul class="layui-nav catalog " id="navUl">
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst1"></i>首页</a></li>
                     <li class="layui-nav-item"><a href=""><i class="icon1 iconPst2"></i>玩法路线</a></li>
-                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst3"></i>景点</a></li>
+                    <li class="layui-nav-item"><a href="<?php echo url('home/Region/scenicShow'); ?>?rgId=1000"><i class="icon1 iconPst3"></i>景点</a></li>
                     <li class="layui-nav-item"><a href="<?php echo url('home/Region/hotel'); ?>?rgId=1000"><i class="icon1 iconPst4"></i>酒店</a></li>
                     <li class="layui-nav-item">
-                        <a href=""><i class="icon1 iconPst5"></i>美食</a>
-                        <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                            <dd><a href="">移动模块</a></dd>
-                            <dd><a href="">后台模版</a></dd>
-                            <dd><a href="">电商平台</a></dd>
-                        </dl>
+                        <a href="<?php echo url('home/Region/food'); ?>"><i class="icon1 iconPst5"></i>美食</a>
                     </li>
-                    <li class="layui-nav-item"><a href="0"><i class="icon1 iconPst6"></i>游记</a></li>
+                    <li class="layui-nav-item"><a href=""><i class="icon1 iconPst6"></i>游记</a></li>
                 </ul>
             </div>
             <div class="layui-hide-sm">
@@ -483,7 +482,7 @@
                 <div class="footer">
                   <ul class="footerUl">
                       <li class="footerHd">关于我们</li>
-                      <li><a href="">关于趣游</a></li>
+                      <li><a href="">商家入驻</a></li>
                       <li><a href="">联系我们</a></li>
                       <li><a href="">关于趣游</a></li>
                   </ul>
