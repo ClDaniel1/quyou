@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1517664939;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517665373;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1519539059;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1519434562;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +25,6 @@
 <link rel="stylesheet" href="__CSS__/home/region/region.css">
 
     <title>
-这个是某地区总体概览
 </title>
     <style>
         .navBg{
@@ -61,10 +60,12 @@
             <li class="layui-nav-item"><a href="">旅途直播</a></li>
             <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
             <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
+            <li class="layui-nav-item loginIn"><a href="<?php echo url('home/User/myMsg'); ?>" class="msga">我的消息</a></li>
             <li class="layui-nav-item loginIn">
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">我的消息</a></dd>
+                    <dd><a href="">我的游记</a></dd>
+                    <dd><a href="">联系客服</a></dd>
                     <dd><a href="" class="toCenter">个人中心</a></dd>
                     <dd  onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
                 </dl>
@@ -83,14 +84,16 @@
         <li class="layui-nav-item"><a href="">旅途直播</a></li>
     </ul>
     <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
-        <li class="layui-nav-item loginIn">
-            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
 
+        <li class="layui-nav-item loginIn"  style="float: right">
+            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
             <dl class="layui-nav-child">
-                <dd><a href="">我的消息</a></dd>
+                <dd><a href="">我的游记</a></dd>
+                <dd><a href="">联系客服</a></dd>
                 <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
-
+        </li>
+        <li class="layui-nav-item loginIn"  style="float: right"><a href="<?php echo url('home/User/myMsg'); ?>" class="msga">我的消息</a></li>
        <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
         <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
 
@@ -236,7 +239,7 @@
             <div class="layui-col-sm5 layui-col-xs6">
                 <div class="msgDiv">
                     <span>攻略：</span>
-                    <p class="">
+                    <p class="conP">
                         <?php echo $bkMsg['intro']; ?>
                     </p>
                 </div>
@@ -250,9 +253,9 @@
 <!--景点路线区域-->
 <div id="content3">
     <div class="layui-container">
-        <h1 class="lineFont"><span><?php echo $region_name; ?></span><span>2</span>条经典路线</h1>
+        <h1 class="lineFont"><span><?php echo $region_name; ?></span><span>{{routeMsg.count}}</span>条经典路线</h1>
         <div class="layui-row">
-            <div class="layui-col-sm6" v-for="(value,key) in routeMsg.msg">
+            <div class="layui-col-sm6" v-for="(value,key) in routeMsg.msg" v-show="key<showNum">
                 <div class="mapBorder1 scenicMsg">
                     <h1>
                         <span class="layui-badge layui-bg-orange mapNo">{{key+1}}</span>
@@ -284,13 +287,20 @@
             </div>
         </div>
         <div class="lookAll">
-            <a href="">
+            <span href="" @click="showMap" v-if="showNum===2">
                 <span class="book">
                     <i class="i-blue"></i>
                     <i class="i-orange"></i>
                 </span>
                 查看全部<span class="numOrange"><span>{{routeMsg.count}}</span>条</span>路线>
-            </a>
+            </span>
+            <span href="" @click="hideMap" v-else>
+                <span class="book">
+                    <i class="i-blue"></i>
+                    <i class="i-orange"></i>
+                </span>
+                收起
+            </span>
         </div>
         <div style="clear: both"></div>
     </div>
@@ -316,9 +326,9 @@
                                 </div>
                             </div>
                             <div class="comTop">
-                                <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
-                                <span class="comName">梨窝浅浅</span>
-                                <span class="comMsg">“呆过四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
+                                <img class="headImg" src="__STATIC__/<?php echo $value['content']['uheadImg']; ?>" alt="加载失败">
+                                <span class="comName"><?php echo $value['content']['uname']; ?></span>
+                                <span class="comMsg">“<?php echo $value['content']['content']; ?>”</span>
                             </div>
                         </div>
                     </a>
@@ -345,9 +355,9 @@
                                 </div>
                             </div>
                             <div class="comTop">
-                                <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
-                                <span class="comName">梨窝浅浅</span>
-                                <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
+                                <img class="headImg" src="__STATIC__/<?php echo $value['content']['uheadImg']; ?>" alt="加载失败">
+                                <span class="comName"><?php echo $value['content']['uname']; ?></span>
+                                <span class="comMsg">“<?php echo $value['content']['content']; ?></span>
                             </div>
                         </div>
                     </a>
@@ -374,9 +384,9 @@
                                 </div>
                             </div>
                             <div class="comTop">
-                                <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
-                                <span class="comName">梨窝浅浅</span>
-                                <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
+                                <img class="headImg" src="__STATIC__/<?php echo $value['content']['uheadImg']; ?>" alt="加载失败">
+                                <span class="comName"><?php echo $value['content']['uname']; ?></span>
+                                <span class="comMsg">“<?php echo $value['content']['content']; ?>”</span>
                             </div>
                         </div>
                     </a>
@@ -441,7 +451,7 @@
                 <div class="footer">
                   <ul class="footerUl">
                       <li class="footerHd">关于我们</li>
-                      <li><a href="">关于趣游</a></li>
+                      <li><a href="">商家入驻</a></li>
                       <li><a href="">联系我们</a></li>
                       <li><a href="">关于趣游</a></li>
                   </ul>
@@ -530,7 +540,8 @@
             routeS:false,
             type:false,
             mapp:"map",
-            region:"<?php echo $region_name; ?>"
+            region:"<?php echo $region_name; ?>",
+            showNum:2
         },
         created: function () {
             var _this=this;
@@ -561,6 +572,7 @@
             });
         },
         methods: {
+
             bdMap:function(showId,scenicArr,max) {
                 var map = new BMap.Map(showId);//创建地图实例
                 map.enableScrollWheelZoom(true);//地图的鼠标滚轮缩放默认是关闭的，需要配置开启。
@@ -622,6 +634,13 @@
                     );
                     map.addOverlay(polyline);//跟polyline一块使用，添加上线
                 }
+            },
+            showMap: function () {
+                var _this=this;
+                _this.showNum=this.routeMsg.count;
+            },
+            hideMap: function () {
+                this.showNum=2;
             }
         }
     });

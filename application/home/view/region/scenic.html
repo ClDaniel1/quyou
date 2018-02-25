@@ -6,17 +6,28 @@
         display: block;
     }
 </style>
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="__CSS__/home/region/scenic.css">
+{/block}
+{block  name="site"}
+<a href="">{$region_name}<i class="layui-icon orangeIcon">&#xe625;</i></a>
+<a><cite style="color: #ff7000;font-weight: bold;">{$region_name}景点</cite></a>
 {/block}
 <!--页面内容 /示例如下-->
 {block name='body'}
     <div class="layui-container">
         <div class="layui-row">
-            <h1 class="summarize">景点概述</h1>
+            <h1 class="summarize">{$region_name}概述</h1>
         </div>
         <div class="layui-row">
             <p class="smMsg">
-                到上海，你永远不会觉得无事可做，你可以到外滩尽情感受夜的风情，去徐汇区的天平路和湖南路找最漂亮的老洋房，在老上海的里弄感受历史的沉淀，或者索性也彻底小资一把，去田子坊、新天地静坐冥想，任时光流逝；衡山路酒吧街对饮狂欢；1933老厂房这些艺术仓库看看中西混搭的艺术魅力。最后千万别忘了登上东方明珠，放眼看看这个国际化的大都市。
+                {$regionMsg.intro}
             </p>
         </div>
         <div class="layui-row">
@@ -24,35 +35,37 @@
                 必游景点TOP5
             </h1>
         </div>
-        <div class="layui-row tiBorder">
+        {volist name="scenic" id="value"}
+            <div class="layui-row tiBorder">
             <div class="layui-col-sm5 layui-col-xs5 dpTable">
                 <div class="scenicDiv">
                     <div>
-                        <span class="layui-badge layui-bg-orange iconMin">1</span>
-                        <a href="{:url('home/Region/scenicMsg')}" class="bigA">外滩</a>
-                        <a href="{:url('home/Region/scenicMsg')}" class="minA"><span>1300</span>条评论</a>
+                        <span class="layui-badge layui-bg-orange iconMin">{$key+1}</span>
+                        <a href="{:url('home/Region/scenicMsg')}?id={$value.scenicId}" class="bigA">{$value.scenicName}</a>
+                        <a href="{:url('home/Region/scenicMsg')}?id={$value.scenicId}" class="minA"><span>{$value.count}</span>条评论</a>
                     </div>
                     <div>
-                        <p class="msgP">外滩是到上海旅游的首站，外滩建筑群是上海的名片，夜景不可错过</p>
+                        <p class="msgP">{$value.scenicDescribe}</p>
                     </div>
                 </div>
             </div>
             <div class="layui-col-sm7 layui-col-xs7 imgDiv">
                 <div class="bigImg">
-                    <a href="{:url('home/Region/scenicMsg')}">
-                        <img src="http://p2-q.mafengwo.net/s2/M00/92/AB/wKgBpU7hX8G6QwT2AAfE1QOwzZc32.jpeg?imageMogr2%2Fthumbnail%2F%21380x270r%2Fgravity%2FCenter%2Fcrop%2F%21380x270%2Fquality%2F100" alt="">
+                    <a href="{:url('home/Region/scenicMsg')}?id={$value.scenicId}">
+                        <img src="__STATIC__/{$value.img[0]['url']}" alt="加载失败">
                     </a>
                 </div>
                 <div class="minImg">
-                    <a href="{:url('home/Region/scenicMsg')}">
-                        <img src="http://p2-q.mafengwo.net/s2/M00/92/AB/wKgBpU7hX8G6QwT2AAfE1QOwzZc32.jpeg?imageMogr2%2Fthumbnail%2F%21380x270r%2Fgravity%2FCenter%2Fcrop%2F%21380x270%2Fquality%2F100" alt="">
+                    <a href="{:url('home/Region/scenicMsg')}?id={$value.scenicId}">
+                        <img src="__STATIC__/{$value.img[1]['url']}" alt="加载失败">
                     </a>
-                    <a href="{:url('home/Region/scenicMsg')}">
-                        <img src="http://p2-q.mafengwo.net/s2/M00/92/AB/wKgBpU7hX8G6QwT2AAfE1QOwzZc32.jpeg?imageMogr2%2Fthumbnail%2F%21380x270r%2Fgravity%2FCenter%2Fcrop%2F%21380x270%2Fquality%2F100" alt="">
+                    <a href="{:url('home/Region/scenicMsg')}?id={$value.scenicId}">
+                        <img src="__STATIC__/{$value.img[2]['url']}" alt="加载失败">
                     </a>
                 </div>
             </div>
         </div>
+        {/volist}
         <div class="layui-row">
             <div>
                 <h1 class="msgH1"><span>上海</span>全部景点</h1>
@@ -60,65 +73,39 @@
         </div>
         <div class="layui-row">
             <ul class="allScenic">
-                <li>
-                    <a href="{:url('home/Region/scenicMsg')}">
-                        <img src="http://p2-q.mafengwo.net/s2/M00/92/AB/wKgBpU7hX8G6QwT2AAfE1QOwzZc32.jpeg?imageMogr2%2Fthumbnail%2F%21192x130r%2Fgravity%2FCenter%2Fcrop%2F%21192x130%2Fquality%2F100" alt="">
-                        <span>外滩</span>
+                {volist name='all' id='val'}
+                    <li>
+                    <a href="{:url('home/Region/scenicMsg')}?id={$value.scenicId}">
+                        <img src="__STATIC__/{$val.scenicImg}" alt="加载失败">
+                        <span>{$val.scenicName}</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{:url('home/Region/scenicMsg')}">
-                        <img src="http://p2-q.mafengwo.net/s2/M00/92/AB/wKgBpU7hX8G6QwT2AAfE1QOwzZc32.jpeg?imageMogr2%2Fthumbnail%2F%21192x130r%2Fgravity%2FCenter%2Fcrop%2F%21192x130%2Fquality%2F100" alt="">
-                        <span>外滩</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{:url('home/Region/scenicMsg')}">
-                        <img src="http://p2-q.mafengwo.net/s2/M00/92/AB/wKgBpU7hX8G6QwT2AAfE1QOwzZc32.jpeg?imageMogr2%2Fthumbnail%2F%21192x130r%2Fgravity%2FCenter%2Fcrop%2F%21192x130%2Fquality%2F100" alt="">
-                        <span>外滩</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{:url('home/Region/scenicMsg')}">
-                        <img src="http://p2-q.mafengwo.net/s2/M00/92/AB/wKgBpU7hX8G6QwT2AAfE1QOwzZc32.jpeg?imageMogr2%2Fthumbnail%2F%21192x130r%2Fgravity%2FCenter%2Fcrop%2F%21192x130%2Fquality%2F100" alt="">
-                        <span>外滩</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{:url('home/Region/scenicMsg')}">
-                        <img src="http://p2-q.mafengwo.net/s2/M00/92/AB/wKgBpU7hX8G6QwT2AAfE1QOwzZc32.jpeg?imageMogr2%2Fthumbnail%2F%21192x130r%2Fgravity%2FCenter%2Fcrop%2F%21192x130%2Fquality%2F100" alt="">
-                        <span>外滩</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{:url('home/Region/scenicMsg')}">
-                        <img src="http://p2-q.mafengwo.net/s2/M00/92/AB/wKgBpU7hX8G6QwT2AAfE1QOwzZc32.jpeg?imageMogr2%2Fthumbnail%2F%21192x130r%2Fgravity%2FCenter%2Fcrop%2F%21192x130%2Fquality%2F100" alt="">
-                        <span>外滩</span>
-                    </a>
-                </li>
+                {/volist}
             </ul>
         </div>
         <div style="text-align: right">
-            <div id="test1"></div>
+            <div id="test1">
+                {$all->render()}
+            </div>
         </div>
     </div>
 {/block}
 <!--Js引用-->
 {block name='script'}
 <script>
-    layui.use('laypage', function(){
-        var laypage = layui.laypage;
-
-        //执行一个laypage实例
-        laypage.render({
-            elem: 'test1'
-            ,count: 100
-            ,first: '首页'
-            ,last: '尾页'
-            ,jump: function(obj){
-                console.log(obj)
-            }
-        });
-    });
+//    layui.use('laypage', function(){
+//        var laypage = layui.laypage;
+//
+//        //执行一个laypage实例
+//        laypage.render({
+//            elem: 'test1'
+//            ,count: 100
+//            ,first: '首页'
+//            ,last: '尾页'
+//            ,jump: function(obj){
+//                console.log(obj)
+//            }
+//        });
+//    });
 </script>
 {/block}

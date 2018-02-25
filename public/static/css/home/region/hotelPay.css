@@ -2,20 +2,25 @@
 {
     display: inline-block;
     margin-left: 10px;
-    width: 45%;
+    /*width: 45%;*/
 }
 .imgUl li
 {
-    margin-bottom:7px;
+    width: 45%;
+    display: inline-block;
+    margin-bottom:10px;
+    margin-right: 12px;
 }
 .imgUl img
 {
     border-radius: 10px;
     width: 100%;
+    height: 117px;
 }
 .bigImg
 {
     width: 100%;
+    height: 372px;
     border-radius: 10px;
 }
 .hotelName
@@ -297,18 +302,19 @@
     }
     .imgUl li
     {
-        margin-bottom: 3px;
+        margin-bottom: 10px;
+        margin-right: 3px;
     }
 }
 @media (min-width: 768px) and (max-width: 992px){
     .imgUl li
     {
-        margin-bottom: 4px;
+        margin-bottom: 8px;
     }
 }
 @media (min-width: 992px) and (max-width: 1200px){
     .imgUl li
     {
-        margin-bottom: 6px;
+        margin-bottom: 9px;
     }
 }

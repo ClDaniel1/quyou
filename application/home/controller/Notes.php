@@ -171,6 +171,7 @@ class Notes extends \think\Controller
                 }
                 else{
                     //获取游记内容
+                    $nm->toDraft($id);
                     $con = $nm->getNoteCont($id);
 
                     $this->assign("info",$info);

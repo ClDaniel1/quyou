@@ -1,0 +1,181 @@
+.lss{
+    color: black;
+}
+
+.lsbtn{
+    float: none;
+    margin-left: 0;
+    margin-right: 80px;
+}
+
+#chatD{
+    display: none;
+    background: white;
+    position: absolute;
+    left: 20%;
+    z-index: 1000000;
+    width: 1195px;
+}
+
+
+.lefts{
+    height: 745px;
+    width: 225px;
+    background: #eeeeee;
+    float: left;
+    border-radius: 5px;
+}
+
+.rights{
+    float: left;
+    height: 100%;
+    width: 970px;
+    position: relative;
+}
+
+#chatHead{
+    width: 100%;
+    height: 39px;
+    border-bottom: #eaeaea 1px solid;
+
+}
+
+#chatMain{
+    width: 100%;
+    height: 575px;
+    border-bottom: #eaeaea 1px solid;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#chatTool{
+    width: 100%;
+    height: 40px;
+
+    position: relative;
+}
+
+#chatbar{
+    width: 100%;
+    height: 88px;
+}
+
+
+#chatZM{
+    width: 100%;
+    height: 100%;
+    background: white;
+    border: 1px solid #eaeaea;
+}
+
+#chatinput{
+    width: 560px;
+    height: 80px;
+    border: none;
+    margin-left: 10px;
+    overflow: scroll;
+    overflow-x: hidden;
+    float: left;
+}
+
+
+#send{
+    float: right;
+    margin-right: 10px;
+    margin-top: 40px;
+    width: 60px;
+    height: 35px;
+    background: #0188fb;
+    color: white;
+    border: none;
+}
+
+.toolimg{
+    width: 24px;
+    height: 24px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color:  rgba(0,0,0,0.5);
+}
+
+
+#chat{
+    border-collapse: collapse;
+}
+
+.chattr{
+    cursor: pointer;
+    border-collapse: collapse;
+    display: inline-block;
+}
+
+.chattr td{
+    border-collapse: collapse;
+}
+
+#chat .chatimg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    float: none;
+}
+
+#chat img{
+    float: right;
+    margin-right: 10px;
+}
+
+
+.friendimg{
+    padding: 10px 5px 10px 10px;
+}
+
+.friendtext{
+    width:160px;
+}
+
+.send{
+    width: 830px;
+}
+.get{
+    width: 830px;
+}
+
+#chatinput{
+    width: 850px;
+}
+
+.goCustomer{
+    width: 105px;
+    height: 35px;
+    background: white;
+    text-align: center;
+    line-height: 35px;
+    position: fixed;
+    z-index: 1000000;
+    bottom: 0;
+    right: 15px;
+    box-shadow:  0 0 10px;
+}
+
+#zz{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    line-height: 600px;
+    color: #707070;
+    text-align: center;
+    z-index: 1000;
+    font-size: 35px;
+}

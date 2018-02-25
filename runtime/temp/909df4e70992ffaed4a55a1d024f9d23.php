@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1519390270;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1519393441;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\index\index.html";i:1519396764;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1519513687;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
     <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
     <link rel="stylesheet" href="__CSS__\home\public\public.css">
+    <link rel="stylesheet" href="__CSS__\home\chat.css">
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
@@ -161,6 +162,24 @@
 
 
 
+<div id="chatD">
+    <div id="chatZone" class="chat">
+        <div id="chatZM">
+            <div id="chatHead"><span id="chatname">正在和xx聊天</span><img src="__STATIC__/images/x.png" alt=""></div>
+            <div id="chatMain"></div>
+            <div id="chatTool">
+                <div class="unuse"></div>
+                <img src="__STATIC__/images/face.png" alt="" class="toolimg" id="btnface">
+                <img src="__STATIC__/images/draw.png" alt="" class="toolimg" id="btndraw">
+            </div>
+            <div id="chatbar">
+                <div class="unuse"></div>
+                <div id="chatinput" contenteditable="true" tabindex="0"></div>
+                <input type="button" value="发送" id="send">
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="layui-header header layui-show-xs-block layui-hide-sm navBg" id="liteNav" >
     <ul class="layui-nav navBg" lay-filter="" style="text-align: center">
@@ -184,7 +203,7 @@
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
                     <dd><a href="">我的游记</a></dd>
-                    <dd><a href="">联系客服</a></dd>
+                    <dd><a href="javascript:;" class="goCustomer">联系客服</a></dd>
                     <dd><a href="" class="toCenter">个人中心</a></dd>
                     <dd  onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
                 </dl>
@@ -207,8 +226,8 @@
         <li class="layui-nav-item loginIn"  style="float: right">
             <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
             <dl class="layui-nav-child">
-                <dd><a href="">我的游记</a></dd>
-                <dd><a href="">联系客服</a></dd>
+                <dd><a href="<?php echo URL('home/personal/personal'); ?>#test1=2">我的游记</a></dd>
+                <dd><a href="javascript:;" class="goCustomer">联系客服</a></dd>
                 <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
         </li>
@@ -373,7 +392,14 @@
                         </ul >
 
                     </div>
-                    <div class="layui-tab-item" id="timeList"></div>
+                    <div class="layui-tab-item">
+
+                        <ul class="am-list" id="timeList">
+                            <!--缩略图在标题左边-->
+
+                        </ul >
+
+                    </div>
 
                 </div>
             </div>
@@ -445,6 +471,10 @@
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
 <script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
+<script>
+    var qqFace = "__STATIC__/images/expression/";
+</script>
+<script src="__JS__/home/chat.js"></script>
 <script>
     $("#menu").click(showSideBar);
     function showSideBar() {

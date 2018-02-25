@@ -44,4 +44,16 @@ class User
         db('t_msg')->where('uid',$uid)->setField('readType','1');
         return $res;
     }
+
+    public function getUserInfo($uid){
+        $data =db('t_user')
+            ->alias('a')
+            ->field("a.uname,a.uheadImg,count(b.collectId) collectNum,count(c.collectId) byCollectNum")
+            ->join('t_collect b','a.uid = b.uid')
+            ->join('t_collect c','a.uid = c.whoId')
+            ->where("a.uid= $uid")
+            ->where("c.type= 0")
+            ->select();
+        return $data;
+    }
 }

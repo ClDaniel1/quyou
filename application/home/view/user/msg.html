@@ -81,7 +81,7 @@
             dataType:"json",
             success:function (res) {
                 $("#loading").hide(300);
-                if(res["code"] == 40001){
+                if(res["code"] == 50001){
                     if(res["data"].length>0){
                         for (var i = 0;i < res["data"].length;i++){
                             var title = res["data"][i]["msgCon"].substring(0,15)+"...";

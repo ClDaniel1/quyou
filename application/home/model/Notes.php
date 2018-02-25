@@ -254,4 +254,35 @@ class Notes extends Model
         db('t_note')->where('noteId',$noteId)->setInc('tapNum');
         return $data;
     }
+
+    /**
+     * 获取用户游记
+     * @param $userId 用户Id
+     * @return mixed
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function allNote($userId){
+        $data =db('t_note')
+            ->where("uid= $userId")
+            ->select();
+        return $data;
+    }
+
+    public function toDraft($noteId){
+        db('t_note')->where('noteId', $noteId)->update(['noteType' => '0']);
+    }
+
+    public function getNoteByRe($desId,$start,$num){
+        $data = db("t_note")
+            ->alias('a')
+            ->field("a.*,c.uname,d.content,c.uheadImg")
+            ->join('t_user c','a.uid = c.uid')
+            ->join('t_notecon d','a.noteId = d.noteId')
+            ->limit($start,$num)
+            ->where("a.noteType=1 and d.num =1 and a.desId = $desId")
+            ->order('createTime desc')->select();
+        return $data;
+    }
 }

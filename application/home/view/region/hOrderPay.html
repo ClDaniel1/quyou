@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" href="__STATIC__/images/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/amazeui.min.css">
+    <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
+    <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
+    <link rel="stylesheet" href="__CSS__\home\public\public.css">
+    <link rel="stylesheet" href="__CSS__/home/region/hotelOrder.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <title>酒店预订</title>
+</head>
+<body>
+<div class="logoDiv">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div style="line-height: 95px">
+                <img class="logoImg" src="__STATIC__/images/logo1.png" alt="加载失败">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="layui-container">
+    <div class="layui-row msgDiv">
+        <div class="layui-col-sm3 layui-col-xs6">
+            <i class="layui-icon" style="color: #64ca80;">&#x1005;</i><span>1.选择房间</span>
+        </div>
+        <div class="layui-col-sm3 layui-col-xs6 ">
+            <i class="layui-icon" style="color: #64ca80;">&#x1005;</i> <span>2.填写入住详情</span>
+        </div>
+        <div class="layui-col-sm3 layui-col-xs6 resColor">
+            <span>3.确认支付信息</span>
+        </div>
+        <div class="layui-col-sm3 layui-col-xs6">
+            <span>4.预订完成</span>
+        </div>
+    </div>
+    <div class="layui-row">
+        <h1 style="margin-bottom: 20px;color: orange;">提示信息：下单成功，请在30分钟内完成支付</h1>
+    </div>
+    <div class="layui-row">
+        <div class="layui-col-sm8">
+            <div class="divBd">
+                <div class="ctLeft">
+                    <div class="ctImg">
+                        <img src="__STATIC__/{$msg.hotel.img}" alt="加载失败">
+                    </div>
+                    <div class="textDiv">
+                        <h1>{$msg.hotel.hotelName}</h1>
+                        <h3><span>简介：</span>{$msg.hotel.hotelDescribe}</h3>
+                        <div>
+                            <span>入住时间</span>
+                            <span>{$msg.order.useDate}</span>
+                        </div>
+                        <div>
+                            <span>入住天数</span>
+                            <span>{$msg.order.valid}</span>
+                            <span class="blockS">天</span>
+                        </div>
+                        <div>
+                            <span>客房数量</span>
+                            <span>{$msg.order.num}</span>
+                            <span class="blockS">间</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        <div class="layui-col-sm4">
+            <div class="rightD">
+                <div class="rTop">
+                    <h1>预订费用明细</h1>
+                </div>
+                <div class="rMiddle">
+                    <h3><span>{$msg.order.num}</span>间客房x<span>{$msg.order.valid}</span>晚 <span class="floatR" style="text-align: right">￥<span>{$msg.order.unitPrice}</span></span></h3>
+                </div>
+                <div class="rBottom">
+                    <h1>总价（含税）<span class="floatR" style="text-align: right;color: orange;font-size: 18px">￥<span>{$msg.order.totalPrice}</span></span></h1>
+                </div>
+            </div>
+            <div>
+                <button class="layui-btn layui-btn-fluid layui-btn-warm payBtn" style="margin-top: 30px">立即支付</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="__STATIC__/lib/vue.js"></script>
+<script src="__STATIC__\lib\layui\layui.all.js"></script>
+<script src="__STATIC__\lib\jquery-3.2.1.js"></script>
+<script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
+<script src="__STATIC__/js/home/order/hOrderPay.js"></script>
+<script>
+    var payUrl="{:url('home/Region/hPay')}";
+    var hrefUrl="{:url('home/Region/hSuccess')}?";
+    var price ="{$msg.order.totalPrice}";
+    var hotelId ="{$msg.order.orderId}";
+</script>
+</html>

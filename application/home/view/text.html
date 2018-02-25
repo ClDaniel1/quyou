@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>test</title>
+</head>
+<body>
+<div style="position:fixed;height:50px;background:#00b9f2;width:100%;display:none" id="topbar">11111</div>
+<div style="height:80000px;background-color: #1b961b">content</div>
+</body>
+<script type="text/javascript">
+    window.onscroll=function(){
+        var top=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop;
+        var node=document.getElementById('topbar');
+        if(top>540){//20就是滚动条滚动到的位置，大于20才显示
+            node.style.display='';
+        }else{
+            node.style.display='none';
+        }
+    }
+</script>
+</html>
