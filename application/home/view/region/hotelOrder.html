@@ -72,54 +72,50 @@
                 </div>
                 <div style="clear:both;"></div>
             </div>
-
             <div class="divBd" id="vueShow">
-                <div class="padding" v-for="value in 2">
+                <form class="padding" class="layui-form layui-form-pane" v-for="value in num">
                     <h2>房间{{value}}-联系人信息（必填）</h2>
                     <h3>填写一人即可,其他人员消费时出示证件</h3>
                     <div>
                         <span style="font-size: 18px">联系人列表中选择：</span>
-                        <select placeholder="请选择联系人" data-am-selected="{maxHeight: 100}">
-                            <option value=""></option>
-                            <option value="a">
-                            </option>
-                            <option value="b">Banana</option>
-                            <option value="o">Orange</option>
-                            <option value="m">Mango</option>
-                            <option value="d" disabled>禁用鸟</option>
+                        <select class="selectC" placeholder="请选择联系人" data-am-selected="{maxHeight: 100}">
+                            <option selected value=""></option>
+                            <option v-for="val in contact" :value="val.conId">{{val.conName}}</option>
                         </select>
+
                     </div>
-                </div>
+
+                </form>
                 <div class="padding">
                     <div style="margin: 15px 0">
                         <button v-if="showT" class="layui-btn layui-btn-normal layui-btn-fluid " lay-submit @click="outU">关闭</button>
                         <button v-else class="layui-btn layui-btn-normal layui-btn-fluid " lay-submit @click="addU">添加联系人</button>
                     </div>
-                    <form v-if="showT" class="layui-form layui-form-pane" action="{:url('home/Region/addHotel')}">
+                    <form v-if="showT" class="layui-form layui-form-pane" action="{:url('home/Region/addContact')}">
                         <div class="layui-form-item">
                             <label class="layui-form-label">姓名</label>
                             <div class="layui-input-block">
-                                <input name="name" class="layui-input" type="text" >
+                                <input name="name" class="layui-input" type="text" lay-verify="required|username">
                             </div>
                         </div>
                         <div class="layui-form-item">
-                            <label class="layui-form-label">电话</label>
+                            <label class="layui-form-label" >电话</label>
                             <div class="layui-input-block">
-                                <input name="phone" class="layui-input" type="text" >
+                                <input name="phone" class="layui-input" type="text" lay-verify="required|phone|number">
                             </div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">身份证</label>
                             <div class="layui-input-block">
-                                <input name="identity" class="layui-input" type="text" >
+                                <input name="identity" class="layui-input" type="text" lay-verify="required|identity" >
                             </div>
                         </div>
-
+                        <button lay-submit class="layui-btn layui-btn-fluid layui-btn-warm" lay-filter="contact">确认添加</button>
                     </form>
                 </div>
             </div>
             <div>
-                <button style="background-color: #00a0e9;margin-top: 20px" class="layui-btn layui-btn-fluid layui-btn-warm" >提交订单</button>
+                <button style="background-color: #00a0e9;margin-top: 20px" class="layui-btn layui-btn-fluid layui-btn-warm" onclick="chose()">提交订单</button>
             </div>
         </div>
         <div class="layui-col-sm4">
@@ -128,7 +124,7 @@
                     <h1>预订费用明细</h1>
                 </div>
                 <div class="rMiddle">
-                    <h3><span>{$msg.num}</span>间客房x<span>1</span>晚 <span class="floatR" style="text-align: right">￥<span>{$msg.price}</span></span></h3>
+                    <h3><span>1</span>间客房x<span>1</span>晚 <span class="floatR" style="text-align: right">￥<span>{$hotel.hotelPrice}</span></span></h3>
                 </div>
                 <div class="rBottom">
                     <h1>总价（含税）<span class="floatR" style="text-align: right;color: orange;font-size: 18px">￥<span>{$msg.price}</span></span></h1>
@@ -143,17 +139,12 @@
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
 <script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
 <script>
-    (function($) {
-        if ($.AMUI && $.AMUI.validator) {
-            // 增加单个正则
-            $.AMUI.validator.patterns.card = /^(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}[0-9Xx]$)$/;
-        }
-    })(window.jQuery);
-    new Vue({
+    $vue=new Vue({
         el:"#vueShow",
         data:{
             num:"{$msg.num}",
-            showT:false
+            showT:false,
+            contact:[]
         },
         methods:{
             addU: function () {
@@ -161,42 +152,115 @@
             },
             outU: function () {
                 this.showT=false;
+            },
+            inContact: function () {
+                var _this=this;
+                $.ajax({
+                    url:"{:url('home/Region/contact')}",
+                    type:"post",
+                    dataType:"json",
+                    success: function (res) {
+                        console.log(res);
+                        _this.contact=res;
+                    },error: function (res) {
+                        console.log(res);
+                    }
+                })
             }
+        },
+        created: function () {
+            var _this=this;
+           _this.inContact();
         }
     });
+    var form = layui.form;
     layui.use('form', function(){
-        var form = layui.form;
-        form.on('submit(addOrder)', function (data) {
+        form = layui.form;
+        form.on('submit(contact)', function (data) {
+            var index = layer.load(2);
             var datas=data.field;
-//            var arr=[];
             console.log(datas);
-//            for(var i=1;i<="{$num}";i++)
-//            {
-//                var name="name"+i;
-//                var phone="phone"+i;
-//                var identity="identity"+i;
-//                console.log(datas.name);1
-////                console.log(JSON.parse(name));
-//                arr.push({name:datas.name,phone:datas.phone,identity:datas.identity});
-//            }
-//            console.log(arr);
             var action=data.form.action;
-//            $.ajax({
-//                url:action,
-//                data:{user:arr,unitPrice:"{$msg.msg.hotelPrice}",hotalPrice:"{$msg.price}",num:"{$num}",days:"{$msg.days}",useTime:"{$msg.checkTime}",tradeId:"{$msg.msg.hotelId}"},
-//                type:"POST",
-//                dataType:"json",
-//                success:function(msg){
-//                    console.log(msg);
-////                    window.location.href=msg.url;
-//                },
-//                error:function(error){
-//                    console.log(error)
-//                }
-//            });
+            console.log(action);
+            $.ajax({
+                url:action,
+                data:datas,
+                type:"POST",
+                dataType:"json",
+                success:function(msg){
+                    console.log(msg.url);
+                    if(msg.code==19000)
+                    {
+                        layer.msg(msg.msg, {icon: 5});
+                        layer.close(index);
+                    }
+                    else if(msg.code==50001)
+                    {
+                        layer.msg(msg.msg, {icon: 6});
+                        layer.close(index);
+                        $vue.inContact();
+                    }
+                    else
+                    {
+                        layer.msg('添加有误，请重新添加', {icon: 5});
+                        layer.close(index);
+                    }
+                    $vue.showT=false;
+//                    window.location.href=msg.url;
+                },
+                error:function(error){
+                    console.log(error)
+                }
+            });
             return false;
+        });
+        form.verify({
+            username:
+            //我们既支持上述函数式的方式，也支持下述数组的形式
+            //数组的两个值分别代表：[正则匹配、匹配不符时的提示文字]
+            [
+                /^[\u4e00-\u9fa5]{2,5}$/
+                ,'用户名必须是2-5个中文字符'
+            ]
         });
     });
 
+
+    function chose(){
+        var arr=[];
+        for(var i=0;i<$(".selectC").length;i++)
+        {
+            if($(".selectC")[i].value!="")
+            {
+                $id=$(".selectC")[i].value;
+                arr.push($id);
+            }
+        }
+        $.ajax({
+            type:"post",
+            url:"{:url('home/Region/addHotel')}",
+            data:{user:arr,unitPrice:"{$msg.msg.hotelPrice}",hotalPrice:"{$msg.price}",num:"{$num}",days:"{$msg.days}",useTime:"{$msg.checkTime}",tradeId:"{$msg.msg.hotelId}"},
+            dataType:"json",
+            success: function (res) {
+                console.log(res);
+                if(res.code==60001)
+                {
+                    layer.msg(res.msg, {icon: 5});
+                }
+                else if(res.code==60002)
+                {
+                    layer.msg(res.msg, {icon: 6,time: 2000},function(){
+                        window.location.href="{:url('home/Region/hOrderPay')}?orderId="+res.data[0]+"";
+                    });
+                }
+                else if(res.code==60003)
+                {
+                    layer.msg(res.msg, {icon: 5});
+                }
+            },error: function (res) {
+                console.log(res);
+            }
+        })
+    }
 </script>
 </html>

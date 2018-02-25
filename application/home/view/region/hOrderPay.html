@@ -52,22 +52,23 @@
             <div class="divBd">
                 <div class="ctLeft">
                     <div class="ctImg">
-                        <img src="__STATIC__/{$msg.msg.img}" alt="加载失败">
+                        <img src="__STATIC__/{$msg.hotel.img}" alt="加载失败">
                     </div>
                     <div class="textDiv">
-                        <h1>{$msg.msg.hotelName}</h1>
-                        <h3><span>简介：</span>{$msg.msg.hotelDescribe}</h3>
+                        <h1>{$msg.hotel.hotelName}</h1>
+                        <h3><span>简介：</span>{$msg.hotel.hotelDescribe}</h3>
                         <div>
                             <span>入住时间</span>
-                            <span>{$msg.checkTime}</span>
+                            <span>{$msg.order.useDate}</span>
                         </div>
                         <div>
-                            <span>离店时间</span>
-                            <span>{$msg.outTime}</span>
+                            <span>入住天数</span>
+                            <span>{$msg.order.valid}</span>
+                            <span class="blockS">天</span>
                         </div>
                         <div>
                             <span>客房数量</span>
-                            <span>{$msg.num}</span>
+                            <span>{$msg.order.num}</span>
                             <span class="blockS">间</span>
                         </div>
                     </div>
@@ -81,14 +82,14 @@
                     <h1>预订费用明细</h1>
                 </div>
                 <div class="rMiddle">
-                    <h3><span>{$msg.num}</span>间客房x<span>1</span>晚 <span class="floatR" style="text-align: right">￥<span>{$msg.price}</span></span></h3>
+                    <h3><span>{$msg.order.num}</span>间客房x<span>{$msg.order.valid}</span>晚 <span class="floatR" style="text-align: right">￥<span>{$msg.order.unitPrice}</span></span></h3>
                 </div>
                 <div class="rBottom">
-                    <h1>总价（含税）<span class="floatR" style="text-align: right;color: orange;font-size: 18px">￥<span>{$msg.price}</span></span></h1>
+                    <h1>总价（含税）<span class="floatR" style="text-align: right;color: orange;font-size: 18px">￥<span>{$msg.order.totalPrice}</span></span></h1>
                 </div>
             </div>
             <div>
-                <button class="layui-btn layui-btn-fluid layui-btn-warm" style="margin-top: 30px">立即支付</button>
+                <button class="layui-btn layui-btn-fluid layui-btn-warm payBtn" style="margin-top: 30px">立即支付</button>
             </div>
         </div>
     </div>
@@ -98,5 +99,11 @@
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
 <script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
-
+<script src="__STATIC__/js/home/order/hOrderPay.js"></script>
+<script>
+    var payUrl="{:url('home/Region/hPay')}";
+    var hrefUrl="{:url('home/Region/hSuccess')}?";
+    var price ="{$msg.order.totalPrice}";
+    var hotelId ="{$msg.order.orderId}";
+</script>
 </html>

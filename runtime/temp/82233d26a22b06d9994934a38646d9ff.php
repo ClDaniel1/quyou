@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\hotel.html";i:1517319262;s:75:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\regionNav.html";i:1517043587;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1517665373;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\hotel.html";i:1517319262;s:75:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\regionNav.html";i:1517043587;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1519434562;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,10 +63,12 @@
             <li class="layui-nav-item"><a href="">旅途直播</a></li>
             <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
             <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
+            <li class="layui-nav-item loginIn"><a href="<?php echo url('home/User/myMsg'); ?>" class="msga">我的消息</a></li>
             <li class="layui-nav-item loginIn">
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">我的消息</a></dd>
+                    <dd><a href="">我的游记</a></dd>
+                    <dd><a href="">联系客服</a></dd>
                     <dd><a href="" class="toCenter">个人中心</a></dd>
                     <dd  onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
                 </dl>
@@ -85,14 +87,16 @@
         <li class="layui-nav-item"><a href="">旅途直播</a></li>
     </ul>
     <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
-        <li class="layui-nav-item loginIn">
-            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
 
+        <li class="layui-nav-item loginIn"  style="float: right">
+            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
             <dl class="layui-nav-child">
-                <dd><a href="">我的消息</a></dd>
+                <dd><a href="">我的游记</a></dd>
+                <dd><a href="">联系客服</a></dd>
                 <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
-
+        </li>
+        <li class="layui-nav-item loginIn"  style="float: right"><a href="<?php echo url('home/User/myMsg'); ?>" class="msga">我的消息</a></li>
        <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
         <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
 
@@ -196,7 +200,7 @@
                 <div class="footer">
                   <ul class="footerUl">
                       <li class="footerHd">关于我们</li>
-                      <li><a href="">关于趣游</a></li>
+                      <li><a href="">商家入驻</a></li>
                       <li><a href="">联系我们</a></li>
                       <li><a href="">关于趣游</a></li>
                   </ul>
