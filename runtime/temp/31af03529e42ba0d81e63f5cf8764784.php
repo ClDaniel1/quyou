@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\wamp64\www\quyou\public/../application/admin\view\index\index.html";i:1517409940;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\wamp64\www\quyou\public/../application/admin\view\index\index.html";i:1519394063;}*/ ?>
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
@@ -97,7 +97,7 @@
 	<div id="iframe_box" class="Hui-article">
 		<div class="show_iframe">
 			<div style="display:none" class="loading"></div>
-			<iframe scrolling="yes" frameborder="0" src="welcome.html"></iframe>
+			<iframe scrolling="yes" frameborder="0" src="<?php echo url('admin/Index/welcome'); ?>"></iframe>
 	</div>
 </div>
 </section>
