@@ -36,6 +36,10 @@ class Region extends \think\Controller
         $this->assign('hotelMsg',$hotel);
         $food=$a->foodMsg($rgId);//根据地区id查找对应地区食物信息
         $this->assign('foodMsg',$food);
+
+        $nm = new model\Notes();
+        $note = $nm->getNoteByRe($rgId,0,1)[0];
+        $this->assign('note',$note);
         return $this->fetch();
     }
     public function hotel()//显示地区酒店
