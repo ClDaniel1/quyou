@@ -311,6 +311,11 @@ class Region extends \think\Controller
     }
     public function scenicMsg()//显示景点详情页
     {
+        $id=input('?param.id')?input('id'):"";
+        $model=new model\Region();
+        $arr=$model->idScenic($id);
+        $this->assign('msg',$arr);
+        exit(dump($arr));
         return $this->fetch('scenicMsg');
     }
     public function scenicPay()//显示景点购买页面

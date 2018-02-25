@@ -8,9 +8,6 @@
 </style>
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- 可选的Bootstrap主题文件（一般不使用） -->
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
-
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 
@@ -44,8 +41,8 @@
                 <div class="scenicDiv">
                     <div>
                         <span class="layui-badge layui-bg-orange iconMin">{$key+1}</span>
-                        <a href="{:url('home/Region/scenicMsg')}" class="bigA">{$value.scenicName}</a>
-                        <a href="{:url('home/Region/scenicMsg')}" class="minA"><span>{$value.count}</span>条评论</a>
+                        <a href="{:url('home/Region/scenicMsg')}?id={$value.scenicId}" class="bigA">{$value.scenicName}</a>
+                        <a href="{:url('home/Region/scenicMsg')}?id={$value.scenicId}" class="minA"><span>{$value.count}</span>条评论</a>
                     </div>
                     <div>
                         <p class="msgP">{$value.scenicDescribe}</p>
@@ -54,15 +51,15 @@
             </div>
             <div class="layui-col-sm7 layui-col-xs7 imgDiv">
                 <div class="bigImg">
-                    <a href="{:url('home/Region/scenicMsg')}">
+                    <a href="{:url('home/Region/scenicMsg')}?id={$value.scenicId}">
                         <img src="__STATIC__/{$value.img[0]['url']}" alt="加载失败">
                     </a>
                 </div>
                 <div class="minImg">
-                    <a href="{:url('home/Region/scenicMsg')}">
+                    <a href="{:url('home/Region/scenicMsg')}?id={$value.scenicId}">
                         <img src="__STATIC__/{$value.img[1]['url']}" alt="加载失败">
                     </a>
-                    <a href="{:url('home/Region/scenicMsg')}">
+                    <a href="{:url('home/Region/scenicMsg')}?id={$value.scenicId}">
                         <img src="__STATIC__/{$value.img[2]['url']}" alt="加载失败">
                     </a>
                 </div>
@@ -78,7 +75,7 @@
             <ul class="allScenic">
                 {volist name='all' id='val'}
                     <li>
-                    <a href="{:url('home/Region/scenicMsg')}">
+                    <a href="{:url('home/Region/scenicMsg')}?id={$value.scenicId}">
                         <img src="__STATIC__/{$val.scenicImg}" alt="加载失败">
                         <span>{$val.scenicName}</span>
                     </a>

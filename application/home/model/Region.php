@@ -50,7 +50,13 @@ class Region extends Model
     {
         return db('t_scenic')->where('desId',$id)->paginate(10,false,['query'=>['rgId'=>$id]]);
     }
-
+    public function idScenic($id)//根据景点id获取景点信息
+    {
+        $msgArr=db('t_scenic')->alias('a')->join('t_region b','a.desId=b.REGION_ID')->where('a.scenicId',$id)->field('a.*,b.REGION_NAME rName')->find();
+        $img=db('t_scenicImg')->where('scenicId',$id)->limit(0,3)->select();
+        $msgArr['imgMsg']=$img;
+        return $msgArr;
+    }
     public function hotelMsg($id)//根据地区id查找对应地区酒店2条信息
     {
         $arr=array();
