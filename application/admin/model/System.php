@@ -22,4 +22,18 @@ class System extends \think\Model{
     public function roleList(){
         return db('t_role')->select();
     }
+
+    public function doLogin($userName,$password){
+        $data = db('t_staff')->where('staName',$userName)->where('staPwd',$password)->select();
+        return $data;
+    }
+
+    public function setKey($key,$userId){
+        $sql=db('t_staff')->where('staId',$userId)->update(["key"=>$key]);
+        return $sql;
+    }
+
+    public function checkLogin($data){
+        return db('t_staff') -> where($data) ->find();
+    }
 }

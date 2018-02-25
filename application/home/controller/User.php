@@ -165,7 +165,7 @@ class User extends \think\Controller
                     $returnMsg['code'] = 10011;
                     $url = url("home/personal/personal");
                     $unreadMsgNum = $um->getUnreadMsgNum($uid);
-                    $returnMsg["data"]=["userImg" => "/quyou/public/static/".$res["uheadImg"],"userUrl"=>$url,"msgNum"=>$unreadMsgNum];
+                    $returnMsg["data"]=["userImg" => "/quyou/public/static/".$res["uheadImg"],"userUrl"=>$url,"msgNum"=>$unreadMsgNum,"uname"=>$res["uname"],"uid"=>$res["uid"]];
                     return json($returnMsg);
                 }
             }
