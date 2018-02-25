@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&page=3 -->
+<html lang="en" class="js cssanimations"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <link rel="icon" href="http://127.0.0.1/quyou/public/static/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./趣游_files/amazeui.min.css">
+    <link rel="stylesheet" href="./趣游_files/app.css">
+    <link rel="stylesheet" href="./趣游_files/layui.css">
+    <link rel="stylesheet" href="./趣游_files/public.css">
+
+    <script src="./趣游_files/vue"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <script src="./趣游_files/html5.min.js.下载"></script>
+    <script src="./趣游_files/respond.min.js.下载"></script>
+    
+<style>
+    #desNav{
+        display: block;
+    }
+</style>
+<link rel="stylesheet" href="./趣游_files/scenic.css">
+
+    <title>
+趣游
+</title>
+    <style>
+        .navBg{
+            background: #F9851D ;
+        }
+        .body {
+            background-color: #efefef;
+        }
+        footer{
+            margin-top:25px;
+        }
+    </style>
+<link id="layuicss-laydate" rel="stylesheet" href="./趣游_files/laydate.css" media="all"><link id="layuicss-layer" rel="stylesheet" href="./趣游_files/layer.css" media="all"><link id="layuicss-skincodecss" rel="stylesheet" href="./趣游_files/code.css" media="all"></head>
+<body class="body">
+
+
+
+
+<div class="layui-header header layui-show-xs-block layui-hide-sm navBg" id="liteNav">
+    <ul class="layui-nav navBg" lay-filter="" style="text-align: center">
+        <i class="layui-icon" style="float: left;font-size: 30px; line-height: 60px" id="menu"></i>
+        <img src="./趣游_files/logo2.png" alt="" style="height: 45px;margin-top: 7px">
+        <i class="layui-icon" style="float: right;font-size: 30px; line-height: 60px"></i>
+    <span class="layui-nav-bar"></span></ul>
+</div>
+<div class="site-mobile-shade"></div>
+<div class="layui-side navBg header layui-show-xs-block layui-hide-sm" id="sideBar">
+    <div class="layui-side-scroll">
+
+        <ul class="layui-nav layui-nav-tree site-demo-nav navBg">
+            <li class="layui-nav-item layui-this"><a href="http://127.0.0.1/quyou/public/index.php/home/index/index.html">首页</a></li>
+            <li class="layui-nav-item"><a href="http://127.0.0.1/quyou/public/index.php/home/desti/desti.html">目的地</a></li>
+            <li class="layui-nav-item"><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">旅途直播</a></li>
+            
+            
+            <li class="layui-nav-item loginIn" style="display: list-item;"><a href="http://127.0.0.1/quyou/public/index.php/home/user/mymsg.html" class="msga">我的消息</a></li>
+            <li class="layui-nav-item loginIn" style="display: list-item;">
+                <a href="javascript:;">我<span class="layui-nav-more"></span></a>
+                <dl class="layui-nav-child">
+                    <dd><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">我的游记</a></dd>
+                    <dd><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">联系客服</a></dd>
+                    <dd><a href="http://127.0.0.1/quyou/public/index.php/home/personal/personal.html" class="toCenter">个人中心</a></dd>
+                    <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
+                </dl>
+            </li>
+            <li style="height: 30px; text-align: center"></li>
+        <span class="layui-nav-bar"></span></ul>
+
+    </div>
+</div>
+
+<div class="navBg layui-show-sm-block layui-hide-xs" style="width: 100%;height: 60px">
+    <img src="./趣游_files/logo1.png" alt="" style="float: left;margin: 7px 35px;height:45px;">
+    <ul class="layui-nav navBg" lay-filter="" style="float: left" id="navBar">
+        <li class="layui-nav-item layui-this"><a href="http://127.0.0.1/quyou/public/index.php/home/index/index.html">首页</a></li>
+        <li class="layui-nav-item"><a href="http://127.0.0.1/quyou/public/index.php/home/desti/desti.html">目的地</a></li>
+        <li class="layui-nav-item"><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">旅途直播</a></li>
+    <span class="layui-nav-bar"></span></ul>
+    <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
+
+        <li class="layui-nav-item loginIn" style="float: right; display: list-item;">
+            <a href="http://127.0.0.1/quyou/public/index.php/home/personal/personal.html" class="toCenter"><img src="./趣游_files/default.jpg" class="layui-nav-img uImg">我<span class="layui-nav-more"></span></a>
+            <dl class="layui-nav-child">
+                <dd><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">我的游记</a></dd>
+                <dd><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">联系客服</a></dd>
+                <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item loginIn" style="float: right; display: list-item;"><a href="http://127.0.0.1/quyou/public/index.php/home/user/mymsg.html" class="msga">我的消息</a></li>
+       
+        
+
+    <span class="layui-nav-bar"></span></ul>
+</div>
+
+<div id="baseMain">
+    <div id="desNav">
+        <div class="layui-container">
+            <div class="layui-row siteNav">
+                 <span class="layui-breadcrumb" lay-separator="&gt;" style="visibility: visible;">
+                    <a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">目的地</a><span lay-separator="">&gt;</span>
+                    
+<a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3"><i class="layui-icon orangeIcon"></i></a><span lay-separator="">&gt;</span>
+<a><cite style="color: #ff7000;font-weight: bold;">景点</cite></a>
+
+                </span>
+            </div>
+            <div class="layui-row layui-hide-xs">
+                <ul class="layui-nav catalog " id="navUl">
+                    <li class="layui-nav-item"><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3"><i class="icon1 iconPst1"></i>首页</a></li>
+                    <li class="layui-nav-item"><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3"><i class="icon1 iconPst2"></i>玩法路线</a></li>
+                    <li class="layui-nav-item"><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?rgId=1000"><i class="icon1 iconPst3"></i>景点</a></li>
+                    <li class="layui-nav-item"><a href="http://127.0.0.1/quyou/public/index.php/home/region/hotel.html?rgId=1000"><i class="icon1 iconPst4"></i>酒店</a></li>
+                    <li class="layui-nav-item">
+                        <a href="http://127.0.0.1/quyou/public/index.php/home/region/food.html"><i class="icon1 iconPst5"></i>美食</a>
+                    </li>
+                    <li class="layui-nav-item"><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3"><i class="icon1 iconPst6"></i>游记</a></li>
+                <span class="layui-nav-bar" style="left: 538px; top: 55px; width: 0px; opacity: 0;"></span></ul>
+            </div>
+            <div class="layui-hide-sm">
+                <ul class="layui-nav catalog">
+                    <li class="layui-nav-item"><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3"><i class="icon1 iconPst1"></i>概况</a></li>
+                    <li class="layui-nav-item allMsg">
+                        <a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3"><i class="icon1 iconPst7"></i>展开全部</a>
+                        <ul class="catalog treeNav">
+                            <li class="">
+                                <a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">
+                                    <i class="icon1 iconPst2"></i>玩法路线
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">
+                                    <i class="icon1 iconPst3"></i>景点
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="http://127.0.0.1/quyou/public/index.php/home/region/hotel.html?rgId=1000">
+                                    <i class="icon1 iconPst4"></i>酒店
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3"><i class="icon1 iconPst5"></i>美食</a>
+                            </li>
+                            <li class="">
+                                <a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3"><i class="icon1 iconPst6"></i>游记</a>
+                            </li>
+                        </ul>
+                    </li>
+                <span class="layui-nav-bar"></span></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="layui-container">
+        <div class="layui-row">
+            <h1 class="summarize">概述</h1>
+        </div>
+        <div class="layui-row">
+            <p class="smMsg">
+                            </p>
+        </div>
+        <div class="layui-row">
+            <h1>
+                必游景点TOP5
+            </h1>
+        </div>
+                <div class="layui-row">
+            <div>
+                <h1 class="msgH1"><span>上海</span>全部景点</h1>
+            </div>
+        </div>
+        <div class="layui-row">
+            <ul class="allScenic">
+                            </ul>
+        </div>
+        <div style="text-align: right">
+            <div id="test1">
+                            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<footer style="background: #3c3c3c">
+    <div class="layui-container">
+        <div class="layui-row layui-col-space30">
+            <div class="layui-col-sm10" id="footL">
+                <div class="footer">
+                  <ul class="footerUl">
+                      <li class="footerHd">关于我们</li>
+                      <li><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">商家入驻</a></li>
+                      <li><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">联系我们</a></li>
+                      <li><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">关于趣游</a></li>
+                  </ul>
+                </div>
+                <div class="footer">
+                    <ul class="footerUl">
+                        <li class="footerHd">友情链接</li>
+                        <li><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">乐淘</a></li>
+                        <li><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">蚂蜂窝</a></li>
+                        <li><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">穷游网</a></li>
+                    </ul>
+                </div>
+                <div class="footer">
+                    <ul class="footerUl">
+                        <li class="footerHd">网站条款</li>
+                        <li><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">会员条款</a></li>
+                        <li><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">版权声明</a></li>
+                        <li><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">免责声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer">
+                    <ul class="footerUl">
+                        <li class="footerHd">帮助中心</li>
+                        <li><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">新手上路</a></li>
+                        <li><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">使用帮助</a></li>
+                        <li><a href="http://127.0.0.1/quyou/public/index.php/home/region/scenicshow.html?regi=2&amp;page=3">网站地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="layui-col-sm2" id="footerR">
+                <img src="./趣游_files/logof1.png" alt="">
+                <p>2017 © 趣游</p>
+                <p>All rights reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="./趣游_files/vue.js.下载"></script>
+<script src="./趣游_files/layui.all.js.下载"></script>
+<script src="./趣游_files/jquery-3.2.1.js.下载"></script>
+<script src="./趣游_files/amazeui.js.下载"></script>
+<script>
+    $("#menu").click(showSideBar);
+    function showSideBar() {
+        $("#sideBar").addClass("show");
+        $("#menu").unbind("click");
+        $("#menu").click(hideSideBar);
+        $(".site-mobile-shade").css("display","block");
+        $(".site-mobile-shade").unbind("click");
+        $(".site-mobile-shade").click(hideSideBar);
+    }
+    function hideSideBar() {
+        $("#sideBar").removeClass("show");
+        $("#menu").unbind("click");
+        $("#menu").click(showSideBar);
+        $(".site-mobile-shade").css("display","none");
+    }
+
+    function nav(i){
+        i = i-1;
+        $("#sideBar li").eq(0).removeClass("layui-this");
+        $("#navBar li").eq(0).removeClass("layui-this");
+        $("#navBar li").eq(i).addClass("layui-this");
+        $("#sideBar li").eq(i).addClass("layui-this");
+    }
+
+    var checkUrl = "/quyou/public/index.php/home/user/check.html";
+
+</script>
+<script src="./趣游_files/public.js.下载"></script>
+
+<script>
+//    layui.use('laypage', function(){
+//        var laypage = layui.laypage;
+//
+//        //执行一个laypage实例
+//        laypage.render({
+//            elem: 'test1'
+//            ,count: 100
+//            ,first: '首页'
+//            ,last: '尾页'
+//            ,jump: function(obj){
+//                console.log(obj)
+//            }
+//        });
+//    });
+</script>
+
+</body></html>

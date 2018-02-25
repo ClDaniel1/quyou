@@ -48,7 +48,7 @@ class Region extends Model
     }
     public function allScenic($id)//全部景点信息分页显示
     {
-        return db('t_scenic')->where('desId',$id)->paginate(10,false,);
+        return db('t_scenic')->where('desId',$id)->paginate(10,false,['query'=>['rgId'=>$id]]);
     }
 
     public function hotelMsg($id)//根据地区id查找对应地区酒店2条信息
