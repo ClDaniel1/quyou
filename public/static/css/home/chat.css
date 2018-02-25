@@ -1,0 +1,198 @@
+#chatD{
+    display: none;
+}
+
+.chat{
+    z-index: 3;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    height: 636px;
+    width: 650px;
+    border:  #eaeaea 1px solid;
+    margin: auto;
+}
+
+#chatHead{
+    width: 100%;
+    height: 39px;
+    border-bottom: #eaeaea 1px solid;
+
+}
+
+#chatMain{
+    width: 100%;
+    height: 467px;
+    border-bottom: #eaeaea 1px solid;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#chatTool{
+    width: 100%;
+    height: 40px;
+
+    position: relative;
+}
+
+#chatbar{
+    width: 100%;
+    height: 88px;
+    position: relative;
+}
+
+#chatZM{
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+
+#chatinput{
+    width: 560px;
+    height: 80px;
+    border: none;
+    margin-left: 10px;
+    overflow: scroll;
+    overflow-x: hidden;
+    float: left;
+}
+
+
+#send{
+    float: right;
+    margin-right: 10px;
+    margin-top: 40px;
+    width: 60px;
+    height: 35px;
+    background: #0188fb;
+    color: white;
+    border: none;
+    transition: box-shadow 0.3s;
+}
+
+#send:hover{
+    box-shadow: 0 0 10px #0188fb;
+}
+
+.toolimg{
+    width: 24px;
+    height: 24px;
+    margin: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+    border-radius: 100px;
+}
+
+.toolimg:hover{
+    box-shadow: 0 0 10px #0188fb;
+}
+
+.get{
+    width: 500px;
+    margin-top: 35px;
+    margin-left: 15px;
+}
+
+.get .ChatHeadImg{
+    height: 100%;
+    width: 75px;
+    display: inline-block;
+    float: left;
+}
+.ChatHeadImg img{
+    width: 56px;
+    border-radius: 75px;
+}
+
+.massgaeManin{
+    display: inline-block;
+    width: 400px;
+    margin-left: 10px;
+    min-height: 56px;;
+}
+
+.send .ChatHeadImg{
+    height: 100%;
+    width: 75px;
+    display: inline-block;
+    float: right;
+}
+.send{
+    width: 500px;
+    margin-top: 35px;
+    margin-left: 135px;
+    text-align:right;
+}
+
+.ChatText{
+    padding: 10px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    margin-top: 15px;
+    max-width:100% ;
+    display: inline-block;
+    word-wrap:break-word;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+#chatname{
+    margin-left: 15px;
+    line-height: 40px;
+}
+
+.chatTips{
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.chatTipsMain{
+    display: inline-block;
+    padding: 5px 15px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10000px;
+    color: white;
+}
+
+.ChatName span{
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+#friendname{
+    line-height: 40px;
+    margin-left:10px ;
+}
+
+
+#chatHead img{
+    float: right;
+    margin-top: 10px;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+#chatHead img:hover{
+    transform: rotate(180deg);
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color:  rgba(0,0,0,0.5);
+}
+.unuse{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+}

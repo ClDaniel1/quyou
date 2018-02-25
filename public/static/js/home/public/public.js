@@ -9,6 +9,7 @@ $(function () {
            if(res["code"] != 10010 && res["code"] != 10011){
                layer.msg(res.msg);
                $(".loginIn").remove();
+               sessionStorage.removeItem("userInfo");
            }
            else if(res["code"] == 10011){
                //检查成功
@@ -19,9 +20,11 @@ $(function () {
                 if(res["data"]["msgNum"] > 0){
                     $(".msga").append('<span class="layui-badge layui-bg-green">'+res["data"]["msgNum"] +'</span>');
                 }
+                sessionStorage.setItem("userInfo",JSON.stringify(res["data"]));
            }
            else {
                $(".loginIn").remove();
+               sessionStorage.removeItem("userInfo");
            }
        }
    })
@@ -65,6 +68,7 @@ function loginOut() {
         clearCookie("qy_uid");
         location.reload();
         layer.close(index);
+        sessionStorage.removeItem("userInfo");
     });
 }
 

@@ -294,7 +294,17 @@ return [
             'changeErr'=>["code"=>30003,"msg"=>'信息为原信息，请修改',"data"=>[]],
             'haveName'=>["code"=>30001,"msg"=>'昵称已被使用，换一个吧',"data"=>[]],
             'repeatPwd'=>["code"=>30004,"msg"=>'密码为原密码，修改不成功',"data"=>[]],
-            'withoutName'=>["code"=>30005,"msg"=>'昵称没有重复，可以使用',"data"=>[]]
+            'withoutName'=>["code"=>30005,"msg"=>'昵称没有重复，可以使用',"data"=>[]],
+            'addFooterErr'=>["code"=>30006,"msg"=>'添加足迹失败',"data"=>[]],
+            'addFooter'=>["code"=>30007,"msg"=>'添加足迹成功',"data"=>[]],
+            "addFooterHave" =>["code"=>30008,"msg"=>'已经有该足迹了哦',"data"=>[]],
+        ],
+        'manager'=>[
+            'changeOK' =>["code"=>60001,"msg"=>'修改成功',"data"=>[]],
+            'changeErr'=>["code"=>60002,"msg"=>'修改失败',"data"=>[]],
+            'delOK'=>["code"=>60003,"msg"=>'删除成功',"data"=>[]],
+            'delErr'=>["code"=>60004,"msg"=>'删除失败',"data"=>[]],
+
         ],
         "userCon"=>[
             "rePsw"=>['code'  =>  "40001",'msg'   =>  "密码重置成功!",'data'  => []],
@@ -304,6 +314,7 @@ return [
             "Repair"=>['code'   =>  "40005",'msg'  =>  "修改成功！" ,"data"=>[]]
         ],
         "msg" => [
+<<<<<<< HEAD
             "getSysMsg" =>["code"=>40001,"msg"=>'获取系统消息成功',"data"=>[]]
         ],
         "contact"=>['code'  =>  "50001",'msg'   =>  "添加联系人成功!",'data'  => []],
@@ -314,25 +325,27 @@ return [
             'pwdF'=>['code'  =>  "60004",'msg'   =>  "支付密码有误，请重新输入!",'data'  => []],
             'payF'=>['code'  =>  "60005",'msg'   =>  "余额不足，请先进行充值!",'data'  => []],
             'payT'=>['code'  =>  "60006",'msg'   =>  "恭喜您支付成功!",'data'  => []],
+=======
+            "getSysMsg" =>["code"=>50001,"msg"=>'获取系统消息成功',"data"=>[]],
+>>>>>>> a40c92a564e74c2fff005b65c796fe4dff407312
         ]
     ],
-
     //验证码
     'captcha'  => [
     // 验证码字符集合
     'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY',
 
     // 验证码字体大小(px)
-    'fontSize' => 50,
+    'fontSize' => 20,
 
     // 是否画混淆曲线
     'useCurve' => false,
 
     // 验证码图片高度
-    'imageH'   => 0,
+    'imageH'   => 50,
 
     // 验证码图片宽度
-    'imageW'   => 0,
+    'imageW'   => 125,
 
     // 验证码位数
     'length'   => 4,

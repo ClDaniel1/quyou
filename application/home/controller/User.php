@@ -39,11 +39,7 @@ class User extends \think\Controller
         //验证码验证
         if(!captcha_check($code)){
             //验证失败
-            $returnMsg=[
-                'code'  =>  10002,
-                'msg'   =>  config('msg')['login']['codeError'],
-                'data'  =>  []
-            ];
+            $returnMsg=config('msg')['login']['codeError'];
             return json($returnMsg);
         }
         $where=[
@@ -169,7 +165,7 @@ class User extends \think\Controller
                     $returnMsg['code'] = 10011;
                     $url = url("home/personal/personal");
                     $unreadMsgNum = $um->getUnreadMsgNum($uid);
-                    $returnMsg["data"]=["userImg" => "/quyou/public/static/".$res["uheadImg"],"userUrl"=>$url,"msgNum"=>$unreadMsgNum];
+                    $returnMsg["data"]=["userImg" => "/quyou/public/static/".$res["uheadImg"],"userUrl"=>$url,"msgNum"=>$unreadMsgNum,"uname"=>$res["uname"],"uid"=>$res["uid"]];
                     return json($returnMsg);
                 }
             }
