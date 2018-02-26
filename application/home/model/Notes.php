@@ -273,4 +273,16 @@ class Notes extends Model
     public function toDraft($noteId){
         db('t_note')->where('noteId', $noteId)->update(['noteType' => '0']);
     }
+
+    public function getNoteByRe($desId,$start,$num){
+        $data = db("t_note")
+            ->alias('a')
+            ->field("a.*,c.uname,d.content,c.uheadImg")
+            ->join('t_user c','a.uid = c.uid')
+            ->join('t_notecon d','a.noteId = d.noteId')
+            ->limit($start,$num)
+            ->where("a.noteType=1 and d.num =1 and a.desId = $desId")
+            ->order('createTime desc')->select();
+        return $data;
+    }
 }

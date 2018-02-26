@@ -25,28 +25,28 @@ var bus = new Vue();
 Vue.component('my-module',{
     template: '<div>' +
     '<div v-if="showU"><h1>暂无相关评论</h1></div>'+
-    '<div class="layui-row replayArea" v-else v-for="value in home">'+
-    '<div class="layui-col-sm2 layui-col-xs2" >'+
+    '<div class="layui-row replayArea" v-for="value in home" v-if="value.fid == 0 && showU==false">'+
+    '<div class="layui-col-sm2 layui-col-xs2">'+
     '<a href="" class="userA">'+
-    '<img class="headImg" :src="staticUrl+\'/\'+value.uheadImg" alt="">{{value.uname}}</a>'+
+    '<img class="headImg" :src="staticUrl+\'/\'+value.uheadImg" alt="" style="margin-right: 10px">{{value.uname}}</a>'+
     '</div>'+
     '<div class="layui-col-sm10 layui-col-xs10">'+
     '<div>'+
     '<p class="comTxt">{{value.content}}</p>'+
-    '<i class="goodIcon good1"></i>'+
+    //'<i class="goodIcon good1"></i>'+
     '<div style="clear: both"></div>'+
     '</div>'+
-    '<div class="comUpImg">'+
+    /*'<div class="comUpImg">'+
     '<img src="http://n2-q.mafengwo.net/s10/M00/F0/8B/wKgBZ1mOXqWAU_wgAAV_03MjvGY01.jpeg?imageMogr2%2Fthumbnail%2F%21500x300r%2Fgravity%2FCenter%2Fcrop%2F%21500x300%2Fquality%2F90" alt="">'+
     '<img src="http://n2-q.mafengwo.net/s10/M00/F0/8B/wKgBZ1mOXqWAU_wgAAV_03MjvGY01.jpeg?imageMogr2%2Fthumbnail%2F%21500x300r%2Fgravity%2FCenter%2Fcrop%2F%21500x300%2Fquality%2F90" alt="">'+
-    '</div>'+
-    '<div>'+
+    '</div>'+*/
+    '<div style="margin-top: 25px">'+
+   /* '<i class="starIcon"></i>'+
     '<i class="starIcon"></i>'+
     '<i class="starIcon"></i>'+
     '<i class="starIcon"></i>'+
-    '<i class="starIcon"></i>'+
-    '<i class="starIcon"></i>'+
-    '<span class="dateSpan">2018-1-31</span>'+
+    '<i class="starIcon"></i>'+*/
+    '<span class="dateSpan1">{{value.comTime}}</span>'+
     '<button class="layui-btn layui-btn-warm layui-btn-sm replay" v-on:click="outBtn()" v-if="value.comId==showId">关闭</button>'+
     '<button class="layui-btn layui-btn-warm layui-btn-sm replay" v-on:click="repBtn(value.comId)" v-else>回复</button>'+
     '</div>'+
@@ -54,17 +54,17 @@ Vue.component('my-module',{
 
     '<div class="repArea" v-if="value.comId==showId">'+
     '<div>'+
-    '<textarea class="textArea"></textarea>'+
-    '<button class="layui-btn layui-btn-normal layui-btn-sm replay repBtn">评论</button>'+
+    '<textarea class="textArea" v-model="replayCon"></textarea>'+
+    '<button class="layui-btn layui-btn-normal layui-btn-sm replay repBtn" @click="replay(value.comId)">评论</button>'+
     '</div>'+
-    '<div class="replayMsg">'+
+    '<div class="replayMsg" v-for="replay in home" v-if="replay.fid == value.comId">'+
     '<a href="" class="userA1">'+
-    '<img src="http://c4-q.mafengwo.net/s10/M00/42/8D/wKgBZ1i4Vn6ASITyAACHePEuq5M12.jpeg?imageMogr2%2Fthumbnail%2F%2196x96r%2Fgravity%2FCenter%2Fcrop%2F%2196x96%2Fquality%2F90" alt="">哈尼</a>'+
-    '<p>交通很便利，出门就是地铁口，这让游天安门广场的我出行省心。酒店不包停车费一晚50有点不开心，但不影响整体居住心情。酒店提供按摩服务，我和老公一个人叫了一个全身和足底，砍了价11002小时2个人，我觉得还行吧</p>'+
+    '<img :src="staticUrl+\'/\'+replay.uheadImg" alt="" style="margin-right: 15px">{{replay.uname}}</a>'+
+    '<p>{{replay.content}}</p>'+
     '<div class="operate">'+
-    '<span>评论</span>'+
-    '<span>删除</span>'+
-    '<span>修改</span>'+
+    //'<span>评论</span>'+
+    '<span v-if="uid==replay.uid" @click="delhCom(replay.comId)">删除</span>'+
+    //'<span>修改</span>'+
     '</div>'+
     '<div style="clear: both"></div>'+
     '</div>'+
@@ -74,9 +74,11 @@ Vue.component('my-module',{
     data: function () {
         return {
             home:[],
-            staticUrl : "__STATIC__",
+            staticUrl : staticUrl,
             showId:0,
-            showU:false
+            showU:false,
+            replayCon:"",
+            uid:uid
         }
     },
     props: ['url','scenicId'],
@@ -87,14 +89,91 @@ Vue.component('my-module',{
         bus.$on('showU', function (res) {
             this.showU=res;
         }.bind(this));
+        bus.$on('newCom', function (res) {
+            var _this=this;
+            $.ajax({
+                type:'post',
+                url:addComUrl,
+                data:{hid:this.scenicId,com:res,fid:0},
+                dataType:"text",
+                success: function (res) {
+                    layer.msg("点评成功");
+                    _this.getCom();
+                },error: function (res) {
+                    console.log(res)
+                }
+            })
+        }.bind(this));
         bus.$emit('data',{ajaxUrl:this.url,sid:this.scenicId})
     },
     methods:{
         repBtn: function (id) {
             this.showId=id;
+            this.replayCon = "";
         },
         outBtn: function () {
             this.showId=false;
+        },
+        delhCom:function (comId) {
+
+            var _this = this;
+            layer.confirm('确认删除该评论?', function(index){
+                //do something
+                $.ajax({
+                    type:'get',
+                    url:delComUrl,
+                    data:{comId:comId},
+                    dataType:"text",
+                    success: function (res) {
+                        layer.msg("删除评论成功");
+                        _this.getCom();
+                    },error: function (res) {
+                        console.log(res)
+                    }
+                })
+                layer.close(index);
+            });
+
+        },
+        getCom:function () {
+            $.ajax({
+                type:'get',
+                url:this.url,
+                data:{id:this.scenicId},
+                dataType:"json",
+                success: function (res) {
+                    console.log(res);
+                    if(res.length<=0)
+                    {
+                        bus.$emit('showU',true)
+                    }
+                    bus.$emit('home', res)
+                },error: function (res) {
+                    console.log(res)
+                }
+            })
+        },
+        replay:function (comId) {
+            if($(".loginIn").length > 0){
+                var _this=this;
+                $.ajax({
+                    type:'post',
+                    url:addComUrl,
+                    data:{hid:this.scenicId,com:this.replayCon,fid:comId},
+                    dataType:"text",
+                    success: function (res) {
+                        layer.msg("回复评论成功");
+                        _this.replayCon = "";
+                        _this.getCom();
+                    },error: function (res) {
+                        console.log(res)
+                    }
+                })
+            }
+            else {
+                layer.alert("请先登录")
+            }
+            console.log(comId);
         }
     }
 });
@@ -158,3 +237,21 @@ new Vue({
         })
     }
 });
+
+function comment() {
+    if($(".loginIn").length > 0){
+        layer.prompt({
+            formType: 2,
+            title: '请输入点评内容',
+            area: ['800px', '350px'] //自定义文本域宽高
+        }, function(value, index, elem){
+            bus.$emit('newCom',value);
+            layer.close(index);
+        });
+    }
+    else {
+        layer.alert("请先登录")
+    }
+
+
+}

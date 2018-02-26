@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"D:\wamp64\www\quyou\public/../application/home\view\region\region.html";i:1519436275;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1519513687;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"D:\wamp64\www\quyou\public/../application/home\view\region\region.html";i:1519562989;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1519606138;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -258,7 +258,7 @@
             <div class="layui-col-sm5 layui-col-xs6">
                 <div class="msgDiv">
                     <span>攻略：</span>
-                    <p class="">
+                    <p class="conP">
                         <?php echo $bkMsg['intro']; ?>
                     </p>
                 </div>
@@ -272,9 +272,9 @@
 <!--景点路线区域-->
 <div id="content3">
     <div class="layui-container">
-        <h1 class="lineFont"><span><?php echo $region_name; ?></span><span>2</span>条经典路线</h1>
+        <h1 class="lineFont"><span><?php echo $region_name; ?></span><span>{{routeMsg.count}}</span>条经典路线</h1>
         <div class="layui-row">
-            <div class="layui-col-sm6" v-for="(value,key) in routeMsg.msg">
+            <div class="layui-col-sm6" v-for="(value,key) in routeMsg.msg" v-show="key<showNum">
                 <div class="mapBorder1 scenicMsg">
                     <h1>
                         <span class="layui-badge layui-bg-orange mapNo">{{key+1}}</span>
@@ -306,13 +306,20 @@
             </div>
         </div>
         <div class="lookAll">
-            <a href="">
+            <span href="" @click="showMap" v-if="showNum===2">
                 <span class="book">
                     <i class="i-blue"></i>
                     <i class="i-orange"></i>
                 </span>
                 查看全部<span class="numOrange"><span>{{routeMsg.count}}</span>条</span>路线>
-            </a>
+            </span>
+            <span href="" @click="hideMap" v-else>
+                <span class="book">
+                    <i class="i-blue"></i>
+                    <i class="i-orange"></i>
+                </span>
+                收起
+            </span>
         </div>
         <div style="clear: both"></div>
     </div>
@@ -338,9 +345,9 @@
                                 </div>
                             </div>
                             <div class="comTop">
-                                <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
-                                <span class="comName">梨窝浅浅</span>
-                                <span class="comMsg">“呆过四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
+                                <img class="headImg" src="__STATIC__/<?php echo $value['content']['uheadImg']; ?>" alt="加载失败">
+                                <span class="comName"><?php echo $value['content']['uname']; ?></span>
+                                <span class="comMsg">“<?php echo $value['content']['content']; ?>”</span>
                             </div>
                         </div>
                     </a>
@@ -367,9 +374,9 @@
                                 </div>
                             </div>
                             <div class="comTop">
-                                <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
-                                <span class="comName">梨窝浅浅</span>
-                                <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
+                                <img class="headImg" src="__STATIC__/<?php echo $value['content']['uheadImg']; ?>" alt="加载失败">
+                                <span class="comName"><?php echo $value['content']['uname']; ?></span>
+                                <span class="comMsg">“<?php echo $value['content']['content']; ?></span>
                             </div>
                         </div>
                     </a>
@@ -396,9 +403,9 @@
                                 </div>
                             </div>
                             <div class="comTop">
-                                <img class="headImg" src="__STATIC__/images/region/head/head1.jpeg" alt="加载失败">
-                                <span class="comName">梨窝浅浅</span>
-                                <span class="comMsg">“呆过四年，每个来厦门旅游的必选，钢琴之岛，音乐之岛。万国建筑。日光岩。琴之岛，音乐之岛。万国建筑。日光岩。怀怀念以前念书的日...”</span>
+                                <img class="headImg" src="__STATIC__/<?php echo $value['content']['uheadImg']; ?>" alt="加载失败">
+                                <span class="comName"><?php echo $value['content']['uname']; ?></span>
+                                <span class="comMsg">“<?php echo $value['content']['content']; ?>”</span>
                             </div>
                         </div>
                     </a>
@@ -414,26 +421,30 @@
 <!--景点游记-->
 <div id="content5">
     <div class="layui-container">
-        <h6 class="siteColor"><span>香格里拉</span>游记</h6>
+        <h6 class="siteColor"><span><?php echo $region_name; ?></span>游记</h6>
         <div class="layui-row">
+            <?php if(count($note) > 0): ?>
             <div>
-                <img class="scenicImg" src="__STATIC__/images/region/scenic/scenic1.jpeg" alt="加载失败">
-                <div class="mgLeft">
-                    <dl class="msgDl">
-                        <dt>
-                            <a href="">滇北第二站：独克宗的意思是月光城</a>
-                        </dt>
-                        <dd>
-                            <a href="">带着第一站梅里朝圣的圆满一站梅里朝圣的圆满，悟空又坐上班车小巴从飞来寺观一站梅里朝圣的圆满，悟空又坐上班车小巴从飞来寺观一站梅里朝圣的圆满，悟空又坐上班车小巴从飞来寺观，悟空又坐上班车小巴从飞来寺观景台返回 香格里拉 。回程的路上，依然要 盘山 翻越两座大雪山，旅途依然艰苦而遥远，悟空却倍感轻松，对梅里的期盼已被满足，对高反的紧张不知所踪，五个小时一晃而过，便到了 香格里拉 。 悟空发现，很多想到这里旅行...</a>
-                        </dd>
-                    </dl>
-                    <div class="headDiv">
-                        <img class="upHead" src="__STATIC__/images/region/head/head2.jpeg" alt="加载失败">
-                        <span>小巴黎xiaoYu</span>
-                        <a href=""><i class="iconUp"></i><span class="upNum">255</span></a>
+                <a href="<?php echo url('home/Notes/show'); ?>?id= <?php echo $note[0]['noteId']; ?>">
+                    <img class="scenicImg" src="__STATIC__/<?php echo $note[0]['img']; ?>" alt="加载失败">
+                    <div class="mgLeft">
+                        <dl class="msgDl">
+                            <dt>
+                                <?php echo $note[0]['title']; ?>
+                            </dt>
+                            <dd>
+                                <?php echo $note[0]['content']; ?>...
+                            </dd>
+                        </dl>
+                        <div class="headDiv">
+                            <img class="upHead" src="__STATIC__/<?php echo $note[0]['uheadImg']; ?>" alt="加载失败">
+                            <span><?php echo $note[0]['uname']; ?></span>
+                            <a href=""><i class="iconUp"></i><span class="upNum">255</span></a>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
+            <?php endif; ?>
             <div style="clear: both"></div>
             <div class="lookAll">
                 <a href="">
@@ -441,7 +452,7 @@
                     <i class="i-blue"></i>
                     <i class="i-orange"></i>
                 </span>
-                    查看全部<span class="numOrange">香格里拉</span>游记>
+                    查看全部<span class="numOrange"><?php echo $region_name; ?></span>游记>
                 </a>
             </div>
         </div>
@@ -463,7 +474,7 @@
                 <div class="footer">
                   <ul class="footerUl">
                       <li class="footerHd">关于我们</li>
-                      <li><a href="">商家入驻</a></li>
+                      <li><a href="<?php echo url('home/Checkin/checkin'); ?>">商家入驻</a></li>
                       <li><a href="">联系我们</a></li>
                       <li><a href="">关于趣游</a></li>
                   </ul>
@@ -556,7 +567,8 @@
             routeS:false,
             type:false,
             mapp:"map",
-            region:"<?php echo $region_name; ?>"
+            region:"<?php echo $region_name; ?>",
+            showNum:2
         },
         created: function () {
             var _this=this;
@@ -587,6 +599,7 @@
             });
         },
         methods: {
+
             bdMap:function(showId,scenicArr,max) {
                 var map = new BMap.Map(showId);//创建地图实例
                 map.enableScrollWheelZoom(true);//地图的鼠标滚轮缩放默认是关闭的，需要配置开启。
@@ -648,6 +661,13 @@
                     );
                     map.addOverlay(polyline);//跟polyline一块使用，添加上线
                 }
+            },
+            showMap: function () {
+                var _this=this;
+                _this.showNum=this.routeMsg.count;
+            },
+            hideMap: function () {
+                this.showNum=2;
             }
         }
     });

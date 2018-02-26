@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="__STATIC__/lib/html5shiv.js"></script>
+    <script type="text/javascript" src="__STATIC__/lib/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="__STATIC__/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/h-ui.admin/css/style.css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="__STATIC__/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <title>用户查看</title>
+</head>
+<body>
+{volist name="auditadd" id="vo"}
+<div class="cl pd-20" style=" background-color:#5bacb6">
+    <img src="__STATIC__/{$vo.license}" style="">
+    <dl style="margin-left:80px; color:#fff">
+        <dt>
+            <span class="f-18">{$vo.tenantsName}</span>
+        </dt>
+        <dd class="pt-10 f-12" style="margin-left:0">{$vo.tenantsNick}</dd>
+    </dl>
+</div>
+<div class="pd-20">
+    <table class="table">
+        <tbody>
+        <tr>
+            <th class="text-r" width="100">商家类型：</th>
+            <td>{$vo.tenantsType}</td>
+        </tr>
+        <tr>
+            <th class="text-r">手机：</th>
+            <td>{$vo.tenantsPhone}</td>
+        </tr>
+        <tr>
+            <th class="text-r">商家注册地址：</th>
+            <td>{$vo.tenantsAdd}</td>
+        </tr>
+        <tr>
+            <th class="text-r">注册时间：</th>
+            <td>{$vo.regisData}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<button class="btn btn-danger radius" onclick="pass('{$vo.tenantsId}')" style="margin-top: 40px;margin-left: 300px;margin-bottom: 50px">审核通过</button>
+<button class="btn btn-primary radius" onclick="passNo('{$vo.tenantsId}')" style="margin-top: 40px;margin-left: 100px;margin-bottom: 50px">审核失败</button>
+{/volist}
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__STATIC__/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__STATIC__/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__STATIC__/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+</body>
+<script>
+    var auditPass="{:url('admin/Notaudit/auditPass')}";
+    var auditPassNot="{:url('admin/Notaudit/auditPassNot')}";
+    function pass(id)
+    {
+        layer.confirm('审核是否通过？', {
+            btn: ['通过','取消'] //按钮
+        }, function(){
+            $.ajax({
+                type: 'POST',
+                url: auditPass,
+                data:{'id':id},
+                dataType: 'json',
+                success: function (data) {
+                    if(data["code"]==40001)
+                    {
+                        layer.msg(data["msg"]);
+                        window.parent.location.reload();
+                    }
+
+                }
+            })
+        }, function(){
+            layer.msg('你取消审核', {btn: ['明白了', '知道了']});
+        });
+    }
+    function passNo(id)
+    {
+        layer.confirm('审核是否失败？', {
+            btn: ['失败','取消'] //按钮
+        }, function(){
+            $.ajax({
+                type: 'POST',
+                url: auditPassNot,
+                data:{'id':id},
+                dataType: 'json',
+                success: function (data) {
+                    if(data["code"]==40002)
+                    {
+                        layer.msg(data["msg"]);
+                        window.parent.location.reload();
+                    }
+
+                }
+            })
+        }, function(){
+            layer.msg('你取消审核', {btn: ['明白了', '知道了']});
+        });
+    }
+</script>
+</html>
