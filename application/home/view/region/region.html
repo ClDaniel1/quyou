@@ -258,26 +258,28 @@
     <div class="layui-container">
         <h6 class="siteColor"><span>{$region_name}</span>游记</h6>
         <div class="layui-row">
+            {if count($note) > 0}
             <div>
-                <a href="{:url('home/Notes/show')}?id= {$note.noteId}">
-                    <img class="scenicImg" src="__STATIC__/{$note.img}" alt="加载失败">
+                <a href="{:url('home/Notes/show')}?id= {$note[0]['noteId']}">
+                    <img class="scenicImg" src="__STATIC__/{$note[0]['img']}" alt="加载失败">
                     <div class="mgLeft">
                         <dl class="msgDl">
                             <dt>
-                                {$note.title}
+                                {$note[0]['title']}
                             </dt>
                             <dd>
-                                {$note.content}...
+                                {$note[0]['content']}...
                             </dd>
                         </dl>
                         <div class="headDiv">
-                            <img class="upHead" src="__STATIC__/{$note.uheadImg}" alt="加载失败">
-                            <span>{$note.uname}</span>
+                            <img class="upHead" src="__STATIC__/{$note[0]['uheadImg']}" alt="加载失败">
+                            <span>{$note[0]['uname']}</span>
                             <a href=""><i class="iconUp"></i><span class="upNum">255</span></a>
                         </div>
                     </div>
                 </a>
             </div>
+            {/if}
             <div style="clear: both"></div>
             <div class="lookAll">
                 <a href="">

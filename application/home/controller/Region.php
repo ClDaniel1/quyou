@@ -38,7 +38,7 @@ class Region extends \think\Controller
         $this->assign('foodMsg',$food);
 
         $nm = new model\Notes();
-        $note = $nm->getNoteByRe($rgId,0,1)[0];
+        $note = $nm->getNoteByRe($rgId,0,1);
         $this->assign('note',$note);
         return $this->fetch();
     }
@@ -94,6 +94,13 @@ class Region extends \think\Controller
         $model=new model\Region();
         $msg=$model->oneHotel($hotelId);
         $this->assign('hotelMsg',$msg);
+        if(Cookie::has('uid')){
+            $uid = cookie("uid");
+        }
+        else{
+            $uid = "";
+        }
+        $this->assign('uid',$uid);
         return $this->fetch('hotelPay');
     }
     public function htComMsg()//获取酒店评论信息
@@ -334,5 +341,22 @@ class Region extends \think\Controller
     public function foodMsg()//显示美食详情页面
     {
         return $this->fetch('foodMsg');
+    }
+    public function addhCom(){
+        $hid = input("param.hid");
+        $com = input("param.com");
+        $time = date("Y-m-d H:i:s");
+        $uid = cookie("uid");
+        $fid = input("param.fid");
+
+        $rm = new model\Region();
+        $rm->addhCom($hid,$com,$time,$uid,$fid);
+
+    }
+    public function delhCom(){
+        $comId = input("param.comId");
+        var_dump($comId);
+        $rm = new model\Region();
+        $rm->delhCom($comId);
     }
 }
