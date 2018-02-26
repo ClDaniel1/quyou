@@ -158,7 +158,7 @@ class Region extends Model
         $data['conId'] = array('IN',json_decode($arr,true));
         return db('t_contact')->where($data)->select();
     }
-    public function radomStr($str)//随机码查重
+    public function radomStr($orderId,$str)//随机码查重
     {
         $res=db('t_order')->where('orderCode',$str)->count();
         if($res>0){
@@ -166,7 +166,7 @@ class Region extends Model
         }
         else
         {
-            db('t_order')->insert(['orderCode'=>$str]);
+            db('t_order')->where('orderId',$orderId)->update(['orderCode'=>$str,'orderTypeId'=>2]);
             return true;
         }
     }

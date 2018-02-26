@@ -14,7 +14,7 @@ $(function () {
                $.ajax({
                    type:"post",
                    url:payUrl,
-                   data:{pwd:value,price:price},
+                   data:{pwd:value,price:price,orderId:hotelId},
                    dataType:"json",
                    success: function (res) {
                        console.log(res);

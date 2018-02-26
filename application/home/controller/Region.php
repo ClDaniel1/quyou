@@ -240,6 +240,7 @@ class Region extends \think\Controller
         $res=$userCon->checkLogin();
         $pwd=input("?param.pwd")?input("pwd"):"";
         $price=input("?param.price")?input("price"):"";
+        $orderId=input("?param.orderId")?input("orderId"):"";
         if($res==false)
         {
             $returnMsg=config('msg')['login']['noLogin'];
@@ -267,7 +268,7 @@ class Region extends \think\Controller
                         while(1)
                         {
                             $radomStr=$radom->get();
-                            $raRes=$model->radomStr($radomStr);
+                            $raRes=$model->radomStr($orderId,$radomStr);
                             if($raRes)
                             {
                                 break;
