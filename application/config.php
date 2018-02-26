@@ -314,7 +314,7 @@ return [
             "Repair"=>['code'   =>  "40005",'msg'  =>  "修改成功！" ,"data"=>[]]
             ],
         "msg" => [
-            "getSysMsg" =>["code"=>40001,"msg"=>'获取系统消息成功',"data"=>[]]
+            "getSysMsg" =>["code"=>50001,"msg"=>'获取系统消息成功',"data"=>[]]
         ],
         "tenants" =>  [
             "tenantsImg" =>["code"=>40001,"msg"=>'上传图片成功！',"data"=>[]],
