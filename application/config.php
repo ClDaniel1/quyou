@@ -312,9 +312,24 @@ return [
             "stop"=>['code'   =>  "40003",'msg'  =>  "用户停用！" ,"data"=>[]],
             "del"=>['code'   =>  "40004",'msg'  =>  "删除成功！" ,"data"=>[]],
             "Repair"=>['code'   =>  "40005",'msg'  =>  "修改成功！" ,"data"=>[]]
+<<<<<<< HEAD
         ],
         "msg" => [
             "getSysMsg" =>["code"=>50001,"msg"=>'获取系统消息成功',"data"=>[]]
+=======
+            ],
+        "msg" => [
+            "getSysMsg" =>["code"=>50001,"msg"=>'获取系统消息成功',"data"=>[]]
+        ],
+        "tenants" =>  [
+            "tenantsImg" =>["code"=>40001,"msg"=>'上传图片成功！',"data"=>[]],
+            "coverImg"=>["code"=>40002,"msg"=>'已注册，待系统审查完毕将以短信通知您是否成功！',"data"=>[]],
+            "coverNot"=>["code"=>40003,"msg"=>'商家账号已被注册，请重新输入！',"data"=>[]]
+        ],
+        "audit"=>[
+            "auditPass"=>["code"=>40001,"msg"=>'审核通过，将以短信方式通知商家！',"data"=>[]],
+            "auditPassNot"=>["code"=>40002,"msg"=>'审核失败，将以短信方式通知商家！',"data"=>[]]
+>>>>>>> 3ed65710f1c763fa2d14f602200bf5ee042c4b64
         ],
         "contact"=>['code'  =>  "50001",'msg'   =>  "添加联系人成功!",'data'  => []],
         "order"=>[

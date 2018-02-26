@@ -149,5 +149,17 @@ class Region extends Model
         $data['conId'] = array('IN',json_decode($arr,true));
         return db('t_contact')->where($data)->select();
     }
-
+    public function addhCom($hid,$com,$time,$uid,$fid){
+        $data = [
+            "hotelId" => $hid,
+            "content" => $com,
+            "comTime" => $time,
+            "uid" => $uid,
+            "fid" => $fid
+        ];
+        return db('t_hotelcomment')->insert($data);
+    }
+    public function delhCom($comId){
+        db('t_hotelcomment')->where('comId',$comId)->delete();
+    }
 }

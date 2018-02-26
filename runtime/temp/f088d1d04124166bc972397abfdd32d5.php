@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"D:\wamp64\www\quyou\public/../application/home\view\region\region.html";i:1519559115;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1519513687;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"D:\wamp64\www\quyou\public/../application/home\view\region\region.html";i:1519562989;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1519513687;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -423,26 +423,28 @@
     <div class="layui-container">
         <h6 class="siteColor"><span><?php echo $region_name; ?></span>游记</h6>
         <div class="layui-row">
+            <?php if(count($note) > 0): ?>
             <div>
-                <a href="<?php echo url('home/Notes/show'); ?>?id= <?php echo $note['noteId']; ?>">
-                    <img class="scenicImg" src="__STATIC__/<?php echo $note['img']; ?>" alt="加载失败">
+                <a href="<?php echo url('home/Notes/show'); ?>?id= <?php echo $note[0]['noteId']; ?>">
+                    <img class="scenicImg" src="__STATIC__/<?php echo $note[0]['img']; ?>" alt="加载失败">
                     <div class="mgLeft">
                         <dl class="msgDl">
                             <dt>
-                                <?php echo $note['title']; ?>
+                                <?php echo $note[0]['title']; ?>
                             </dt>
                             <dd>
-                                <?php echo $note['content']; ?>...
+                                <?php echo $note[0]['content']; ?>...
                             </dd>
                         </dl>
                         <div class="headDiv">
-                            <img class="upHead" src="__STATIC__/<?php echo $note['uheadImg']; ?>" alt="加载失败">
-                            <span><?php echo $note['uname']; ?></span>
+                            <img class="upHead" src="__STATIC__/<?php echo $note[0]['uheadImg']; ?>" alt="加载失败">
+                            <span><?php echo $note[0]['uname']; ?></span>
                             <a href=""><i class="iconUp"></i><span class="upNum">255</span></a>
                         </div>
                     </div>
                 </a>
             </div>
+            <?php endif; ?>
             <div style="clear: both"></div>
             <div class="lookAll">
                 <a href="">
