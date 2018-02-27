@@ -40,10 +40,7 @@
                     </span>
                     <h1 class="sMoney">￥<span>{$msg.price}</span></h1>
                 </div>
-                <div>
-                    <span>请选择使用时间：</span>
-                    <input type="text" class="layui-input" id="time1">
-                </div>
+
                 <div>
                     <button class="layui-btn layui-btn-warm addBtn" v-if="addMsg" @click="change">关闭</button>
                     <button class="layui-btn layui-btn-warm addBtn" @click="change" v-else>实名添加</button>
@@ -126,22 +123,6 @@
             ,width: '100%' //设置容器宽度
             ,arrow: 'hover' //始终显示箭头
             ,autoplay:true
-        });
-    });
-    var timss = (new Date()).getTime();
-    console.log(timss);
-    layui.use('laydate', function(){
-        var laydate = layui.laydate;
-        //执行一个laydate实例
-        laydate.render({
-            elem: '#time1'//指定元
-            ,value: new Date(timss),
-            min:0,
-            max:7
-            ,done: function(value){
-                console.log(value);
-
-            }
         });
     });
     new Vue({

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1519539059;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1519561061;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1519615604;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1519615604;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -421,26 +421,30 @@
 <!--景点游记-->
 <div id="content5">
     <div class="layui-container">
-        <h6 class="siteColor"><span>香格里拉</span>游记</h6>
+        <h6 class="siteColor"><span><?php echo $region_name; ?></span>游记</h6>
         <div class="layui-row">
+            <?php if(count($note) > 0): ?>
             <div>
-                <img class="scenicImg" src="__STATIC__/images/region/scenic/scenic1.jpeg" alt="加载失败">
-                <div class="mgLeft">
-                    <dl class="msgDl">
-                        <dt>
-                            <a href="">滇北第二站：独克宗的意思是月光城</a>
-                        </dt>
-                        <dd>
-                            <a href="">带着第一站梅里朝圣的圆满一站梅里朝圣的圆满，悟空又坐上班车小巴从飞来寺观一站梅里朝圣的圆满，悟空又坐上班车小巴从飞来寺观一站梅里朝圣的圆满，悟空又坐上班车小巴从飞来寺观，悟空又坐上班车小巴从飞来寺观景台返回 香格里拉 。回程的路上，依然要 盘山 翻越两座大雪山，旅途依然艰苦而遥远，悟空却倍感轻松，对梅里的期盼已被满足，对高反的紧张不知所踪，五个小时一晃而过，便到了 香格里拉 。 悟空发现，很多想到这里旅行...</a>
-                        </dd>
-                    </dl>
-                    <div class="headDiv">
-                        <img class="upHead" src="__STATIC__/images/region/head/head2.jpeg" alt="加载失败">
-                        <span>小巴黎xiaoYu</span>
-                        <a href=""><i class="iconUp"></i><span class="upNum">255</span></a>
+                <a href="<?php echo url('home/Notes/show'); ?>?id= <?php echo $note[0]['noteId']; ?>">
+                    <img class="scenicImg" src="__STATIC__/<?php echo $note[0]['img']; ?>" alt="加载失败">
+                    <div class="mgLeft">
+                        <dl class="msgDl">
+                            <dt>
+                                <?php echo $note[0]['title']; ?>
+                            </dt>
+                            <dd>
+                                <?php echo $note[0]['content']; ?>...
+                            </dd>
+                        </dl>
+                        <div class="headDiv">
+                            <img class="upHead" src="__STATIC__/<?php echo $note[0]['uheadImg']; ?>" alt="加载失败">
+                            <span><?php echo $note[0]['uname']; ?></span>
+                            <a href=""><i class="iconUp"></i><span class="upNum">255</span></a>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
+            <?php endif; ?>
             <div style="clear: both"></div>
             <div class="lookAll">
                 <a href="">
@@ -448,7 +452,7 @@
                     <i class="i-blue"></i>
                     <i class="i-orange"></i>
                 </span>
-                    查看全部<span class="numOrange">香格里拉</span>游记>
+                    查看全部<span class="numOrange"><?php echo $region_name; ?></span>游记>
                 </a>
             </div>
         </div>
@@ -470,7 +474,7 @@
                 <div class="footer">
                   <ul class="footerUl">
                       <li class="footerHd">关于我们</li>
-                      <li><a href="">商家入驻</a></li>
+                      <li><a href="<?php echo url('home/Checkin/checkin'); ?>">商家入驻</a></li>
                       <li><a href="">联系我们</a></li>
                       <li><a href="">关于趣游</a></li>
                   </ul>

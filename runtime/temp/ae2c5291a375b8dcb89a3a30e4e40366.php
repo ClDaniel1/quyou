@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\desti\desti.html";i:1517152143;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1519561061;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\desti\desti.html";i:1517152143;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1519615604;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -501,7 +501,7 @@
                 <div class="footer">
                   <ul class="footerUl">
                       <li class="footerHd">关于我们</li>
-                      <li><a href="">商家入驻</a></li>
+                      <li><a href="<?php echo url('home/Checkin/checkin'); ?>">商家入驻</a></li>
                       <li><a href="">联系我们</a></li>
                       <li><a href="">关于趣游</a></li>
                   </ul>

@@ -366,7 +366,6 @@ class Region extends \think\Controller
 
         $rm = new model\Region();
         $rm->addhCom($hid,$com,$time,$uid,$fid);
-
     }
     public function delhCom(){
         $comId = input("param.comId");
