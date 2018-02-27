@@ -656,7 +656,6 @@ class Notes extends \think\Controller
                 } else {
                     //获取游记内容
                     $con = $nm->getNoteCont($id);
-
                     $this->assign("info", $info);
                     $this->assign("con", $con);
                     $this->assign("noteId", $id);
