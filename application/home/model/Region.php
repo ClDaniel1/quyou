@@ -158,19 +158,17 @@ class Region extends Model
         $data['conId'] = array('IN',json_decode($arr,true));
         return db('t_contact')->where($data)->select();
     }
-<<<<<<< HEAD
     public function radomStr($orderId,$str)//随机码查重
     {
-        $res=db('t_order')->where('orderCode',$str)->count();
-        if($res>0){
+        $res = db('t_order')->where('orderCode', $str)->count();
+        if ($res > 0) {
             return false;
-        }
-        else
-        {
-            db('t_order')->where('orderId',$orderId)->update(['orderCode'=>$str,'orderTypeId'=>2]);
+        } else {
+            db('t_order')->where('orderId', $orderId)->update(['orderCode' => $str, 'orderTypeId' => 2]);
             return true;
         }
-=======
+    }
+
     public function addhCom($hid,$com,$time,$uid,$fid){
         $data = [
             "hotelId" => $hid,
@@ -183,6 +181,5 @@ class Region extends Model
     }
     public function delhCom($comId){
         db('t_hotelcomment')->where('comId',$comId)->delete();
->>>>>>> 3a7c5968e7628f3c26d16dd9f98ec93d68d67612
     }
 }
