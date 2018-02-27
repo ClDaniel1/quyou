@@ -28,9 +28,10 @@
 <body>
 <article class="page-container">
     <form class="form form-horizontal" id="form-admin-edit">
+        <input type="hidden" id="staId" name="staId" value="{$staId}">
         <div class="row cl">
             <div class="col-xs-2 col-sm-1"></div>
-            <label class="form-label col-xs-3 col-sm-5"><span class="c-red">*</span>管理员：</label>
+            <label class="form-label col-xs-3 col-sm-5"><span class="c-red">*</span>员工名称：</label>
             <div class="formControls col-xs-5 col-sm-5">
                 <input type="text" class="input-text" value="" placeholder="" id="adminName" name="adminName">
             </div>
@@ -67,7 +68,7 @@
 			<select class="select" name="adminRole" size="1">
                 <option>请选择一个角色</option>
                 {volist name="roleList" id="staa"}
-                <option value="{$staa.roleId}">{$staa.roleName}</option>
+                <option value="{$staa.roleId}" id="roleId" name="roleId">{$staa.roleName}</option>
                 {/volist}
             </select>
 			</span> </div>
@@ -75,7 +76,7 @@
         </div>
         <div class="row cl">
             <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                <input class="btn btn-primary radius" type="submit" id="staffEditBtn" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
             </div>
         </div>
     </form>
@@ -92,12 +93,14 @@
 <script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/validate-methods.js"></script>
 <script type="text/javascript" src="__STATIC__/lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript">
+    var staId = "{$staId}";
     $(function(){
         $('.skin-minimal input').iCheck({
             checkboxClass: 'icheckbox-blue',
             radioClass: 'iradio-blue',
             increaseArea: '20%'
         });
+        var staffEditUrl="{:url('admin/System/staffEdit')}";
 
         $("#form-admin-edit").validate({
             rules:{
@@ -131,16 +134,20 @@
             onkeyup:false,
             focusCleanup:true,
             success:"valid",
+
             submitHandler:function(form){
                 $(form).ajaxSubmit({
-                    type: 'post',
-                    url: "xxxxxxx" ,
-                    success: function(data){
-                        layer.msg('添加成功!',{icon:1,time:1000});
-                    },
-                    error: function(XmlHttpRequest, textStatus, errorThrown){
-                        layer.msg('error!',{icon:1,time:1000});
+                    type:'post',
+                    url:staffEditUrl,
+                    success: function (res) {
+                        console.log(JSON.parse(res));
                     }
+//                    success: function(data){
+//                        layer.msg('添加成功!',{icon:1,time:1000});
+//                    },
+//                    error: function(XmlHttpRequest, textStatus, errorThrown){
+//                        layer.msg('error!',{icon:1,time:1000});
+//                    }
                 });
                 var index = parent.layer.getFrameIndex(window.name);
                 parent.$('.btn-refresh').click();
@@ -148,6 +155,20 @@
             }
         });
     });
+    var getStaInfoUrl="{:url('admin/System/getStaInfo')}";
+$(function () {
+    $.ajax({
+        url:getStaInfoUrl,
+        data:{'staId':staId},
+        type:'post',
+        dataType: 'json',
+        success: function (res) {
+            console.log(res);
+            $('#adminName').val(res.staName);
+            $('#phone').val(res.staPhone);
+        }
+    })
+})
 </script>
 <!--/请在上方写此页面业务相关的脚本-->
 </body>
