@@ -43,6 +43,11 @@
 {
     margin-top: 25px;
 }
+#time1
+{
+    width: 150px;
+    display: inline-block;
+}
 .payDiv
 {
     text-align: right;

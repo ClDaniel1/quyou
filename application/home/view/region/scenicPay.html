@@ -1,6 +1,7 @@
 {extend name="public/base"}
 {block name='style'}
 <link rel="stylesheet" href="__CSS__/home/region/scenicPay.css">
+
 {/block}
 {block name='body'}
 <div class="layui-container" id="app">
@@ -8,7 +9,7 @@
         <div class="layui-row breadcrumb">
              <span class="layui-breadcrumb" lay-separator=">">
                 <a href="">目的地</a>
-                <a href="">上海</a>
+                <a href="">{$msg.rName}</a>
                 <a><cite>景点门票</cite></a>
             </span>
         </div>
@@ -17,19 +18,17 @@
         <div class="layui-col-sm5">
             <div class="layui-carousel" id="test1">
                 <div carousel-item>
+                    {foreach $msg.sImg as $vo}
                     <div>
-                        <img src="__STATIC__/images/region/scenic/scenic1.jpeg" alt="">
+                        <img src="__STATIC__/{$vo['url']}" alt="">
                     </div>
-                    <div><img src="__STATIC__/images/region/scenic/scenic1.jpeg" alt=""></div>
-                    <div><img src="__STATIC__/images/region/scenic/scenic1.jpeg" alt=""></div>
-                    <div><img src="__STATIC__/images/region/scenic/scenic1.jpeg" alt=""></div>
-                    <div><img src="__STATIC__/images/region/scenic/scenic1.jpeg" alt=""></div>
+                    {/foreach}
                 </div>
             </div>
         </div>
         <div class="layui-col-sm7">
             <div class="pdDiv">
-                <h1><span>北京故宫</span>电子票</h1>
+                <h1><span>{$msg.scenicName}</span>电子票</h1>
                 <div class="msgSpan">
                     <span>刷身份证检票</span>
                     <span>无需排队</span>
@@ -39,7 +38,11 @@
                     <span>
                         实名购票(购票数与实名数保持一致)
                     </span>
-                    <h1 class="sMoney">￥<span>2000</span></h1>
+                    <h1 class="sMoney">￥<span>{$msg.price}</span></h1>
+                </div>
+                <div>
+                    <span>请选择使用时间：</span>
+                    <input type="text" class="layui-input" id="time1">
                 </div>
                 <div>
                     <button class="layui-btn layui-btn-warm addBtn" v-if="addMsg" @click="change">关闭</button>
@@ -52,7 +55,7 @@
     <transition name="fade">
         <div class="layui-row magTop" v-if="addMsg">
             <div class="layui-form">
-                <div class="layui-col-sm4">
+                <div class="layui-col-sm3">
                     <div class="layui-form-item">
                         <label class="layui-form-label">姓名</label>
                         <div class="layui-input-inline">
@@ -60,7 +63,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="layui-col-sm4">
+                <div class="layui-col-sm3">
                     <div class="layui-form-item">
                         <label class="layui-form-label">身份证</label>
                         <div class="layui-input-inline">
@@ -68,13 +71,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="layui-col-sm4">
+                <div class="layui-col-sm3">
                     <div class="layui-form-item">
                         <label class="layui-form-label">手机号</label>
                         <div class="layui-input-inline">
                             <input type="text" required lay-verify="required" placeholder="请输入手机号" autocomplete="off" class="layui-input">
                         </div>
                     </div>
+                </div>
+                <div class="layui-col-sm3">
+                   <button class="layui-btn">确认添加</button>
                 </div>
             </div>
         </div>
@@ -119,7 +125,23 @@
             elem: '#test1'
             ,width: '100%' //设置容器宽度
             ,arrow: 'hover' //始终显示箭头
-            //,anim: 'fade' //切换动画方式
+            ,autoplay:true
+        });
+    });
+    var timss = (new Date()).getTime();
+    console.log(timss);
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#time1'//指定元
+            ,value: new Date(timss),
+            min:0,
+            max:7
+            ,done: function(value){
+                console.log(value);
+
+            }
         });
     });
     new Vue({

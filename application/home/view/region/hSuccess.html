@@ -52,23 +52,24 @@
             <div class="divBd">
                 <div class="ctLeft">
                     <div class="ctImg">
-                        <img src="__STATIC__/{$msg.msg.img}" alt="加载失败">
+                        <img src="__STATIC__/{$msg.hotel.img}" alt="加载失败">
 
                     </div>
                     <div class="textDiv">
-                        <h1>{$msg.msg.hotelName}</h1>
-                        <h3><span>简介：</span>{$msg.msg.hotelDescribe}</h3>
+                        <h1>{$msg.hotel.hotelName}</h1>
+                        <h3><span>简介：</span>{$msg.hotel.hotelDescribe}</h3>
                         <div>
                             <span>入住时间</span>
-                            <span>{$msg.checkTime}</span>
+                            <span>{$msg.order.useDate}</span>
                         </div>
                         <div>
-                            <span>离店时间</span>
-                            <span>{$msg.outTime}</span>
+                            <span>入住天数</span>
+                            <span>{$msg.order.valid}</span>
+                            <span class="blockS">天</span>
                         </div>
                         <div>
                             <span>客房数量</span>
-                            <span>{$msg.num}</span>
+                            <span>{$msg.order.num}</span>
                             <span class="blockS">间</span>
                         </div>
                     </div>
@@ -80,11 +81,13 @@
                     <div style="background-color: #e6e6e6;line-height: 20px;border-top-left-radius: 10px;border-top-right-radius: 10px;padding: 15px">
                         <h1>联系人信息</h1>
                     </div>
+                    {volist name="contact" id="value"}
                     <div style="padding: 15px">
-                        <p style="margin-bottom: 15px"><span style="color: #888080; margin-right: 40px">联系人姓名：</span><span>张三</span></p>
-                        <p style="margin-bottom: 15px"><span style="color: #888080;margin-right: 38px">联系人电话：</span><span>15259052697</span></p>
-                        <p><span style="color: #888080;margin-right: 25px">联系人证件号：</span><span>3522281995091651</span></p>
+                        <p style="margin-bottom: 15px"><span style="color: #888080; margin-right: 40px">联系人姓名：</span><span>{$value.conName}</span></p>
+                        <p style="margin-bottom: 15px"><span style="color: #888080;margin-right: 38px">联系人电话：</span><span>{$value.conPhone}</span></p>
+                        <p><span style="color: #888080;margin-right: 25px">联系人证件号：</span><span>{$value.conIdCard}</span></p>
                     </div>
+                    {/volist}
                 </div>
             </div>
         </div>
@@ -94,10 +97,10 @@
                     <h1>预订费用明细</h1>
                 </div>
                 <div class="rMiddle">
-                    <h3><span>{$msg.num}</span>间客房x<span>1</span>晚 <span class="floatR" style="text-align: right">￥<span>{$msg.price}</span></span></h3>
+                    <h3><span>1</span>间客房x<span>1</span>晚 <span class="floatR" style="text-align: right">￥<span>{$msg.hotel.hotelPrice}</span></span></h3>
                 </div>
                 <div class="rBottom">
-                    <h1>总价（含税）<span class="floatR" style="text-align: right;color: orange;font-size: 18px">￥<span>{$msg.price}</span></span></h1>
+                    <h1>总价（含税）<span class="floatR" style="text-align: right;color: orange;font-size: 18px">￥<span>{$msg.order.totalPrice}</span></span></h1>
                 </div>
             </div>
         </div>
