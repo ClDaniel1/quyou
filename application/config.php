@@ -237,6 +237,8 @@ return [
         'list_rows' => 15,
     ],
 
+    "APPID" =>"wx1c17ef311f295218",
+    "APPSECRET"=>"81a83770b54c0b614e95b290f9586e04",
     //提示消息
     'msg'                     =>[
         'login'             => [
@@ -298,6 +300,8 @@ return [
             'addFooterErr'=>["code"=>30006,"msg"=>'添加足迹失败',"data"=>[]],
             'addFooter'=>["code"=>30007,"msg"=>'添加足迹成功',"data"=>[]],
             "addFooterHave" =>["code"=>30008,"msg"=>'已经有该足迹了哦',"data"=>[]],
+            "userInfoSucc" =>["code"=>30009,"msg"=>'获取用户信息成功',"data"=>[]],
+            "userInfoErr" =>["code"=>30010,"msg"=>'登录有误，请重新登录',"data"=>[]],
         ],
         'staff'=>[
             'changeOK' =>["code"=>30002,"msg"=>'修改成功',"data"=>[]],
@@ -347,6 +351,9 @@ return [
             'focusNo'=>['code'  =>  "80002",'msg'   =>  "关注失败！",'data'  => []],
             'focusHeavy'=>['code'  =>  "80003",'msg'   =>  "不能关注自己！",'data'  => []]
         ],
+        "des" => [
+            'getInSuccess' => ['code'  =>  90001,'msg'   =>  "获取信息成功",'data'  => []]
+        ]
     ],
     //验证码
     'captcha'  => [
