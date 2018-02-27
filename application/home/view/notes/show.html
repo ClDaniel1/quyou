@@ -128,8 +128,8 @@
                     </div>
                 </div>
                 <div>{$info["uname"]} </div>
-                <button class="btn layui-btn layui-btn-xs">关注</button>
-                <button class="btn layui-btn layui-btn-xs">收藏</button>
+                <button class="btn layui-btn layui-btn-xs" onclick="Focus({$info['uid']})">关注</button>
+                <button class="btn layui-btn layui-btn-xs" onclick="collection()">收藏</button>
             </div>
             {if $info["music"]!=null}
             <div>
@@ -172,6 +172,62 @@
     var title = "{$info["title"]}";
 
     var getCon = "{:url('home/Notes/getConS')}";
+    var collectionShow="{:url('home/Notes/collectionShow')}";
+    var focusShow="{:url('home/Notes/focusShow')}";
+    function collection(){
+        if($(".loginIn").length>0)
+        {
+            $.ajax({
+                type: 'post',
+                url: collectionShow,
+                data: {'noteId':noteId},
+                dataType: 'json',
+                success: function (res) {
+                    if(res["code"]==70001)
+                    {
+                        layer.msg(res["msg"]);
+                    }
+                    else
+                    {
+                        layer.msg(res["msg"]);
+                    }
+                }
+            })
+        }
+        else {
+            layer.msg('请先登录！');
+            window.location.href="{:url('home/User/login')}";
+        }
+    }
+    function Focus(uid){
+        if($(".loginIn").length>0)
+        {
+            $.ajax({
+                type: 'post',
+                url: focusShow,
+                data: {'uid':uid},
+                dataType: 'json',
+                success: function (res) {
+                    if(res["code"]==80001)
+                    {
+                        layer.msg(res["msg"]);
+                    }
+                    else if(res["code"]==80002)
+                    {
+                        layer.msg(res["msg"]);
+                    }
+                    else {
+                        layer.msg(res["msg"]);
+                    }
+                }
+            })
+        }
+        else {
+            layer.msg('请先登录！');
+            window.location.href="{:url('home/User/login')}";
+        }
+
+    }
 
 </script>
 <script src="__JS__/home/note/show.js"></script>

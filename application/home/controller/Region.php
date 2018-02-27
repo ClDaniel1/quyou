@@ -374,4 +374,21 @@ class Region extends \think\Controller
         $rm = new model\Region();
         $rm->delhCom($comId);
     }
+    public function collection()
+    {
+        $uid = cookie("uid");
+        $id=input('param.id');
+        $rm = new model\Region();
+        $data=$rm->collection($uid,$id);
+        if($data==1)
+        {
+            $reMsg=config("msg")["collection"]["collectionYes"];
+            return json($reMsg);
+        }
+        else
+        {
+            $reMsg=config("msg")["collection"]["collectionNo"];
+            return json($reMsg);
+        }
+    }
 }

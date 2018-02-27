@@ -285,4 +285,24 @@ class Notes extends Model
             ->order('createTime desc')->select();
         return $data;
     }
+    public function collectionShow($uid,$noteId)
+    {
+        $data = [
+            'uid'=>$uid,
+            'whoId'=>$noteId,
+            'type'=>'1'
+        ];
+        $sql=db('t_collect')->insert($data);
+        return $sql;
+    }
+    public function focusShow($uid,$Uid)
+    {
+        $data = [
+            'uid'=>$uid,
+            'whoId'=>$Uid,
+            'type'=>'0'
+        ];
+        $sql=db('t_collect')->insert($data);
+        return $sql;
+    }
 }
