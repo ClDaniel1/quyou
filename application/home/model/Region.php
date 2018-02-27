@@ -162,4 +162,14 @@ class Region extends Model
     public function delhCom($comId){
         db('t_hotelcomment')->where('comId',$comId)->delete();
     }
+    public function collection($uid,$id)
+    {
+        $data = [
+            'uid'=>$uid,
+            'whoId'=>$id,
+            'type'=>'4'
+        ];
+        $sql=db('t_collect')->insert($data);
+        return $sql;
+    }
 }

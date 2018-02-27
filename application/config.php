@@ -312,11 +312,6 @@ return [
             "stop"=>['code'   =>  "40003",'msg'  =>  "用户停用！" ,"data"=>[]],
             "del"=>['code'   =>  "40004",'msg'  =>  "删除成功！" ,"data"=>[]],
             "Repair"=>['code'   =>  "40005",'msg'  =>  "修改成功！" ,"data"=>[]]
-<<<<<<< HEAD
-        ],
-        "msg" => [
-            "getSysMsg" =>["code"=>50001,"msg"=>'获取系统消息成功',"data"=>[]]
-=======
             ],
         "msg" => [
             "getSysMsg" =>["code"=>50001,"msg"=>'获取系统消息成功',"data"=>[]]
@@ -329,7 +324,6 @@ return [
         "audit"=>[
             "auditPass"=>["code"=>40001,"msg"=>'审核通过，将以短信方式通知商家！',"data"=>[]],
             "auditPassNot"=>["code"=>40002,"msg"=>'审核失败，将以短信方式通知商家！',"data"=>[]]
->>>>>>> 3ed65710f1c763fa2d14f602200bf5ee042c4b64
         ],
         "contact"=>['code'  =>  "50001",'msg'   =>  "添加联系人成功!",'data'  => []],
         "order"=>[
@@ -339,7 +333,16 @@ return [
             'pwdF'=>['code'  =>  "60004",'msg'   =>  "支付密码有误，请重新输入!",'data'  => []],
             'payF'=>['code'  =>  "60005",'msg'   =>  "余额不足，请先进行充值!",'data'  => []],
             'payT'=>['code'  =>  "60006",'msg'   =>  "恭喜您支付成功!",'data'  => []],
-        ]
+        ],
+        "collection"=>[
+            'collectionYes'=>['code'  =>  "70001",'msg'   =>  "收藏成功！",'data'  => []],
+            'collectionNo'=>['code'  =>  "70002",'msg'   =>  "收藏失败！",'data'  => []]
+        ],
+        "focus"=>[
+            'focusYes'=>['code'  =>  "80001",'msg'   =>  "关注成功！",'data'  => []],
+            'focusNo'=>['code'  =>  "80002",'msg'   =>  "关注失败！",'data'  => []],
+            'focusHeavy'=>['code'  =>  "80003",'msg'   =>  "不能关注自己！",'data'  => []]
+        ],
     ],
     //验证码
     'captcha'  => [
