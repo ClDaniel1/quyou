@@ -7,6 +7,7 @@
  */
 namespace app\home\controller;
 use app\admin\model\User;
+use org\RadomStr;
 use think\console\command\make\Controller;
 use \think\Request;
 use \app\home\model;
@@ -250,6 +251,7 @@ class Region extends \think\Controller
         $res=$userCon->checkLogin();
         $pwd=input("?param.pwd")?input("pwd"):"";
         $price=input("?param.price")?input("price"):"";
+        $orderId=input("?param.orderId")?input("orderId"):"";
         if($res==false)
         {
             $returnMsg=config('msg')['login']['noLogin'];
@@ -273,6 +275,16 @@ class Region extends \think\Controller
                     $upRes=$model->upBalance($uId,$balance);
                     if($upRes!=false)
                     {
+                        $radom=new RadomStr();
+                        while(1)
+                        {
+                            $radomStr=$radom->get();
+                            $raRes=$model->radomStr($orderId,$radomStr);
+                            if($raRes)
+                            {
+                                break;
+                            }
+                        }
                         $returnMsg=config('msg')['order']['payT'];
                         echo json_encode($returnMsg);
                     }
@@ -326,11 +338,14 @@ class Region extends \think\Controller
         $model=new model\Region();
         $arr=$model->idScenic($id);
         $this->assign('msg',$arr);
-        exit(dump($arr));
         return $this->fetch('scenicMsg');
     }
     public function scenicPay()//显示景点购买页面
     {
+        $id=input('?param.id')?input('id'):"";
+        $model=new model\Region();
+        $arr=$model->payScenic($id);
+        $this->assign('msg',$arr);
         return $this->fetch('scenicPay');
     }
     public function food()//显示美食页面

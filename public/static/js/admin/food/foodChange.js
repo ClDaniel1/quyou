@@ -51,6 +51,4 @@ function Release()
             btn: ['取消', '修改']
         });
     });
-
-
 }

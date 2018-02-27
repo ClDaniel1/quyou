@@ -52,12 +52,21 @@ class Region extends Model
     }
     public function idScenic($id)//根据景点id获取景点信息
     {
+
         $msgArr=db('t_scenic')->alias('a')->join('t_region b','a.desId=b.REGION_ID')->where('a.scenicId',$id)->field('a.*,b.REGION_NAME rName')->find();
 
-        $img=db('t_scenicImg')->where('scenicId',$id)->limit(0,3)->select();
+        $img=db('t_scenicimg')->field('url')->where('scenicId',$id)->limit(0,3)->select();
         $msgArr['imgMsg']=$img;
         return $msgArr;
     }
+    public function payScenic($id)//根据id获取景点信息，购买页面
+    {
+        $msgArr=db('t_scenic')->alias('a')->join('t_region b','a.desId=b.REGION_ID')->where('a.scenicId',$id)->field('a.*,b.REGION_NAME rName')->find();
+        $img=db('t_scenicimg')->field('url')->where('scenicId',$id)->limit(0,5)->select();
+        $msgArr['sImg']=$img;
+        return $msgArr;
+    }
+
     public function hotelMsg($id)//根据地区id查找对应地区酒店2条信息
     {
         $arr=array();
@@ -149,6 +158,17 @@ class Region extends Model
         $data['conId'] = array('IN',json_decode($arr,true));
         return db('t_contact')->where($data)->select();
     }
+    public function radomStr($orderId,$str)//随机码查重
+    {
+        $res = db('t_order')->where('orderCode', $str)->count();
+        if ($res > 0) {
+            return false;
+        } else {
+            db('t_order')->where('orderId', $orderId)->update(['orderCode' => $str, 'orderTypeId' => 2]);
+            return true;
+        }
+    }
+
     public function addhCom($hid,$com,$time,$uid,$fid){
         $data = [
             "hotelId" => $hid,

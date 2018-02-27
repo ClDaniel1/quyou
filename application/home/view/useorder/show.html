@@ -1,0 +1,43 @@
+{extend name="public/base"}
+{block name='style'}
+<!--页面样式、引用/示例如下-->
+<style>
+
+
+</style>
+{/block}
+
+{block name='title'}
+订单使用
+{/block}
+
+{block name='body'}
+<!--页面内容 /示例如下-->
+<div style="text-align: center;line-height:125px;font-size: 30px">
+    <h1>感谢选择趣游</h1>
+
+</div>
+
+<div class="layui-container" style="min-height: 700px">
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <input type="text" name="title" required  lay-verify="required" placeholder="请输入订单使用码" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block" style="text-align: center">
+                <button class="layui-btn" lay-submit lay-filter="formDemo" style="margin-left: -135px">立即提交</button>
+                <button type="reset" class="layui-btn ">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{/block}
+
+
+{block name='script'}
+<!--JS、引用 /示例如下-->
+
+{/block}

@@ -68,14 +68,14 @@
 .scMaxImg  img
 {
     width: 100%;
-    /*height: 370px;*/
+    height: 370px;
     display: block;
 }
-.scMinImg  img
+.scMinImg img
 {
     float: right;
     width: 97%;
-    /*height: 180px ;*/
+    height: 178px ;
 }
 .topImg{
     margin-top: 13px;
@@ -232,6 +232,10 @@
 @media screen and (max-width: 992px){
     .topImg{
         margin-top: 7px;
+    }
+    .scMinImg img
+    {
+        height: 181px;
     }
 }
 @media (min-width: 992px) and (max-width: 1200px){

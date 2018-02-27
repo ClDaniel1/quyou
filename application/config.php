@@ -299,23 +299,41 @@ return [
             'addFooter'=>["code"=>30007,"msg"=>'添加足迹成功',"data"=>[]],
             "addFooterHave" =>["code"=>30008,"msg"=>'已经有该足迹了哦',"data"=>[]],
         ],
+<<<<<<< HEAD
+
+        'staff'=>[
+            'changeOK' =>["code"=>30002,"msg"=>'修改成功',"data"=>[]],
+            'changeErr'=>["code"=>30003,"msg"=>'信息为原信息，请修改',"data"=>[]]
+        ],
+
+
+=======
+>>>>>>> 23996152c3f73b3fb75f9a75211ab32678b82c9a
         'manager'=>[
             'changeOK' =>["code"=>60001,"msg"=>'修改成功',"data"=>[]],
             'changeErr'=>["code"=>60002,"msg"=>'修改失败',"data"=>[]],
             'delOK'=>["code"=>60003,"msg"=>'删除成功',"data"=>[]],
-            'delErr'=>["code"=>60004,"msg"=>'删除失败',"data"=>[]],
+            'delErr'=>["code"=>60004,"msg"=>'删除失败',"data"=>[]]
 
         ],
+<<<<<<< HEAD
+
+=======
+>>>>>>> 23996152c3f73b3fb75f9a75211ab32678b82c9a
         "userCon"=>[
             "rePsw"=>['code'  =>  "40001",'msg'   =>  "密码重置成功!",'data'  => []],
             "open"=>['code'   =>  "40002",'msg'  =>  "启用成功！" ,"data"=>[]],
             "stop"=>['code'   =>  "40003",'msg'  =>  "用户停用！" ,"data"=>[]],
             "del"=>['code'   =>  "40004",'msg'  =>  "删除成功！" ,"data"=>[]],
             "Repair"=>['code'   =>  "40005",'msg'  =>  "修改成功！" ,"data"=>[]]
-            ],
+<<<<<<< HEAD
+=======
+        ],
         "msg" => [
             "getSysMsg" =>["code"=>50001,"msg"=>'获取系统消息成功',"data"=>[]]
-        ],
+
+>>>>>>> 240baec8d9c997ac25eff1cb86f588c6c270dfc1
+            ],
         "tenants" =>  [
             "tenantsImg" =>["code"=>40001,"msg"=>'上传图片成功！',"data"=>[]],
             "coverImg"=>["code"=>40002,"msg"=>'已注册，待系统审查完毕将以短信通知您是否成功！',"data"=>[]],

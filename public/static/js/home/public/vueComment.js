@@ -209,7 +209,6 @@ new Vue({
                     _this.outTime=value;
                 }
             });
-
         });
         bus.$on('data', function (res) {
             console.log(res);
