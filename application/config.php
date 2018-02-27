@@ -323,7 +323,11 @@ return [
         ],
         "msg" => [
             "getSysMsg" =>["code"=>50001,"msg"=>'获取系统消息成功',"data"=>[]]
+<<<<<<< HEAD
+        ],
+=======
             ],
+>>>>>>> f6a9002badde4fa42f99735b07c41d49759a2c20
         "tenants" =>  [
             "tenantsImg" =>["code"=>40001,"msg"=>'上传图片成功！',"data"=>[]],
             "coverImg"=>["code"=>40002,"msg"=>'已注册，待系统审查完毕将以短信通知您是否成功！',"data"=>[]],
@@ -341,6 +345,11 @@ return [
             'pwdF'=>['code'  =>  "60004",'msg'   =>  "支付密码有误，请重新输入!",'data'  => []],
             'payF'=>['code'  =>  "60005",'msg'   =>  "余额不足，请先进行充值!",'data'  => []],
             'payT'=>['code'  =>  "60006",'msg'   =>  "恭喜您支付成功!",'data'  => []],
+<<<<<<< HEAD
+            'cancelT'=>['code'  =>  "60007",'msg'   =>  "取消订单成功!",'data'  => []],
+            'cancelF'=>['code'  =>  "60008",'msg'   =>  "取消订单失败!",'data'  => []],
+        ]
+=======
         ],
         "collection"=>[
             'collectionYes'=>['code'  =>  "70001",'msg'   =>  "收藏成功！",'data'  => []],
@@ -351,9 +360,13 @@ return [
             'focusNo'=>['code'  =>  "80002",'msg'   =>  "关注失败！",'data'  => []],
             'focusHeavy'=>['code'  =>  "80003",'msg'   =>  "不能关注自己！",'data'  => []]
         ],
+<<<<<<< HEAD
         "des" => [
             'getInSuccess' => ['code'  =>  90001,'msg'   =>  "获取信息成功",'data'  => []]
         ]
+=======
+>>>>>>> f6a9002badde4fa42f99735b07c41d49759a2c20
+>>>>>>> 8d8c2621b3bcb41568a9ecaf8b8704a59f1929c2
     ],
     //验证码
     'captcha'  => [
