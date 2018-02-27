@@ -7,6 +7,9 @@ class System extends \think\Controller{
 
     public function role()
     {
+        $am=new \app\admin\model\System();
+        $data=$am->roleList();
+        $this->assign("role",$data);
         return $this->fetch('role');
     }
     public function staff()
@@ -56,11 +59,62 @@ class System extends \think\Controller{
         }
     }
 
+
+    public function roleEditShow(){
+        $roleId=input('?get.id')?input('get.id'):'';
+        $this->assign("roleId",$roleId);
+        return $this->fetch('roleEdit');
+    }
+
+
+    public function roleAddShow(){
+        $roleId=input('?get.id')?input('get.id'):'';
+        $this->assign("roleId",$roleId);
+        return $this->fetch('roleAdd');
+    }
+
     public function staffEditShow(){
         $am=new \app\admin\model\System();
         $data=$am->roleList();
+        $staId=input('?get.id')?input('get.id'):'';
+        $this->assign("staId",$staId);
         $this->assign("roleList",$data);
+        $where=[
+            'staId' => $staId
+        ];
+        $staInfo=$am->staInfo($where);
         return $this->fetch('staffEdit');
     }
 
+    public function getStaInfo(){
+        $staId=input('?post.staId')? input('staId'):'';
+        $am=new \app\admin\model\System();
+        $where=[
+            'staId' => $staId
+        ];
+        $staInfo=$am->staInfo($where);
+        return json($staInfo);
+    }
+
+    //员工编辑
+    public function staffEdit(){
+        $adminName=input('?post.adminName')? input('adminName'):'';
+        $password=input('?post.password')? input('password'):'';
+        $phone=input('?post.phone')? input('phone'):'';
+        $roleId=input('?post.roleId')? input('roleId'):'';
+        $staId=input('?post.staId')? input('staId'):'';
+        $model=new \app\admin\model\System();
+        $data = ['staName' => $adminName, 'staPwd' => $password,
+            'staPhone' =>$phone,'roleId'=>$roleId
+        ];
+        $res=$model->changeStaff($staId,$data);
+
+        if($res){
+            $returnMsg=config('msg')['staff']['changeOK'];
+            return json($returnMsg);
+        }else{
+            $returnMsg=config('msg')['staff']['changeErr'];
+            return json($returnMsg);
+        }
+    }
 }

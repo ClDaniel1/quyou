@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"D:\AppServ\www\quyou\public/../application/home\view\index\index.html";i:1517560738;s:69:"D:\AppServ\www\quyou\public/../application/home\view\public\base.html";i:1517729242;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"D:\AppServ\www\quyou\public/../application/home\view\index\index.html";i:1519436078;s:69:"D:\AppServ\www\quyou\public/../application/home\view\public\base.html";i:1519697608;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="__STATIC__/lib/amazeui/css/app.css">
     <link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
     <link rel="stylesheet" href="__CSS__\home\public\public.css">
+    <link rel="stylesheet" href="__CSS__\home\chat.css">
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
@@ -127,7 +128,18 @@
 
     }
     @media (min-width: 768px) {
-
+        .am-list-main{
+            position: relative;
+        }
+        .am-vertical-align-bottom{
+            position:  absolute;
+            top: 135px;
+        }
+       .am-list-item-text{
+        overflow: hidden;
+        text-overflow:ellipsis;
+           max-height: 95px;
+       }
     }
 </style>
 
@@ -150,6 +162,24 @@
 
 
 
+<div id="chatD">
+    <div id="chatZone" class="chat">
+        <div id="chatZM">
+            <div id="chatHead"><span id="chatname">正在和xx聊天</span><img src="__STATIC__/images/x.png" alt=""></div>
+            <div id="chatMain"></div>
+            <div id="chatTool">
+                <div class="unuse"></div>
+                <img src="__STATIC__/images/face.png" alt="" class="toolimg" id="btnface">
+                <img src="__STATIC__/images/draw.png" alt="" class="toolimg" id="btndraw">
+            </div>
+            <div id="chatbar">
+                <div class="unuse"></div>
+                <div id="chatinput" contenteditable="true" tabindex="0"></div>
+                <input type="button" value="发送" id="send">
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="layui-header header layui-show-xs-block layui-hide-sm navBg" id="liteNav" >
     <ul class="layui-nav navBg" lay-filter="" style="text-align: center">
@@ -168,10 +198,12 @@
             <li class="layui-nav-item"><a href="">旅途直播</a></li>
             <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
             <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
+            <li class="layui-nav-item loginIn"><a href="<?php echo url('home/User/myMsg'); ?>" class="msga">我的消息</a></li>
             <li class="layui-nav-item loginIn">
                 <a href="javascript:;">我</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">我的消息</a></dd>
+                    <dd><a href="">我的游记</a></dd>
+                    <dd><a href="javascript:;" class="goCustomer">联系客服</a></dd>
                     <dd><a href="" class="toCenter">个人中心</a></dd>
                     <dd  onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
                 </dl>
@@ -190,14 +222,16 @@
         <li class="layui-nav-item"><a href="">旅途直播</a></li>
     </ul>
     <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
-        <li class="layui-nav-item loginIn">
-            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
 
+        <li class="layui-nav-item loginIn"  style="float: right">
+            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
             <dl class="layui-nav-child">
-                <dd><a href="">我的消息</a></dd>
+                <dd><a href="<?php echo URL('home/personal/personal'); ?>#test1=2">我的游记</a></dd>
+                <dd><a href="javascript:;" class="goCustomer">联系客服</a></dd>
                 <dd onclick="loginOut()"><a href="javascript:;">退出登录</a></dd>
             </dl>
-
+        </li>
+        <li class="layui-nav-item loginIn"  style="float: right"><a href="<?php echo url('home/User/myMsg'); ?>" class="msga">我的消息</a></li>
        <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
         <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
 
@@ -358,7 +392,14 @@
                         </ul >
 
                     </div>
-                    <div class="layui-tab-item">内容2</div>
+                    <div class="layui-tab-item">
+
+                        <ul class="am-list" id="timeList">
+                            <!--缩略图在标题左边-->
+
+                        </ul >
+
+                    </div>
 
                 </div>
             </div>
@@ -387,7 +428,7 @@
                 <div class="footer">
                   <ul class="footerUl">
                       <li class="footerHd">关于我们</li>
-                      <li><a href="">关于趣游</a></li>
+                      <li><a href="<?php echo url('home/Checkin/checkin'); ?>">商家入驻</a></li>
                       <li><a href="">联系我们</a></li>
                       <li><a href="">关于趣游</a></li>
                   </ul>
@@ -431,6 +472,10 @@
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
 <script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
 <script>
+    var qqFace = "__STATIC__/images/expression/";
+</script>
+<script src="__JS__/home/chat.js"></script>
+<script>
     $("#menu").click(showSideBar);
     function showSideBar() {
         $("#sideBar").addClass("show");
@@ -468,29 +513,77 @@
         elem: '#list',
         isAuto:false//指定列表容器
         ,done: function(page, next){ //到达临界点（默认滚动触发），触发下一页
-            var lis = [];
-            //以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
-            for(var i =0;i<10;i++){
-                lis.push('<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">'+
-                    '<div class="am-u-sm-4 am-list-thumb listImg">'+
-                    '<a href="http://www.douban.com/online/11614662/" class="">'+
-                    '<img src="https://b4-q.mafengwo.net/s11/M00/9E/70/wKgBEFplvumAEU6GAAuwkxzWAm802.jpeg?imageMogr2%2Finterlace%2F1" alt="我很囧，你保重....晒晒旅行中的那些囧！" />'+
-                    '</a>'+
-                    '</div>'+
-                    ' <div class=" am-u-sm-8 am-list-main">'+
-                    '<h1 class="am-list-item-hd"><a href="http://www.douban.com/online/11614662/" class="">我很囧，你保重....晒晒旅行中的那些囧！</a></h1>'+
-                    '<div class="am-list-item-text">囧人囧事囧照，人在囧途，越囧越萌。标记《带你出发，陪我回家》http://book.douban.com/subject/25711202/为“想读”“在读”或“读过”，有机会获得此书本活动进行3个月，每月送出三本书。会有不定期bonus！</div>'+
-                    '<div class="am-list-item-text am-vertical-align-bottom "><i class="layui-icon">&#xe715;</i> 云南  <i class="layui-icon">by</i></div>'+
-                    ' </div>'+
-                    '</li>');
+            $.ajax({
+                url:"<?php echo url('home/Notes/lists'); ?>",
+                data:{page:page},
+                success:function (res) {
+                    var lis = [];
+                    var data = res.data[0];
+                    //以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
+                    for(var i =0;i<data.length;i++){
+                        lis.push('<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">'+
+                            '<div class="am-u-sm-4 am-list-thumb listImg">'+
+                            '<a href="<?php echo url('home/Notes/show'); ?>?id='+data[i]["noteId"]+'" class="">'+
+                            '<img src="__STATIC__/'+data[i]["img"]+'" alt="" />'+
+                            '</a>'+
+                            '</div>'+
+                            ' <div class=" am-u-sm-8 am-list-main">'+
+                            '<h1 class="am-list-item-hd"><a href="<?php echo url('home/Notes/show'); ?>?id='+data[i]["noteId"]+'" class="">'+data[i]["title"]+'</a></h1>'+
+                            '<div class="am-list-item-text">'+data[i]["content"]+'</div>'+
+                            '<div class="am-list-item-text am-vertical-align-bottom "><i class="layui-icon">&#xe715;</i> '+data[i]["REGION_NAME"]+'  <i class="layui-icon">by</i> '+data[i]["uname"]+' </div>'+
+                            ' </div>'+
+                            '</li>');
+                    }
+
+
+
+                    //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+                    //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+                    next(lis.join(''), page < res.data[1]);
+                }
+
+            });
+
             }
+    });
+
+    var flownew = layui.flow;
+    flownew.load({
+        elem: '#timeList',
+        isAuto:false//指定列表容器
+        ,done: function(page, next){ //到达临界点（默认滚动触发），触发下一页
+            $.ajax({
+                url:"<?php echo url('home/Notes/newLists'); ?>",
+                data:{page:page},
+                success:function (res) {
+                    var lis = [];
+                    var data = res.data[0];
+                    //以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
+                    for(var i =0;i<data.length;i++){
+                        lis.push('<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">'+
+                            '<div class="am-u-sm-4 am-list-thumb listImg">'+
+                            '<a href="<?php echo url('home/Notes/show'); ?>?id='+data[i]["noteId"]+'" class="">'+
+                            '<img src="__STATIC__/'+data[i]["img"]+'" alt="" />'+
+                            '</a>'+
+                            '</div>'+
+                            ' <div class=" am-u-sm-8 am-list-main">'+
+                            '<h1 class="am-list-item-hd"><a href="<?php echo url('home/Notes/show'); ?>?id='+data[i]["noteId"]+'" class="">'+data[i]["title"]+'</a></h1>'+
+                        '<div class="am-list-item-text">'+data[i]["content"]+'</div>'+
+                        '<div class="am-list-item-text am-vertical-align-bottom "><i class="layui-icon">&#xe715;</i> '+data[i]["REGION_NAME"]+'  <i class="layui-icon">by</i> '+data[i]["uname"]+' </div>'+
+                        ' </div>'+
+                        '</li>');
+                    }
 
 
 
-                //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
-                //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
-                next(lis.join(''), page < 10);
-            }
+                    //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+                    //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+                    next(lis.join(''), page < res.data[1]);
+                }
+
+            });
+
+        }
     });
 </script>
 

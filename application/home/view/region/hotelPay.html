@@ -56,7 +56,7 @@
                         <a><i class="layui-icon" onclick="comment()" style="font-size: 30px; color: orange;">&#xe61f;</i>点评</a>
                     </li>
                     <li id="hideH">
-                        <a><i class="layui-icon" style="font-size: 30px; color: orange;">&#xe600;</i>收藏</a>
+                        <a onclick="collection('{$hotelMsg.hotelId}')"><i class="layui-icon" style="font-size: 30px; color: orange;">&#xe600;</i>收藏</a>
                     </li>
                 </ul>
             </div>
@@ -185,6 +185,24 @@
             })
         }
     })
+    function collection(id){
+        $.ajax({
+            url:"{:url('home/Region/collection')}",
+            type:"get",
+            data:{'id':id},
+            dataType:"json",
+            success: function (res) {
+                if(res["code"==70001])
+                {
+                    layer.msg(res["msg"]);
+                }
+                else
+                {
+                    layer.msg(res["msg"]);
+                }
+            }
+        })
+    }
     var staticUrl = "__STATIC__";
     var addComUrl = "{:url('home/Region/addhCom')}";
     var uid = "{$uid}";

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\wamp64\www\quyou\public/../application/admin\view\index\index.html";i:1519394063;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"E:\wamp64\www\quyou\public/../application/admin\view\index\index.html";i:1519562595;}*/ ?>
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
@@ -18,6 +18,9 @@
 <link rel="stylesheet" type="text/css" href="__STATIC__/lib/Hui-iconfont/1.0.8/iconfont.css" />
 <link rel="stylesheet" type="text/css" href="__STATIC__/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="__STATIC__/h-ui.admin/css/style.css" />
+	<link rel="stylesheet" href="__STATIC__\lib\layui\css\layui.css">
+	<link rel="stylesheet" href="__CSS__\home\chat.css">
+	<link rel="stylesheet" href="__CSS__\admin\customer.css">
 <!--[if IE 6]>
 <script type="text/javascript" src="__STATIC__/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
@@ -25,11 +28,39 @@
 <title>趣游后台管理系统</title>
 </head>
 <body>
+
+<div id="chatD">
+	<div id="chatList">
+		<table id="chat" class="lefts"></table>
+	</div>
+
+	<div id="chatZone" class="rights">
+		<div id="zz">
+			趣游客服系统
+		</div>
+		<div id="chatZM">
+			<div id="chatHead"><span id="chatname">正在和xx聊天</span><img src="__STATIC__/images/x.png" alt=""></div>
+			<div id="chatMain"></div>
+			<div id="chatTool">
+				<img src="__STATIC__/images/face.png" alt="" class="toolimg" id="btnface">
+				<img src="__STATIC__/images/draw.png" alt="" class="toolimg" id="btndraw">
+			</div>
+			<div id="chatbar">
+				<div id="chatinput" contenteditable="true" tabindex="0"></div>
+				<input type="button" value="发送" id="send">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="goCustomer">
+	未登录
+</div>
 <header class="navbar-wrapper">
 	<div class="navbar navbar-fixed-top">
 		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">趣游后台管理系统</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml">趣游</a>
 			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
-			<nav class="nav navbar-nav">
+		<!--	<nav class="nav navbar-nav">
 				<ul class="cl">
 					<li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
 						<ul class="dropDown-menu menu radius box-shadow">
@@ -40,7 +71,7 @@
 					</ul>
 				</li>
 			</ul>
-		</nav>
+		</nav>-->
 		<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
 			<ul class="cl">
 				<li>超级管理员</li>
@@ -48,8 +79,7 @@
 					<a href="#" class="dropDown_A">admin <i class="Hui-iconfont">&#xe6d5;</i></a>
 					<ul class="dropDown-menu menu radius box-shadow">
 						<li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>
-						<li><a href="#">切换账户</a></li>
-						<li><a href="#">退出</a></li>
+						<li><a href="#" onClick="loginOut()">退出</a></li>
 				</ul>
 			</li>
 				<li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
@@ -108,13 +138,20 @@
 		<li id="closeall">关闭全部 </li>
 </ul>
 </div>
-<!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="__STATIC__/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="__STATIC__/lib/layer/2.4/layer.js"></script>
+<!--_footer 作为公共模版分离出去--><!--
+<script type="text/javascript" src="__STATIC__/lib/jquery/1.9.1/jquery.min.js"></script>-->
 
+<script src="__STATIC__\lib\jquery-3.2.1.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/layer/2.4/layer.js"></script>
+<script>
+    var qqFace = "__STATIC__/images/expression/";
+    var staticc = "__STATIC__/";
+</script>
+<script src="__JS__\admin\customer.js"></script>
 
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="__STATIC__/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
+<script src="__STATIC__\lib\layui\layui.all.js"></script>
 
 <script type="text/javascript">
 $(function(){
@@ -145,37 +182,39 @@ function myselfinfo(){
 	});
 }
 
-/*资讯-添加*/
-function article_add(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
+function loginOut() {
+    layer.confirm('确定退出?', function(index){
+        //do something
+		clearCookie("qy_adminId");
+        clearCookie("qy_adminKey");
+        location.href="<?php echo url('admin/Index/login'); ?>";
+        layer.close(index);
+    });
 }
-/*图片-添加*/
-function picture_add(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
+
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires+ ";path=/";
 }
-/*产品-添加*/
-function product_add(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
+//获取cookie
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+    }
+    return "";
 }
-/*用户-添加*/
-function member_add(title,url,w,h){
-	layer_show(title,url,w,h);
+//清除cookie
+function clearCookie(name) {
+    setCookie(name, "", -1);
 }
+
 
 var menuUrl="<?php echo url('admin/Index/getMenu'); ?>";
 </script>

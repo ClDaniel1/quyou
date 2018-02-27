@@ -162,7 +162,7 @@
                     <div id="uname">{$userInfo["uname"]}</div>
                     <a href="{:url('home/Personal/setting')}" class="layui-btn layui-btn-radius setBtn">设置中心</a>
                     <div class="myPation">
-                        <a href="">{$userInfo["collectNum"]}</a>
+                        <a href="{:url('home/Personal/focus')}">{$userInfo["collectNum"]}</a>
                         <p>关注</p>
                     </div>
                     <div class="myPation">
@@ -198,6 +198,35 @@
                                                 {$vo.REGION_NAME}
                                             </p>
                                         </div>
+<<<<<<< HEAD
+                                        <div class="layui-form-item" style="margin: 0 76px;width: 340px">
+                                            <label class="layui-form-label">选择地点</label>
+                                            <!--<select onchange="province()" id="regionId">-->
+                                                <!--<option>请选择一个地区</option>-->
+                                                <!--{volist name="citys" id="vo"}&lt;!&ndash;免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for&ndash;&gt;-->
+                                                <!--<option value="{$vo.REGION_ID}">{$vo.REGION_NAME}</option>-->
+                                                <!--{/volist}-->
+                                            <!--</select>-->
+                                            <!--<select id="regionCity"  name="desId">-->
+                                                <!--<option value="0"></option>-->
+                                            <!--</select>-->
+
+
+                                            <div class="layui-input-inline" style="width: 100px;">
+                                                <select onchange="province()" name="s_province" id="s_province">
+                                                    <option value="">请选择省
+                                                        {volist name="citys" id="vo"}
+                                                    </option>
+                                                    <option value="{$vo.REGION_ID}">{$vo.REGION_NAME}</option>
+                                                    {/volist}
+                                                </select>
+                                            </div>
+                                            <div class="layui-input-inline" style="width: 100px;margin: 0 10px">
+                                                <select name="s_city" id="s_city" style="width: 200px">
+
+                                                </select>
+                                            </div>
+=======
                                     </li>
                                     {/volist}
                                 </ul>
