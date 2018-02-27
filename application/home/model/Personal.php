@@ -62,4 +62,9 @@ class Personal{
         ];
         db('t_footmark')->insert($data);
     }
+    public function focusPersonal($uid)
+    {
+        $sql=db('t_collect')->where('uid',$uid)->where('type','0')->field('whoId')->select();
+        return $sql;
+    }
 }

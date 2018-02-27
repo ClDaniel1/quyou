@@ -656,7 +656,6 @@ class Notes extends \think\Controller
                 } else {
                     //获取游记内容
                     $con = $nm->getNoteCont($id);
-
                     $this->assign("info", $info);
                     $this->assign("con", $con);
                     $this->assign("noteId", $id);
@@ -674,5 +673,46 @@ class Notes extends \think\Controller
             $reMsg=config("msg")["note"]["getCon"];
             $reMsg["data"]=$con;
             return json($reMsg);
+    }
+    public function collectionShow(){
+        $uid = cookie("uid");
+        $noteId=input('param.noteId');
+        $nm = new \app\home\model\Notes();
+        $con = $nm->collectionShow($uid,$noteId);
+        if($con==1)
+        {
+            $reMsg=config("msg")["collection"]["collectionYes"];
+            return json($reMsg);
+       }
+        else
+        {
+            $reMsg=config("msg")["collection"]["collectionNo"];
+            return json($reMsg);
+        }
+    }
+    public function focusShow()
+    {
+        $uid = cookie("uid");
+        $Uid=input('param.uid');
+        if($uid==$Uid)
+        {
+            $reMsg=config("msg")["focus"]["focusHeavy"];
+            return json($reMsg);
+        }
+        else
+        {
+            $nm = new \app\home\model\Notes();
+            $con = $nm->focusShow($uid,$Uid);
+            if($con==1)
+            {
+                $reMsg=config("msg")["focus"]["focusYes"];
+                return json($reMsg);
+            }
+            else
+            {
+                $reMsg=config("msg")["focus"]["focusNo"];
+                return json($reMsg);
+            }
+        }
     }
 }

@@ -299,16 +299,10 @@ return [
             'addFooter'=>["code"=>30007,"msg"=>'添加足迹成功',"data"=>[]],
             "addFooterHave" =>["code"=>30008,"msg"=>'已经有该足迹了哦',"data"=>[]],
         ],
-<<<<<<< HEAD
-
         'staff'=>[
             'changeOK' =>["code"=>30002,"msg"=>'修改成功',"data"=>[]],
             'changeErr'=>["code"=>30003,"msg"=>'信息为原信息，请修改',"data"=>[]]
         ],
-
-
-=======
->>>>>>> 23996152c3f73b3fb75f9a75211ab32678b82c9a
         'manager'=>[
             'changeOK' =>["code"=>60001,"msg"=>'修改成功',"data"=>[]],
             'changeErr'=>["code"=>60002,"msg"=>'修改失败',"data"=>[]],
@@ -316,10 +310,6 @@ return [
             'delErr'=>["code"=>60004,"msg"=>'删除失败',"data"=>[]]
 
         ],
-<<<<<<< HEAD
-
-=======
->>>>>>> 23996152c3f73b3fb75f9a75211ab32678b82c9a
         "userCon"=>[
             "rePsw"=>['code'  =>  "40001",'msg'   =>  "密码重置成功!",'data'  => []],
             "open"=>['code'   =>  "40002",'msg'  =>  "启用成功！" ,"data"=>[]],
@@ -329,7 +319,6 @@ return [
         ],
         "msg" => [
             "getSysMsg" =>["code"=>50001,"msg"=>'获取系统消息成功',"data"=>[]]
-
             ],
         "tenants" =>  [
             "tenantsImg" =>["code"=>40001,"msg"=>'上传图片成功！',"data"=>[]],
@@ -348,7 +337,16 @@ return [
             'pwdF'=>['code'  =>  "60004",'msg'   =>  "支付密码有误，请重新输入!",'data'  => []],
             'payF'=>['code'  =>  "60005",'msg'   =>  "余额不足，请先进行充值!",'data'  => []],
             'payT'=>['code'  =>  "60006",'msg'   =>  "恭喜您支付成功!",'data'  => []],
-        ]
+        ],
+        "collection"=>[
+            'collectionYes'=>['code'  =>  "70001",'msg'   =>  "收藏成功！",'data'  => []],
+            'collectionNo'=>['code'  =>  "70002",'msg'   =>  "收藏失败！",'data'  => []]
+        ],
+        "focus"=>[
+            'focusYes'=>['code'  =>  "80001",'msg'   =>  "关注成功！",'data'  => []],
+            'focusNo'=>['code'  =>  "80002",'msg'   =>  "关注失败！",'data'  => []],
+            'focusHeavy'=>['code'  =>  "80003",'msg'   =>  "不能关注自己！",'data'  => []]
+        ],
     ],
     //验证码
     'captcha'  => [

@@ -35,6 +35,16 @@ class Personal extends \think\Controller
         return $this->fetch('setting');
     }
 
+    public function focus()
+    {
+        $am=new \app\home\model\Personal();
+        $uid=cookie("uid");
+        $focusPersonal=$am->focusPersonal($uid);
+
+
+        return $this->fetch('focus');
+    }
+
     //显示信息
     public function getInfo(){
         $uid=input('?post.uid')? input('uid'):'';
