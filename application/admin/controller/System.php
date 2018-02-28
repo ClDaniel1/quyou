@@ -117,4 +117,20 @@ class System extends \think\Controller{
             return json($returnMsg);
         }
     }
+
+
+    //角色删除
+    public function roleDel(){
+        $roleId=input('?post.roleId')? input('roleId'):'';
+        $model=new \app\admin\model\System();
+        $res=$model->roleDel($roleId);
+        if($res){
+            $returnMsg=config('msg')['manager']['delOK'];
+            return json($returnMsg);
+
+        }else{
+            $returnMsg=config('msg')['manager']['delErr'];
+            return json($returnMsg);
+        }
+    }
 }
