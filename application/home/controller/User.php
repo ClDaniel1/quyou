@@ -6,6 +6,7 @@
  * Time: 12:05
  */
 namespace app\home\controller;
+use org\Intro;
 use \think\Response;
 use \think\Db;
 use \think\Session;
@@ -73,6 +74,32 @@ class User extends \think\Controller
         cookie('ukey',$loginKey);
 
         $returnMsg=config('msg')['login']['successLogin'];
+        return json($returnMsg);
+
+    }
+
+    public function dowxLogin(){
+        $uphone=input('?post.userName')? input('userName'):'';
+        $upwd=input('?post.psw')? input('psw'):'';
+
+        $where=[
+            'uphone' =>  $uphone,
+            'upwd'   =>   $upwd
+        ];
+
+
+        //查询数据库
+        $um = new \app\home\model\User();
+        $result = $um->login($where);
+
+        //登录失败
+        if(empty($result)){
+            $returnMsg=config('msg')['login']['accountError'];
+            return json($returnMsg);
+        }
+
+        $returnMsg=config('msg')['login']['successLogin'];
+        $returnMsg["data"] = [$result["uid"]];
         return json($returnMsg);
 
     }
@@ -275,5 +302,37 @@ class User extends \think\Controller
             $returnMsg = config("msg")["login"]["noLogin"];
         }
         return json($returnMsg);
+    }
+
+
+    public function wxLogin(){
+        session_start();
+
+        $code = input("code");
+
+        $url = "https://api.weixin.qq.com/sns/jscode2session?appid=".config("APPID")."&secret=".config("APPSECRET")."&js_code=".$code."&grant_type=authorization_code";
+
+        $cu = new Intro();
+        $res = json_decode($cu->curlHttp($url),true);
+        $openId = $res["openid"];
+        $session_key = $res["session_key"];
+
+
+
+        $m = new \app\home\model\User();
+
+        $user = $m->wxIdLogin($openId);
+
+        if(count($user)>0){
+            $err = "true";
+            $data =[$user[0]["userId"]];
+        }
+        else{
+            $err = "10001";
+            $data = $openId;
+            file_put_contents($openId.".php",json_encode([$openId,$session_key]));
+        }
+
+        echo '{"err":"'.$err.'","data":'.json_encode($data).'}';
     }
 }

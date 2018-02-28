@@ -257,5 +257,27 @@ class Personal extends \think\Controller
         }
         return json($resMsg);
     }
+
+    public function getwxInfo(){
+        $uid=input('?param.id')? input('id'):'';
+        $where=[
+            'uid' =>  $uid
+        ];
+        //查询数据库
+        $um = new \app\home\model\Personal();
+        $result = $um->getInfo($where);
+
+        if(empty($result)){
+            $resMsg = config("msg")["personal"]["userInfoErr"];
+        }
+        else{
+            $resMsg = config("msg")["personal"]["userInfoSucc"];
+            $resMsg["data"] = ["userImg"=>$result["uheadImg"],"userId"=>$result["uid"],"userName"=>$result["uname"]];
+        }
+
+
+        return json($resMsg);
+
+    }
 }
 

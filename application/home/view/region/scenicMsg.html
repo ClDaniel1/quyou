@@ -106,10 +106,14 @@
         </div>
     </div>
 </div>
-<div class="whiteB">
+<div class="whiteB" id="vuePay">
     <div class="layui-container">
         <div class="layui-row">
-            <h1>门票预订</h1>
+            <h1>门票预订(门票仅限当天使用)</h1>
+            <div style="margin-top: 20px">
+                <span style="font-size: 17px">请选择使用时间：</span>
+                <input type="text" class="layui-input" id="time1">
+            </div>
         </div>
         <div class="layui-row" style="margin-top: 25px">
             <table class="layui-table" lay-skin="line">
@@ -118,6 +122,7 @@
                     <th>数据来源</th>
                     <th>类型</th>
                     <th>价格</th>
+                    <th>数量选择</th>
                     <th>操作</th>
                 </tr>
                 </thead>
@@ -127,7 +132,10 @@
                     <td>景点门票</td>
                     <td id="priColor">￥<span>{$msg.price}</span></td>
                     <td>
-                        <a href="{:url('home/Region/scenicPay')}?id={$msg.scenicId}" class="layui-btn">预订</a>
+                        <input v-model="num" type="number" min="1" max="100" value="1">（张）
+                    </td>
+                    <td>
+                        <button @click="payReg" href="{:url('home/Region/scenicPay')}?id={$msg.scenicId}" class="layui-btn">预订</button>
                     </td>
                 </tr>
             </table>
@@ -147,4 +155,42 @@
 {/block}
 {block name='script'}
 <script src="__JS__/home/public/vueComment.js"></script>
+<script>
+    var timss = (new Date()).getTime();
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#time1'//指定元
+            ,value: new Date(timss),
+            min:0,
+            max:7
+            ,done: function(value){
+                console.log(value);
+                $vuePay.checkTime=value;
+            }
+        });
+    });
+    $vuePay=new Vue({
+        el:"#vuePay",
+        data:{
+            num:1
+            ,checkTime:$now
+        },
+        methods:{
+            payReg: function () {
+                var _this=this;
+                if(_this.num>0&&_this.num<=100)
+                {
+                    console.log(_this.checkTime);
+                    _this.checkTime
+                }
+                else
+                {
+                    layer.msg('数量输入有误', {icon: 5});
+                }
+            }
+        }
+    })
+</script>
 {/block}

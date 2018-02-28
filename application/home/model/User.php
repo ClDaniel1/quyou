@@ -8,6 +8,8 @@
 
 namespace app\home\model;
 
+use org\Intro;
+
 class User
 {
     public function login($data){
@@ -53,6 +55,15 @@ class User
             ->join('t_collect c','a.uid = c.whoId')
             ->where("a.uid= $uid")
             ->where("c.type= 0")
+            ->select();
+        return $data;
+    }
+
+
+
+    public function wxIdLogin($openId){
+        $data =db('t_user')
+            ->where(['wechatId'=>$openId] )
             ->select();
         return $data;
     }
