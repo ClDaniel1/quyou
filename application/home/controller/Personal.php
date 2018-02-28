@@ -28,8 +28,38 @@ class Personal extends \think\Controller
         $um = new \app\home\model\User();
         $userInfo = $um->getUserInfo($uid)[0];
         $this->assign("userInfo",$userInfo);
+        $collectData=$am->collectData($uid);
+        $this->assign("collectData",$collectData);
+        /*$personalCollect=[];
+        foreach($collectData as $key=>$value)
+        {
+            if($value['type']==1)
+            {
+                $noteid=$value['whoId'];
+                $note=$am->noteCollect($noteid);
+                array_push($personalCollect,$note);
+            }
+            else if($value['type']==2)
+            {
+                $foodid=$value['whoId'];
+                $food=$am->foodCollect($foodid);
+                array_push($personalCollect,$food);
+            }
+            else if($value['type']==3)
+            {
+                $scenicid=$value['whoId'];
+                $scenic=$am->scenicCollect($scenicid);
+                array_push($personalCollect,$scenic);
+            }
+            else if($value['type']==4)
+            {
+                echo 5;
+            }
+        }*/
         return $this->fetch('personal');
     }
+
+
 
     public function setting()
     {

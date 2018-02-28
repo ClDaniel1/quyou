@@ -363,8 +363,17 @@ return [
             'focusNo'=>['code'  =>  "80002",'msg'   =>  "关注失败！",'data'  => []],
             'focusHeavy'=>['code'  =>  "80003",'msg'   =>  "不能关注自己！",'data'  => []]
         ],
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        "food"=>[
+            "foodRegion"=>['code'  =>  "80001",'msg'   =>  "获取成功！",'data'  => []],
+=======
+<<<<<<< HEAD
+>>>>>>> 87fcf57c6d3ca7519c05fc255573b6ed29b5f095
         "des" => [
             'getInSuccess' => ['code'  =>  90001,'msg'   =>  "获取信息成功",'data'  => []]
+>>>>>>> b3bc5795c0583319ef04d12cdac8e83a113aeaf4
         ]
     ],
     //验证码

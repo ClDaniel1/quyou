@@ -154,5 +154,23 @@ class Food extends \think\Model
         ]);
         return $sql;
     }//修改酒店数据
-
+    public function regionWx($id){
+        $sql=db('t_food')->where('desId',$id)->select();
+        return $sql;
+    }
+    public function fooddetailsWx($id)
+    {
+        $sql=db('t_food')->where('foodId',$id)->select();
+        return $sql;
+    }
+    public function foodImgWx($id){
+        $sql=db('t_foodimg')->where('foodId',$id)->select();
+        return $sql;
+    }
+    public function foodCommentWx($id)
+    {
+        $sql=db('t_foodcomment')->alias('a')
+            ->join('t_user b','a.uid=b.uid')->field('a.*,b.uname,b.uheadImg')->select();
+        return $sql;
+    }
 }

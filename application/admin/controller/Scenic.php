@@ -270,4 +270,40 @@ class Scenic extends \think\Controller
         }
         echo 1;
     }
+    public function regionWx(){
+        $id=input('param.id');
+        $str=new \app\admin\model\Scenic();
+        $data=$str->regionWx($id);
+        $scenicRegion=config("msg")["food"]["foodRegion"];
+        array_push($scenicRegion["data"],$data);
+        echo json_encode($scenicRegion);
+    }
+    public function scenicdetailsWx()
+    {
+        $id=input('param.id');
+        $str=new \app\admin\model\Scenic();
+        $data=$str->scenicdetailsWx($id);
+        $scenicRegion=config("msg")["food"]["foodRegion"];
+        array_push($scenicRegion["data"],$data);
+        echo json_encode($scenicRegion);
+    }
+    public function scenicImgWx()
+    {
+        $id=input('param.id');
+        $str=new \app\admin\model\Scenic();
+        $data=$str->scenicImgWx($id);
+        $scenicImg=config("msg")["food"]["foodRegion"];
+        array_push($scenicImg["data"],$data);
+        echo json_encode($scenicImg);
+    }
+
+    public function scenicCommentWx()
+    {
+        $id=input('param.id');
+        $str=new \app\admin\model\Scenic();
+        $data=$str->scenicCommentWx($id);
+        $scenicComment=config("msg")["food"]["foodRegion"];
+        array_push($scenicComment["data"],$data);
+        echo json_encode($scenicComment);
+    }
 }
