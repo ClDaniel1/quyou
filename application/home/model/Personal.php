@@ -67,4 +67,28 @@ class Personal{
         $sql=db('t_collect')->where('uid',$uid)->where('type','0')->field('whoId')->select();
         return $sql;
     }
+    /*public function collectData($uid){
+        $sql=db('t_collect')->where('uid',$uid)->select();
+        return $sql;
+    }
+    public function noteCollect($noteid){
+        $sql=db('t_note')->where('noteId',$noteid)->select();
+        return $sql;
+    }
+    public function foodCollect($foodid){
+        $sql=db('t_food')->where('foodId',$foodid)->select();
+        return $sql;
+    }*/
+    public function collectData($uid){
+        $arr = db('t_collect')
+            ->field("a.type,b.hotelName,b.img,c.scenicName,c.scenicImg,d.foodName,d.foodImg,e.title,e.img,b.hotelId,c.scenicId,d.foodId,e.noteId")
+            ->alias("a")
+            ->join('t_hotel b','a.whoId = b.hotelId and a.type = "4"','LEFT')
+            ->join('t_scenic c','a.whoId = c.scenicId and a.type = "3"','LEFT')
+            ->join('t_food d','a.whoId = d.foodId and a.type = "2"','LEFT')
+            ->join('t_note e','a.whoId = e.noteId and a.type = "1"','LEFT')
+            ->where("a.uid = $uid and a.type <> '0'")
+            ->select();
+        return $arr;
+    }
 }

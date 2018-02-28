@@ -347,6 +347,9 @@ return [
             'focusNo'=>['code'  =>  "80002",'msg'   =>  "关注失败！",'data'  => []],
             'focusHeavy'=>['code'  =>  "80003",'msg'   =>  "不能关注自己！",'data'  => []]
         ],
+        "food"=>[
+            "foodRegion"=>['code'  =>  "80001",'msg'   =>  "获取成功！",'data'  => []],
+        ]
     ],
     //验证码
     'captcha'  => [
