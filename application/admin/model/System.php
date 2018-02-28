@@ -19,6 +19,11 @@ class System extends \think\Model{
         return $sql;
     }
 
+    public function roleDel($roleId){
+        $sql=db('t_role')->where('roleId',$roleId)->delete();
+        return $sql;
+    }
+
     public function roleList(){
         return db('t_role')->select();
     }
