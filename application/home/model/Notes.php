@@ -230,6 +230,10 @@ class Notes extends Model
         return $data;
     }
 
+
+
+
+
     public function getNewNote($start,$num){
         $data = db("t_note")
             ->alias('a')

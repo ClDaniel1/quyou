@@ -8,6 +8,8 @@
 
 namespace app\home\model;
 
+use org\Intro;
+
 class User
 {
     public function login($data){
@@ -55,5 +57,57 @@ class User
             ->where("c.type= 0")
             ->select();
         return $data;
+    }
+
+
+
+    public function wxIdLogin($openId){
+        $data =db('t_user')
+            ->where(['wechatId'=>$openId] )
+            ->select();
+        return $data;
+    }
+
+    public function bind($id,$openId){
+        $user = $this->wxIdLogin($openId);
+
+        if(count($user)>0){
+            return "isset";
+        }
+        else{
+            $res = db("t_user")->where("uid",$id)->update(["wechatId" => $openId]);
+
+            return $res;
+        }
+    }
+
+    public function oneKey($userName,$uphone,$userImg,$wx){
+        $user = $this->wxIdLogin($wx);
+
+        if(count($user)>0){
+            return "isset";
+        }
+        else{
+            $data = [
+                "uphone" => $uphone,
+                "uname" => $userName,
+                "upwd" => 123456,
+                "wechatId" => $wx
+            ];
+            $uid = db('t_user')->insertGetId($data);
+            $im = new Intro();
+            $img =  $im->curlHttp($userImg);
+            $imgName = "head.jpeg";
+
+            $dirName = "static/images/user/".$uid;
+            if(!file_exists($dirName)){
+                mkdir ($dirName,0777,true);
+            }
+            file_put_contents($dirName."/".$imgName,$img);
+            $imgUrl = "images/user/".$uid."/".$imgName;
+
+            $res = db("t_user")->where("uid",$uid)->update(["uheadImg" => $imgUrl]);
+            return $res;
+        }
     }
 }

@@ -48,7 +48,7 @@
             <td>{$ro.roleId}</td>
             <td>{$ro.roleName}</td>
             <td>{$ro.roleDetail}</td>
-            <td class="f-14"><a title="编辑" href="javascript:;" onclick="admin_role_edit('角色编辑','{:url('admin/System/roleEditShow')}','{$ro.roleId}')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_role_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+            <td class="f-14"><a title="编辑" href="javascript:;" onclick="admin_role_edit('角色编辑','{:url('admin/System/roleEditShow')}','{$ro.roleId}')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_role_del(this,'{$ro.roleId}')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
         </tr>
         {/volist}
         </tbody>
@@ -71,11 +71,13 @@
         layer_show(title,url,w,h);
     }
     /*管理员-角色-删除*/
+    var roleDelUrl="{:url('admin/System/roleDel')}";
     function admin_role_del(obj,id){
         layer.confirm('角色删除须谨慎，确认要删除吗？',function(index){
             $.ajax({
                 type: 'POST',
-                url: '',
+                url: roleDelUrl,
+                data: {'roleId':id},
                 dataType: 'json',
                 success: function(data){
                     $(obj).parents("tr").remove();

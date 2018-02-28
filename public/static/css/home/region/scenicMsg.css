@@ -6,6 +6,11 @@
 {
     margin: 20px 0;
 }
+#time1
+{
+    width: 150px;
+    display: inline-block;
+}
 .icon
 {
     background:url("../../../images/region/icon.png") no-repeat ;

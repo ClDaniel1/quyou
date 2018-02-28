@@ -168,7 +168,6 @@ class Region extends Model
             return true;
         }
     }
-
     public function addhCom($hid,$com,$time,$uid,$fid){
         $data = [
             "hotelId" => $hid,
