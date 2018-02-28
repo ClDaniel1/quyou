@@ -143,8 +143,6 @@ class Notes extends \think\Controller
             $resMsg = config("msg")["note"]["notUserNote"];
             return json($resMsg);
         }
-
-
     }
 
     /**
@@ -597,8 +595,6 @@ class Notes extends \think\Controller
             $reMsg=config("msg")["note"]["notUserNote"];
             return json($reMsg);
         }
-
-
     }
 
 
@@ -659,11 +655,25 @@ class Notes extends \think\Controller
                     $this->assign("info", $info);
                     $this->assign("con", $con);
                     $this->assign("noteId", $id);
-
                     return $this->fetch("show");
                 }
-
     }
+
+    public function showMiniNote(){
+        $id = input("param.id");
+        $nm = new \app\home\model\Notes();
+        $info = $nm->getNoteInfoS($id)[0];
+        //获取游记内容
+        $con = $nm->getNoteCont($id);
+        return json_encode(["info"=>$info,"con"=>$con]);
+    }
+
+
+
+
+
+
+
 
     public function getConS(){
             $id = input("param.id");
