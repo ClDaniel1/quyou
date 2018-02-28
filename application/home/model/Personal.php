@@ -106,4 +106,16 @@ class Personal{
         $data=db('t_order')->field("count(orderId) allN")->where("orderTypeId <> 1 and uid=$uid")->select();
         return $data[0]["allN"];
     }
+
+    public function getOrderInfo($orderId){
+        $arr = db('t_order')
+            ->field("a.*,b.hotelName,b.img,c.scenicName,c.scenicImg")
+            ->alias("a")
+            -> join('t_hotel b','a.tradeId = b.hotelId and a.tradeType = "hotel"','LEFT')
+            ->join('t_scenic c','a.tradeId = c.scenicId and a.tradeType = "scenic"','LEFT')
+            ->order('a.orderTypeId Desc')
+            ->where("orderId",$orderId)
+            ->select();
+        return $arr;
+    }
 }

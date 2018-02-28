@@ -306,6 +306,7 @@ return [
             "oldPswErr"=>["code"=>30013,"msg"=>'旧密码错误',"data"=>[]],
             "chPswErr"=>["code"=>30014,"msg"=>'密码修改失败',"data"=>[]],
             "getOrderSucc" =>["code"=>30015,"msg"=>'获取待支付订单成功',"data"=>[]],
+            "getOrderInfoSucc" =>["code"=>30015,"msg"=>'获取订单详情成功',"data"=>[]],
         ],
         'staff'=>[
             'changeOK' =>["code"=>30002,"msg"=>'修改成功',"data"=>[]],
@@ -332,13 +333,7 @@ return [
         ],
         "msg" => [
             "getSysMsg" =>["code"=>50001,"msg"=>'获取系统消息成功',"data"=>[]]
-<<<<<<< HEAD
-
         ],
-=======
-        ],
-
->>>>>>> c7f2306b376bd329118339189ac398224ec9b980
         "tenants" =>  [
             "tenantsImg" =>["code"=>40001,"msg"=>'上传图片成功！',"data"=>[]],
             "coverImg"=>["code"=>40002,"msg"=>'已注册，待系统审查完毕将以短信通知您是否成功！',"data"=>[]],
@@ -356,16 +351,8 @@ return [
             'pwdF'=>['code'  =>  "60004",'msg'   =>  "支付密码有误，请重新输入!",'data'  => []],
             'payF'=>['code'  =>  "60005",'msg'   =>  "余额不足，请先进行充值!",'data'  => []],
             'payT'=>['code'  =>  "60006",'msg'   =>  "恭喜您支付成功!",'data'  => []],
-<<<<<<< HEAD
             'cancelT'=>['code'  =>  "60007",'msg'   =>  "取消订单成功!",'data'  => []],
             'cancelF'=>['code'  =>  "60008",'msg'   =>  "取消订单失败!",'data'  => []],
-=======
-
-            'cancelT'=>['code'  =>  "60007",'msg'   =>  "取消订单成功!",'data'  => []],
-            'cancelF'=>['code'  =>  "60008",'msg'   =>  "取消订单失败!",'data'  => []],
-        ]
-
->>>>>>> c7f2306b376bd329118339189ac398224ec9b980
         ],
         "collection"=>[
             'collectionYes'=>['code'  =>  "70001",'msg'   =>  "收藏成功！",'data'  => []],
@@ -376,19 +363,10 @@ return [
             'focusNo'=>['code'  =>  "80002",'msg'   =>  "关注失败！",'data'  => []],
             'focusHeavy'=>['code'  =>  "80003",'msg'   =>  "不能关注自己！",'data'  => []]
         ],
-<<<<<<< HEAD
         "des" => [
             'getInSuccess' => ['code'  =>  90001,'msg'   =>  "获取信息成功",'data'  => []]
         ]
     ],
-=======
-
-        "des" => [
-            'getInSuccess' => ['code'  =>  90001,'msg'   =>  "获取信息成功",'data'  => []]
-        ],
-
-
->>>>>>> c7f2306b376bd329118339189ac398224ec9b980
     //验证码
     'captcha'  => [
     // 验证码字符集合
