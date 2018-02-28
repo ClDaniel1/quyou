@@ -168,10 +168,6 @@ class Region extends Model
             return true;
         }
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> f6a9002badde4fa42f99735b07c41d49759a2c20
     public function addhCom($hid,$com,$time,$uid,$fid){
         $data = [
             "hotelId" => $hid,
@@ -184,8 +180,6 @@ class Region extends Model
     }
     public function delhCom($comId){
         db('t_hotelcomment')->where('comId',$comId)->delete();
-<<<<<<< HEAD
-=======
     }
     public function collection($uid,$id)
     {
@@ -196,6 +190,5 @@ class Region extends Model
         ];
         $sql=db('t_collect')->insert($data);
         return $sql;
->>>>>>> f6a9002badde4fa42f99735b07c41d49759a2c20
     }
 }

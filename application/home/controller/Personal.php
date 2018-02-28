@@ -7,6 +7,7 @@
  */
 
 namespace app\home\controller;
+use org\Page;
 use \think\Response;
 use \think\Db;
 use \think\Cookie;
@@ -129,6 +130,37 @@ class Personal extends \think\Controller
         }
     }
 
+    public function changePsw(){
+        $uid=input('?post.userId')? input('userId'):'';
+        $upwd=input('?post.newPsw')? input('newPsw'):'';
+        $opwd=input('?post.oldPsw')? input('oldPsw'):'';
+        $data=[
+            'upwd'=>$upwd
+        ];
+
+        //密码查重
+        $model=new \app\home\model\Personal();
+
+        $where=[
+            'uid' =>  $uid,
+            'upwd'   =>   $opwd
+        ];
+        $result = $model->checkPwd($where);
+
+        if(!empty($result)){
+            $res=$model->changePwd($uid,$data);
+            if($res){
+                $returnMsg=config('msg')['personal']['changeOK'];
+                return json($returnMsg);
+            }else{
+                $returnMsg=config('msg')['personal']['chPswErr'];
+                return json($returnMsg);
+            }
+        }else{
+            $returnMsg=config('msg')['personal']['oldPswErr'];
+            return json($returnMsg);
+        }
+    }
 
     //头像上传
     public function upload(){
@@ -278,6 +310,65 @@ class Personal extends \think\Controller
 
         return json($resMsg);
 
+    }
+
+    public function changeNickName(){
+        $uid = input("param.id");
+        $uname = input("param.nikeName");
+
+        $pm = new \app\home\model\Personal();
+        $res = $pm->checkName($uname);
+
+        if(empty($res)){
+            $res = $pm->changeNikeName($uid,$uname);
+            if($res == 1){
+                $reMsg = config("msg")["personal"]["nameSucc"];
+            }
+            else{
+                $reMsg = config("msg")["personal"]["nameErr"];
+            }
+        }
+        else{
+            $reMsg = config("msg")["personal"]["haveName"];
+        }
+
+        return json($reMsg);
+    }
+
+
+    //获取当前用户待付款订单
+    public function getMyDfOrder(){
+
+        $uid = input("param.uid");
+        $p = input("param.p");
+
+        $m = new \app\home\model\Personal();
+        $allNum = $m->getMyDfOrderCount($uid);
+
+        $page = new Page($allNum,15,$p);
+        $data = $m->getMyDfOrder($uid,$page->getStart(),$page->getNum());
+
+        $reMsg = config("msg")["personal"]["getOrderSucc"];
+        $reMsg["data"] = [$data,$page->exp()];
+
+        return json($reMsg);
+    }
+
+    public function getMyyfOrder(){
+
+        $uid = input("param.uid");
+        $p = input("param.p");
+
+        $m = new \app\home\model\Personal();
+        $allNum = $m->getMyyfOrderCount($uid);
+
+        $page = new Page($allNum,15,$p);
+        $data = $m->getMyyfOrder($uid,$page->getStart(),$page->getNum());
+
+        $reMsg = config("msg")["personal"]["getOrderSucc"];
+        $reMsg["data"] = [$data,$page->exp()];
+
+        return json($reMsg);
     }
 }
 

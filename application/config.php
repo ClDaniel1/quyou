@@ -250,7 +250,6 @@ return [
             'haveUser'=>["code"=>10006,"msg"=>'用户重复了',"data"=>[]],
             'havePhone'=>["code"=>10006,"msg"=>'您的手机号已经注册了，请前往登录',"data"=>[]],
             'withoutPhone'=>["code"=>10007,"msg"=>'您的手机号未被注册，可以使用',"data"=>[]],
-
             'noLogin'=>["code"=>19000,"msg"=>'您未登陆',"data"=>[]]
         ],
         'loginChek'     =>[
@@ -302,6 +301,11 @@ return [
             "addFooterHave" =>["code"=>30008,"msg"=>'已经有该足迹了哦',"data"=>[]],
             "userInfoSucc" =>["code"=>30009,"msg"=>'获取用户信息成功',"data"=>[]],
             "userInfoErr" =>["code"=>30010,"msg"=>'登录有误，请重新登录',"data"=>[]],
+            'nameSucc'=>["code"=>30011,"msg"=>'用户名修改成功',"data"=>[]],
+            'nameErr'=>["code"=>30012,"msg"=>'用户名修改失败',"data"=>[]],
+            "oldPswErr"=>["code"=>30013,"msg"=>'旧密码错误',"data"=>[]],
+            "chPswErr"=>["code"=>30014,"msg"=>'密码修改失败',"data"=>[]],
+            "getOrderSucc" =>["code"=>30015,"msg"=>'获取待支付订单成功',"data"=>[]],
         ],
         'staff'=>[
             'changeOK' =>["code"=>30002,"msg"=>'修改成功',"data"=>[]],
@@ -319,15 +323,18 @@ return [
             "open"=>['code'   =>  "40002",'msg'  =>  "启用成功！" ,"data"=>[]],
             "stop"=>['code'   =>  "40003",'msg'  =>  "用户停用！" ,"data"=>[]],
             "del"=>['code'   =>  "40004",'msg'  =>  "删除成功！" ,"data"=>[]],
-            "Repair"=>['code'   =>  "40005",'msg'  =>  "修改成功！" ,"data"=>[]]
+            "Repair"=>['code'   =>  "40005",'msg'  =>  "修改成功！" ,"data"=>[]],
+            "haveWx" => ['code'   =>  "40006",'msg'  =>  "该账户已绑定微信,是否换绑为当前微信号?" ,"data"=>[]],
+            "wxBindSucc" => ['code'   =>  "40007",'msg'  =>  "绑定成功" ,"data"=>[]],
+            "wxBindhave" => ['code'   =>  "40008",'msg'  =>  "该微信已绑定账户" ,"data"=>[]],
+            "wxBindErr" => ['code'   =>  "40009",'msg'  =>  "绑定失败" ,"data"=>[]],
+            "wxBindTimeOut" => ['code'   =>  "40010",'msg'  =>  "微信登录已过期" ,"data"=>[]],
+            "onKeySucc" => ['code'   =>  "40011",'msg'  =>  "一键注册成功" ,"data"=>[]]
         ],
         "msg" => [
             "getSysMsg" =>["code"=>50001,"msg"=>'获取系统消息成功',"data"=>[]]
-<<<<<<< HEAD
+
         ],
-=======
-            ],
->>>>>>> f6a9002badde4fa42f99735b07c41d49759a2c20
         "tenants" =>  [
             "tenantsImg" =>["code"=>40001,"msg"=>'上传图片成功！',"data"=>[]],
             "coverImg"=>["code"=>40002,"msg"=>'已注册，待系统审查完毕将以短信通知您是否成功！',"data"=>[]],
@@ -345,11 +352,8 @@ return [
             'pwdF'=>['code'  =>  "60004",'msg'   =>  "支付密码有误，请重新输入!",'data'  => []],
             'payF'=>['code'  =>  "60005",'msg'   =>  "余额不足，请先进行充值!",'data'  => []],
             'payT'=>['code'  =>  "60006",'msg'   =>  "恭喜您支付成功!",'data'  => []],
-<<<<<<< HEAD
             'cancelT'=>['code'  =>  "60007",'msg'   =>  "取消订单成功!",'data'  => []],
             'cancelF'=>['code'  =>  "60008",'msg'   =>  "取消订单失败!",'data'  => []],
-        ]
-=======
         ],
         "collection"=>[
             'collectionYes'=>['code'  =>  "70001",'msg'   =>  "收藏成功！",'data'  => []],
@@ -360,13 +364,9 @@ return [
             'focusNo'=>['code'  =>  "80002",'msg'   =>  "关注失败！",'data'  => []],
             'focusHeavy'=>['code'  =>  "80003",'msg'   =>  "不能关注自己！",'data'  => []]
         ],
-<<<<<<< HEAD
         "des" => [
             'getInSuccess' => ['code'  =>  90001,'msg'   =>  "获取信息成功",'data'  => []]
         ]
-=======
->>>>>>> f6a9002badde4fa42f99735b07c41d49759a2c20
->>>>>>> 8d8c2621b3bcb41568a9ecaf8b8704a59f1929c2
     ],
     //验证码
     'captcha'  => [
