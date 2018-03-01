@@ -180,7 +180,7 @@
                             <li lay-id="2">我的游记</li>
                             <li lay-id="3">我的点评</li>
                             <li lay-id="4">订单管理</li>
-                            <li lay-id="5">我的收藏</li>
+                            <li lay-id="5" >我的收藏</li>
                         </ul>
                         <div class="layui-tab-content">
                             <div class="layui-tab-item layui-show">
@@ -194,6 +194,7 @@
                                                 {$vo.REGION_NAME}
                                             </p>
                                         </div>
+<<<<<<< HEAD
                                             <!--<select onchange="province()" id="regionId">-->
                                                 <!--<option>请选择一个地区</option>-->
                                                 <!--{volist name="citys" id="vo"}&lt;!&ndash;免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for&ndash;&gt;-->
@@ -205,6 +206,8 @@
                                             <!--</select>-->
 
 
+=======
+>>>>>>> 2fd59dc6490bc2d6ba5bbd01a32ebd8d73eb00d3
                                     </li>
                                     {/volist}
                                 </ul>
@@ -371,7 +374,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="layui-tab-item">5</div>
+                        <div class="layui-tab-item">
+                            {volist name="collectData" id="vo"}<!--免发ajax形式，在页面加载的同时也跟着加载菜单的形式name代表控制器名volist代表for-->
+                            <span>{$vo['type']}</span>
+                            {/volist}
+
+                        </div>
                     </div>
                 </div>
             </div>

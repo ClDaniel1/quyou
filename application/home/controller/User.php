@@ -306,8 +306,6 @@ class User extends \think\Controller
 
 
     public function wxLogin(){
-        session_start();
-
         $code = input("code");
 
         $url = "https://api.weixin.qq.com/sns/jscode2session?appid=".config("APPID")."&secret=".config("APPSECRET")."&js_code=".$code."&grant_type=authorization_code";
@@ -325,7 +323,7 @@ class User extends \think\Controller
 
         if(count($user)>0){
             $err = "true";
-            $data =[$user[0]["userId"]];
+            $data =[$user[0]["uid"]];
         }
         else{
             $err = "10001";
@@ -335,4 +333,113 @@ class User extends \think\Controller
 
         echo '{"err":"'.$err.'","data":'.json_encode($data).'}';
     }
+
+    public function bind(){
+        $userInfo = json_decode(input("param.userInfo"),true);
+        $openId = input("param.id");
+        $userName = input("param.userName");
+        $psw = input("param.psw");
+        $type = input("param.type");
+
+
+        $set = file_exists($openId.".php");
+
+
+        if($set){
+            $userAcc = json_decode(file_get_contents($openId.".php"),true);
+            $openId = $userAcc[0];
+
+            $m = new \app\home\model\User();
+            $where = [
+                "uphone" => $userName,
+                "upwd" => $psw
+            ];
+            $res  = $m->login($where);
+            if(!empty($res)){
+                $id = $res["uid"];
+                if(strlen($res["wechatId"]) > 10 && $type == 0){
+                    $reMsg = config("msg")["userCon"]["haveWx"];
+                }
+                else{
+                    $res = $m->bind($id,$openId);
+                    if( $res == 1){
+                        $user = $m->wxIdLogin($openId);
+                        $reMsg = config("msg")["userCon"]["wxBindSucc"];
+                        $reMsg["data"]=[$user[0]["uid"]];
+                    }
+                    else if ($res == "isset"){
+                        //该微信号已绑定账号
+                        $reMsg = config("msg")["userCon"]["wxBindhave"];
+                    }
+                    else{
+                        //注册失败
+                        $reMsg = config("msg")["userCon"]["wxBindErr"];
+                    }
+                }
+            }
+            else{
+                $reMsg = config("msg")["login"]["accountError"];
+            }
+
+        }
+        else{
+            //没有缓存，重新调用微信登录
+            $reMsg = config("msg")["userCon"]["wxBindTimeOut"];
+        }
+
+        if($set && $reMsg["code"]!=10003 && $reMsg["code"]!='40006'){
+            unlink($openId.".php");
+        }
+
+
+        return json($reMsg);
+    }
+
+    public function oneKey(){
+        session_start();
+        $userInfo = json_decode(stripslashes(input("param.userInfo")),true);
+        $openId = input("param.id");
+        $uphone = input("param.uphone");
+
+        $rad = new RadomStr();
+        $userName = "qu_".$rad->get(9);
+
+        $set = file_exists($openId.".php");
+
+
+        if($set){
+            $userAcc = json_decode(file_get_contents($openId.".php"),true);
+            $openId = $userAcc[0];
+
+            $m = new \app\home\model\User();
+            $res  = $m->oneKey($userName,$uphone,$userInfo["avatarUrl"],$openId);
+            if( $res == 1){
+                $user = $m->wxIdLogin($openId);
+
+                $reMsg = config("msg")["userCon"]["onKeySucc"];
+                $reMsg["data"]=[$uphone,$user[0]["uid"]];
+            }
+            else if ($res == "isset"){
+                //该微信号已绑定账号
+                $reMsg = config("msg")["userCon"]["wxBindhave"];
+            }
+            else{
+                //注册失败
+                $reMsg = config("msg")["login"]["regError"];
+            };
+        }
+        else{
+            //没有缓存，重新调用微信登录
+            $reMsg = config("msg")["userCon"]["wxBindTimeOut"];
+        }
+
+        if($set){
+            unlink($openId.".php");
+        }
+
+
+        return json($reMsg);
+    }
+
+
 }
