@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1519615604;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1519615604;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1519713466;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1519713466;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -515,7 +515,6 @@
 </body>
 <script src="__STATIC__/lib/vue.js"></script>
 <script src="__STATIC__\lib\layui\layui.all.js"></script>
-<script src="__STATIC__\lib\layui\layui.js"></script>
 <script src="__STATIC__\lib\jquery-3.2.1.js"></script>
 <script src="__STATIC__/lib/amazeui/js/amazeui.js"></script>
 <script>
@@ -589,7 +588,7 @@
                             {
                                 routeArr.push(_this.region+res.msg[i][j].scenicName);
                             }
-                                _this.bdMap(_this.mapp+i,routeArr,13);
+                                _this.bdMap(_this.mapp+i,routeArr,10);
                         }
                     },1000);
 

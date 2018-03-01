@@ -400,5 +400,17 @@ class Personal extends \think\Controller
 
         return json($reMsg);
     }
+
+    public function getMyOrderInfo(){
+        $orderId = input("param.orderId");
+
+        $m = new \app\home\model\Personal();
+        $data = $m->getOrderInfo($orderId);
+
+        $reMsg = config("msg")["personal"]["getOrderInfoSucc"];
+        $reMsg["data"] =$data;
+
+        return json($reMsg);
+    }
 }
 
