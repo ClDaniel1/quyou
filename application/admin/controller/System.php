@@ -79,22 +79,17 @@ class System extends \think\Controller{
         $staId=input('?get.id')?input('get.id'):'';
         $this->assign("staId",$staId);
         $this->assign("roleList",$data);
-        $where=[
-            'staId' => $staId
-        ];
-        $staInfo=$am->staInfo($where);
         return $this->fetch('staffEdit');
     }
 
     public function getStaInfo(){
         $staId=input('?post.staId')? input('staId'):'';
         $am=new \app\admin\model\System();
-        $where=[
-            'staId' => $staId
-        ];
+        $where=['staId' => $staId];
         $staInfo=$am->staInfo($where);
         return json($staInfo);
     }
+
 
     //员工编辑
     public function staffEdit(){

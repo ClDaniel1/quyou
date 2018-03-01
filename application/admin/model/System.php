@@ -28,6 +28,12 @@ class System extends \think\Model{
         return db('t_role')->select();
     }
 
+    public function staInfo($data){
+        return db('t_staff') -> where($data) ->find();
+    }
+
+
+
     public function changeStaff($staId,$data){
         return db('t_staff')->where('staId',$staId)->update($data);
     }
