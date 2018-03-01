@@ -389,7 +389,6 @@ class Region extends \think\Controller
             return json($reMsg);
         }
     }
-<<<<<<< HEAD
     public function wxHotel()// 微信小程序开发获取全部酒店信息
     {
         $model=new model\Region();
@@ -497,7 +496,6 @@ class Region extends \think\Controller
             echo json_encode($returnMsg);
         }
     }
-=======
 
     public function getDesIn(){
         $a=new model\Region();
@@ -516,7 +514,4 @@ class Region extends \think\Controller
         return json($remsg);
 
     }
-
-
->>>>>>> aad307e56e683816b40777e0bfe81b02a6c9e6e3
 }
