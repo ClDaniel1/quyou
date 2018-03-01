@@ -669,22 +669,8 @@ class Notes extends \think\Controller
         return json_encode(["info"=>$info,"con"=>$con]);
     }
 
+
     //小程序显示主页游记
-    public function showIndex(){
-        $page = input("param.page");
-        $nm = new \app\home\model\Notes();
-        $all = $nm->countNote();
-        $p = new Page($all,5,$page);
-
-        $start = $p -> getStart();
-        $num = $p -> getNum();
-        $allPage = $p->getAllPage();
-        $data = $nm -> getNote($start,$num);
-//        $data = $nm -> getNote(0,10);
-        return json_encode($data);
-//        return json_encode(["allPage"=>$allPage,"data"=>$data]);
-    }
-
     public function showIndexPage(){
         $page = input("param.page");
         $nm = new \app\home\model\Notes();

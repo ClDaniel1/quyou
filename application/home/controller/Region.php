@@ -496,7 +496,10 @@ class Region extends \think\Controller
             echo json_encode($returnMsg);
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 416c32dac061a43b15eb291a74394966c5a91fcc
     public function getDesIn(){
         $a=new model\Region();
         $rgId=input('?param.des')?input('param.des'):"";
