@@ -199,7 +199,6 @@ class Region extends \think\Controller
     public function addHotel()//确认酒店订单信息
     {
         $user=input("?param.user")?input("user/a"):"";//联系人数组
-
         $userArr=json_encode($user);
         $unitPrice=input("?param.unitPrice")?input("unitPrice"):"";//单价
         $hotalPrice=input("?param.hotalPrice")?input("hotalPrice"):"";//总价
@@ -209,25 +208,25 @@ class Region extends \think\Controller
         $tradeId=input("?param.tradeId")?input("tradeId"):"";//订购商品id
         $uId=cookie("uid");//用户id
         $orderTime=date('Y-m-d H-i-s',time());//下单时间
-        $arr=['uid'=>$uId,'orderTime'=>$orderTime,'unitPrice'=>$unitPrice,'totalPrice'=>$hotalPrice,'num'=>$num,'orderTypeId'=>1,'useDate'=>$useTime,'valid'=>$days,'conId'=>$userArr,'tradeId'=>$tradeId,'tradeType'=>'hotel'];
-        $model=new model\Region();
-        $res=$model->hotelOrder($arr);
         if(empty($user)||count($user)!=$num)
         {
-            $returnMsg=config('msg')['order']['numF'];
+            $returnMsg=config('order')['numF'];
             echo json_encode($returnMsg);
         }
         else
         {
+            $arr=['uid'=>$uId,'orderTime'=>$orderTime,'unitPrice'=>$unitPrice,'totalPrice'=>$hotalPrice,'num'=>$num,'orderTypeId'=>1,'useDate'=>$useTime,'valid'=>$days,'conId'=>$userArr,'tradeId'=>$tradeId,'tradeType'=>'hotel'];
+            $model=new model\Region();
+            $res=$model->hotelOrder($arr);
             if($res==true)
             {
-                $returnMsg=config('msg')['order']['orderT'];
+                $returnMsg=config('order')['orderT'];
                 array_push($returnMsg['data'],$res);
                 echo json_encode($returnMsg);
             }
             else
             {
-                $returnMsg=config('msg')['order']['orderF'];
+                $returnMsg=config('order')['orderF'];
                 echo json_encode($returnMsg);
             }
         }
@@ -390,6 +389,115 @@ class Region extends \think\Controller
             return json($reMsg);
         }
     }
+<<<<<<< HEAD
+    public function wxHotel()// 微信小程序开发获取全部酒店信息
+    {
+        $model=new model\Region();
+
+        $pageIndex=input('?param.page')?input('page'):"";
+        $regionId=input('?param.regionId')?input('regionId'):"";
+        $size=input('?param.size')?input('size'):"";
+
+        $count=$model->htCount($regionId);
+        $num=ceil($count/$size);
+        $start=($pageIndex-1)*$size;
+        $end=$start+$size;
+        $msg=$model->hotelCount($regionId,$start,$end);
+        $arr=[];
+        array_push($arr,$num);
+        array_push($arr,$msg);
+        echo json_encode($arr);
+    }
+    public function wxHMsg()//微信小程序酒店详情页
+    {
+        $id=input('?param.id')?input('id'):"";
+        $model=new model\Region();
+        $res=$model->oneHotel($id);
+        echo json_encode($res);
+    }
+    public function wxTakeOrder()//微信下单酒店页面跳转
+    {
+        $user=input("?param.user")?input("user/a"):"";//联系人数组
+        $userArr=json_encode($user);
+        $unitPrice=input("?param.unitPrice")?input("unitPrice"):"";//单价
+        $num=input("?param.num")?input("num"):"";//订购数
+        $checkTime=input("?param.checkTime")?input("checkTime"):"";//使用时间
+        $outTime=input("?param.outTime")?input("outTime"):"";
+        $days=$this->days($outTime,$checkTime);
+        $hotalPrice=$num*$days*$unitPrice;//酒店总价
+        $tradeId=input("?param.tradeId")?input("tradeId"):"";//订购商品id
+        $uId=input("?param.uid")?input("uid"):"";//用户id
+        $orderTime=date('Y-m-d H-i-s',time());//下单时间
+        $model=new model\Region();
+        $data=$model->idUser($uId);
+            if($hotalPrice>$data['ubalance'])
+            {
+                $returnMsg=config('order')['payF'];
+                echo json_encode($returnMsg);
+            }
+            else
+            {
+                $arr=['uid'=>$uId,'orderTime'=>$orderTime,'unitPrice'=>$unitPrice,'totalPrice'=>$hotalPrice,'num'=>$num,'orderTypeId'=>1,'useDate'=>$checkTime,'valid'=>$days,'conId'=>$userArr,'tradeId'=>$tradeId,'tradeType'=>'hotel'];
+                $res=$model->hotelOrder($arr);
+                if($res==true)
+                {
+                    $balance=sprintf("%.2f",$data['ubalance']-$hotalPrice);
+                    $upRes=$model->upBalance($uId,$balance);
+                    if($upRes!=false)
+                    {
+                        $radom=new RadomStr();
+                        while(1)
+                        {
+                            $radomStr=$radom->get();
+                            $raRes=$model->radomStr($res,$radomStr);
+                            if($raRes)
+                            {
+                                break;
+                            }
+                        }
+                        $returnMsg=config('order')['payT'];
+                        echo json_encode($returnMsg);
+                    }
+                }
+                else
+                {
+                    $returnMsg=config('order')['orderF'];
+                    echo json_encode($returnMsg);
+                }
+            }
+    }
+    public function wxContact()//微信获取联系人
+    {
+        $userId=input('?param.userId')?input('userId'):"";
+        $model=new model\Region();
+        $res=$model->contactM($userId);
+        $arr=['name'=>['请选择联系人'],'conId'=>['']];
+        foreach($res as $key=>$value)
+        {
+            array_push($arr['name'],$value['conName']);
+            array_push($arr['conId'],$value['conId']);
+        }
+        echo json_encode($arr);
+    }
+
+    public function wxhPay()//微信下单酒店支付，配对密码
+    {
+        $uId=input("?param.uid")?input("uid"):"";
+        $pwd=input("?param.pwd")?input("pwd"):"";
+        $model=new model\Region();
+        $data=$model->hPay($uId,$pwd);
+        if(!empty($data))
+        {
+            $returnMsg=config('order')['pwdT'];
+            echo json_encode($returnMsg);
+        }
+        else
+        {
+            $returnMsg=config('order')['pwdF'];
+            echo json_encode($returnMsg);
+        }
+    }
+=======
 
     public function getDesIn(){
         $a=new model\Region();
@@ -410,4 +518,5 @@ class Region extends \think\Controller
     }
 
 
+>>>>>>> aad307e56e683816b40777e0bfe81b02a6c9e6e3
 }

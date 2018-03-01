@@ -149,6 +149,12 @@ class Region extends Model
     {
         return db('t_user')->where('uid',$uid)->where('payPwd',md5($pwd))->find();
     }
+
+    public function idUser($uid)//根据用户id查找对应信息
+    {
+        return db('t_user')->where('uid',$uid)->find();
+    }
+
     public function upBalance($uid,$balance)//更新用户数据库金额
     {
         return db('t_user')->where('uid',$uid)->update(['ubalance' => $balance]);
