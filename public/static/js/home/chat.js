@@ -4,7 +4,7 @@ if(sessionStorage.getItem("userInfo")!=undefined){
     var headImg = userInfo["userImg"];
     var name = userInfo["uname"];
 
-    var ws = new WebSocket("ws://127.0.0.1:8808");
+    var ws = new WebSocket("wss://www.liner.fun:8808");
 
     function WsMessage() {}
     WsMessage.prototype.getMessage = function (callback) {

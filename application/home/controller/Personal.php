@@ -133,7 +133,7 @@ class Personal extends \think\Controller
         $uid=input('?post.uid')? input('uid'):'';
         $upwd=input('?post.upwd')? input('upwd'):'';
         $data=[
-            'upwd'=>$upwd
+            'upwd'=>md5($upwd)
         ];
 
         //密码查重
@@ -141,7 +141,7 @@ class Personal extends \think\Controller
 
         $where=[
             'uid' =>  $uid,
-            'upwd'   =>   $upwd
+            'upwd'   =>   md5($upwd)
         ];
         $result = $model->checkPwd($where);
 
@@ -165,7 +165,7 @@ class Personal extends \think\Controller
         $upwd=input('?post.newPsw')? input('newPsw'):'';
         $opwd=input('?post.oldPsw')? input('oldPsw'):'';
         $data=[
-            'upwd'=>$upwd
+            'upwd'=>md5($upwd)
         ];
 
         //密码查重
@@ -173,7 +173,7 @@ class Personal extends \think\Controller
 
         $where=[
             'uid' =>  $uid,
-            'upwd'   =>   $opwd
+            'upwd'   =>   md5($opwd)
         ];
         $result = $model->checkPwd($where);
 

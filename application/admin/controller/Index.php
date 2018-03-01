@@ -47,7 +47,7 @@ class Index extends \think\Controller
         }
         else{
             $sm = new \app\admin\model\System();
-            $res = $sm -> doLogin($userName,$password);
+            $res = $sm -> doLogin($userName,md5($password));
 
             if(count($res)>0){
                 $resMsg = config("msg")["login"]["successLogin"];

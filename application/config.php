@@ -334,19 +334,6 @@ return [
         "msg" => [
             "getSysMsg" =>["code"=>50001,"msg"=>'获取系统消息成功',"data"=>[]]
         ],
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-            ],
-=======
->>>>>>> aad307e56e683816b40777e0bfe81b02a6c9e6e3
->>>>>>> cf0575d5fb06e599cbc9496e9bf31512aabcc1d3
->>>>>>> 2fd59dc6490bc2d6ba5bbd01a32ebd8d73eb00d3
->>>>>>> 416c32dac061a43b15eb291a74394966c5a91fcc
         "tenants" =>  [
             "tenantsImg" =>["code"=>40001,"msg"=>'上传图片成功！',"data"=>[]],
             "coverImg"=>["code"=>40002,"msg"=>'已注册，待系统审查完毕将以短信通知您是否成功！',"data"=>[]],
@@ -365,32 +352,8 @@ return [
             'pwdT'=>['code'  =>  "60009",'msg'   =>  "支付密码正确!",'data'  => []],
             'payF'=>['code'  =>  "60005",'msg'   =>  "余额不足，请先进行充值!",'data'  => []],
             'payT'=>['code'  =>  "60006",'msg'   =>  "恭喜您支付成功!",'data'  => []],
-<<<<<<< HEAD
-
             'cancelT'=>['code'  =>  "60007",'msg'   =>  "取消订单成功!",'data'  => []],
             'cancelF'=>['code'  =>  "60008",'msg'   =>  "取消订单失败!",'data'  => []],
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-            'cancelT'=>['code'  =>  "60007",'msg'   =>  "取消订单成功!",'data'  => []],
-            'cancelF'=>['code'  =>  "60008",'msg'   =>  "取消订单失败!",'data'  => []],
-=======
-<<<<<<< HEAD
->>>>>>> 2fd59dc6490bc2d6ba5bbd01a32ebd8d73eb00d3
-
-            'cancelT'=>['code'  =>  "60007",'msg'   =>  "取消订单成功!",'data'  => []],
-            'cancelF'=>['code'  =>  "60008",'msg'   =>  "取消订单失败!",'data'  => []],
-
-<<<<<<< HEAD
-=======
-=======
-            'cancelT'=>['code'  =>  "60007",'msg'   =>  "取消订单成功!",'data'  => []],
-            'cancelF'=>['code'  =>  "60008",'msg'   =>  "取消订单失败!",'data'  => []],
->>>>>>> aad307e56e683816b40777e0bfe81b02a6c9e6e3
->>>>>>> cf0575d5fb06e599cbc9496e9bf31512aabcc1d3
->>>>>>> 2fd59dc6490bc2d6ba5bbd01a32ebd8d73eb00d3
->>>>>>> 416c32dac061a43b15eb291a74394966c5a91fcc
         ],
         "collection"=>[
             'collectionYes'=>['code'  =>  "70001",'msg'   =>  "收藏成功！",'data'  => []],
@@ -401,17 +364,6 @@ return [
             'focusNo'=>['code'  =>  "80002",'msg'   =>  "关注失败！",'data'  => []],
             'focusHeavy'=>['code'  =>  "80003",'msg'   =>  "不能关注自己！",'data'  => []]
         ],
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> cf0575d5fb06e599cbc9496e9bf31512aabcc1d3
->>>>>>> 2fd59dc6490bc2d6ba5bbd01a32ebd8d73eb00d3
->>>>>>> 416c32dac061a43b15eb291a74394966c5a91fcc
         "food"=>[
             "foodRegion"=>['code'  =>  "80001",'msg'   =>  "获取成功！",'data'  => []],
             ],
@@ -419,16 +371,6 @@ return [
             'getInSuccess' => ['code'  =>  90001,'msg'   =>  "获取信息成功",'data'  => []]
         ]
     ],
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> aad307e56e683816b40777e0bfe81b02a6c9e6e3
->>>>>>> cf0575d5fb06e599cbc9496e9bf31512aabcc1d3
->>>>>>> 2fd59dc6490bc2d6ba5bbd01a32ebd8d73eb00d3
->>>>>>> 416c32dac061a43b15eb291a74394966c5a91fcc
     //验证码
     'captcha'  => [
     // 验证码字符集合

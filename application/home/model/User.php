@@ -91,7 +91,7 @@ class User
             $data = [
                 "uphone" => $uphone,
                 "uname" => $userName,
-                "upwd" => 123456,
+                "upwd" => md5('123456'),
                 "wechatId" => $wx
             ];
             $uid = db('t_user')->insertGetId($data);

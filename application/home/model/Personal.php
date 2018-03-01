@@ -67,7 +67,6 @@ class Personal{
         $sql=db('t_collect')->where('uid',$uid)->where('type','0')->field('whoId')->select();
         return $sql;
     }
-<<<<<<< HEAD
     /*public function collectData($uid){
         $sql=db('t_collect')->where('uid',$uid)->select();
         return $sql;
@@ -92,7 +91,6 @@ class Personal{
             ->select();
         return $arr;
     }
-=======
 
     public function changeNikeName($uid,$nikeName){
         $res = db("t_user")->where("uid",$uid)->update(["uname"=>$nikeName]);
@@ -132,7 +130,6 @@ class Personal{
         $data=db('t_order')->field("count(orderId) allN")->where("orderTypeId <> 1 and uid=$uid")->select();
         return $data[0]["allN"];
     }
-<<<<<<< HEAD
 
     public function getOrderInfo($orderId){
         $arr = db('t_order')
@@ -145,7 +142,4 @@ class Personal{
             ->select();
         return $arr;
     }
-=======
->>>>>>> b3bc5795c0583319ef04d12cdac8e83a113aeaf4
->>>>>>> 87fcf57c6d3ca7519c05fc255573b6ed29b5f095
 }

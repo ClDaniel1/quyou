@@ -45,7 +45,7 @@ class User extends \think\Controller
         }
         $where=[
             'uphone' =>  $uphone,
-            'upwd'   =>   $upwd
+            'upwd'   =>   md5($upwd)
         ];
 
 
@@ -84,7 +84,7 @@ class User extends \think\Controller
 
         $where=[
             'uphone' =>  $uphone,
-            'upwd'   =>   $upwd
+            'upwd'   =>   md5($upwd)
         ];
 
 
@@ -214,7 +214,7 @@ class User extends \think\Controller
         $nowTime=date("Y-m-d H:i:s",time());
         $defaultImg="images/default.jpg";
         $data = ['uphone' => $uphone, 'uname' => $uname,
-            'upwd' =>$upwd, 'uheadImg'=>$defaultImg,'uregTime'=>$nowTime
+            'upwd' =>md5($upwd), 'uheadImg'=>$defaultImg,'uregTime'=>$nowTime,"payPwd"=>md5($upwd)
         ];
         $where=[
             'uphone' => $uphone
@@ -352,7 +352,7 @@ class User extends \think\Controller
             $m = new \app\home\model\User();
             $where = [
                 "uphone" => $userName,
-                "upwd" => $psw
+                "upwd" => md5($psw)
             ];
             $res  = $m->login($where);
             if(!empty($res)){
