@@ -19,6 +19,11 @@ class System extends \think\Model{
         return $sql;
     }
 
+    public function roleDel($roleId){
+        $sql=db('t_role')->where('roleId',$roleId)->delete();
+        return $sql;
+    }
+
     public function roleList(){
         return db('t_role')->select();
     }
@@ -27,7 +32,10 @@ class System extends \think\Model{
         return db('t_staff')->where('staId',$staId)->update($data);
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> aad307e56e683816b40777e0bfe81b02a6c9e6e3
     public function doLogin($userName,$password){
         $data = db('t_staff')->where('staName',$userName)->where('staPwd',$password)->select();
         return $data;

@@ -389,6 +389,7 @@ class Region extends \think\Controller
             return json($reMsg);
         }
     }
+<<<<<<< HEAD
     public function wxHotel()// 微信小程序开发获取全部酒店信息
     {
         $model=new model\Region();
@@ -496,4 +497,26 @@ class Region extends \think\Controller
             echo json_encode($returnMsg);
         }
     }
+=======
+
+    public function getDesIn(){
+        $a=new model\Region();
+        $rgId=input('?param.des')?input('param.des'):"";
+        $scenicMsg=$a->scenicMsg($rgId);//根据地区id查找对应地区景点信息
+        $hotel=$a->hotelMsg($rgId);//根据地区id查找对应地区酒店信息
+        $food=$a->foodMsg($rgId);//根据地区id查找对应地区食物信息
+
+        $res=$a->region($rgId);//根据地区id查找对应名称
+        $bk=new Intro();
+        $bkMsg=$bk->getIntro($res['REGION_NAME']);//查找地区对应百科信息
+
+        $remsg = config("msg")["des"]["getInSuccess"];
+        $remsg["data"] = ["scenic" => $scenicMsg,"hotel" => $hotel,"food" => $food,"bk"=>$bkMsg];
+
+        return json($remsg);
+
+    }
+
+
+>>>>>>> aad307e56e683816b40777e0bfe81b02a6c9e6e3
 }

@@ -67,4 +67,85 @@ class Personal{
         $sql=db('t_collect')->where('uid',$uid)->where('type','0')->field('whoId')->select();
         return $sql;
     }
+<<<<<<< HEAD
+    /*public function collectData($uid){
+        $sql=db('t_collect')->where('uid',$uid)->select();
+        return $sql;
+    }
+    public function noteCollect($noteid){
+        $sql=db('t_note')->where('noteId',$noteid)->select();
+        return $sql;
+    }
+    public function foodCollect($foodid){
+        $sql=db('t_food')->where('foodId',$foodid)->select();
+        return $sql;
+    }*/
+    public function collectData($uid){
+        $arr = db('t_collect')
+            ->field("a.type,b.hotelName,b.img,c.scenicName,c.scenicImg,d.foodName,d.foodImg,e.title,e.img,b.hotelId,c.scenicId,d.foodId,e.noteId")
+            ->alias("a")
+            ->join('t_hotel b','a.whoId = b.hotelId and a.type = "4"','LEFT')
+            ->join('t_scenic c','a.whoId = c.scenicId and a.type = "3"','LEFT')
+            ->join('t_food d','a.whoId = d.foodId and a.type = "2"','LEFT')
+            ->join('t_note e','a.whoId = e.noteId and a.type = "1"','LEFT')
+            ->where("a.uid = $uid and a.type <> '0'")
+            ->select();
+        return $arr;
+    }
+=======
+
+    public function changeNikeName($uid,$nikeName){
+        $res = db("t_user")->where("uid",$uid)->update(["uname"=>$nikeName]);
+        return $res;
+    }
+
+    public function getMyDfOrder($uid,$start,$num){
+        $arr = db('t_order')
+            ->field("a.*,b.hotelName,b.img,c.scenicName,c.scenicImg")
+            ->alias("a")
+            -> join('t_hotel b','a.tradeId = b.hotelId and a.tradeType = "hotel"','LEFT')
+            ->join('t_scenic c','a.tradeId = c.scenicId and a.tradeType = "scenic"','LEFT')
+            ->order('a.orderTime Desc')
+            ->where(['orderTypeId'=>1,"uid"=>$uid])
+            ->limit($start,$num)
+            ->select();
+        return $arr;
+    }
+    public function getMyDfOrderCount($uid){
+        $data=db('t_order')->field("count(orderId) allN")->where(['orderTypeId'=>1,"uid"=>$uid])->select();
+        return $data[0]["allN"];
+    }
+
+    public function getMyyfOrder($uid,$start,$num){
+        $arr = db('t_order')
+            ->field("a.*,b.hotelName,b.img,c.scenicName,c.scenicImg")
+            ->alias("a")
+            -> join('t_hotel b','a.tradeId = b.hotelId and a.tradeType = "hotel"','LEFT')
+            ->join('t_scenic c','a.tradeId = c.scenicId and a.tradeType = "scenic"','LEFT')
+            ->order('a.orderTypeId Desc')
+            ->where("orderTypeId <> 1 and uid=$uid")
+            ->limit($start,$num)
+            ->select();
+        return $arr;
+    }
+    public function getMyyfOrderCount($uid){
+        $data=db('t_order')->field("count(orderId) allN")->where("orderTypeId <> 1 and uid=$uid")->select();
+        return $data[0]["allN"];
+    }
+<<<<<<< HEAD
+
+    public function getOrderInfo($orderId){
+        $arr = db('t_order')
+            ->field("a.*,b.hotelName,b.img,c.scenicName,c.scenicImg")
+            ->alias("a")
+            -> join('t_hotel b','a.tradeId = b.hotelId and a.tradeType = "hotel"','LEFT')
+            ->join('t_scenic c','a.tradeId = c.scenicId and a.tradeType = "scenic"','LEFT')
+            ->order('a.orderTypeId Desc')
+            ->where("orderId",$orderId)
+            ->select();
+        return $arr;
+    }
+=======
+>>>>>>> b3bc5795c0583319ef04d12cdac8e83a113aeaf4
+>>>>>>> 87fcf57c6d3ca7519c05fc255573b6ed29b5f095
 }

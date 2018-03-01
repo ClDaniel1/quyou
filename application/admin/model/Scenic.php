@@ -144,6 +144,23 @@ class Scenic extends \think\Model
         ]);
         return $sql;
     }//修改酒店数据
-
-
+    public function regionWx($id){
+        $sql=db('t_scenic')->where('desId',$id)->select();
+        return $sql;
+    }
+    public function scenicdetailsWx($id)
+    {
+        $sql=db('t_scenic')->where('scenicId',$id)->select();
+        return $sql;
+    }
+    public function scenicImgWx($id){
+        $sql=db('t_scenicimg')->where('scenicId',$id)->select();
+        return $sql;
+    }
+    public function scenicCommentWx($id)
+    {
+        $sql=db('t_sceniccomment')->alias('a')
+            ->join('t_user b','a.uid=b.uid')->field('a.*,b.uname,b.uheadImg')->select();
+        return $sql;
+    }
 }

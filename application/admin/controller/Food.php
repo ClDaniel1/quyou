@@ -274,4 +274,40 @@ class Food extends \think\Controller
         }
         echo 1;
     }
+    public function regionWx(){
+        $id=input('param.id');
+        $str=new \app\admin\model\Food();
+        $data=$str->regionWx($id);
+        $foodRegion=config("msg")["food"]["foodRegion"];
+        array_push($foodRegion["data"],$data);
+        echo json_encode($foodRegion);
+    }
+    public function fooddetailsWx()
+    {
+        $id=input('param.id');
+        $str=new \app\admin\model\Food();
+        $data=$str->fooddetailsWx($id);
+        $foodRegion=config("msg")["food"]["foodRegion"];
+        array_push($foodRegion["data"],$data);
+        echo json_encode($foodRegion);
+    }
+    public function foodImgWx()
+    {
+        $id=input('param.id');
+        $str=new \app\admin\model\Food();
+        $data=$str->foodImgWx($id);
+        $foodImg=config("msg")["food"]["foodRegion"];
+        array_push($foodImg["data"],$data);
+        echo json_encode($foodImg);
+    }
+
+    public function foodCommentWx()
+    {
+        $id=input('param.id');
+        $str=new \app\admin\model\Food();
+        $data=$str->foodCommentWx($id);
+        $foodComment=config("msg")["food"]["foodRegion"];
+        array_push($foodComment["data"],$data);
+        echo json_encode($foodComment);
+    }
 }

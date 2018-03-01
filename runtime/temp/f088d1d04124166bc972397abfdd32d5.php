@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"D:\wamp64\www\quyou\public/../application/home\view\region\region.html";i:1519562989;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1519634692;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"D:\wamp64\www\quyou\public/../application/home\view\region\region.html";i:1519659803;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1519634692;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -588,7 +588,7 @@
                             {
                                 routeArr.push(_this.region+res.msg[i][j].scenicName);
                             }
-                                _this.bdMap(_this.mapp+i,routeArr,13);
+                                _this.bdMap(_this.mapp+i,routeArr,10);
                         }
                     },1000);
 
