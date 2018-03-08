@@ -28,7 +28,7 @@ class User extends \think\Model
     }//用户启用
     public function userPawRepair($uid)
     {
-        $sql=db('t_user')->where('uid', $uid)->update(['upwd' => '123456']);
+        $sql=db('t_user')->where('uid', $uid)->update(['upwd' => md5('123456')]);
         return $sql;
     }//密码重置
     public function userDel($uid)

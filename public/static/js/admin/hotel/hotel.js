@@ -25,10 +25,10 @@ $.ajax({
                     '<td><input name="" type="checkbox" value=""></td>'+
                     '<td>'+res.data[0][i]['hotelId']+'</td>'+
                     '<td>'+res.data[0][i]['hotelName']+'</td>'+
-                    '<td>'+res.data[0][i]['hotelDescribe']+'</td>'+
+                    '<td>'+res.data[0][i]['hotelDescribe'].substring(0,15)+'...</td>'+
                     '<td class="text-l">'+res.data[0][i]['hotelNum']+'间</td>'+
                     '<td><a href="javascript:;" onClick="picture_edit(\'图库编辑\',hotelPicture,'+res.data[0][i]['hotelId']+')">'+
-                    '<img width="210" class="picture-thumb" src="'+staticc+res.data[0][i]['img']+'"></a></td>'+
+                    '<img width="210" class="picture-thumb" style="width: 100px;height: 100px" src="'+staticc+res.data[0][i]['img']+'"></a></td>'+
                     '<td class="text-c">'+res.data[0][i]['hotelPrice']+'</td>'+
                     '<td>'+res.data[0][i]['REGION_NAME']+'</td>'+
                     '<td class="td-status"><span class="label label-success radius">已发布</span></td>'+
@@ -43,10 +43,10 @@ $.ajax({
                     '<td><input name="" type="checkbox" value=""></td>'+
                     '<td>'+res.data[0][i]['hotelId']+'</td>'+
                     '<td>'+res.data[0][i]['hotelName']+'</td>'+
-                    '<td>'+res.data[0][i]['hotelDescribe']+'</td>'+
+                    '<td>'+res.data[0][i]['hotelDescribe'].substring(0,15)+'...</td>'+
                     '<td class="text-l">'+res.data[0][i]['hotelNum']+'间</td>'+
                     '<td><a href="javascript:;" onClick="picture_edit(\'图库编辑\',hotelPicture,'+res.data[0][i]['hotelId']+')">'+
-                    '<img width="210" class="picture-thumb" src="'+staticc+res.data[0][i]['img']+'"></a></td>'+
+                    '<img width="210" class="picture-thumb" style="width: 100px;height: 100px" src="'+staticc+res.data[0][i]['img']+'"></a></td>'+
                     '<td class="text-c">'+res.data[0][i]['hotelPrice']+'</td>'+
                     '<td>'+res.data[0][i]['REGION_NAME']+'</td>'+
                     '<td class="td-status"><span class="label label-defaunt radius">已下架</span></td>'+

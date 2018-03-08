@@ -24,9 +24,9 @@ $.ajax({
                     '<td><input name="" type="checkbox" value=""></td>'+
                     '<td>'+res.data[0][i]['foodId']+'</td>'+
                     '<td>'+res.data[0][i]['foodName']+'</td>'+
-                    '<td>'+res.data[0][i]['foodDescribe']+'</td>'+
+                    '<td>'+res.data[0][i]['foodDescribe'].substring(0,15)+'...</td>'+
                     '<td><a href="javascript:;" onClick="picture_edit(\'图库编辑\',foodPicture,'+res.data[0][i]['foodId']+')">'+
-                    '<img width="210" class="picture-thumb" src="'+staticc+res.data[0][i]['foodImg']+'"></a></td>'+
+                    '<img width="210" class="picture-thumb" style="width: 100px;height: 100px" src="'+staticc+res.data[0][i]['foodImg']+'"></a></td>'+
                     '<td>'+res.data[0][i]['REGION_NAME']+'</td>'+
                     '<td>'+res.data[0][i]['address']+'</td>'+
                     '<td class="td-status"><span class="label label-success radius">已发布</span></td>'+
@@ -41,9 +41,9 @@ $.ajax({
                     '<td><input name="" type="checkbox" value=""></td>'+
                     '<td>'+res.data[0][i]['foodId']+'</td>'+
                     '<td>'+res.data[0][i]['foodName']+'</td>'+
-                    '<td>'+res.data[0][i]['foodDescribe']+'</td>'+
+                    '<td>'+res.data[0][i]['foodDescribe'].substring(0,15)+'...</td>'+
                     '<td><a href="javascript:;" onClick="picture_edit(\'图库编辑\',foodPicture,'+res.data[0][i]['foodId']+')">'+
-                    '<img width="210" class="picture-thumb" src="'+staticc+res.data[0][i]['foodImg']+'"></a></td>'+
+                    '<img width="210" class="picture-thumb" style="width: 100px;height: 100px" src="'+staticc+res.data[0][i]['foodImg']+'"></a></td>'+
                     '<td>'+res.data[0][i]['REGION_NAME']+'</td>'+
                     '<td>'+res.data[0][i]['address']+'</td>'+
                     '<td class="td-status"><span class="label label-defaunt radius">已下架</span></td>'+
