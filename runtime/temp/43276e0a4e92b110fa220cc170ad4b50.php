@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1519713466;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1519713466;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"E:\phpstudy\WWW\quyou\public/../application/home\view\region\region.html";i:1519891497;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1519713466;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -553,7 +553,7 @@
 
 <!--JS、引用 /示例如下-->
 <!--引用百度地图api文件-->
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=TRYU1lcQ2YkgXRzerqXODMOKkAGrETrL"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=TRYU1lcQ2YkgXRzerqXODMOKkAGrETrL"></script>
 <script>
     nav(2);
     layui.use('element', function(){

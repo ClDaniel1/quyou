@@ -198,6 +198,7 @@ class Region extends \think\Controller
 
     public function addHotel()//确认酒店订单信息
     {
+
         $user=input("?param.user")?input("user/a"):"";//联系人数组
         $userArr=json_encode($user);
         $unitPrice=input("?param.unitPrice")?input("unitPrice"):"";//单价
@@ -210,7 +211,7 @@ class Region extends \think\Controller
         $orderTime=date('Y-m-d H-i-s',time());//下单时间
         if(empty($user)||count($user)!=$num)
         {
-            $returnMsg=config('order')['numF'];
+            $returnMsg=config('msg')['order']['numF'];
             echo json_encode($returnMsg);
         }
         else
@@ -220,13 +221,13 @@ class Region extends \think\Controller
             $res=$model->hotelOrder($arr);
             if($res==true)
             {
-                $returnMsg=config('order')['orderT'];
+                $returnMsg=config('msg')['order']['orderT'];
                 array_push($returnMsg['data'],$res);
                 echo json_encode($returnMsg);
             }
             else
             {
-                $returnMsg=config('order')['orderF'];
+                $returnMsg=config('msg')['order']['orderF'];
                 echo json_encode($returnMsg);
             }
         }
@@ -487,12 +488,12 @@ class Region extends \think\Controller
         $data=$model->hPay($uId,$pwd);
         if(!empty($data))
         {
-            $returnMsg=config('order')['pwdT'];
+            $returnMsg=config('msg')['order']['pwdT'];
             echo json_encode($returnMsg);
         }
         else
         {
-            $returnMsg=config('order')['pwdF'];
+            $returnMsg=config('msg')['order']['pwdF'];
             echo json_encode($returnMsg);
         }
     }
