@@ -24,10 +24,10 @@ $.ajax({
                     '<td><input name="" type="checkbox" value=""></td>'+
                     '<td>'+res.data[0][i]['scenicId']+'</td>'+
                     '<td>'+res.data[0][i]['scenicName']+'</td>'+
-                    '<td>'+res.data[0][i]['scenicDescribe']+'</td>'+
+                    '<td>'+res.data[0][i]['scenicDescribe'].substring(0,15)+'...</td>'+
                     '<td class="text-l"><a class="maincolor" href="javascript:;">'+res.data[0][i]['scenicNum']+'人</a></td>'+
                     '<td><a href="javascript:;" onClick="picture_edit(\'图库编辑\',scenicPicture,'+res.data[0][i]['scenicId']+')">'+
-                    '<img width="210" class="picture-thumb" src="'+staticc+res.data[0][i]['scenicImg']+'"></a></td>'+
+                    '<img width="210" class="picture-thumb" style="width: 100px;height: 100px" src="'+staticc+res.data[0][i]['scenicImg']+'"></a></td>'+
                     '<td class="text-c">'+res.data[0][i]['price']+'</td>'+
                     '<td>'+res.data[0][i]['REGION_NAME']+'</td>'+
                     '<td class="td-status"><span class="label label-success radius">已发布</span></td>'+
@@ -42,10 +42,10 @@ $.ajax({
                     '<td><input name="" type="checkbox" value=""></td>'+
                     '<td>'+res.data[0][i]['scenicId']+'</td>'+
                     '<td>'+res.data[0][i]['scenicName']+'</td>'+
-                    '<td>'+res.data[0][i]['scenicDescribe']+'</td>'+
+                    '<td>'+res.data[0][i]['scenicDescribe'].substring(0,15)+'...</td>'+
                     '<td class="text-l"><a class="maincolor" href="javascript:;">'+res.data[0][i]['scenicNum']+'人</a></td>'+
                     '<td><a href="javascript:;" onClick="picture_edit(\'图库编辑\',scenicPicture,'+res.data[0][i]['scenicId']+')">'+
-                    '<img width="210" class="picture-thumb" src="'+staticc+res.data[0][i]['scenicImg']+'"></a></td>'+
+                    '<img width="210" class="picture-thumb" style="width: 100px;height: 100px" src="'+staticc+res.data[0][i]['scenicImg']+'"></a></td>'+
                     '<td class="text-c">'+res.data[0][i]['price']+'</td>'+
                     '<td>'+res.data[0][i]['REGION_NAME']+'</td>'+
                     '<td class="td-status"><span class="label label-defaunt radius">已下架</span></td>'+

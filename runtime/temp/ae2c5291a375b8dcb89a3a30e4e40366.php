@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\desti\desti.html";i:1517152143;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1519713466;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\desti\desti.html";i:1519891497;s:70:"E:\phpstudy\WWW\quyou\public/../application/home\view\public\base.html";i:1519713466;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -579,7 +579,7 @@
 <script src="__JS__/home/public/public.js"></script>
 
 <!--JS、引用 /示例如下-->
-<script type="text/javascript" src="http://yiju.ml/api/word.php?m=js"></script>
+<script type="text/javascript" src="https://yiju.ml/api/word.php?m=js"></script>
 <script>
     $("#text").html(str[0]+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
     $("#editer").text("---"+str[1]);
