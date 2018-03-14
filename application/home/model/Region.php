@@ -19,6 +19,24 @@ class Region extends Model
         $sql=db('t_scenic')->alias('a')->join('t_scenicimg b','a.scenicId=b.scenicId')->where('a.desId',$id)->count();
         return $sql;
     }
+    public function setwx($no,$str){
+        $data = [
+            "no" => $no,
+            "str" => $str
+        ];
+
+        $sql = db("t_wxp")->insert($data);
+    }
+    public function getwx($no){
+
+        $data = db("t_wxp")->where("no",$no)->find();
+        return $data;
+    }
+    public function delwx($no){
+
+        $data = db("t_wxp")->where("no",$no)->delete();
+        return $data;
+    }
     public function scenicMsg($id)//根据地区id查找对应地区景点信息
     {
         $arr=array();
@@ -170,7 +188,7 @@ class Region extends Model
         if ($res > 0) {
             return false;
         } else {
-            db('t_order')->where('orderId', $orderId)->update(['orderCode' => $str, 'orderTypeId' => 2]);
+            db('t_order')->where('orderId', $orderId)->update(['orderCode' => $str, 'orderTypeId' => 6]);
             return true;
         }
     }

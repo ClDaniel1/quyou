@@ -139,7 +139,9 @@ return [
     ],
 
     // 视图输出字符串内容替换
-    'view_replace_str'       => [],
+    'view_replace_str'       => [
+        "__STATIC__" => "https://quyou.liner.fun/quyou/public/static"
+    ],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
     'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
@@ -354,6 +356,7 @@ return [
             'payT'=>['code'  =>  "60006",'msg'   =>  "恭喜您支付成功!",'data'  => []],
             'cancelT'=>['code'  =>  "60007",'msg'   =>  "取消订单成功!",'data'  => []],
             'cancelF'=>['code'  =>  "60008",'msg'   =>  "取消订单失败!",'data'  => []],
+            'payE'=>['code'  =>  "60009",'msg'   =>  "支付失败，请重试!",'data'  => []],
         ],
         "collection"=>[
             'collectionYes'=>['code'  =>  "70001",'msg'   =>  "收藏成功！",'data'  => []],

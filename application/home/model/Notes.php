@@ -274,6 +274,26 @@ class Notes extends Model
         return $data;
     }
 
+    public function allNotes($userId,$start,$num){
+        $data =db('t_note')
+            ->alias('a')
+            ->field("a.*,b.REGION_NAME")
+            ->join('t_region b','a.desId = b.REGION_ID')
+            ->where("a.uid= $userId")
+            ->order("createTime desc")
+            ->limit($start,$num)
+            ->select();
+        return $data;
+    }
+
+    public function countAllNote($userId){
+        $data =db('t_note')
+            ->field("count(noteId) allN")
+            ->where("uid= $userId")
+            ->select();
+        return $data[0]["allN"];
+    }
+
     public function toDraft($noteId){
         db('t_note')->where('noteId', $noteId)->update(['noteType' => '0']);
     }

@@ -192,7 +192,7 @@ class User extends \think\Controller
                     $returnMsg['code'] = 10011;
                     $url = url("home/personal/personal");
                     $unreadMsgNum = $um->getUnreadMsgNum($uid);
-                    $returnMsg["data"]=["userImg" => "/quyou/public/static/".$res["uheadImg"],"userUrl"=>$url,"msgNum"=>$unreadMsgNum,"uname"=>$res["uname"],"uid"=>$res["uid"]];
+                    $returnMsg["data"]=["userImg" => "https://quyou.liner.fun/quyou/public/static/".$res["uheadImg"],"userUrl"=>$url,"msgNum"=>$unreadMsgNum,"uname"=>$res["uname"],"uid"=>$res["uid"]];
                     return json($returnMsg);
                 }
             }
@@ -290,9 +290,11 @@ class User extends \think\Controller
         //获取系统消息
     public function getSysMsg(){
         $res = $this->checkLogin();
-        if($res){
+        if($res || input("?param.uid")){
             $um = new \app\home\model\User();
             $uid = cookie('uid');
+
+            $uid = input("?param.uid")?input("param.uid"):$uid;
 
             $data = $um->getSysMsg($uid);
             $returnMsg = config("msg")["msg"]["getSysMsg"];
@@ -341,8 +343,8 @@ class User extends \think\Controller
         $psw = input("param.psw");
         $type = input("param.type");
 
-
         $set = file_exists($openId.".php");
+
 
 
         if($set){
@@ -405,33 +407,41 @@ class User extends \think\Controller
         $userName = "qu_".$rad->get(9);
 
         $set = file_exists($openId.".php");
+        $model=new \app\home\model\User();
+        $arr = $model->checkPhone($uphone);
+        if(count($arr) >= 1){
+            //用户名重复
+            $returnMsg= config('msg')['login']['havePhone'];
+            return json($returnMsg);
+        }else{
+            if($set){
+                $userAcc = json_decode(file_get_contents($openId.".php"),true);
+                $openId = $userAcc[0];
 
+                $m = new \app\home\model\User();
+                $res  = $m->oneKey($userName,$uphone,$userInfo["avatarUrl"],$openId);
+                if( $res == 1){
+                    $user = $m->wxIdLogin($openId);
 
-        if($set){
-            $userAcc = json_decode(file_get_contents($openId.".php"),true);
-            $openId = $userAcc[0];
-
-            $m = new \app\home\model\User();
-            $res  = $m->oneKey($userName,$uphone,$userInfo["avatarUrl"],$openId);
-            if( $res == 1){
-                $user = $m->wxIdLogin($openId);
-
-                $reMsg = config("msg")["userCon"]["onKeySucc"];
-                $reMsg["data"]=[$uphone,$user[0]["uid"]];
-            }
-            else if ($res == "isset"){
-                //该微信号已绑定账号
-                $reMsg = config("msg")["userCon"]["wxBindhave"];
+                    $reMsg = config("msg")["userCon"]["onKeySucc"];
+                    $reMsg["data"]=[$uphone,$user[0]["uid"]];
+                }
+                else if ($res == "isset"){
+                    //该微信号已绑定账号
+                    $reMsg = config("msg")["userCon"]["wxBindhave"];
+                }
+                else{
+                    //注册失败
+                    $reMsg = config("msg")["login"]["regError"];
+                };
             }
             else{
-                //注册失败
-                $reMsg = config("msg")["login"]["regError"];
-            };
+                //没有缓存，重新调用微信登录
+                $reMsg = config("msg")["userCon"]["wxBindTimeOut"];
+            }
         }
-        else{
-            //没有缓存，重新调用微信登录
-            $reMsg = config("msg")["userCon"]["wxBindTimeOut"];
-        }
+
+
 
         if($set){
             unlink($openId.".php");

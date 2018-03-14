@@ -92,7 +92,8 @@ class User
                 "uphone" => $uphone,
                 "uname" => $userName,
                 "upwd" => md5('123456'),
-                "wechatId" => $wx
+                "wechatId" => $wx,
+                "payPwd" => md5('123456')
             ];
             $uid = db('t_user')->insertGetId($data);
             $im = new Intro();

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"D:\wamp64\www\quyou\public/../application/home\view\region\region.html";i:1519659803;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1519634692;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:70:"D:\wamp64\www\quyou\public/../application/home\view\region\region.html";i:1520313455;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1520312326;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +26,7 @@
 <link rel="stylesheet" href="__CSS__/home/region/region.css">
 
     <title>
+<?php echo $region_name; ?>
 </title>
     <style>
         .navBg{
@@ -105,7 +106,7 @@
     <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
 
         <li class="layui-nav-item loginIn"  style="float: right">
-            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
+            <a href="" class="toCenter"><img src="" class="layui-nav-img uImg">我</a>
             <dl class="layui-nav-child">
                 <dd><a href="<?php echo URL('home/personal/personal'); ?>#test1=2">我的游记</a></dd>
                 <dd><a href="javascript:;" class="goCustomer">联系客服</a></dd>
@@ -115,7 +116,6 @@
         <li class="layui-nav-item loginIn"  style="float: right"><a href="<?php echo url('home/User/myMsg'); ?>" class="msga">我的消息</a></li>
        <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
         <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
-
     </ul>
 </div>
 
@@ -124,7 +124,7 @@
         <div class="layui-container" >
             <div class="layui-row siteNav">
                  <span class="layui-breadcrumb" lay-separator=">">
-                    <a href="">目的地</a>
+                    <a href="<?php echo url('home/Desti/desti'); ?>">目的地</a>
                     
                     
                 </span>
@@ -184,7 +184,7 @@
                 <div>
                     <span class="layui-breadcrumb" lay-separator=">">
                         <a href="">目的地</a>
-                        <a href=""><?php echo $region_name; ?><i class="layui-icon orangeIcon">&#xe625;</i></a>
+                        <a href=""><?php echo $region_name; ?></a>
                         <a ><cite style="color: #ff7000;font-weight: bold;"><span><?php echo $region_name; ?></span>旅游攻略</cite></a>
                     </span>
                 </div>
@@ -344,11 +344,6 @@
                                     <span><?php echo $value['hotelDescribe']; ?></span>
                                 </div>
                             </div>
-                            <div class="comTop">
-                                <img class="headImg" src="__STATIC__/<?php echo $value['content']['uheadImg']; ?>" alt="加载失败">
-                                <span class="comName"><?php echo $value['content']['uname']; ?></span>
-                                <span class="comMsg">“<?php echo $value['content']['content']; ?>”</span>
-                            </div>
                         </div>
                     </a>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -373,11 +368,7 @@
                                     <span><?php echo $value['scenicDescribe']; ?></span>
                                 </div>
                             </div>
-                            <div class="comTop">
-                                <img class="headImg" src="__STATIC__/<?php echo $value['content']['uheadImg']; ?>" alt="加载失败">
-                                <span class="comName"><?php echo $value['content']['uname']; ?></span>
-                                <span class="comMsg">“<?php echo $value['content']['content']; ?></span>
-                            </div>
+
                         </div>
                     </a>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -402,11 +393,7 @@
                                     <span><?php echo $value['foodDescribe']; ?></span>
                                 </div>
                             </div>
-                            <div class="comTop">
-                                <img class="headImg" src="__STATIC__/<?php echo $value['content']['uheadImg']; ?>" alt="加载失败">
-                                <span class="comName"><?php echo $value['content']['uname']; ?></span>
-                                <span class="comMsg">“<?php echo $value['content']['content']; ?>”</span>
-                            </div>
+
                         </div>
                     </a>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -553,7 +540,7 @@
 
 <!--JS、引用 /示例如下-->
 <!--引用百度地图api文件-->
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=TRYU1lcQ2YkgXRzerqXODMOKkAGrETrL"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=TRYU1lcQ2YkgXRzerqXODMOKkAGrETrL"></script>
 <script>
     nav(2);
     layui.use('element', function(){

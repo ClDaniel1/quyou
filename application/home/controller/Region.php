@@ -8,6 +8,10 @@
 namespace app\home\controller;
 use app\admin\model\User;
 use org\RadomStr;
+use org\wxBack;
+use org\wxlib\NativePay;
+use org\wxlib\WxPayConfig;
+use org\WxPayUnifiedOrder;
 use think\console\command\make\Controller;
 use \think\Request;
 use \app\home\model;
@@ -48,6 +52,11 @@ class Region extends \think\Controller
 
 //        $msg=$model->hotelCount($regionId);
 //        $this->assign('htCount',$msg);
+        $regionId=cookie('regionId');
+        $m = new model\Region();
+        $regionName = $m->region($regionId);
+        $this->assign("regionName",$regionName["REGION_NAME"]);
+        $this->assign("regionId",$regionId);
         return $this->fetch('hotel');
     }
     public function ajaxHotel()//根据ajax发送过来的请求获取酒店信息
@@ -95,6 +104,8 @@ class Region extends \think\Controller
         $model=new model\Region();
         $msg=$model->oneHotel($hotelId);
         $this->assign('hotelMsg',$msg);
+        $regionId=cookie('regionId');
+        $this->assign("regionId",$regionId);
         if(Cookie::has('uid')){
             $uid = cookie("uid");
         }
@@ -144,7 +155,7 @@ class Region extends \think\Controller
     }
     public function contact()//获取当前用户联系人列表
     {
-        $userCon = new \app\home\Controller\User();
+        $userCon = new \app\home\controller\User();
         $res=$userCon->checkLogin();
         if($res==true)
         {
@@ -161,7 +172,7 @@ class Region extends \think\Controller
     }
     public function addContact()//添加联系人
     {
-        $userCon = new \app\home\Controller\User();
+        $userCon = new \app\home\controller\User();
         $res=$userCon->checkLogin();
         if($res==true)
         {
@@ -210,7 +221,7 @@ class Region extends \think\Controller
         $orderTime=date('Y-m-d H-i-s',time());//下单时间
         if(empty($user)||count($user)!=$num)
         {
-            $returnMsg=config('order')['numF'];
+            $returnMsg=config('msg')["order"]['numF'];
             echo json_encode($returnMsg);
         }
         else
@@ -220,29 +231,96 @@ class Region extends \think\Controller
             $res=$model->hotelOrder($arr);
             if($res==true)
             {
-                $returnMsg=config('order')['orderT'];
+                $returnMsg=config('msg')["order"]['orderT'];
                 array_push($returnMsg['data'],$res);
                 echo json_encode($returnMsg);
             }
             else
             {
-                $returnMsg=config('order')['orderF'];
+                $returnMsg=config('msg')["order"]['orderF'];
                 echo json_encode($returnMsg);
             }
         }
     }
+
+    public function checkWx(){
+        $no = input("param.no");
+        $model=new model\Region();
+        $str = $model->getwx($no)["str"];
+        if($str == "ok"){
+            $returnMsg=config('msg')['order']['payT'];
+            echo json_encode($returnMsg);
+        }
+        else if($str == "err"){
+            $returnMsg=config('msg')['order']['payE'];
+            echo json_encode($returnMsg);
+        }
+        $model->delwx($no);
+    }
     public function hOrderPay()//酒店下单付款页面
     {
+      /*  require_once "../extend/org/wxlib/WxPay.Api.php";
+        require_once "../extend/org/wxlib/WxPay.NativePay.php";*/
+
+
+
         $orderId=input('?param.orderId')?input('orderId'):"";
         $model=new model\Region();
         $res=$model->gainOrder($orderId);
         $hotelId=$res["tradeId"];
         $hotelMsg=$model->oneHotel($hotelId);
+
+        ini_set('date.timezone','Asia/Shanghai');
+        $input = new \org\wxlib\WxPayUnifiedOrder();
+        $no = WxPayConfig::MCHID.date("YmdHis");
+        $input->SetBody($hotelMsg["hotelName"]);
+        $input->SetAttach($hotelMsg["hotelName"].$res["num"]."间");
+        $input->SetOut_trade_no($no.$orderId);
+        $input->SetTotal_fee("1");
+        $input->SetTime_start(date("YmdHis"));
+        $input->SetTime_expire(date("YmdHis", time() + 600));
+        $input->SetGoods_tag("test");
+        $input->SetNotify_url("http://www.liner.fun/quyou/public/home/Region/wxPay");
+        $input->SetTrade_type("NATIVE");
+        $input->SetProduct_id("123456789");
+        $notify = new NativePay();
+        $result = $notify->GetPayUrl($input);
+        $url2 = $result["code_url"];
+
+        $this->assign("no",$no.$orderId);
+        $this->assign("payUrl",$url2);
+
         $arr=[];
         $arr['order']=$res;
         $arr['hotel']=$hotelMsg;
         $this->assign('msg',$arr);
         return $this->fetch('hOrderPay');
+    }
+
+    public function wxPay(){
+        $msg = file_get_contents("php://input");
+        $msgObj = simplexml_load_string($msg, 'SimpleXMLElement', LIBXML_NOCDATA);
+
+        if($msgObj->result_code == "SUCCESS"){
+            $model=new model\Region();
+            $no = $msgObj->out_trade_no;
+            $orderId = substr($no,24);
+            if($msgObj->return_code == "SUCCESS"){
+
+                $model->setwx($no,"ok");
+                $radom=new RadomStr();
+                while(1)
+                {
+                    $radomStr=$radom->get();
+                    $raRes=$model->radomStr($orderId,$radomStr);
+                    if($raRes)
+                    {
+                        return;
+                    }
+                }
+            }
+            $model->setwx($no,"err");
+        }
     }
     public function hPay()//酒店支付，配对密码
     {
@@ -431,7 +509,7 @@ class Region extends \think\Controller
         $data=$model->idUser($uId);
             if($hotalPrice>$data['ubalance'])
             {
-                $returnMsg=config('order')['payF'];
+                $returnMsg=config('msg')["order"]['payF'];
                 echo json_encode($returnMsg);
             }
             else
@@ -454,13 +532,14 @@ class Region extends \think\Controller
                                 break;
                             }
                         }
-                        $returnMsg=config('order')['payT'];
+                        $returnMsg=config('msg')["order"]['payT'];
+                        $returnMsg["data"] = [$res];
                         echo json_encode($returnMsg);
                     }
                 }
                 else
                 {
-                    $returnMsg=config('order')['orderF'];
+                    $returnMsg=config('msg')["order"]['orderF'];
                     echo json_encode($returnMsg);
                 }
             }
@@ -487,12 +566,12 @@ class Region extends \think\Controller
         $data=$model->hPay($uId,$pwd);
         if(!empty($data))
         {
-            $returnMsg=config('order')['pwdT'];
+            $returnMsg=config('msg')["order"]['pwdT'];
             echo json_encode($returnMsg);
         }
         else
         {
-            $returnMsg=config('order')['pwdF'];
+            $returnMsg=config('msg')["order"]['pwdF'];
             echo json_encode($returnMsg);
         }
     }

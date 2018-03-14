@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\desti\desti.html";i:1517188027;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1519634692;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp64\www\quyou\public/../application/home\view\desti\desti.html";i:1519887751;s:68:"D:\wamp64\www\quyou\public/../application/home\view\public\base.html";i:1520312326;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -188,7 +188,7 @@
     <ul class="layui-nav navBg" id="userLoginZone" lay-filter="" style="float: right">
 
         <li class="layui-nav-item loginIn"  style="float: right">
-            <a href="" class="toCenter"><img src="http://t.cn/RCzsdCq" class="layui-nav-img uImg">我</a>
+            <a href="" class="toCenter"><img src="" class="layui-nav-img uImg">我</a>
             <dl class="layui-nav-child">
                 <dd><a href="<?php echo URL('home/personal/personal'); ?>#test1=2">我的游记</a></dd>
                 <dd><a href="javascript:;" class="goCustomer">联系客服</a></dd>
@@ -198,7 +198,6 @@
         <li class="layui-nav-item loginIn"  style="float: right"><a href="<?php echo url('home/User/myMsg'); ?>" class="msga">我的消息</a></li>
        <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/login'); ?>">登录</a></li>
         <li class="layui-nav-item nologin"><a href="<?php echo url('home/User/register'); ?>"> 注册</a></li>
-
     </ul>
 </div>
 
@@ -207,7 +206,7 @@
         <div class="layui-container" >
             <div class="layui-row siteNav">
                  <span class="layui-breadcrumb" lay-separator=">">
-                    <a href="">目的地</a>
+                    <a href="<?php echo url('home/Desti/desti'); ?>">目的地</a>
                     
                     
                 </span>
@@ -579,7 +578,7 @@
 <script src="__JS__/home/public/public.js"></script>
 
 <!--JS、引用 /示例如下-->
-<script type="text/javascript" src="http://yiju.ml/api/word.php?m=js"></script>
+<script type="text/javascript" src="https://yiju.ml/api/word.php?m=js"></script>
 <script>
     $("#text").html(str[0]+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
     $("#editer").text("---"+str[1]);

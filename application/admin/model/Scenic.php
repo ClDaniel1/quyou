@@ -160,7 +160,7 @@ class Scenic extends \think\Model
     public function scenicCommentWx($id)
     {
         $sql=db('t_sceniccomment')->alias('a')
-            ->join('t_user b','a.uid=b.uid')->field('a.*,b.uname,b.uheadImg')->select();
+            ->join('t_user b','a.uid=b.uid')->field('a.*,b.uname,b.uheadImg')->where('scenicId',$id)->select();
         return $sql;
     }
 }

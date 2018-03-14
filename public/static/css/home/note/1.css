@@ -1,0 +1,23 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.vertical_head {
+    width: 1px;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.vertical_body {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.safe {
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+}

@@ -8,6 +8,8 @@
 
 namespace app\home\controller;
 use org\Page;
+use org\Qiniu;
+use org\RadomStr;
 use \think\Response;
 use \think\Db;
 use \think\Cookie;
@@ -97,6 +99,8 @@ class Personal extends \think\Controller
         $email=input('?post.email')? input('email'):'';
         $usex=input('?post.usex')? input('usex'):'';
         $uage=input('?post.uage')? input('uage'):'';
+
+
 
         $data = ['uname' => $uname, 'email' => $email,
             'usex' =>$usex,'uage'=>$uage
@@ -206,14 +210,20 @@ class Personal extends \think\Controller
             //检查是否有用户文件夹
             $uid = cookie("uid");
             $userDir = "static/images/user/".$uid;
+
             if(!(is_dir($userDir))){
                 mkdir($userDir);
             }
             //移动文件到用户文件夹
             $type = $_FILES["file"]["type"];
             $type = explode("/",$type)[1];
-            $path = $userDir."/head".".".$type;
+            $ran = new RadomStr();
+            $fileNewName = time().$ran->get();
+            $path = $userDir."/$fileNewName".".".$type;
+
+
             move_uploaded_file($_FILES["file"]["tmp_name"],$path);
+
 
             $image = \think\Image::open($path);// 原图
             $x = $width = $image->width();//获取图片的宽
@@ -258,12 +268,17 @@ class Personal extends \think\Controller
             //裁图
             $image->crop($rew-$rsw, $reh-$rsh,$rsw,$rsh)->save($path);
 
-            $userPath = "images/user/".$uid."/head".".".$type;
+            $userPath = "images/user/".$uid."/$fileNewName".".".$type;
 
             //存数据库
             $resMsg["data"]["url"] = $userPath;
             $model = new \app\home\model\Personal();
             $model->upload($uid,$userPath);
+
+            exec("rsync -avzP /data/www/default/quyou/public/static/images web@120.78.77.164::quyou/public/static/");
+            $qiniu = new Qiniu();
+            $qiniu->up($path,"quyou/public/".$path);
+
             return json($resMsg);
         }
     }
@@ -412,5 +427,7 @@ class Personal extends \think\Controller
 
         return json($reMsg);
     }
+
+
 }
 

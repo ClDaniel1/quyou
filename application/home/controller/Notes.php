@@ -10,6 +10,7 @@ namespace app\home\controller;
 
 
 use org\Page;
+use org\Qiniu;
 use org\RadomStr;
 
 
@@ -81,10 +82,13 @@ class Notes extends \think\Controller
                 if(!(is_dir($userDir))){
                     mkdir($userDir);
                 }
+
+                $rad = new RadomStr();
+                $newName = $rad->get().time();
                 //移动文件到用户文件夹
                 $type = $_FILES["file"]["type"];
                 $type = explode("/",$type)[1];
-                $path = $userDir."/head".".".$type;
+                $path = $userDir."/$newName".".".$type;
                 move_uploaded_file($_FILES["file"]["tmp_name"],$path);
 
                 $image = \think\Image::open($path);// 原图
@@ -128,9 +132,11 @@ class Notes extends \think\Controller
                 //裁图
                $image->crop($rew-$rsw, $reh-$rsh,$rsw,$rsh)->save($path);
 
-                $userPath = "images/user/".$uid."/note/".$noteId."/head".".".$type;
+                $userPath = "images/user/".$uid."/note/".$noteId."/$newName".".".$type;
 
-
+                exec("rsync -avzP /data/www/default/quyou/public/static/images web@120.78.77.164::quyou/public/static/");
+                $qiniu = new Qiniu();
+                $qiniu->up($path,"quyou/public/".$path);
 
                 $nm = new \app\home\model\Notes();
                 $nm->setUp($noteId,$userPath);
@@ -280,7 +286,9 @@ class Notes extends \think\Controller
             $type = explode("/",$type)[1];
             $path = $userDir."/".$fileName.".".$type;
             $res = move_uploaded_file($_FILES["file"]["tmp_name"],$path);
-
+            exec("rsync -avzP /data/www/default/quyou/public/static/images web@120.78.77.164::quyou/public/static/");
+            $qiniu = new Qiniu();
+            $qiniu->up($path,"quyou/public/".$path);
             if ($res){
                 $userPath = "images/user/".$uid."/note/".$noteId."/".$fileName.".".$type;
 
@@ -637,6 +645,25 @@ class Notes extends \think\Controller
         $resMsg = config("msg")["note"]["getNoteList"];
         $resMsg["data"] = [$data,$allPage];
         return json($resMsg);
+    }
+
+    public  function getUserNote(){
+        $uid = input("param.uid");
+        $p = input("param.p");
+        $nm = new \app\home\model\Notes();
+
+
+        $all = $nm -> countAllNote($uid);
+
+        $page = new Page($all,6,$p);
+        $data = $nm->allNotes($uid,$page->getStart(),$page->getNum());
+
+        $resMsg = config("msg")["note"]["getNoteList"];
+        $resMsg["data"] = [$data,$page->exp()];
+
+        return json($resMsg);
+
+
     }
 
     public function show(){

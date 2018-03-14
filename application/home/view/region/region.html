@@ -7,6 +7,7 @@
 {/block}
 
 {block name='title'}
+{$region_name}
 {/block}
 
 {block name='body'}
@@ -19,7 +20,7 @@
                 <div>
                     <span class="layui-breadcrumb" lay-separator=">">
                         <a href="">目的地</a>
-                        <a href="">{$region_name}<i class="layui-icon orangeIcon">&#xe625;</i></a>
+                        <a href="">{$region_name}</a>
                         <a ><cite style="color: #ff7000;font-weight: bold;"><span>{$region_name}</span>旅游攻略</cite></a>
                     </span>
                 </div>
@@ -179,11 +180,6 @@
                                     <span>{$value.hotelDescribe}</span>
                                 </div>
                             </div>
-                            <div class="comTop">
-                                <img class="headImg" src="__STATIC__/{$value.content.uheadImg}" alt="加载失败">
-                                <span class="comName">{$value.content.uname}</span>
-                                <span class="comMsg">“{$value.content.content}”</span>
-                            </div>
                         </div>
                     </a>
                     {/volist}
@@ -208,11 +204,7 @@
                                     <span>{$value.scenicDescribe}</span>
                                 </div>
                             </div>
-                            <div class="comTop">
-                                <img class="headImg" src="__STATIC__/{$value.content.uheadImg}" alt="加载失败">
-                                <span class="comName">{$value.content.uname}</span>
-                                <span class="comMsg">“{$value.content.content}</span>
-                            </div>
+
                         </div>
                     </a>
                     {/volist}
@@ -237,11 +229,7 @@
                                     <span>{$value.foodDescribe}</span>
                                 </div>
                             </div>
-                            <div class="comTop">
-                                <img class="headImg" src="__STATIC__/{$value.content.uheadImg}" alt="加载失败">
-                                <span class="comName">{$value.content.uname}</span>
-                                <span class="comMsg">“{$value.content.content}”</span>
-                            </div>
+
                         </div>
                     </a>
                     {/volist}

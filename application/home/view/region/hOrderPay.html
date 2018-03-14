@@ -18,6 +18,18 @@
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <title>酒店预订</title>
+    <style>
+        #pay:hover #wxPay{
+            display: block;
+        }
+        #wxPay{
+            display: none;
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
 <div class="logoDiv">
@@ -88,8 +100,14 @@
                     <h1>总价（含税）<span class="floatR" style="text-align: right;color: orange;font-size: 18px">￥<span>{$msg.order.totalPrice}</span></span></h1>
                 </div>
             </div>
-            <div>
+
+            <div id="pay">
                 <button class="layui-btn layui-btn-fluid layui-btn-warm payBtn" style="margin-top: 30px">立即支付</button>
+                <div id="wxPay">
+                    <p>微信支付</p>
+                    <img src="http://paysdk.weixin.qq.com/example/qrcode.php?data={$payUrl}" alt="">
+                </div>
+
             </div>
         </div>
     </div>
@@ -105,5 +123,25 @@
     var hrefUrl="{:url('home/Region/hSuccess')}?";
     var price ="{$msg.order.totalPrice}";
     var hotelId ="{$msg.order.orderId}";
+
+    setInterval(function () {
+        $.ajax({
+            url:"{:url('home/Region/checkWx')}",
+            data:{no:'{$no}'},
+            dataType:"json",
+            success:function (res) {
+                if(res.code==60006)
+                {
+                    layer.msg(res.msg, {icon: 6,time: 2000}, function () {
+                        window.location.href=hrefUrl+"orderId="+hotelId+"";
+                    });
+                }
+                else if(res.code==60009)
+                {
+                    layer.msg(res.msg, {icon: 5});
+                }
+            }
+        })
+    },1000)
 </script>
 </html>
