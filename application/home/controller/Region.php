@@ -222,11 +222,7 @@ class Region extends \think\Controller
         $orderTime=date('Y-m-d H-i-s',time());//下单时间
         if(empty($user)||count($user)!=$num)
         {
-<<<<<<< HEAD
-            $returnMsg=config('msg')["order"]['numF'];
-=======
             $returnMsg=config('msg')['order']['numF'];
->>>>>>> fe9671577d2adc87d4e76f984fb138f698f42492
             echo json_encode($returnMsg);
         }
         else
@@ -236,21 +232,13 @@ class Region extends \think\Controller
             $res=$model->hotelOrder($arr);
             if($res==true)
             {
-<<<<<<< HEAD
-                $returnMsg=config('msg')["order"]['orderT'];
-=======
                 $returnMsg=config('msg')['order']['orderT'];
->>>>>>> fe9671577d2adc87d4e76f984fb138f698f42492
                 array_push($returnMsg['data'],$res);
                 echo json_encode($returnMsg);
             }
             else
             {
-<<<<<<< HEAD
                 $returnMsg=config('msg')["order"]['orderF'];
-=======
-                $returnMsg=config('msg')['order']['orderF'];
->>>>>>> fe9671577d2adc87d4e76f984fb138f698f42492
                 echo json_encode($returnMsg);
             }
         }
@@ -579,20 +567,12 @@ class Region extends \think\Controller
         $data=$model->hPay($uId,$pwd);
         if(!empty($data))
         {
-<<<<<<< HEAD
             $returnMsg=config('msg')["order"]['pwdT'];
-=======
-            $returnMsg=config('msg')['order']['pwdT'];
->>>>>>> fe9671577d2adc87d4e76f984fb138f698f42492
             echo json_encode($returnMsg);
         }
         else
         {
-<<<<<<< HEAD
             $returnMsg=config('msg')["order"]['pwdF'];
-=======
-            $returnMsg=config('msg')['order']['pwdF'];
->>>>>>> fe9671577d2adc87d4e76f984fb138f698f42492
             echo json_encode($returnMsg);
         }
     }

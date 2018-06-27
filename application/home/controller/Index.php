@@ -3,6 +3,7 @@ namespace app\home\controller;
 
 
 use app\home\model\Ad;
+use org\Intro;
 
 class Index extends \think\Controller
 {
@@ -18,6 +19,11 @@ class Index extends \think\Controller
         //将广告数据绑定到ad变量
         $this->assign("ad",$data);
         return $this->fetch('index');
+    }
+
+    public function test(){
+        $i = new Intro();
+        $i ->zc();
     }
 
     public function err($str="OHH~<br>好像出错了，请重试",$url="",$type=0){

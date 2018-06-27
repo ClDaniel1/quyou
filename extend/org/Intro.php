@@ -393,12 +393,52 @@ class Intro{
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
         curl_setopt($ch, CURLOPT_HEADER,0);
-        curl_setopt($ch, CURLOPT_REFERER, "http://www.mafengwo.cn");
+        curl_setopt($ch, CURLOPT_REFERER, "https://z.jd.com/bigger/search.html");
         //执行并获取HTML文档内容
         $output = curl_exec($ch);
         //释放curl句柄
         curl_close($ch);
         //打印获得的数据
         return $output;
+    }
+
+    public function zc(){
+        $data=[
+            "status"=>'',
+            "sort"=>'',
+            "categoryId"=>'10',
+            "parentCategoryId"=>'',
+            "sceneEnd"=>'',
+            "productEnd"=>'',
+            "keyword"=>'',
+            "page"=>'3',
+        ];
+
+        for($i = 1;$i <2;$i++){
+            $html = new simple_html_dom();
+            $html-> load_file("http://z.jd.com/bigger/search.html?categoryId=10&page=$i");
+
+            $res = $html->find("div[class=i-tits] a");
+            $res2 = $html->find("div[class=i-tits] h4");
+            //var_dump($res);
+            $item= [];
+            foreach ($res as $k=>$v){
+                $item[] = ["name" => $res2[$k]->title,"href" => $v->href];
+            }
+
+            foreach ($item as $v){
+                echo "名字：".$v['name']."<br/>";
+                $html-> load_file("http://z.jd.com/".$v['href']);
+                echo "大图<br/>";
+                //var_dump($html->find('div[class=project-img] img'));
+                echo "<img src='".$html->find('div[class=project-img] img')[0]->src."' /><br/>";
+                echo "小图<br/>";
+                $arr = $html->find('div[class=tab-img-group] img');
+                foreach ($arr as $v){
+                    echo "<img src='".$v->attr["data-original"]."' /><br/>";
+                }
+            }
+        }
+
     }
 }

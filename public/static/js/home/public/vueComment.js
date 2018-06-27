@@ -33,19 +33,10 @@ Vue.component('my-module',{
     '<div class="layui-col-sm10 layui-col-xs10">'+
     '<div>'+
     '<p class="comTxt">{{value.content}}</p>'+
-    //'<i class="goodIcon good1"></i>'+
+
     '<div style="clear: both"></div>'+
     '</div>'+
-    /*'<div class="comUpImg">'+
-    '<img src="http://n2-q.mafengwo.net/s10/M00/F0/8B/wKgBZ1mOXqWAU_wgAAV_03MjvGY01.jpeg?imageMogr2%2Fthumbnail%2F%21500x300r%2Fgravity%2FCenter%2Fcrop%2F%21500x300%2Fquality%2F90" alt="">'+
-    '<img src="http://n2-q.mafengwo.net/s10/M00/F0/8B/wKgBZ1mOXqWAU_wgAAV_03MjvGY01.jpeg?imageMogr2%2Fthumbnail%2F%21500x300r%2Fgravity%2FCenter%2Fcrop%2F%21500x300%2Fquality%2F90" alt="">'+
-    '</div>'+*/
     '<div style="margin-top: 25px">'+
-   /* '<i class="starIcon"></i>'+
-    '<i class="starIcon"></i>'+
-    '<i class="starIcon"></i>'+
-    '<i class="starIcon"></i>'+
-    '<i class="starIcon"></i>'+*/
     '<span class="dateSpan1">{{value.comTime}}</span>'+
     '<button class="layui-btn layui-btn-warm layui-btn-sm replay" v-on:click="outBtn()" v-if="value.comId==showId">关闭</button>'+
     '<button class="layui-btn layui-btn-warm layui-btn-sm replay" v-on:click="repBtn(value.comId)" v-else>回复</button>'+
@@ -252,6 +243,4 @@ function comment() {
     else {
         layer.alert("请先登录")
     }
-
-
 }
